@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief — Módulo V: Estrategia Tecnológica + Mindset Digital</title>
+
+    <!-- Fonts: Clash Display for headings, Space Grotesk for body -->
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=space-grotesk@300,400,500,600,700&display=swap">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (NEON CYBER THEME)
+           =========================================== */
+        :root {
+            --bg: #0d0d12;
+            --bg-surface: #16161d;
+            --bg-card: #1c1c26;
+            --text: #e8e6e3;
+            --text-secondary: #9090a0;
+            --muted: #6b6b78;
+            --cyan: #00e5ff;
+            --magenta: #ff0080;
+            --purple: #8b5cf6;
+            --cyan-glow: rgba(0, 229, 255, 0.3);
+            --magenta-glow: rgba(255, 0, 128, 0.2);
+
+            --font-display: 'Clash Display', sans-serif;
+            --font-body: 'Space Grotesk', sans-serif;
+            --title-size: clamp(2rem, 6vw, 5rem);
+            --h2-size: clamp(1.4rem, 4vw, 3rem);
+            --h3-size: clamp(1rem, 2.5vw, 1.6rem);
+            --body-size: clamp(0.75rem, 1.3vw, 1.05rem);
+            --small-size: clamp(0.6rem, 0.9vw, 0.8rem);
+            --label-size: clamp(0.55rem, 0.8vw, 0.72rem);
+
+            --slide-padding: clamp(1.5rem, 4vw, 4rem);
+            --content-gap: clamp(0.75rem, 2vw, 2rem);
+            --element-gap: clamp(0.4rem, 1vw, 1rem);
+
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration: 0.6s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            height: 100%;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            height: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===========================================
+           SLIDE CONTAINER
+           =========================================== */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: var(--slide-padding);
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        /* ===========================================
+           CORNER BRACKETS
+           =========================================== */
+        .corner {
+            position: absolute;
+            width: clamp(16px, 2.5vw, 30px);
+            height: clamp(16px, 2.5vw, 30px);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .corner::before, .corner::after {
+            content: '';
+            position: absolute;
+            background: var(--cyan);
+            opacity: 0.25;
+        }
+        .corner-tl { top: var(--slide-padding); left: var(--slide-padding); }
+        .corner-tl::before { top: 0; left: 0; width: 100%; height: 1px; }
+        .corner-tl::after  { top: 0; left: 0; width: 1px; height: 100%; }
+        .corner-tr { top: var(--slide-padding); right: var(--slide-padding); }
+        .corner-tr::before { top: 0; right: 0; width: 100%; height: 1px; }
+        .corner-tr::after  { top: 0; right: 0; width: 1px; height: 100%; }
+        .corner-bl { bottom: var(--slide-padding); left: var(--slide-padding); }
+        .corner-bl::before { bottom: 0; left: 0; width: 100%; height: 1px; }
+        .corner-bl::after  { bottom: 0; left: 0; width: 1px; height: 100%; }
+        .corner-br { bottom: var(--slide-padding); right: var(--slide-padding); }
+        .corner-br::before { bottom: 0; right: 0; width: 100%; height: 1px; }
+        .corner-br::after  { bottom: 0; right: 0; width: 1px; height: 100%; }
+
+        /* Scan line */
+        .scan-line {
+            position: fixed;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+            opacity: 0.08;
+            animation: scan 8s linear infinite;
+            z-index: 100;
+            pointer-events: none;
+        }
+        @keyframes scan { 0% { top: -2px; } 100% { top: 100%; } }
+
+        /* Slide number */
+        .slide-number {
+            position: absolute;
+            bottom: var(--slide-padding);
+            right: var(--slide-padding);
+            font-size: var(--small-size);
+            color: var(--muted);
+            font-variant-numeric: tabular-nums;
+            z-index: 5;
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        h1 { font-size: var(--title-size); font-weight: 700; }
+        h2 { font-size: var(--h2-size); font-weight: 600; }
+        h3 { font-size: var(--h3-size); font-weight: 600; }
+
+        p, li {
+            font-size: var(--body-size);
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--cyan), var(--magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cyan { color: var(--cyan); }
+        .magenta { color: var(--magenta); }
+        .purple { color: var(--purple); }
+
+        strong { color: var(--text); font-weight: 600; }
+
+        /* ===========================================
+           TOP BAR
+           =========================================== */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+            margin-bottom: clamp(1rem, 3vh, 2rem);
+        }
+        .top-bar .line {
+            width: clamp(20px, 4vw, 50px);
+            height: 1px;
+            background: var(--cyan);
+            opacity: 0.4;
+        }
+        .top-bar .label {
+            font-size: var(--label-size);
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* ===========================================
+           CARDS & GRIDS
+           =========================================== */
+        .grid { display: grid; gap: clamp(0.5rem, 1.5vw, 1rem); }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: clamp(8px, 1vw, 14px);
+            padding: clamp(0.75rem, 1.5vw, 1.5rem);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--cyan), var(--magenta));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .card:hover::before { opacity: 1; }
+        .card h3 { margin-bottom: clamp(0.2rem, 0.5vh, 0.4rem); color: var(--text); }
+        .card p { font-size: var(--small-size); line-height: 1.5; }
+        .card-icon {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            margin-bottom: clamp(0.2rem, 0.5vh, 0.4rem);
+            display: block;
+        }
+
+        /* ===========================================
+           BULLET LISTS
+           =========================================== */
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.8vh, 0.7rem);
+        }
+        .bullet-list li { padding-left: 1.5em; position: relative; }
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0.6em;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--cyan);
+        }
+
+        /* ===========================================
+           QUOTE BLOCK
+           =========================================== */
+        .quote-block {
+            border-left: 3px solid var(--cyan);
+            padding-left: clamp(0.8rem, 2vw, 1.5rem);
+            max-width: min(90%, 650px);
+        }
+        .quote-block p {
+            font-size: clamp(0.95rem, 2vw, 1.4rem);
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* ===========================================
+           PILLAR / NUMBER LIST
+           =========================================== */
+        .pillar-list {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.25rem, 0.5vh, 0.45rem);
+        }
+        .pillar-item {
+            display: flex;
+            align-items: baseline;
+            gap: clamp(0.4rem, 0.8vw, 0.8rem);
+        }
+        .pillar-num {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: var(--h3-size);
+            color: var(--cyan);
+            min-width: 1.5em;
+            line-height: 1;
+        }
+        .pillar-text {
+            font-size: var(--small-size);
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .pillar-text strong { color: var(--text); }
+
+        /* ===========================================
+           HIGHLIGHT BOX
+           =========================================== */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0,229,255,0.08), rgba(139,92,246,0.08));
+            border: 1px solid rgba(0,229,255,0.15);
+            border-radius: clamp(8px, 1vw, 12px);
+            padding: clamp(0.6rem, 1.2vw, 1.2rem);
+        }
+        .highlight-box p { color: var(--text); font-size: var(--body-size); }
+
+        /* ===========================================
+           TWO COLUMN
+           =========================================== */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1rem, 3vw, 3rem);
+            align-items: start;
+        }
+
+        /* ===========================================
+           STATS ROW
+           =========================================== */
+        .stats-row { display: flex; gap: clamp(1.5rem, 4vw, 4rem); }
+        .stat { text-align: center; }
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4.5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--cyan);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: var(--label-size);
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-top: 0.3em;
+        }
+
+        /* ===========================================
+           TABLE
+           =========================================== */
+        .table-container { width: 100%; overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; font-size: var(--small-size); }
+        th {
+            text-align: left;
+            font-weight: 600;
+            color: var(--cyan);
+            padding: clamp(0.3rem, 0.6vh, 0.5rem) clamp(0.4rem, 0.8vw, 0.8rem);
+            border-bottom: 1px solid rgba(0,229,255,0.3);
+            font-size: var(--label-size);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        td {
+            padding: clamp(0.3rem, 0.6vh, 0.5rem) clamp(0.4rem, 0.8vw, 0.8rem);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+        td strong { color: var(--text); }
+
+        /* ===========================================
+           SEPARATOR
+           =========================================== */
+        .sep {
+            width: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--cyan), var(--magenta));
+            margin: clamp(0.5rem, 1.5vh, 1rem) 0;
+        }
+
+        /* ===========================================
+           BOTTOM BAR
+           =========================================== */
+        .bottom-bar {
+            position: absolute;
+            bottom: var(--slide-padding);
+            left: var(--slide-padding);
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1.5vw, 1.5rem);
+        }
+        .bottom-bar span {
+            font-size: var(--label-size);
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+        .bottom-bar .dot {
+            width: 4px; height: 4px;
+            border-radius: 50%;
+            background: var(--cyan);
+        }
+
+        /* ===========================================
+           REVEAL ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity var(--duration) var(--ease),
+                        transform var(--duration) var(--ease);
+        }
+        .slide.visible .reveal { opacity: 1; transform: translateY(0); }
+        .slide.visible .reveal:nth-child(1) { transition-delay: 0.1s; }
+        .slide.visible .reveal:nth-child(2) { transition-delay: 0.2s; }
+        .slide.visible .reveal:nth-child(3) { transition-delay: 0.3s; }
+        .slide.visible .reveal:nth-child(4) { transition-delay: 0.4s; }
+        .slide.visible .reveal:nth-child(5) { transition-delay: 0.5s; }
+        .slide.visible .reveal:nth-child(6) { transition-delay: 0.6s; }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity var(--duration) var(--ease),
+                        transform var(--duration) var(--ease);
+        }
+        .slide.visible .reveal-scale { opacity: 1; transform: scale(1); }
+        .slide.visible .reveal-scale:nth-child(1) { transition-delay: 0.15s; }
+        .slide.visible .reveal-scale:nth-child(2) { transition-delay: 0.25s; }
+        .slide.visible .reveal-scale:nth-child(3) { transition-delay: 0.35s; }
+        .slide.visible .reveal-scale:nth-child(4) { transition-delay: 0.45s; }
+
+        .reveal-glitch {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+        }
+        .slide.visible .reveal-glitch {
+            opacity: 1;
+            transform: translateY(0);
+            animation: glitchSettle 0.8s 0.3s var(--ease);
+        }
+        @keyframes glitchSettle {
+            0% { transform: skewX(0); }
+            20% { transform: skewX(-1.5deg); }
+            40% { transform: skewX(1deg); }
+            60% { transform: skewX(-0.5deg); }
+            100% { transform: skewX(0); }
+        }
+
+        /* ===========================================
+           PROGRESS BAR
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cyan), var(--magenta));
+            z-index: 1000;
+            transition: width 0.3s var(--ease);
+            width: 0%;
+        }
+
+        /* ===========================================
+           NAV DOTS
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: clamp(0.5rem, 1.5vw, 1.5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 1000;
+        }
+        .nav-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none; padding: 0;
+        }
+        .nav-dot.active {
+            background: var(--cyan);
+            box-shadow: 0 0 8px var(--cyan-glow);
+        }
+        .nav-dot:hover { background: rgba(255,255,255,0.4); }
+
+        /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+        @media (max-height: 700px) {
+            :root {
+                --slide-padding: clamp(0.75rem, 3vw, 2rem);
+                --content-gap: clamp(0.4rem, 1.5vw, 1rem);
+                --title-size: clamp(1.5rem, 5vw, 3rem);
+                --h2-size: clamp(1.1rem, 3.5vw, 2rem);
+            }
+        }
+        @media (max-height: 600px) {
+            :root {
+                --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem);
+                --content-gap: clamp(0.3rem, 1vw, 0.75rem);
+                --title-size: clamp(1.25rem, 4vw, 2.2rem);
+                --body-size: clamp(0.65rem, 1.1vw, 0.9rem);
+            }
+            .nav-dots, .corner { display: none; }
+        }
+        @media (max-height: 500px) {
+            :root {
+                --slide-padding: clamp(0.4rem, 2vw, 1rem);
+                --title-size: clamp(1rem, 3.5vw, 1.8rem);
+                --h2-size: clamp(0.9rem, 2.5vw, 1.3rem);
+                --body-size: clamp(0.6rem, 1vw, 0.8rem);
+            }
+        }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .two-col { grid-template-columns: 1fr; gap: clamp(0.5rem, 1.5vw, 1rem); }
+            .stats-row { flex-wrap: wrap; gap: clamp(1rem, 3vw, 2rem); }
+            .nav-dots { display: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html { scroll-behavior: auto; }
+            .scan-line { display: none; }
+        }
+
+        /* Title slide centering */
+        .title-slide .slide-content { align-items: center; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <!-- Global effects -->
+    <div class="scan-line"></div>
+    <div class="progress-bar" id="progressBar"></div>
+    <canvas id="particles" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+    <nav class="nav-dots" id="navDots"></nav>
+
+    <!-- ===========================================
+         SLIDE 1: TITLE
+         =========================================== -->
+    <section class="slide title-slide" data-slide="0">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo V — Brief</span>
+                <div class="line"></div>
+            </div>
+
+            <h1 class="reveal-glitch" style="margin-bottom: clamp(0.5rem, 1.5vh, 1rem);">
+                <span style="display:block;">Estrategia</span>
+                <span class="gradient-text" style="display:block;">Tecnológica</span>
+                <span style="display:block;">+ Mindset Digital</span>
+            </h1>
+
+            <p class="reveal" style="max-width: 500px;">
+                Formando criterio ejecutivo para decisiones tecnológicas en contextos de incertidumbre.
+            </p>
+
+            <div class="stats-row reveal" style="margin-top: clamp(1.5rem, 4vh, 3rem);">
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Módulos</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Semanas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">Práctica</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <span>Alfredo Edye</span>
+            <div class="dot"></div>
+            <span>Pablo Ortiz Olmos</span>
+        </div>
+        <div class="slide-number">01 / 14</div>
+    </section>
+
+    <!-- SLIDE 2: AUDIENCIA -->
+    <section class="slide" data-slide="1">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Audiencia</span><div class="line"></div></div>
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">¿Para quién <span class="gradient-text">diseñamos</span> este módulo?</h2>
+            <div class="two-col reveal">
+                <div>
+                    <h3 style="margin-bottom: var(--element-gap);">Perfil del participante</h3>
+                    <ul class="bullet-list">
+                        <li>Ejecutivos C-level, gerentes y directores de instituciones educativas y EdTech</li>
+                        <li>Líderes de área que llevan adelante operaciones</li>
+                        <li>90% sin trasfondo técnico, 10% con background técnico</li>
+                        <li>Edad promedio: 40 años</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="stats-row" style="margin-bottom: var(--content-gap);">
+                        <div class="stat"><div class="stat-number">~15</div><div class="stat-label">por cohorte</div></div>
+                        <div class="stat"><div class="stat-number">90%</div><div class="stat-label">no técnicos</div></div>
+                    </div>
+                    <div class="highlight-box"><p><strong>Industria:</strong> Sector educativo. Educación superior mediada por tecnología.</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">02 / 14</div>
+    </section>
+
+    <!-- SLIDE 3: ESTRUCTURA -->
+    <section class="slide" data-slide="2">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Formato</span><div class="line"></div></div>
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">Estructura del módulo — <span class="gradient-text">4 semanas</span></h2>
+            <div class="table-container reveal" style="max-width: min(95%, 800px);">
+                <table>
+                    <thead><tr><th>Semana</th><th>Actividad</th><th>Formato</th><th>Fechas</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>1</strong></td><td><strong class="cyan">Driver Class</strong></td><td>Híbrido</td><td>Vie 27/02, 10:00–19:00<br>Sáb 28/02, 09:30–13:30</td></tr>
+                        <tr><td><strong>2</strong></td><td>Challenge Work</td><td>Grupal autónomo</td><td>Semana del 02/03</td></tr>
+                        <tr><td><strong>3</strong></td><td>Challenge Work</td><td>Grupal autónomo</td><td>Semana del 09/03</td></tr>
+                        <tr><td><strong>4</strong></td><td><strong class="magenta">Challenge Point</strong></td><td>100% virtual</td><td>Mié 18/03, 14:00–16:00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="highlight-box reveal" style="margin-top: var(--content-gap); max-width: min(95%, 800px);">
+                <p style="font-size: var(--small-size);">
+                    <strong>Driver Class:</strong> Sesiones sincrónicas lideradas por facilitadores &nbsp;|&nbsp;
+                    <strong>Challenge Work:</strong> Resolución grupal de desafío real &nbsp;|&nbsp;
+                    <strong>Challenge Point:</strong> Debate y feedback
+                </p>
+            </div>
+        </div>
+        <div class="slide-number">03 / 14</div>
+    </section>
+
+    <!-- SLIDE 4: EJE CENTRAL -->
+    <section class="slide" data-slide="3">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Eje Central</span><div class="line"></div></div>
+            <div class="quote-block reveal" style="margin-bottom: var(--content-gap);">
+                <p>"Formar criterio ejecutivo para tomar decisiones tecnológicas en contextos de incertidumbre, entendiendo la tecnología como una palanca estratégica del negocio educativo — no como un área de soporte operativo."</p>
+            </div>
+            <div class="sep reveal"></div>
+            <p class="reveal" style="max-width: 550px;">
+                Un módulo para líderes que necesitan tomar decisiones tecnológicas con criterio, <strong>sin ser técnicos</strong> y sin delegar el futuro del negocio.
+            </p>
+        </div>
+        <div class="slide-number">04 / 14</div>
+    </section>
+
+    <!-- SLIDE 5: MÓDULO 1 -->
+    <section class="slide" data-slide="4">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Módulo 1</span><div class="line"></div></div>
+            <h2 class="reveal" style="margin-bottom: clamp(0.3rem, 1vh, 0.6rem);">Hello World</h2>
+            <p class="reveal" style="color: var(--cyan); font-size: var(--h3-size); font-weight: 500; margin-bottom: var(--content-gap);">Tecnología como ventaja competitiva</p>
+            <p class="reveal" style="font-style: italic; color: var(--text); margin-bottom: var(--content-gap); max-width: 550px;">¿Por qué la tecnología dejó de ser soporte y pasó a ser parte del core del negocio?</p>
+            <ul class="bullet-list reveal" style="margin-bottom: var(--content-gap);">
+                <li>Qué significa competir hoy en educación mediada por tecnología</li>
+                <li>Diferencia entre <strong>usar</strong>, <strong>operar</strong> y <strong>diseñar desde</strong> la tecnología</li>
+                <li>Rol del CEO y equipo directivo en decisiones tecnológicas clave</li>
+            </ul>
+            <div class="highlight-box reveal" style="max-width: min(90%, 600px);">
+                <p style="font-size: var(--small-size);"><strong>Resultado:</strong> El participante entiende dónde se juega la ventaja competitiva y por qué no puede delegar completamente estas decisiones.</p>
+            </div>
+        </div>
+        <div class="slide-number">05 / 14</div>
+    </section>
+
+    <!-- SLIDE 6: MÓDULO 2 -->
+    <section class="slide" data-slide="5">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Módulo 2</span><div class="line"></div></div>
+            <h2 class="reveal" style="margin-bottom: clamp(0.3rem, 1vh, 0.6rem);">Estrategia Tecnológica</h2>
+            <p class="reveal" style="color: var(--cyan); font-size: var(--h3-size); font-weight: 500; margin-bottom: var(--content-gap);">del Negocio</p>
+            <div class="two-col reveal">
+                <div>
+                    <h3 style="margin-bottom: var(--element-gap);">Decisiones estructurales</h3>
+                    <ul class="bullet-list">
+                        <li><strong>Build vs. Buy</strong></li>
+                        <li><strong>Cloud vs. On-premise</strong></li>
+                        <li><strong>Core vs. Commodity</strong></li>
+                        <li><strong>Velocidad vs. Control</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: var(--element-gap);">Estrategia integral</h3>
+                    <ul class="bullet-list"><li>Plataforma</li><li>Datos</li><li>Integraciones</li><li>Seguridad</li><li>Talento</li></ul>
+                </div>
+            </div>
+            <div class="highlight-box reveal" style="margin-top: var(--content-gap); max-width: min(90%, 700px);">
+                <p style="font-size: var(--small-size);"><strong>Resultado:</strong> Lenguaje, criterios y trade-offs para participar activamente en la estrategia tecnológica.</p>
+            </div>
+        </div>
+        <div class="slide-number">06 / 14</div>
+    </section>
+
+    <!-- SLIDE 7: MÓDULO 3 -->
+    <section class="slide" data-slide="6">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Módulo 3</span><div class="line"></div></div>
+            <h2 class="reveal" style="margin-bottom: clamp(0.3rem, 1vh, 0.6rem);">Arquitectura IT <span class="gradient-text">Educativa</span></h2>
+            <p class="reveal" style="color: var(--text-secondary); font-size: var(--h3-size); margin-bottom: var(--content-gap); max-width: 550px;">¿Cómo funciona por dentro una institución educativa moderna?</p>
+            <div class="grid grid-3 reveal" style="margin-bottom: var(--content-gap); max-width: min(95%, 800px);">
+                <div class="card reveal-scale"><h3 class="cyan">Ecosistema</h3><p>SIS · LMS · CRM · ERP · BI · Integraciones · IA</p></div>
+                <div class="card reveal-scale"><h3 class="magenta">Ciclo de vida</h3><p>Del estudiante y la carrera, visto desde los sistemas</p></div>
+                <div class="card reveal-scale"><h3 class="purple">Arquitectura como herramienta</h3><p>Escalabilidad · Gobierno · Toma de decisiones</p></div>
+            </div>
+            <div class="highlight-box reveal" style="max-width: min(95%, 800px);">
+                <p style="font-size: var(--small-size);"><strong>Resultado:</strong> El participante puede leer, cuestionar y discutir una arquitectura IT, aunque no sea técnico.</p>
+            </div>
+        </div>
+        <div class="slide-number">07 / 14</div>
+    </section>
+
+    <!-- SLIDE 8: MÓDULO 4 -->
+    <section class="slide" data-slide="7">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Módulo 4</span><div class="line"></div></div>
+            <h2 class="reveal" style="margin-bottom: clamp(0.3rem, 1vh, 0.6rem);">Transformación Digital <span class="gradient-text">e IA</span></h2>
+            <p class="reveal" style="color: var(--text-secondary); font-size: var(--h3-size); margin-bottom: var(--content-gap);">¿Cómo transformar sin romper la organización?</p>
+            <div class="two-col reveal">
+                <div>
+                    <h3 style="margin-bottom: var(--element-gap);">Transformación = tres fuerzas</h3>
+                    <ul class="bullet-list">
+                        <li><strong>Cultura</strong> — Mindset de cambio y liderazgo visible</li>
+                        <li><strong>Procesos</strong> — Rediseñar el cómo, no solo digitalizar</li>
+                        <li><strong>Tecnología</strong> — Herramientas, plataformas, infraestructura</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: var(--element-gap);">Framework de adopción de IA</h3>
+                    <ul class="bullet-list">
+                        <li>Casos de uso concretos y probados</li>
+                        <li>Riesgos éticos y prácticos</li>
+                        <li>Madurez organizacional</li>
+                        <li>IA como <strong>capa transversal</strong>, no proyecto aislado</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box reveal" style="margin-top: var(--content-gap); max-width: min(90%, 700px);">
+                <p style="font-size: var(--small-size);"><strong>Resultado:</strong> Avanzar con IA de forma responsable, incremental y alineada al negocio.</p>
+            </div>
+        </div>
+        <div class="slide-number">08 / 14</div>
+    </section>
+
+    <!-- SLIDE 9: MINDSET DIGITAL INTRO -->
+    <section class="slide" data-slide="8">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Módulo 5</span><div class="line"></div></div>
+            <h2 class="reveal-glitch" style="margin-bottom: var(--content-gap);">Mindset <span class="gradient-text">Digital</span></h2>
+            <div class="quote-block reveal" style="margin-bottom: var(--content-gap);">
+                <p>"El mindset digital no es una actitud: es una forma de tomar decisiones. Es la capa humana que hace posible la estrategia tecnológica."</p>
+            </div>
+            <div class="sep reveal"></div>
+            <p class="reveal" style="max-width: 500px;">
+                <strong>El sistema operativo del liderazgo.</strong> Una forma concreta e instalable en la organización de tomar decisiones basadas en datos, experimentación y velocidad.
+            </p>
+        </div>
+        <div class="slide-number">09 / 14</div>
+    </section>
+
+    <!-- SLIDE 10: 7 PILARES -->
+    <section class="slide" data-slide="9">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Módulo 5 — Los 7 Pilares</span><div class="line"></div></div>
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">Los 7 pilares del <span class="gradient-text">Mindset Digital</span></h2>
+            <div class="pillar-list reveal">
+                <div class="pillar-item"><span class="pillar-num">1</span><span class="pillar-text"><strong>Orientación a Producto</strong> — Iterar, priorizar valor, dejar ir lo que no funciona</span></div>
+                <div class="pillar-item"><span class="pillar-num">2</span><span class="pillar-text"><strong>Aprendizaje Continuo</strong> — La tecnología cambia más rápido que los organigramas</span></div>
+                <div class="pillar-item"><span class="pillar-num">3</span><span class="pillar-text"><strong>Experimentación</strong> — Hipótesis, prototipos y pruebas controladas</span></div>
+                <div class="pillar-item"><span class="pillar-num">4</span><span class="pillar-text"><strong>Colaboración Multidisciplinaria</strong> — Negocio + Tecnología + Datos + Diseño</span></div>
+                <div class="pillar-item"><span class="pillar-num">5</span><span class="pillar-text"><strong>Cultura de Datos</strong> — No opinar: medir. No asumir: probar</span></div>
+                <div class="pillar-item"><span class="pillar-num">6</span><span class="pillar-text"><strong>Agencia Digital</strong> — Cada persona entiende, usa y propone tecnología</span></div>
+                <div class="pillar-item"><span class="pillar-num">7</span><span class="pillar-text"><strong>Seguridad y Ética</strong> — El mindset digital moderno incluye responsabilidad</span></div>
+            </div>
+            <p class="reveal" style="margin-top: var(--content-gap); font-size: var(--small-size); color: var(--muted);">
+                Resultado: El participante puede modelar este mindset en su organización, no solo predicarlo.
+            </p>
+        </div>
+        <div class="slide-number">10 / 14</div>
+    </section>
+
+    <!-- SLIDE 11: OBJETIVOS -->
+    <section class="slide" data-slide="10">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Objetivos</span><div class="line"></div></div>
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">Al finalizar, los participantes <span class="gradient-text">serán capaces de</span></h2>
+            <div class="pillar-list reveal" style="max-width: min(90%, 700px);">
+                <div class="pillar-item"><span class="pillar-num">1</span><span class="pillar-text"><strong>Explicar y defender</strong> el rol estratégico de la tecnología en su modelo de negocio</span></div>
+                <div class="pillar-item"><span class="pillar-num">2</span><span class="pillar-text"><strong>Tomar decisiones informadas</strong> sobre inversiones tecnológicas: qué sí, qué no, cuándo y por qué</span></div>
+                <div class="pillar-item"><span class="pillar-num">3</span><span class="pillar-text"><strong>Interpretar</strong> una arquitectura IT educativa y sus implicancias en escalabilidad, costos y experiencia</span></div>
+                <div class="pillar-item"><span class="pillar-num">4</span><span class="pillar-text"><strong>Diseñar</strong> una estrategia tecnológica alineada a objetivos de negocio y madurez organizacional</span></div>
+                <div class="pillar-item"><span class="pillar-num">5</span><span class="pillar-text"><strong>Evaluar</strong> la adopción de IA y definir un roadmap realista y responsable</span></div>
+                <div class="pillar-item"><span class="pillar-num">6</span><span class="pillar-text"><strong>Liderar</strong> procesos de transformación digital integrando cultura, procesos y tecnología</span></div>
+            </div>
+        </div>
+        <div class="slide-number">11 / 14</div>
+    </section>
+
+    <!-- SLIDE 12: CHALLENGE -->
+    <section class="slide" data-slide="11">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Entrega Final</span><div class="line"></div></div>
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">El <span class="gradient-text">Challenge</span></h2>
+            <p class="reveal" style="max-width: 550px; margin-bottom: var(--content-gap);">Actividad grupal: diseño de una <strong>hoja de ruta tecnológica ejecutiva</strong> que incluye:</p>
+            <div class="grid grid-2 reveal" style="max-width: min(90%, 700px);">
+                <div class="card reveal-scale"><span class="card-icon">🔍</span><h3>Diagnóstico de madurez</h3><p>Evaluación del estado actual de la organización</p></div>
+                <div class="card reveal-scale"><span class="card-icon">⚡</span><h3>Decisiones tecnológicas clave</h3><p>Build/Buy, Core/Commodity, prioridades</p></div>
+                <div class="card reveal-scale"><span class="card-icon">🏗️</span><h3>Arquitectura a alto nivel</h3><p>Mapa de sistemas, integraciones y flujos</p></div>
+                <div class="card reveal-scale"><span class="card-icon">🚀</span><h3>Próximos pasos accionables</h3><p>Roadmap con horizontes y quick wins</p></div>
+            </div>
+        </div>
+        <div class="slide-number">12 / 14</div>
+    </section>
+
+    <!-- SLIDE 13: METODOLOGÍA -->
+    <section class="slide" data-slide="12">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Metodología</span><div class="line"></div></div>
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">Cómo <span class="gradient-text">aprendemos</span></h2>
+            <div class="grid grid-3 reveal" style="max-width: min(95%, 800px);">
+                <div class="card reveal-scale" style="text-align:center;">
+                    <div class="stat-number" style="font-size: clamp(1.5rem, 3.5vw, 2.5rem);">30%</div>
+                    <div class="sep" style="margin: 0.5rem auto;"></div>
+                    <h3>Teórico</h3>
+                    <p>Frameworks, conceptos clave y vocabulario</p>
+                </div>
+                <div class="card reveal-scale" style="text-align:center;">
+                    <div class="stat-number" style="font-size: clamp(1.5rem, 3.5vw, 2.5rem);">70%</div>
+                    <div class="sep" style="margin: 0.5rem auto;"></div>
+                    <h3>Práctico-taller</h3>
+                    <p>Dinámicas, casos reales y ejercicios grupales</p>
+                </div>
+                <div class="card reveal-scale" style="text-align:center;">
+                    <div style="font-size: clamp(1.5rem, 3.5vw, 2.5rem);">🎮</div>
+                    <div class="sep" style="margin: 0.5rem auto;"></div>
+                    <h3>Gamificado</h3>
+                    <p>Dinámicas lúdicas donde sea posible</p>
+                </div>
+            </div>
+            <div class="highlight-box reveal" style="margin-top: var(--content-gap); max-width: min(95%, 800px);">
+                <p style="font-size: var(--small-size);">
+                    <strong>Casos de estudio:</strong> Preferentemente reales, del sector educativo en LATAM &nbsp;|&nbsp;
+                    <strong>Materiales:</strong> Slides, documentos, repositorio abierto &nbsp;|&nbsp;
+                    <strong>Idioma:</strong> Español
+                </p>
+            </div>
+        </div>
+        <div class="slide-number">13 / 14</div>
+    </section>
+
+    <!-- SLIDE 14: CIERRE -->
+    <section class="slide title-slide" data-slide="13">
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div>
+        <div class="slide-content" style="align-items: flex-start; text-align: left;">
+            <div class="top-bar reveal"><div class="line"></div><span class="label">Facilitadores</span><div class="line"></div></div>
+            <h2 class="reveal-glitch" style="font-size: var(--title-size); margin-bottom: var(--content-gap); max-width: min(80%, 550px);">
+                Tecnología es <span class="gradient-text">estrategia.</span><br>Estrategia es <span class="gradient-text">criterio.</span>
+            </h2>
+            <div class="sep reveal"></div>
+            <div class="two-col reveal" style="max-width: min(80%, 500px); margin-top: var(--element-gap);">
+                <div><h3 style="margin-bottom: 0.2em;">Alfredo Edye</h3><p style="font-size: var(--small-size);">Background técnico + entendimiento del negocio</p></div>
+                <div><h3 style="margin-bottom: 0.2em;">Pablo Ortiz Olmos</h3><p style="font-size: var(--small-size);">Background técnico + entendimiento del negocio</p></div>
+            </div>
+        </div>
+        <div class="bottom-bar"><span>Módulo V</span><div class="dot"></div><span>Estrategia Tecnológica + Mindset Digital</span></div>
+        <div class="slide-number">14 / 14</div>
+    </section>
+
+    <!-- ===========================================
+       JAVASCRIPT
+       =========================================== -->
+    <script>
+    (function() {
+        'use strict';
+
+        /* Particle System */
+        class ParticleSystem {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.particles = [];
+                this.COUNT = 50;
+                this.resize();
+                this.init();
+                window.addEventListener('resize', () => this.resize());
+            }
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+            init() {
+                for (let i = 0; i < this.COUNT; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.25,
+                        vy: (Math.random() - 0.5) * 0.25,
+                        size: Math.random() * 1.5 + 0.5,
+                        opacity: Math.random() * 0.25 + 0.08,
+                    });
+                }
+            }
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.particles.forEach(p => {
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0) p.x = this.canvas.width;
+                    if (p.x > this.canvas.width) p.x = 0;
+                    if (p.y < 0) p.y = this.canvas.height;
+                    if (p.y > this.canvas.height) p.y = 0;
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `rgba(0, 229, 255, ${p.opacity})`;
+                    this.ctx.fill();
+                });
+                for (let i = 0; i < this.particles.length; i++) {
+                    for (let j = i + 1; j < this.particles.length; j++) {
+                        const dx = this.particles[i].x - this.particles[j].x;
+                        const dy = this.particles[i].y - this.particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 100) {
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
+                            this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+                            this.ctx.strokeStyle = `rgba(0, 229, 255, ${0.04 * (1 - dist / 100)})`;
+                            this.ctx.lineWidth = 0.5;
+                            this.ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        /* Slide Controller */
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.totalSlides = this.slides.length;
+                this.currentSlide = 0;
+                this.isScrolling = false;
+                this.scrollTimeout = null;
+                this.progressBar = document.getElementById('progressBar');
+                this.navDotsContainer = document.getElementById('navDots');
+                this.createNavDots();
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.setupWheelNav();
+                this.slides[0].classList.add('visible');
+                this.updateProgress(0);
+            }
+            createNavDots() {
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', `Ir a slide ${i + 1}`);
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.navDotsContainer.appendChild(dot);
+                }
+            }
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const idx = parseInt(entry.target.dataset.slide);
+                            this.currentSlide = idx;
+                            this.updateDots(idx);
+                            this.updateProgress(idx);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    switch(e.key) {
+                        case 'ArrowDown': case 'ArrowRight': case ' ': case 'PageDown':
+                            e.preventDefault(); this.nextSlide(); break;
+                        case 'ArrowUp': case 'ArrowLeft': case 'PageUp':
+                            e.preventDefault(); this.prevSlide(); break;
+                        case 'Home': e.preventDefault(); this.goToSlide(0); break;
+                        case 'End': e.preventDefault(); this.goToSlide(this.totalSlides - 1); break;
+                    }
+                });
+            }
+            setupTouchNav() {
+                let touchStartY = 0;
+                document.addEventListener('touchstart', (e) => { touchStartY = e.touches[0].clientY; }, { passive: true });
+                document.addEventListener('touchend', (e) => {
+                    const diff = touchStartY - e.changedTouches[0].clientY;
+                    if (Math.abs(diff) > 50) { diff > 0 ? this.nextSlide() : this.prevSlide(); }
+                }, { passive: true });
+            }
+            setupWheelNav() {
+                document.addEventListener('wheel', (e) => {
+                    if (this.isScrolling) return;
+                    this.isScrolling = true;
+                    if (e.deltaY > 0) this.nextSlide();
+                    else if (e.deltaY < 0) this.prevSlide();
+                    clearTimeout(this.scrollTimeout);
+                    this.scrollTimeout = setTimeout(() => { this.isScrolling = false; }, 800);
+                }, { passive: true });
+            }
+            nextSlide() { if (this.currentSlide < this.totalSlides - 1) this.goToSlide(this.currentSlide + 1); }
+            prevSlide() { if (this.currentSlide > 0) this.goToSlide(this.currentSlide - 1); }
+            goToSlide(index) {
+                this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                this.currentSlide = index;
+                this.updateDots(index);
+                this.updateProgress(index);
+            }
+            updateDots(index) {
+                this.navDotsContainer.querySelectorAll('.nav-dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+            updateProgress(index) {
+                this.progressBar.style.width = ((index + 1) / this.totalSlides) * 100 + '%';
+            }
+        }
+
+        const ps = new ParticleSystem(document.getElementById('particles'));
+        ps.animate();
+        new SlidePresentation();
+    })();
+    </script>
+</body>
+</html>

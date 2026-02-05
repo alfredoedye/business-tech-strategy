@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo V: Estrategia Tecnológica + Mindset Digital</title>
+
+    <!-- Fonts: Clash Display for headings, Space Grotesk for body -->
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=space-grotesk@300,400,500,600,700&display=swap">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (NEON CYBER THEME)
+           Change these to change the whole look.
+           =========================================== */
+        :root {
+            /* Colors */
+            --bg: #0d0d12;
+            --bg-surface: #16161d;
+            --bg-card: #1c1c26;
+            --text: #e8e6e3;
+            --text-secondary: #9090a0;
+            --muted: #6b6b78;
+            --cyan: #00e5ff;
+            --magenta: #ff0080;
+            --purple: #8b5cf6;
+            --cyan-glow: rgba(0, 229, 255, 0.3);
+            --magenta-glow: rgba(255, 0, 128, 0.2);
+
+            /* Typography — clamp() for responsive scaling */
+            --font-display: 'Clash Display', sans-serif;
+            --font-body: 'Space Grotesk', sans-serif;
+            --title-size: clamp(2rem, 6vw, 5rem);
+            --h2-size: clamp(1.4rem, 4vw, 3rem);
+            --h3-size: clamp(1rem, 2.5vw, 1.6rem);
+            --body-size: clamp(0.75rem, 1.3vw, 1.05rem);
+            --small-size: clamp(0.6rem, 0.9vw, 0.8rem);
+            --label-size: clamp(0.55rem, 0.8vw, 0.72rem);
+
+            /* Spacing — scales with viewport */
+            --slide-padding: clamp(1.5rem, 4vw, 4rem);
+            --content-gap: clamp(0.75rem, 2vw, 2rem);
+            --element-gap: clamp(0.4rem, 1vw, 1rem);
+
+            /* Animation */
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration: 0.6s;
+        }
+
+        /* ===========================================
+           BASE STYLES & RESET
+           =========================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            height: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===========================================
+           SLIDE CONTAINER
+           Each slide = exactly one viewport.
+           overflow: hidden prevents ANY scrolling.
+           =========================================== */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: var(--slide-padding);
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        /* ===========================================
+           SHARED DECORATIVE ELEMENTS
+           =========================================== */
+
+        /* Corner brackets on every slide */
+        .corner {
+            position: absolute;
+            width: clamp(16px, 2.5vw, 30px);
+            height: clamp(16px, 2.5vw, 30px);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .corner::before, .corner::after {
+            content: '';
+            position: absolute;
+            background: var(--cyan);
+            opacity: 0.25;
+        }
+        .corner-tl { top: var(--slide-padding); left: var(--slide-padding); }
+        .corner-tl::before { top: 0; left: 0; width: 100%; height: 1px; }
+        .corner-tl::after  { top: 0; left: 0; width: 1px; height: 100%; }
+        .corner-tr { top: var(--slide-padding); right: var(--slide-padding); }
+        .corner-tr::before { top: 0; right: 0; width: 100%; height: 1px; }
+        .corner-tr::after  { top: 0; right: 0; width: 1px; height: 100%; }
+        .corner-bl { bottom: var(--slide-padding); left: var(--slide-padding); }
+        .corner-bl::before { bottom: 0; left: 0; width: 100%; height: 1px; }
+        .corner-bl::after  { bottom: 0; left: 0; width: 1px; height: 100%; }
+        .corner-br { bottom: var(--slide-padding); right: var(--slide-padding); }
+        .corner-br::before { bottom: 0; right: 0; width: 100%; height: 1px; }
+        .corner-br::after  { bottom: 0; right: 0; width: 1px; height: 100%; }
+
+        /* Scan line effect */
+        .scan-line {
+            position: fixed;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+            opacity: 0.08;
+            animation: scan 8s linear infinite;
+            z-index: 100;
+            pointer-events: none;
+        }
+        @keyframes scan {
+            0% { top: -2px; }
+            100% { top: 100%; }
+        }
+
+        /* Slide number */
+        .slide-number {
+            position: absolute;
+            bottom: var(--slide-padding);
+            right: var(--slide-padding);
+            font-size: var(--small-size);
+            color: var(--muted);
+            font-variant-numeric: tabular-nums;
+            z-index: 5;
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        h1 { font-size: var(--title-size); font-weight: 700; }
+        h2 { font-size: var(--h2-size); font-weight: 600; }
+        h3 { font-size: var(--h3-size); font-weight: 600; }
+
+        p, li {
+            font-size: var(--body-size);
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--cyan), var(--magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cyan { color: var(--cyan); }
+        .magenta { color: var(--magenta); }
+        .purple { color: var(--purple); }
+
+        /* ===========================================
+           TOP BAR (label + lines)
+           =========================================== */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+            margin-bottom: clamp(1rem, 3vh, 2rem);
+        }
+        .top-bar .line {
+            width: clamp(20px, 4vw, 50px);
+            height: 1px;
+            background: var(--cyan);
+            opacity: 0.4;
+        }
+        .top-bar .label {
+            font-size: var(--label-size);
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* ===========================================
+           CARDS & GRIDS
+           =========================================== */
+        .grid {
+            display: grid;
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+        }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: clamp(8px, 1vw, 14px);
+            padding: clamp(0.75rem, 1.5vw, 1.5rem);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--cyan), var(--magenta));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .card:hover::before { opacity: 1; }
+
+        .card h3 {
+            margin-bottom: clamp(0.3rem, 0.7vh, 0.6rem);
+            color: var(--text);
+        }
+        .card p {
+            font-size: var(--small-size);
+            line-height: 1.5;
+        }
+
+        .card-icon {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            margin-bottom: clamp(0.3rem, 0.7vh, 0.6rem);
+            display: block;
+        }
+
+        /* ===========================================
+           BULLET LISTS
+           =========================================== */
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.8vh, 0.7rem);
+        }
+        .bullet-list li {
+            padding-left: 1.5em;
+            position: relative;
+        }
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cyan);
+        }
+
+        /* ===========================================
+           SPECIAL COMPONENTS
+           =========================================== */
+
+        /* Quote block */
+        .quote-block {
+            border-left: 3px solid var(--cyan);
+            padding-left: clamp(1rem, 2vw, 2rem);
+            max-width: min(90%, 700px);
+        }
+        .quote-block p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.5;
+        }
+        .quote-block .attribution {
+            font-size: var(--small-size);
+            color: var(--muted);
+            margin-top: 0.5em;
+            font-style: normal;
+        }
+
+        /* Diagram / Flow */
+        .flow {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.3rem, 1vw, 0.8rem);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .flow-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: clamp(0.4rem, 0.8vw, 0.8rem) clamp(0.6rem, 1.2vw, 1.2rem);
+            font-size: var(--small-size);
+            color: var(--text);
+            white-space: nowrap;
+        }
+        .flow-arrow {
+            color: var(--cyan);
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+        }
+
+        /* Level/meter visualization */
+        .level-bar {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.3rem, 0.7vw, 0.6rem);
+        }
+        .level-bar .level-label {
+            font-size: var(--small-size);
+            color: var(--muted);
+            min-width: 80px;
+        }
+        .level-bar .bar {
+            flex: 1;
+            height: clamp(4px, 0.5vh, 8px);
+            background: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .level-bar .bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--cyan), var(--magenta));
+        }
+
+        /* Tag pills */
+        .tag {
+            display: inline-block;
+            padding: 0.3em 0.8em;
+            border: 1px solid rgba(0,229,255,0.3);
+            border-radius: 100px;
+            font-size: var(--label-size);
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        /* Two-column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1rem, 3vw, 3rem);
+            align-items: center;
+        }
+
+        /* Stat row */
+        .stats-row {
+            display: flex;
+            gap: clamp(1rem, 3vw, 3rem);
+            justify-content: center;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--cyan);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: var(--label-size);
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-top: 0.3em;
+        }
+
+        /* Triangle diagram */
+        .triangle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .triangle-svg {
+            max-width: min(50vw, 300px);
+            max-height: min(35vh, 250px);
+        }
+
+        /* ===========================================
+           REVEAL ANIMATIONS
+           Elements fade in when slide becomes visible.
+           Stagger children via nth-child delays.
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity var(--duration) var(--ease),
+                        transform var(--duration) var(--ease);
+        }
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .slide.visible .reveal:nth-child(1) { transition-delay: 0.1s; }
+        .slide.visible .reveal:nth-child(2) { transition-delay: 0.2s; }
+        .slide.visible .reveal:nth-child(3) { transition-delay: 0.3s; }
+        .slide.visible .reveal:nth-child(4) { transition-delay: 0.4s; }
+        .slide.visible .reveal:nth-child(5) { transition-delay: 0.5s; }
+        .slide.visible .reveal:nth-child(6) { transition-delay: 0.6s; }
+
+        /* Glitch entrance for titles */
+        .reveal-glitch {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+        }
+        .slide.visible .reveal-glitch {
+            opacity: 1;
+            transform: translateY(0);
+            animation: glitchSettleOnly 0.8s 0.3s var(--ease);
+        }
+        @keyframes glitchSettleOnly {
+            0% { transform: skewX(0); }
+            20% { transform: skewX(-1.5deg); }
+            40% { transform: skewX(1deg); }
+            60% { transform: skewX(-0.5deg); }
+            100% { transform: skewX(0); }
+        }
+
+        /* Scale-in for cards */
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity var(--duration) var(--ease),
+                        transform var(--duration) var(--ease);
+        }
+        .slide.visible .reveal-scale {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .slide.visible .reveal-scale:nth-child(1) { transition-delay: 0.15s; }
+        .slide.visible .reveal-scale:nth-child(2) { transition-delay: 0.25s; }
+        .slide.visible .reveal-scale:nth-child(3) { transition-delay: 0.35s; }
+        .slide.visible .reveal-scale:nth-child(4) { transition-delay: 0.45s; }
+        .slide.visible .reveal-scale:nth-child(5) { transition-delay: 0.55s; }
+        .slide.visible .reveal-scale:nth-child(6) { transition-delay: 0.65s; }
+
+        /* ===========================================
+           PROGRESS BAR (top of screen)
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cyan), var(--magenta));
+            z-index: 1000;
+            transition: width 0.3s var(--ease);
+            width: 0%;
+        }
+
+        /* ===========================================
+           NAV DOTS (right side)
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: clamp(0.5rem, 1.5vw, 1.5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 1000;
+        }
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+        .nav-dot.active {
+            background: var(--cyan);
+            box-shadow: 0 0 8px var(--cyan-glow);
+        }
+        .nav-dot:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+
+        /* Short viewports (< 700px height) */
+        @media (max-height: 700px) {
+            :root {
+                --slide-padding: clamp(0.75rem, 3vw, 2rem);
+                --content-gap: clamp(0.4rem, 1.5vw, 1rem);
+                --title-size: clamp(1.5rem, 5vw, 3rem);
+                --h2-size: clamp(1.1rem, 3.5vw, 2rem);
+            }
+        }
+
+        /* Very short viewports (< 600px height) */
+        @media (max-height: 600px) {
+            :root {
+                --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem);
+                --content-gap: clamp(0.3rem, 1vw, 0.75rem);
+                --title-size: clamp(1.25rem, 4vw, 2.2rem);
+                --body-size: clamp(0.65rem, 1.1vw, 0.9rem);
+            }
+            .nav-dots, .corner { display: none; }
+        }
+
+        /* Extremely short (landscape phones, < 500px height) */
+        @media (max-height: 500px) {
+            :root {
+                --slide-padding: clamp(0.4rem, 2vw, 1rem);
+                --title-size: clamp(1rem, 3.5vw, 1.8rem);
+                --h2-size: clamp(0.9rem, 2.5vw, 1.3rem);
+                --body-size: clamp(0.6rem, 1vw, 0.8rem);
+            }
+        }
+
+        /* Narrow viewports (< 768px width) */
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: clamp(0.75rem, 2vw, 1.5rem);
+            }
+            .stats-row {
+                flex-wrap: wrap;
+            }
+            .flow {
+                flex-direction: column;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+            .nav-dots { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        /* ===========================================
+           REDUCED MOTION
+           =========================================== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html { scroll-behavior: auto; }
+            .scan-line { display: none; }
+        }
+
+        /* ===========================================
+           SLIDE-SPECIFIC STYLES
+           =========================================== */
+
+        /* Title slide: centered with particle canvas behind */
+        .title-slide .slide-content {
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Module intro slides have a big faded number */
+        .module-intro {
+            position: relative;
+        }
+        .module-bg-number {
+            position: absolute;
+            top: 50%;
+            right: clamp(2rem, 8vw, 8rem);
+            transform: translateY(-50%);
+            font-family: var(--font-display);
+            font-size: clamp(8rem, 25vw, 20rem);
+            font-weight: 800;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(0,229,255,0.06);
+            line-height: 1;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .module-intro .slide-content {
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0,229,255,0.08), rgba(139,92,246,0.08));
+            border: 1px solid rgba(0,229,255,0.15);
+            border-radius: clamp(8px, 1vw, 12px);
+            padding: clamp(0.75rem, 1.5vw, 1.5rem);
+        }
+
+        /* Pyramid / levels */
+        .levels {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.6vh, 0.5rem);
+        }
+        .level-item {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            padding: clamp(0.4rem, 0.8vh, 0.7rem) clamp(0.6rem, 1vw, 1rem);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .level-item .num {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: var(--h3-size);
+            min-width: 2em;
+        }
+        .level-item .desc {
+            font-size: var(--small-size);
+            color: var(--text-secondary);
+        }
+        .level-item strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* Separator line */
+        .sep {
+            width: 100%;
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin: clamp(0.5rem, 1vh, 1rem) 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Global effects -->
+    <div class="scan-line"></div>
+    <div class="progress-bar" id="progressBar"></div>
+    <canvas id="particles" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+    <nav class="nav-dots" id="navDots"></nav>
+
+    <!-- ===========================================
+         SLIDE 1: TITLE
+         =========================================== -->
+    <section class="slide title-slide" data-slide="0">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo V — Executive Education</span>
+                <div class="line"></div>
+            </div>
+
+            <h1 class="reveal-glitch" style="margin-bottom: clamp(0.5rem, 1.5vh, 1rem);">
+                <span style="display:block; color: var(--text);">Estrategia</span>
+                <span class="gradient-text" style="display:block;">Tecnológica</span>
+                <span style="display:block; color: var(--text);">+ Mindset Digital</span>
+            </h1>
+
+            <p class="reveal" style="max-width:550px; text-align:center;">
+                Formando criterio ejecutivo para decisiones tecnológicas en contextos de incertidumbre
+            </p>
+
+            <div class="stats-row reveal" style="margin-top: clamp(1.5rem, 4vh, 3rem);">
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Módulos</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Semanas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">Práctica</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-number">01 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: AGENDA / ESTRUCTURA
+         =========================================== -->
+    <section class="slide" data-slide="1">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Estructura del Módulo</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">Nuestro <span class="gradient-text">recorrido</span></h2>
+
+            <div class="grid grid-3 reveal">
+                <div class="card reveal-scale">
+                    <span class="card-icon">📡</span>
+                    <h3>Semana 1</h3>
+                    <p><strong>Driver Class</strong><br>Viernes 10:00–19:00<br>Sábado 09:30–13:30</p>
+                </div>
+                <div class="card reveal-scale">
+                    <span class="card-icon">🔧</span>
+                    <h3>Semanas 2–3</h3>
+                    <p><strong>Challenge Work</strong><br>Trabajo autónomo grupal con soporte del facilitador</p>
+                </div>
+                <div class="card reveal-scale">
+                    <span class="card-icon">🎯</span>
+                    <h3>Semana 4</h3>
+                    <p><strong>Challenge Point</strong><br>Presentaciones y feedback en sesión virtual</p>
+                </div>
+            </div>
+
+            <div class="flow reveal" style="margin-top: var(--content-gap);">
+                <div class="flow-item">Hello World</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item">Estrategia Tech</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item">Arquitectura IT</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item">Transformación + IA</div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item">Mindset Digital</div>
+            </div>
+        </div>
+
+        <div class="slide-number">02 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: MÓDULO 1 — HELLO WORLD
+         =========================================== -->
+    <section class="slide module-intro" data-slide="2">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="module-bg-number">01</div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo 1</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal-glitch" style="margin-bottom: clamp(0.3rem, 1vh, 0.6rem);">
+                Hello World
+            </h2>
+            <p class="reveal" style="font-size: var(--h3-size); color: var(--cyan); margin-bottom: var(--content-gap);">
+                Tecnología como ventaja competitiva
+            </p>
+
+            <div class="quote-block reveal" style="margin-bottom: var(--content-gap);">
+                <p>"¿Por qué la tecnología dejó de ser soporte y se convirtió en el core del negocio?"</p>
+            </div>
+
+            <ul class="bullet-list reveal">
+                <li><strong class="cyan">Software is Eating The World</strong> — aplicado a educación</li>
+                <li>Tres niveles: <strong>Usar</strong> → <strong>Operar</strong> → <strong>Diseñar desde la tecnología</strong></li>
+                <li>Decisiones que el CEO no puede delegar</li>
+                <li>Mercado EdTech global: USD 400B+ rumbo a USD 1T en 2030</li>
+            </ul>
+        </div>
+
+        <div class="slide-number">03 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: TRES NIVELES DE RELACIÓN CON LA TECH
+         =========================================== -->
+    <section class="slide" data-slide="3">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo 1 — Niveles</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">Tres niveles de relación <span class="gradient-text">con la tecnología</span></h2>
+
+            <div class="levels reveal">
+                <div class="level-item" style="background: rgba(139,92,246,0.08); border-color: rgba(139,92,246,0.2);">
+                    <span class="num purple">3</span>
+                    <div>
+                        <strong>Diseñar desde la tecnología</strong>
+                        <div class="desc">Modelo de negocio nacido de capacidades tecnológicas. Ej: Platzi — nativo digital, streaming optimizado, retención por datos.</div>
+                    </div>
+                </div>
+                <div class="level-item" style="background: rgba(0,229,255,0.06); border-color: rgba(0,229,255,0.15);">
+                    <span class="num cyan">2</span>
+                    <div>
+                        <strong>Operar tecnología</strong>
+                        <div class="desc">Integrar herramientas, personalizar flujos, conectar datos. Ej: LMS ↔ CRM para identificar estudiantes en riesgo.</div>
+                    </div>
+                </div>
+                <div class="level-item" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08);">
+                    <span class="num" style="color: var(--muted);">1</span>
+                    <div>
+                        <strong>Usar tecnología</strong>
+                        <div class="desc">Comprar herramientas y usarlas tal cual. Ej: Zoom durante la pandemia — sin integración, sin datos.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box reveal" style="margin-top: var(--content-gap); text-align:center;">
+                <p style="color: var(--text); font-size: var(--body-size);">
+                    <strong>¿En qué nivel está tu organización?</strong> — La respuesta define tu posición competitiva.
+                </p>
+            </div>
+        </div>
+
+        <div class="slide-number">04 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: MÓDULO 2 — ESTRATEGIA TECNOLÓGICA
+         =========================================== -->
+    <section class="slide module-intro" data-slide="4">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="module-bg-number">02</div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo 2</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal-glitch" style="margin-bottom: clamp(0.3rem, 1vh, 0.6rem);">
+                Estrategia Tecnológica
+            </h2>
+            <p class="reveal" style="font-size: var(--h3-size); color: var(--cyan); margin-bottom: var(--content-gap);">
+                del Negocio
+            </p>
+
+            <div class="quote-block reveal" style="margin-bottom: var(--content-gap);">
+                <p>"¿Cuáles decisiones tecnológicas son estratégicas y cuáles son tácticas?"</p>
+            </div>
+
+            <div class="grid grid-2 reveal" style="max-width: min(90vw, 700px);">
+                <div class="card reveal-scale" style="text-align:center;">
+                    <h3 class="cyan">Build vs. Buy</h3>
+                    <p>Comprar lo commodity, construir la ventaja competitiva</p>
+                </div>
+                <div class="card reveal-scale" style="text-align:center;">
+                    <h3 class="magenta">Cloud vs. On-premise</h3>
+                    <p>Escalabilidad y flexibilidad vs. control total</p>
+                </div>
+                <div class="card reveal-scale" style="text-align:center;">
+                    <h3 class="purple">Core vs. Commodity</h3>
+                    <p>Invertir donde se diferencia, no donde se iguala</p>
+                </div>
+                <div class="card reveal-scale" style="text-align:center;">
+                    <h3 class="cyan">Velocidad vs. Control</h3>
+                    <p>Lanzar rápido e iterar vs. planificar para minimizar deuda</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-number">05 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: 5 COMPONENTES DE ESTRATEGIA INTEGRAL
+         =========================================== -->
+    <section class="slide" data-slide="5">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo 2 — Componentes</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">5 componentes de una <span class="gradient-text">estrategia tech integral</span></h2>
+
+            <div class="grid grid-3 reveal" style="max-width: min(95vw, 900px); margin: 0 auto;">
+                <div class="card reveal-scale">
+                    <span class="card-icon">🏗️</span>
+                    <h3>Plataforma</h3>
+                    <p>¿Plataforma central propia o tercera? ¿Escala?</p>
+                </div>
+                <div class="card reveal-scale">
+                    <span class="card-icon">📊</span>
+                    <h3>Datos</h3>
+                    <p>¿Qué datos existen? ¿Son confiables? ¿Centralizados?</p>
+                </div>
+                <div class="card reveal-scale">
+                    <span class="card-icon">🔗</span>
+                    <h3>Integraciones</h3>
+                    <p>¿Los sistemas hablan entre sí o dependen de Excel y email?</p>
+                </div>
+                <div class="card reveal-scale">
+                    <span class="card-icon">🔒</span>
+                    <h3>Seguridad</h3>
+                    <p>¿Políticas definidas? ¿Control de accesos? ¿Plan ante incidentes?</p>
+                </div>
+                <div class="card reveal-scale">
+                    <span class="card-icon">🧑‍💻</span>
+                    <h3>Talento</h3>
+                    <p>¿El equipo IT apaga incendios o construye? ¿Hay lenguaje común?</p>
+                </div>
+            </div>
+
+            <div class="reveal" style="text-align:center; margin-top: var(--content-gap);">
+                <p style="color: var(--muted); font-size: var(--small-size);">
+                    Objetivos de negocio → Capacidades requeridas → Habilitadores tecnológicos → Inversión y priorización
+                </p>
+            </div>
+        </div>
+
+        <div class="slide-number">06 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: MÓDULO 3 — ARQUITECTURA IT
+         =========================================== -->
+    <section class="slide module-intro" data-slide="6">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="module-bg-number">03</div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo 3</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal-glitch" style="margin-bottom: clamp(0.3rem, 1vh, 0.6rem);">
+                Arquitectura IT Educativa
+            </h2>
+            <p class="reveal" style="font-size: var(--h3-size); color: var(--cyan); margin-bottom: var(--content-gap);">
+                ¿Cómo funciona por dentro una institución moderna?
+            </p>
+
+            <p class="reveal" style="max-width:600px; margin-bottom: var(--content-gap);">
+                Analogía: la organización es una <strong style="color:var(--text)">ciudad</strong>. Los sistemas son edificios, las integraciones son calles, los datos son personas. Si las calles se cortan, las personas no llegan a destino.
+            </p>
+
+            <div class="flow reveal">
+                <div class="flow-item" style="border-color: rgba(0,229,255,0.3);">SIS</div>
+                <span class="flow-arrow">↔</span>
+                <div class="flow-item" style="border-color: rgba(255,0,128,0.3);">LMS</div>
+                <span class="flow-arrow">↔</span>
+                <div class="flow-item" style="border-color: rgba(139,92,246,0.3);">CRM</div>
+                <span class="flow-arrow">↔</span>
+                <div class="flow-item" style="border-color: rgba(0,229,255,0.3);">ERP</div>
+                <span class="flow-arrow">↔</span>
+                <div class="flow-item" style="border-color: rgba(255,0,128,0.3);">BI</div>
+                <span class="flow-arrow">↔</span>
+                <div class="flow-item" style="border-color: rgba(139,92,246,0.3);">IAM</div>
+            </div>
+        </div>
+
+        <div class="slide-number">07 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: CICLO DE VIDA DEL ESTUDIANTE
+         =========================================== -->
+    <section class="slide" data-slide="7">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo 3 — Ciclo de Vida</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">El estudiante a través de los <span class="gradient-text">sistemas</span></h2>
+
+            <div class="flow reveal" style="margin-bottom: var(--content-gap);">
+                <div class="flow-item"><strong class="cyan">Descubrimiento</strong><br><span style="font-size:var(--label-size);color:var(--muted)">CRM</span></div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item"><strong class="magenta">Admisión</strong><br><span style="font-size:var(--label-size);color:var(--muted)">SIS</span></div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item"><strong class="purple">Cursado</strong><br><span style="font-size:var(--label-size);color:var(--muted)">LMS</span></div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item"><strong class="cyan">Evaluación</strong><br><span style="font-size:var(--label-size);color:var(--muted)">SIS/LMS</span></div>
+                <span class="flow-arrow">→</span>
+                <div class="flow-item"><strong class="magenta">Titulación</strong><br><span style="font-size:var(--label-size);color:var(--muted)">SIS</span></div>
+            </div>
+
+            <div class="highlight-box reveal" style="margin-top: auto;">
+                <h3 style="margin-bottom: 0.5em; font-size: var(--body-size);">⚠️ Los problemas ocurren en las <span class="gradient-text">transiciones</span></h3>
+                <ul class="bullet-list" style="font-size: var(--small-size);">
+                    <li>Prospecto se inscribe en CRM pero datos no llegan a SIS → recargar todo</li>
+                    <li>Estudiante aprueba en LMS pero nota no sincroniza a SIS → proceso manual</li>
+                    <li>Egresado sin seguimiento alumni → oportunidad perdida</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide-number">08 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: CASO SIGLO 21
+         =========================================== -->
+    <section class="slide" data-slide="8">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Caso de Estudio</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal" style="margin-bottom: clamp(0.5rem, 1.5vh, 1rem);">
+                Universidad Siglo 21 — <span class="gradient-text">Educación en la nube</span>
+            </h2>
+
+            <div class="two-col reveal">
+                <div>
+                    <ul class="bullet-list" style="margin-bottom: var(--element-gap);">
+                        <li>Migración a <strong style="color:var(--text)">AWS</strong> — escalabilidad elástica</li>
+                        <li><strong style="color:var(--text)">SIS propio (Algarrobo)</strong> — microservicios cloud-native</li>
+                        <li>Ecosistema integrado: HubSpot, Canvas, SAP, BI</li>
+                        <li>Cada módulo evoluciona de forma independiente</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="stats-row" style="flex-wrap: wrap; gap: clamp(0.5rem, 1.5vw, 1.5rem);">
+                        <div class="stat">
+                            <div class="stat-number">60K+</div>
+                            <div class="stat-label">Estudiantes</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">+35%</div>
+                            <div class="stat-label">Nuevos inscritos</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">+31</div>
+                            <div class="stat-label">NPS</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">10K</div>
+                            <div class="stat-label">Usuarios simult.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box reveal" style="margin-top: var(--content-gap); text-align:center;">
+                <p style="color: var(--text); font-size: var(--small-size);">
+                    <strong>Lección:</strong> Compraron lo commodity (CRM, LMS, ERP), construyeron la ventaja competitiva (SIS).
+                </p>
+            </div>
+        </div>
+
+        <div class="slide-number">09 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: MÓDULO 4 — TRANSFORMACIÓN DIGITAL + IA
+         =========================================== -->
+    <section class="slide module-intro" data-slide="9">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="module-bg-number">04</div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo 4</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal-glitch" style="margin-bottom: clamp(0.3rem, 1vh, 0.6rem);">
+                Transformación Digital e IA
+            </h2>
+            <p class="reveal" style="font-size: var(--h3-size); color: var(--cyan); margin-bottom: var(--content-gap);">
+                ¿Cómo transformar sin romper la organización?
+            </p>
+
+            <div class="two-col reveal">
+                <!-- Triangle diagram -->
+                <div style="text-align:center;">
+                    <svg class="triangle-svg" viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="150,20 280,230 20,230" stroke="url(#grad1)" stroke-width="2" fill="rgba(0,229,255,0.03)"/>
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:0.8"/>
+                                <stop offset="100%" style="stop-color:#ff0080;stop-opacity:0.8"/>
+                            </linearGradient>
+                        </defs>
+                        <text x="150" y="16" text-anchor="middle" fill="#00e5ff" font-family="'Clash Display',sans-serif" font-size="14" font-weight="600">Cultura</text>
+                        <text x="10" y="252" text-anchor="start" fill="#ff0080" font-family="'Clash Display',sans-serif" font-size="14" font-weight="600">Procesos</text>
+                        <text x="290" y="252" text-anchor="end" fill="#8b5cf6" font-family="'Clash Display',sans-serif" font-size="14" font-weight="600">Tecnología</text>
+                    </svg>
+                </div>
+
+                <div>
+                    <p style="margin-bottom: var(--element-gap); color: var(--text); font-size: var(--body-size);">
+                        <strong>No es un proyecto de tecnología.</strong>
+                    </p>
+                    <p style="margin-bottom: var(--element-gap);">
+                        Es la intersección de tres fuerzas avanzando juntas.
+                    </p>
+                    <div class="highlight-box" style="background: rgba(255,0,128,0.06); border-color: rgba(255,0,128,0.15);">
+                        <p style="font-size: var(--small-size); color: var(--text);">
+                            <strong>Error común:</strong> Comprar nueva tecnología, mantener cultura y procesos viejos = automatización rápida de la ineficiencia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-number">10 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 11: HORIZONTES DE TRANSFORMACIÓN
+         =========================================== -->
+    <section class="slide" data-slide="10">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo 4 — Horizontes</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">Tres horizontes de <span class="gradient-text">transformación</span></h2>
+
+            <div class="grid grid-3 reveal">
+                <div class="card reveal-scale" style="border-top: 2px solid var(--cyan);">
+                    <h3 class="cyan" style="font-size: var(--h3-size);">H1 — Optimizar</h3>
+                    <p style="color: var(--muted); font-size: var(--label-size); margin-bottom: 0.5em;">0–6 meses</p>
+                    <p>Mejorar lo que existe, eliminar fricción.</p>
+                    <p style="margin-top:0.5em; color: var(--text); font-size: var(--small-size);"><em>Ej: Integrar SIS+LMS para que notas sincronicen automáticamente.</em></p>
+                </div>
+                <div class="card reveal-scale" style="border-top: 2px solid var(--magenta);">
+                    <h3 class="magenta" style="font-size: var(--h3-size);">H2 — Evolucionar</h3>
+                    <p style="color: var(--muted); font-size: var(--label-size); margin-bottom: 0.5em;">6–18 meses</p>
+                    <p>Rediseñar procesos clave, agregar capacidades nuevas.</p>
+                    <p style="margin-top:0.5em; color: var(--text); font-size: var(--small-size);"><em>Ej: Implementar CRM para gestionar ciclo de vida del estudiante.</em></p>
+                </div>
+                <div class="card reveal-scale" style="border-top: 2px solid var(--purple);">
+                    <h3 class="purple" style="font-size: var(--h3-size);">H3 — Reinventar</h3>
+                    <p style="color: var(--muted); font-size: var(--label-size); margin-bottom: 0.5em;">18+ meses</p>
+                    <p>Cuestionar el modelo, explorar nuevos paradigmas.</p>
+                    <p style="margin-top:0.5em; color: var(--text); font-size: var(--small-size);"><em>Ej: Programas nativos digitales con tutoría IA personalizada.</em></p>
+                </div>
+            </div>
+
+            <p class="reveal" style="text-align:center; margin-top: var(--content-gap); color: var(--muted); font-size: var(--small-size);">
+                Comenzar por H1 (quick wins generan credibilidad) → avanzar a H2 → explorar H3. Los tres coexisten.
+            </p>
+        </div>
+
+        <div class="slide-number">11 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 12: NIVELES DE ADOPCIÓN DE IA
+         =========================================== -->
+    <section class="slide" data-slide="11">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo 4 — Adopción IA</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">¿Dónde estás en <span class="gradient-text">adopción de IA</span>?</h2>
+
+            <div class="levels reveal">
+                <div class="level-item" style="background: linear-gradient(90deg, rgba(139,92,246,0.12), transparent);">
+                    <span class="num purple">4</span>
+                    <div>
+                        <strong>Redefinir</strong> — Modelo de negocio rediseñado alrededor de IA
+                        <div class="desc">Ej: Tec de Monterrey — TECgpt, 3,000 usuarios/mes, 250+ skills</div>
+                    </div>
+                </div>
+                <div class="level-item" style="background: linear-gradient(90deg, rgba(0,229,255,0.08), transparent);">
+                    <span class="num cyan">3</span>
+                    <div>
+                        <strong>Integrar</strong> — IA en procesos clave con políticas y gobernanza
+                        <div class="desc">Soporte, retención, personalización integrados en operación</div>
+                    </div>
+                </div>
+                <div class="level-item" style="background: linear-gradient(90deg, rgba(255,0,128,0.06), transparent);">
+                    <span class="num magenta">2</span>
+                    <div>
+                        <strong>Experimentar</strong> — Pilotos controlados con objetivos claros
+                        <div class="desc">Casos de uso definidos, impacto medido</div>
+                    </div>
+                </div>
+                <div class="level-item">
+                    <span class="num" style="color: var(--text-secondary);">1</span>
+                    <div>
+                        <strong>Explorar</strong> — Uso individual aislado, sin política institucional
+                        <div class="desc">ChatGPT personal, sin escala ni medición</div>
+                    </div>
+                </div>
+                <div class="level-item" style="opacity: 0.6;">
+                    <span class="num" style="color: var(--muted);">0</span>
+                    <div>
+                        <strong>Ignorar</strong> — "La IA no aplica a nosotros"
+                        <div class="desc">Riesgo: quedar atrás mientras los competidores avanzan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-number">12 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 13: MÓDULO 5 — MINDSET DIGITAL
+         =========================================== -->
+    <section class="slide module-intro" data-slide="12">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="module-bg-number">05</div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo 5</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal-glitch" style="margin-bottom: clamp(0.3rem, 1vh, 0.6rem);">
+                Mindset Digital
+            </h2>
+            <p class="reveal" style="font-size: var(--h3-size); color: var(--cyan); margin-bottom: var(--content-gap);">
+                El sistema operativo del liderazgo
+            </p>
+
+            <div class="quote-block reveal" style="margin-bottom: var(--content-gap);">
+                <p>"No es ser joven, ni saber usar herramientas, ni hablar de innovación en conferencias.<br>
+                Es un <strong style="color:var(--cyan)">sistema de toma de decisiones</strong> basado en datos, experimentación y velocidad."</p>
+            </div>
+
+            <p class="reveal" style="max-width: 600px;">
+                Una mentalidad concreta e instalable en la organización — la capa humana que hace posible que la estrategia tecnológica funcione.
+            </p>
+        </div>
+
+        <div class="slide-number">13 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 14: LOS 7 PILARES DEL MINDSET DIGITAL
+         =========================================== -->
+    <section class="slide" data-slide="13">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Módulo 5 — Los 7 Pilares</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">Los 7 pilares del <span class="gradient-text">Mindset Digital</span></h2>
+
+            <div class="grid grid-4 reveal" style="max-width: min(95vw, 1000px); margin: 0 auto;">
+                <div class="card reveal-scale" style="text-align:center;">
+                    <span class="card-icon">🎯</span>
+                    <h3 style="font-size: var(--small-size);">Orientación a<br>Producto</h3>
+                </div>
+                <div class="card reveal-scale" style="text-align:center;">
+                    <span class="card-icon">📚</span>
+                    <h3 style="font-size: var(--small-size);">Aprendizaje<br>Continuo</h3>
+                </div>
+                <div class="card reveal-scale" style="text-align:center;">
+                    <span class="card-icon">🧪</span>
+                    <h3 style="font-size: var(--small-size);">Experimentación</h3>
+                </div>
+                <div class="card reveal-scale" style="text-align:center;">
+                    <span class="card-icon">🤝</span>
+                    <h3 style="font-size: var(--small-size);">Colaboración<br>Multidisciplinaria</h3>
+                </div>
+            </div>
+
+            <div class="grid grid-3 reveal" style="max-width: min(75vw, 750px); margin: var(--element-gap) auto 0;">
+                <div class="card reveal-scale" style="text-align:center;">
+                    <span class="card-icon">📈</span>
+                    <h3 style="font-size: var(--small-size);">Cultura<br>de Datos</h3>
+                </div>
+                <div class="card reveal-scale" style="text-align:center;">
+                    <span class="card-icon">⚡</span>
+                    <h3 style="font-size: var(--small-size);">Agencia<br>Digital</h3>
+                </div>
+                <div class="card reveal-scale" style="text-align:center;">
+                    <span class="card-icon">🛡️</span>
+                    <h3 style="font-size: var(--small-size);">Seguridad<br>y Ética</h3>
+                </div>
+            </div>
+
+            <p class="reveal" style="text-align:center; margin-top: var(--content-gap); color: var(--text); font-size: var(--small-size);">
+                <strong>Anti-patrón universal:</strong> <em>"Eso es tema de sistemas"</em> — cuando todos delegan, nadie lidera.
+            </p>
+        </div>
+
+        <div class="slide-number">14 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 15: PLATZI VS. UNIVERSIDAD TRADICIONAL
+         =========================================== -->
+    <section class="slide" data-slide="14">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Contraste</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">Mindset en acción: <span class="gradient-text">Platzi vs. Tradicional</span></h2>
+
+            <div class="grid grid-2 reveal" style="max-width: min(90vw, 800px); margin: 0 auto;">
+                <!-- Platzi column -->
+                <div class="card reveal-scale" style="border-top: 2px solid var(--cyan);">
+                    <h3 class="cyan" style="margin-bottom: var(--element-gap);">Platzi</h3>
+                    <ul class="bullet-list" style="font-size: var(--small-size);">
+                        <li>Updates semanales, sin "versiones"</li>
+                        <li>50–70% completitud (vs 15% MOOCs)</li>
+                        <li>Métricas: completitud + impacto ingresos</li>
+                        <li>Equipos de producto multidisciplinarios</li>
+                        <li>La tecnología <strong>ES</strong> el negocio</li>
+                    </ul>
+                </div>
+
+                <!-- Traditional column -->
+                <div class="card reveal-scale" style="border-top: 2px solid var(--muted);">
+                    <h3 style="color: var(--muted); margin-bottom: var(--element-gap);">Universidad Tradicional</h3>
+                    <ul class="bullet-list" style="font-size: var(--small-size);">
+                        <li>Reformas cada 3–5 años</li>
+                        <li>Métrica: matrícula + títulos otorgados</li>
+                        <li>Departamentos académicos en silos</li>
+                        <li>Relación administrativa / masiva</li>
+                        <li>La tecnología <strong>soporta</strong> el negocio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box reveal" style="margin-top: var(--content-gap); text-align:center; max-width: min(90vw, 800px); margin-left:auto; margin-right:auto;">
+                <p style="color: var(--text); font-size: var(--body-size);">
+                    No se trata de "ser como Platzi" — sino de <strong class="cyan">qué prácticas de este mindset puedo incorporar</strong> en mi contexto.
+                </p>
+            </div>
+        </div>
+
+        <div class="slide-number">15 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 16: EL CHALLENGE
+         =========================================== -->
+    <section class="slide" data-slide="15">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Challenge — Semanas 2–4</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal" style="margin-bottom: var(--content-gap);">
+                Tu misión: diseñar un <span class="gradient-text">Roadmap Tecnológico</span>
+            </h2>
+
+            <p class="reveal" style="max-width: 600px; margin-bottom: var(--content-gap);">
+                Equipos diseñan un roadmap de 18 meses para una institución real o simulada, aplicando todo lo aprendido.
+            </p>
+
+            <div class="grid grid-2 reveal" style="max-width: min(90vw, 700px); margin: 0 auto;">
+                <div class="card reveal-scale">
+                    <h3 class="cyan">Entregables</h3>
+                    <ul class="bullet-list" style="font-size: var(--small-size);">
+                        <li>Diagnóstico actual (1 página)</li>
+                        <li>Visión objetivo (1 página)</li>
+                        <li>Roadmap 3 horizontes (1 página)</li>
+                        <li>Pitch de 10 min al "directorio"</li>
+                    </ul>
+                </div>
+                <div class="card reveal-scale">
+                    <h3 class="magenta">Evaluación</h3>
+                    <ul class="bullet-list" style="font-size: var(--small-size);">
+                        <li>Alineación estratégica — 25%</li>
+                        <li>Realismo — 25%</li>
+                        <li>Profundidad diagnóstico — 20%</li>
+                        <li>Claridad presentación — 15%</li>
+                        <li>Uso de conceptos — 15%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-number">16 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 17: CIERRE
+         =========================================== -->
+    <section class="slide title-slide" data-slide="16">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <div class="slide-content">
+            <div class="top-bar reveal">
+                <div class="line"></div>
+                <span class="label">Cierre</span>
+                <div class="line"></div>
+            </div>
+
+            <h2 class="reveal-glitch" style="font-size: var(--title-size); margin-bottom: clamp(0.5rem, 2vh, 1.5rem);">
+                La tecnología no espera.<br>
+                <span class="gradient-text">Tu criterio sí la puede dirigir.</span>
+            </h2>
+
+            <p class="reveal" style="max-width:500px; text-align:center; margin-bottom: var(--content-gap);">
+                Formamos líderes que no escriben código — pero sí deciden qué se construye, qué se compra y hacia dónde se avanza.
+            </p>
+
+            <div class="reveal" style="text-align:center;">
+                <div class="tag" style="font-size: var(--small-size);">
+                    Muro de Decisiones: DEJAR de hacer · EMPEZAR a hacer · SEGUIR haciendo
+                </div>
+            </div>
+
+            <div class="stats-row reveal" style="margin-top: clamp(1.5rem, 4vh, 3rem);">
+                <div class="stat">
+                    <div class="stat-number" style="color: var(--magenta);">STOP</div>
+                    <div class="stat-label">¿Qué dejo?</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" style="color: var(--cyan);">START</div>
+                    <div class="stat-label">¿Qué empiezo?</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" style="color: var(--purple);">KEEP</div>
+                    <div class="stat-label">¿Qué sigo?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-number">17 / 17</div>
+    </section>
+
+    <!-- ===========================================
+       JAVASCRIPT: Slide Presentation Controller
+       Handles navigation, animations, particles.
+       =========================================== -->
+    <script>
+    (function() {
+        'use strict';
+
+        /* ===========================================
+           PARTICLE SYSTEM
+           Floating connected particles in background.
+           Uses lerp for smooth movement.
+           =========================================== */
+        class ParticleSystem {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.particles = [];
+                this.PARTICLE_COUNT = 50;
+                this.resize();
+                this.init();
+                window.addEventListener('resize', () => this.resize());
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            init() {
+                for (let i = 0; i < this.PARTICLE_COUNT; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.25,
+                        vy: (Math.random() - 0.5) * 0.25,
+                        size: Math.random() * 1.5 + 0.5,
+                        opacity: Math.random() * 0.25 + 0.08,
+                    });
+                }
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0) p.x = this.canvas.width;
+                    if (p.x > this.canvas.width) p.x = 0;
+                    if (p.y < 0) p.y = this.canvas.height;
+                    if (p.y > this.canvas.height) p.y = 0;
+
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `rgba(0, 229, 255, ${p.opacity})`;
+                    this.ctx.fill();
+                });
+
+                /* Draw connection lines between nearby particles */
+                for (let i = 0; i < this.particles.length; i++) {
+                    for (let j = i + 1; j < this.particles.length; j++) {
+                        const dx = this.particles[i].x - this.particles[j].x;
+                        const dy = this.particles[i].y - this.particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 100) {
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
+                            this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+                            this.ctx.strokeStyle = `rgba(0, 229, 255, ${0.04 * (1 - dist / 100)})`;
+                            this.ctx.lineWidth = 0.5;
+                            this.ctx.stroke();
+                        }
+                    }
+                }
+
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        /* ===========================================
+           SLIDE PRESENTATION CONTROLLER
+           Handles keyboard nav, scroll, touch, dots.
+           =========================================== */
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.totalSlides = this.slides.length;
+                this.currentSlide = 0;
+                this.isScrolling = false;
+                this.scrollTimeout = null;
+
+                this.progressBar = document.getElementById('progressBar');
+                this.navDotsContainer = document.getElementById('navDots');
+
+                this.createNavDots();
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.setupWheelNav();
+
+                /* Mark first slide visible */
+                this.slides[0].classList.add('visible');
+                this.updateProgress(0);
+            }
+
+            /* Create navigation dots on the right side */
+            createNavDots() {
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.navDotsContainer.appendChild(dot);
+                }
+            }
+
+            /* IntersectionObserver triggers .visible class
+               when slides enter the viewport */
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const idx = parseInt(entry.target.dataset.slide);
+                            this.currentSlide = idx;
+                            this.updateDots(idx);
+                            this.updateProgress(idx);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            /* Keyboard: arrows, space, page up/down */
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    switch(e.key) {
+                        case 'ArrowDown':
+                        case 'ArrowRight':
+                        case ' ':
+                        case 'PageDown':
+                            e.preventDefault();
+                            this.nextSlide();
+                            break;
+                        case 'ArrowUp':
+                        case 'ArrowLeft':
+                        case 'PageUp':
+                            e.preventDefault();
+                            this.prevSlide();
+                            break;
+                        case 'Home':
+                            e.preventDefault();
+                            this.goToSlide(0);
+                            break;
+                        case 'End':
+                            e.preventDefault();
+                            this.goToSlide(this.totalSlides - 1);
+                            break;
+                    }
+                });
+            }
+
+            /* Touch: swipe up/down navigation */
+            setupTouchNav() {
+                let touchStartY = 0;
+                document.addEventListener('touchstart', (e) => {
+                    touchStartY = e.touches[0].clientY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    const diff = touchStartY - e.changedTouches[0].clientY;
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) this.nextSlide();
+                        else this.prevSlide();
+                    }
+                }, { passive: true });
+            }
+
+            /* Mouse wheel: debounced slide navigation */
+            setupWheelNav() {
+                document.addEventListener('wheel', (e) => {
+                    if (this.isScrolling) return;
+                    this.isScrolling = true;
+
+                    if (e.deltaY > 0) this.nextSlide();
+                    else if (e.deltaY < 0) this.prevSlide();
+
+                    clearTimeout(this.scrollTimeout);
+                    this.scrollTimeout = setTimeout(() => {
+                        this.isScrolling = false;
+                    }, 800);
+                }, { passive: true });
+            }
+
+            nextSlide() {
+                if (this.currentSlide < this.totalSlides - 1) {
+                    this.goToSlide(this.currentSlide + 1);
+                }
+            }
+
+            prevSlide() {
+                if (this.currentSlide > 0) {
+                    this.goToSlide(this.currentSlide - 1);
+                }
+            }
+
+            goToSlide(index) {
+                this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                this.currentSlide = index;
+                this.updateDots(index);
+                this.updateProgress(index);
+            }
+
+            updateDots(index) {
+                const dots = this.navDotsContainer.querySelectorAll('.nav-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            updateProgress(index) {
+                const pct = ((index + 1) / this.totalSlides) * 100;
+                this.progressBar.style.width = pct + '%';
+            }
+        }
+
+        /* ===========================================
+           INITIALIZE
+           =========================================== */
+        const canvas = document.getElementById('particles');
+        const ps = new ParticleSystem(canvas);
+        ps.animate();
+
+        const presentation = new SlidePresentation();
+
+    })();
+    </script>
+</body>
+</html>

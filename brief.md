@@ -50,67 +50,152 @@
 
 ### Estrategia Tecnológica
 
-#### Bloque 1 — Hello World
-- Entender cuál es el rol de la tecnología en el negocio que están llevando adelante.
-- Concepto central: "Why is software eating the world."
+Un módulo para líderes que necesitan tomar decisiones tecnológicas con criterio, sin ser técnicos y sin delegar el futuro del negocio.
 
-#### Bloque 2 — Estrategia Tecnológica
-- Principales definiciones que el CEO tiene que entender.
-- Componentes y apuestas que hacen a una estrategia tecnológica integral (ej. on-premise vs cloud, build vs buy).
+#### Eje central del módulo
 
-#### Bloque 3 — Arquitectura IT Educativa
-- Entender cuáles son los principales sistemas y componentes de una institución académica y cómo intervienen en el ciclo de vida de una carrera y del estudiante.
-- Visión 360 del ecosistema de plataformas y soluciones que habilitan el negocio.
-- Conocer la arquitectura de una institución tecnológica educativa.
-- Documentos de referencia:
-  - SIS WhitePaper
-  - ALGARROBO BBP v09.docx
-  - Journey del estudiante
-  - [HolonIQ Global Learning Landscape](https://www.holoniq.com/global-learning-landscape)
-- Arquitectura en el modelo mii: por qué es importante, línea base. *(Pendiente: Pablo proveerá esta información.)*
+Formar criterio ejecutivo para tomar decisiones tecnológicas en contextos de incertidumbre, entendiendo la tecnología como una **palanca estratégica del negocio educativo**, y no como un área de soporte operativo.
 
-#### Bloque 4 — Transformación Digital
-- Cultura + Proceso + Tecnología.
-- Definir estrategia tecnológica alineada con el negocio.
-- Framework de adopción de IA.
+---
 
-### Mindset Digital
+#### Módulo 1 — Hello World: Tecnología como ventaja competitiva
 
-La capa humana que hace posible la estrategia. 7 pilares:
+**Pregunta guía:**  
+¿Por qué la tecnología dejó de ser un área de soporte y pasó a ser parte del core del negocio?
 
-1. **Orientación a Producto, no a Proyecto** — Iterar, priorizar valor, dejar ir lo que no funciona.
-2. **Aprendizaje Continuo** — La tecnología cambia más rápido que los organigramas.
-3. **Experimentación** — Hipótesis, prototipos, pruebas controladas. "Aprender antes de escalar."
-4. **Colaboración Multidisciplinaria** — Negocio + Tecnología + Datos + Diseño, trabajando como un solo equipo.
-5. **Cultura de Datos** — No opinar: medir. No asumir: probar.
-6. **Agencia Digital** — Cada persona es protagonista del cambio: entiende, usa y propone tecnología.
-7. **Seguridad y Ética como base** — El mindset digital moderno incluye responsabilidad, no la delega.
+**Contenidos:**
+- Qué significa competir hoy en educación mediada por tecnología.
+- Diferencia entre:
+  - Usar tecnología
+  - Operar tecnología
+  - Diseñar el negocio desde la tecnología
+- Rol del CEO y del equipo directivo en decisiones tecnológicas clave.
 
-### Temas imprescindibles
-- IA y framework de adopción
-- Cloud
-- Transformación digital
-- Arquitectura IT educativa (SIS, LMS, CRM, ERP, etc.)
+**Resultado esperado:**  
+El participante entiende dónde se juega realmente la ventaja competitiva y por qué no puede delegar completamente estas decisiones.
 
-### Temas a excluir
-- *(No definido aún.)*
+---
+
+#### Módulo 2 — Estrategia Tecnológica del negocio
+
+**Pregunta guía:**  
+¿Qué decisiones tecnológicas son estratégicas y cuáles son tácticas?
+
+**Contenidos:**
+- Decisiones estructurales que todo CEO debe dominar:
+  - Build vs Buy
+  - Cloud vs On-premise
+  - Core vs Commodity
+  - Velocidad vs Control
+- Componentes de una estrategia tecnológica integral:
+  - Plataforma
+  - Datos
+  - Integraciones
+  - Seguridad
+  - Talento
+- Alineación entre tecnología, modelo de negocio y crecimiento.
+
+**Resultado esperado:**  
+El participante adquiere lenguaje, criterios y trade-offs para participar activamente en la definición de la estrategia tecnológica.
+
+---
+
+#### Módulo 3 — Arquitectura IT Educativa
+
+**Pregunta guía:**  
+¿Cómo funciona realmente una institución educativa moderna por dentro?
+
+**Contenidos:**
+- Visión sistémica del ecosistema tecnológico educativo:
+  - SIS
+  - LMS
+  - CRM
+  - ERP
+  - BI
+  - Integraciones
+  - IA
+- Ciclo de vida del estudiante y de la carrera visto desde sistemas.
+- La arquitectura como herramienta de:
+  - Escalabilidad
+  - Gobierno
+  - Toma de decisiones
+
+**Referencias:**
+- Journey del estudiante
+- Arquitectura mii (línea base)
+
+**Resultado esperado:**  
+El participante puede leer, cuestionar y discutir una arquitectura IT, aunque no sea técnico.
+
+---
+
+#### Módulo 4 — Transformación Digital e IA
+
+**Pregunta guía:**  
+¿Cómo transformar sin romper la organización?
+
+**Contenidos:**
+- Transformación digital como combinación de:
+  - Cultura
+  - Procesos
+  - Tecnología
+- Framework de adopción de IA:
+  - Casos de uso
+  - Riesgos
+  - Madurez organizacional
+- IA como capa transversal, no como proyecto aislado.
+
+**Resultado esperado:**  
+El participante entiende cómo avanzar con IA de forma responsable, incremental y alineada al negocio.
+
+---
+
+### Mindset Digital — El sistema operativo del liderazgo
+
+El mindset digital no es una actitud: es una **forma de tomar decisiones**.  
+Es la capa humana que hace posible la estrategia tecnológica.
+
+#### Los 7 pilares del Mindset Digital
+
+1. **Orientación a Producto, no a Proyecto**  
+   Iterar, priorizar valor y dejar ir lo que no funciona.
+2. **Aprendizaje Continuo**  
+   La tecnología cambia más rápido que los organigramas.
+3. **Experimentación**  
+   Hipótesis, prototipos y pruebas controladas. Aprender antes de escalar.
+4. **Colaboración Multidisciplinaria**  
+   Negocio + Tecnología + Datos + Diseño trabajando como un solo equipo.
+5. **Cultura de Datos**  
+   No opinar: medir. No asumir: probar.
+6. **Agencia Digital**  
+   Cada persona es protagonista del cambio: entiende, usa y propone tecnología.
+7. **Seguridad y Ética como base**  
+   El mindset digital moderno incluye responsabilidad; no la delega.
+
+**Resultado esperado:**  
+El participante puede modelar este mindset en su organización, no solo predicarlo.
 
 ---
 
 ## 4. Objetivos de aprendizaje
 
-Al finalizar el módulo, los participantes podrán:
+Al finalizar el curso, los participantes serán capaces de:
 
-1. **Articular** el rol de la tecnología en el negocio que están llevando adelante.
-2. **Identificar** los principales sistemas y componentes de una institución académica y cómo intervienen en el ciclo de vida de la carrera y del estudiante.
-3. **Mapear** el ecosistema 360 de plataformas y soluciones que habilitan el negocio (arquitectura IT educativa).
-4. **Diseñar** una estrategia tecnológica alineada con los objetivos de negocio.
-5. **Evaluar** el nivel de adopción de IA de su organización y definir un camino de evolución.
-6. **Aplicar** los principios del mindset digital para liderar la transformación (cultura + proceso + tecnología).
+- Explicar y defender el rol estratégico de la tecnología en su modelo de negocio.
+- Tomar decisiones informadas sobre inversiones tecnológicas (qué sí, qué no, cuándo y por qué).
+- Interpretar una arquitectura IT educativa y entender sus implicancias en escalabilidad, costos y experiencia del estudiante.
+- Diseñar una estrategia tecnológica alineada a los objetivos de negocio y a la etapa de madurez organizacional.
+- Evaluar la adopción de IA de su organización y definir un roadmap realista y responsable.
+- Liderar procesos de transformación digital, integrando cultura, procesos y tecnología sin delegar el liderazgo.
+
 
 ### Entrega final
-- **Challenge Work:** Actividad grupal para resolución de un desafío real o simulado, con acompañamiento de la dupla.
-- Formato por definir (hoja de ruta tecnológica, business model canvas, caso de educación, u otro).
+- **Challenge Work:** Actividad grupal iseño de una hoja de ruta tecnológica ejecutiva, que podrá tomar distintos formatos (roadmap, canvas o caso), pero deberá incluir:
+
+  * Diagnóstico de madurez
+  * Decisiones tecnológicas clave
+  * Arquitectura a alto nivel
+  * Próximos pasos accionables
 
 ---
 

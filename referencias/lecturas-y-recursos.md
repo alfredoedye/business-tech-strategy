@@ -27,6 +27,7 @@
 ## 2. Estrategia Tecnológica
 
 ### Lecturas recomendadas
+- **Frederick Brooks** — *"No Silver Bullet — Essence and Accident in Software Engineering"* (1986). El ensayo clásico que argumenta que no existe una solución mágica que por sí sola mejore la productividad del software en un orden de magnitud. Distingue entre complejidad esencial (inherente al problema) y complejidad accidental (creada por las herramientas). Lectura fundamental para cualquier líder que necesite entender por qué la tecnología no tiene atajos. [Link](http://worrydream.com/refs/Brooks-NoSilverBullet.pdf)
 - **Simon Wardley** — *Wardley Maps*. Mapeo estratégico de componentes tecnológicos. [Link](https://learnwardleymapping.com/)
 - **Thoughtworks** — *Technology Radar* (edición más reciente). Panorama de tecnologías, técnicas, plataformas y herramientas. [Link](https://www.thoughtworks.com/radar)
 - **Martin Fowler** — *"Microservices"*. Explicación accesible de arquitectura de microservicios. [Link](https://martinfowler.com/articles/microservices.html)

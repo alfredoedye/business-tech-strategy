@@ -9,7 +9,8 @@
 
 ### Materiales
 - [ ] Slides de los bloques 1-5 cargadas y probadas
-- [ ] Templates impresos: Radar de Estrategia Tech + Mapa de Arquitectura IT
+- [ ] Survey Radar en vivo probado: https://alfredoedye.github.io/business-tech-strategy/survey-radar/
+- [ ] Templates impresos: Radar de Estrategia Tech + Mapa de Arquitectura IT (backup si falla conectividad)
 - [ ] Post-its de colores (mínimo 3 colores), marcadores gruesos, hojas A3
 - [ ] Mural digital preparado (Miro/FigJam) para participantes remotos
 - [ ] Timer visible (pantalla o proyector)
@@ -104,6 +105,15 @@
 - El llenado individual debe ser rápido (15 min). Si alguien se traba, sugerir que ponga su mejor estimación — no se busca precisión, se busca la conversación que genera.
 - La discusión en pares es lo más valioso. Caminar entre las mesas y escuchar las conversaciones.
 - En el debrief, pedir a 2-3 personas que compartan un hallazgo sorprendente.
+
+**📡 Opción Digital — Survey Radar en Vivo:**
+- Abrir en pantalla: https://alfredoedye.github.io/business-tech-strategy/survey-radar/
+- Hacer clic en "Nueva sesión" para iniciar una sesión fresca
+- Los participantes escanean el QR con sus celulares (o copiar el enlace y compartirlo)
+- Responden las 6 dimensiones en ~5 minutos desde sus dispositivos
+- El radar se actualiza en tiempo real mostrando promedios del grupo
+- Ideal para generar conversación grupal: "¿Por qué creen que Seguridad está tan bajo?"
+- ⚠️ Si la conectividad falla, usar el template impreso como backup
 
 **Trade-offs en acción:**
 - Los 4 escenarios están en el contenido del módulo. Proyectarlos uno a uno.

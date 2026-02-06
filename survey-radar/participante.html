@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Radar Survey - Participante</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=space-grotesk@300,400,500,600,700&display=swap">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg-surface: #12121a;
+            --bg-card: #1a1a24;
+            --text: #e8e6e3;
+            --text-secondary: #9090a0;
+            --muted: #6b6b78;
+            --cyan: #00e5ff;
+            --magenta: #ff0080;
+            --purple: #8b5cf6;
+            --green: #10b981;
+            --cyan-glow: rgba(0, 229, 255, 0.4);
+            --font-display: 'Clash Display', sans-serif;
+            --font-body: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 1rem;
+            padding-bottom: 100px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .header h1 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .header h1 span {
+            color: var(--cyan);
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Progress bar */
+        .progress-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--cyan), var(--purple));
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        /* Question card */
+        .question-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .question-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .question-number {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 229, 255, 0.1);
+            border-radius: 8px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--cyan);
+            flex-shrink: 0;
+        }
+
+        .question-content {
+            flex: 1;
+        }
+
+        .question-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .question-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Rating buttons */
+        .rating-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .rating-btn {
+            flex: 1;
+            padding: 0.75rem 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            color: var(--text);
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rating-btn:hover {
+            background: rgba(0, 229, 255, 0.1);
+            border-color: rgba(0, 229, 255, 0.3);
+        }
+
+        .rating-btn.selected {
+            background: rgba(0, 229, 255, 0.2);
+            border-color: var(--cyan);
+            color: var(--cyan);
+            box-shadow: 0 0 15px var(--cyan-glow);
+        }
+
+        .rating-label {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Expandable description */
+        .description-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        .description-toggle:hover {
+            color: var(--cyan);
+        }
+
+        .description-toggle svg {
+            transition: transform 0.2s;
+        }
+
+        .description-toggle.open svg {
+            transform: rotate(180deg);
+        }
+
+        .description-content {
+            display: none;
+            margin-top: 0.75rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .description-content.show {
+            display: block;
+        }
+
+        .description-content table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .description-content td {
+            padding: 0.5rem 0;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .description-content td:first-child {
+            width: 30px;
+            color: var(--cyan);
+            font-weight: 600;
+        }
+
+        .description-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Submit button */
+        .submit-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(to top, var(--bg) 80%, transparent);
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 1rem;
+            background: var(--cyan);
+            border: none;
+            border-radius: 12px;
+            color: var(--bg);
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            box-shadow: 0 0 30px var(--cyan-glow);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            background: var(--muted);
+            cursor: not-allowed;
+        }
+
+        /* Success screen */
+        .success-screen {
+            display: none;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .success-screen.show {
+            display: block;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .success-screen h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--green);
+        }
+
+        .success-screen p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* Form container */
+        .form-container {
+            display: block;
+        }
+
+        .form-container.hidden {
+            display: none;
+        }
+
+        /* Error screen */
+        .error-screen {
+            display: none;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .error-screen.show {
+            display: block;
+        }
+
+        .error-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-screen h2 {
+            font-family: var(--font-display);
+            color: var(--magenta);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Radar de <span>Estrategia Tech</span></h1>
+            <p>Evalúa tu institución en 6 dimensiones</p>
+        </div>
+
+        <!-- Error Screen -->
+        <div class="error-screen" id="error-screen">
+            <div class="error-icon">⚠️</div>
+            <h2>Enlace inválido</h2>
+            <p>Este enlace no contiene una sesión válida. Por favor escanea el QR nuevamente.</p>
+        </div>
+
+        <!-- Success Screen -->
+        <div class="success-screen" id="success-screen">
+            <div class="success-icon">✓</div>
+            <h2>¡Gracias!</h2>
+            <p>Tu respuesta fue enviada correctamente.<br>Los resultados se mostrarán en pantalla.</p>
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container" id="form-container">
+            <!-- Progress -->
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span>Progreso</span>
+                    <span id="progress-count">0/6 completadas</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Questions -->
+            <div id="questions-container"></div>
+
+            <!-- Submit -->
+            <div class="submit-container">
+                <button class="submit-btn" id="submit-btn" disabled onclick="submitSurvey()">
+                    Enviar respuestas
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // =====================================================
+        // CONFIGURACIÓN DE FIREBASE
+        // =====================================================
+        // IMPORTANTE: Usa la misma configuración que en index.html
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB55yzZqyYRLLPnS3XJRo9EKRM_OSr1-Ew",
+            authDomain: "techradar-da04d.firebaseapp.com",
+            databaseURL: "https://techradar-da04d-default-rtdb.firebaseio.com",
+            projectId: "techradar-da04d",
+            storageBucket: "techradar-da04d.firebasestorage.app",
+            messagingSenderId: "923225198073",
+            appId: "1:923225198073:web:b2104a26c40e768d01c128"
+        };
+
+        // =====================================================
+        // DATOS DE LAS PREGUNTAS
+        // =====================================================
+        const questions = [
+            {
+                id: 'infraestructura',
+                title: 'Infraestructura',
+                subtitle: '¿Dónde viven sus sistemas y datos?',
+                levels: [
+                    'Todo on-premise, servidores propios, sin redundancia',
+                    'Mayoría on-premise, algún servicio SaaS aislado',
+                    'Híbrido: algunos sistemas en la nube, otros on-premise',
+                    'Cloud-first: nuevos sistemas van a la nube',
+                    'Cloud-native: todo en la nube con alta disponibilidad'
+                ]
+            },
+            {
+                id: 'arquitectura',
+                title: 'Arquitectura',
+                subtitle: '¿Cómo están organizados sus sistemas?',
+                levels: [
+                    'Sistemas aislados, sin integración, islas de datos',
+                    'Algunas integraciones punto a punto (archivos, exports)',
+                    'Hay un sistema central pero no todos se integran',
+                    'Ecosistema integrado con APIs, hay un "maestro de datos"',
+                    'Arquitectura orientada a servicios, event-driven'
+                ]
+            },
+            {
+                id: 'datos',
+                title: 'Datos',
+                subtitle: '¿Cómo usan los datos para decidir?',
+                levels: [
+                    'No hay reportes confiables, cada área usa Excel',
+                    'Reportes básicos pero manuales y con demora',
+                    'Dashboard operativo con datos actualizados',
+                    'BI integrado: dashboards en tiempo real, KPIs definidos',
+                    'Data-driven: modelos predictivos, datos como activo'
+                ]
+            },
+            {
+                id: 'seguridad',
+                title: 'Seguridad',
+                subtitle: '¿Qué tan protegidos están sus datos?',
+                levels: [
+                    'Sin políticas formales, contraseñas compartidas',
+                    'Backups básicos, antivirus, sin políticas de acceso',
+                    'IAM implementado, políticas por rol, backups auto',
+                    'Seguridad gestionada: monitoreo, auditorías, plan de respuesta',
+                    'Zero-trust, compliance con regulaciones, cultura de seguridad'
+                ]
+            },
+            {
+                id: 'talento',
+                title: 'Talento',
+                subtitle: '¿Tienen las capacidades para gestionar tech?',
+                levels: [
+                    'IT = 1-2 personas que "apagan incendios"',
+                    'Equipo IT operativo sin capacidad de desarrollo',
+                    'Equipo IT con roles definidos + proveedores',
+                    'Equipo híbrido con capacidad de desarrollo',
+                    'Cultura tech: equipos multidisciplinarios'
+                ]
+            },
+            {
+                id: 'innovacion',
+                title: 'Innovación',
+                subtitle: '¿Cómo incorporan nuevas tecnologías?',
+                levels: [
+                    'No hay presupuesto ni tiempo, solo reacción',
+                    'Innovamos cuando un vendor propone algo',
+                    'Hay interés pero pilotos aislados sin seguimiento',
+                    'Proceso de evaluación, pilotos controlados, roadmap',
+                    'Cultura de experimentación: hipótesis → piloto → escala'
+                ]
+            }
+        ];
+
+        let responses = {};
+        let db = null;
+        let sessionId = '';
+        let participantId = '';
+
+        // =====================================================
+        // INICIALIZACIÓN
+        // =====================================================
+        function init() {
+            // Get session ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            sessionId = urlParams.get('session');
+
+            if (!sessionId) {
+                showError();
+                return;
+            }
+
+            // Check if already submitted
+            participantId = localStorage.getItem(`radar-participant-${sessionId}`);
+            if (participantId) {
+                showSuccess();
+                return;
+            }
+
+            // Generate new participant ID
+            participantId = 'p-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+
+            // Initialize Firebase
+            const isFirebaseConfigured = firebaseConfig.apiKey !== "TU_API_KEY";
+            if (isFirebaseConfigured) {
+                try {
+                    firebase.initializeApp(firebaseConfig);
+                    db = firebase.database();
+                } catch (e) {
+                    console.log('Firebase already initialized or error:', e);
+                    db = firebase.database();
+                }
+            }
+
+            // Render questions
+            renderQuestions();
+        }
+
+        function showError() {
+            document.getElementById('form-container').classList.add('hidden');
+            document.getElementById('error-screen').classList.add('show');
+        }
+
+        function showSuccess() {
+            document.getElementById('form-container').classList.add('hidden');
+            document.getElementById('success-screen').classList.add('show');
+        }
+
+        // =====================================================
+        // RENDER QUESTIONS
+        // =====================================================
+        function renderQuestions() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = questions.map((q, index) => `
+                <div class="question-card" id="question-${q.id}">
+                    <div class="question-header">
+                        <div class="question-number">${index + 1}</div>
+                        <div class="question-content">
+                            <div class="question-title">${q.title}</div>
+                            <div class="question-subtitle">${q.subtitle}</div>
+                        </div>
+                    </div>
+
+                    <div class="rating-buttons">
+                        ${[1, 2, 3, 4, 5].map(n => `
+                            <button class="rating-btn" data-question="${q.id}" data-value="${n}" onclick="selectRating('${q.id}', ${n})">
+                                ${n}
+                                <span class="rating-label">${n === 1 ? 'Bajo' : n === 5 ? 'Alto' : ''}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+
+                    <button class="description-toggle" onclick="toggleDescription('${q.id}')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                        Ver descripción de niveles
+                    </button>
+
+                    <div class="description-content" id="desc-${q.id}">
+                        <table>
+                            ${q.levels.map((level, i) => `
+                                <tr>
+                                    <td>${i + 1}</td>
+                                    <td>${level}</td>
+                                </tr>
+                            `).join('')}
+                        </table>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // =====================================================
+        // INTERACTIONS
+        // =====================================================
+        function selectRating(questionId, value) {
+            // Update responses
+            responses[questionId] = value;
+
+            // Update UI
+            document.querySelectorAll(`[data-question="${questionId}"]`).forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            document.querySelector(`[data-question="${questionId}"][data-value="${value}"]`).classList.add('selected');
+
+            // Update progress
+            updateProgress();
+        }
+
+        function toggleDescription(questionId) {
+            const content = document.getElementById(`desc-${questionId}`);
+            const toggle = content.previousElementSibling;
+
+            content.classList.toggle('show');
+            toggle.classList.toggle('open');
+        }
+
+        function updateProgress() {
+            const completed = Object.keys(responses).length;
+            const total = questions.length;
+            const percentage = (completed / total) * 100;
+
+            document.getElementById('progress-count').textContent = `${completed}/${total} completadas`;
+            document.getElementById('progress-fill').style.width = `${percentage}%`;
+
+            // Enable submit button when all answered
+            document.getElementById('submit-btn').disabled = completed < total;
+        }
+
+        // =====================================================
+        // SUBMIT
+        // =====================================================
+        async function submitSurvey() {
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.textContent = 'Enviando...';
+
+            const data = {
+                ...responses,
+                timestamp: Date.now()
+            };
+
+            if (db) {
+                try {
+                    await db.ref(`radar-sessions/${sessionId}/responses/${participantId}`).set(data);
+                } catch (e) {
+                    console.error('Firebase error:', e);
+                }
+            }
+
+            // Mark as submitted
+            localStorage.setItem(`radar-participant-${sessionId}`, participantId);
+
+            // Show success
+            showSuccess();
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

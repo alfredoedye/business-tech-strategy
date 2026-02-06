@@ -13,7 +13,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
     <!-- QR Code -->
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
 
     <style>
         :root {
@@ -557,20 +557,18 @@
 
             document.getElementById('survey-url').textContent = surveyUrl;
 
-            QRCode.toCanvas(document.createElement('canvas'), surveyUrl, {
+            // Limpiar QR anterior
+            const qrContainer = document.getElementById('qr-code');
+            qrContainer.innerHTML = '';
+
+            // Generar nuevo QR con qrcodejs
+            new QRCode(qrContainer, {
+                text: surveyUrl,
                 width: 200,
-                margin: 0,
-                color: {
-                    dark: '#000000',
-                    light: '#ffffff'
-                }
-            }, function(error, canvas) {
-                if (error) {
-                    console.error(error);
-                    return;
-                }
-                document.getElementById('qr-code').innerHTML = '';
-                document.getElementById('qr-code').appendChild(canvas);
+                height: 200,
+                colorDark: '#000000',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.M
             });
         }
 

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagramas | Estrategia Tecnológica</title>
+
+    <!-- Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=space-grotesk@300,400,500,600,700&display=swap">
+
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg-surface: #12121a;
+            --bg-card: #1a1a24;
+            --text: #e8e6e3;
+            --text-secondary: #9090a0;
+            --muted: #6b6b78;
+            --cyan: #00e5ff;
+            --magenta: #ff0080;
+            --purple: #8b5cf6;
+            --green: #10b981;
+
+            --font-display: 'Clash Display', sans-serif;
+            --font-body: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 .gradient {
+            background: linear-gradient(135deg, var(--cyan), var(--magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+        }
+
+        .diagram-section {
+            background: var(--bg-surface);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .diagram-section:hover {
+            border-color: rgba(0, 229, 255, 0.25);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-number {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--cyan);
+            background: rgba(0, 229, 255, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+
+        .mermaid {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+        }
+
+        /* Mermaid theme overrides */
+        .mermaid svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--cyan);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(0, 229, 255, 0.1);
+            border-color: var(--cyan);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+    </style>
+
+    <script>
+        // Mermaid dark theme configuration
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#1a1a24',
+                primaryTextColor: '#e8e6e3',
+                primaryBorderColor: '#00e5ff',
+                lineColor: '#00e5ff',
+                secondaryColor: '#22222e',
+                tertiaryColor: '#12121a',
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontSize: '14px',
+                nodeBorder: '#00e5ff',
+                clusterBkg: '#1a1a24',
+                clusterBorder: '#8b5cf6',
+                edgeLabelBackground: '#12121a',
+                nodeTextColor: '#e8e6e3'
+            },
+            flowchart: {
+                curve: 'basis',
+                padding: 20
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Diagramas <span class="gradient">Estratégicos</span></h1>
+            <p class="subtitle">Visualizaciones profesionales para el curso de Estrategia Tecnológica</p>
+        </header>
+
+        <!-- 1. Framework de Alineación -->
+        <section class="diagram-section">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">Framework de Alineación Negocio-Tecnología</h2>
+            </div>
+            <p class="section-desc">Flujo desde objetivos de negocio hasta inversión y priorización tecnológica.</p>
+
+            <div class="mermaid">
+flowchart LR
+    subgraph NEGOCIO["🎯 NEGOCIO"]
+        A[Objetivos<br/>de Negocio]
+    end
+
+    subgraph CAPACIDADES["⚡ CAPACIDADES"]
+        B[Capacidades<br/>Necesarias]
+    end
+
+    subgraph TECH["🔧 TECNOLOGÍA"]
+        C[Habilitadores<br/>Tecnológicos]
+    end
+
+    subgraph INVERSION["📈 INVERSIÓN"]
+        D[Inversión y<br/>Priorización]
+    end
+
+    A -->|"Define"| B
+    B -->|"Requiere"| C
+    C -->|"Determina"| D
+
+    style A fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style B fill:#00e5ff,stroke:#00e5ff,color:#000
+    style C fill:#ff0080,stroke:#ff0080,color:#fff
+    style D fill:#10b981,stroke:#10b981,color:#fff
+            </div>
+        </section>
+
+        <!-- 2. Arquitectura IT Educativa -->
+        <section class="diagram-section">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Arquitectura IT Educativa</h2>
+            </div>
+            <p class="section-desc">Mapa de sistemas y su relación con el ciclo de vida del estudiante.</p>
+
+            <div class="mermaid">
+flowchart TB
+    subgraph TOUCH["📱 TOUCHPOINTS"]
+        T1[Web<br/>Institucional]
+        T2[Campus<br/>Virtual]
+        T3[App<br/>Móvil]
+        T4[E-commerce]
+    end
+
+    subgraph CORE["🎓 CICLO DE VIDA DEL ESTUDIANTE"]
+        direction LR
+        C1[Marketing] --> C2[Admisión]
+        C2 --> C3[Cursado]
+        C3 --> C4[Evaluación]
+        C4 --> C5[Titulación]
+    end
+
+    subgraph SOPORTE["⚙️ SISTEMAS DE SOPORTE"]
+        S1[CRM]
+        S2[LMS]
+        S3[ERP]
+        S4[BI]
+        S5[IAM]
+    end
+
+    TOUCH --> CORE
+    CORE --> SOPORTE
+
+    style T1 fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style T2 fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style T3 fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style T4 fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style C1 fill:#00e5ff,stroke:#00e5ff,color:#000
+    style C2 fill:#00e5ff,stroke:#00e5ff,color:#000
+    style C3 fill:#00e5ff,stroke:#00e5ff,color:#000
+    style C4 fill:#00e5ff,stroke:#00e5ff,color:#000
+    style C5 fill:#00e5ff,stroke:#00e5ff,color:#000
+    style S1 fill:#ff0080,stroke:#ff0080,color:#fff
+    style S2 fill:#ff0080,stroke:#ff0080,color:#fff
+    style S3 fill:#ff0080,stroke:#ff0080,color:#fff
+    style S4 fill:#ff0080,stroke:#ff0080,color:#fff
+    style S5 fill:#ff0080,stroke:#ff0080,color:#fff
+            </div>
+        </section>
+
+        <!-- 3. Triángulo de Transformación Digital -->
+        <section class="diagram-section">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Triángulo de Transformación Digital</h2>
+            </div>
+            <p class="section-desc">Las tres dimensiones que deben avanzar juntas para una transformación exitosa.</p>
+
+            <div class="mermaid">
+flowchart TB
+    subgraph TRANSFORMACION["TRANSFORMACIÓN DIGITAL"]
+        CULTURA["🧠 CULTURA<br/><small>Mentalidad de cambio<br/>Liderazgo visible</small>"]
+        PROCESOS["⚙️ PROCESOS<br/><small>Rediseño de operaciones<br/>No solo digitalizar</small>"]
+        TECH["💻 TECNOLOGÍA<br/><small>Herramientas<br/>Plataformas</small>"]
+
+        CULTURA --- PROCESOS
+        PROCESOS --- TECH
+        TECH --- CULTURA
+    end
+
+    style CULTURA fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style PROCESOS fill:#00e5ff,stroke:#00e5ff,color:#000
+    style TECH fill:#ff0080,stroke:#ff0080,color:#fff
+            </div>
+        </section>
+
+        <!-- 4. Framework de Adopción de IA -->
+        <section class="diagram-section">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Framework de Adopción de IA</h2>
+            </div>
+            <p class="section-desc">Los 5 niveles de madurez en adopción de inteligencia artificial.</p>
+
+            <div class="mermaid">
+flowchart LR
+    L0["❌ NIVEL 0<br/>Ignorar"]
+    L1["🔍 NIVEL 1<br/>Explorar"]
+    L2["🧪 NIVEL 2<br/>Experimentar"]
+    L3["🔗 NIVEL 3<br/>Integrar"]
+    L4["🚀 NIVEL 4<br/>Redefinir"]
+
+    L0 --> L1 --> L2 --> L3 --> L4
+
+    style L0 fill:#6b6b78,stroke:#6b6b78,color:#fff
+    style L1 fill:#f59e0b,stroke:#f59e0b,color:#000
+    style L2 fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style L3 fill:#00e5ff,stroke:#00e5ff,color:#000
+    style L4 fill:#10b981,stroke:#10b981,color:#fff
+            </div>
+        </section>
+
+        <!-- 5. Tres Horizontes de Transformación -->
+        <section class="diagram-section">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Los Tres Horizontes de Transformación</h2>
+            </div>
+            <p class="section-desc">Planificación de iniciativas según plazo y tipo de impacto.</p>
+
+            <div class="mermaid">
+gantt
+    title Horizontes de Transformación
+    dateFormat YYYY-MM
+    axisFormat %m
+
+    section H1: Optimizar
+    Integrar SIS-LMS           :h1a, 2024-01, 4M
+    Automatizar procesos       :h1b, 2024-03, 3M
+
+    section H2: Evolucionar
+    Implementar CRM completo   :h2a, 2024-04, 8M
+    Analítica predictiva       :h2b, 2024-06, 10M
+
+    section H3: Reinventar
+    Tutor IA personalizado     :h3a, 2024-10, 14M
+    Nuevo modelo educativo     :h3b, 2025-01, 18M
+            </div>
+        </section>
+
+        <!-- 6. Niveles de Integración -->
+        <section class="diagram-section">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Niveles de Integración entre Sistemas</h2>
+            </div>
+            <p class="section-desc">Evolución desde procesos manuales hacia arquitectura event-driven.</p>
+
+            <div class="mermaid">
+flowchart TB
+    subgraph N1["NIVEL 1: MANUAL"]
+        M1[Sistema A] -.->|"Export Excel"| U1((👤))
+        U1 -.->|"Import manual"| M2[Sistema B]
+    end
+
+    subgraph N2["NIVEL 2: ARCHIVOS"]
+        A1[Sistema A] -->|"CSV automático"| F1[(Archivo)]
+        F1 -->|"Proceso nocturno"| A2[Sistema B]
+    end
+
+    subgraph N3["NIVEL 3: APIs"]
+        P1[Sistema A] <-->|"API REST<br/>tiempo real"| P2[Sistema B]
+    end
+
+    subgraph N4["NIVEL 4: EVENTOS"]
+        E1[Sistema A] -->|"Publica evento"| BUS{Event Bus}
+        BUS -->|"Notifica"| E2[Sistema B]
+        BUS -->|"Notifica"| E3[Sistema C]
+    end
+
+    N1 --> N2 --> N3 --> N4
+
+    style M1 fill:#6b6b78,stroke:#6b6b78
+    style M2 fill:#6b6b78,stroke:#6b6b78
+    style A1 fill:#f59e0b,stroke:#f59e0b
+    style A2 fill:#f59e0b,stroke:#f59e0b
+    style P1 fill:#8b5cf6,stroke:#8b5cf6
+    style P2 fill:#8b5cf6,stroke:#8b5cf6
+    style E1 fill:#00e5ff,stroke:#00e5ff,color:#000
+    style E2 fill:#00e5ff,stroke:#00e5ff,color:#000
+    style E3 fill:#00e5ff,stroke:#00e5ff,color:#000
+    style BUS fill:#10b981,stroke:#10b981
+            </div>
+        </section>
+
+        <!-- 7. Wardley Map Simplificado -->
+        <section class="diagram-section">
+            <div class="section-header">
+                <span class="section-number">07</span>
+                <h2 class="section-title">Wardley Map: Evolución de Componentes</h2>
+            </div>
+            <p class="section-desc">Ubicación de tecnologías según su etapa de evolución.</p>
+
+            <div class="mermaid">
+flowchart LR
+    subgraph GENESIS["🌱 GÉNESIS"]
+        G1[Tutor IA<br/>Personalizado]
+        G2[Credenciales<br/>Blockchain]
+    end
+
+    subgraph CUSTOM["🔧 CUSTOM"]
+        C1[Analítica<br/>Predictiva]
+        C2[SIS<br/>Propio]
+    end
+
+    subgraph PRODUCTO["📦 PRODUCTO"]
+        P1[LMS]
+        P2[CRM]
+    end
+
+    subgraph COMMODITY["⚡ COMMODITY"]
+        CO1[Email]
+        CO2[Cloud<br/>Hosting]
+        CO3[Video<br/>Conferencia]
+    end
+
+    GENESIS --> CUSTOM --> PRODUCTO --> COMMODITY
+
+    style G1 fill:#ff0080,stroke:#ff0080,color:#fff
+    style G2 fill:#ff0080,stroke:#ff0080,color:#fff
+    style C1 fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style C2 fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style P1 fill:#00e5ff,stroke:#00e5ff,color:#000
+    style P2 fill:#00e5ff,stroke:#00e5ff,color:#000
+    style CO1 fill:#10b981,stroke:#10b981,color:#fff
+    style CO2 fill:#10b981,stroke:#10b981,color:#fff
+    style CO3 fill:#10b981,stroke:#10b981,color:#fff
+            </div>
+        </section>
+
+        <!-- 8. Build vs Buy Decision -->
+        <section class="diagram-section">
+            <div class="section-header">
+                <span class="section-number">08</span>
+                <h2 class="section-title">Árbol de Decisión: Build vs Buy</h2>
+            </div>
+            <p class="section-desc">Framework para decidir cuándo construir vs. comprar tecnología.</p>
+
+            <div class="mermaid">
+flowchart TB
+    START((¿Build o Buy?))
+    Q1{¿Es core de tu<br/>ventaja competitiva?}
+    Q2{¿Existe solución<br/>de mercado?}
+    Q3{¿Tenés equipo<br/>técnico?}
+    Q4{¿Se puede<br/>personalizar?}
+
+    BUILD[🔧 BUILD<br/>Construir]
+    BUY[💰 BUY<br/>Comprar SaaS]
+    HYBRID[🔀 HÍBRIDO<br/>Buy + Personalizar]
+    PARTNER[🤝 PARTNER<br/>Desarrollo tercerizado]
+
+    START --> Q1
+    Q1 -->|"Sí"| Q3
+    Q1 -->|"No"| Q2
+
+    Q3 -->|"Sí"| BUILD
+    Q3 -->|"No"| PARTNER
+
+    Q2 -->|"Sí"| Q4
+    Q2 -->|"No"| PARTNER
+
+    Q4 -->|"Sí"| HYBRID
+    Q4 -->|"No"| BUY
+
+    style BUILD fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style BUY fill:#10b981,stroke:#10b981,color:#fff
+    style HYBRID fill:#00e5ff,stroke:#00e5ff,color:#000
+    style PARTNER fill:#f59e0b,stroke:#f59e0b,color:#000
+            </div>
+        </section>
+
+        <!-- 9. 7 Pilares del Mindset Digital -->
+        <section class="diagram-section">
+            <div class="section-header">
+                <span class="section-number">09</span>
+                <h2 class="section-title">Los 7 Pilares del Mindset Digital</h2>
+            </div>
+            <p class="section-desc">El sistema operativo del liderazgo para la era digital.</p>
+
+            <div class="mermaid">
+mindmap
+  root((MINDSET<br/>DIGITAL))
+    🎯 Orientación<br/>a Producto
+      Iteración continua
+      Métricas de valor
+    📚 Aprendizaje<br/>Continuo
+      Actualización constante
+      Curiosidad activa
+    🧪 Experimentación
+      Hipótesis-piloto-escala
+      Tolerancia al error
+    👥 Colaboración<br/>Multidisciplinaria
+      Negocio + Tech + Datos
+      Sin silos
+    📊 Cultura de<br/>Datos
+      No opinar, medir
+      Decisiones informadas
+    ⚡ Agencia<br/>Digital
+      Todos proponen
+      No solo IT
+    🔐 Seguridad<br/>y Ética
+      Privacidad
+      Responsabilidad
+            </div>
+        </section>
+
+        <!-- 10. Proceso de Adopción de IA -->
+        <section class="diagram-section">
+            <div class="section-header">
+                <span class="section-number">10</span>
+                <h2 class="section-title">Proceso de Adopción de IA</h2>
+            </div>
+            <p class="section-desc">Flujo desde la propuesta hasta el escalamiento de una iniciativa de IA.</p>
+
+            <div class="mermaid">
+flowchart LR
+    subgraph INICIO["📝 INICIO"]
+        A[Propuesta<br/>de caso de uso]
+    end
+
+    subgraph EVALUACION["🔍 EVALUACIÓN"]
+        B[Triage<br/>técnico]
+        C[Evaluación<br/>de riesgo]
+    end
+
+    subgraph PILOTO["🧪 PILOTO"]
+        D[Implementación<br/>controlada]
+        E[Medición<br/>y feedback]
+    end
+
+    subgraph DECISION["✅ DECISIÓN"]
+        F{¿Éxito?}
+        G[Escalar]
+        H[Ajustar]
+        I[Descartar]
+    end
+
+    A --> B --> C --> D --> E --> F
+    F -->|"Sí"| G
+    F -->|"Parcial"| H
+    F -->|"No"| I
+    H --> D
+
+    style A fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style B fill:#00e5ff,stroke:#00e5ff,color:#000
+    style C fill:#00e5ff,stroke:#00e5ff,color:#000
+    style D fill:#f59e0b,stroke:#f59e0b,color:#000
+    style E fill:#f59e0b,stroke:#f59e0b,color:#000
+    style G fill:#10b981,stroke:#10b981,color:#fff
+    style H fill:#8b5cf6,stroke:#8b5cf6,color:#fff
+    style I fill:#ff0080,stroke:#ff0080,color:#fff
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="nav-links">
+            <a href="index.html">← Portal Principal</a>
+            <a href="presentacion.html">Ver Presentación</a>
+            <a href="graficos-profesionales.html">Gráficos HTML/CSS</a>
+        </nav>
+
+        <footer>
+            Módulo V — Estrategia Tecnológica + Mindset Digital
+        </footer>
+    </div>
+</body>
+</html>

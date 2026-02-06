@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategia Tecnológica + Mindset Digital</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=space-grotesk@300,400,500,600,700&display=swap">
+
+    <style>
+        /* ==========================================
+           NEON CYBER THEME
+           ========================================== */
+        :root {
+            --bg: #0a0a0f;
+            --bg-surface: #12121a;
+            --bg-card: #1a1a24;
+            --bg-elevated: #22222e;
+            --text: #e8e6e3;
+            --text-secondary: #9090a0;
+            --muted: #6b6b78;
+            --cyan: #00e5ff;
+            --magenta: #ff0080;
+            --purple: #8b5cf6;
+            --green: #10b981;
+            --amber: #f59e0b;
+            --cyan-glow: rgba(0, 229, 255, 0.4);
+            --magenta-glow: rgba(255, 0, 128, 0.3);
+            --purple-glow: rgba(139, 92, 246, 0.3);
+
+            --font-display: 'Clash Display', sans-serif;
+            --font-body: 'Space Grotesk', sans-serif;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ==========================================
+           RESET & BASE
+           ========================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        /* Scan line effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+            opacity: 0.12;
+            animation: scan 8s linear infinite;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% { top: -2px; }
+            100% { top: 100vh; }
+        }
+
+        /* Grid background */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 229, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 229, 255, 0.02) 1px, transparent 1px);
+            background-size: 80px 80px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a {
+            color: var(--cyan);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--magenta);
+        }
+
+        /* ==========================================
+           LAYOUT
+           ========================================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ==========================================
+           NAVIGATION
+           ========================================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo .accent {
+            color: var(--cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyan);
+        }
+
+        /* ==========================================
+           HERO
+           ========================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 60%);
+            opacity: 0.3;
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--cyan);
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, var(--cyan), var(--magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--cyan);
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            background: #00d4eb;
+            box-shadow: 0 0 30px var(--cyan-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        /* ==========================================
+           SECTIONS
+           ========================================== */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--cyan);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* ==========================================
+           MODULES GRID
+           ========================================== */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .module-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s var(--ease);
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cyan), var(--purple));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .module-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 229, 255, 0.2);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+        }
+
+        .module-card:hover::before {
+            opacity: 1;
+        }
+
+        .module-number {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--cyan);
+            margin-bottom: 1rem;
+        }
+
+        .module-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-subtitle {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .module-topics {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .module-topics li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .module-topics li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--cyan);
+            opacity: 0.5;
+        }
+
+        .module-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--cyan);
+            font-weight: 500;
+        }
+
+        .module-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* ==========================================
+           RESOURCES GRID
+           ========================================== */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .resource-card {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s var(--ease);
+        }
+
+        .resource-card:hover {
+            border-color: rgba(0, 229, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .resource-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 229, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .resource-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .resource-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .resource-tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+        }
+
+        .resource-tag:hover {
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--cyan);
+        }
+
+        /* ==========================================
+           CASE STUDIES
+           ========================================== */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-card {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-card.featured {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 900px) {
+            .case-card.featured {
+                grid-column: span 1;
+            }
+        }
+
+        .case-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .case-badge.argentina {
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--cyan);
+        }
+
+        .case-badge.mexico {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--purple);
+        }
+
+        .case-badge.colombia {
+            background: rgba(255, 0, 128, 0.1);
+            color: var(--magenta);
+        }
+
+        .case-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .case-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .case-stats {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cyan);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ==========================================
+           QUICK ACCESS
+           ========================================== */
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .quick-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--bg-surface);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            color: var(--text);
+            transition: all 0.3s var(--ease);
+        }
+
+        .quick-item:hover {
+            border-color: var(--cyan);
+            background: rgba(0, 229, 255, 0.05);
+            color: var(--cyan);
+        }
+
+        .quick-item span {
+            font-size: 1.25rem;
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+        }
+
+        /* ==========================================
+           ANIMATIONS
+           ========================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s var(--ease) backwards;
+        }
+
+        .animate-delay-1 { animation-delay: 0.1s; }
+        .animate-delay-2 { animation-delay: 0.2s; }
+        .animate-delay-3 { animation-delay: 0.3s; }
+        .animate-delay-4 { animation-delay: 0.4s; }
+        .animate-delay-5 { animation-delay: 0.5s; }
+
+        /* ==========================================
+           RESPONSIVE
+           ========================================== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <span class="accent">//</span> Tech Strategy
+            </div>
+            <ul class="nav-links">
+                <li><a href="#modulos">Módulos</a></li>
+                <li><a href="#casos">Casos</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="presentacion.html">Presentación</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge animate">Módulo V — Programa Ejecutivo</div>
+            <h1 class="animate animate-delay-1">
+                Estrategia Tecnológica<br>
+                <span class="gradient">+ Mindset Digital</span>
+            </h1>
+            <p class="hero-subtitle animate animate-delay-2">
+                Herramientas, frameworks y criterios para que líderes educativos tomen decisiones tecnológicas estratégicas.
+            </p>
+            <div class="hero-cta animate animate-delay-3">
+                <a href="presentacion.html" class="btn btn-primary">
+                    Ver Presentación
+                </a>
+                <a href="curso-estrategia-tecnologica.pdf" class="btn btn-secondary">
+                    Descargar PDF
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules -->
+    <section id="modulos">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Contenido del curso</div>
+                <h2 class="section-title">5 Módulos + Bonus</h2>
+            </div>
+
+            <div class="modules-grid">
+                <!-- Module 1 -->
+                <div class="module-card">
+                    <div class="module-number">MÓDULO 01</div>
+                    <h3 class="module-title">Hello World</h3>
+                    <p class="module-subtitle">Tecnología como ventaja competitiva</p>
+                    <ul class="module-topics">
+                        <li>Software Is Eating The World</li>
+                        <li>3 niveles: Usar → Operar → Diseñar</li>
+                        <li>El rol del CEO en decisiones tech</li>
+                        <li>Mapa global EdTech (HolonIQ)</li>
+                    </ul>
+                    <a href="contenido/modulo-01-hello-world.md" class="module-link">
+                        Ver contenido →
+                    </a>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="module-card">
+                    <div class="module-number">MÓDULO 02</div>
+                    <h3 class="module-title">Estrategia Tecnológica</h3>
+                    <p class="module-subtitle">Decisiones que definen el futuro</p>
+                    <ul class="module-topics">
+                        <li>Build vs Buy</li>
+                        <li>Cloud vs On-premise</li>
+                        <li>Core vs Commodity</li>
+                        <li>5 componentes de estrategia tech</li>
+                    </ul>
+                    <a href="contenido/modulo-02-estrategia-tecnologica.md" class="module-link">
+                        Ver contenido →
+                    </a>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="module-card">
+                    <div class="module-number">MÓDULO 03</div>
+                    <h3 class="module-title">Arquitectura IT Educativa</h3>
+                    <p class="module-subtitle">El mapa de tus sistemas</p>
+                    <ul class="module-topics">
+                        <li>SIS, LMS, CRM, ERP, BI, IAM</li>
+                        <li>Ciclo de vida del estudiante</li>
+                        <li>Niveles de integración</li>
+                        <li>Arquitectura como decisión</li>
+                    </ul>
+                    <a href="contenido/modulo-03-arquitectura-it.md" class="module-link">
+                        Ver contenido →
+                    </a>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="module-card">
+                    <div class="module-number">MÓDULO 04</div>
+                    <h3 class="module-title">Transformación Digital e IA</h3>
+                    <p class="module-subtitle">Cómo transformar sin romper</p>
+                    <ul class="module-topics">
+                        <li>Triángulo: Cultura + Procesos + Tech</li>
+                        <li>3 horizontes de transformación</li>
+                        <li>Framework adopción de IA (5 niveles)</li>
+                        <li>Riesgos y ética</li>
+                    </ul>
+                    <a href="contenido/modulo-04-transformacion-digital-ia.md" class="module-link">
+                        Ver contenido →
+                    </a>
+                </div>
+
+                <!-- Module 5 -->
+                <div class="module-card">
+                    <div class="module-number">MÓDULO 05</div>
+                    <h3 class="module-title">Mindset Digital</h3>
+                    <p class="module-subtitle">El sistema operativo del liderazgo</p>
+                    <ul class="module-topics">
+                        <li>Los 7 Pilares del Mindset Digital</li>
+                        <li>Orientación a Producto</li>
+                        <li>Cultura de Datos</li>
+                        <li>Experimentación y Agilidad</li>
+                    </ul>
+                    <a href="contenido/modulo-05-mindset-digital.md" class="module-link">
+                        Ver contenido →
+                    </a>
+                </div>
+
+                <!-- Bonus -->
+                <div class="module-card" style="border-color: rgba(255, 0, 128, 0.2);">
+                    <div class="module-number" style="color: var(--magenta);">BONUS</div>
+                    <h3 class="module-title">Panel: IA y Educación</h3>
+                    <p class="module-subtitle">5 preguntas provocadoras</p>
+                    <ul class="module-topics">
+                        <li>¿IA reemplaza o potencia docentes?</li>
+                        <li>¿Los títulos perderán valor?</li>
+                        <li>¿Quién regula la IA en educación?</li>
+                        <li>¿Qué debe aprender un estudiante 2030?</li>
+                    </ul>
+                    <a href="contenido/bonus-panel-ia-educacion.md" class="module-link" style="color: var(--magenta);">
+                        Ver contenido →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="casos" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Aprender de los mejores</div>
+                <h2 class="section-title">Casos de Estudio</h2>
+            </div>
+
+            <div class="cases-grid">
+                <!-- Siglo 21 -->
+                <div class="case-card featured">
+                    <span class="case-badge argentina">Argentina</span>
+                    <h3 class="case-title">Universidad Siglo 21</h3>
+                    <p class="case-subtitle">Migración a la nube + SIS propio (Proyecto Algarrobo). Cómo una universidad privada construyó su ecosistema tecnológico y escaló a 60,000+ estudiantes.</p>
+                    <div class="case-stats">
+                        <div class="stat">
+                            <div class="stat-value">+35%</div>
+                            <div class="stat-label">Crecimiento anual</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">+31</div>
+                            <div class="stat-label">NPS Score</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">60K+</div>
+                            <div class="stat-label">Estudiantes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tec de Monterrey -->
+                <div class="case-card">
+                    <span class="case-badge mexico">México</span>
+                    <h3 class="case-title">Tec de Monterrey</h3>
+                    <p class="case-subtitle">TECgpt: ecosistema institucional de IA generativa sobre Azure OpenAI.</p>
+                    <div class="case-stats">
+                        <div class="stat">
+                            <div class="stat-value">3K+</div>
+                            <div class="stat-label">Usuarios activos</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">250+</div>
+                            <div class="stat-label">Skills creados</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platzi -->
+                <div class="case-card">
+                    <span class="case-badge colombia">Colombia</span>
+                    <h3 class="case-title">Platzi</h3>
+                    <p class="case-subtitle">EdTech nativa digital con mentalidad de producto y 1M+ estudiantes en LATAM.</p>
+                    <div class="case-stats">
+                        <div class="stat">
+                            <div class="stat-value">70%</div>
+                            <div class="stat-label">Tasa completación</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">+54%</div>
+                            <div class="stat-label">Aumento ingresos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="materiales/casos-de-estudio.md" class="btn btn-secondary">
+                    Ver todos los casos →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="recursos">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Todo el material</div>
+                <h2 class="section-title">Recursos del Curso</h2>
+            </div>
+
+            <div class="resources-grid">
+                <!-- Templates -->
+                <div class="resource-card">
+                    <div class="resource-icon">📋</div>
+                    <h3 class="resource-title">Templates de Trabajo</h3>
+                    <p class="resource-desc">Plantillas para actividades prácticas y diagnóstico organizacional.</p>
+                    <div class="resource-links">
+                        <a href="materiales/templates/template-radar-estrategia-tech.md" class="resource-tag">Radar Tech</a>
+                        <a href="materiales/templates/template-mapa-arquitectura-it.md" class="resource-tag">Mapa IT</a>
+                        <a href="materiales/templates/template-journey-map-estudiante.md" class="resource-tag">Journey Map</a>
+                        <a href="materiales/templates/template-diagnostico-mindset-digital.md" class="resource-tag">Mindset</a>
+                    </div>
+                </div>
+
+                <!-- Programa -->
+                <div class="resource-card">
+                    <div class="resource-icon">📅</div>
+                    <h3 class="resource-title">Programa del Curso</h3>
+                    <p class="resource-desc">Agenda, estructura y diseño del challenge.</p>
+                    <div class="resource-links">
+                        <a href="programa/00-programa-completo.md" class="resource-tag">Programa</a>
+                        <a href="programa/01-challenge-design.md" class="resource-tag">Challenge</a>
+                        <a href="programa/02-challenge-point.md" class="resource-tag">Checkpoint</a>
+                    </div>
+                </div>
+
+                <!-- Guías Facilitador -->
+                <div class="resource-card">
+                    <div class="resource-icon">🎯</div>
+                    <h3 class="resource-title">Guías del Facilitador</h3>
+                    <p class="resource-desc">Instrucciones detalladas para cada día del curso.</p>
+                    <div class="resource-links">
+                        <a href="guia-facilitador/guia-dia-1-viernes.md" class="resource-tag">Día 1</a>
+                        <a href="guia-facilitador/guia-dia-2-sabado.md" class="resource-tag">Día 2</a>
+                        <a href="guia-facilitador/guia-challenge-point.md" class="resource-tag">Challenge</a>
+                    </div>
+                </div>
+
+                <!-- Referencias -->
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3 class="resource-title">Lecturas y Referencias</h3>
+                    <p class="resource-desc">Bibliografía, artículos y recursos para profundizar.</p>
+                    <div class="resource-links">
+                        <a href="referencias/lecturas-y-recursos.md" class="resource-tag">Ver todas</a>
+                    </div>
+                </div>
+
+                <!-- Presentaciones -->
+                <div class="resource-card">
+                    <div class="resource-icon">🎬</div>
+                    <h3 class="resource-title">Presentaciones</h3>
+                    <p class="resource-desc">Slides interactivas para proyectar en clase.</p>
+                    <div class="resource-links">
+                        <a href="presentacion.html" class="resource-tag">Completa</a>
+                        <a href="presentacion-brief.html" class="resource-tag">Brief</a>
+                        <a href="graficos-profesionales.html" class="resource-tag">Gráficos</a>
+                    </div>
+                </div>
+
+                <!-- Downloads -->
+                <div class="resource-card">
+                    <div class="resource-icon">⬇️</div>
+                    <h3 class="resource-title">Descargas</h3>
+                    <p class="resource-desc">Material en formato PDF para imprimir o compartir.</p>
+                    <div class="resource-links">
+                        <a href="curso-estrategia-tecnologica.pdf" class="resource-tag">Manual PDF</a>
+                        <a href="brief.md" class="resource-tag">Brief</a>
+                    </div>
+                </div>
+
+                <!-- Anexos Teóricos -->
+                <div class="resource-card">
+                    <div class="resource-icon">🎓</div>
+                    <h3 class="resource-title">Anexos Teóricos</h3>
+                    <p class="resource-desc">Profundización en frameworks estratégicos, finanzas e IA.</p>
+                    <div class="resource-links">
+                        <a href="contenido/anexo-frameworks-estrategicos.md" class="resource-tag">Frameworks</a>
+                        <a href="contenido/anexo-finanzas-para-decisiones-tech.md" class="resource-tag">Finanzas</a>
+                        <a href="contenido/anexo-framework-ia-expandido.md" class="resource-tag">IA Expandido</a>
+                    </div>
+                </div>
+
+                <!-- Herramientas Ejecutivas -->
+                <div class="resource-card">
+                    <div class="resource-icon">🛠️</div>
+                    <h3 class="resource-title">Herramientas Ejecutivas</h3>
+                    <p class="resource-desc">Recursos prácticos para líderes: glosario, checklists y alertas.</p>
+                    <div class="resource-links">
+                        <a href="referencias/glosario-ejecutivo.md" class="resource-tag">Glosario</a>
+                        <a href="referencias/checklist-preguntas-cto.md" class="resource-tag">10 Preguntas CTO</a>
+                        <a href="referencias/red-flags-proyectos-tech.md" class="resource-tag">Red Flags</a>
+                    </div>
+                </div>
+
+                <!-- Visualizaciones -->
+                <div class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3 class="resource-title">Visualizaciones</h3>
+                    <p class="resource-desc">Diagramas interactivos de frameworks y arquitecturas.</p>
+                    <div class="resource-links">
+                        <a href="graficos-mermaid.html" class="resource-tag">Diagramas Mermaid</a>
+                        <a href="graficos-profesionales.html" class="resource-tag">Gráficos SVG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access -->
+    <section style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Acceso rápido</div>
+                <h2 class="section-title">Archivos Principales</h2>
+            </div>
+
+            <div class="quick-grid">
+                <a href="README.md" class="quick-item">
+                    <span>📖</span> README
+                </a>
+                <a href="brief.md" class="quick-item">
+                    <span>📝</span> Brief del Módulo
+                </a>
+                <a href="graficos-mermaid.html" class="quick-item">
+                    <span>📊</span> Diagramas
+                </a>
+                <a href="referencias/glosario-ejecutivo.md" class="quick-item">
+                    <span>📘</span> Glosario Tech
+                </a>
+                <a href="referencias/checklist-preguntas-cto.md" class="quick-item">
+                    <span>✅</span> 10 Preguntas CTO
+                </a>
+                <a href="referencias/red-flags-proyectos-tech.md" class="quick-item">
+                    <span>🚩</span> Red Flags
+                </a>
+                <a href="materiales/challenge/brief-challenge.md" class="quick-item">
+                    <span>🏆</span> Brief Challenge
+                </a>
+                <a href="contenido/" class="quick-item">
+                    <span>📁</span> Todo el Contenido
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>
+                Módulo V — Estrategia Tecnológica + Mindset Digital<br>
+                <span style="color: var(--muted);">Programa Ejecutivo de Estrategia Digital para Líderes del Sector Educativo</span>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

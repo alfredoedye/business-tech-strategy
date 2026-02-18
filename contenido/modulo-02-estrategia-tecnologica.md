@@ -8,9 +8,33 @@ Que los participantes adquieran el vocabulario, los criterios y los frameworks n
 
 ---
 
+## Tesis del módulo
+
+> No existen decisiones "puramente tecnológicas".
+> Toda decisión tecnológica es una decisión de negocio con consecuencias en costos, velocidad, dependencia y diferenciación.
+>
+> El CEO que no participa en estas decisiones no está delegando — está abdicando.
+
+---
+
 ## Pregunta guía
 
 > ¿Qué decisiones tecnológicas son estratégicas y cuáles son tácticas?
+
+---
+
+## El costo de las decisiones tecnológicas equivocadas
+
+*3 minutos de contexto antes de entrar en los frameworks.*
+
+- **La deuda técnica consume el 40% del presupuesto de IT** en la empresa promedio (McKinsey, 2024). Cada peso que se va en mantener sistemas viejos es un peso que no va a innovación.
+- **2U invirtió USD 800M en adquirir edX** con la estrategia de "comprar" la plataforma. Hoy tiene USD 900M en deuda. La decisión Build vs Buy más cara de la historia de EdTech.
+- **Universidad Siglo 21 tomó la decisión opuesta** — construir su propio SIS. Resultado: de 30,000 a 60,000+ estudiantes con NPS de +31.
+
+La diferencia entre ambos casos no es técnica. Es estratégica. Es la diferencia entre tener criterio para decidir y delegar sin entender.
+
+**Pregunta para la sala:**
+*¿En tu organización, quién toma las decisiones tecnológicas estructurales? ¿El equipo directivo o el área de IT sola?*
 
 ---
 
@@ -33,6 +57,8 @@ No todas las decisiones tecnológicas son iguales. Algunas son operativas (qué 
 
 **La regla de oro:** Comprá lo que es commodity. Construí lo que es tu ventaja competitiva.
 
+**Impacto financiero:** Build = CAPEX (inversión de capital) + equipo permanente. Buy = OPEX predecible (gasto operativo mensual). La decisión no es solo técnica — cambia el modelo financiero. Para profundizar: [Anexo: Finanzas para Decisiones Tech](../anexos/finanzas-para-decisiones-tech.md).
+
 #### Cloud vs. On-premise
 
 | | Cloud | On-premise |
@@ -44,6 +70,8 @@ No todas las decisiones tecnológicas son iguales. Algunas son operativas (qué 
 | **Tendencia** | La mayoría de las organizaciones están migrando a cloud | Se mantiene para regulaciones específicas |
 
 **Ejemplo educativo:** Universidad Siglo 21 migró a AWS. Esto le permitió escalar de cientos a 10,000 usuarios simultáneos sin comprar servidores. Durante picos de inscripción o exámenes, la infraestructura escala automáticamente.
+
+**Impacto financiero:** Cloud convierte CAPEX en OPEX. Se elimina la inversión inicial grande (comprar servidores) pero se genera un costo recurrente mensual. El CFO necesita entender esta transición porque cambia cómo se planifica y aprueba el presupuesto tecnológico.
 
 #### Core vs. Commodity
 
@@ -67,24 +95,26 @@ No todos los sistemas tienen el mismo valor estratégico:
 
 **La clave para líderes:** no hay una respuesta correcta universal. La decisión depende del momento de la organización, el riesgo del proyecto y la reversibilidad de la decisión.
 
-### 2. Componentes de una estrategia tecnológica integral
+### 2. Las 6 dimensiones de una estrategia tecnológica
 
-Una estrategia tecnológica no es una lista de herramientas. Es un modelo que conecta cinco dimensiones:
+Una estrategia tecnológica no es una lista de herramientas. Es un modelo que conecta seis dimensiones. Estas mismas dimensiones son las que vas a evaluar en el [Radar de Estrategia Tecnológica](../materiales/templates/template-radar-estrategia-tech.md).
 
-#### Plataforma
-- ¿Cuál es la plataforma central sobre la que opera el negocio?
-- ¿Es propia o de terceros? ¿Cuán dependientes somos?
-- ¿Puede escalar al ritmo que necesitamos?
+#### Infraestructura
+
+- ¿Dónde viven tus sistemas y datos? ¿Cloud, on-premise, o híbrido?
+- ¿Tu infraestructura puede escalar en picos (inscripciones, exámenes)?
+- ¿Cuán dependiente sos de servidores físicos o de un proveedor cloud?
+
+#### Arquitectura
+
+- ¿Cómo están organizados tus sistemas? ¿Se hablan entre sí o son islas?
+- ¿La información fluye automáticamente o requiere carga manual?
+- ¿Cuántos procesos dependen de un Excel o un email para funcionar?
 
 #### Datos
 - ¿Qué datos tenemos? ¿Son confiables?
 - ¿Quién los gobierna? ¿Están centralizados o fragmentados?
 - ¿Tomamos decisiones basadas en datos o en intuición?
-
-#### Integraciones
-- ¿Los sistemas se hablan entre sí?
-- ¿La información fluye automáticamente o requiere carga manual?
-- ¿Cuántos procesos dependen de un Excel o un email para funcionar?
 
 #### Seguridad
 - ¿Tenemos políticas de seguridad definidas?
@@ -95,6 +125,12 @@ Una estrategia tecnológica no es una lista de herramientas. Es un modelo que co
 - ¿Tenemos las personas correctas para ejecutar la estrategia?
 - ¿Nuestro equipo de IT es de "apaga incendios" o de construcción estratégica?
 - ¿El negocio y la tecnología hablan el mismo idioma?
+
+#### Innovación
+
+- ¿Cómo incorporamos nuevas tecnologías? ¿Hay un proceso o es ad hoc?
+- ¿Quién identifica oportunidades tecnológicas? ¿Solo IT o también el negocio?
+- ¿Tenemos espacio para experimentar o toda inversión requiere un business case completo?
 
 ### 3. Alineación tecnología-negocio
 
@@ -115,6 +151,8 @@ Ejemplo:
 - Capacidad: detectar estudiantes en riesgo antes de que abandonen.
 - Habilitador: analítica predictiva conectada al LMS y al SIS.
 - Inversión: integración de datos + modelo de alertas + equipo de intervención.
+
+> Para profundizar en frameworks estratégicos (Wardley Maps, Hype Cycle, TOGAF simplificado), ver el [Anexo: Frameworks Estratégicos](../anexos/frameworks-estrategicos.md).
 
 ---
 
@@ -175,9 +213,18 @@ Al terminar este módulo, el participante:
 
 - Maneja el vocabulario de decisiones tecnológicas estratégicas (Build vs. Buy, Cloud vs. On-premise, Core vs. Commodity).
 - Puede distinguir entre una decisión táctica y una decisión estructural.
-- Entiende los 5 componentes de una estrategia tecnológica integral.
+- Entiende las 6 dimensiones de una estrategia tecnológica integral.
+- Comprende el impacto financiero de las decisiones tecnológicas (CAPEX vs. OPEX, deuda técnica).
 - Tiene un primer diagnóstico visual (radar) de la madurez tecnológica de su organización.
 - Puede participar activamente en una conversación sobre estrategia tecnológica con su equipo de IT.
+
+---
+
+## Reflexión final
+
+> Cada decisión tecnológica que tomás (o que dejás que otros tomen por vos)
+> define la estructura de costos, la velocidad y la dependencia de tu organización por los próximos 3-5 años.
+> ¿Estás eligiendo… o estás heredando?
 
 ---
 

@@ -387,4 +387,4 @@ PAYBACK de migración ($500,000): 2 años
 
 ---
 
-*Este anexo complementa el Módulo 2. Para volver: [← Módulo 2 — Estrategia Tecnológica](modulo-02-estrategia-tecnologica.md)*
+*Este anexo complementa el Módulo 2. Para volver: [← Módulo 2 — Estrategia Tecnológica](../contenido/modulo-02-estrategia-tecnologica.md)*

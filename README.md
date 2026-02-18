@@ -37,6 +37,12 @@ Módulo de formación ejecutiva para líderes del sector educativo (CEOs, direct
 | 5 | [Mindset Digital](contenido/modulo-05-mindset-digital.md) | ¿Qué tipo de líder necesita ser tu organización? |
 | Bonus | [IA y Educación](contenido/bonus-panel-ia-educacion.md) | Panel de discusión (opcional, fuera de programa) |
 
+### Anexos teóricos
+
+- [Frameworks Estratégicos](anexos/frameworks-estrategicos.md) — Wardley Maps, SWOT tech, Porter digital
+- [Finanzas para Decisiones Tech](anexos/finanzas-para-decisiones-tech.md) — TCO, ROI, métricas financieras
+- [Framework de IA Expandido](anexos/framework-ia-expandido.md) — Niveles de adopción en detalle
+
 ### Materiales de trabajo
 
 **Templates (para actividades en clase y Challenge):**
@@ -55,6 +61,15 @@ Módulo de formación ejecutiva para líderes del sector educativo (CEOs, direct
 
 - [Casos de estudio LATAM](materiales/casos-de-estudio.md) — Siglo 21, Tec de Monterrey, Platzi
 - [Lecturas y recursos](referencias/lecturas-y-recursos.md) — Bibliografía y material complementario
+- [Glosario Ejecutivo](referencias/glosario-ejecutivo.md) — Términos tech traducidos para líderes
+- [10 Preguntas para tu CTO](referencias/checklist-preguntas-cto.md) — Checklist ejecutivo
+- [Red Flags en Proyectos Tech](referencias/red-flags-proyectos-tech.md) — Señales de alerta
+
+### Presentaciones interactivas
+
+- [Presentación completa](presentaciones/presentacion.html)
+- [Presentación brief](presentaciones/presentacion-brief.html)
+- [Diagramas Mermaid](presentaciones/graficos-mermaid.html)
 
 ### Guía del Facilitador (uso interno)
 
@@ -62,33 +77,43 @@ Módulo de formación ejecutiva para líderes del sector educativo (CEOs, direct
 - [Guía Día 2 — Sábado](guia-facilitador/guia-dia-2-sabado.md)
 - [Guía Challenge Point](guia-facilitador/guia-challenge-point.md)
 
+### Documentos internos
+
+- [Brief del módulo](docs/brief.md) — Fuente de verdad del diseño
+- [Recomendaciones de mejora](docs/RECOMENDACIONES-MEJORA.md) — Ideas para futuras iteraciones
+
 ---
 
 ## Estructura de carpetas
 
 ```
-├── brief.md                          # Brief del módulo (fuente de verdad)
-├── programa/                         # Programa y estructura
-│   ├── 00-programa-completo.md
-│   ├── 01-challenge-design.md
-│   └── 02-challenge-point.md
-├── contenido/                        # Contenido de cada módulo (participantes)
-│   ├── modulo-01-hello-world.md
-│   ├── modulo-02-estrategia-tecnologica.md
-│   ├── modulo-03-arquitectura-it.md
-│   ├── modulo-04-transformacion-digital-ia.md
-│   ├── modulo-05-mindset-digital.md
+├── contenido/                        # Módulos del curso (participantes)
+│   ├── modulo-01 a modulo-05
 │   └── bonus-panel-ia-educacion.md
-├── guia-facilitador/                 # Guías internas para facilitadores
-│   ├── guia-dia-1-viernes.md
-│   ├── guia-dia-2-sabado.md
-│   └── guia-challenge-point.md
+├── anexos/                           # Profundización teórica
+│   ├── frameworks-estrategicos.md
+│   ├── finanzas-para-decisiones-tech.md
+│   └── framework-ia-expandido.md
 ├── materiales/                       # Materiales de trabajo
 │   ├── templates/                    # Templates para actividades
 │   ├── challenge/                    # Brief y seguimiento del Challenge
-│   └── casos-de-estudio.md          # Casos LATAM
-└── referencias/                      # Lecturas complementarias
-    └── lecturas-y-recursos.md
+│   └── casos-de-estudio.md
+├── referencias/                      # Lecturas y herramientas ejecutivas
+│   ├── lecturas-y-recursos.md
+│   ├── glosario-ejecutivo.md
+│   ├── checklist-preguntas-cto.md
+│   └── red-flags-proyectos-tech.md
+├── programa/                         # Programa y estructura
+├── guia-facilitador/                 # Guías internas para facilitadores
+├── presentaciones/                   # HTMLs interactivos para proyectar
+│   ├── presentacion.html
+│   ├── presentacion-brief.html
+│   └── graficos-mermaid.html
+├── survey-radar/                     # Encuesta interactiva en vivo
+├── assets/                           # Archivos generados (PDF, scripts)
+└── docs/                             # Documentos internos
+    ├── brief.md
+    └── RECOMENDACIONES-MEJORA.md
 ```
 
 ---

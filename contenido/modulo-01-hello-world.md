@@ -8,13 +8,68 @@ Que los participantes comprendan por qué la tecnología dejó de ser un área d
 
 ---
 
+## Tesis del módulo
+
+> La tecnología ya no es eficiencia operativa.  
+> Es arquitectura competitiva.  
+>  
+> El nivel de madurez tecnológica de una institución define su techo de crecimiento, su margen y su capacidad de adaptación.
+
+---
+
 ## Pregunta guía
 
 > ¿Por qué la tecnología dejó de ser un área de soporte y pasó a ser parte del core del negocio?
 
 ---
 
+## Apertura: Las tres fuerzas que están reconfigurando la educación superior
+
+*5 minutos de claridad estructural antes de entrar en la teoría.*
+
+La presión no es coyuntural. Es estructural. Viene de tres fuerzas simultáneas:
+
+---
+
+### 1️⃣ Presión financiera y sostenibilidad
+
+- **20+ universidades cerraron en EE.UU. en 2024.** En 2025, al menos 16 más. La Reserva Federal predice que el ritmo podría subir a 80 cierres por año.
+- **2U pagó USD 800M por el contenido de Harvard y MIT (edX)** y hoy enfrenta USD 900M en deuda. Tener el mejor contenido del mundo no alcanza sin modelo tecnológico sostenible.
+- En LATAM, sin endowments de USD 50B como Harvard, la resiliencia financiera es menor.
+
+La pregunta ya no es “si vamos a crecer”, sino “si el modelo actual es financieramente viable”.
+
+---
+
+### 2️⃣ Cambio en la demanda laboral
+
+- **Google, Apple, IBM y 150+ empresas eliminaron el requisito de título universitario.**
+- El **81% de los empleadores ya contrata por skills**, no por diplomas.
+
+El valor del credential tradicional está siendo cuestionado por el mercado laboral.
+
+---
+
+### 3️⃣ Competencia nativa digital
+
+- **Duolingo tiene 47 millones de usuarios diarios** y proyecta USD 1B en revenue para 2025.
+- El mercado EdTech global es **USD 404B** y crece al 16.3% anual.
+- Un estudiante en Buenos Aires compite entre universidades locales y plataformas globales.
+
+La competencia ya no es local. Es global y tecnológica.
+
+---
+
+Clayton Christensen predijo en 2011 que la mitad de las universidades estadounidenses cerrarían en 10–15 años. Estamos en la ventana.
+
+**Pregunta para la sala:**  
+*¿Tu institución está preparada para competir en este contexto? ¿O está operando con supuestos del pasado?*
+
+---
+
 ## Conceptos clave
+
+---
 
 ### 1. Software Is Eating The World
 
@@ -22,53 +77,96 @@ En 2011, Marc Andreessen publicó una tesis que sigue vigente: las empresas más
 
 En educación, esto se traduce así:
 
-| Ayer | Hoy |
-|------|-----|
-| La tecnología era el campus virtual | La tecnología **es** la experiencia del estudiante |
-| IT era un área de soporte | IT habilita (o limita) el crecimiento |
-| Invertir en tech era un gasto | No invertir en tech es un riesgo estratégico |
+| Lo que creías | Lo que está pasando |
+|---------------|---------------------|
+| "Tenemos un campus virtual, estamos digitalizados" | Duolingo tiene 47M de usuarios diarios con IA adaptativa. Un Moodle con PDFs no es digitalización. |
+| "Nuestra competencia son las universidades vecinas" | Tu estudiante en Buenos Aires elige entre vos, Coursera, Platzi, Google Certificates y un bootcamp en Berlín. |
+| "IT es un área de soporte" | 2U compró el contenido de Harvard y MIT por USD 800M. Sin estrategia tech, está al borde de la quiebra. |
+| "La IA es una moda que va a pasar" | El 81% de los empleadores ya contrata por skills, no por títulos. |
+| "Invertir en tecnología es un gasto" | No invertir es una decisión de cierre en cámara lenta. |
 
-Netflix no es una empresa de tecnología que hace entretenimiento por accidente. Entendió que la experiencia del usuario **es** el producto. La pregunta para educación es: ¿tu institución ya lo entiende?
+Netflix no es una empresa de tecnología que hace entretenimiento por accidente. Entendió que la experiencia del usuario **es** el producto.
+
+La pregunta es: ¿tu institución entiende que su experiencia tecnológica **es parte del producto educativo**?
+
+---
 
 ### 2. Los tres niveles de relación con la tecnología
 
-No todas las organizaciones se relacionan con la tecnología de la misma manera. Hay tres niveles, y la diferencia entre ellos define la capacidad competitiva:
+No todas las organizaciones se relacionan con la tecnología de la misma manera. Hay tres niveles, y la diferencia entre ellos define la capacidad competitiva.
 
-**Nivel 1 — Usar tecnología**
+---
+
+#### Nivel 1 — Usar tecnología
+
 - Comprar herramientas y usarlas tal como vienen.
-- Ejemplo: adoptar Zoom para dar clases virtuales durante la pandemia.
-- El riesgo: dependencia total del proveedor, sin diferenciación.
+- Ejemplo: adoptar Zoom para dar clases virtuales.
+- Dependencia alta del proveedor.
+- Sin diferenciación real.
 
-**Nivel 2 — Operar tecnología**
+#### Nivel 2 — Operar tecnología
+
 - Integrar herramientas, personalizar flujos, conectar datos.
-- Ejemplo: conectar el LMS con el CRM para saber qué estudiantes están en riesgo de deserción.
-- El avance: la tecnología empieza a generar inteligencia de negocio.
+- Ejemplo: LMS + CRM para detectar riesgo de deserción.
+- Genera eficiencia e inteligencia operativa.
 
-**Nivel 3 — Diseñar el negocio desde la tecnología**
+#### Nivel 3 — Diseñar el negocio desde la tecnología
+
 - El modelo de negocio **nace** de las capacidades tecnológicas.
-- Ejemplo: Platzi diseñó su modelo de suscripción, su plataforma de streaming y su sistema de certificación como un todo integrado. No "digitalizó" una universidad — creó un modelo nativo digital.
-- La ventaja: velocidad, escalabilidad y experiencia del estudiante como diferenciación real.
+- Ejemplo: Platzi diseñó su modelo de suscripción y plataforma como un sistema integrado.
+- Diferenciación real y escalabilidad estructural.
 
-**La pregunta para cada líder:** ¿en qué nivel está tu organización? ¿En qué nivel necesita estar para competir en los próximos 5 años?
+---
+
+### Impacto económico de cada nivel
+
+Cada nivel tiene consecuencias directas en el P&L.
+
+| Dimensión | Nivel 1 — Usar | Nivel 2 — Operar | Nivel 3 — Diseñar |
+|-----------|----------------|------------------|-------------------|
+| Margen | Crece de forma lineal con la estructura | Mejora por eficiencia | Escalable, con costo marginal decreciente |
+| CAC | Alto, poco optimizado | Optimizable con datos | Optimizado por analítica y personalización |
+| Retención / LTV | Dependiente del docente | Mejorada por datos | Diseñada como sistema |
+| Velocidad de lanzamiento | Lenta | Media | Alta |
+| Diferenciación | Nula | Parcial | Alta |
+
+La diferencia entre niveles no es técnica.  
+Es económica.
+
+Una organización en Nivel 1 compite en precio y ubicación.  
+Una en Nivel 3 compite en experiencia, datos y escala.
+
+**El nivel en el que estás define el techo de tu crecimiento.**
+
+---
 
 ### 3. El rol del CEO en las decisiones tecnológicas
 
-Hay decisiones tecnológicas que un CEO no puede delegar porque **son** decisiones de negocio:
+Hay decisiones tecnológicas que no son operativas. Son estratégicas.
 
 | Decisión | Por qué es del CEO |
 |----------|-------------------|
-| ¿Construimos o compramos nuestra plataforma core? | Define dependencia, costos a largo plazo y diferenciación |
-| ¿Qué datos son estratégicos y quién los gobierna? | Define capacidad de tomar decisiones basadas en evidencia |
+| ¿Construimos o compramos nuestra plataforma core? | Define dependencia estructural y costos a largo plazo |
+| ¿Qué datos son estratégicos y quién los gobierna? | Define capacidad de decisión basada en evidencia |
 | ¿Cuánto invertimos en tecnología vs. otras áreas? | Define prioridades y visión de futuro |
-| ¿Cómo integramos IA en nuestra operación? | Define posición competitiva para los próximos 3-5 años |
+| ¿Cómo integramos IA en nuestra operación? | Define posición competitiva a 3–5 años |
 
-Esto no significa que el CEO deba saber programar. Significa que debe tener **criterio** para evaluar opciones, hacer preguntas correctas y tomar decisiones informadas.
+El CEO no necesita saber programar.  
+Pero sí necesita criterio tecnológico.
+
+Y una pregunta incómoda:
+
+> Si tu CTO renuncia mañana,  
+> ¿sabés qué decisiones tecnológicas son estratégicas y cuáles son operativas?  
+> ¿O estás delegando arquitectura competitiva sin entenderla?
+
+---
 
 ### 4. El mapa del sector educativo global
 
-El ecosistema EdTech no es un nicho: es un mercado global de más de USD 400 mil millones, con proyección de crecer a más de USD 1 billón hacia 2030 (HolonIQ).
+El ecosistema EdTech supera los USD 400 mil millones y se proyecta hacia el trillón hacia 2030.
 
-Las categorías más relevantes para líderes educativos:
+Categorías estratégicas:
 
 - **Plataformas de aprendizaje** (LMS, MOOCs)
 - **Sistemas de gestión institucional** (SIS, ERP)
@@ -76,20 +174,11 @@ Las categorías más relevantes para líderes educativos:
 - **Inteligencia artificial aplicada** (tutores, asistentes, analítica)
 - **Credenciales y certificación** (badges, blockchain)
 
-Conocer este mapa permite identificar dónde están las oportunidades y dónde están las amenazas competitivas.
+Conocer el mapa permite entender:
 
----
-
-## Ejemplos aplicados al sector educativo (LATAM)
-
-### Platzi: nativo digital desde el día uno
-Platzi no digitalizó un modelo existente. Diseñó su modelo de negocio **desde** la tecnología: streaming en vivo optimizado para conexiones lentas en LATAM, suscripción mensual accesible, datos de progreso como motor de retención. Resultado: más de 1 millón de estudiantes con tasas de finalización 3-4x superiores al promedio MOOC.
-
-### La pandemia como acelerador forzado
-En marzo de 2020, instituciones que llevaban años "planificando" la digitalización tuvieron que ejecutar en semanas. Las que tenían infraestructura y cultura digital previas (como Siglo 21 en Argentina) pudieron escalar. Las que solo "usaban" tecnología (Nivel 1) sufrieron disrupciones severas.
-
-### Universidades LATAM que compiten con Big Tech
-Hoy, un estudiante en Bogotá, Lima o Buenos Aires puede elegir entre su universidad local, Coursera, Platzi, Google Career Certificates o un bootcamp. La competencia ya no es solo entre instituciones — es contra plataformas globales con recursos y escala masiva.
+- Dónde competís realmente.
+- Dónde hay oportunidades.
+- Dónde están las amenazas invisibles.
 
 ---
 
@@ -97,32 +186,21 @@ Hoy, un estudiante en Bogotá, Lima o Buenos Aires puede elegir entre su univers
 
 **Duración:** 15 minutos
 
-**Instrucciones:**
-1. En una hoja en blanco (o post-it grande), dibujá todas las herramientas tecnológicas que tu organización usa.
-2. Conectalas con flechas si hay integración entre ellas.
-3. Marcá con un círculo rojo las que son críticas (sin ellas, la operación se detiene).
-4. Marcá con un signo de pregunta las que no sabés bien cómo se conectan.
+### Instrucciones
 
-**Debrief grupal:**
+1. Dibujá todas las herramientas tecnológicas que tu organización usa.
+2. Conectalas si están integradas.
+3. Marcá las críticas.
+4. Señalá las que no entendés cómo se conectan.
+
+### Debrief
+
 - ¿Cuántas herramientas aparecieron?
 - ¿Cuántas están realmente integradas?
-- ¿Quién en la organización tiene la visión completa de este mapa?
+- ¿Quién tiene la visión completa?
+- ¿Tu stack permite cambiar el modelo de negocio?
 
-Esta dinámica no busca un inventario técnico. Busca hacer visible algo que muchos CEOs no ven: **la complejidad tecnológica real de su organización**.
-
----
-
-## Dinámica: Mapeo HolonIQ
-
-**Duración:** 20 minutos
-
-**Instrucciones:**
-1. Se proyecta el mapa global de EdTech de HolonIQ (Global Learning Landscape).
-2. Cada participante identifica en qué categorías compite su organización.
-3. En grupos de 3, discuten:
-   - ¿Contra quién competimos realmente?
-   - ¿Qué categorías nos son relevantes y no estamos cubriendo?
-   - ¿Dónde está la mayor amenaza competitiva?
+La complejidad tecnológica que no se ve es una de las mayores fuentes de riesgo estratégico.
 
 ---
 
@@ -130,11 +208,19 @@ Esta dinámica no busca un inventario técnico. Busca hacer visible algo que muc
 
 Al terminar este módulo, el participante:
 
-- Entiende que la tecnología **es** parte del negocio, no un servicio de soporte.
-- Puede identificar en qué nivel de madurez tecnológica se encuentra su organización (usar / operar / diseñar).
-- Reconoce qué decisiones tecnológicas son responsabilidad del liderazgo ejecutivo.
-- Tiene una primera foto de la complejidad tecnológica de su propia organización.
-- Comprende el panorama competitivo global y sabe que la competencia ya no es solo local.
+- Entiende que la tecnología **es arquitectura competitiva**, no soporte.
+- Puede identificar su nivel de madurez tecnológica.
+- Comprende el impacto económico de cada nivel.
+- Reconoce qué decisiones tecnológicas no puede delegar.
+- Tiene una primera imagen de su complejidad tecnológica real.
+- Entiende que la competencia ya es global.
+
+---
+
+## Reflexión final
+
+> Si la tecnología define el techo de crecimiento de tu institución,  
+> ¿estás diseñando ese techo… o lo heredaste sin cuestionarlo?
 
 ---
 

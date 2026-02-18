@@ -113,6 +113,24 @@
         }
 
         .mermaid {
+            /* Beautiful-mermaid color system */
+            --m-bg: #0a0a0f;
+            --m-fg: #e8e6e3;
+            --m-accent: #00e5ff;
+            --m-accent2: #8b5cf6;
+            --m-accent3: #ff0080;
+
+            /* Derived colors using color-mix() */
+            --m-text: var(--m-fg);
+            --m-text-sec: color-mix(in srgb, var(--m-fg) 70%, var(--m-bg));
+            --m-text-muted: color-mix(in srgb, var(--m-fg) 50%, var(--m-bg));
+            --m-line: color-mix(in srgb, var(--m-accent) 60%, var(--m-bg));
+            --m-arrow: color-mix(in srgb, var(--m-fg) 60%, var(--m-bg));
+            --m-node-fill: color-mix(in srgb, var(--m-fg) 8%, var(--m-bg));
+            --m-node-stroke: color-mix(in srgb, var(--m-accent) 50%, var(--m-bg));
+            --m-cluster-bg: color-mix(in srgb, var(--m-fg) 5%, var(--m-bg));
+            --m-cluster-stroke: color-mix(in srgb, var(--m-accent2) 60%, var(--m-bg));
+
             background: var(--bg-card);
             border-radius: 12px;
             padding: 2rem;
@@ -121,10 +139,63 @@
             overflow-x: auto;
         }
 
-        /* Mermaid theme overrides */
+        /* Beautiful-mermaid SVG overrides */
         .mermaid svg {
             max-width: 100%;
             height: auto;
+        }
+
+        /* Node styling */
+        .mermaid .node rect,
+        .mermaid .node polygon,
+        .mermaid .node circle {
+            fill: var(--m-node-fill) !important;
+            stroke: var(--m-node-stroke) !important;
+            stroke-width: 1.5px !important;
+        }
+
+        /* Text styling */
+        .mermaid .nodeLabel,
+        .mermaid .label {
+            color: var(--m-text) !important;
+            fill: var(--m-text) !important;
+        }
+
+        /* Edge/line styling */
+        .mermaid .flowchart-link,
+        .mermaid .edge-pattern-solid {
+            stroke: var(--m-line) !important;
+            stroke-width: 1.5px !important;
+        }
+
+        /* Arrow markers */
+        .mermaid marker path {
+            fill: var(--m-arrow) !important;
+            stroke: var(--m-arrow) !important;
+        }
+
+        /* Edge labels */
+        .mermaid .edgeLabel {
+            background-color: var(--m-bg) !important;
+            color: var(--m-text-muted) !important;
+        }
+
+        .mermaid .edgeLabel rect {
+            fill: var(--m-bg) !important;
+            opacity: 0.9 !important;
+        }
+
+        /* Cluster/subgraph styling */
+        .mermaid .cluster rect {
+            fill: var(--m-cluster-bg) !important;
+            stroke: var(--m-cluster-stroke) !important;
+            stroke-width: 1.5px !important;
+            rx: 8px !important;
+        }
+
+        .mermaid .cluster-label .nodeLabel {
+            color: var(--m-text-sec) !important;
+            fill: var(--m-text-sec) !important;
         }
 
         .nav-links {
@@ -160,28 +231,47 @@
     </style>
 
     <script>
-        // Mermaid dark theme configuration
+        // Beautiful-mermaid inspired configuration
+        // Colors are derived via CSS color-mix() for consistency
         mermaid.initialize({
             startOnLoad: true,
-            theme: 'dark',
+            theme: 'base',
             themeVariables: {
-                primaryColor: '#1a1a24',
+                // Base colors - CSS will override with color-mix derivatives
+                background: '#0a0a0f',
+                primaryColor: '#151520',
                 primaryTextColor: '#e8e6e3',
-                primaryBorderColor: '#00e5ff',
-                lineColor: '#00e5ff',
-                secondaryColor: '#22222e',
-                tertiaryColor: '#12121a',
+                primaryBorderColor: '#2a4a5a',
+                secondaryColor: '#151520',
+                tertiaryColor: '#101018',
+                lineColor: '#2a5a6a',
                 fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: '14px',
-                nodeBorder: '#00e5ff',
-                clusterBkg: '#1a1a24',
-                clusterBorder: '#8b5cf6',
-                edgeLabelBackground: '#12121a',
-                nodeTextColor: '#e8e6e3'
+                fontSize: '13px',
+
+                // Node styling
+                nodeBorder: '#2a4a5a',
+                nodeTextColor: '#e8e6e3',
+
+                // Cluster styling
+                clusterBkg: '#0f0f15',
+                clusterBorder: '#3a3a5a',
+
+                // Edge labels
+                edgeLabelBackground: '#0a0a0f',
+
+                // Text
+                textColor: '#e8e6e3'
             },
             flowchart: {
                 curve: 'basis',
-                padding: 20
+                padding: 20,
+                nodeSpacing: 50,
+                rankSpacing: 60,
+                htmlLabels: true
+            },
+            gantt: {
+                barHeight: 30,
+                fontSize: 12
             }
         });
     </script>

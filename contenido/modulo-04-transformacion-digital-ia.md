@@ -14,9 +14,39 @@ Que los participantes entiendan la transformación digital como un proceso que i
 
 ---
 
+## Dinámica de apertura: "¿Qué falló aquí?"
+
+**Duración:** 10 minutos (5 min lectura + discusión en grupos, 5 min plenario)
+
+Antes de presentar cualquier concepto, los participantes analizan 3 mini-casos de transformaciones que fracasaron. El objetivo es que **descubran el patrón** por sí mismos.
+
+### Los 3 casos
+
+**Caso A — La universidad y el LMS fantasma**
+Una universidad invierte USD 500K en un LMS de última generación. Rediseñan los flujos administrativos, integran el sistema con el SIS. Pero los docentes siguen subiendo PDFs y tomando lista exactamente igual que antes. En 2 años, el 60% de las funcionalidades nunca se usó. La tecnología era nueva, los procesos se rediseñaron en papel... pero nadie trabajó el cambio cultural con los docentes.
+
+**Caso B — El CRM que nadie alimenta**
+Una empresa implementa un CRM potente y capacita a todo el equipo comercial (la gente está motivada, entiende el valor). Pero el proceso de seguimiento de leads sigue siendo el mismo de hace 10 años: planillas Excel que se pasan por email. El CRM tiene los datos, pero nadie los usa porque el proceso real sigue siendo manual. La cultura estaba, la tecnología estaba... los procesos no cambiaron.
+
+**Caso C — El visionario atrapado en los 90s**
+Un rector visionario impulsa una transformación digital profunda. Logra cambio cultural (todos están motivados) y rediseña procesos (nuevos flujos de admisión, retención, seguimiento). Pero la infraestructura tecnológica es un SIS de los 90s que no se integra con nada. Las buenas intenciones chocan contra la imposibilidad técnica de ejecutar.
+
+### Instrucciones
+
+1. Proyectar o imprimir los 3 casos.
+2. En grupos de 3-4, discutir: **"¿Qué falló en cada caso?"** (5 min)
+3. Plenario rápido: cada grupo comparte su análisis (5 min).
+4. El facilitador anota las respuestas y revela: los 3 casos fracasaron porque **les faltaba una de las 3 dimensiones** de la transformación digital.
+
+> **Para empresas no educativas:** El Caso B está planteado en contexto empresarial. Los Casos A y C se traducen directamente: "LMS" = "ERP" o "plataforma core"; "docentes" = "equipo operativo"; "rector" = "CEO o director general".
+
+---
+
 ## Conceptos clave
 
 ### 1. El Triángulo de la Transformación Digital
+
+> **El 70% de las transformaciones digitales fracasan** (McKinsey). No por falta de tecnología — por falta de cultura y procesos.
 
 La transformación digital **no** es un proyecto de tecnología. Es la intersección de tres fuerzas que deben avanzar juntas:
 
@@ -33,9 +63,22 @@ Procesos ---- Tecnología
 | **Procesos** | Rediseño de cómo se hacen las cosas, no solo digitalizar lo existente | Se automatizan procesos ineficientes |
 | **Tecnología** | Herramientas, plataformas, infraestructura | Se quiere cambiar pero no se puede ejecutar |
 
-**El error más común:** pensar que transformación digital = comprar tecnología. Digitalizar un proceso malo produce un proceso malo más rápido.
+**Digitalizar un proceso malo produce un proceso malo más rápido.** Este es el error más común — y el más caro.
 
-**Ejemplo educativo:** una universidad que implementa un LMS de última generación pero obliga a los docentes a usarlo exactamente como usaban el aula presencial (subir PDFs y tomar lista). La tecnología es nueva, pero la cultura y los procesos son los mismos.
+McKinsey llama a esto **transformación holística**: no alcanza con una sola dimensión, las capacidades son interdependientes. Su framework *Rewired* (2023) identifica 6 capacidades que deben avanzar juntas: estrategia, talento, modelo operativo, tecnología, datos y adopción. El triángulo Cultura–Procesos–Tecnología es una simplificación ejecutiva útil del mismo principio: **si falta una pata, la transformación colapsa**.
+
+**Dato clave:** Las organizaciones que invierten en cambio cultural tienen **5.3x más probabilidad de éxito** en su transformación digital que las que solo invierten en tecnología (McKinsey).
+
+### Los anti-patrones: nombres para los fracasos más comunes
+
+| Anti-patrón                        | Qué pasa                                                          | Lado débil               |
+|------------------------------------|-------------------------------------------------------------------|--------------------------|
+| **"La Ferrari en el barro"**       | Tecnología de punta, pero nadie sabe usarla ni quiere cambiar     | Falta cultura            |
+| **"El maquillaje digital"**        | Se digitalizan procesos rotos — ahora son procesos rotos más rápidos | Faltan procesos       |
+| **"El visionario sin herramientas"** | Todos quieren cambiar pero los sistemas no lo permiten           | Falta tecnología         |
+| **"El piloto eterno"**             | Se prueba, se prueba, pero nunca se escala                        | Falta decisión ejecutiva |
+
+Estos anti-patrones son universales. Aplican a instituciones educativas, empresas de tecnología, retailers, bancos — cualquier organización que intente transformarse.
 
 ### 2. Los tres horizontes de transformación
 

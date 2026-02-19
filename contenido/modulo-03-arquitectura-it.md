@@ -10,10 +10,17 @@ Que los participantes puedan **leer, cuestionar y discutir** la arquitectura tec
 
 ## Pregunta guía
 
-> ¿Cómo funciona realmente una institución educativa moderna por dentro?
+> Es el último día de exámenes finales y miles de estudiantes acceden al sistema de exámenes.
+> El sistema de Examinación + Proctoring se cae, las notas no se guardan, estudiantes protestan, redes sociales estallan.
+> El call center no pueden comunicarse con el CRM para gestionar reclamos y los sistemas internos no tienen unificadas los datos de los estudiantes
 
 ---
 
+## Dinámica Disparadora 
+
+> ¿Cómo funciona realmente una institución educativa moderna por dentro?
+
+---
 ## Conceptos clave
 
 ### 1. ¿Qué es una arquitectura IT?

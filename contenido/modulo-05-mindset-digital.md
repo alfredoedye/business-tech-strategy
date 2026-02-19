@@ -152,7 +152,7 @@ El mindset digital moderno incluye responsabilidad. No la delega.
 - ¿Cumplimos con la regulación de protección de datos de nuestro país?
 - Si usamos IA para decisiones sobre estudiantes, ¿podemos explicar el criterio?
 
-**Anti-patrón:** "La seguridad es tema del equipo de IT." En 2024, una filtración de datos es una crisis reputacional que llega al CEO, no al CTO.
+**Anti-patrón:** "La seguridad es tema del equipo de IT." En 2024, una filtración de datos es una crisis reputacional que llega a la dirección general, no solo al CTO.
 
 **Práctica concreta:** incluir seguridad y ética como punto fijo en toda discusión de proyecto o adopción tecnológica, no como revisión final.
 

@@ -1,6 +1,8 @@
 # Template: Journey Map del Estudiante + Tecnología
 
-## Actividad: Bloque 7 (Sábado, 11:45 - 12:45)
+## Material de referencia para el Challenge
+
+> Nota: esta actividad ya no se realiza en clase. El template queda como herramienta de apoyo para los equipos durante el Challenge.
 
 ### Instrucciones
 1. Completen cada etapa del journey pensando en un estudiante real de su institución.

@@ -38,7 +38,7 @@
 ### Deuda técnica — Impacto ejecutivo
 
 - **McKinsey** — *"Tech debt: Reclaiming tech equity"* (2024). La deuda técnica consume ~40% del presupuesto IT. Explica el impacto en lenguaje ejecutivo y propone un framework de priorización. [McKinsey](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/tech-debt-reclaiming-tech-equity)
-- **McKinsey** — *"Breaking technical debt's vicious cycle"* (2023). Cómo las organizaciones quedan atrapadas en ciclos de deuda técnica y cómo los CEOs pueden intervenir para romperlo. [McKinsey](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/breaking-technical-debts-vicious-cycle-to-modernize-your-business)
+- **McKinsey** — *"Breaking technical debt's vicious cycle"* (2023). Cómo las organizaciones quedan atrapadas en ciclos de deuda técnica y cómo los directivos pueden intervenir para romperlo. [McKinsey](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/breaking-technical-debts-vicious-cycle-to-modernize-your-business)
 
 ### Conceptos clave para profundizar
 

@@ -3,7 +3,7 @@
 ## Programa del Curso
 
 **Facilitadores:** Alfredo Edye & Pablo Ortiz Olmos
-**Participantes:** ~15 líderes del sector educativo (C-level, gerentes, directores)
+**Participantes:** ~15 directivos y líderes del sector educativo y empresas (gerentes, directores)
 **Contexto:** Educación superior mediada por tecnología — LATAM
 
 ---
@@ -21,7 +21,7 @@ Al finalizar este módulo, los participantes podrán:
 1. **Explicar y defender** el rol estratégico de la tecnología en su modelo de negocio.
 2. **Tomar decisiones informadas** sobre inversiones tecnológicas (qué sí, qué no, cuándo y por qué).
 3. **Interpretar** una arquitectura IT educativa y entender sus implicancias en escalabilidad, costos y experiencia del estudiante.
-4. **Diseñar** una estrategia tecnológica alineada a los objetivos de negocio y a la etapa de madurez organizacional.
+4. **Formar criterio** para evaluar y comprender estrategias tecnológicas alineadas a los objetivos de negocio y a la etapa de madurez organizacional.
 5. **Evaluar** la adopción de IA de su organización y definir un roadmap realista y responsable.
 6. **Liderar** procesos de transformación digital, integrando cultura, procesos y tecnología sin delegar el liderazgo.
 
@@ -42,12 +42,12 @@ Al finalizar este módulo, los participantes podrán:
 
 | # | Módulo | Pregunta guía | Contenido |
 |---|--------|---------------|-----------|
-| 1 | [Hello World](../contenido/modulo-01-hello-world.md) | ¿Por qué la tecnología dejó de ser soporte y pasó a ser core? | Ventaja competitiva, 3 niveles de relación con la tech, rol del CEO |
+| 1 | [Hello World](../contenido/modulo-01-hello-world.md) | ¿Por qué la tecnología dejó de ser soporte y pasó a ser core? | Ventaja competitiva, 3 niveles de relación con la tech, rol del equipo directivo |
 | 2 | [Estrategia Tecnológica](../contenido/modulo-02-estrategia-tecnologica.md) | ¿Qué decisiones son estratégicas y cuáles tácticas? | Build/Buy, Cloud/On-premise, Core/Commodity, 5 componentes de estrategia |
 | 3 | [Arquitectura IT Educativa](../contenido/modulo-03-arquitectura-it.md) | ¿Cómo funciona una institución educativa moderna por dentro? | SIS, LMS, CRM, ERP, BI, IAM, integraciones, ciclo de vida del estudiante |
 | 4 | [Transformación Digital e IA](../contenido/modulo-04-transformacion-digital-ia.md) | ¿Cómo transformar sin romper la organización? | Triángulo de transformación, framework de adopción de IA, ética |
 | 5 | [Mindset Digital](../contenido/modulo-05-mindset-digital.md) | ¿Qué tipo de líder necesita ser tu organización? | 7 pilares del mindset digital, anti-patrones, diagnóstico |
-| ⚡ | [Bonus: IA y Educación](../contenido/bonus-panel-ia-educacion.md) | ¿Cómo va la IA a transformar la educación? | Panel de discusión (opcional, fuera de programa) |
+| ⚡ | [Bonus: IA y Educación](../contenido/bonus-panel-ia-educacion.md) | ¿Cómo va la IA a transformar la educación? | Panel de discusión — Día 2 (Sábado) |
 
 ---
 
@@ -66,20 +66,21 @@ Al finalizar este módulo, los participantes podrán:
 | 3 | 14:15–16:15 | Arquitectura IT Educativa | 120 min |
 | ☕ | 16:15–16:30 | Break | 15 min |
 | 4 | 16:30–18:00 | Transformación Digital e IA | 90 min |
-| 5 | 18:00–19:00 | Cierre Día 1 (Muro de Decisiones + Síntesis) | 60 min |
+| 5 | 18:00–18:30 | Cierre Día 1 (Takeaway rápido + Preview Día 2) | 30 min |
 
 → Guía detallada: [Guía del Facilitador — Día 1](../guia-facilitador/guia-dia-1-viernes.md)
 
 ### DÍA 2: SÁBADO 28/02 (09:30 - 13:30)
 
-**Tema central:** *Las personas detrás de la estrategia: mindset digital y lanzamiento del Challenge.*
+**Tema central:** *Mindset digital, IA en educación y lanzamiento del Challenge.*
 
 | Bloque | Horario | Módulo | Duración |
 |--------|---------|--------|----------|
-| 6 | 09:30–11:30 | Mindset Digital: El sistema operativo del liderazgo | 120 min |
-| ☕ | 11:30–11:45 | Break | 15 min |
-| 7 | 11:45–12:45 | Student Journey + Quick Wins | 60 min |
-| 8 | 12:45–13:30 | Lanzamiento del Challenge | 45 min |
+| 6 | 09:30–10:30 | Mindset Digital: El sistema operativo del liderazgo | 60 min |
+| ☕ | 10:30–10:45 | Break | 15 min |
+| 7 | 10:45–11:45 | Panel: IA y el Futuro de la Educación | 60 min |
+| ☕ | 11:45–12:00 | Break | 15 min |
+| 8 | 12:00–13:30 | Lanzamiento y Trabajo del Challenge | 90 min |
 
 → Guía detallada: [Guía del Facilitador — Día 2](../guia-facilitador/guia-dia-2-sabado.md)
 
@@ -99,15 +100,15 @@ Al finalizar este módulo, los participantes podrán:
 
 ## Distribución del tiempo
 
-### Driver Class completo (~11.5h netas)
+### Driver Class completo (~10.5h netas)
 
 | Tipo | Horas | % |
 |------|-------|---|
-| Exposición / teoría | ~4h | ~35% |
-| Talleres / actividades prácticas | ~5.5h | ~48% |
-| Dinámicas / icebreakers / cierre | ~2h | ~17% |
+| Exposición / teoría | ~3.5h | ~33% |
+| Talleres / actividades prácticas | ~5.5h | ~52% |
+| Dinámicas / icebreakers / cierre | ~1.5h | ~15% |
 
-> Ratio teórico/práctico: ~35/65 (objetivo brief: 30/70)
+> Ratio teórico/práctico: ~33/67 (objetivo brief: 30/70)
 
 ---
 

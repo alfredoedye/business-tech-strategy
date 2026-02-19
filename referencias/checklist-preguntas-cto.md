@@ -1,4 +1,4 @@
-# 10 Preguntas que Todo CEO Debería Hacer a su CTO
+# 10 Preguntas que Todo Directivo Debería Hacer a su CTO
 
 > Esta checklist te ayuda a mantener conversaciones productivas con tu equipo de tecnología. No necesitás entender todos los detalles técnicos — necesitás hacer las preguntas correctas.
 
@@ -191,7 +191,7 @@
 ## Template para la Conversación
 
 ```
-REUNIÓN MENSUAL CEO-CTO
+REUNIÓN MENSUAL DIRECCIÓN-CTO
 
 Fecha: _______________
 

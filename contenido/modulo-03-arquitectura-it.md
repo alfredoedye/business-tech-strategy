@@ -4,7 +4,7 @@
 
 ## Objetivo del módulo
 
-Que los participantes puedan **leer, cuestionar y discutir** la arquitectura tecnológica de una institución educativa, aunque no sean técnicos. No se trata de aprender a diseñar sistemas, sino de entender cómo funcionan por dentro para tomar mejores decisiones y hacer mejores preguntas.
+Que los participantes puedan **leer, cuestionar y discutir** la arquitectura tecnológica de una organización, aunque no sean técnicos. No se trata de aprender a diseñar sistemas, sino de entender cómo funcionan por dentro para tomar mejores decisiones y hacer mejores preguntas.
 
 ---
 
@@ -26,11 +26,13 @@ Una arquitectura IT es el **mapa** de todos los sistemas tecnológicos de una or
 - Los datos son las personas que circulan por la ciudad (si las calles están cortadas, no llegan a destino).
 - La arquitectura IT es el plano de la ciudad completa.
 
-Un CEO no necesita saber construir edificios. Pero sí necesita poder leer el plano de la ciudad para decidir dónde construir el próximo, cuál demoler y cuál renovar.
+Un directivo no necesita saber construir edificios. Pero sí necesita poder leer el plano de la ciudad para decidir dónde construir el próximo, cuál demoler y cuál renovar.
 
-### 2. Los sistemas clave de una institución educativa
+> 💡 **Para participantes de empresas no educativas:** Los conceptos de arquitectura IT son universales. Donde dice "estudiante", pensá en "cliente" o "usuario". Donde dice "SIS", pensá en tu sistema core de gestión. El principio es el mismo: los sistemas deben estar integrados y alineados al negocio.
 
-Toda institución educativa moderna opera con un ecosistema de sistemas. Los principales son:
+### 2. Los sistemas clave de una organización educativa
+
+Toda organización educativa moderna opera con un ecosistema de sistemas. Los principales son:
 
 | Sistema | Qué hace | Analogía |
 |---------|----------|----------|

@@ -329,10 +329,10 @@ def create_module_1(story, styles):
     ]))
     story.append(table2)
 
-    # CEO decisions
-    story.append(Paragraph("El rol del CEO en las decisiones tecnológicas", styles['SectionHeader']))
+    # Directivo decisions
+    story.append(Paragraph("El rol del equipo directivo en las decisiones tecnológicas", styles['SectionHeader']))
     story.append(Paragraph(
-        "Hay decisiones tecnológicas que un CEO no puede delegar porque SON decisiones de negocio:",
+        "Hay decisiones tecnológicas que un directivo no puede delegar porque SON decisiones de negocio:",
         styles['CustomBody']
     ))
 

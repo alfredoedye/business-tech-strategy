@@ -13,7 +13,7 @@ Que los participantes adquieran el vocabulario, los criterios y los frameworks n
 > No existen decisiones "puramente tecnológicas".
 > Toda decisión tecnológica es una decisión de negocio con consecuencias en costos, velocidad, dependencia y diferenciación.
 >
-> El CEO que no participa en estas decisiones no está delegando — está abdicando.
+> El directivo que no participa en estas decisiones no está delegando — está abdicando.
 
 ---
 
@@ -40,7 +40,7 @@ La diferencia entre ambos casos no es técnica. Es estratégica. Es la diferenci
 
 ## Conceptos clave
 
-### 1. Decisiones estratégicas que todo CEO debe dominar
+### 1. Decisiones estratégicas que todo directivo debe dominar
 
 No todas las decisiones tecnológicas son iguales. Algunas son operativas (qué herramienta de videoconferencia usar) y otras son estructurales (en qué plataforma vamos a construir nuestro futuro). Un líder debe saber distinguirlas.
 

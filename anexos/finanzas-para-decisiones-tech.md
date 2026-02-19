@@ -4,7 +4,7 @@
 
 ---
 
-## Por qué un CEO necesita hablar de finanzas tech
+## Por qué un directivo necesita hablar de finanzas tech
 
 La tecnología ya no es un "gasto de IT" — es una inversión estratégica que compite por capital con marketing, expansión, talento y otras prioridades. Para defender una inversión tecnológica, necesitás hablar el idioma de finanzas.
 

@@ -8,7 +8,7 @@
 - Perfil variado y no homogéneo.
 - Todos son líderes de área u organización que llevan adelante operaciones.
 - Necesitan entender el rol de la tecnología para mejorar el negocio.
-- Ejecutivos C-level, gerentes y directores de instituciones educativas y empresas de EdTech.
+- Directivos, gerentes y directores de instituciones educativas, empresas de EdTech y otras organizaciones.
 - Edad promedio: 40 años.
 
 ### Nivel de madurez digital
@@ -21,6 +21,7 @@
 
 ### Industria
 - Sector educativo. Principalmente educación superior mediada por tecnología.
+- Nota: ~4 participantes provienen de empresas no educativas. Los contenidos y actividades deben ser inclusivos para ambos perfiles.
 
 ---
 
@@ -69,7 +70,7 @@ Formar criterio ejecutivo para tomar decisiones tecnológicas en contextos de in
   - Usar tecnología
   - Operar tecnología
   - Diseñar el negocio desde la tecnología
-- Rol del CEO y del equipo directivo en decisiones tecnológicas clave.
+- Rol del equipo directivo en decisiones tecnológicas clave.
 
 **Resultado esperado:**  
 El participante entiende dónde se juega realmente la ventaja competitiva y por qué no puede delegar completamente estas decisiones.
@@ -82,7 +83,7 @@ El participante entiende dónde se juega realmente la ventaja competitiva y por 
 ¿Qué decisiones tecnológicas son estratégicas y cuáles son tácticas?
 
 **Contenidos:**
-- Decisiones estructurales que todo CEO debe dominar:
+- Decisiones estructurales que todo directivo debe dominar:
   - Build vs Buy
   - Cloud vs On-premise
   - Core vs Commodity
@@ -184,7 +185,7 @@ Al finalizar el curso, los participantes serán capaces de:
 - Explicar y defender el rol estratégico de la tecnología en su modelo de negocio.
 - Tomar decisiones informadas sobre inversiones tecnológicas (qué sí, qué no, cuándo y por qué).
 - Interpretar una arquitectura IT educativa y entender sus implicancias en escalabilidad, costos y experiencia del estudiante.
-- Diseñar una estrategia tecnológica alineada a los objetivos de negocio y a la etapa de madurez organizacional.
+- Formar criterio para evaluar y comprender estrategias tecnológicas alineadas a los objetivos de negocio y a la etapa de madurez organizacional.
 - Evaluar la adopción de IA de su organización y definir un roadmap realista y responsable.
 - Liderar procesos de transformación digital, integrando cultura, procesos y tecnología sin delegar el liderazgo.
 

@@ -140,18 +140,18 @@ Una en Nivel 3 compite en experiencia, datos y escala.
 
 ---
 
-### 3. El rol del CEO en las decisiones tecnológicas
+### 3. El rol del equipo directivo en las decisiones tecnológicas
 
 Hay decisiones tecnológicas que no son operativas. Son estratégicas.
 
-| Decisión | Por qué es del CEO |
-|----------|-------------------|
+| Decisión | Por qué es del equipo directivo |
+|----------|-------------------------------|
 | ¿Construimos o compramos nuestra plataforma core? | Define dependencia estructural y costos a largo plazo |
 | ¿Qué datos son estratégicos y quién los gobierna? | Define capacidad de decisión basada en evidencia |
 | ¿Cuánto invertimos en tecnología vs. otras áreas? | Define prioridades y visión de futuro |
 | ¿Cómo integramos IA en nuestra operación? | Define posición competitiva a 3–5 años |
 
-El CEO no necesita saber programar.  
+El directivo no necesita saber programar.
 Pero sí necesita criterio tecnológico.
 
 Y una pregunta incómoda:

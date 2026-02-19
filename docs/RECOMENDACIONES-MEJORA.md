@@ -67,7 +67,7 @@ SEGURIDAD Y COMPLIANCE PARA EJECUTIVOS
    - Fuga de datos: costos reputacionales y legales
    - Vendor lock-in: estrategias de mitigación
 
-3. Preguntas que el CEO debe hacer
+3. Preguntas que el directivo debe hacer
    - ¿Tenemos un plan de respuesta a incidentes?
    - ¿Dónde están físicamente nuestros datos?
    - ¿Qué pasa si nuestro vendor principal quiebra?
@@ -166,12 +166,12 @@ Benchmark por tipo de institución:
 ```
 SIMULACIÓN 1: "Negociación con el CTO"
 - Escenario: El CTO quiere construir un SIS propio. El CFO dice que no hay presupuesto.
-- Roles: CEO, CTO, CFO
+- Roles: Director General, CTO, CFO
 - Objetivo: Llegar a una decisión fundamentada en 15 minutos
 
 SIMULACIÓN 2: "Presentación al Board"
 - Escenario: Pedir aprobación para migrar a la nube
-- Roles: CEO presentando, Board members cuestionando
+- Roles: Director General presentando, Board members cuestionando
 - Objetivo: Convencer con datos y gestionar objeciones
 
 SIMULACIÓN 3: "Vendor Pitch"
@@ -230,7 +230,7 @@ Vendor Lock-in: Cuando cambiar de proveedor es tan caro que no podés.
 ### 2. Checklist de Preguntas para Hacer al Equipo de IT
 
 ```
-10 PREGUNTAS QUE TODO CEO DEBERÍA HACER A SU CTO
+10 PREGUNTAS QUE TODO DIRECTIVO DEBERÍA HACER A SU CTO
 
 1. ¿Cuál es nuestro sistema más crítico? ¿Qué pasa si falla?
 2. ¿Cuánta deuda técnica tenemos? ¿Está creciendo o reduciéndose?

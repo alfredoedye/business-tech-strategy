@@ -179,19 +179,16 @@ En 18 meses:        [ ] Ignorar  [ ] Explorar  [ ] Experimentar  [ ] Integrar  [
 
 ---
 
-## Dinámica: "El Muro de Decisiones"
+## Cierre del Día 1: Takeaway rápido
 
-**Duración:** 20 minutos
+**Duración:** 10 minutos
 
 **Instrucciones:**
-1. Se colocan post-its en una pared organizada en tres columnas:
-   - **Dejar de hacer** (procesos, herramientas o prácticas que frenan)
-   - **Empezar a hacer** (cambios que necesitamos implementar)
-   - **Seguir haciendo** (lo que funciona y no debemos perder)
-2. Cada participante pone al menos un post-it por columna.
-3. El facilitador agrupa y abre discusión sobre los patrones emergentes.
+1. Cada participante escribe **1 post-it** con su mayor aprendizaje o insight del día.
+2. Pegar todos en una pared/mural.
+3. 2-3 voluntarios leen el suyo en voz alta.
 
-**Este ejercicio cierra el Día 1** y funciona como puente hacia el Mindset Digital del Día 2.
+**Este ejercicio cierra el Día 1** de forma ágil y funciona como puente hacia el Mindset Digital del Día 2.
 
 ---
 

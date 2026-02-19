@@ -1,6 +1,6 @@
 # Módulo V: Estrategia Tecnológica + Mindset Digital
 
-Módulo de formación ejecutiva para líderes del sector educativo (CEOs, directores, gerentes) que necesitan tomar decisiones tecnológicas con criterio, sin ser técnicos y sin delegar el futuro del negocio.
+Módulo de formación ejecutiva para directivos y líderes del sector educativo y empresas (directores, gerentes) que necesitan tomar decisiones tecnológicas con criterio, sin ser técnicos y sin delegar el futuro del negocio.
 
 **Facilitadores:** Alfredo Edye & Pablo Ortiz Olmos
 **Participantes:** ~15 líderes por cohorte

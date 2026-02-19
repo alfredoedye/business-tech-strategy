@@ -69,7 +69,7 @@ Todos los equipos reciben el **mismo caso ficticio** de una institución educati
 > - *El presupuesto de tecnología es el 8% del revenue*
 > - *Acaban de recibir una inversión de USD 2M con la condición de 'modernizarse'*
 >
-> *El nuevo CEO (recién llegado del mundo fintech) les pide a ustedes, como consultores, un plan de transformación."*
+> *El nuevo director general (recién llegado del mundo fintech) les pide a ustedes, como consultores, un plan de transformación."*
 
 ### Entregables
 Mismos que Opción A, pero todos trabajan sobre el mismo caso. Esto permite **comparar enfoques** en el Challenge Point.

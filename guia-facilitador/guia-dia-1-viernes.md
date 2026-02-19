@@ -1,6 +1,6 @@
 # Guía del Facilitador — Día 1 (Viernes)
 
-> **Fecha:** Viernes 27/02 | **Horario:** 10:00–19:00 | **Formato:** Híbrido
+> **Fecha:** Viernes 27/02 | **Horario:** 10:00–18:30 | **Formato:** Híbrido
 > **Facilitadores:** Alfredo Edye + Pablo Ortiz Olmos
 
 ---
@@ -15,6 +15,9 @@
 - [ ] Mural digital preparado (Miro/FigJam) para participantes remotos
 - [ ] Timer visible (pantalla o proyector)
 - [ ] Caso de estudio Siglo 21 impreso o accesible
+
+### Nota sobre diversidad del grupo
+- ~4 participantes provienen de empresas no educativas. Usar "tu organización" en lugar de "tu institución educativa" cuando sea posible. Cuando se den ejemplos educativos, hacer puente hacia lo empresarial.
 
 ### Logística
 - [ ] Sala configurada en modo taller (mesas grupales de 4, no auditorio)
@@ -75,7 +78,7 @@
 - ⚠️ El perfil es ejecutivo. No profundizar en detalles técnicos. Si alguien pregunta algo muy técnico, responder brevemente y redirigir: "Eso es una conversación para tener con tu equipo de IT — lo importante hoy es..."
 
 ### Transición al Bloque 2
-> "Ya vimos POR QUÉ la tecnología es estratégica. Ahora vamos a ver CÓMO se toman decisiones tecnológicas. Después del break, vamos a hablar del vocabulario que todo CEO necesita para sentarse en la mesa de estrategia tech."
+> "Ya vimos POR QUÉ la tecnología es estratégica. Ahora vamos a ver CÓMO se toman decisiones tecnológicas. Después del break, vamos a hablar del vocabulario que todo directivo necesita para sentarse en la mesa de estrategia tech."
 
 **☕ Coffee break: 11:30–11:45**
 
@@ -88,13 +91,19 @@
 
 | Tiempo | Actividad | Formato | Duración |
 |--------|-----------|---------|----------|
-| 11:45 | Exposición: Las 4 decisiones estratégicas (Build/Buy, Cloud/On-premise, Core/Commodity, Velocidad/Control) | Exposición | 25 min |
+| 11:45 | Warm-up: "La peor decisión tech que tomaron (o dejaron que tomaran)" | Reflexión individual + pares | 5 min |
+| 11:50 | Exposición: Las 4 decisiones estratégicas (Build/Buy, Cloud/On-premise, Core/Commodity, Velocidad/Control) | Exposición | 20 min |
 | 12:10 | Exposición: Los 5 componentes de una estrategia tech integral | Exposición | 15 min |
 | 12:25 | Dinámica: Auditoría Express — Radar | Individual + pares | 30 min |
 | 12:55 | Dinámica: Trade-offs en acción (escenarios) | Grupal | 15 min |
 | 13:10 | Cierre del bloque | Plenario | 5 min |
 
 ### Tips de facilitación
+
+**Warm-up "La peor decisión tech":**
+- 2 minutos de reflexión individual: "Pensá en la peor decisión tecnológica que tomaron — o que dejaron que tomaran — en tu organización."
+- 3 minutos: compartir con la persona de al lado. No se pide plenario — es solo para activar el modo "decisiones tech".
+- Genera contexto emocional para las 4 decisiones estratégicas que vienen.
 
 **Decisiones estratégicas:**
 - Usar analogías constantemente. Build vs Buy = "¿te hacés la casa a medida o comprás un departamento?" Cloud vs On-premise = "¿alquilás o comprás?"
@@ -197,13 +206,18 @@
 
 | Tiempo | Actividad | Formato | Duración |
 |--------|-----------|---------|----------|
-| 16:30 | Exposición: El triángulo de la transformación (Cultura + Procesos + Tecnología) | Exposición | 15 min |
+| 16:30 | Energizer: "¿Quién ya usa IA en el trabajo? ¿Quién la usa a escondidas?" | Show of hands | 5 min |
+| 16:35 | Exposición: El triángulo de la transformación (Cultura + Procesos + Tecnología) | Exposición | 10 min |
 | 16:45 | Exposición: Framework de adopción de IA (5 niveles) | Exposición | 15 min |
 | 17:00 | Caso de estudio: Tec de Monterrey — TECgpt | Exposición + Q&A | 15 min |
 | 17:15 | Dinámica: "¿Dónde estás? ¿Adónde querés ir?" | Individual + grupal | 30 min |
 | 17:45 | Cierre del bloque + Q&A abierto | Plenario | 15 min |
 
 ### Tips de facilitación
+
+**Energizer IA:**
+- "Levanten la mano los que ya están usando IA en algo laboral." (pausa) "Ahora, levanten la mano los que la están usando... a escondidas." Genera risas y rompe la energía post-break.
+- Conectar: "Eso que acaban de decir es exactamente de lo que vamos a hablar ahora — cómo pasar del uso informal a una estrategia real."
 
 **Triángulo de la transformación:**
 - Empezar con el ejemplo del LMS que nadie usa bien: "La tecnología era nueva, pero la cultura y los procesos eran los de siempre."
@@ -231,38 +245,40 @@
 
 ---
 
-## Bloque 5 — Cierre del Día 1
-**18:00–19:00 (60 min)**
+## Bloque 5 — Cierre del Día 1 (light)
+**18:00–18:30 (30 min)**
+
+> ⚡ Este cierre es intencionalmente corto y liviano. Es viernes a las 18:00, mucha gente ya quiere irse. No forzar actividades largas.
 
 ### Estructura
 
 | Tiempo | Actividad | Formato | Duración |
 |--------|-----------|---------|----------|
-| 18:00 | Dinámica: "El Muro de Decisiones" | Individual + plenario | 25 min |
-| 18:25 | Síntesis del Día 1: Los 5 puntos clave | Exposición | 15 min |
-| 18:40 | Preview del Día 2: Mindset Digital + Student Journey + Challenge | Exposición | 10 min |
-| 18:50 | Cierre y logística para mañana | Ambos | 10 min |
+| 18:00 | Takeaway rápido: "1 post-it con tu mayor aprendizaje de hoy" | Individual + 2-3 voluntarios comparten | 10 min |
+| 18:10 | Preview Día 2: Mindset Digital + Panel IA + Challenge | Exposición breve | 10 min |
+| 18:20 | Logística para mañana + despedida | Ambos | 10 min |
 
 ### Tips de facilitación
 
-**Muro de Decisiones:**
-- Tres columnas en la pared (o mural digital): DEJAR DE HACER | EMPEZAR A HACER | SEGUIR HACIENDO.
-- Dar 5 minutos para escritura individual (mínimo 1 post-it por columna).
-- Pegar, agrupar y comentar los patrones más fuertes.
-- Este ejercicio produce material útil para el Challenge.
-
-**Síntesis:**
-- No repetir contenido. Elegir los 5 puntos más impactantes del día y conectarlos.
-- Ejemplo de síntesis: "Hoy vimos que la tecnología es parte del core, que hay decisiones que no pueden delegar, que su arquitectura tiene brechas que no conocían, y que la IA no es una moda — es la próxima capa de competitividad."
+**Takeaway rápido:**
+- Cada participante escribe 1 solo post-it con su mayor aprendizaje o insight del día.
+- Pegar todos en una pared/mural. No hace falta agrupar ni analizar.
+- Pedir a 2-3 voluntarios que lean el suyo en voz alta (no forzar a nadie).
+- Tomar foto del mural para documentar.
 
 **Preview Día 2:**
 - Breve y motivante. "Mañana vamos a hablar del otro lado de la moneda: el mindset. Porque la mejor estrategia fracasa si el liderazgo no cambia."
-- Mencionar que el sábado lanzan el Challenge.
+- Mencionar la agenda: Mindset Digital + Panel de IA + Lanzamiento y trabajo del Challenge.
+
+**Despedida:**
+- Confirmar horario del sábado (09:30), sala y conectividad.
+- Si quedaron preguntas abiertas durante el día, mencionarlas brevemente y comprometerse a abordarlas el sábado.
+- Cerrar con energía: agradecer la disposición del grupo en un día largo.
 
 ### Advertencias comunes
-- ⚠️ A las 18:00 la energía está baja. Mantener el cierre dinámico y breve. No extender.
-- ⚠️ Si quedaron preguntas sin responder durante el día, mencionarlas y comprometerse a abordarlas el sábado.
-- ⚠️ Confirmar logística del sábado (horario, sala, conectividad).
+
+- ⚠️ NO extender más allá de las 18:30. Si a las 18:00 ya se fue gente, adaptar — hacer el takeaway en 5 min y cerrar.
+- ⚠️ No insistir con actividades elaboradas. La energía no da para más.
 
 ---
 

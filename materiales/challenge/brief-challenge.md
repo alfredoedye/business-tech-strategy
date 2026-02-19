@@ -6,10 +6,10 @@
 
 ## El desafío
 
-Su equipo ha sido convocado como **equipo consultor** por el directorio de una institución educativa que necesita modernizar su tecnología. Tienen 2 semanas para diseñar una **hoja de ruta tecnológica a 18 meses** que resuelva los problemas reales del negocio.
+Su equipo ha sido convocado como **equipo consultor** por el directorio de una organización que necesita modernizar su tecnología. Tienen 2 semanas para diseñar una **hoja de ruta tecnológica a 18 meses** que resuelva los problemas reales del negocio.
 
 Pueden trabajar sobre:
-- **La institución real** de alguno de los integrantes del equipo (recomendado).
+- **La organización real** de alguno de los integrantes del equipo (recomendado — puede ser una institución educativa o una empresa).
 - **El caso simulado** de la Universidad del Valle Digital (ver Anexo A).
 
 ---
@@ -64,7 +64,7 @@ Presentación al "directorio" (los demás equipos + facilitadores). Estructura s
 | Criterio | Peso | Pregunta guía |
 |----------|------|---------------|
 | Alineación tech ↔ negocio | 25% | ¿La tecnología resuelve un problema real o es tecnología por tecnología? |
-| Realismo y viabilidad | 25% | ¿Se puede hacer con los recursos de una institución educativa real? |
+| Realismo y viabilidad | 25% | ¿Se puede hacer con los recursos de una organización real? |
 | Profundidad del diagnóstico | 20% | ¿Entendieron el estado actual antes de proponer? |
 | Claridad de la presentación | 15% | ¿Se entiende? ¿Convence? |
 | Uso de conceptos del módulo | 15% | ¿Aplicaron los frameworks, el mindset, el vocabulario? |
@@ -127,5 +127,5 @@ Presentación al "directorio" (los demás equipos + facilitadores). Estructura s
 | Exámenes | Google Forms | Sin proctoring |
 | Pagos | Transferencia bancaria | Manual |
 
-**El CEO les dice:**
+**La dirección les dice:**
 > *"Necesito que en 18 meses esta institución tenga la tecnología que le permita crecer al doble sin que todo se rompa. Tengo USD 2M y 4 personas de IT. ¿Qué hago?"*

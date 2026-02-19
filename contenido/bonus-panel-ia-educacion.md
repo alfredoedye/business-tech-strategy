@@ -1,6 +1,6 @@
 # Bonus — Panel de Discusión: IA y el Futuro de la Educación
 
-> ⚡ Este módulo es **opcional y fuera del programa oficial**. Está diseñado como un panel de discusión abierto que puede realizarse como cierre extendido del Driver Class, como evento separado, o como sesión adicional asincrónica.
+> ⚡ Este módulo es **parte del programa oficial del Día 2 (Sábado), 60 minutos**. Formato: panel de discusión moderado. Se seleccionan 3 de las 5 preguntas según la energía y los intereses del grupo.
 
 ---
 
@@ -14,7 +14,7 @@ Abrir un espacio de reflexión profunda — sin respuestas predefinidas — sobr
 
 | Elemento | Detalle |
 |----------|---------|
-| **Duración** | 60-90 minutos |
+| **Duración** | 60 minutos |
 | **Formato** | Panel de discusión moderado |
 | **Participantes** | Los 15 participantes del módulo + facilitadores |
 | **Moderador** | Uno de los facilitadores |
@@ -24,7 +24,7 @@ Abrir un espacio de reflexión profunda — sin respuestas predefinidas — sobr
 
 ## Las 5 preguntas provocadoras
 
-Cada pregunta se presenta al grupo, se da 2 minutos de reflexión individual, y luego se abre el debate. El moderador gestiona tiempos y equilibra participación.
+Se recomienda elegir 3 de las 5 preguntas según la energía del grupo (sugeridas: 1, 4 y 5). Cada pregunta se presenta al grupo, se da 2 minutos de reflexión individual, y luego se abre el debate. El moderador gestiona tiempos y equilibra participación.
 
 ### 1. ¿La IA va a reemplazar docentes o va a potenciarlos?
 
@@ -81,7 +81,7 @@ Cada pregunta se presenta al grupo, se da 2 minutos de reflexión individual, y 
 
 **Pregunta filosa:** Si ChatGPT puede dar una clase mejor que el 80% de los docentes del mundo, ¿qué hacemos con esa realidad?
 
-### 5. ¿Qué debería aprender un estudiante de 2030?
+### 5. ¿Qué debería saber hacer un profesional de 2030?
 
 **Contexto para el debate:**
 - Si la IA puede escribir código, traducir idiomas, analizar datos y crear contenido, ¿cuáles son las habilidades humanas irremplazables?

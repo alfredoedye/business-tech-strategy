@@ -10,16 +10,34 @@ Que los participantes puedan **leer, cuestionar y discutir** la arquitectura tec
 
 ## Pregunta guía
 
-> Es el último día de exámenes finales y miles de estudiantes acceden al sistema de exámenes.
-> El sistema de Examinación + Proctoring se cae, las notas no se guardan, estudiantes protestan, redes sociales estallan.
-> El call center no pueden comunicarse con el CRM para gestionar reclamos y los sistemas internos no tienen unificadas los datos de los estudiantes
+> ¿Cómo funciona realmente una institución educativa moderna por dentro?
 
 ---
 
 ## Dinámica Disparadora 
 
-> ¿Cómo funciona realmente una institución educativa moderna por dentro?
+> Es el último día de exámenes finales y miles de estudiantes acceden al sistema de exámenes.
+> El sistema de Examinación + Proctoring se cae, las notas no se guardan, estudiantes protestan, redes sociales estallan.
+> El call center no pueden comunicarse con el CRM para gestionar reclamos y los sistemas internos no tienen unificadas los datos de los estudiantes
 
+Se divide a los directivos en 3 grupos:
+Grupo A — Usuarios/Operaciones:
+    ¿Qué perciben los estudiantes?
+    ¿Qué impacta en la calidad de servicio?
+Grupo B — Tecnología/Integraciones:
+    ¿Qué falló a nivel de sistema y flujos de datos?
+    ¿Qué dependencias existen entre Examinación/Proctoring y otros sistemas?
+Grupo C — Negocio/Finanzas:
+    ¿Cuánto puede costar la reputación, penalizaciones, reclamos?
+    ¿Qué decisiones deberían haberse tomado antes?
+
+🟡 Salidas de la dinámica
+Cada grupo define:
+   Principales puntos de falla (técnicos y de negocio)
+   Decisiones que hubieran evitado el problema
+   2 prioridades inmediatas para mitigarlo
+
+💡 El facilitador cierra conectando cada punto con la arquitectura de sistemas (qué es, cómo se mapea, dónde están las fronteras e interdependencias).
 ---
 ## Conceptos clave
 

@@ -93,6 +93,8 @@ Para aterrizar el framework, estos son los casos de uso más concretos y probado
 | **Analítica** | Dashboards inteligentes con insights automáticos | Nivel 2-3 |
 | **Docencia** | Herramientas para que docentes creen actividades, rúbricas y feedback | Nivel 2 |
 
+> **Para participantes de empresas no educativas:** Estos casos se traducen directamente a otros sectores. "Retención de estudiantes" = retención de clientes. "Chatbot para consultas de estudiantes" = chatbot de atención al cliente. "Modelo predictivo de abandono" = modelo predictivo de churn. El framework de adopción es universal.
+
 ### 5. Riesgos y consideraciones éticas
 
 Adoptar IA sin marco ético es irresponsable. Los riesgos principales:
@@ -145,6 +147,8 @@ Su decisión fue construir un ecosistema propio (**TECgpt**) sobre Azure OpenAI 
 ### La tentación del "proyecto piloto eterno"
 
 Muchas instituciones LATAM se quedan en Nivel 1 indefinidamente: un par de personas usando ChatGPT, sin política, sin medición, sin escala. El riesgo no es que la IA falle — es que la organización nunca aprenda a usarla sistemáticamente mientras los competidores sí lo hacen.
+
+Esto no es exclusivo de educación. Empresas de todos los sectores caen en el mismo patrón: pruebas aisladas que nunca escalan porque no hay sponsorship directivo ni métricas de éxito definidas.
 
 ### Universidades que prohibieron la IA (y tuvieron que retroceder)
 
@@ -201,7 +205,7 @@ Al terminar este módulo, el participante:
 - Identifica al menos un caso de uso de IA relevante para su contexto.
 - Comprende los riesgos éticos y prácticos de la adopción de IA.
 - Ve la IA como una capa transversal, no como un proyecto aislado.
-- Tiene una primera lista de "dejar de hacer / empezar a hacer / seguir haciendo" como punto de partida para la transformación.
+- Tiene un primer paso concreto para avanzar un nivel en la adopción de IA en su organización.
 
 ---
 

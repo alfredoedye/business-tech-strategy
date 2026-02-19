@@ -208,37 +208,70 @@
 |--------|-----------|---------|----------|
 | 16:30 | Energizer: "¿Quién ya usa IA en el trabajo? ¿Quién la usa a escondidas?" | Show of hands | 5 min |
 | 16:35 | Exposición: El triángulo de la transformación (Cultura + Procesos + Tecnología) | Exposición | 10 min |
-| 16:45 | Exposición: Framework de adopción de IA (5 niveles) | Exposición | 15 min |
-| 17:00 | Caso de estudio: Tec de Monterrey — TECgpt | Exposición + Q&A | 15 min |
-| 17:15 | Dinámica: "¿Dónde estás? ¿Adónde querés ir?" | Individual + grupal | 30 min |
-| 17:45 | Cierre del bloque + Q&A abierto | Plenario | 15 min |
+| 16:45 | Micro-actividad: "¿Cuál es tu lado débil?" | Individual + show of hands | 5 min |
+| 16:50 | Exposición: Framework de adopción de IA (5 niveles) | Exposición | 10 min |
+| 17:00 | Micro-actividad: "¿En qué nivel estás?" | Individual + plenario rápido | 5 min |
+| 17:05 | Caso de estudio: Tec de Monterrey — TECgpt | Exposición + Q&A | 10 min |
+| 17:15 | Dinámica: "¿Dónde estás? ¿Adónde querés ir?" | Individual + grupal | 25 min |
+| 17:40 | Riesgos éticos: 1 pregunta provocadora | Debate rápido | 10 min |
+| 17:50 | Cierre del bloque | Plenario | 10 min |
+
+> 💡 **Diseño anti-pasividad:** Este bloque intercala micro-actividades cada 10-15 min de exposición. A las 16:30 de un viernes, ningún grupo aguanta 40 min de escucha seguida.
 
 ### Tips de facilitación
 
 **Energizer IA:**
+
 - "Levanten la mano los que ya están usando IA en algo laboral." (pausa) "Ahora, levanten la mano los que la están usando... a escondidas." Genera risas y rompe la energía post-break.
 - Conectar: "Eso que acaban de decir es exactamente de lo que vamos a hablar ahora — cómo pasar del uso informal a una estrategia real."
 
 **Triángulo de la transformación:**
+
 - Empezar con el ejemplo del LMS que nadie usa bien: "La tecnología era nueva, pero la cultura y los procesos eran los de siempre."
-- Dibujar el triángulo y pedir a los participantes que identifiquen cuál de las 3 dimensiones es la más débil en su organización.
+- Dibujar el triángulo en el pizarrón/slide y explicar las 3 dimensiones con la tabla del contenido.
+
+**Micro-actividad "¿Cuál es tu lado débil?":**
+
+- Inmediatamente después del triángulo, hacer un sondeo a mano alzada: "¿Quién siente que lo más débil en su organización es la cultura?" (pausa, contar) "¿Los procesos?" (pausa) "¿La tecnología?"
+- La mayoría va a decir cultura o procesos. Señalar el patrón: "Fíjense — casi nadie dice tecnología. El problema nunca es la herramienta. Es lo que pasa alrededor."
+- Para participantes de empresas no educativas: el triángulo es universal. Funciona igual para cualquier organización.
 
 **Framework de IA:**
-- Ir nivel por nivel. En cada uno, dar un ejemplo concreto de educación.
-- Preguntar: "¿Quién se identifica con el Nivel 1?" Muchos van a levantar la mano. Normalizar: "La mayoría de las organizaciones educativas en LATAM está entre el Nivel 0 y el 2."
+
+- Ir nivel por nivel, dar 2 min por nivel. En cada uno, un ejemplo concreto.
+- NO hacer los 5 niveles como monólogo. Después de presentar cada nivel, mirar al grupo — si alguien asiente o reacciona, hacer contacto visual.
+
+**Micro-actividad "¿En qué nivel estás?":**
+
+- Cada persona levanta dedos del 0 al 4 indicando el nivel de su organización. Contar rápido en voz alta: "Veo muchos 1s y 2s. ¿Alguien en 3 o más? Contanos brevemente qué están haciendo."
+- Normalizar: "La mayoría de las organizaciones en LATAM está entre el Nivel 0 y el 2. No es malo — es el punto de partida."
+- Esta micro-actividad pre-carga la dinámica principal que viene después.
 
 **Caso Tec de Monterrey:**
-- Este caso genera mucha energía. Usar los datos concretos: 3,000 usuarios, 250+ skills, etc.
+
+- Ir directo a los datos: 3,000 usuarios, 200 docentes, 250+ skills, pilotos con 500 estudiantes. Sin rodeos.
 - La pregunta que va a surgir: "¿Pero eso no cuesta una fortuna?" Responder con honestidad: el Tec tiene escala, pero la lógica de empezar con un piloto acotado aplica a cualquier tamaño.
+- Cerrar con: "Lo que hizo el Tec fue elegir BUILD sobre CONSUME (¿recuerdan el módulo 2?). No todos necesitan eso. Lo importante es la decisión consciente."
 
 **"¿Dónde estás? ¿Adónde querés ir?":**
-- Es la actividad más introspectiva del día. Dar espacio para pensamiento individual antes del trabajo grupal.
-- La brecha entre "dónde estoy" y "dónde quiero estar" genera urgencia. Canalizarla hacia acciones concretas, no hacia frustración.
+
+- La parte individual ya se activó con la micro-actividad. Ahora profundizar en grupos de 4.
+- Cada grupo discute: ¿qué los frena? ¿qué primer caso de uso implementarían? ¿qué riesgo les preocupa más?
+- Cada grupo propone 1 primer paso concreto para avanzar un nivel. No más — se busca foco.
+- Canalizarla hacia acciones concretas, no hacia frustración.
+
+**Riesgos éticos (10 min):**
+
+- Plantear UNA pregunta provocadora: "Si un algoritmo decide que un estudiante está en riesgo de abandono, ¿podemos explicar por qué? ¿Y si el algoritmo tiene sesgos que no podemos detectar?"
+- Para empresas no educativas: "Si un modelo decide que un cliente es de bajo valor, ¿podemos explicar el criterio?"
+- 2 min de reflexión individual, 8 min de debate abierto.
+- No buscar respuesta. Buscar que el tema quede instalado. Cerrar con: "La posición del líder no es frenar la IA. Es avanzar con intención, transparencia y responsabilidad."
 
 ### Advertencias comunes
+
 - ⚠️ El tema de IA genera dos reacciones extremas: entusiasmo desmedido ("vamos a hacer todo con IA") o miedo ("la IA va a reemplazar todo"). Equilibrar: la IA es una herramienta poderosa que requiere estrategia, no pánico ni euforia.
-- ⚠️ La pregunta "¿la IA va a reemplazar docentes?" va a aparecer. Redirigir: "La IA no va a reemplazar a los docentes. Pero los docentes que usen IA van a tener ventaja sobre los que no. ¿Quién va a liderar esa transición en tu organización?"
-- ⚠️ Es el final de la tarde. Si la energía baja, acortar la exposición y dar más tiempo a la dinámica.
+- ⚠️ La pregunta "¿la IA va a reemplazar docentes/empleados?" va a aparecer. Redirigir: "La IA no va a reemplazar a las personas. Pero las personas que usen IA van a tener ventaja sobre las que no. ¿Quién va a liderar esa transición en tu organización?"
+- ⚠️ Es el final de la tarde. Si la energía baja, las micro-actividades son tu salvavidas. Si aun así baja, acortar la exposición del framework y dar más tiempo a la dinámica grupal.
 
 ### Transición al Bloque 5
 > "Hicimos un recorrido intenso: por qué importa la tech, cómo decidir, cómo se arma por dentro, cómo transformar con IA. Ahora cerremos el día integrando todo."

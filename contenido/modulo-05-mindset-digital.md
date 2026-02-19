@@ -31,6 +31,46 @@ El mindset digital **es**:
 
 ---
 
+## Dinámica de apertura: Bingo de anti-patrones
+
+**Duración:** 7 minutos
+
+Antes de presentar los pilares, los participantes descubren cuántos anti-patrones reconocen en sus propias organizaciones — en formato de juego.
+
+### Instrucciones
+
+1. Entregar a cada participante una tarjeta de Bingo 3x3 con 9 anti-patrones (ver modelo abajo).
+2. El facilitador lee los anti-patrones uno por uno, en orden aleatorio.
+3. Si el participante reconoce ese anti-patrón en su organización (actual o anterior), **marca la casilla**.
+4. El primero que complete una línea (horizontal, vertical o diagonal) grita **"¡Bingo!"**
+5. Cierre: "¿Cuántos marcaron más de 5 casillas?" (levantar la mano). "Ese es el diagnóstico más honesto que van a hacer hoy."
+
+### Modelo de tarjeta
+
+```
+┌───────────────────────┬───────────────────────┬───────────────────────┐
+│ "Implementamos el     │ "Yo no necesito       │ "Necesitamos un       │
+│  sistema hace 3 años  │  entender de tech,    │  business case de 50  │
+│  y no lo tocamos"     │  para eso tengo IT"   │  páginas antes de     │
+│                       │                       │  probar algo"         │
+│  [Producto]           │  [Aprendizaje]        │  [Experimentación]    │
+├───────────────────────┼───────────────────────┼───────────────────────┤
+│ "Eso es tema de       │ "Yo creo que la       │ "Solo IT propone      │
+│  sistemas, no mío"    │  deserción bajó"      │  soluciones           │
+│                       │  (sin datos)          │  tecnológicas"        │
+│  [Colaboración]       │  [Datos]              │  [Agencia]            │
+├───────────────────────┼───────────────────────┼───────────────────────┤
+│ "La seguridad es      │ "Compramos la         │ "Tenemos 12 sistemas  │
+│  tema del equipo      │  herramienta pero     │  y solo 2 están       │
+│  de IT"               │  nadie la usa"        │  integrados"          │
+│  [Seguridad/Ética]    │  [Cultura]            │  [Colaboración]       │
+└───────────────────────┴───────────────────────┴───────────────────────┘
+```
+
+> Los anti-patrones son universales. "Implementamos el LMS" = "Implementamos el ERP". "Deserción de estudiantes" = "churn de clientes". Funciona para cualquier organización.
+
+---
+
 ## Los 7 Pilares del Mindset Digital
 
 ### Pilar 1 — Orientación a Producto, no a Proyecto
@@ -186,34 +226,19 @@ La pregunta no es "cómo ser como Platzi" — es "qué prácticas de este mindse
 
 ---
 
-## Dinámica: Diagnóstico de Mindset Digital
+## Dinámica: Diagnóstico rápido de Mindset Digital
 
-**Duración:** 45 minutos (25 individual + 20 grupo)
+**Duración:** 25 minutos (10 individual + 10 grupal + 5 debrief)
 
 **Instrucciones:**
-1. Cada participante completa el [Template Diagnóstico de Mindset Digital](../materiales/templates/template-diagnostico-mindset-digital.md).
-2. Evalúa cada pilar como semáforo:
+
+1. **Individual (10 min):** Cada participante completa el [Template Diagnóstico de Mindset Digital](../materiales/templates/template-diagnostico-mindset-digital.md). Evalúa cada pilar como semáforo:
    - 🔴 Rojo: no existe o es muy débil
    - 🟡 Amarillo: existe pero no es consistente
    - 🟢 Verde: es parte de la cultura, se practica regularmente
-3. Para cada pilar, aporta evidencia concreta (no opinión).
-4. Identifica los 2 pilares más urgentes y propone una acción para cada uno.
-5. En grupos, comparan diagnósticos y buscan patrones.
-
----
-
-## Dinámica: "Si fueras Platzi por un día"
-
-**Duración:** 15 minutos
-
-**Instrucciones:**
-1. Cada grupo elige UN proceso de su institución (inscripción, atención a estudiantes, evaluación, etc.).
-2. Reimaginan ese proceso como si fueran Platzi:
-   - ¿Cómo lo harían con mentalidad de producto?
-   - ¿Qué medirían?
-   - ¿Qué experimentarían?
-   - ¿Qué datos usarían?
-3. Presentan la idea en 2 minutos. No tiene que ser realista — tiene que ser inspiradora.
+   - Para cada pilar, aportar **evidencia concreta** (no opinión). "No me digas que estás en verde. Dame el ejemplo que lo demuestra."
+2. **Grupal (10 min):** En mesas, compartir diagnósticos. Buscar patrones: ¿hay pilares que son rojos en todas las organizaciones?
+3. **Debrief (5 min):** 2-3 personas comparten su hallazgo más sorprendente. Cada participante elige **1 acción concreta** para mejorar un pilar (no más — se busca foco).
 
 ---
 

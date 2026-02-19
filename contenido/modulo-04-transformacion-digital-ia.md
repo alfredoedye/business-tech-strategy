@@ -38,7 +38,6 @@ Un rector visionario impulsa una transformación digital profunda. Logra cambio 
 3. Plenario rápido: cada grupo comparte su análisis (5 min).
 4. El facilitador anota las respuestas y revela: los 3 casos fracasaron porque **les faltaba una de las 3 dimensiones** de la transformación digital.
 
-> **Para empresas no educativas:** El Caso B está planteado en contexto empresarial. Los Casos A y C se traducen directamente: "LMS" = "ERP" o "plataforma core"; "docentes" = "equipo operativo"; "rector" = "CEO o director general".
 
 ---
 
@@ -136,7 +135,7 @@ Para aterrizar el framework, estos son los casos de uso más concretos y probado
 | **Analítica** | Dashboards inteligentes con insights automáticos | Nivel 2-3 |
 | **Docencia** | Herramientas para que docentes creen actividades, rúbricas y feedback | Nivel 2 |
 
-> **Para participantes de empresas no educativas:** Estos casos se traducen directamente a otros sectores. "Retención de estudiantes" = retención de clientes. "Chatbot para consultas de estudiantes" = chatbot de atención al cliente. "Modelo predictivo de abandono" = modelo predictivo de churn. El framework de adopción es universal.
+
 
 ### 5. Riesgos y consideraciones éticas
 

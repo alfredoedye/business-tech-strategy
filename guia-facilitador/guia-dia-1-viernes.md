@@ -9,6 +9,7 @@
 
 ### Materiales
 - [ ] Slides de los bloques 1-5 cargadas y probadas
+- [ ] 3 slides de "Antes y Después" para dinámica de apertura del Bloque 4 (pasaje de avión, servicio al cliente, admisión educativa)
 - [ ] Survey Radar en vivo probado: https://alfredoedye.github.io/business-tech-strategy/survey-radar/
 - [ ] Templates impresos: Radar de Estrategia Tech + Mapa de Arquitectura IT (backup si falla conectividad)
 - [ ] Post-its de colores (mínimo 3 colores), marcadores gruesos, hojas A3
@@ -206,12 +207,12 @@
 
 | Tiempo | Actividad | Formato | Duración |
 |--------|-----------|---------|----------|
-| 16:30 | Energizer: "¿Quién ya usa IA en el trabajo? ¿Quién la usa a escondidas?" | Show of hands | 5 min |
-| 16:35 | Exposición: El triángulo de la transformación (Cultura + Procesos + Tecnología) | Exposición | 10 min |
-| 16:45 | Micro-actividad: "¿Cuál es tu lado débil?" | Individual + show of hands | 5 min |
-| 16:50 | Exposición: Framework de adopción de IA (5 niveles) | Exposición | 10 min |
-| 17:00 | Micro-actividad: "¿En qué nivel estás?" | Individual + plenario rápido | 5 min |
-| 17:05 | Caso de estudio: Tec de Monterrey — TECgpt | Exposición + Q&A | 10 min |
+| 16:30 | Dinámica: "Antes y Después — ¿Cuántos saltos te faltan?" | Visual + reflexión rápida | 8 min |
+| 16:38 | Exposición: El triángulo de la transformación (Cultura + Procesos + Tecnología) | Exposición | 10 min |
+| 16:48 | Micro-actividad: "¿Cuál es tu lado débil?" | Individual + show of hands | 5 min |
+| 16:53 | Exposición: Framework de adopción de IA (5 niveles) | Exposición | 10 min |
+| 17:03 | Micro-actividad: "¿En qué nivel estás?" | Individual + plenario rápido | 5 min |
+| 17:08 | Caso de estudio: Tec de Monterrey — TECgpt | Exposición + Q&A | 7 min |
 | 17:15 | Dinámica: "¿Dónde estás? ¿Adónde querés ir?" | Individual + grupal | 25 min |
 | 17:40 | Riesgos éticos: 1 pregunta provocadora | Debate rápido | 10 min |
 | 17:50 | Cierre del bloque | Plenario | 10 min |
@@ -220,10 +221,17 @@
 
 ### Tips de facilitación
 
-**Energizer IA:**
+**Dinámica "Antes y Después — ¿Cuántos saltos te faltan?" (8 min):**
 
-- "Levanten la mano los que ya están usando IA en algo laboral." (pausa) "Ahora, levanten la mano los que la están usando... a escondidas." Genera risas y rompe la energía post-break.
-- Conectar: "Eso que acaban de decir es exactamente de lo que vamos a hablar ahora — cómo pasar del uso informal a una estrategia real."
+Proyectar 3 pares de "antes y después", ~1.5 min por par:
+
+1. **Comprar un pasaje de avión:** Antes: ir a una agencia de viajes, hacer fila, comparar 3 opciones. → Después: Booking/Skyscanner te compara 500 opciones en 2 segundos con IA de precios.
+2. **Servicio al cliente:** Antes: call center, esperar 20 min, repetir tu problema 3 veces. → Después: chatbot que te resuelve el 70% en 30 segundos, y si necesita humano, ya tiene todo tu contexto.
+3. **Proceso de admisión educativa:** Antes: formulario en papel, esperar 3 semanas. → Después: proceso 100% digital con chatbot de consultas 24/7 y decisión en 48hs. (Para empresas: pensar en onboarding de clientes o empleados como equivalente.)
+
+- Después de los 3 pares, hacer LA pregunta: "¿Cuántos de estos saltos ya dio tu organización? Levanten dedos: 0, 1, 2, 3." (Pausa, contar.)
+- Cerrar con: "Lo que vamos a ver en los próximos 90 minutos es exactamente esto: cómo dar esos saltos sin romper la organización en el proceso." → Conecta directo con la pregunta guía del módulo.
+- Material necesario: 3 slides con los pares antes/después (imágenes simples o texto con formato visual claro).
 
 **Triángulo de la transformación:**
 

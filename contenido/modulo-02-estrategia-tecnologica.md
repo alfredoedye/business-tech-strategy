@@ -140,6 +140,10 @@ Una estrategia tecnológica no es una lista de herramientas. Es un modelo que co
 - ¿Quién los gobierna? ¿Están centralizados o fragmentados?
 - ¿Tomamos decisiones basadas en datos o en intuición?
 
+> 💡 Politica de Gobernanza de Datos Grupo R'Evolution
+>  Propiedad Institucional y Custodia Ejecutiva :  El CTO es el custodio de la Arquitectura de Datos , y de sus accesos. El CEO es el responsable final del cumplimiento.
+ 
+
 #### Seguridad
 - ¿Tenemos políticas de seguridad definidas?
 - ¿Quién tiene acceso a qué? ¿Lo sabemos?

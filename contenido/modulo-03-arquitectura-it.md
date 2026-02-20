@@ -88,7 +88,7 @@ Descubrimiento → Evaluación → Admisión → Onboarding → Cursada → Eval
 
 #### 3.1 El "doble-click" en la plataforma Core : el SIS
 
-![Funcionalidades del SIS.](https://drive.google.com/file/d/1HN28Q2wT--sp4fSub61OnAxd2kxwDK8w/view?usp=drive_link)
+![Funcionalidades del SIS.](https://github.com/alfredoedye/business-tech-strategy/blob/main/assets/Funcionalidades%20SIS.png)
 
 
 **Cada quiebre en la integración es una mala experiencia para el estudiante y un costo operativo para la organización.**

@@ -8,14 +8,6 @@ Que los participantes comprendan por qué la tecnología dejó de ser un área d
 
 ---
 
-## Tesis del módulo
-
-> La tecnología ya no es eficiencia operativa.  
-> Es arquitectura competitiva.  
->  
-> El nivel de madurez tecnológica de una institución define su techo de crecimiento, su margen y su capacidad de adaptación.
-
----
 
 ## Pregunta guía
 
@@ -34,10 +26,10 @@ Deben responder:
 4.	¿Qué no haría que ustedes sí hacen?
 
 ¿Qué genera esta dinámica?
-•	Pone en evidencia rigideces internas.
-•	Muestra que la ventaja no está en el campus.
-•	Hace visible la deuda tecnológica.
-•	Introduce la idea de arquitectura sin decir “arquitectura”.
+- 	Pone en evidencia rigideces internas.
+- 	Muestra que la ventaja no está en el campus.
+- 	Hace visible la deuda tecnológica.
+- 	Introduce la idea de arquitectura sin decir “arquitectura”.
 
 > 💡 **Cierre del facilitador:**
 Si ese competidor nace hoy digital, la tecnología no es soporte. Es el modelo.”
@@ -156,7 +148,7 @@ Y una pregunta incómoda:
 
 ### 4. El mapa del sector educativo global
 
-El ecosistema EdTech supera los USD 400 mil millones y se proyecta hacia el trillón hacia 2030.
+## 4.1 El ecosistema EdTech supera los USD 400 mil millones y se proyecta hacia el trillón hacia 2030.
 
 Categorías estratégicas:
 
@@ -174,14 +166,14 @@ Conocer el mapa permite entender:
 
 ---
 
-## Las tres fuerzas que están reconfigurando la educación superior
+## 4.2 Las tres fuerzas que están reconfigurando la educación superior
 
 
 La presión no es coyuntural. Es estructural. Viene de tres fuerzas simultáneas:
 
 ---
 
-### 1️⃣ Presión financiera y sostenibilidad
+ 1️⃣ Presión financiera y sostenibilidad
 
 - **20+ universidades cerraron en EE.UU. en 2024.** En 2025, al menos 16 más. La Reserva Federal predice que el ritmo podría subir a 80 cierres por año.
 - **2U pagó USD 800M por el contenido de Harvard y MIT (edX)** y hoy enfrenta USD 900M en deuda. Tener el mejor contenido del mundo no alcanza sin modelo tecnológico sostenible.
@@ -191,7 +183,7 @@ La pregunta ya no es “si vamos a crecer”, sino “si el modelo actual es fin
 
 ---
 
-### 2️⃣ Cambio en la demanda laboral
+2️⃣ Cambio en la demanda laboral
 
 - **Google, Apple, IBM y 150+ empresas eliminaron el requisito de título universitario.**
 - El **81% de los empleadores ya contrata por skills**, no por diplomas.
@@ -200,7 +192,7 @@ El valor del credential tradicional está siendo cuestionado por el mercado labo
 
 ---
 
-### 3️⃣ Competencia nativa digital
+3️⃣ Competencia nativa digital
 
 - **Duolingo tiene 47 millones de usuarios diarios** y proyecta USD 1B en revenue para 2025.
 - El mercado EdTech global es **USD 404B** y crece al 16.3% anual.

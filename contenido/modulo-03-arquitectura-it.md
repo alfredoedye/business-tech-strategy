@@ -92,7 +92,13 @@ El "Student Information System" es el sistema Core: modela la estrategia académ
 
 ![Funcionalidades del SIS.](https://github.com/alfredoedye/business-tech-strategy/blob/main/assets/Funcionalidades%20SIS.png)
 
-### 4. Integraciones: el sistema nervioso de la organización
+### 4. Cuadrante de Tecnologia en Modelo MII
+
+El modelo MII, en su cuadrante de Tecnología define la linea base de stack tecnológico para el grupo R'Evolution, como la arquitectura recomendada y deseada en cada institución, para garantizar la calidad y excelencia en la experiencia del estudiante , y la escalabilidad y eficiencia en su modelo academico mediado por tecnologia. 
+
+![Linea base](https://github.com/alfredoedye/business-tech-strategy/blob/main/assets/Linea%20base%20Revolution.png)
+
+### 5. Integraciones: el sistema nervioso de la organización
 
 Los sistemas individuales son importantes, pero lo que realmente define la madurez de una arquitectura es **cómo se conectan entre sí**.
 **Cada quiebre en la integración es una mala experiencia para el estudiante y un costo operativo para la organización.**
@@ -110,14 +116,6 @@ Los sistemas individuales son importantes, pero lo que realmente define la madur
 - ¿Cuántos procesos dependen de carga manual? (Cada uno es un riesgo y un costo)
 - ¿Los datos del estudiante están en un solo lugar o fragmentados en 5 sistemas?
 - ¿Cuánto tiempo pasa entre que algo sucede y se refleja en todos los sistemas?
-
-### 5. Cuadrante de Tecnologia en Modelo MII
-
-El modelo MII, en su cuadrante de Tecnología define la linea base de stack tecnológico para el grupo R'Evolution, como la arquitectura recomendada y deseada en cada institución, para garantizar la calidad y excelencia en la experiencia del estudiante , y la escalabilidad y eficiencia en su modelo academico mediado por tecnologia. 
-
-![Linea base](https://github.com/alfredoedye/business-tech-strategy/blob/main/assets/Linea%20base%20Revolution.png)
-
-
 ### 6. La arquitectura como herramienta de decisión
 
 Una arquitectura IT bien entendida permite al líder evaluar:

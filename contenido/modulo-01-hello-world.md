@@ -4,14 +4,14 @@
 
 ## Objetivo del módulo
 
-Que los participantes comprendan por qué la tecnología dejó de ser un área de soporte y se convirtió en una pieza central del negocio educativo. Al terminar este bloque, cada líder debe poder identificar en qué nivel se encuentra su organización y qué implica esa posición para competir.
+Que los participantes comprendan por qué la tecnología dejó de ser un área de soporte y se convirtió en parte de la estrategia central del negocio educativo. Al terminar este bloque, cada líder debe poder identificar en qué nivel se encuentra su organización y qué implica esa posición para competir.
 
 ---
 
 
 ## Pregunta guía
 
-> ¿Por qué la tecnología dejó de ser un área de soporte y pasó a ser parte del core del negocio?
+> ¿Por qué la tecnología dejó de ser un área de soporte y pasó a ser parte de la estrategia del negocio?
 
 ---
 ## Dinámica Disparadora "El reemplazo Invisible"
@@ -247,7 +247,7 @@ Al terminar este módulo, el participante:
 ## Reflexión final
 
 > Si la tecnología define el techo de crecimiento de tu institución,  
-> ¿estás diseñando ese techo… o lo heredaste sin cuestionarlo?
+> ¿estámoss diseñando ese techo?
 
 ---
 

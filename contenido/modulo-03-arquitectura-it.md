@@ -115,7 +115,7 @@ Los sistemas individuales son importantes, pero lo que realmente define la madur
 
 El modelo MII, en su cuadrante de Tecnología define la linea base de stack tecnológico para el grupo R'Evolution, como la arquitectura recomendada y deseada en cada institución, para garantizar la calidad y excelencia en la experiencia del estudiante , y la escalabilidad y eficiencia en su modelo academico mediado por tecnologia. 
 
-![Linea base.](https://drive.google.com/file/d/1NHJ7bvweDgNQ46rCpzcypv3AAESN8s4r/view?usp=sharing)
+![Linea base.](assets/Linea base Revolution.png)
 
 
 ### 6. La arquitectura como herramienta de decisión

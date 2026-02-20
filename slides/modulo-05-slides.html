@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 05 — Mindset Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (THEME: Midnight Clarity)
+           =========================================== */
+        :root {
+            /* Colors */
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.07);
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent: #38bdf8;
+            --accent-purple: #a855f7;
+            --accent-warm: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-green: #34d399;
+            --border: rgba(255, 255, 255, 0.08);
+
+            /* Typography */
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --title-size: clamp(2rem, 5.5vw, 4rem);
+            --h2-size: clamp(1.4rem, 3.5vw, 2.5rem);
+            --h3-size: clamp(1rem, 2vw, 1.4rem);
+            --body-size: clamp(0.75rem, 1.3vw, 1.05rem);
+            --small-size: clamp(0.65rem, 1vw, 0.85rem);
+            --tag-size: clamp(0.6rem, 0.9vw, 0.75rem);
+
+            /* Spacing */
+            --slide-padding: clamp(1.5rem, 4vw, 4rem);
+            --content-gap: clamp(0.8rem, 2vw, 2rem);
+            --element-gap: clamp(0.4rem, 1vw, 1rem);
+
+            /* Animation */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration: 0.7s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+        /* ===========================================
+           SLIDE CONTAINER
+           =========================================== */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            padding: var(--slide-padding);
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 100%;
+            overflow: hidden;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ===========================================
+           BACKGROUND EFFECTS
+           =========================================== */
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 70% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Geometric decorations */
+        .geo {
+            position: absolute;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        .slide-tag {
+            display: inline-block;
+            font-size: var(--tag-size);
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 0.4em 1.2em;
+            border-radius: 100px;
+            margin-bottom: clamp(0.8rem, 1.5vw, 1.5rem);
+            width: fit-content;
+        }
+
+        .slide h1 {
+            font-family: var(--font-display);
+            font-size: var(--title-size);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+        }
+
+        .slide h2 {
+            font-family: var(--font-display);
+            font-size: var(--h2-size);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: clamp(0.5rem, 1.5vw, 1.2rem);
+        }
+
+        .slide h3 {
+            font-family: var(--font-body);
+            font-size: var(--h3-size);
+            font-weight: 700;
+            margin-bottom: var(--element-gap);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide p, .slide li {
+            font-size: var(--body-size);
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .subtitle {
+            font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+            color: var(--text-secondary);
+        }
+
+        /* ===========================================
+           COMPONENTS
+           =========================================== */
+
+        /* Blockquote */
+        .quote-box {
+            border-left: 3px solid var(--accent);
+            padding: 0.8em 1.2em;
+            background: rgba(56, 189, 248, 0.05);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: var(--body-size);
+        }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: clamp(0.5rem, 1.2vw, 1rem);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(0.8rem, 1.5vw, 1.5rem);
+            transition: background 0.3s ease;
+        }
+
+        .card:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .card-icon {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            margin-bottom: clamp(0.3rem, 0.8vw, 0.6rem);
+        }
+
+        .card h3 {
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
+            color: var(--text-primary);
+        }
+
+        .card p {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Table-like rows */
+        .info-row {
+            display: flex;
+            gap: clamp(0.5rem, 1.5vw, 1.5rem);
+            padding: clamp(0.5rem, 1vw, 0.8rem) 0;
+            border-bottom: 1px solid var(--border);
+            align-items: flex-start;
+        }
+
+        .info-row:last-child { border-bottom: none; }
+
+        .info-label {
+            font-size: var(--small-size);
+            font-weight: 700;
+            color: var(--accent);
+            min-width: clamp(80px, 12vw, 140px);
+            flex-shrink: 0;
+        }
+
+        .info-value {
+            font-size: var(--small-size);
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Stat highlight */
+        .stat-big {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1;
+            margin-bottom: clamp(0.3rem, 1vw, 0.8rem);
+        }
+
+        /* Pill tags */
+        .pill {
+            display: inline-block;
+            font-size: var(--small-size);
+            font-weight: 500;
+            padding: 0.3em 0.8em;
+            border-radius: 100px;
+            border: 1px solid;
+        }
+
+        .pill-blue { color: #38bdf8; border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.08); }
+        .pill-purple { color: #a855f7; border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.08); }
+        .pill-amber { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.08); }
+        .pill-red { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); }
+        .pill-green { color: #34d399; border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.08); }
+
+        /* Two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1rem, 2.5vw, 2.5rem);
+            align-items: start;
+        }
+
+        @media (max-width: 700px) {
+            .two-col { grid-template-columns: 1fr; }
+        }
+
+        /* Bullet list */
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.8vw, 0.6rem);
+        }
+
+        .bullet-list li {
+            padding-left: 1.2em;
+            position: relative;
+            font-size: var(--body-size);
+        }
+
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: clamp(0.5rem, 1.5vw, 1.5rem) 0;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .divider .diamond {
+            width: 5px; height: 5px;
+            background: var(--accent);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* Triangle diagram */
+        .triangle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(0.5rem, 2vw, 1.5rem) 0;
+        }
+
+        .triangle-svg {
+            width: min(300px, 40vw);
+            height: auto;
+        }
+
+        /* Anti-pattern cards */
+        .antipattern {
+            display: flex;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            align-items: flex-start;
+            padding: clamp(0.6rem, 1vw, 1rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-red);
+        }
+
+        .antipattern-icon {
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
+            flex-shrink: 0;
+        }
+
+        .antipattern-name {
+            font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.15em;
+        }
+
+        .antipattern-desc {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+        }
+
+        /* Layer diagram */
+        .layer-stack {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.6vw, 0.5rem);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .layer {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            padding: clamp(0.5rem, 0.8vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: var(--small-size);
+            font-weight: 500;
+        }
+
+        .layer-label {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 40px;
+        }
+
+        /* Governance roles */
+        .role-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+
+        .role-title {
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);
+        }
+
+        .role-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.15rem, 0.4vw, 0.3rem);
+        }
+
+        .role-list li {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            padding-left: 1em;
+            position: relative;
+        }
+
+        .role-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Ethics list */
+        .ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: clamp(0.4rem, 0.8vw, 0.6rem);
+        }
+
+        .ethics-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            font-size: var(--body-size);
+            color: var(--text-secondary);
+            padding: clamp(0.4rem, 0.7vw, 0.6rem) clamp(0.6rem, 1vw, 0.8rem);
+            background: var(--bg-card);
+            border-radius: 8px;
+        }
+
+        .ethics-icon {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity var(--duration) var(--ease-out-expo),
+                        transform var(--duration) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal:nth-child(1) { transition-delay: 0.05s; }
+        .reveal:nth-child(2) { transition-delay: 0.12s; }
+        .reveal:nth-child(3) { transition-delay: 0.19s; }
+        .reveal:nth-child(4) { transition-delay: 0.26s; }
+        .reveal:nth-child(5) { transition-delay: 0.33s; }
+        .reveal:nth-child(6) { transition-delay: 0.40s; }
+        .reveal:nth-child(7) { transition-delay: 0.47s; }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity var(--duration) var(--ease-out-expo),
+                        transform var(--duration) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal-scale {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ===========================================
+           PROGRESS BAR
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+            z-index: 100;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        /* ===========================================
+           NAV DOTS
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: clamp(0.8rem, 1.5vw, 1.5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .nav-dot.active {
+            background: var(--accent);
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+        }
+
+        .nav-dot:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ===========================================
+           SLIDE NUMBER
+           =========================================== */
+        .slide-num {
+            position: absolute;
+            bottom: clamp(1rem, 2vw, 1.5rem);
+            right: clamp(1.5rem, 3vw, 2.5rem);
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ===========================================
+           CENTERED CONTENT
+           =========================================== */
+        .centered {
+            text-align: center;
+            align-items: center;
+        }
+
+        /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+        @media (max-height: 700px) {
+            :root {
+                --slide-padding: clamp(1rem, 3vw, 2.5rem);
+                --content-gap: clamp(0.5rem, 1.5vw, 1.2rem);
+                --title-size: clamp(1.6rem, 4.5vw, 3rem);
+                --h2-size: clamp(1.2rem, 3vw, 2rem);
+            }
+        }
+
+        @media (max-height: 600px) {
+            :root {
+                --slide-padding: clamp(0.75rem, 2.5vw, 1.5rem);
+                --content-gap: clamp(0.3rem, 1vw, 0.8rem);
+                --title-size: clamp(1.3rem, 4vw, 2.2rem);
+                --body-size: clamp(0.7rem, 1.1vw, 0.9rem);
+            }
+            .nav-dots { display: none; }
+        }
+
+        @media (max-height: 500px) {
+            :root {
+                --slide-padding: clamp(0.5rem, 2vw, 1rem);
+                --title-size: clamp(1.1rem, 3.5vw, 1.8rem);
+                --h2-size: clamp(0.95rem, 2.5vw, 1.4rem);
+                --body-size: clamp(0.65rem, 1vw, 0.8rem);
+            }
+        }
+
+        @media (max-width: 600px) {
+            :root {
+                --title-size: clamp(1.5rem, 7vw, 2.5rem);
+            }
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation dots -->
+    <nav class="nav-dots" id="navDots"></nav>
+
+    <!-- ===========================================
+         SLIDE 1: TITLE
+         =========================================== -->
+    <section class="slide" data-slide="0">
+        <!-- Floating geometry -->
+        <div class="geo" style="width:180px;height:180px;top:8%;right:12%;border-color:rgba(56,189,248,0.08);transform:rotate(15deg);"></div>
+        <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
+
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Modulo 05</div>
+            <h1 class="reveal">Mindset <span class="gradient-text">Digital</span></h1>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <p class="subtitle reveal">El sistema operativo del liderazgo</p>
+            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Que tipo de lider necesita ser tu organizacion?</p>
+        </div>
+        <div class="slide-num">01 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: QUE NO ES MINDSET DIGITAL
+         =========================================== -->
+    <section class="slide" data-slide="1">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Objetivo</div>
+            <h2 class="reveal">Que NO es <span class="gradient-text">mindset digital</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <h3 style="color:var(--accent-red);margin-bottom:var(--element-gap);">NO es:</h3>
+                    <ul class="bullet-list" style="list-style:none;">
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">✕</span>
+                            Ser joven o "millennial"
+                        </li>
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">✕</span>
+                            Saber usar herramientas digitales
+                        </li>
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">✕</span>
+                            Hablar de innovacion en conferencias
+                        </li>
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">✕</span>
+                            Tener cuentas en redes sociales
+                        </li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <h3 style="color:var(--accent-green);margin-bottom:var(--element-gap);">SI es:</h3>
+                    <ul class="bullet-list" style="list-style:none;">
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">✓</span>
+                            Tomar decisiones basadas en datos y experimentacion
+                        </li>
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">✓</span>
+                            Liderar en contextos de incertidumbre tecnologica
+                        </li>
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">✓</span>
+                            Practicas concretas que se pueden instalar
+                        </li>
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">✓</span>
+                            La capa humana que hace posible la estrategia tech
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">02 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: BINGO DE ANTI-PATRONES
+         =========================================== -->
+    <section class="slide" data-slide="2">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
+            <h2 class="reveal">Bingo de <span class="gradient-text">anti-patrones</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);gap:clamp(0.4rem,0.8vw,0.6rem);">
+                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Implementamos el sistema hace 3 anos y no lo tocamos"</p>
+                    <span class="pill pill-blue">Producto</span>
+                </div>
+                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Yo no necesito entender de tech"</p>
+                    <span class="pill pill-purple">Aprendizaje</span>
+                </div>
+                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Necesitamos un business case de 50 paginas"</p>
+                    <span class="pill pill-amber">Experimentacion</span>
+                </div>
+                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Eso es tema de sistemas, no mio"</p>
+                    <span class="pill pill-blue">Colaboracion</span>
+                </div>
+                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Yo creo que la desercion bajo" (sin datos)</p>
+                    <span class="pill pill-purple">Datos</span>
+                </div>
+                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Solo IT propone soluciones"</p>
+                    <span class="pill pill-green">Agencia</span>
+                </div>
+                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"La seguridad es tema de IT"</p>
+                    <span class="pill pill-red">Seguridad</span>
+                </div>
+                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Compramos la herramienta pero nadie la usa"</p>
+                    <span class="pill pill-amber">Cultura</span>
+                </div>
+                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Tenemos 12 sistemas y solo 2 integrados"</p>
+                    <span class="pill pill-blue">Arquitectura</span>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">7 minutos &mdash; &iquest;Cuantos marcaste? Ese es el diagnostico mas honesto del dia.</p>
+        </div>
+        <div class="slide-num">03 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: PILAR 1 — ORIENTACION A PRODUCTO
+         =========================================== -->
+    <section class="slide" data-slide="3">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pilar 1</div>
+            <h2 class="reveal">Orientacion a <span class="gradient-text">Producto</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div>
+                    <h3 style="color:var(--accent-red);margin-bottom:var(--element-gap);">Mentalidad de Proyecto</h3>
+                    <div class="info-row">
+                        <span class="info-value">Tiene fecha de inicio y fin</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-value">Se mide por entrega en tiempo</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-value">Una vez entregado, "se termino"</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color:var(--accent-green);margin-bottom:var(--element-gap);">Mentalidad de Producto</h3>
+                    <div class="info-row">
+                        <span class="info-value">Es continuo &mdash; se itera permanentemente</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-value">Se mide por valor al usuario</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-value">Nunca esta terminado</span>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                El campus virtual no es un proyecto. Es un producto que se itera y se mide continuamente.
+            </div>
+        </div>
+        <div class="slide-num">04 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: PILAR 2 — APRENDIZAJE CONTINUO
+         =========================================== -->
+    <section class="slide" data-slide="4">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pilar 2</div>
+            <h2 class="reveal">Aprendizaje <span class="gradient-text">Continuo</span></h2>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal">2-3 horas semanales leyendo sobre tendencias del sector</li>
+                    <li class="reveal">Al menos 2 eventos de industria por ano</li>
+                    <li class="reveal">Conversaciones regulares con pares de otras industrias</li>
+                    <li class="reveal">Probar personalmente las herramientas que usa la organizacion</li>
+                </ul>
+            </div>
+            <div class="antipattern reveal" style="margin-top:var(--content-gap);">
+                <div class="antipattern-icon">⚠️</div>
+                <div>
+                    <div class="antipattern-name">Anti-patron</div>
+                    <div class="antipattern-desc">"Yo no necesito entender de tecnologia, para eso tengo IT."</div>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--element-gap);">
+                &iquest;Cuando fue la ultima vez que usaste tu propia plataforma como si fueras un estudiante?
+            </div>
+        </div>
+        <div class="slide-num">05 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: PILAR 3 — EXPERIMENTACION
+         =========================================== -->
+    <section class="slide" data-slide="5">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pilar 3</div>
+            <h2 class="reveal"><span class="gradient-text">Experimentacion</span></h2>
+            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:100%;">
+                <div class="layer" style="justify-content:center;gap:clamp(0.3rem,0.6vw,0.5rem);">
+                    <span style="color:var(--accent);font-weight:700;">Hipotesis</span>
+                    <span style="color:var(--text-muted);">→</span>
+                    <span style="color:var(--text-secondary);">Prototipo</span>
+                    <span style="color:var(--text-muted);">→</span>
+                    <span style="color:var(--text-secondary);">Prueba controlada</span>
+                    <span style="color:var(--text-muted);">→</span>
+                    <span style="color:var(--text-secondary);">Medir</span>
+                    <span style="color:var(--text-muted);">→</span>
+                    <span style="color:var(--text-secondary);">Decidir</span>
+                </div>
+            </div>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <h3 style="color:var(--accent-green);margin-bottom:var(--element-gap);">Experimentar</h3>
+                    <ul class="bullet-list" style="list-style:none;">
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-green);">✓</span>
+                            Tiene hipotesis clara
+                        </li>
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-green);">✓</span>
+                            Se mide el resultado
+                        </li>
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-green);">✓</span>
+                            El fracaso ensena
+                        </li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <h3 style="color:var(--accent-red);margin-bottom:var(--element-gap);">Improvisar</h3>
+                    <ul class="bullet-list" style="list-style:none;">
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-red);">✕</span>
+                            No tiene direccion
+                        </li>
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-red);">✕</span>
+                            No se mide nada
+                        </li>
+                        <li style="padding-left:1.4em;position:relative;">
+                            <span style="position:absolute;left:0;color:var(--accent-red);">✕</span>
+                            El fracaso se oculta
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Antes de invertir USD 200K en un chatbot, proba con 500 estudiantes durante 2 meses.</p>
+        </div>
+        <div class="slide-num">06 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: PILAR 4 — COLABORACION MULTIDISCIPLINARIA
+         =========================================== -->
+    <section class="slide" data-slide="6">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pilar 4</div>
+            <h2 class="reveal">Colaboracion <span class="gradient-text">Multidisciplinaria</span></h2>
+            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:100%;">
+                <div class="layer" style="justify-content:center;gap:clamp(0.3rem,0.6vw,0.5rem);flex-wrap:wrap;">
+                    <span style="color:#38bdf8;font-weight:700;">Negocio</span>
+                    <span style="color:var(--text-muted);">+</span>
+                    <span style="color:#a855f7;font-weight:700;">Tecnologia</span>
+                    <span style="color:var(--text-muted);">+</span>
+                    <span style="color:#34d399;font-weight:700;">Datos</span>
+                    <span style="color:var(--text-muted);">+</span>
+                    <span style="color:#f59e0b;font-weight:700;">Diseno</span>
+                    <span style="color:var(--text-muted);">=</span>
+                    <span style="color:var(--text-primary);font-weight:700;">Decisiones integrales</span>
+                </div>
+            </div>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal">Academia no elige el LMS sola &mdash; lo elige con IT y experiencia del estudiante</li>
+                    <li class="reveal">IT no decide la arquitectura solo &mdash; la define con el negocio</li>
+                    <li class="reveal">Marketing no compra un CRM solo &mdash; lo compra con IT que lo va a integrar</li>
+                </ul>
+            </div>
+            <div class="antipattern reveal" style="margin-top:var(--content-gap);">
+                <div class="antipattern-icon">⚠️</div>
+                <div>
+                    <div class="antipattern-name">Silos</div>
+                    <div class="antipattern-desc">Cada area compra su herramienta sin consultar. Resultado: 12 sistemas, 2 integrados.</div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">07 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: PILAR 5 — CULTURA DE DATOS
+         =========================================== -->
+    <section class="slide" data-slide="7">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pilar 5</div>
+            <h2 class="reveal">Cultura de <span class="gradient-text">Datos</span></h2>
+            <div style="margin-top:var(--content-gap);">
+                <div class="info-row reveal">
+                    <span class="info-label" style="color:var(--accent-red);">Sin datos</span>
+                    <span class="info-value">"Creo que la desercion bajo"</span>
+                    <span style="color:var(--text-muted);font-size:var(--small-size);margin-left:auto;padding-left:0.5em;">→</span>
+                    <span class="info-label" style="color:var(--accent-green);min-width:clamp(60px,8vw,100px);">Con datos</span>
+                    <span class="info-value">"La desercion bajo del 42% al 35%"</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label" style="color:var(--accent-red);">Sin datos</span>
+                    <span class="info-value">"Los estudiantes estan satisfechos"</span>
+                    <span style="color:var(--text-muted);font-size:var(--small-size);margin-left:auto;padding-left:0.5em;">→</span>
+                    <span class="info-label" style="color:var(--accent-green);min-width:clamp(60px,8vw,100px);">Con datos</span>
+                    <span class="info-value">"El NPS subio de +15 a +31"</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label" style="color:var(--accent-red);">Sin datos</span>
+                    <span class="info-value">"Necesitamos mas marketing"</span>
+                    <span style="color:var(--text-muted);font-size:var(--small-size);margin-left:auto;padding-left:0.5em;">→</span>
+                    <span class="info-label" style="color:var(--accent-green);min-width:clamp(60px,8vw,100px);">Con datos</span>
+                    <span class="info-value">"El CAC subio 40% pero el LTV se mantuvo"</span>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                No se trata de tener data science. Se trata de que las decisiones se basen en evidencia.
+            </div>
+        </div>
+        <div class="slide-num">08 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: PILAR 6 — AGENCIA DIGITAL
+         =========================================== -->
+    <section class="slide" data-slide="8">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pilar 6</div>
+            <h2 class="reveal">Agencia <span class="gradient-text">Digital</span></h2>
+            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:100%;">
+                <div class="layer" style="justify-content:space-between;">
+                    <span class="pill pill-red">Pasivo</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">"No se de tech, que lo resuelva IT"</span>
+                </div>
+                <div class="layer" style="justify-content:space-between;">
+                    <span class="pill pill-amber">Usuario</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">"Uso lo que me dan"</span>
+                </div>
+                <div class="layer" style="justify-content:space-between;">
+                    <span class="pill pill-blue">Participante</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">"Propongo mejoras desde mi perspectiva"</span>
+                </div>
+                <div class="layer" style="justify-content:space-between;border-color:rgba(52,211,153,0.2);">
+                    <span class="pill pill-green">Protagonista</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">"Entiendo, uso y propongo tecnologia"</span>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                En una organizacion con agencia digital, cualquier area puede identificar oportunidades.
+            </div>
+        </div>
+        <div class="slide-num">09 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: PILAR 7 — SEGURIDAD Y ETICA
+         =========================================== -->
+    <section class="slide" data-slide="9">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pilar 7</div>
+            <h2 class="reveal">Seguridad y <span class="gradient-text">Etica</span></h2>
+            <div class="ethics-grid reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="ethics-item">
+                    <span class="ethics-icon">✓</span>
+                    <span>&iquest;Que datos personales almacenamos?</span>
+                </div>
+                <div class="ethics-item">
+                    <span class="ethics-icon">✓</span>
+                    <span>&iquest;Quien tiene acceso a esa informacion?</span>
+                </div>
+                <div class="ethics-item">
+                    <span class="ethics-icon">✓</span>
+                    <span>&iquest;Que pasaria con un ataque de ransomware?</span>
+                </div>
+                <div class="ethics-item">
+                    <span class="ethics-icon">✓</span>
+                    <span>&iquest;Cumplimos regulacion de proteccion de datos?</span>
+                </div>
+                <div class="ethics-item">
+                    <span class="ethics-icon">✓</span>
+                    <span>&iquest;Podemos explicar el criterio de la IA?</span>
+                </div>
+            </div>
+            <div class="antipattern reveal" style="margin-top:var(--content-gap);">
+                <div class="antipattern-icon">⚠️</div>
+                <div>
+                    <div class="antipattern-name">Anti-patron critico</div>
+                    <div class="antipattern-desc">"La seguridad es tema del equipo de IT." En 2024, una filtracion llega a la direccion general.</div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">10 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 11: EJEMPLO PLATZI
+         =========================================== -->
+    <section class="slide" data-slide="10">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Caso Real</div>
+            <h2 class="reveal">Platzi: <span class="gradient-text">mindset digital en accion</span></h2>
+            <div style="margin-top:var(--content-gap);">
+                <div class="info-row reveal">
+                    <span class="info-label">Producto</span>
+                    <span class="info-value">Actualizacion semanal, sin "versiones"</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Aprendizaje</span>
+                    <span class="info-value">Los fundadores siguen creando cursos</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Experimentacion</span>
+                    <span class="info-value">Nuevos formatos se prueban continuamente</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Colaboracion</span>
+                    <span class="info-value">Equipos multidisciplinarios crean cada curso</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Datos</span>
+                    <span class="info-value">Tasas de finalizacion, engagement y NPS como KPIs centrales</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Agencia</span>
+                    <span class="info-value">Toda la organizacion propone mejoras al producto</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Seguridad</span>
+                    <span class="info-value">Tecnologia propia para control de datos</span>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">11 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 12: PLATZI VS UNIVERSIDAD
+         =========================================== -->
+    <section class="slide" data-slide="11">
+        <div class="slide-content">
+            <h2 class="reveal">Platzi vs <span class="gradient-text">Universidad tradicional</span></h2>
+            <div style="margin-top:var(--content-gap);">
+                <div class="info-row reveal">
+                    <span class="info-label">Actualizacion</span>
+                    <span class="info-value">Semanal <span style="color:var(--text-muted);">vs</span> Cada 3-5 anos</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Metrica central</span>
+                    <span class="info-value">Tasa finalizacion <span style="color:var(--text-muted);">vs</span> Matricula</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Time to market</span>
+                    <span class="info-value">Dias/semanas <span style="color:var(--text-muted);">vs</span> Meses/anos</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Relacion con estudiante</span>
+                    <span class="info-value">Continua, personalizada <span style="color:var(--text-muted);">vs</span> Administrativa</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Rol de la tech</span>
+                    <span class="info-value">ES el negocio <span style="color:var(--text-muted);">vs</span> Soporte al negocio</span>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                La pregunta no es "como ser como Platzi". Es que practicas podes incorporar en tu contexto.
+            </div>
+        </div>
+        <div class="slide-num">12 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 13: DINAMICA DIAGNOSTICO
+         =========================================== -->
+    <section class="slide" data-slide="12">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
+            <h2 class="reveal">Diagnostico rapido</h2>
+            <p class="subtitle reveal">Evalua cada pilar como semaforo</p>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
+                <div class="card" style="border-left:3px solid var(--accent-red);text-align:center;">
+                    <div class="card-icon">&#x1F534;</div>
+                    <h3 style="color:var(--accent-red);">Rojo</h3>
+                    <p>No existe o es muy debil</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-warm);text-align:center;">
+                    <div class="card-icon">&#x1F7E1;</div>
+                    <h3 style="color:var(--accent-warm);">Amarillo</h3>
+                    <p>Existe pero no es consistente</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);text-align:center;">
+                    <div class="card-icon">&#x1F7E2;</div>
+                    <h3 style="color:var(--accent-green);">Verde</h3>
+                    <p>Es parte de la cultura</p>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">25 minutos &mdash; "No me digas que estas en verde. Dame el ejemplo que lo demuestra."</p>
+        </div>
+        <div class="slide-num">13 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 14: RESULTADO ESPERADO
+         =========================================== -->
+    <section class="slide" data-slide="13">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Cierre</div>
+            <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <div style="max-width:550px;margin-top:var(--content-gap);">
+                <ul class="bullet-list" style="text-align:left;">
+                    <li class="reveal">Entendes el mindset digital como sistema de decision concreto</li>
+                    <li class="reveal">Podes diagnosticar los 7 pilares en tu organizacion</li>
+                    <li class="reveal">Identificas anti-patrones en tu gestion</li>
+                    <li class="reveal">Tenes acciones concretas para mejorar al menos 2 pilares</li>
+                    <li class="reveal">Podes modelar y comunicar este mindset a tu equipo</li>
+                </ul>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 05 &mdash; Mindset Digital</p>
+        </div>
+        <div class="slide-num">14 / 14</div>
+    </section>
+
+    <!-- ===========================================
+       JAVASCRIPT: Slide Controller
+       =========================================== -->
+    <script>
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.progressBar = document.getElementById('progressBar');
+                this.navDotsContainer = document.getElementById('navDots');
+                this.currentSlide = 0;
+                this.totalSlides = this.slides.length;
+                this.isScrolling = false;
+
+                this.createNavDots();
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.updateProgress();
+            }
+
+            /* Create navigation dots */
+            createNavDots() {
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('nav-dot');
+                    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.navDotsContainer.appendChild(dot);
+                }
+            }
+
+            /* Observe which slide is visible */
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const index = parseInt(entry.target.dataset.slide);
+                            this.currentSlide = index;
+                            this.updateNavDots();
+                            this.updateProgress();
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            /* Keyboard navigation */
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                        e.preventDefault();
+                        this.nextSlide();
+                    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        this.prevSlide();
+                    }
+                });
+            }
+
+            /* Touch/swipe support */
+            setupTouchNav() {
+                let startY = 0;
+                document.addEventListener('touchstart', (e) => {
+                    startY = e.touches[0].clientY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    const diff = startY - e.changedTouches[0].clientY;
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) this.nextSlide();
+                        else this.prevSlide();
+                    }
+                }, { passive: true });
+            }
+
+            goToSlide(index) {
+                if (index >= 0 && index < this.totalSlides) {
+                    this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            nextSlide() {
+                this.goToSlide(this.currentSlide + 1);
+            }
+
+            prevSlide() {
+                this.goToSlide(this.currentSlide - 1);
+            }
+
+            updateNavDots() {
+                const dots = this.navDotsContainer.querySelectorAll('.nav-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === this.currentSlide);
+                });
+            }
+
+            updateProgress() {
+                const progress = ((this.currentSlide + 1) / this.totalSlides) * 100;
+                this.progressBar.style.width = `${progress}%`;
+            }
+        }
+
+        /* Initialize on load */
+        document.addEventListener('DOMContentLoaded', () => {
+            new SlidePresentation();
+        });
+    </script>
+</body>
+</html>

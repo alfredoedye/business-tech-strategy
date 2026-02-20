@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&#243;dulo 02 &#8212; Estrategia Tecnol&#243;gica</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (THEME: Midnight Clarity)
+           =========================================== */
+        :root {
+            /* Colors */
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.07);
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent: #38bdf8;
+            --accent-purple: #a855f7;
+            --accent-warm: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-green: #34d399;
+            --border: rgba(255, 255, 255, 0.08);
+
+            /* Typography */
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --title-size: clamp(2rem, 5.5vw, 4rem);
+            --h2-size: clamp(1.4rem, 3.5vw, 2.5rem);
+            --h3-size: clamp(1rem, 2vw, 1.4rem);
+            --body-size: clamp(0.75rem, 1.3vw, 1.05rem);
+            --small-size: clamp(0.65rem, 1vw, 0.85rem);
+            --tag-size: clamp(0.6rem, 0.9vw, 0.75rem);
+
+            /* Spacing */
+            --slide-padding: clamp(1.5rem, 4vw, 4rem);
+            --content-gap: clamp(0.8rem, 2vw, 2rem);
+            --element-gap: clamp(0.4rem, 1vw, 1rem);
+
+            /* Animation */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration: 0.7s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+        /* ===========================================
+           SLIDE CONTAINER
+           =========================================== */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            padding: var(--slide-padding);
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 100%;
+            overflow: hidden;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ===========================================
+           BACKGROUND EFFECTS
+           =========================================== */
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 70% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Geometric decorations */
+        .geo {
+            position: absolute;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        .slide-tag {
+            display: inline-block;
+            font-size: var(--tag-size);
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 0.4em 1.2em;
+            border-radius: 100px;
+            margin-bottom: clamp(0.8rem, 1.5vw, 1.5rem);
+            width: fit-content;
+        }
+
+        .slide h1 {
+            font-family: var(--font-display);
+            font-size: var(--title-size);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+        }
+
+        .slide h2 {
+            font-family: var(--font-display);
+            font-size: var(--h2-size);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: clamp(0.5rem, 1.5vw, 1.2rem);
+        }
+
+        .slide h3 {
+            font-family: var(--font-body);
+            font-size: var(--h3-size);
+            font-weight: 700;
+            margin-bottom: var(--element-gap);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide p, .slide li {
+            font-size: var(--body-size);
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .subtitle {
+            font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+            color: var(--text-secondary);
+        }
+
+        /* ===========================================
+           COMPONENTS
+           =========================================== */
+
+        /* Blockquote */
+        .quote-box {
+            border-left: 3px solid var(--accent);
+            padding: 0.8em 1.2em;
+            background: rgba(56, 189, 248, 0.05);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: var(--body-size);
+        }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: clamp(0.5rem, 1.2vw, 1rem);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(0.8rem, 1.5vw, 1.5rem);
+            transition: background 0.3s ease;
+        }
+
+        .card:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .card-icon {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            margin-bottom: clamp(0.3rem, 0.8vw, 0.6rem);
+        }
+
+        .card h3 {
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
+            color: var(--text-primary);
+        }
+
+        .card p {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Table-like rows */
+        .info-row {
+            display: flex;
+            gap: clamp(0.5rem, 1.5vw, 1.5rem);
+            padding: clamp(0.5rem, 1vw, 0.8rem) 0;
+            border-bottom: 1px solid var(--border);
+            align-items: flex-start;
+        }
+
+        .info-row:last-child { border-bottom: none; }
+
+        .info-label {
+            font-size: var(--small-size);
+            font-weight: 700;
+            color: var(--accent);
+            min-width: clamp(80px, 12vw, 140px);
+            flex-shrink: 0;
+        }
+
+        .info-value {
+            font-size: var(--small-size);
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Stat highlight */
+        .stat-big {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1;
+            margin-bottom: clamp(0.3rem, 1vw, 0.8rem);
+        }
+
+        /* Pill tags */
+        .pill {
+            display: inline-block;
+            font-size: var(--small-size);
+            font-weight: 500;
+            padding: 0.3em 0.8em;
+            border-radius: 100px;
+            border: 1px solid;
+        }
+
+        .pill-blue { color: #38bdf8; border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.08); }
+        .pill-purple { color: #a855f7; border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.08); }
+        .pill-amber { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.08); }
+        .pill-red { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); }
+        .pill-green { color: #34d399; border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.08); }
+
+        /* Two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1rem, 2.5vw, 2.5rem);
+            align-items: start;
+        }
+
+        @media (max-width: 700px) {
+            .two-col { grid-template-columns: 1fr; }
+        }
+
+        /* Bullet list */
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.8vw, 0.6rem);
+        }
+
+        .bullet-list li {
+            padding-left: 1.2em;
+            position: relative;
+            font-size: var(--body-size);
+        }
+
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: clamp(0.5rem, 1.5vw, 1.5rem) 0;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .divider .diamond {
+            width: 5px; height: 5px;
+            background: var(--accent);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* Triangle diagram */
+        .triangle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(0.5rem, 2vw, 1.5rem) 0;
+        }
+
+        .triangle-svg {
+            width: min(300px, 40vw);
+            height: auto;
+        }
+
+        /* Anti-pattern cards */
+        .antipattern {
+            display: flex;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            align-items: flex-start;
+            padding: clamp(0.6rem, 1vw, 1rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-red);
+        }
+
+        .antipattern-icon {
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
+            flex-shrink: 0;
+        }
+
+        .antipattern-name {
+            font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.15em;
+        }
+
+        .antipattern-desc {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+        }
+
+        /* Layer diagram */
+        .layer-stack {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.6vw, 0.5rem);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .layer {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            padding: clamp(0.5rem, 0.8vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: var(--small-size);
+            font-weight: 500;
+        }
+
+        .layer-label {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 40px;
+        }
+
+        /* Governance roles */
+        .role-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+
+        .role-title {
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);
+        }
+
+        .role-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.15rem, 0.4vw, 0.3rem);
+        }
+
+        .role-list li {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            padding-left: 1em;
+            position: relative;
+        }
+
+        .role-list li::before {
+            content: '&#8594;';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Ethics list */
+        .ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: clamp(0.4rem, 0.8vw, 0.6rem);
+        }
+
+        .ethics-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            font-size: var(--body-size);
+            color: var(--text-secondary);
+            padding: clamp(0.4rem, 0.7vw, 0.6rem) clamp(0.6rem, 1vw, 0.8rem);
+            background: var(--bg-card);
+            border-radius: 8px;
+        }
+
+        .ethics-icon {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity var(--duration) var(--ease-out-expo),
+                        transform var(--duration) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal:nth-child(1) { transition-delay: 0.05s; }
+        .reveal:nth-child(2) { transition-delay: 0.12s; }
+        .reveal:nth-child(3) { transition-delay: 0.19s; }
+        .reveal:nth-child(4) { transition-delay: 0.26s; }
+        .reveal:nth-child(5) { transition-delay: 0.33s; }
+        .reveal:nth-child(6) { transition-delay: 0.40s; }
+        .reveal:nth-child(7) { transition-delay: 0.47s; }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity var(--duration) var(--ease-out-expo),
+                        transform var(--duration) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal-scale {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ===========================================
+           PROGRESS BAR
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+            z-index: 100;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        /* ===========================================
+           NAV DOTS
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: clamp(0.8rem, 1.5vw, 1.5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .nav-dot.active {
+            background: var(--accent);
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+        }
+
+        .nav-dot:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ===========================================
+           SLIDE NUMBER
+           =========================================== */
+        .slide-num {
+            position: absolute;
+            bottom: clamp(1rem, 2vw, 1.5rem);
+            right: clamp(1.5rem, 3vw, 2.5rem);
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ===========================================
+           CENTERED CONTENT
+           =========================================== */
+        .centered {
+            text-align: center;
+            align-items: center;
+        }
+
+        /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+        @media (max-height: 700px) {
+            :root {
+                --slide-padding: clamp(1rem, 3vw, 2.5rem);
+                --content-gap: clamp(0.5rem, 1.5vw, 1.2rem);
+                --title-size: clamp(1.6rem, 4.5vw, 3rem);
+                --h2-size: clamp(1.2rem, 3vw, 2rem);
+            }
+        }
+
+        @media (max-height: 600px) {
+            :root {
+                --slide-padding: clamp(0.75rem, 2.5vw, 1.5rem);
+                --content-gap: clamp(0.3rem, 1vw, 0.8rem);
+                --title-size: clamp(1.3rem, 4vw, 2.2rem);
+                --body-size: clamp(0.7rem, 1.1vw, 0.9rem);
+            }
+            .nav-dots { display: none; }
+        }
+
+        @media (max-height: 500px) {
+            :root {
+                --slide-padding: clamp(0.5rem, 2vw, 1rem);
+                --title-size: clamp(1.1rem, 3.5vw, 1.8rem);
+                --h2-size: clamp(0.95rem, 2.5vw, 1.4rem);
+                --body-size: clamp(0.65rem, 1vw, 0.8rem);
+            }
+        }
+
+        @media (max-width: 600px) {
+            :root {
+                --title-size: clamp(1.5rem, 7vw, 2.5rem);
+            }
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation dots -->
+    <nav class="nav-dots" id="navDots"></nav>
+
+    <!-- ===========================================
+         SLIDE 1: TITLE
+         =========================================== -->
+    <section class="slide" data-slide="0">
+        <div class="geo" style="width:180px;height:180px;top:8%;right:12%;border-color:rgba(56,189,248,0.08);transform:rotate(15deg);"></div>
+        <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
+
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Modulo 02</div>
+            <h1 class="reveal">Estrategia <span class="gradient-text">Tecnologica</span></h1>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <p class="subtitle reveal">Decisiones que definen el futuro</p>
+            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Que decisiones tecnologicas son estrategicas y cuales son tacticas?</p>
+        </div>
+        <div class="slide-num">01 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: OBJETIVO + TESIS
+         =========================================== -->
+    <section class="slide" data-slide="1">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Objetivo</div>
+            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este modulo</span></h2>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal">Manejar el vocabulario de <strong style="color:var(--text-primary);">decisiones tecnologicas estrategicas</strong></li>
+                    <li class="reveal">Distinguir entre <strong style="color:var(--text-primary);">decision tactica y decision estructural</strong></li>
+                    <li class="reveal">Entender las <strong style="color:var(--text-primary);">6 dimensiones de una estrategia tecnologica</strong></li>
+                    <li class="reveal">Comprender el <strong style="color:var(--text-primary);">impacto financiero de las decisiones tech</strong> (CAPEX vs OPEX)</li>
+                </ul>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                No existen decisiones "puramente tecnologicas". Toda decision tech es una decision de negocio con consecuencias en costos, velocidad, dependencia y diferenciacion.
+            </div>
+        </div>
+        <div class="slide-num">02 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: COSTO DE DECISIONES EQUIVOCADAS
+         =========================================== -->
+    <section class="slide" data-slide="2">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Revelacion</div>
+            <h2 class="reveal">El costo de <span class="gradient-text">decidir mal</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <div class="card-icon">&#x1F4B8;</div>
+                    <h3>Deuda tecnica</h3>
+                    <p>Consume el 40% del presupuesto IT en la empresa promedio (McKinsey 2024)</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <div class="card-icon">&#x1F4C9;</div>
+                    <h3>2U + edX</h3>
+                    <p>Invirtio USD 800M. Hoy tiene USD 900M en deuda. La decision Build vs Buy mas cara de EdTech.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <div class="card-icon">&#x1F4C8;</div>
+                    <h3>Siglo 21</h3>
+                    <p>Construyo su propio SIS. De 30,000 a 60,000+ estudiantes con NPS +31.</p>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">La diferencia no es tecnica. Es estrategica.</p>
+        </div>
+        <div class="slide-num">03 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: BUILD VS BUY
+         =========================================== -->
+    <section class="slide" data-slide="3">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Decision 1</div>
+            <h2 class="reveal">Build vs <span class="gradient-text">Buy</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="role-card" style="border-top:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">Build (Construir)</h3>
+                    <ul class="role-list">
+                        <li>Control total y diferenciacion</li>
+                        <li>Requiere equipo tecnico</li>
+                        <li>Costos altos, mas tiempo</li>
+                        <li>Conviene para ventaja competitiva</li>
+                    </ul>
+                </div>
+                <div class="role-card" style="border-top:3px solid #a855f7;">
+                    <h3 style="color:#a855f7;">Buy (Comprar)</h3>
+                    <ul class="role-list">
+                        <li>Velocidad de implementacion</li>
+                        <li>Menor riesgo inicial</li>
+                        <li>Dependencia del proveedor</li>
+                        <li>Conviene para procesos estandar</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                Compra lo que es commodity. Construi lo que es tu ventaja competitiva.
+            </div>
+            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">Impacto financiero: Build = CAPEX (inversion de capital). Buy = OPEX (gasto operativo mensual).</p>
+        </div>
+        <div class="slide-num">04 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: CLOUD VS ON-PREMISE
+         =========================================== -->
+    <section class="slide" data-slide="4">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Decision 2</div>
+            <h2 class="reveal">Cloud vs <span class="gradient-text">On-premise</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="role-card" style="border-top:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">&#x2601;&#xFE0F; Cloud</h3>
+                    <ul class="role-list">
+                        <li>Escalabilidad automatica</li>
+                        <li>Sin inversion inicial grande</li>
+                        <li>Costos que pueden crecer</li>
+                        <li>Analogia: alquilar un departamento</li>
+                    </ul>
+                </div>
+                <div class="role-card" style="border-top:3px solid #f59e0b;">
+                    <h3 style="color:#f59e0b;">&#x1F3E2; On-premise</h3>
+                    <ul class="role-list">
+                        <li>Control total</li>
+                        <li>Costos predecibles largo plazo</li>
+                        <li>Riesgo de obsolescencia</li>
+                        <li>Analogia: comprar una casa</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--body-size);color:var(--text-muted);">Cloud convierte CAPEX en OPEX. El CFO necesita entender esta transicion.</p>
+        </div>
+        <div class="slide-num">05 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: CORE VS COMMODITY
+         =========================================== -->
+    <section class="slide" data-slide="5">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Decision 3</div>
+            <h2 class="reveal">Core vs <span class="gradient-text">Commodity</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="role-card" style="border-top:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">Core</h3>
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:var(--element-gap);">Sistemas que definen tu ventaja competitiva</p>
+                    <ul class="role-list">
+                        <li>Plataforma de aprendizaje personalizado</li>
+                        <li>Motor de analitica de retencion</li>
+                    </ul>
+                </div>
+                <div class="role-card" style="border-top:3px solid #f59e0b;">
+                    <h3 style="color:#f59e0b;">Commodity</h3>
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:var(--element-gap);">Sistemas necesarios pero no diferenciadores</p>
+                    <ul class="role-list">
+                        <li>Email</li>
+                        <li>Videoconferencia</li>
+                        <li>Sistema contable</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="antipattern reveal" style="margin-top:var(--content-gap);">
+                <div class="antipattern-icon">&#x26A0;&#xFE0F;</div>
+                <div>
+                    <div class="antipattern-name">La trampa comun</div>
+                    <div class="antipattern-desc">Invertir en personalizar commodities y usar soluciones genericas para lo que es core.</div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">06 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: VELOCIDAD VS CONTROL
+         =========================================== -->
+    <section class="slide" data-slide="6">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Decision 4</div>
+            <h2 class="reveal">Velocidad vs <span class="gradient-text">Control</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="role-card" style="border-top:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">Priorizar Velocidad</h3>
+                    <div class="info-row">
+                        <span class="info-value">Lanzar rapido, iterar despues</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-value">Aceptar deuda tecnica a corto plazo</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-value">Funciona para validar hipotesis</span>
+                    </div>
+                    <div style="margin-top:var(--element-gap);"><span class="pill pill-blue">Riesgo: acumulacion de problemas</span></div>
+                </div>
+                <div class="role-card" style="border-top:3px solid #a855f7;">
+                    <h3 style="color:#a855f7;">Priorizar Control</h3>
+                    <div class="info-row">
+                        <span class="info-value">Planificar en detalle</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-value">Minimizar deuda tecnica desde el inicio</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-value">Funciona para sistemas criticos</span>
+                    </div>
+                    <div style="margin-top:var(--element-gap);"><span class="pill pill-purple">Riesgo: paralisis por analisis</span></div>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                No hay respuesta correcta universal. La decision depende del momento, el riesgo y la reversibilidad.
+            </div>
+        </div>
+        <div class="slide-num">07 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: 6 DIMENSIONES GRID
+         =========================================== -->
+    <section class="slide" data-slide="7">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Framework</div>
+            <h2 class="reveal">6 dimensiones de <span class="gradient-text">estrategia tech</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
+                <div class="card">
+                    <div class="card-icon">&#x1F3D7;&#xFE0F;</div>
+                    <h3>Infraestructura</h3>
+                    <p>&iquest;Donde viven tus sistemas? &iquest;Cloud, on-premise, hibrido?</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#x1F517;</div>
+                    <h3>Arquitectura</h3>
+                    <p>&iquest;Tus sistemas se hablan o son islas?</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#x1F4CA;</div>
+                    <h3>Datos</h3>
+                    <p>&iquest;Son confiables? &iquest;Quien los gobierna?</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#x1F512;</div>
+                    <h3>Seguridad</h3>
+                    <p>&iquest;Tenemos politicas definidas? &iquest;Estamos preparados?</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#x1F465;</div>
+                    <h3>Talento</h3>
+                    <p>&iquest;Apaga incendios o construye estrategia?</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#x1F4A1;</div>
+                    <h3>Innovacion</h3>
+                    <p>&iquest;Hay proceso o es ad hoc?</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">08 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: 6 DIMENSIONES DETALLE 1, 2, 3
+         =========================================== -->
+    <section class="slide" data-slide="8">
+        <div class="slide-content">
+            <h2 class="reveal">Dimensiones <span class="gradient-text">1, 2 y 3</span></h2>
+            <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vw,0.8rem);margin-top:var(--content-gap);">
+                <div class="card reveal" style="border-left:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">&#x1F3D7;&#xFE0F; Infraestructura</h3>
+                    <ul class="bullet-list">
+                        <li>&iquest;Puede escalar en picos?</li>
+                        <li>&iquest;Cuan dependiente sos de un proveedor?</li>
+                    </ul>
+                </div>
+                <div class="card reveal" style="border-left:3px solid #a855f7;">
+                    <h3 style="color:#a855f7;">&#x1F517; Arquitectura</h3>
+                    <ul class="bullet-list">
+                        <li>&iquest;La info fluye automaticamente?</li>
+                        <li>&iquest;Cuantos procesos dependen de Excel?</li>
+                    </ul>
+                </div>
+                <div class="card reveal" style="border-left:3px solid #34d399;">
+                    <h3 style="color:#34d399;">&#x1F4CA; Datos</h3>
+                    <ul class="bullet-list">
+                        <li>&iquest;Que datos tenemos?</li>
+                        <li>&iquest;Decisiones con datos o intuicion?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">09 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: 6 DIMENSIONES DETALLE 4, 5, 6
+         =========================================== -->
+    <section class="slide" data-slide="9">
+        <div class="slide-content">
+            <h2 class="reveal">Dimensiones <span class="gradient-text">4, 5 y 6</span></h2>
+            <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vw,0.8rem);margin-top:var(--content-gap);">
+                <div class="card reveal" style="border-left:3px solid #ef4444;">
+                    <h3 style="color:#ef4444;">&#x1F512; Seguridad</h3>
+                    <ul class="bullet-list">
+                        <li>&iquest;Quien tiene acceso a que?</li>
+                        <li>&iquest;Preparados para un incidente?</li>
+                    </ul>
+                </div>
+                <div class="card reveal" style="border-left:3px solid #f59e0b;">
+                    <h3 style="color:#f59e0b;">&#x1F465; Talento</h3>
+                    <ul class="bullet-list">
+                        <li>&iquest;Negocio y tech hablan el mismo idioma?</li>
+                        <li>&iquest;Equipo de construccion o de bomberos?</li>
+                    </ul>
+                </div>
+                <div class="card reveal" style="border-left:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">&#x1F4A1; Innovacion</h3>
+                    <ul class="bullet-list">
+                        <li>&iquest;Quien identifica oportunidades?</li>
+                        <li>&iquest;Espacio para experimentar?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">10 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 11: ALINEACION TECNOLOGIA-NEGOCIO
+         =========================================== -->
+    <section class="slide" data-slide="10">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Alineacion</div>
+            <h2 class="reveal">Tecnologia alineada <span class="gradient-text">al negocio</span></h2>
+            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:600px;margin-left:0;">
+                <div class="layer">
+                    <span class="layer-label">01</span>
+                    <span style="font-size:var(--small-size);color:var(--text-primary);font-weight:600;">Objetivos de negocio</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">02</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">&#8594; Capacidades necesarias</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">03</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">&#8594; Habilitadores tecnologicos</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">04</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">&#8594; Inversion y priorizacion</span>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                <strong style="color:var(--text-primary);">Ejemplo:</strong> Objetivo: reducir desercion del 42% al 25%. Capacidad: detectar estudiantes en riesgo. Habilitador: analitica predictiva. Inversion: integracion de datos + modelo de alertas.
+            </div>
+        </div>
+        <div class="slide-num">11 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 12: DINAMICA
+         =========================================== -->
+    <section class="slide" data-slide="11">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
+            <h2 class="reveal">Radar + Trade-offs</h2>
+            <div class="divider reveal"><div class="diamond" style="background:var(--accent-warm);"></div></div>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);max-width:700px;">
+                <div class="card" style="text-align:left;">
+                    <div class="card-icon">&#x1F4E1;</div>
+                    <h3>Radar de Estrategia Tech</h3>
+                    <p>Califica las 6 dimensiones del 1 al 5. Visualiza tu perfil. 15 min individual.</p>
+                </div>
+                <div class="card" style="text-align:left;">
+                    <div class="card-icon">&#x2696;&#xFE0F;</div>
+                    <h3>Trade-offs en Accion</h3>
+                    <p>4 escenarios de decision. Decidir y argumentar en grupo. 20 min grupal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">12 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 13: RESULTADO ESPERADO
+         =========================================== -->
+    <section class="slide" data-slide="12">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Cierre</div>
+            <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <div style="max-width:550px;margin-top:var(--content-gap);">
+                <ul class="bullet-list" style="text-align:left;">
+                    <li class="reveal">Manejas vocabulario de <strong style="color:var(--text-primary);">decisiones tech estrategicas</strong></li>
+                    <li class="reveal">Distingues decisiones <strong style="color:var(--text-primary);">tacticas de estructurales</strong></li>
+                    <li class="reveal">Entendes las <strong style="color:var(--text-primary);">6 dimensiones de estrategia tech</strong></li>
+                    <li class="reveal">Tenes un primer <strong style="color:var(--text-primary);">diagnostico visual (radar) de tu madurez</strong></li>
+                    <li class="reveal">Podes participar activamente en <strong style="color:var(--text-primary);">conversaciones de estrategia tech</strong></li>
+                </ul>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 02 &#8212; Estrategia Tecnologica</p>
+        </div>
+        <div class="slide-num">13 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 14: REFLEXION
+         =========================================== -->
+    <section class="slide" data-slide="13">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Reflexion</div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:680px;font-size:var(--h3-size);line-height:1.6;border-left-width:4px;">
+                Cada decision tecnologica que tomas (o que dejas que otros tomen por vos) define la estructura de costos, la velocidad y la dependencia de tu organizacion por los proximos 3&#8211;5 anos. &iquest;Estas eligiendo... o estas heredando?
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 02 &#8212; Estrategia Tecnologica</p>
+        </div>
+        <div class="slide-num">14 / 14</div>
+    </section>
+
+    <!-- ===========================================
+       JAVASCRIPT: Slide Controller
+       =========================================== -->
+    <script>
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.progressBar = document.getElementById('progressBar');
+                this.navDotsContainer = document.getElementById('navDots');
+                this.currentSlide = 0;
+                this.totalSlides = this.slides.length;
+                this.isScrolling = false;
+
+                this.createNavDots();
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.updateProgress();
+            }
+
+            /* Create navigation dots */
+            createNavDots() {
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('nav-dot');
+                    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.navDotsContainer.appendChild(dot);
+                }
+            }
+
+            /* Observe which slide is visible */
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const index = parseInt(entry.target.dataset.slide);
+                            this.currentSlide = index;
+                            this.updateNavDots();
+                            this.updateProgress();
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            /* Keyboard navigation */
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                        e.preventDefault();
+                        this.nextSlide();
+                    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        this.prevSlide();
+                    }
+                });
+            }
+
+            /* Touch/swipe support */
+            setupTouchNav() {
+                let startY = 0;
+                document.addEventListener('touchstart', (e) => {
+                    startY = e.touches[0].clientY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    const diff = startY - e.changedTouches[0].clientY;
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) this.nextSlide();
+                        else this.prevSlide();
+                    }
+                }, { passive: true });
+            }
+
+            goToSlide(index) {
+                if (index >= 0 && index < this.totalSlides) {
+                    this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            nextSlide() {
+                this.goToSlide(this.currentSlide + 1);
+            }
+
+            prevSlide() {
+                this.goToSlide(this.currentSlide - 1);
+            }
+
+            updateNavDots() {
+                const dots = this.navDotsContainer.querySelectorAll('.nav-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === this.currentSlide);
+                });
+            }
+
+            updateProgress() {
+                const progress = ((this.currentSlide + 1) / this.totalSlides) * 100;
+                this.progressBar.style.width = `${progress}%`;
+            }
+        }
+
+        /* Initialize on load */
+        document.addEventListener('DOMContentLoaded', () => {
+            new SlidePresentation();
+        });
+    </script>
+</body>
+</html>

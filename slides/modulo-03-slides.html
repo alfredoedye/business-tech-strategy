@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&oacute;dulo 03 &mdash; Arquitectura IT Educativa</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (THEME: Midnight Clarity)
+           =========================================== */
+        :root {
+            /* Colors */
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.07);
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent: #38bdf8;
+            --accent-purple: #a855f7;
+            --accent-warm: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-green: #34d399;
+            --border: rgba(255, 255, 255, 0.08);
+
+            /* Typography */
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --title-size: clamp(2rem, 5.5vw, 4rem);
+            --h2-size: clamp(1.4rem, 3.5vw, 2.5rem);
+            --h3-size: clamp(1rem, 2vw, 1.4rem);
+            --body-size: clamp(0.75rem, 1.3vw, 1.05rem);
+            --small-size: clamp(0.65rem, 1vw, 0.85rem);
+            --tag-size: clamp(0.6rem, 0.9vw, 0.75rem);
+
+            /* Spacing */
+            --slide-padding: clamp(1.5rem, 4vw, 4rem);
+            --content-gap: clamp(0.8rem, 2vw, 2rem);
+            --element-gap: clamp(0.4rem, 1vw, 1rem);
+
+            /* Animation */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration: 0.7s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+        /* ===========================================
+           SLIDE CONTAINER
+           =========================================== */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            padding: var(--slide-padding);
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 100%;
+            overflow: hidden;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ===========================================
+           BACKGROUND EFFECTS
+           =========================================== */
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 70% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Geometric decorations */
+        .geo {
+            position: absolute;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        .slide-tag {
+            display: inline-block;
+            font-size: var(--tag-size);
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 0.4em 1.2em;
+            border-radius: 100px;
+            margin-bottom: clamp(0.8rem, 1.5vw, 1.5rem);
+            width: fit-content;
+        }
+
+        .slide h1 {
+            font-family: var(--font-display);
+            font-size: var(--title-size);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+        }
+
+        .slide h2 {
+            font-family: var(--font-display);
+            font-size: var(--h2-size);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: clamp(0.5rem, 1.5vw, 1.2rem);
+        }
+
+        .slide h3 {
+            font-family: var(--font-body);
+            font-size: var(--h3-size);
+            font-weight: 700;
+            margin-bottom: var(--element-gap);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide p, .slide li {
+            font-size: var(--body-size);
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .subtitle {
+            font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+            color: var(--text-secondary);
+        }
+
+        /* ===========================================
+           COMPONENTS
+           =========================================== */
+
+        /* Blockquote */
+        .quote-box {
+            border-left: 3px solid var(--accent);
+            padding: 0.8em 1.2em;
+            background: rgba(56, 189, 248, 0.05);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: var(--body-size);
+        }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: clamp(0.5rem, 1.2vw, 1rem);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(0.8rem, 1.5vw, 1.5rem);
+            transition: background 0.3s ease;
+        }
+
+        .card:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .card-icon {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            margin-bottom: clamp(0.3rem, 0.8vw, 0.6rem);
+        }
+
+        .card h3 {
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
+            color: var(--text-primary);
+        }
+
+        .card p {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Table-like rows */
+        .info-row {
+            display: flex;
+            gap: clamp(0.5rem, 1.5vw, 1.5rem);
+            padding: clamp(0.5rem, 1vw, 0.8rem) 0;
+            border-bottom: 1px solid var(--border);
+            align-items: flex-start;
+        }
+
+        .info-row:last-child { border-bottom: none; }
+
+        .info-label {
+            font-size: var(--small-size);
+            font-weight: 700;
+            color: var(--accent);
+            min-width: clamp(80px, 12vw, 140px);
+            flex-shrink: 0;
+        }
+
+        .info-value {
+            font-size: var(--small-size);
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Stat highlight */
+        .stat-big {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1;
+            margin-bottom: clamp(0.3rem, 1vw, 0.8rem);
+        }
+
+        /* Pill tags */
+        .pill {
+            display: inline-block;
+            font-size: var(--small-size);
+            font-weight: 500;
+            padding: 0.3em 0.8em;
+            border-radius: 100px;
+            border: 1px solid;
+        }
+
+        .pill-blue { color: #38bdf8; border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.08); }
+        .pill-purple { color: #a855f7; border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.08); }
+        .pill-amber { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.08); }
+        .pill-red { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); }
+        .pill-green { color: #34d399; border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.08); }
+
+        /* Two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1rem, 2.5vw, 2.5rem);
+            align-items: start;
+        }
+
+        @media (max-width: 700px) {
+            .two-col { grid-template-columns: 1fr; }
+        }
+
+        /* Bullet list */
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.8vw, 0.6rem);
+        }
+
+        .bullet-list li {
+            padding-left: 1.2em;
+            position: relative;
+            font-size: var(--body-size);
+        }
+
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: clamp(0.5rem, 1.5vw, 1.5rem) 0;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .divider .diamond {
+            width: 5px; height: 5px;
+            background: var(--accent);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* Triangle diagram */
+        .triangle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(0.5rem, 2vw, 1.5rem) 0;
+        }
+
+        .triangle-svg {
+            width: min(300px, 40vw);
+            height: auto;
+        }
+
+        /* Anti-pattern cards */
+        .antipattern {
+            display: flex;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            align-items: flex-start;
+            padding: clamp(0.6rem, 1vw, 1rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-red);
+        }
+
+        .antipattern-icon {
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
+            flex-shrink: 0;
+        }
+
+        .antipattern-name {
+            font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.15em;
+        }
+
+        .antipattern-desc {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+        }
+
+        /* Layer diagram */
+        .layer-stack {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.6vw, 0.5rem);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .layer {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            padding: clamp(0.5rem, 0.8vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: var(--small-size);
+            font-weight: 500;
+        }
+
+        .layer-label {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 40px;
+        }
+
+        /* Governance roles */
+        .role-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+
+        .role-title {
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);
+        }
+
+        .role-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.15rem, 0.4vw, 0.3rem);
+        }
+
+        .role-list li {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            padding-left: 1em;
+            position: relative;
+        }
+
+        .role-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Ethics list */
+        .ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: clamp(0.4rem, 0.8vw, 0.6rem);
+        }
+
+        .ethics-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            font-size: var(--body-size);
+            color: var(--text-secondary);
+            padding: clamp(0.4rem, 0.7vw, 0.6rem) clamp(0.6rem, 1vw, 0.8rem);
+            background: var(--bg-card);
+            border-radius: 8px;
+        }
+
+        .ethics-icon {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity var(--duration) var(--ease-out-expo),
+                        transform var(--duration) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal:nth-child(1) { transition-delay: 0.05s; }
+        .reveal:nth-child(2) { transition-delay: 0.12s; }
+        .reveal:nth-child(3) { transition-delay: 0.19s; }
+        .reveal:nth-child(4) { transition-delay: 0.26s; }
+        .reveal:nth-child(5) { transition-delay: 0.33s; }
+        .reveal:nth-child(6) { transition-delay: 0.40s; }
+        .reveal:nth-child(7) { transition-delay: 0.47s; }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity var(--duration) var(--ease-out-expo),
+                        transform var(--duration) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal-scale {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ===========================================
+           PROGRESS BAR
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+            z-index: 100;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        /* ===========================================
+           NAV DOTS
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: clamp(0.8rem, 1.5vw, 1.5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .nav-dot.active {
+            background: var(--accent);
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+        }
+
+        .nav-dot:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ===========================================
+           SLIDE NUMBER
+           =========================================== */
+        .slide-num {
+            position: absolute;
+            bottom: clamp(1rem, 2vw, 1.5rem);
+            right: clamp(1.5rem, 3vw, 2.5rem);
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ===========================================
+           CENTERED CONTENT
+           =========================================== */
+        .centered {
+            text-align: center;
+            align-items: center;
+        }
+
+        /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+        @media (max-height: 700px) {
+            :root {
+                --slide-padding: clamp(1rem, 3vw, 2.5rem);
+                --content-gap: clamp(0.5rem, 1.5vw, 1.2rem);
+                --title-size: clamp(1.6rem, 4.5vw, 3rem);
+                --h2-size: clamp(1.2rem, 3vw, 2rem);
+            }
+        }
+
+        @media (max-height: 600px) {
+            :root {
+                --slide-padding: clamp(0.75rem, 2.5vw, 1.5rem);
+                --content-gap: clamp(0.3rem, 1vw, 0.8rem);
+                --title-size: clamp(1.3rem, 4vw, 2.2rem);
+                --body-size: clamp(0.7rem, 1.1vw, 0.9rem);
+            }
+            .nav-dots { display: none; }
+        }
+
+        @media (max-height: 500px) {
+            :root {
+                --slide-padding: clamp(0.5rem, 2vw, 1rem);
+                --title-size: clamp(1.1rem, 3.5vw, 1.8rem);
+                --h2-size: clamp(0.95rem, 2.5vw, 1.4rem);
+                --body-size: clamp(0.65rem, 1vw, 0.8rem);
+            }
+        }
+
+        @media (max-width: 600px) {
+            :root {
+                --title-size: clamp(1.5rem, 7vw, 2.5rem);
+            }
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation dots -->
+    <nav class="nav-dots" id="navDots"></nav>
+
+    <!-- ===========================================
+         SLIDE 1: TITLE
+         =========================================== -->
+    <section class="slide" data-slide="0">
+        <!-- Floating geometry -->
+        <div class="geo" style="width:180px;height:180px;top:8%;right:12%;border-color:rgba(56,189,248,0.08);transform:rotate(15deg);"></div>
+        <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
+
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Modulo 03</div>
+            <h1 class="reveal">Arquitectura IT <span class="gradient-text">Educativa</span></h1>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <p class="subtitle reveal">El mapa de tus sistemas</p>
+            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Como funciona realmente una institucion educativa moderna por dentro?</p>
+        </div>
+        <div class="slide-num">01 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: OBJETIVO
+         =========================================== -->
+    <section class="slide" data-slide="1">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Objetivo</div>
+            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este modulo</span></h2>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal">Nombrar y describir los sistemas principales (<strong style="color:var(--text-primary)">SIS, LMS, CRM, ERP, BI</strong>)</li>
+                    <li class="reveal">Entender el ciclo de vida del estudiante como <strong style="color:var(--text-primary)">flujo entre sistemas</strong></li>
+                    <li class="reveal">Leer un mapa de arquitectura IT y hacer <strong style="color:var(--text-primary)">preguntas relevantes</strong></li>
+                    <li class="reveal">Comprender que la arquitectura es <strong style="color:var(--text-primary)">gobierno y competitividad</strong>, no solo IT</li>
+                </ul>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                Un directivo no necesita saber construir edificios. Pero si necesita poder leer el plano de la ciudad.
+            </div>
+        </div>
+        <div class="slide-num">02 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: DINAMICA DISPARADORA
+         =========================================== -->
+    <section class="slide" data-slide="2">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
+            <h2 class="reveal">Crisis de examenes</h2>
+            <p class="subtitle reveal">Ultimo dia de finales. Miles de estudiantes. El sistema se cae.</p>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);max-width:750px;">
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">&#127891;</div>
+                    <h3>Grupo Academico</h3>
+                    <p>&iquest;Que perciben los estudiantes? &iquest;Que impacta en calidad?</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">&#9881;&#65039;</div>
+                    <h3>Grupo Operaciones</h3>
+                    <p>&iquest;Que fallo a nivel de sistemas? &iquest;Que dependencias existen?</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">&#128188;</div>
+                    <h3>Grupo Direccion</h3>
+                    <p>&iquest;Cuanto cuesta esta crisis? &iquest;Que decisiones faltaron?</p>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Salidas: puntos de falla, decisiones preventivas, 2 prioridades inmediatas</p>
+        </div>
+        <div class="slide-num">03 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: QUE ES UNA ARQUITECTURA IT
+         =========================================== -->
+    <section class="slide" data-slide="3">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Concepto Clave</div>
+            <h2 class="reveal">Arquitectura IT: <span class="gradient-text">la analogia de la ciudad</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
+                <div class="card">
+                    <div class="card-icon">&#127970;</div>
+                    <h3>Sistemas</h3>
+                    <p>Son los edificios. Cada uno cumple una funcion.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#128739;&#65039;</div>
+                    <h3>Integraciones</h3>
+                    <p>Son las calles. Conectan los edificios entre si.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#128101;</div>
+                    <h3>Datos</h3>
+                    <p>Son las personas que circulan. Si las calles estan cortadas, no llegan.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#128506;&#65039;</div>
+                    <h3>Arquitectura</h3>
+                    <p>Es el plano completo de la ciudad.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">04 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: SISTEMAS CLAVE
+         =========================================== -->
+    <section class="slide" data-slide="4">
+        <div class="slide-content">
+            <h2 class="reveal">Los sistemas <span class="gradient-text">clave</span></h2>
+            <div style="margin-top:var(--content-gap);">
+                <div class="info-row reveal">
+                    <span class="info-label">SIS</span>
+                    <span class="info-value">Gestion academica: inscripcion, cursada, notas, titulo. El &lsquo;DNI&rsquo; del estudiante.</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">LMS</span>
+                    <span class="info-value">Experiencia de aprendizaje: contenidos, actividades, foros. El &lsquo;aula&rsquo; virtual.</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">EXAM</span>
+                    <span class="info-value">Examinacion segura con auditorias de fraude. La validacion del proceso.</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">CRM</span>
+                    <span class="info-value">Relacion con prospectos y estudiantes. La &lsquo;memoria&rsquo; de interacciones.</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">ERP</span>
+                    <span class="info-value">Administracion y finanzas: facturacion, pagos, RRHH. La &lsquo;administracion&rsquo;.</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">BI</span>
+                    <span class="info-value">Analitica y reportes: dashboards, indicadores. Los &lsquo;ojos&rsquo; de la organizacion.</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">IA</span>
+                    <span class="info-value">Capa transversal: chatbots, analitica predictiva. El &lsquo;asistente inteligente&rsquo;.</span>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">05 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: CICLO DE VIDA DEL ESTUDIANTE
+         =========================================== -->
+    <section class="slide" data-slide="5">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Flujo</div>
+            <h2 class="reveal">Ciclo de vida <span class="gradient-text">del estudiante</span></h2>
+            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:600px;">
+                <div class="layer">
+                    <span class="layer-label">CRM</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Descubrimiento &rarr; primer contacto con la institucion</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">SIS</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Admision &rarr; inscripcion y registro academico</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">SIS / LMS</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Onboarding &rarr; activacion del estudiante</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">LMS</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Cursada &rarr; experiencia de aprendizaje</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">EXAM</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Evaluacion &rarr; validacion del proceso academico</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">SIS</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Graduacion &rarr; cierre del ciclo academico</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">CRM</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Alumni &rarr; relacion post-egreso y comunidad</span>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                Los problemas reales surgen en las transiciones entre sistemas.
+            </div>
+        </div>
+        <div class="slide-num">06 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: NIVELES DE INTEGRACION
+         =========================================== -->
+    <section class="slide" data-slide="6">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Integracion</div>
+            <h2 class="reveal">Niveles de <span class="gradient-text">integracion</span></h2>
+            <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,0.8vw,0.6rem);margin-top:var(--content-gap);">
+                <div class="reveal" style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem);background:var(--bg-card);border:1px solid var(--border);border-radius:10px;border-left:3px solid var(--accent-red);">
+                    <div>
+                        <div style="font-size:clamp(0.75rem,1.1vw,0.95rem);font-weight:700;color:var(--text-primary);margin-bottom:0.15em;">Manual</div>
+                        <div style="font-size:var(--small-size);color:var(--text-muted);">Alguien exporta un Excel y lo importa en otro sistema</div>
+                    </div>
+                </div>
+                <div class="reveal" style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem);background:var(--bg-card);border:1px solid var(--border);border-radius:10px;border-left:3px solid var(--accent-warm);">
+                    <div>
+                        <div style="font-size:clamp(0.75rem,1.1vw,0.95rem);font-weight:700;color:var(--text-primary);margin-bottom:0.15em;">Archivos</div>
+                        <div style="font-size:var(--small-size);color:var(--text-muted);">Un sistema genera un archivo que otro consume automaticamente</div>
+                    </div>
+                </div>
+                <div class="reveal" style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem);background:var(--bg-card);border:1px solid var(--border);border-radius:10px;border-left:3px solid var(--accent);">
+                    <div>
+                        <div style="font-size:clamp(0.75rem,1.1vw,0.95rem);font-weight:700;color:var(--text-primary);margin-bottom:0.15em;">APIs</div>
+                        <div style="font-size:var(--small-size);color:var(--text-muted);">Los sistemas se hablan en tiempo real</div>
+                    </div>
+                </div>
+                <div class="reveal" style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem);background:var(--bg-card);border:1px solid var(--border);border-radius:10px;border-left:3px solid var(--accent-green);">
+                    <div>
+                        <div style="font-size:clamp(0.75rem,1.1vw,0.95rem);font-weight:700;color:var(--text-primary);margin-bottom:0.15em;">Eventos</div>
+                        <div style="font-size:var(--small-size);color:var(--text-muted);">Los sistemas reaccionan a lo que pasa en otros sistemas</div>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                Cada proceso manual es un riesgo y un costo.
+            </div>
+        </div>
+        <div class="slide-num">07 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: MODELO MII / LINEA BASE
+         =========================================== -->
+    <section class="slide" data-slide="7">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Framework</div>
+            <h2 class="reveal">Linea base <span class="gradient-text">tecnologica</span></h2>
+            <p class="subtitle reveal">Modelo MII &mdash; Cuadrante de Tecnologia</p>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal">Define el <strong style="color:var(--text-primary)">stack tecnologico recomendado</strong> para el grupo</li>
+                    <li class="reveal">Garantiza calidad en la <strong style="color:var(--text-primary)">experiencia del estudiante</strong></li>
+                    <li class="reveal">Asegura <strong style="color:var(--text-primary)">escalabilidad y eficiencia</strong></li>
+                    <li class="reveal">Arquitectura como <strong style="color:var(--text-primary)">estandar</strong>, no como improvisacion</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide-num">08 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: ARQUITECTURA COMO HERRAMIENTA DE DECISION
+         =========================================== -->
+    <section class="slide" data-slide="8">
+        <div class="slide-content">
+            <h2 class="reveal">La arquitectura como <span class="gradient-text">herramienta de decision</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
+                <div class="card">
+                    <div class="card-icon">&#128200;</div>
+                    <h3>Escalabilidad</h3>
+                    <p>&iquest;Puede mi infra soportar el doble de estudiantes?</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#127963;&#65039;</div>
+                    <h3>Gobierno</h3>
+                    <p>&iquest;Quien es el dueno de cada dato? &iquest;Hay vision unificada?</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#128176;</div>
+                    <h3>Costos</h3>
+                    <p>&iquest;Cuanto cuesta mantener sistemas que no se integran?</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#9888;&#65039;</div>
+                    <h3>Riesgo</h3>
+                    <p>&iquest;Que pasa si cae el sistema central? &iquest;Hay plan B?</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">09 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: EJEMPLO SIGLO 21
+         =========================================== -->
+    <section class="slide" data-slide="9">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Caso Real</div>
+            <h2 class="reveal">Siglo 21: <span class="gradient-text">ecosistema integrado</span></h2>
+            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:650px;">
+                <div class="layer">
+                    <span class="layer-label">SIS</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Algarrobo &mdash; Centro del ecosistema</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">CRM</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">HubSpot &mdash; Gestion comercial</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">LMS</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Canvas &mdash; Experiencia de aprendizaje</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">ERP</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">SAP &mdash; Administracion y finanzas</span>
+                </div>
+                <div class="layer">
+                    <span class="layer-label">BI</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Analitica y reportes</span>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                Pueden cambiar el LMS sin afectar la inscripcion. Cada pieza evoluciona de forma independiente.
+            </div>
+        </div>
+        <div class="slide-num">10 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 11: ENSALADA DE SISTEMAS
+         =========================================== -->
+    <section class="slide" data-slide="10">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Anti-patron</div>
+            <h2 class="reveal">La &lsquo;ensalada&rsquo; <span class="gradient-text">de sistemas</span></h2>
+            <div style="display:flex;flex-direction:column;gap:clamp(0.3rem,0.7vw,0.5rem);margin-top:var(--content-gap);">
+                <div class="antipattern reveal">
+                    <div>
+                        <div class="antipattern-name">SIS de los 2000 que nadie se anima a tocar</div>
+                    </div>
+                </div>
+                <div class="antipattern reveal">
+                    <div>
+                        <div class="antipattern-name">LMS elegido por academia sin consultar IT</div>
+                    </div>
+                </div>
+                <div class="antipattern reveal">
+                    <div>
+                        <div class="antipattern-name">CRM comprado por marketing por su cuenta</div>
+                    </div>
+                </div>
+                <div class="antipattern reveal">
+                    <div>
+                        <div class="antipattern-name">Excel como &lsquo;integracion&rsquo; entre todos</div>
+                    </div>
+                </div>
+                <div class="antipattern reveal">
+                    <div>
+                        <div class="antipattern-name">3 personas en IT que son las unicas que entienden todo</div>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal" style="margin-top:var(--content-gap);text-align:center;">
+                <span class="stat-big gradient-text" style="font-size:clamp(1.8rem,4vw,3rem);">12 sistemas, 2 integrados, 40% procesos manuales</span>
+            </div>
+        </div>
+        <div class="slide-num">11 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 12: DINAMICA: MAPEA TU ARQUITECTURA
+         =========================================== -->
+    <section class="slide" data-slide="11">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
+            <h2 class="reveal">Mapea tu arquitectura</h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card">
+                    <div class="card-icon">&#128196;</div>
+                    <h3>1. Mapear</h3>
+                    <p>Que sistemas tiene tu organizacion y como se conectan</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#128269;</div>
+                    <h3>2. Identificar</h3>
+                    <p>Quien es el dueno de los datos del estudiante. Top 3 dolores.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#127908;</div>
+                    <h3>3. Presentar</h3>
+                    <p>Tu descubrimiento principal, dolor #1, y la pregunta que te llevas</p>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">40 minutos &mdash; Individual/grupal + presentacion</p>
+        </div>
+        <div class="slide-num">12 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 13: RESULTADO ESPERADO
+         =========================================== -->
+    <section class="slide" data-slide="12">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Cierre</div>
+            <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <div style="max-width:600px;margin-top:var(--content-gap);">
+                <ul class="bullet-list" style="text-align:left;">
+                    <li class="reveal">Podes nombrar y describir <strong style="color:var(--text-primary)">SIS, LMS, CRM, ERP, BI, IAM</strong></li>
+                    <li class="reveal">Entendes el ciclo de vida del estudiante como <strong style="color:var(--text-primary)">flujo entre sistemas</strong></li>
+                    <li class="reveal">Podes leer un <strong style="color:var(--text-primary)">mapa de arquitectura IT</strong></li>
+                    <li class="reveal">Tenes un <strong style="color:var(--text-primary)">diagnostico visual de tu arquitectura</strong> con brechas identificadas</li>
+                    <li class="reveal">Comprendes que la arquitectura no es tema de IT &mdash; es <strong style="color:var(--text-primary)">gobierno y competitividad</strong></li>
+                </ul>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 03 &mdash; Arquitectura IT Educativa</p>
+        </div>
+        <div class="slide-num">13 / 13</div>
+    </section>
+
+    <!-- ===========================================
+       JAVASCRIPT: Slide Controller
+       =========================================== -->
+    <script>
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.progressBar = document.getElementById('progressBar');
+                this.navDotsContainer = document.getElementById('navDots');
+                this.currentSlide = 0;
+                this.totalSlides = this.slides.length;
+                this.isScrolling = false;
+
+                this.createNavDots();
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.updateProgress();
+            }
+
+            /* Create navigation dots */
+            createNavDots() {
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('nav-dot');
+                    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.navDotsContainer.appendChild(dot);
+                }
+            }
+
+            /* Observe which slide is visible */
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const index = parseInt(entry.target.dataset.slide);
+                            this.currentSlide = index;
+                            this.updateNavDots();
+                            this.updateProgress();
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            /* Keyboard navigation */
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                        e.preventDefault();
+                        this.nextSlide();
+                    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        this.prevSlide();
+                    }
+                });
+            }
+
+            /* Touch/swipe support */
+            setupTouchNav() {
+                let startY = 0;
+                document.addEventListener('touchstart', (e) => {
+                    startY = e.touches[0].clientY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    const diff = startY - e.changedTouches[0].clientY;
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) this.nextSlide();
+                        else this.prevSlide();
+                    }
+                }, { passive: true });
+            }
+
+            goToSlide(index) {
+                if (index >= 0 && index < this.totalSlides) {
+                    this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            nextSlide() {
+                this.goToSlide(this.currentSlide + 1);
+            }
+
+            prevSlide() {
+                this.goToSlide(this.currentSlide - 1);
+            }
+
+            updateNavDots() {
+                const dots = this.navDotsContainer.querySelectorAll('.nav-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === this.currentSlide);
+                });
+            }
+
+            updateProgress() {
+                const progress = ((this.currentSlide + 1) / this.totalSlides) * 100;
+                this.progressBar.style.width = `${progress}%`;
+            }
+        }
+
+        /* Initialize on load */
+        document.addEventListener('DOMContentLoaded', () => {
+            new SlidePresentation();
+        });
+    </script>
+</body>
+</html>

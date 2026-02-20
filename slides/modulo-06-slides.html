@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus — IA y el Futuro de la Educacion</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (THEME: Midnight Clarity)
+           =========================================== */
+        :root {
+            /* Colors */
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.07);
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent: #38bdf8;
+            --accent-purple: #a855f7;
+            --accent-warm: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-green: #34d399;
+            --border: rgba(255, 255, 255, 0.08);
+
+            /* Typography */
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --title-size: clamp(2rem, 5.5vw, 4rem);
+            --h2-size: clamp(1.4rem, 3.5vw, 2.5rem);
+            --h3-size: clamp(1rem, 2vw, 1.4rem);
+            --body-size: clamp(0.75rem, 1.3vw, 1.05rem);
+            --small-size: clamp(0.65rem, 1vw, 0.85rem);
+            --tag-size: clamp(0.6rem, 0.9vw, 0.75rem);
+
+            /* Spacing */
+            --slide-padding: clamp(1.5rem, 4vw, 4rem);
+            --content-gap: clamp(0.8rem, 2vw, 2rem);
+            --element-gap: clamp(0.4rem, 1vw, 1rem);
+
+            /* Animation */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration: 0.7s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+        /* ===========================================
+           SLIDE CONTAINER
+           =========================================== */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            padding: var(--slide-padding);
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 100%;
+            overflow: hidden;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ===========================================
+           BACKGROUND EFFECTS
+           =========================================== */
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 70% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Geometric decorations */
+        .geo {
+            position: absolute;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        .slide-tag {
+            display: inline-block;
+            font-size: var(--tag-size);
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 0.4em 1.2em;
+            border-radius: 100px;
+            margin-bottom: clamp(0.8rem, 1.5vw, 1.5rem);
+            width: fit-content;
+        }
+
+        .slide h1 {
+            font-family: var(--font-display);
+            font-size: var(--title-size);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+        }
+
+        .slide h2 {
+            font-family: var(--font-display);
+            font-size: var(--h2-size);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: clamp(0.5rem, 1.5vw, 1.2rem);
+        }
+
+        .slide h3 {
+            font-family: var(--font-body);
+            font-size: var(--h3-size);
+            font-weight: 700;
+            margin-bottom: var(--element-gap);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide p, .slide li {
+            font-size: var(--body-size);
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .subtitle {
+            font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+            color: var(--text-secondary);
+        }
+
+        /* ===========================================
+           COMPONENTS
+           =========================================== */
+
+        /* Blockquote */
+        .quote-box {
+            border-left: 3px solid var(--accent);
+            padding: 0.8em 1.2em;
+            background: rgba(56, 189, 248, 0.05);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: var(--body-size);
+        }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: clamp(0.5rem, 1.2vw, 1rem);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(0.8rem, 1.5vw, 1.5rem);
+            transition: background 0.3s ease;
+        }
+
+        .card:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .card-icon {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            margin-bottom: clamp(0.3rem, 0.8vw, 0.6rem);
+        }
+
+        .card h3 {
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
+            color: var(--text-primary);
+        }
+
+        .card p {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Table-like rows */
+        .info-row {
+            display: flex;
+            gap: clamp(0.5rem, 1.5vw, 1.5rem);
+            padding: clamp(0.5rem, 1vw, 0.8rem) 0;
+            border-bottom: 1px solid var(--border);
+            align-items: flex-start;
+        }
+
+        .info-row:last-child { border-bottom: none; }
+
+        .info-label {
+            font-size: var(--small-size);
+            font-weight: 700;
+            color: var(--accent);
+            min-width: clamp(80px, 12vw, 140px);
+            flex-shrink: 0;
+        }
+
+        .info-value {
+            font-size: var(--small-size);
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Stat highlight */
+        .stat-big {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1;
+            margin-bottom: clamp(0.3rem, 1vw, 0.8rem);
+        }
+
+        /* Pill tags */
+        .pill {
+            display: inline-block;
+            font-size: var(--small-size);
+            font-weight: 500;
+            padding: 0.3em 0.8em;
+            border-radius: 100px;
+            border: 1px solid;
+        }
+
+        .pill-blue { color: #38bdf8; border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.08); }
+        .pill-purple { color: #a855f7; border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.08); }
+        .pill-amber { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.08); }
+        .pill-red { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); }
+        .pill-green { color: #34d399; border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.08); }
+
+        /* Two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1rem, 2.5vw, 2.5rem);
+            align-items: start;
+        }
+
+        @media (max-width: 700px) {
+            .two-col { grid-template-columns: 1fr; }
+        }
+
+        /* Bullet list */
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.8vw, 0.6rem);
+        }
+
+        .bullet-list li {
+            padding-left: 1.2em;
+            position: relative;
+            font-size: var(--body-size);
+        }
+
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: clamp(0.5rem, 1.5vw, 1.5rem) 0;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .divider .diamond {
+            width: 5px; height: 5px;
+            background: var(--accent);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* Triangle diagram */
+        .triangle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(0.5rem, 2vw, 1.5rem) 0;
+        }
+
+        .triangle-svg {
+            width: min(300px, 40vw);
+            height: auto;
+        }
+
+        /* Anti-pattern cards */
+        .antipattern {
+            display: flex;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            align-items: flex-start;
+            padding: clamp(0.6rem, 1vw, 1rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-red);
+        }
+
+        .antipattern-icon {
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
+            flex-shrink: 0;
+        }
+
+        .antipattern-name {
+            font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.15em;
+        }
+
+        .antipattern-desc {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+        }
+
+        /* Layer diagram */
+        .layer-stack {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.6vw, 0.5rem);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .layer {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            padding: clamp(0.5rem, 0.8vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: var(--small-size);
+            font-weight: 500;
+        }
+
+        .layer-label {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 40px;
+        }
+
+        /* Governance roles */
+        .role-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+
+        .role-title {
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);
+        }
+
+        .role-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.15rem, 0.4vw, 0.3rem);
+        }
+
+        .role-list li {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            padding-left: 1em;
+            position: relative;
+        }
+
+        .role-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Ethics list */
+        .ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: clamp(0.4rem, 0.8vw, 0.6rem);
+        }
+
+        .ethics-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            font-size: var(--body-size);
+            color: var(--text-secondary);
+            padding: clamp(0.4rem, 0.7vw, 0.6rem) clamp(0.6rem, 1vw, 0.8rem);
+            background: var(--bg-card);
+            border-radius: 8px;
+        }
+
+        .ethics-icon {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity var(--duration) var(--ease-out-expo),
+                        transform var(--duration) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal:nth-child(1) { transition-delay: 0.05s; }
+        .reveal:nth-child(2) { transition-delay: 0.12s; }
+        .reveal:nth-child(3) { transition-delay: 0.19s; }
+        .reveal:nth-child(4) { transition-delay: 0.26s; }
+        .reveal:nth-child(5) { transition-delay: 0.33s; }
+        .reveal:nth-child(6) { transition-delay: 0.40s; }
+        .reveal:nth-child(7) { transition-delay: 0.47s; }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity var(--duration) var(--ease-out-expo),
+                        transform var(--duration) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal-scale {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ===========================================
+           PROGRESS BAR
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+            z-index: 100;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        /* ===========================================
+           NAV DOTS
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: clamp(0.8rem, 1.5vw, 1.5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .nav-dot.active {
+            background: var(--accent);
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+        }
+
+        .nav-dot:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ===========================================
+           SLIDE NUMBER
+           =========================================== */
+        .slide-num {
+            position: absolute;
+            bottom: clamp(1rem, 2vw, 1.5rem);
+            right: clamp(1.5rem, 3vw, 2.5rem);
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ===========================================
+           CENTERED CONTENT
+           =========================================== */
+        .centered {
+            text-align: center;
+            align-items: center;
+        }
+
+        /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+        @media (max-height: 700px) {
+            :root {
+                --slide-padding: clamp(1rem, 3vw, 2.5rem);
+                --content-gap: clamp(0.5rem, 1.5vw, 1.2rem);
+                --title-size: clamp(1.6rem, 4.5vw, 3rem);
+                --h2-size: clamp(1.2rem, 3vw, 2rem);
+            }
+        }
+
+        @media (max-height: 600px) {
+            :root {
+                --slide-padding: clamp(0.75rem, 2.5vw, 1.5rem);
+                --content-gap: clamp(0.3rem, 1vw, 0.8rem);
+                --title-size: clamp(1.3rem, 4vw, 2.2rem);
+                --body-size: clamp(0.7rem, 1.1vw, 0.9rem);
+            }
+            .nav-dots { display: none; }
+        }
+
+        @media (max-height: 500px) {
+            :root {
+                --slide-padding: clamp(0.5rem, 2vw, 1rem);
+                --title-size: clamp(1.1rem, 3.5vw, 1.8rem);
+                --h2-size: clamp(0.95rem, 2.5vw, 1.4rem);
+                --body-size: clamp(0.65rem, 1vw, 0.8rem);
+            }
+        }
+
+        @media (max-width: 600px) {
+            :root {
+                --title-size: clamp(1.5rem, 7vw, 2.5rem);
+            }
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation dots -->
+    <nav class="nav-dots" id="navDots"></nav>
+
+    <!-- ===========================================
+         SLIDE 1: TITLE
+         =========================================== -->
+    <section class="slide" data-slide="0">
+        <div class="geo" style="width:180px;height:180px;top:8%;right:12%;border-color:rgba(56,189,248,0.08);transform:rotate(15deg);"></div>
+        <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
+
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Bonus</div>
+            <h1 class="reveal">IA y el Futuro <span class="gradient-text">de la Educacion</span></h1>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <p class="subtitle reveal">Panel de Discusion</p>
+            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">No es una clase. Es una conversacion entre lideres.</p>
+        </div>
+        <div class="slide-num">01 / 11</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: PROPOSITO + FORMATO
+         =========================================== -->
+    <section class="slide" data-slide="1">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Proposito</div>
+            <h2 class="reveal">Reflexion profunda, <span class="gradient-text">sin respuestas predefinidas</span></h2>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal">Abrir espacio de reflexion sobre como la IA transformara la educacion en 5-10 anos</li>
+                    <li class="reveal">No hay respuestas correctas — hay posiciones informadas</li>
+                    <li class="reveal">Conversacion entre lideres que toman decisiones hoy sobre un futuro incierto</li>
+                </ul>
+            </div>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">⏱️</div>
+                    <h3>60 minutos</h3>
+                    <p>Panel de discusion moderado</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">👥</div>
+                    <h3>15 participantes</h3>
+                    <p>Facilitadores como moderadores</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🎯</div>
+                    <h3>3 de 5 preguntas</h3>
+                    <p>Segun energia del grupo</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">02 / 11</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: PREGUNTA 1
+         =========================================== -->
+    <section class="slide" data-slide="2">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pregunta 1</div>
+            <h2 class="reveal">&iquest;La IA va a <span class="gradient-text">reemplazar docentes?</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:1fr;">
+                <div class="card" style="border-left:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">Posicion A</h3>
+                    <p>La IA reemplaza tareas repetitivas (calificar, consultas), liberando al docente para mentoria y pensamiento critico.</p>
+                </div>
+                <div class="card" style="border-left:3px solid #a855f7;">
+                    <h3 style="color:#a855f7;">Posicion B</h3>
+                    <p>La IA crea una nueva categoria: el "docente aumentado" que usa IA como co-piloto.</p>
+                </div>
+                <div class="card" style="border-left:3px solid #ef4444;">
+                    <h3 style="color:#ef4444;">Posicion C</h3>
+                    <p>Riesgo real de que instituciones reemplacen docentes por IA para reducir costos.</p>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                Si un estudiante aprende mas con un tutor de IA que con una clase de 200 personas, &iquest;cual es el rol de la institucion?
+            </div>
+        </div>
+        <div class="slide-num">03 / 11</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: PREGUNTA 2
+         =========================================== -->
+    <section class="slide" data-slide="3">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pregunta 2</div>
+            <h2 class="reveal">&iquest;Los titulos van a <span class="gradient-text">perder valor?</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:1fr;">
+                <div class="card" style="border-left:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">Posicion A</h3>
+                    <p>El titulo pierde valor como credencial laboral, pero mantiene valor como experiencia formativa.</p>
+                </div>
+                <div class="card" style="border-left:3px solid #a855f7;">
+                    <h3 style="color:#a855f7;">Posicion B</h3>
+                    <p>El titulo sera reemplazado por portafolios de habilidades verificables.</p>
+                </div>
+                <div class="card" style="border-left:3px solid #34d399;">
+                    <h3 style="color:#34d399;">Posicion C</h3>
+                    <p>El titulo va a evolucionar, no desaparecer. Se complementara con certificaciones.</p>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Google, Apple, IBM eliminaron el requisito de titulo. Las micro-credenciales crecen exponencialmente. En LATAM, el titulo sigue siendo diferenciador.</p>
+        </div>
+        <div class="slide-num">04 / 11</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: PREGUNTA 3
+         =========================================== -->
+    <section class="slide" data-slide="4">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pregunta 3</div>
+            <h2 class="reveal">&iquest;Quien debe <span class="gradient-text">regular la IA?</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="border-left:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">Posicion A</h3>
+                    <p>Gobiernos deben establecer marcos regulatorios claros.</p>
+                </div>
+                <div class="card" style="border-left:3px solid #a855f7;">
+                    <h3 style="color:#a855f7;">Posicion B</h3>
+                    <p>Instituciones deben autorregularse con estandares eticos propios.</p>
+                </div>
+                <div class="card" style="border-left:3px solid #f59e0b;">
+                    <h3 style="color:#f59e0b;">Posicion C</h3>
+                    <p>La regulacion siempre llega tarde. Lo importante es tener principios claros hoy.</p>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                &iquest;Estas dispuesto a que un algoritmo decida si un estudiante esta en riesgo? &iquest;Y si tiene sesgos?
+            </div>
+        </div>
+        <div class="slide-num">05 / 11</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: PREGUNTA 4
+         =========================================== -->
+    <section class="slide" data-slide="5">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pregunta 4</div>
+            <h2 class="reveal">&iquest;Democratizar o <span class="gradient-text">concentrar?</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="border-top:3px solid #34d399;">
+                    <h3 style="color:#34d399;">Democratizacion</h3>
+                    <p>Un estudiante rural en Peru accede a un tutor de IA de nivel mundial con un celular. La IA reduce barreras de acceso.</p>
+                </div>
+                <div class="card" style="border-top:3px solid #ef4444;">
+                    <h3 style="color:#ef4444;">Concentracion</h3>
+                    <p>Las universidades con mas recursos desarrollan ecosistemas mucho mas sofisticados, ampliando la brecha.</p>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                Si ChatGPT puede dar una clase mejor que el 80% de los docentes del mundo, &iquest;que hacemos con esa realidad?
+            </div>
+        </div>
+        <div class="slide-num">06 / 11</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: PREGUNTA 5
+         =========================================== -->
+    <section class="slide" data-slide="6">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pregunta 5</div>
+            <h2 class="reveal">&iquest;Profesional <span class="gradient-text">2030?</span></h2>
+            <p class="subtitle reveal">&iquest;Que deberia saber hacer?</p>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🧠</div>
+                    <h3>Core Skills</h3>
+                    <p>Pensamiento critico, creatividad, colaboracion y adaptabilidad</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🤖</div>
+                    <h3>Alfabetizacion IA</h3>
+                    <p>Todos necesitan entender como funciona la IA, aunque no la construyan</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🔄</div>
+                    <h3>Aprender a aprender</h3>
+                    <p>La capacidad de adaptacion es la unica skill a prueba de futuro</p>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                &iquest;Tu plan de estudios actual prepara estudiantes para 2030 o para 2010?
+            </div>
+        </div>
+        <div class="slide-num">07 / 11</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: VOTACION DE POSICIONES
+         =========================================== -->
+    <section class="slide" data-slide="7">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica de Cierre</div>
+            <h2 class="reveal">Votacion de <span class="gradient-text">posiciones</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:1fr 1fr;">
+                <div class="card" style="border-left:3px solid #38bdf8;">
+                    <p style="color:var(--text-primary);">"La IA es la mayor oportunidad para la educacion en 100 anos."</p>
+                </div>
+                <div class="card" style="border-left:3px solid #34d399;">
+                    <p style="color:var(--text-primary);">"La IA es un riesgo que necesitamos gestionar con cuidado."</p>
+                </div>
+                <div class="card" style="border-left:3px solid #f59e0b;">
+                    <p style="color:var(--text-primary);">"La IA no va a cambiar tanto — es otra ola tecnologica mas."</p>
+                </div>
+                <div class="card" style="border-left:3px solid #a855f7;">
+                    <p style="color:var(--text-primary);">"No tengo una posicion clara y eso esta bien."</p>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">El objetivo no es consenso. Es hacer visible la diversidad de perspectivas.</p>
+        </div>
+        <div class="slide-num">08 / 11</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: LECTURAS SUGERIDAS
+         =========================================== -->
+    <section class="slide" data-slide="8">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Lecturas</div>
+            <h2 class="reveal">Para <span class="gradient-text">profundizar</span></h2>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal">Sal Khan — <strong style="color:var(--text-primary);">Brave New Words</strong> (2024)</li>
+                    <li class="reveal">Ethan Mollick — <strong style="color:var(--text-primary);">Co-Intelligence</strong> (2024)</li>
+                    <li class="reveal">UNESCO — <strong style="color:var(--text-primary);">Guidance for Generative AI in Education</strong> (2023)</li>
+                    <li class="reveal">World Economic Forum — <strong style="color:var(--text-primary);">Future of Jobs Report</strong></li>
+                    <li class="reveal">Audrey Watters — <strong style="color:var(--text-primary);">Teaching Machines</strong> (2021) — perspectiva critica</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide-num">09 / 11</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: NOTAS PARA EL MODERADOR
+         =========================================== -->
+    <section class="slide" data-slide="9">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Moderador</div>
+            <h2 class="reveal">Notas para el <span class="gradient-text">moderador</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🎯</div>
+                    <h3>Tono</h3>
+                    <p>Panel de discusion, no clase. Validar todas las posiciones. Garantizar voces diversas.</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">⏱️</div>
+                    <h3>Gestion</h3>
+                    <p>10-12 min por pregunta. Si se polariza: buscar perspectiva intermedia. Si se estanca: pasar a la siguiente.</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🏁</div>
+                    <h3>Cierre</h3>
+                    <p>"No vinimos a resolver estas preguntas. Vinimos a hacernoslas con mejor criterio."</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">10 / 11</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 11: CIERRE
+         =========================================== -->
+    <section class="slide" data-slide="10">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Cierre</div>
+            <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <div style="max-width:550px;margin-top:var(--content-gap);">
+                <ul class="bullet-list" style="text-align:left;">
+                    <li class="reveal">Reflexionaste sobre el impacto de la IA en educacion con pares</li>
+                    <li class="reveal">Tenes una posicion informada (aunque sea provisional)</li>
+                    <li class="reveal">Identificas las preguntas que van a definir los proximos anos</li>
+                    <li class="reveal">Tenes herramientas para abordarlas con criterio</li>
+                </ul>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:550px;text-align:left;">
+                Estas preguntas van a definir las decisiones tecnologicas de los proximos anos. Ahora tenes mejores herramientas para abordarlas.
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Bonus — IA y el Futuro de la Educacion</p>
+        </div>
+        <div class="slide-num">11 / 11</div>
+    </section>
+
+    <!-- ===========================================
+       JAVASCRIPT: Slide Controller
+       =========================================== -->
+    <script>
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.progressBar = document.getElementById('progressBar');
+                this.navDotsContainer = document.getElementById('navDots');
+                this.currentSlide = 0;
+                this.totalSlides = this.slides.length;
+                this.isScrolling = false;
+
+                this.createNavDots();
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.updateProgress();
+            }
+
+            /* Create navigation dots */
+            createNavDots() {
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('nav-dot');
+                    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.navDotsContainer.appendChild(dot);
+                }
+            }
+
+            /* Observe which slide is visible */
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const index = parseInt(entry.target.dataset.slide);
+                            this.currentSlide = index;
+                            this.updateNavDots();
+                            this.updateProgress();
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            /* Keyboard navigation */
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                        e.preventDefault();
+                        this.nextSlide();
+                    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        this.prevSlide();
+                    }
+                });
+            }
+
+            /* Touch/swipe support */
+            setupTouchNav() {
+                let startY = 0;
+                document.addEventListener('touchstart', (e) => {
+                    startY = e.touches[0].clientY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    const diff = startY - e.changedTouches[0].clientY;
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) this.nextSlide();
+                        else this.prevSlide();
+                    }
+                }, { passive: true });
+            }
+
+            goToSlide(index) {
+                if (index >= 0 && index < this.totalSlides) {
+                    this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            nextSlide() {
+                this.goToSlide(this.currentSlide + 1);
+            }
+
+            prevSlide() {
+                this.goToSlide(this.currentSlide - 1);
+            }
+
+            updateNavDots() {
+                const dots = this.navDotsContainer.querySelectorAll('.nav-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === this.currentSlide);
+                });
+            }
+
+            updateProgress() {
+                const progress = ((this.currentSlide + 1) / this.totalSlides) * 100;
+                this.progressBar.style.width = `${progress}%`;
+            }
+        }
+
+        /* Initialize on load */
+        document.addEventListener('DOMContentLoaded', () => {
+            new SlidePresentation();
+        });
+    </script>
+</body>
+</html>

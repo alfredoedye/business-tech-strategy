@@ -35,7 +35,7 @@ Módulo de formación ejecutiva para directivos y líderes del sector educativo 
 | 3 | [Arquitectura IT Educativa](contenido/modulo-03-arquitectura-it.md) | ¿Cómo funciona una institución educativa moderna por dentro? |
 | 4 | [Transformación Digital e IA](contenido/modulo-04-transformacion-digital-ia.md) | ¿Cómo transformar sin romper la organización? |
 | 5 | [Mindset Digital](contenido/modulo-05-mindset-digital.md) | ¿Qué tipo de líder necesita ser tu organización? |
-| Bonus | [IA y Educación](contenido/bonus-panel-ia-educacion.md) | Panel de discusión (opcional, fuera de programa) |
+| 6 | [IA y Educación](contenido/modulo-06-ia-educacion.md) | Panel de discusión (opcional, fuera de programa) |
 
 ### Anexos teóricos
 
@@ -89,7 +89,7 @@ Módulo de formación ejecutiva para directivos y líderes del sector educativo 
 ```
 ├── contenido/                        # Módulos del curso (participantes)
 │   ├── modulo-01 a modulo-05
-│   └── bonus-panel-ia-educacion.md
+│   └── modulo-06-ia-educacion.md
 ├── anexos/                           # Profundización teórica
 │   ├── frameworks-estrategicos.md
 │   ├── finanzas-para-decisiones-tech.md

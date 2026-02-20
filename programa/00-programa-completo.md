@@ -47,7 +47,7 @@ Al finalizar este módulo, los participantes podrán:
 | 3 | [Arquitectura IT Educativa](../contenido/modulo-03-arquitectura-it.md) | ¿Cómo funciona una institución educativa moderna por dentro? | SIS, LMS, CRM, ERP, BI, IAM, integraciones, ciclo de vida del estudiante |
 | 4 | [Transformación Digital e IA](../contenido/modulo-04-transformacion-digital-ia.md) | ¿Cómo transformar sin romper la organización? | Triángulo de transformación, framework de adopción de IA, ética |
 | 5 | [Mindset Digital](../contenido/modulo-05-mindset-digital.md) | ¿Qué tipo de líder necesita ser tu organización? | 7 pilares del mindset digital, anti-patrones, diagnóstico |
-| ⚡ | [Bonus: IA y Educación](../contenido/bonus-panel-ia-educacion.md) | ¿Cómo va la IA a transformar la educación? | Panel de discusión — Día 2 (Sábado) |
+| 6 | [IA y Educación](../contenido/modulo-06-ia-educacion.md) | ¿Cómo va la IA a transformar la educación? | Panel de discusión — Día 2 (Sábado) |
 
 ---
 

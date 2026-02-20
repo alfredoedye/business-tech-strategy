@@ -255,4 +255,4 @@ Al terminar este módulo, el participante:
 ---
 
 *Anterior: [← Módulo 4 — Transformación Digital e IA](modulo-04-transformacion-digital-ia.md)*
-*Siguiente: [Bonus — Panel IA y Educación →](bonus-panel-ia-educacion.md)*
+*Siguiente: [Módulo 6 — IA y Educación →](modulo-06-ia-educacion.md)*

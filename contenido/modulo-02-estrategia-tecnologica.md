@@ -22,7 +22,31 @@ Que los participantes adquieran el vocabulario, los criterios y los frameworks n
 > ¿Qué decisiones tecnológicas son estratégicas y cuáles son tácticas?
 
 ---
+## Dinámica Disparadora : "Tenés USD 1 millón para invertir”
+Escenario: Recibís USD 1M para fortalecer la estrategia tecnológica.
+Tenés que distribuirlo entre:
+    - Infraestructura
+    - Integraciones
+    - Desarrollo Propio
+    - Datos - BI
+    - Seguridad
+    - IA
+    - Talento 
+CONDICIÓN: No podés invertir en todo.
 
+Luego deben explicar:
+- Qué priorizaron.
+- Qué dejaron afuera.
+- Qué riesgo asumen.
+________________________________________
+Por qué funciona: 
+- 	Conecta tecnología con capital.
+- 	Hace visible la alineación negocio-tecnología.
+-  	Es profundamente ejecutiva.
+
+Después de la dinámica, se puede decir para finalizar : “Acaban de hacer estrategia tecnológica. Ahora vamos a ordenar el criterio.”
+
+---
 ## El costo de las decisiones tecnológicas equivocadas
 
 *3 minutos de contexto antes de entrar en los frameworks.*

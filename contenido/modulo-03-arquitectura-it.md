@@ -24,7 +24,7 @@ El call center no pueden comunicarse con el CRM para gestionar reclamos y los si
 #### Grupo 1 --- Académico
 -   ¿Qué perciben los estudiantes?
 -   ¿Qué impacta en la calidad de servicio?
-- 
+  
 #### Grupo 2 --- Operaciones / Tecnología
 -   ¿Qué falló a nivel de sistema y flujos de datos?
 -   ¿Qué dependencias existen entre Examinación/Proctoring y otros sistemas?
@@ -63,7 +63,8 @@ Un directivo no necesita saber construir edificios. Pero sí necesita poder leer
 Toda organización educativa moderna opera con un ecosistema de sistemas. Los principales son:
 
 | Sistema | Qué hace | Analogía |
-|---------|----------|----------|
+|---------|----------|----------
+| **CMS** (Content Managemnt System) | Presenta la Institución en la WEB, publica la oferta académica y puede contener el e-commerce  | El "sitio" de la Institución |
 | **SIS** (Student Information System) | Gestiona toda la vida académica del estudiante: inscripción, cursada, notas, título | El "DNI" del estudiante en la institución |
 | **LMS** (Learning Management System) | Plataforma donde se da la experiencia de aprendizaje: contenidos, actividades, foros | El "aula" virtual |
 | **EXAM** (Exam & Proctoring) | Plataforma de examinación segura, con auditorías de fraude | La validación del proceso de aprendizaje |
@@ -77,8 +78,8 @@ Toda organización educativa moderna opera con un ecosistema de sistemas. Los pr
 La experiencia del estudiante es un viaje que atraviesa múltiples sistemas. Cada etapa depende de que los sistemas correctos funcionen y estén conectados:
 
 ```
-Descubrimiento → Evaluación → Admisión → Onboarding → Cursada → Evaluación → Graduación → Alumni
-     CRM           CRM/Web      SIS        SIS/LMS      LMS       EXAM        SIS         CRM
+Captación → Evaluación → Admisión → Onboarding → Cursada → Servicios al Est → Evaluación → Graduación → Alumni
+ CRM/Mktg     CMS/Web      SIS        SIS/LMS      LMS       CRM/Services        EXAM        SIS         CRM
 ```
 
 **Los problemas reales surgen en las transiciones:**
@@ -87,15 +88,14 @@ Descubrimiento → Evaluación → Admisión → Onboarding → Cursada → Eval
 - El graduado que no recibe seguimiento porque el CRM no tiene datos de ex-alumnos → oportunidad perdida.
 
 #### 3.1 El "doble-click" en la plataforma Core : el SIS
+El "Student Information System" es el sistema Core: modela la estrategia académica y los procesos académicos má importantes: 
 
 ![Funcionalidades del SIS.](https://github.com/alfredoedye/business-tech-strategy/blob/main/assets/Funcionalidades%20SIS.png)
-
-
-**Cada quiebre en la integración es una mala experiencia para el estudiante y un costo operativo para la organización.**
 
 ### 4. Integraciones: el sistema nervioso de la organización
 
 Los sistemas individuales son importantes, pero lo que realmente define la madurez de una arquitectura es **cómo se conectan entre sí**.
+**Cada quiebre en la integración es una mala experiencia para el estudiante y un costo operativo para la organización.**
 
 **Niveles de integración:**
 
@@ -132,46 +132,6 @@ Una arquitectura IT bien entendida permite al líder evaluar:
 
 ---
 
-## Ejemplos aplicados al sector educativo (LATAM)
-
-### Universidad Siglo 21: Ecosistema integrado
-
-Siglo 21 construyó una arquitectura donde el SIS propio (Algarrobo) es el centro del ecosistema y se conecta con:
-- **HubSpot** (CRM) para gestión comercial
-- **Canvas** (LMS) para la experiencia de aprendizaje
-- **SAP** (ERP) para administración y finanzas
-- **SistemaQ** (AMS) para mesa de ayuda
-- **BI** para analítica y reportes
-- **IAM** para gestión de identidades
-
-El SIS opera con arquitectura de microservicios: módulos independientes (Planificación, Vida Académica, Administración, Trámites) con bases de datos propias que se comunican mediante eventos.
-
-**Lo que esto significa para el negocio:** pueden cambiar el LMS sin afectar la inscripción. Pueden escalar la atención sin tocar la facturación. Cada pieza puede evolucionar de forma independiente.
-
-### El caso típico: la "ensalada de sistemas"
-
-Muchas universidades en LATAM acumularon sistemas durante años sin un plan de arquitectura:
-- Un SIS de los 2000 que nadie se anima a tocar.
-- Un LMS elegido por el área académica sin consultar a IT.
-- Un CRM que marketing compró por su cuenta.
-- Planillas de Excel como "integración" entre todos.
-- 3 personas en IT que son las únicas que entienden cómo funciona todo.
-
-**El resultado:** 12 sistemas, 2 integrados, 40% de procesos manuales, y un equipo de IT que pasa el 90% del tiempo apagando incendios en lugar de construyendo capacidades.
-
-### UVD (caso simulado): Un diagnóstico revelador
-
-Universidad del Valle Digital tiene:
-- SIS legacy de 2010 (parcialmente funcional)
-- Moodle como LMS (sin integración)
-- Google Sheets como "CRM"
-- Sin BI real
-- Sin IAM formal (contraseñas compartidas)
-
-Con 8,000 estudiantes y una tasa de deserción del 42%, la falta de integración no es un problema técnico — es un problema de negocio.
-
----
-
 ## Dinámica: "Mapeá tu arquitectura"
 
 **Duración:** 40 minutos (20 individual/grupal + 20 presentación y debate)
@@ -192,24 +152,6 @@ Con 8,000 estudiantes y una tasa de deserción del 42%, la falta de integración
 - Buscar patrones comunes entre las organizaciones.
 - Señalar que mapear la arquitectura es un acto de gobierno, no un ejercicio técnico.
 - Destacar que muchos líderes hacen este ejercicio por primera vez — y eso es parte del problema.
-
----
-
-## Dinámica: "Walkthrough de una arquitectura de referencia"
-
-**Duración:** 20 minutos
-
-**Instrucciones:**
-1. El facilitador presenta una arquitectura de referencia (basada en el caso Siglo 21 o en una arquitectura genérica educativa).
-2. Se recorre cada capa:
-   - Capa de touchpoints (web, campus virtual, app, e-commerce)
-   - Capa de ciclo de vida del estudiante
-   - Capa de sistemas de soporte
-   - Capa de datos e inteligencia
-3. Preguntas al grupo:
-   - ¿Qué les sorprende?
-   - ¿Qué tienen y qué les falta?
-   - ¿Qué sistema querrían agregar primero?
 
 ---
 

@@ -38,7 +38,8 @@ El call center no pueden comunicarse con el CRM para gestionar reclamos y los si
    Decisiones que hubieran evitado el problema
    2 prioridades inmediatas para mitigarlo
 
-**El facilitador cierra conectando cada punto con la arquitectura de sistemas (qué es, cómo se mapea, dónde están las fronteras e interdependencias)**
+El facilitador cierra conectando cada punto con la arquitectura de sistemas (qué es, cómo se mapea, dónde están las fronteras e interdependencias)
+
 ---
 
 ## Conceptos clave
@@ -65,10 +66,10 @@ Toda organización educativa moderna opera con un ecosistema de sistemas. Los pr
 |---------|----------|----------|
 | **SIS** (Student Information System) | Gestiona toda la vida académica del estudiante: inscripción, cursada, notas, título | El "DNI" del estudiante en la institución |
 | **LMS** (Learning Management System) | Plataforma donde se da la experiencia de aprendizaje: contenidos, actividades, foros | El "aula" virtual |
+| **EXAM** (Exam & Proctoring) | Plataforma de examinación segura, con auditorías de fraude | La validación del proceso de aprendizaje |
 | **CRM** (Customer Relationship Management) | Gestiona la relación con prospectos y estudiantes: campañas, seguimiento, comunicación | La "memoria" de todas las interacciones |
 | **ERP** (Enterprise Resource Planning) | Gestiona administración y finanzas: facturación, pagos, contabilidad, RRHH | La "administración" del negocio |
 | **BI** (Business Intelligence) | Analítica y reportes: dashboards, indicadores, tendencias | Los "ojos" de la organización |
-| **IAM** (Identity & Access Management) | Gestiona identidades y permisos: quién puede acceder a qué | La "seguridad" del edificio |
 | **IA** (Inteligencia Artificial) | Capa transversal: chatbots, analítica predictiva, personalización | El "asistente inteligente" |
 
 ### 3. El ciclo de vida del estudiante visto desde los sistemas
@@ -77,13 +78,18 @@ La experiencia del estudiante es un viaje que atraviesa múltiples sistemas. Cad
 
 ```
 Descubrimiento → Evaluación → Admisión → Onboarding → Cursada → Evaluación → Graduación → Alumni
-     CRM           CRM/Web      SIS        SIS/LMS      LMS       SIS/LMS      SIS         CRM
+     CRM           CRM/Web      SIS        SIS/LMS      LMS       EXAM        SIS         CRM
 ```
 
 **Los problemas reales surgen en las transiciones:**
 - El prospecto que se inscribe en el CRM pero sus datos no llegan al SIS → tiene que cargar todo de nuevo.
 - El estudiante que aprueba en el LMS pero la nota no se refleja en el SIS → necesita un trámite manual.
 - El graduado que no recibe seguimiento porque el CRM no tiene datos de ex-alumnos → oportunidad perdida.
+
+#### 3.1 El "doble-click" en la plataforma Core : el SIS
+
+![Funcionalidades del SIS.](https://drive.google.com/file/d/1HN28Q2wT--sp4fSub61OnAxd2kxwDK8w/view?usp=drive_link)
+
 
 **Cada quiebre en la integración es una mala experiencia para el estudiante y un costo operativo para la organización.**
 
@@ -105,7 +111,14 @@ Los sistemas individuales son importantes, pero lo que realmente define la madur
 - ¿Los datos del estudiante están en un solo lugar o fragmentados en 5 sistemas?
 - ¿Cuánto tiempo pasa entre que algo sucede y se refleja en todos los sistemas?
 
-### 5. La arquitectura como herramienta de decisión
+### 5. Cuadrante de Tecnologia en Modelo MII
+
+El modelo MII, en su cuadrante de Tecnología define la linea base de stack tecnológico para el grupo R'Evolution, como la arquitectura recomendada y deseada en cada institución, para garantizar la calidad y excelencia en la experiencia del estudiante , y la escalabilidad y eficiencia en su modelo academico mediado por tecnologia. 
+
+![Linea base.](https://drive.google.com/file/d/1NHJ7bvweDgNQ46rCpzcypv3AAESN8s4r/view?usp=sharing)
+
+
+### 6. La arquitectura como herramienta de decisión
 
 Una arquitectura IT bien entendida permite al líder evaluar:
 

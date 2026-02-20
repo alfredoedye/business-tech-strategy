@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 04 — Transformación Digital e IA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (THEME: Midnight Clarity)
+           =========================================== */
+        :root {
+            /* Colors */
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-card-hover: rgba(255, 255, 255, 0.07);
+            --text-primary: #e5e7eb;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent: #38bdf8;
+            --accent-purple: #a855f7;
+            --accent-warm: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-green: #34d399;
+            --border: rgba(255, 255, 255, 0.08);
+
+            /* Typography */
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --title-size: clamp(2rem, 5.5vw, 4rem);
+            --h2-size: clamp(1.4rem, 3.5vw, 2.5rem);
+            --h3-size: clamp(1rem, 2vw, 1.4rem);
+            --body-size: clamp(0.75rem, 1.3vw, 1.05rem);
+            --small-size: clamp(0.65rem, 1vw, 0.85rem);
+            --tag-size: clamp(0.6rem, 0.9vw, 0.75rem);
+
+            /* Spacing */
+            --slide-padding: clamp(1.5rem, 4vw, 4rem);
+            --content-gap: clamp(0.8rem, 2vw, 2rem);
+            --element-gap: clamp(0.4rem, 1vw, 1rem);
+
+            /* Animation */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration: 0.7s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            height: 100%;
+        }
+
+        /* ===========================================
+           SLIDE CONTAINER
+           =========================================== */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            padding: var(--slide-padding);
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 100%;
+            overflow: hidden;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ===========================================
+           BACKGROUND EFFECTS
+           =========================================== */
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 70% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Geometric decorations */
+        .geo {
+            position: absolute;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        .slide-tag {
+            display: inline-block;
+            font-size: var(--tag-size);
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 0.4em 1.2em;
+            border-radius: 100px;
+            margin-bottom: clamp(0.8rem, 1.5vw, 1.5rem);
+            width: fit-content;
+        }
+
+        .slide h1 {
+            font-family: var(--font-display);
+            font-size: var(--title-size);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+        }
+
+        .slide h2 {
+            font-family: var(--font-display);
+            font-size: var(--h2-size);
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: clamp(0.5rem, 1.5vw, 1.2rem);
+        }
+
+        .slide h3 {
+            font-family: var(--font-body);
+            font-size: var(--h3-size);
+            font-weight: 700;
+            margin-bottom: var(--element-gap);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide p, .slide li {
+            font-size: var(--body-size);
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .subtitle {
+            font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+            color: var(--text-secondary);
+        }
+
+        /* ===========================================
+           COMPONENTS
+           =========================================== */
+
+        /* Blockquote */
+        .quote-box {
+            border-left: 3px solid var(--accent);
+            padding: 0.8em 1.2em;
+            background: rgba(56, 189, 248, 0.05);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: var(--body-size);
+        }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: clamp(0.5rem, 1.2vw, 1rem);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(0.8rem, 1.5vw, 1.5rem);
+            transition: background 0.3s ease;
+        }
+
+        .card:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .card-icon {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            margin-bottom: clamp(0.3rem, 0.8vw, 0.6rem);
+        }
+
+        .card h3 {
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
+            color: var(--text-primary);
+        }
+
+        .card p {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* Table-like rows */
+        .info-row {
+            display: flex;
+            gap: clamp(0.5rem, 1.5vw, 1.5rem);
+            padding: clamp(0.5rem, 1vw, 0.8rem) 0;
+            border-bottom: 1px solid var(--border);
+            align-items: flex-start;
+        }
+
+        .info-row:last-child { border-bottom: none; }
+
+        .info-label {
+            font-size: var(--small-size);
+            font-weight: 700;
+            color: var(--accent);
+            min-width: clamp(80px, 12vw, 140px);
+            flex-shrink: 0;
+        }
+
+        .info-value {
+            font-size: var(--small-size);
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* Stat highlight */
+        .stat-big {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1;
+            margin-bottom: clamp(0.3rem, 1vw, 0.8rem);
+        }
+
+        /* Pill tags */
+        .pill {
+            display: inline-block;
+            font-size: var(--small-size);
+            font-weight: 500;
+            padding: 0.3em 0.8em;
+            border-radius: 100px;
+            border: 1px solid;
+        }
+
+        .pill-blue { color: #38bdf8; border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.08); }
+        .pill-purple { color: #a855f7; border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.08); }
+        .pill-amber { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.08); }
+        .pill-red { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); }
+        .pill-green { color: #34d399; border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.08); }
+
+        /* Two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1rem, 2.5vw, 2.5rem);
+            align-items: start;
+        }
+
+        @media (max-width: 700px) {
+            .two-col { grid-template-columns: 1fr; }
+        }
+
+        /* Bullet list */
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.8vw, 0.6rem);
+        }
+
+        .bullet-list li {
+            padding-left: 1.2em;
+            position: relative;
+            font-size: var(--body-size);
+        }
+
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: clamp(0.5rem, 1.5vw, 1.5rem) 0;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .divider .diamond {
+            width: 5px; height: 5px;
+            background: var(--accent);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* Triangle diagram */
+        .triangle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(0.5rem, 2vw, 1.5rem) 0;
+        }
+
+        .triangle-svg {
+            width: min(300px, 40vw);
+            height: auto;
+        }
+
+        /* Anti-pattern cards */
+        .antipattern {
+            display: flex;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            align-items: flex-start;
+            padding: clamp(0.6rem, 1vw, 1rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-red);
+        }
+
+        .antipattern-icon {
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
+            flex-shrink: 0;
+        }
+
+        .antipattern-name {
+            font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.15em;
+        }
+
+        .antipattern-desc {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+        }
+
+        /* Layer diagram */
+        .layer-stack {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.6vw, 0.5rem);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .layer {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            padding: clamp(0.5rem, 0.8vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: var(--small-size);
+            font-weight: 500;
+        }
+
+        .layer-label {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 40px;
+        }
+
+        /* Governance roles */
+        .role-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+
+        .role-title {
+            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);
+        }
+
+        .role-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.15rem, 0.4vw, 0.3rem);
+        }
+
+        .role-list li {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            padding-left: 1em;
+            position: relative;
+        }
+
+        .role-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Ethics list */
+        .ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: clamp(0.4rem, 0.8vw, 0.6rem);
+        }
+
+        .ethics-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            font-size: var(--body-size);
+            color: var(--text-secondary);
+            padding: clamp(0.4rem, 0.7vw, 0.6rem) clamp(0.6rem, 1vw, 0.8rem);
+            background: var(--bg-card);
+            border-radius: 8px;
+        }
+
+        .ethics-icon {
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity var(--duration) var(--ease-out-expo),
+                        transform var(--duration) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal:nth-child(1) { transition-delay: 0.05s; }
+        .reveal:nth-child(2) { transition-delay: 0.12s; }
+        .reveal:nth-child(3) { transition-delay: 0.19s; }
+        .reveal:nth-child(4) { transition-delay: 0.26s; }
+        .reveal:nth-child(5) { transition-delay: 0.33s; }
+        .reveal:nth-child(6) { transition-delay: 0.40s; }
+        .reveal:nth-child(7) { transition-delay: 0.47s; }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity var(--duration) var(--ease-out-expo),
+                        transform var(--duration) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal-scale {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ===========================================
+           PROGRESS BAR
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+            z-index: 100;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        /* ===========================================
+           NAV DOTS
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: clamp(0.8rem, 1.5vw, 1.5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .nav-dot.active {
+            background: var(--accent);
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+        }
+
+        .nav-dot:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ===========================================
+           SLIDE NUMBER
+           =========================================== */
+        .slide-num {
+            position: absolute;
+            bottom: clamp(1rem, 2vw, 1.5rem);
+            right: clamp(1.5rem, 3vw, 2.5rem);
+            font-size: var(--small-size);
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ===========================================
+           CENTERED CONTENT
+           =========================================== */
+        .centered {
+            text-align: center;
+            align-items: center;
+        }
+
+        /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+        @media (max-height: 700px) {
+            :root {
+                --slide-padding: clamp(1rem, 3vw, 2.5rem);
+                --content-gap: clamp(0.5rem, 1.5vw, 1.2rem);
+                --title-size: clamp(1.6rem, 4.5vw, 3rem);
+                --h2-size: clamp(1.2rem, 3vw, 2rem);
+            }
+        }
+
+        @media (max-height: 600px) {
+            :root {
+                --slide-padding: clamp(0.75rem, 2.5vw, 1.5rem);
+                --content-gap: clamp(0.3rem, 1vw, 0.8rem);
+                --title-size: clamp(1.3rem, 4vw, 2.2rem);
+                --body-size: clamp(0.7rem, 1.1vw, 0.9rem);
+            }
+            .nav-dots { display: none; }
+        }
+
+        @media (max-height: 500px) {
+            :root {
+                --slide-padding: clamp(0.5rem, 2vw, 1rem);
+                --title-size: clamp(1.1rem, 3.5vw, 1.8rem);
+                --h2-size: clamp(0.95rem, 2.5vw, 1.4rem);
+                --body-size: clamp(0.65rem, 1vw, 0.8rem);
+            }
+        }
+
+        @media (max-width: 600px) {
+            :root {
+                --title-size: clamp(1.5rem, 7vw, 2.5rem);
+            }
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation dots -->
+    <nav class="nav-dots" id="navDots"></nav>
+
+    <!-- ===========================================
+         SLIDE 1: TITLE
+         =========================================== -->
+    <section class="slide" data-slide="0">
+        <!-- Floating geometry -->
+        <div class="geo" style="width:180px;height:180px;top:8%;right:12%;border-color:rgba(56,189,248,0.08);transform:rotate(15deg);"></div>
+        <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
+
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Modulo 04</div>
+            <h1 class="reveal">Transformacion Digital <span class="gradient-text">e IA</span></h1>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <p class="subtitle reveal">De la intencion a la gobernanza</p>
+            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Como transformar sin romper la organizacion?</p>
+        </div>
+        <div class="slide-num">01 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: OBJETIVO
+         =========================================== -->
+    <section class="slide" data-slide="1">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Objetivo</div>
+            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este modulo</span></h2>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal">Comprender que la transformacion digital requiere <strong style="color:var(--text-primary)">cultura + procesos + tecnologia</strong></li>
+                    <li class="reveal">Entender que la adopcion de IA es una <strong style="color:var(--text-primary)">decision estrategica con gobernanza</strong>, no un proyecto aislado</li>
+                    <li class="reveal">Conocer un <strong style="color:var(--text-primary)">framework real de aplicacion de IA</strong></li>
+                    <li class="reveal">Salir con un <strong style="color:var(--text-primary)">primer paso concreto y estructurado</strong> para avanzar</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide-num">02 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: DINAMICA DE APERTURA
+         =========================================== -->
+    <section class="slide" data-slide="2">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
+            <h2 class="reveal">Boardroom en Crisis</h2>
+            <p class="subtitle reveal">Decidir bajo presion</p>
+            <div class="divider reveal"><div class="diamond" style="background:var(--accent-warm);"></div></div>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);max-width:700px;">
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">📋</div>
+                    <h3>3 min</h3>
+                    <p>Briefing del escenario</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">⚡</div>
+                    <h3>8 min</h3>
+                    <p>Trabajo en grupo como Comite Ejecutivo</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🎤</div>
+                    <h3>6-7 min</h3>
+                    <p>Plenaria y reflexion</p>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Asumes el rol de Comite Ejecutivo. Recibes un escenario con presion financiera y competitiva. Tienes 8 minutos para decidir.</p>
+        </div>
+        <div class="slide-num">03 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: EL PATRON INVISIBLE
+         =========================================== -->
+    <section class="slide" data-slide="3">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Revelacion</div>
+            <h2 class="reveal">El patron <span class="gradient-text">invisible</span></h2>
+            <p class="reveal" style="margin-bottom:var(--content-gap);color:var(--text-secondary);font-size:var(--body-size);">Despues de la dinamica, algo se hace visible. Las decisiones suelen:</p>
+            <div style="display:flex;flex-direction:column;gap:clamp(0.3rem,0.7vw,0.5rem);">
+                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-red);">
+                    <span style="color:var(--accent-red);">✕</span>
+                    <span style="font-size:var(--body-size);">Ir directo a tecnologia</span>
+                </div>
+                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-red);">
+                    <span style="color:var(--accent-red);">✕</span>
+                    <span style="font-size:var(--body-size);">Carecer de gobernanza formal</span>
+                </div>
+                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-red);">
+                    <span style="color:var(--accent-red);">✕</span>
+                    <span style="font-size:var(--body-size);">No tener presupuesto asignado explicitamente</span>
+                </div>
+                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-red);">
+                    <span style="color:var(--accent-red);">✕</span>
+                    <span style="font-size:var(--body-size);">No definir KPIs antes de ejecutar</span>
+                </div>
+                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-red);">
+                    <span style="color:var(--accent-red);">✕</span>
+                    <span style="font-size:var(--body-size);">Ignorar cultura o procesos</span>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">04 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: TRIANGULO DE TRANSFORMACION
+         =========================================== -->
+    <section class="slide" data-slide="4">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Concepto Clave</div>
+            <h2 class="reveal">El Triangulo de la <span class="gradient-text">Transformacion Digital</span></h2>
+            <p class="reveal" style="max-width:650px;font-size:var(--body-size);">La transformacion digital <strong style="color:var(--text-primary);">no es un proyecto de tecnologia</strong>. Es la interseccion de tres dimensiones.</p>
+
+            <div class="reveal-scale" style="margin-top:var(--content-gap);">
+                <svg class="triangle-svg" viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Triangle -->
+                    <path d="M150 30 L270 220 L30 220 Z" stroke="rgba(56,189,248,0.3)" stroke-width="1.5" fill="none"/>
+                    <!-- Nodes -->
+                    <circle cx="150" cy="30" r="8" fill="#38bdf8"/>
+                    <circle cx="30" cy="220" r="8" fill="#a855f7"/>
+                    <circle cx="270" cy="220" r="8" fill="#f59e0b"/>
+                    <!-- Labels -->
+                    <text x="150" y="15" text-anchor="middle" fill="#38bdf8" font-family="DM Sans" font-size="13" font-weight="700">Cultura</text>
+                    <text x="15" y="248" text-anchor="middle" fill="#a855f7" font-family="DM Sans" font-size="13" font-weight="700">Procesos</text>
+                    <text x="280" y="248" text-anchor="middle" fill="#f59e0b" font-family="DM Sans" font-size="13" font-weight="700">Tecnologia</text>
+                    <!-- Center text -->
+                    <text x="150" y="155" text-anchor="middle" fill="#6b7280" font-family="DM Sans" font-size="11">Transformacion</text>
+                    <text x="150" y="170" text-anchor="middle" fill="#6b7280" font-family="DM Sans" font-size="11">Digital</text>
+                </svg>
+            </div>
+        </div>
+        <div class="slide-num">05 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: TRES DIMENSIONES
+         =========================================== -->
+    <section class="slide" data-slide="5">
+        <div class="slide-content">
+            <h2 class="reveal">Tres dimensiones, <span class="gradient-text">un sistema</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
+                <div class="card" style="border-top:3px solid #38bdf8;">
+                    <div class="card-icon">🧠</div>
+                    <h3 style="color:#38bdf8;">Cultura</h3>
+                    <p>Liderazgo visible, apertura al cambio</p>
+                    <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
+                        <p style="font-size:var(--small-size);color:var(--accent-red);">Sin ella: la tecnologia no se usa</p>
+                    </div>
+                </div>
+                <div class="card" style="border-top:3px solid #a855f7;">
+                    <div class="card-icon">⚙️</div>
+                    <h3 style="color:#a855f7;">Procesos</h3>
+                    <p>Rediseno real del trabajo</p>
+                    <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
+                        <p style="font-size:var(--small-size);color:var(--accent-red);">Sin ella: se automatiza lo ineficiente</p>
+                    </div>
+                </div>
+                <div class="card" style="border-top:3px solid #f59e0b;">
+                    <div class="card-icon">🔧</div>
+                    <h3 style="color:#f59e0b;">Tecnologia</h3>
+                    <p>Arquitectura, integracion, escalabilidad</p>
+                    <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
+                        <p style="font-size:var(--small-size);color:var(--accent-red);">Sin ella: la estrategia no se ejecuta</p>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                McKinsey: las organizaciones que tratan la transformacion como un cambio de modelo de negocio tienen <strong style="color:var(--text-primary)">2.5x mas probabilidad de exito</strong>.
+            </div>
+        </div>
+        <div class="slide-num">06 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: McKINSEY 6 DIMENSIONES
+         =========================================== -->
+    <section class="slide" data-slide="6">
+        <div class="slide-content">
+            <div class="slide-tag reveal">McKinsey</div>
+            <h2 class="reveal">6 dimensiones de la <span class="gradient-text">transformacion holistica</span></h2>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);margin-bottom:var(--content-gap);">Si falta una dimension, el sistema colapsa.</p>
+            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);">
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Estrategia y modelo de negocio</h3>
+                    <p>Redefinir donde y como compite la organizacion</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏃</div>
+                    <h3>Agilidad y organizacion</h3>
+                    <p>Equipos autonomos con mandato claro</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Tecnologia</h3>
+                    <p>Arquitectura moderna, datos integrados</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Datos y analitica</h3>
+                    <p>Datos como activo estrategico</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <h3>Talento y cultura</h3>
+                    <p>Lideres que modelan el cambio</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Ecosistema</h3>
+                    <p>Partnerships y plataformas externas</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">07 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: ESTADISTICA DE FRACASO
+         =========================================== -->
+    <section class="slide" data-slide="7">
+        <div class="slide-content centered">
+            <div class="reveal">
+                <div class="stat-big gradient-text">70%</div>
+                <p style="font-size:var(--h3-size);color:var(--text-primary);font-weight:500;">de las transformaciones digitales<br>no alcanzan sus objetivos</p>
+            </div>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <p class="reveal" style="font-size:var(--body-size);max-width:600px;">Menos de 1 de cada 3 proyectos entrega el valor prometido.<br><span style="color:var(--text-muted);">— McKinsey / Gartner</span></p>
+            <div style="margin-top:var(--content-gap);display:flex;flex-direction:column;gap:clamp(0.2rem,0.5vw,0.4rem);max-width:500px;width:100%;">
+                <div class="reveal" style="display:flex;justify-content:space-between;font-size:var(--small-size);padding:0.4em 0;border-bottom:1px solid var(--border);">
+                    <span style="color:var(--text-secondary);">1. Falta de alineacion del liderazgo</span>
+                    <span class="pill pill-red" style="font-size:var(--small-size);">1er</span>
+                </div>
+                <div class="reveal" style="display:flex;justify-content:space-between;font-size:var(--small-size);padding:0.4em 0;border-bottom:1px solid var(--border);">
+                    <span style="color:var(--text-secondary);">2. Resistencia cultural al cambio</span>
+                    <span class="pill pill-red" style="font-size:var(--small-size);">2do</span>
+                </div>
+                <div class="reveal" style="display:flex;justify-content:space-between;font-size:var(--small-size);padding:0.4em 0;border-bottom:1px solid var(--border);">
+                    <span style="color:var(--text-secondary);">3. Deficit de talento digital</span>
+                    <span class="pill pill-amber" style="font-size:var(--small-size);">3er</span>
+                </div>
+                <div class="reveal" style="display:flex;justify-content:space-between;font-size:var(--small-size);padding:0.4em 0;border-bottom:1px solid var(--border);">
+                    <span style="color:var(--text-secondary);">4. Iniciativas aisladas sin vision sistemica</span>
+                    <span class="pill pill-amber" style="font-size:var(--small-size);">4to</span>
+                </div>
+                <div class="reveal" style="display:flex;justify-content:space-between;font-size:var(--small-size);padding:0.4em 0;">
+                    <span style="color:var(--text-secondary);">5. Ausencia de metricas claras</span>
+                    <span class="pill pill-amber" style="font-size:var(--small-size);">5to</span>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">08 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: ANTI-PATRONES
+         =========================================== -->
+    <section class="slide" data-slide="8">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Anti-patrones</div>
+            <h2 class="reveal">Los errores que <span class="gradient-text">tienen nombre</span></h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(0.5rem,1vw,0.8rem);margin-top:var(--content-gap);">
+                <div class="antipattern reveal">
+                    <div class="antipattern-icon">🏎️</div>
+                    <div>
+                        <div class="antipattern-name">Ferrari en el barro</div>
+                        <div class="antipattern-desc">Tecnologia potente, baja adopcion</div>
+                        <span class="pill pill-blue" style="margin-top:0.3em;font-size:var(--small-size);">Cultura debil</span>
+                    </div>
+                </div>
+                <div class="antipattern reveal">
+                    <div class="antipattern-icon">💄</div>
+                    <div>
+                        <div class="antipattern-name">Maquillaje digital</div>
+                        <div class="antipattern-desc">Automatizacion de procesos rotos</div>
+                        <span class="pill pill-purple" style="margin-top:0.3em;font-size:var(--small-size);">Procesos debiles</span>
+                    </div>
+                </div>
+                <div class="antipattern reveal">
+                    <div class="antipattern-icon">💭</div>
+                    <div>
+                        <div class="antipattern-name">Visionario sin herramientas</div>
+                        <div class="antipattern-desc">Intencion sin infraestructura</div>
+                        <span class="pill pill-amber" style="margin-top:0.3em;font-size:var(--small-size);">Tecnologia debil</span>
+                    </div>
+                </div>
+                <div class="antipattern reveal">
+                    <div class="antipattern-icon">🔄</div>
+                    <div>
+                        <div class="antipattern-name">Piloto eterno</div>
+                        <div class="antipattern-desc">Pruebas sin escalamiento</div>
+                        <span class="pill pill-red" style="margin-top:0.3em;font-size:var(--small-size);">Gobernanza debil</span>
+                    </div>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">El patron mas comun: invertir en tecnologia, ignorar cultura y procesos, medir exito por "cuanto se implemento" en vez de "cuanto cambio el resultado".</p>
+        </div>
+        <div class="slide-num">09 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: FRAMEWORK IA - INTRO
+         =========================================== -->
+    <section class="slide" data-slide="9">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Framework</div>
+            <h2 class="reveal">Framework Estrategico de <span class="gradient-text">Implementacion de IA</span></h2>
+            <p class="subtitle reveal">Basado en el Framework R'Evolution 2026</p>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <div class="cards-grid reveal-scale" style="max-width:700px;margin-top:var(--content-gap);">
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🏛️</div>
+                    <h3>Gobernanza formal</h3>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🎯</div>
+                    <h3>Ejes estrategicos</h3>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">💰</div>
+                    <h3>Presupuesto explicito</h3>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🔄</div>
+                    <h3>Ciclo autonomo</h3>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">📈</div>
+                    <h3>Revision MBR/QBR</h3>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Marco etico</h3>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">10 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 11: PRINCIPIOS RECTORES
+         =========================================== -->
+    <section class="slide" data-slide="10">
+        <div class="slide-content">
+            <h2 class="reveal">Principios <span class="gradient-text">rectores</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:1fr 1fr;">
+                <div class="card" style="border-left:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">1. Centralizacion estrategica</h3>
+                    <ul class="role-list">
+                        <li>Ejes definidos por Celula Estrategica IA</li>
+                        <li>Validacion tecnica obligatoria</li>
+                        <li>KPIs y ROI requeridos</li>
+                        <li>Presupuesto revisado en MBR</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left:3px solid #a855f7;">
+                    <h3 style="color:#a855f7;">2. Ejecucion descentralizada</h3>
+                    <ul class="role-list">
+                        <li>Cada institucion implementa en su contexto</li>
+                        <li>Autonomia dentro de lineamientos comunes</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left:3px solid #34d399;">
+                    <h3 style="color:#34d399;">3. Iteracion agil</h3>
+                    <ul class="role-list">
+                        <li>Pilotos acotados</li>
+                        <li>Escalar lo que funciona</li>
+                        <li>Descartar lo que no</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left:3px solid #f59e0b;">
+                    <h3 style="color:#f59e0b;">4. Etica y responsabilidad</h3>
+                    <ul class="role-list">
+                        <li>Transparencia y equidad</li>
+                        <li>Proteccion de datos</li>
+                        <li>Explicabilidad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">11 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 12: GOBERNANZA
+         =========================================== -->
+    <section class="slide" data-slide="11">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Gobernanza</div>
+            <h2 class="reveal">La diferencia entre <span class="gradient-text">moda y estrategia</span></h2>
+            <p class="reveal" style="font-size:var(--body-size);color:var(--text-muted);margin-bottom:var(--content-gap);">Sin estructura, la IA se vuelve improvisacion.</p>
+            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);">
+                <div class="role-card" style="border-top:3px solid #38bdf8;">
+                    <div style="display:flex;align-items:center;gap:0.5em;margin-bottom:clamp(0.3rem,0.6vw,0.5rem);">
+                        <span style="font-size:1.2em;">🏛️</span>
+                        <div class="role-title" style="margin-bottom:0;">Celula Estrategica IA</div>
+                    </div>
+                    <ul class="role-list">
+                        <li>Define lineamientos y ejes</li>
+                        <li>Aprueba presupuesto</li>
+                        <li>Valida KPIs y ROI</li>
+                    </ul>
+                </div>
+                <div class="role-card" style="border-top:3px solid #a855f7;">
+                    <div style="display:flex;align-items:center;gap:0.5em;margin-bottom:clamp(0.3rem,0.6vw,0.5rem);">
+                        <span style="font-size:1.2em;">🔬</span>
+                        <div class="role-title" style="margin-bottom:0;">Equipo Experto IA</div>
+                    </div>
+                    <ul class="role-list">
+                        <li>Valida arquitecturas</li>
+                        <li>Selecciona herramientas</li>
+                        <li>Documenta aprendizajes</li>
+                        <li>Apoya equipos reducidos</li>
+                    </ul>
+                </div>
+                <div class="role-card" style="border-top:3px solid #34d399;">
+                    <div style="display:flex;align-items:center;gap:0.5em;margin-bottom:clamp(0.3rem,0.6vw,0.5rem);">
+                        <span style="font-size:1.2em;">🏫</span>
+                        <div class="role-title" style="margin-bottom:0;">Instituciones / EdTech</div>
+                    </div>
+                    <ul class="role-list">
+                        <li>Ejecutan ejes estrategicos</li>
+                        <li>Proponen iniciativas</li>
+                        <li>Reportan resultados</li>
+                        <li>MBR mensual / QBR trimestral</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">12 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 13: PRESUPUESTO
+         =========================================== -->
+    <section class="slide" data-slide="12">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Presupuesto</div>
+            <h2 class="reveal">Lo que no tiene presupuesto<br><span class="gradient-text">no tiene prioridad real</span></h2>
+            <div class="divider reveal"><div class="diamond" style="background:var(--accent-warm);"></div></div>
+            <div class="reveal" style="max-width:550px;">
+                <ul class="bullet-list" style="text-align:left;">
+                    <li>Obliga a definir ROI <strong style="color:var(--text-primary);">antes</strong> de gastar</li>
+                    <li>Crea una linea de <strong style="color:var(--text-primary);">rendicion de cuentas</strong> clara en cada MBR</li>
+                    <li>Senala a toda la organizacion que es una <strong style="color:var(--text-primary);">apuesta estrategica</strong></li>
+                </ul>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:550px;text-align:left;">
+                &iquest;Cuanto presupuesto formal tiene hoy tu organizacion asignado a IA?
+            </div>
+        </div>
+        <div class="slide-num">13 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 14: IA COMO CAPA TRANSVERSAL
+         =========================================== -->
+    <section class="slide" data-slide="13">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Arquitectura</div>
+            <h2 class="reveal">IA como <span class="gradient-text">capa transversal</span></h2>
+            <p class="reveal" style="font-size:var(--body-size);color:var(--text-secondary);margin-bottom:var(--content-gap);">La IA no es un proyecto independiente. Es una capacidad que cruza cada proceso.</p>
+            <div class="two-col">
+                <div>
+                    <div class="layer-stack reveal-scale">
+                        <div class="layer">
+                            <span class="layer-label">CRM</span>
+                            <span style="font-size:var(--small-size);color:var(--text-secondary);">Relacion con estudiantes</span>
+                        </div>
+                        <div class="layer">
+                            <span class="layer-label">SIS</span>
+                            <span style="font-size:var(--small-size);color:var(--text-secondary);">Sistema de informacion estudiantil</span>
+                        </div>
+                        <div class="layer">
+                            <span class="layer-label">LMS</span>
+                            <span style="font-size:var(--small-size);color:var(--text-secondary);">Gestion de aprendizaje</span>
+                        </div>
+                        <div class="layer">
+                            <span class="layer-label">ERP</span>
+                            <span style="font-size:var(--small-size);color:var(--text-secondary);">Planificacion de recursos</span>
+                        </div>
+                        <div class="layer">
+                            <span class="layer-label">BI</span>
+                            <span style="font-size:var(--small-size);color:var(--text-secondary);">Inteligencia de negocios</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="quote-box" style="margin-bottom:var(--element-gap);">
+                        La pregunta no es: &iquest;Tenemos IA?
+                    </div>
+                    <div class="quote-box" style="border-left-color:var(--accent-purple);background:rgba(168,85,247,0.05);">
+                        Sino: &iquest;Como cada proceso incorpora capacidades inteligentes de manera sistematica?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">14 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 15: RIESGOS Y ETICA
+         =========================================== -->
+    <section class="slide" data-slide="14">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(52,211,153,0.1);color:var(--accent-green);">Etica</div>
+            <h2 class="reveal">Riesgos y <span class="gradient-text">responsabilidad</span></h2>
+            <p class="reveal" style="font-size:var(--body-size);color:var(--text-secondary);margin-bottom:var(--content-gap);">La IA toma decisiones que antes tomaban personas. La adopcion responsable exige:</p>
+            <div class="ethics-grid reveal-scale">
+                <div class="ethics-item">
+                    <span class="ethics-icon">✓</span>
+                    <span>Supervision humana significativa</span>
+                </div>
+                <div class="ethics-item">
+                    <span class="ethics-icon">✓</span>
+                    <span>Robustez tecnica</span>
+                </div>
+                <div class="ethics-item">
+                    <span class="ethics-icon">✓</span>
+                    <span>Gobernanza de datos</span>
+                </div>
+                <div class="ethics-item">
+                    <span class="ethics-icon">✓</span>
+                    <span>Transparencia y explicabilidad</span>
+                </div>
+                <div class="ethics-item">
+                    <span class="ethics-icon">✓</span>
+                    <span>No discriminacion</span>
+                </div>
+                <div class="ethics-item">
+                    <span class="ethics-icon">✓</span>
+                    <span>Rendicion de cuentas</span>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                El rol del lider no es frenar la IA. Es <strong style="color:var(--text-primary);">institucionalizarla con intencion y responsabilidad</strong>.
+            </div>
+        </div>
+        <div class="slide-num">15 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 16: RESULTADO ESPERADO
+         =========================================== -->
+    <section class="slide" data-slide="15">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Cierre</div>
+            <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <div style="max-width:550px;margin-top:var(--content-gap);">
+                <ul class="bullet-list" style="text-align:left;">
+                    <li class="reveal">Entiendes la transformacion digital <strong style="color:var(--text-primary);">como sistema</strong></li>
+                    <li class="reveal">Conoces un <strong style="color:var(--text-primary);">framework operativo real</strong></li>
+                    <li class="reveal">Puedes disenar <strong style="color:var(--text-primary);">gobernanza basica</strong> en tu organizacion</li>
+                    <li class="reveal">Identificas un <strong style="color:var(--text-primary);">eje estrategico prioritario</strong></li>
+                    <li class="reveal">Defines un <strong style="color:var(--text-primary);">primer paso estructurado</strong></li>
+                </ul>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 04 — Transformacion Digital e IA</p>
+        </div>
+        <div class="slide-num">16 / 16</div>
+    </section>
+
+    <!-- ===========================================
+       JAVASCRIPT: Slide Controller
+       =========================================== -->
+    <script>
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.progressBar = document.getElementById('progressBar');
+                this.navDotsContainer = document.getElementById('navDots');
+                this.currentSlide = 0;
+                this.totalSlides = this.slides.length;
+                this.isScrolling = false;
+
+                this.createNavDots();
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.updateProgress();
+            }
+
+            /* Create navigation dots */
+            createNavDots() {
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('nav-dot');
+                    dot.setAttribute('aria-label', `Slide ${i + 1}`);
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.navDotsContainer.appendChild(dot);
+                }
+            }
+
+            /* Observe which slide is visible */
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const index = parseInt(entry.target.dataset.slide);
+                            this.currentSlide = index;
+                            this.updateNavDots();
+                            this.updateProgress();
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            /* Keyboard navigation */
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                        e.preventDefault();
+                        this.nextSlide();
+                    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        this.prevSlide();
+                    }
+                });
+            }
+
+            /* Touch/swipe support */
+            setupTouchNav() {
+                let startY = 0;
+                document.addEventListener('touchstart', (e) => {
+                    startY = e.touches[0].clientY;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    const diff = startY - e.changedTouches[0].clientY;
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) this.nextSlide();
+                        else this.prevSlide();
+                    }
+                }, { passive: true });
+            }
+
+            goToSlide(index) {
+                if (index >= 0 && index < this.totalSlides) {
+                    this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            nextSlide() {
+                this.goToSlide(this.currentSlide + 1);
+            }
+
+            prevSlide() {
+                this.goToSlide(this.currentSlide - 1);
+            }
+
+            updateNavDots() {
+                const dots = this.navDotsContainer.querySelectorAll('.nav-dot');
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === this.currentSlide);
+                });
+            }
+
+            updateProgress() {
+                const progress = ((this.currentSlide + 1) / this.totalSlides) * 100;
+                this.progressBar.style.width = `${progress}%`;
+            }
+        }
+
+        /* Initialize on load */
+        document.addEventListener('DOMContentLoaded', () => {
+            new SlidePresentation();
+        });
+    </script>
+</body>
+</html>

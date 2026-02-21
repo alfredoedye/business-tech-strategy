@@ -333,48 +333,6 @@
             flex-shrink: 0;
         }
 
-        /* Triangle diagram */
-        .triangle-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: clamp(0.5rem, 2vw, 1.5rem) 0;
-        }
-
-        .triangle-svg {
-            width: min(300px, 40vw);
-            height: auto;
-        }
-
-        /* Anti-pattern cards */
-        .antipattern {
-            display: flex;
-            gap: clamp(0.5rem, 1vw, 1rem);
-            align-items: flex-start;
-            padding: clamp(0.6rem, 1vw, 1rem);
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            border-left: 3px solid var(--accent-red);
-        }
-
-        .antipattern-icon {
-            font-size: clamp(1rem, 1.5vw, 1.5rem);
-            flex-shrink: 0;
-        }
-
-        .antipattern-name {
-            font-size: clamp(0.75rem, 1.1vw, 0.95rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.15em;
-        }
-
-        .antipattern-desc {
-            font-size: var(--small-size);
-            color: var(--text-muted);
-        }
-
         /* Layer diagram */
         .layer-stack {
             display: flex;
@@ -402,19 +360,12 @@
             min-width: 40px;
         }
 
-        /* Governance roles */
+        /* Role card */
         .role-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: clamp(0.8rem, 1.5vw, 1.2rem);
-        }
-
-        .role-title {
-            font-size: clamp(0.8rem, 1.2vw, 1rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);
         }
 
         .role-list {
@@ -438,27 +389,16 @@
             color: var(--accent);
         }
 
-        /* Ethics list */
-        .ethics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-            gap: clamp(0.4rem, 0.8vw, 0.6rem);
-        }
-
-        .ethics-item {
+        /* Anti-pattern cards */
+        .antipattern {
             display: flex;
-            align-items: center;
-            gap: 0.5em;
-            font-size: var(--body-size);
-            color: var(--text-secondary);
-            padding: clamp(0.4rem, 0.7vw, 0.6rem) clamp(0.6rem, 1vw, 0.8rem);
+            gap: clamp(0.5rem, 1vw, 1rem);
+            align-items: flex-start;
+            padding: clamp(0.6rem, 1vw, 1rem);
             background: var(--bg-card);
-            border-radius: 8px;
-        }
-
-        .ethics-icon {
-            color: var(--accent-green);
-            flex-shrink: 0;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-red);
         }
 
         /* ===========================================
@@ -632,13 +572,13 @@
             <h1 class="reveal">Hello World <span class="gradient-text">Tecnologia como ventaja competitiva</span></h1>
             <div class="divider reveal"><div class="diamond"></div></div>
             <p class="subtitle reveal">La tecnologia dejo de ser soporte. Es arquitectura competitiva.</p>
-            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Por que la tecnologia dejo de ser un area de soporte?</p>
+            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Por que la tecnologia dejo de ser un area de soporte y paso a ser parte de la estrategia del negocio?</p>
         </div>
-        <div class="slide-num">01 / 13</div>
+        <div class="slide-num">01 / 12</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 2: OBJETIVO + TESIS
+         SLIDE 2: OBJETIVO
          =========================================== -->
     <section class="slide" data-slide="1">
         <div class="slide-content">
@@ -646,112 +586,86 @@
             <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este modulo</span></h2>
             <div style="margin-top:var(--content-gap);">
                 <ul class="bullet-list">
-                    <li class="reveal">Comprender por que la tecnologia es <strong style="color:var(--text-primary);">pieza central del negocio educativo</strong></li>
+                    <li class="reveal">Comprender por que la tecnologia es <strong style="color:var(--text-primary);">parte de la estrategia central</strong> del negocio educativo</li>
                     <li class="reveal">Identificar en que <strong style="color:var(--text-primary);">nivel de madurez tecnologica</strong> esta tu organizacion</li>
                     <li class="reveal">Entender el <strong style="color:var(--text-primary);">impacto economico</strong> de cada nivel</li>
                     <li class="reveal">Reconocer que <strong style="color:var(--text-primary);">decisiones tecnologicas no podes delegar</strong></li>
+                    <li class="reveal">Entender que la <strong style="color:var(--text-primary);">competencia ya es global</strong></li>
                 </ul>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                La tecnologia ya no es eficiencia operativa. Es arquitectura competitiva. El nivel de madurez define el techo de crecimiento.
-            </div>
         </div>
-        <div class="slide-num">02 / 13</div>
+        <div class="slide-num">02 / 12</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 3: FUERZA 1 - PRESION FINANCIERA
+         SLIDE 3: DINAMICA DISPARADORA — EL REEMPLAZO INVISIBLE
          =========================================== -->
     <section class="slide" data-slide="2">
         <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Contexto</div>
-            <h2 class="reveal">Tres fuerzas que <span class="gradient-text">reconfiguran la educacion</span></h2>
-            <p class="reveal subtitle" style="margin-bottom:var(--content-gap);">Fuerza 1: Presion financiera y sostenibilidad</p>
-            <div class="reveal">
-                <div class="info-row">
-                    <span class="info-label">EE.UU.</span>
-                    <span class="info-value">20+ universidades cerraron en 2024. Se proyectan 80 cierres/ano.</span>
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica Disparadora</div>
+            <h2 class="reveal">El Reemplazo <span class="gradient-text">Invisible</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">"Mañana aparece un competidor digital sin campus, sin legacy, sin deuda organizacional. Diseña desde cero, hoy, en 2026. ¿Qué haría diferente a ustedes?"</p>
+            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(2,1fr);">
+                <div class="card">
+                    <div class="card-icon">&#x1F393;</div>
+                    <h3>&iquest;Como captaria estudiantes?</h3>
                 </div>
-                <div class="info-row">
-                    <span class="info-label">2U + edX</span>
-                    <span class="info-value">Pago USD 800M por el contenido de Harvard y MIT. Hoy tiene USD 900M en deuda.</span>
+                <div class="card">
+                    <div class="card-icon">&#x2728;</div>
+                    <h3>&iquest;Como diseñaria la experiencia?</h3>
                 </div>
-                <div class="info-row">
-                    <span class="info-label">LATAM</span>
-                    <span class="info-value">Sin endowments de USD 50B, la resiliencia financiera es menor.</span>
+                <div class="card">
+                    <div class="card-icon">&#x1F4CA;</div>
+                    <h3>&iquest;Como usaria datos?</h3>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#x1F6AB;</div>
+                    <h3>&iquest;Que NO haria que ustedes si hacen?</h3>
                 </div>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">La pregunta ya no es 'si vamos a crecer', sino 'si el modelo actual es viable'.</p>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                <strong style="color:var(--text-primary);">Cierre del facilitador:</strong> Si ese competidor nace hoy digital, la tecnologia no es soporte. Es el modelo.
+            </div>
         </div>
-        <div class="slide-num">03 / 13</div>
+        <div class="slide-num">03 / 12</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 4: FUERZAS 2 Y 3
+         SLIDE 4: SOFTWARE IS EATING THE WORLD
          =========================================== -->
     <section class="slide" data-slide="3">
-        <div class="slide-content">
-            <h2 class="reveal">Fuerzas <span class="gradient-text">2 y 3</span></h2>
-            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
-                <div>
-                    <h3 style="color:#38bdf8;margin-bottom:var(--element-gap);">Fuerza 2: Demanda laboral</h3>
-                    <ul class="bullet-list" style="margin-bottom:var(--element-gap);">
-                        <li>Google, Apple, IBM eliminaron el requisito de titulo</li>
-                        <li>81% de empleadores contrata por skills, no diplomas</li>
-                    </ul>
-                    <span class="pill pill-blue">El valor del credential esta en cuestion</span>
-                </div>
-                <div>
-                    <h3 style="color:#a855f7;margin-bottom:var(--element-gap);">Fuerza 3: Competencia digital</h3>
-                    <ul class="bullet-list" style="margin-bottom:var(--element-gap);">
-                        <li>Duolingo: 47M usuarios diarios, USD 1B revenue proyectado</li>
-                        <li>Mercado EdTech global: USD 404B, crece 16.3% anual</li>
-                        <li>Un estudiante en Buenos Aires compite entre universidades locales y plataformas globales</li>
-                    </ul>
-                    <span class="pill pill-purple">La competencia es global y tecnologica</span>
-                </div>
-            </div>
-        </div>
-        <div class="slide-num">04 / 13</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 5: SOFTWARE IS EATING THE WORLD
-         =========================================== -->
-    <section class="slide" data-slide="4">
         <div class="slide-content">
             <div class="slide-tag reveal">Concepto Clave</div>
             <h2 class="reveal">Software Is Eating <span class="gradient-text">The World</span></h2>
             <div class="reveal" style="margin-top:var(--content-gap);">
                 <div class="info-row">
                     <span class="info-label" style="color:var(--text-muted);font-weight:400;">Tenemos campus virtual</span>
-                    <span class="info-value" style="color:var(--text-primary);">Duolingo tiene 47M usuarios con IA adaptativa</span>
+                    <span class="info-value" style="color:var(--text-primary);">Duolingo tiene 47M usuarios con IA adaptativa. Un Moodle con PDFs no es digitalizacion.</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label" style="color:var(--text-muted);font-weight:400;">Competencia son las universidades vecinas</span>
-                    <span class="info-value" style="color:var(--text-primary);">Tu estudiante elige entre vos, Coursera, Platzi, Google</span>
+                    <span class="info-value" style="color:var(--text-primary);">Tu estudiante elige entre vos, Coursera, Platzi, Google Certificates y un bootcamp en Berlin.</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label" style="color:var(--text-muted);font-weight:400;">IT es soporte</span>
-                    <span class="info-value" style="color:var(--text-primary);">2U compro Harvard/MIT por USD 800M. Sin estrategia tech, quiebra.</span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label" style="color:var(--text-muted);font-weight:400;">La IA es una moda</span>
-                    <span class="info-value" style="color:var(--text-primary);">81% de empleadores contrata por skills</span>
+                    <span class="info-value" style="color:var(--text-primary);">2U compro Harvard/MIT por USD 800M. Sin estrategia tech, al borde de la quiebra.</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label" style="color:var(--text-muted);font-weight:400;">Invertir en tech es gasto</span>
-                    <span class="info-value" style="color:var(--text-primary);">No invertir es cierre en camara lenta</span>
+                    <span class="info-value" style="color:var(--text-primary);">No invertir es una decision de cierre en camara lenta.</span>
                 </div>
             </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                Si el negocio educativo es digital-first, la arquitectura tecnologica es parte del modelo de negocio. No es infraestructura. Es <strong style="color:var(--text-primary);">estructura competitiva</strong>.
+            </div>
         </div>
-        <div class="slide-num">05 / 13</div>
+        <div class="slide-num">04 / 12</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 6: 3 NIVELES
+         SLIDE 5: 3 NIVELES
          =========================================== -->
-    <section class="slide" data-slide="5">
+    <section class="slide" data-slide="4">
         <div class="slide-content">
             <div class="slide-tag reveal">Framework</div>
             <h2 class="reveal">Tres niveles: <span class="gradient-text">Usar, Operar, Disenar</span></h2>
@@ -760,7 +674,7 @@
                     <div class="card-icon">1&#65039;&#8419;</div>
                     <h3 style="color:#38bdf8;">Nivel 1: Usar</h3>
                     <p>Comprar herramientas y usarlas tal como vienen</p>
-                    <p style="margin-top:0.5em;font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Ejemplo: adoptar Zoom para clases virtuales</p>
+                    <p style="margin-top:0.5em;font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Ej: adoptar Zoom para clases</p>
                     <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
                         <p style="font-size:var(--small-size);color:var(--text-muted);">Dependencia alta, sin diferenciacion</p>
                     </div>
@@ -769,7 +683,7 @@
                     <div class="card-icon">2&#65039;&#8419;</div>
                     <h3 style="color:#a855f7;">Nivel 2: Operar</h3>
                     <p>Integrar herramientas, personalizar flujos, conectar datos</p>
-                    <p style="margin-top:0.5em;font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Ejemplo: LMS + CRM para detectar desercion</p>
+                    <p style="margin-top:0.5em;font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Ej: LMS + CRM para detectar desercion</p>
                     <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
                         <p style="font-size:var(--small-size);color:var(--text-muted);">Eficiencia e inteligencia operativa</p>
                     </div>
@@ -778,30 +692,33 @@
                     <div class="card-icon">3&#65039;&#8419;</div>
                     <h3 style="color:#f59e0b;">Nivel 3: Disenar</h3>
                     <p>El modelo de negocio nace de las capacidades tecnologicas</p>
-                    <p style="margin-top:0.5em;font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Ejemplo: Platzi diseno su modelo como sistema integrado</p>
+                    <p style="margin-top:0.5em;font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Ej: Platzi diseno su modelo como sistema integrado</p>
                     <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
                         <p style="font-size:var(--small-size);color:var(--text-muted);">Diferenciacion real y escalabilidad</p>
                     </div>
                 </div>
             </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                &#x1F4A1; &iquest;En que nivel esta tu organizacion? &iquest;En que nivel necesita estar para competir en los proximos 5 anos?
+            </div>
         </div>
-        <div class="slide-num">06 / 13</div>
+        <div class="slide-num">05 / 12</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 7: IMPACTO ECONOMICO
+         SLIDE 6: IMPACTO ECONOMICO
          =========================================== -->
-    <section class="slide" data-slide="6">
+    <section class="slide" data-slide="5">
         <div class="slide-content">
             <h2 class="reveal">Impacto economico <span class="gradient-text">por nivel</span></h2>
             <div class="reveal" style="margin-top:var(--content-gap);">
                 <div class="info-row">
                     <span class="info-label">Margen</span>
-                    <span class="info-value">Lineal &rarr; Eficiente &rarr; Escalable</span>
+                    <span class="info-value">Lineal &rarr; Eficiente &rarr; Escalable (costo marginal decreciente)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">CAC</span>
-                    <span class="info-value">Alto &rarr; Optimizable &rarr; Optimizado por analitica</span>
+                    <span class="info-value">Alto &rarr; Optimizable &rarr; Optimizado por analitica y personalizacion</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Retencion</span>
@@ -817,48 +734,62 @@
                 </div>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                El nivel en el que estas define el techo de tu crecimiento.
+                La diferencia entre niveles no es tecnica. Es economica. <strong style="color:var(--text-primary);">El nivel en el que estas define el techo de tu crecimiento.</strong>
             </div>
         </div>
-        <div class="slide-num">07 / 13</div>
+        <div class="slide-num">06 / 12</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 8: ROL DEL EQUIPO DIRECTIVO
+         SLIDE 7: ROL DEL EQUIPO DIRECTIVO
          =========================================== -->
-    <section class="slide" data-slide="7">
+    <section class="slide" data-slide="6">
         <div class="slide-content">
             <div class="slide-tag reveal">Liderazgo</div>
             <h2 class="reveal">El rol del <span class="gradient-text">equipo directivo</span></h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:1fr 1fr;">
-                <div class="card">
-                    <h3 style="color:var(--text-primary);">&iquest;Construimos o compramos?</h3>
-                    <p>Define dependencia estructural y costos a largo plazo</p>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div>
+                    <div class="cards-grid" style="grid-template-columns:1fr 1fr;gap:clamp(0.4rem,0.8vw,0.6rem);">
+                        <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                            <h3 style="color:var(--text-primary);font-size:var(--small-size);">&iquest;Construimos o compramos?</h3>
+                            <p>Dependencia y costos a largo plazo</p>
+                        </div>
+                        <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                            <h3 style="color:var(--text-primary);font-size:var(--small-size);">&iquest;Que datos son estrategicos?</h3>
+                            <p>Decision basada en evidencia</p>
+                        </div>
+                        <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                            <h3 style="color:var(--text-primary);font-size:var(--small-size);">&iquest;Cuanto invertimos en tech?</h3>
+                            <p>Prioridades y vision de futuro</p>
+                        </div>
+                        <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
+                            <h3 style="color:var(--text-primary);font-size:var(--small-size);">&iquest;Como integramos IA?</h3>
+                            <p>Posicion competitiva a 3&#8211;5 anos</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3 style="color:var(--text-primary);">&iquest;Que datos son estrategicos?</h3>
-                    <p>Define capacidad de decision basada en evidencia</p>
+                <div>
+                    <h3 style="color:var(--accent);margin-bottom:var(--element-gap);font-size:var(--small-size);">Casos cercanos</h3>
+                    <ul class="role-list" style="gap:clamp(0.2rem,0.5vw,0.4rem);">
+                        <li>EPIC como palanca de crecimiento Online</li>
+                        <li>Capabilia: unidad de negocio disenada desde la tecnologia</li>
+                        <li>Adquisicion de Bitlogic para no ceder en el modelo de negocio</li>
+                        <li>Klarway para la escalabilidad de la examinacion Online</li>
+                        <li>Plataformas World Class para asegurar escalabilidad</li>
+                    </ul>
+                    <div class="quote-box" style="margin-top:var(--element-gap);border-left-color:var(--accent-purple);background:rgba(168,85,247,0.05);">
+                        Si el CTO renuncia manana, &iquest;sabemos que decisiones tecnologicas son estrategicas y cuales son operativas?
+                    </div>
                 </div>
-                <div class="card">
-                    <h3 style="color:var(--text-primary);">&iquest;Cuanto invertimos en tech?</h3>
-                    <p>Define prioridades y vision de futuro</p>
-                </div>
-                <div class="card">
-                    <h3 style="color:var(--text-primary);">&iquest;Como integramos IA?</h3>
-                    <p>Define posicion competitiva a 3-5 anos</p>
-                </div>
-            </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);border-left-color:var(--accent-purple);background:rgba(168,85,247,0.05);">
-                Si tu CTO renuncia manana, &iquest;sabes que decisiones son estrategicas y cuales operativas?
             </div>
         </div>
-        <div class="slide-num">08 / 13</div>
+        <div class="slide-num">07 / 12</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 9: MAPA EDTECH GLOBAL
+         SLIDE 8: MAPA EDTECH GLOBAL (4.1)
          =========================================== -->
-    <section class="slide" data-slide="8">
+    <section class="slide" data-slide="7">
         <div class="slide-content">
             <div class="slide-tag reveal">Ecosistema</div>
             <h2 class="reveal">Mapa EdTech <span class="gradient-text">global</span></h2>
@@ -888,96 +819,106 @@
                     <p>badges, blockchain</p>
                 </div>
             </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Conocer el mapa permite entender donde competis, donde hay oportunidades y donde estan las amenazas invisibles.</p>
         </div>
-        <div class="slide-num">09 / 13</div>
+        <div class="slide-num">08 / 12</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 10: DINAMICA
+         SLIDE 9: LAS 3 FUERZAS — FUERZA 1 (4.2)
+         =========================================== -->
+    <section class="slide" data-slide="8">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Contexto Estructural</div>
+            <h2 class="reveal">Tres fuerzas que <span class="gradient-text">reconfiguran la educacion</span></h2>
+            <p class="reveal subtitle" style="margin-bottom:var(--content-gap);">&#x31;&#xFE0F;&#x20E3; Presion financiera y sostenibilidad</p>
+            <div class="reveal">
+                <div class="info-row">
+                    <span class="info-label">EE.UU.</span>
+                    <span class="info-value">20+ universidades cerraron en 2024. En 2025, al menos 16 mas. La Fed predice 80 cierres/ano.</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">2U + edX</span>
+                    <span class="info-value">Pago USD 800M por el contenido de Harvard y MIT. Hoy tiene USD 900M en deuda.</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">LATAM</span>
+                    <span class="info-value">Sin endowments de USD 50B, la resiliencia financiera es menor.</span>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">La pregunta ya no es "si vamos a crecer", sino "si el modelo actual es financieramente viable".</p>
+        </div>
+        <div class="slide-num">09 / 12</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: LAS 3 FUERZAS — FUERZAS 2 Y 3
          =========================================== -->
     <section class="slide" data-slide="9">
-        <div class="slide-content centered">
-            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
-            <h2 class="reveal">Tu stack en una servilleta</h2>
-            <div class="divider reveal"><div class="diamond" style="background:var(--accent-warm);"></div></div>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);max-width:700px;grid-template-columns:repeat(2,1fr);">
-                <div class="card" style="text-align:left;">
-                    <h3 style="color:var(--text-primary);">1. Dibuja</h3>
-                    <p>Todas las herramientas tech que tu organizacion usa</p>
-                </div>
-                <div class="card" style="text-align:left;">
-                    <h3 style="color:var(--text-primary);">2. Conecta</h3>
-                    <p>Las que estan integradas entre si</p>
-                </div>
-                <div class="card" style="text-align:left;">
-                    <h3 style="color:var(--text-primary);">3. Marca</h3>
-                    <p>Las que son criticas para la operacion</p>
-                </div>
-                <div class="card" style="text-align:left;">
-                    <h3 style="color:var(--text-primary);">4. Senala</h3>
-                    <p>Las que no entendes como se conectan</p>
-                </div>
-            </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">15 minutos &mdash; Individual</p>
-        </div>
-        <div class="slide-num">10 / 13</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 11: DEBRIEF DINAMICA
-         =========================================== -->
-    <section class="slide" data-slide="10">
         <div class="slide-content">
-            <h2 class="reveal">Debrief: <span class="gradient-text">tu stack</span></h2>
-            <div style="margin-top:var(--content-gap);">
-                <ul class="bullet-list">
-                    <li class="reveal">&iquest;Cuantas herramientas aparecieron?</li>
-                    <li class="reveal">&iquest;Cuantas estan realmente integradas?</li>
-                    <li class="reveal">&iquest;Quien tiene la vision completa?</li>
-                    <li class="reveal">&iquest;Tu stack permite cambiar el modelo de negocio?</li>
-                </ul>
+            <h2 class="reveal">Fuerzas <span class="gradient-text">2 y 3</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div>
+                    <h3 style="color:#38bdf8;margin-bottom:var(--element-gap);">&#x32;&#xFE0F;&#x20E3; Cambio en la demanda laboral</h3>
+                    <ul class="bullet-list" style="margin-bottom:var(--element-gap);">
+                        <li>Google, Apple, IBM y 150+ empresas eliminaron el requisito de titulo</li>
+                        <li>81% de empleadores contrata por skills, no por diplomas</li>
+                    </ul>
+                    <span class="pill pill-blue">El valor del credential esta en cuestion</span>
+                </div>
+                <div>
+                    <h3 style="color:#a855f7;margin-bottom:var(--element-gap);">&#x33;&#xFE0F;&#x20E3; Competencia nativa digital</h3>
+                    <ul class="bullet-list" style="margin-bottom:var(--element-gap);">
+                        <li>Duolingo: 47M usuarios diarios, USD 1B revenue proyectado 2025</li>
+                        <li>Mercado EdTech global: USD 404B, crece 16.3% anual</li>
+                        <li>Un estudiante en Buenos Aires elige entre universidades locales y plataformas globales</li>
+                    </ul>
+                    <span class="pill pill-purple">La competencia ya no es local</span>
+                </div>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                La complejidad tecnologica que no se ve es una de las mayores fuentes de riesgo estrategico.
+                Christensen predijo en 2011 que la mitad de las universidades de EE.UU. cerrarian en 10&#8211;15 anos. Estamos en la ventana. <strong style="color:var(--text-primary);">&iquest;Tu institucion esta preparada para competir?</strong>
             </div>
         </div>
-        <div class="slide-num">11 / 13</div>
+        <div class="slide-num">10 / 12</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 12: RESULTADO ESPERADO
+         SLIDE 11: RESULTADO ESPERADO
          =========================================== -->
-    <section class="slide" data-slide="11">
+    <section class="slide" data-slide="10">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Cierre</div>
             <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
             <div class="divider reveal"><div class="diamond"></div></div>
-            <div style="max-width:550px;margin-top:var(--content-gap);">
+            <div style="max-width:580px;margin-top:var(--content-gap);">
                 <ul class="bullet-list" style="text-align:left;">
                     <li class="reveal">Entendes que la tecnologia es <strong style="color:var(--text-primary);">arquitectura competitiva</strong>, no soporte</li>
                     <li class="reveal">Podes identificar tu <strong style="color:var(--text-primary);">nivel de madurez tecnologica</strong></li>
                     <li class="reveal">Comprendes el <strong style="color:var(--text-primary);">impacto economico</strong> de cada nivel</li>
                     <li class="reveal">Reconoces que <strong style="color:var(--text-primary);">decisiones tecnologicas no podes delegar</strong></li>
                     <li class="reveal">Tenes una primera imagen de tu <strong style="color:var(--text-primary);">complejidad tecnologica real</strong></li>
+                    <li class="reveal">Entendes que la <strong style="color:var(--text-primary);">competencia ya es global</strong></li>
                 </ul>
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 01 &mdash; Hello World</p>
         </div>
-        <div class="slide-num">12 / 13</div>
+        <div class="slide-num">11 / 12</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 13: REFLEXION FINAL
+         SLIDE 12: REFLEXION FINAL
          =========================================== -->
-    <section class="slide" data-slide="12">
+    <section class="slide" data-slide="11">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Reflexion</div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:700px;text-align:center;border-left:none;border-top:3px solid var(--accent);border-radius:8px 8px 0 0;padding:1.5em 2em;font-size:clamp(1rem,2vw,1.4rem);line-height:1.6;">
-                Si la tecnologia define el techo de crecimiento de tu institucion, &iquest;estas disenando ese techo... o lo heredaste sin cuestionarlo?
+                Si la tecnologia define el techo de crecimiento de tu institucion,<br>
+                &iquest;estamos disenando ese techo?
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 01 &mdash; Hello World: Tecnologia como ventaja competitiva</p>
         </div>
-        <div class="slide-num">13 / 13</div>
+        <div class="slide-num">12 / 12</div>
     </section>
 
     <!-- ===========================================

@@ -2,47 +2,28 @@
 
 ---
 
-## Objetivo del módulo
+## 1 Introduccion 
+## 1.1 Objetivo del módulo
 
 Que los participantes comprendan por qué la tecnología dejó de ser un área de soporte y se convirtió en parte de la estrategia central del negocio educativo. Al terminar este bloque, cada líder debe poder identificar en qué nivel se encuentra su organización y qué implica esa posición para competir.
 
----
-
-
-## Pregunta guía
+## 1.2 Pregunta guía
 
 > ¿Por qué la tecnología dejó de ser un área de soporte y pasó a ser parte de la estrategia del negocio?
 
----
-## Dinámica Disparadora "El reemplazo Invisible"
 
-“Imaginemos que mañana aparece un competidor digital que no tiene campus, no tiene legacy tecnológico, no tiene deuda organizacional y diseña su institución desde cero, hoy, en 2026.
-¿Qué haría diferente a ustedes?”
+## 1.3 Dinámica Disparadora "El reemplazo Invisible"
 
-Deben responder:
-1.	¿Cómo captaría estudiantes?
-2.	¿Cómo diseñaría la experiencia?
-3.	¿Cómo usaría datos?
-4.	¿Qué no haría que ustedes sí hacen?
-
-¿Qué genera esta dinámica?
-- 	Pone en evidencia rigideces internas.
-- 	Muestra que la ventaja no está en el campus.
-- 	Hace visible la deuda tecnológica.
-- 	Introduce la idea de arquitectura sin decir “arquitectura”.
-
-> 💡 **Cierre del facilitador:**
-Si ese competidor nace hoy digital, la tecnología no es soporte. Es el modelo.”
-Cuando la tecnología es soporte, el negocio se diseña primero y se digitaliza después. Cuando es core, el negocio se diseña desde la arquitectura y la tecnología es parte de la estrategia
+TODO: add link to Dinamica 01-el-reemplazo-invisible.md
 
 ---
 
 
-## Conceptos clave
+## 2 Conceptos clave
 
 ---
 
-### 1. Software Is Eating The World
+### 2.1 Software Is Eating The World
 
 En 2011, Marc Andreessen publicó una tesis que sigue vigente: las empresas más valiosas del mundo no "usan" tecnología — **son** empresas de tecnología que operan en una industria específica.
 
@@ -66,7 +47,7 @@ La pregunta es: ¿tu institución entiende que su experiencia tecnológica **es 
 
 ---
 
-### 2. Los tres niveles de relación con la tecnología
+### 2.2 Los tres niveles de relación con la tecnología
 
 No todas las organizaciones se relacionan con la tecnología de la misma manera. Hay tres niveles, y la diferencia entre ellos define la capacidad competitiva.
 
@@ -93,31 +74,12 @@ No todas las organizaciones se relacionan con la tecnología de la misma manera.
 
 > 💡 **La pregunta para cada líder: ¿en qué nivel está tu organización? ¿En qué nivel necesita estar para competir en los próximos 5 años?**
 
----
-
-### Impacto económico de cada nivel
-
-Cada nivel tiene consecuencias directas en el P&L.
-
-| Dimensión | Nivel 1 — Usar | Nivel 2 — Operar | Nivel 3 — Diseñar |
-|-----------|----------------|------------------|-------------------|
-| Margen | Crece de forma lineal con la estructura | Mejora por eficiencia | Escalable, con costo marginal decreciente |
-| CAC | Alto, poco optimizado | Optimizable con datos | Optimizado por analítica y personalización |
-| Retención / LTV | Dependiente del docente | Mejorada por datos | Diseñada como sistema |
-| Velocidad de lanzamiento | Lenta | Media | Alta |
-| Diferenciación | Nula | Parcial | Alta |
-
-La diferencia entre niveles no es técnica.  
-Es económica.
-
-Una organización en Nivel 1 compite en precio y ubicación.  
-Una en Nivel 3 compite en experiencia, datos y escala.
 
 **El nivel en el que estás define el techo de tu crecimiento.**
 
 ---
 
-### 3. El rol del equipo directivo en las decisiones tecnológicas
+### 2.3 El rol del equipo directivo en las decisiones tecnológicas
 
 Hay decisiones tecnológicas que no son operativas. Son estratégicas.
 
@@ -131,6 +93,13 @@ Hay decisiones tecnológicas que no son operativas. Son estratégicas.
 El directivo no necesita saber programar.
 Pero sí necesita criterio tecnológico.
 
+Y una pregunta incómoda:
+
+> Si el CTO renuncia mañana,  
+> ¿sabémos qué decisiones tecnológicas son estratégicas en mi organización y cuáles son operativas?  
+
+
+TODO: mover los siguientes casos a la guia del facilitador.
 Casos cercanos , de decisiones que incorporan la tecnología como pilar estratégico : 
 •	“EPIC” como palanca de crecimiento Online. 
 •	Capabilia , como unidad de negocio diseñada desde la tecnología. 
@@ -139,16 +108,12 @@ Casos cercanos , de decisiones que incorporan la tecnología como pilar estraté
 •	Plataformas World Class, para asegurar escalabilidad. 
 
 
-Y una pregunta incómoda:
-
-> Si el CTO renuncia mañana,  
-> ¿sabémos qué decisiones tecnológicas son estratégicas en mi organización y cuáles son operativas?  
 
 ---
 
-### 4. El mapa del sector educativo global
+### 2.4. El mapa del sector educativo global
 
-## 4.1 El ecosistema EdTech supera los USD 400 mil millones y se proyecta hacia el trillón hacia 2030.
+#### El ecosistema EdTech supera los USD 400 mil millones y se proyecta hacia el trillón hacia 2030.
 
 Categorías estratégicas:
 
@@ -166,7 +131,7 @@ Conocer el mapa permite entender:
 
 ---
 
-## 4.2 Las tres fuerzas que están reconfigurando la educación superior
+#### Las tres fuerzas que están reconfigurando la educación superior
 
 
 La presión no es coyuntural. Es estructural. Viene de tres fuerzas simultáneas:
@@ -205,29 +170,10 @@ La competencia ya no es local. Es global y tecnológica.
 Clayton Christensen predijo en 2011 que la mitad de las universidades estadounidenses cerrarían en 10–15 años. Estamos en la ventana.
 
 **Pregunta para la sala:**  
-*¿Tu institución está preparada para competir en este contexto? ¿O está operando con supuestos del pasado?*
+*¿Como directivo, estas preparado para competir en este contexto? ¿O está operando con supuestos del pasado?*
 
 ---
-<!--
-## Dinámica: "Tu stack en una servilleta"
 
-**Duración:** 15 minutos
-
-### Instrucciones
-
-1. Dibujá todas las herramientas tecnológicas que tu organización usa.
-2. Conectalas si están integradas.
-3. Marcá las críticas.
-4. Señalá las que no entendés cómo se conectan.
-
-### Debrief
-
-- ¿Cuántas herramientas aparecieron?
-- ¿Cuántas están realmente integradas?
-- ¿Quién tiene la visión completa?
-- ¿Tu stack permite cambiar el modelo de negocio?
-
-La complejidad tecnológica que no se ve es una de las mayores fuentes de riesgo estratégico. -->
 
 ---
 
@@ -236,9 +182,8 @@ La complejidad tecnológica que no se ve es una de las mayores fuentes de riesgo
 Al terminar este módulo, el participante:
 
 - Entiende que la tecnología **es arquitectura competitiva**, no soporte.
-- Puede identificar su nivel de madurez tecnológica.
 - Comprende el impacto económico de cada nivel.
-- Reconoce qué decisiones tecnológicas no puede delegar.
+- Reconoce qué decisiones de negocio conllevan a decisiones tecnológicas y no pueden separar.
 - Tiene una primera imagen de su complejidad tecnológica real.
 - Entiende que la competencia ya es global.
 

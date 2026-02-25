@@ -21,7 +21,7 @@ TODO: add link to Dinamica 01-el-reemplazo-invisible.md
 
 ## 2 Conceptos clave
 
----
+
 
 ### 2.1 Software Is Eating The World
 
@@ -166,33 +166,12 @@ El valor del credential tradicional está siendo cuestionado por el mercado labo
 La competencia ya no es local. Es global y tecnológica.
 
 ---
-
+## 3 Reflexión final
 Clayton Christensen predijo en 2011 que la mitad de las universidades estadounidenses cerrarían en 10–15 años. Estamos en la ventana.
 
 **Pregunta para la sala:**  
 *¿Como directivo, estas preparado para competir en este contexto? ¿O está operando con supuestos del pasado?*
 
----
-
-
----
-
-## Resultado esperado
-
-Al terminar este módulo, el participante:
-
-- Entiende que la tecnología **es arquitectura competitiva**, no soporte.
-- Comprende el impacto económico de cada nivel.
-- Reconoce qué decisiones de negocio conllevan a decisiones tecnológicas y no pueden separar.
-- Tiene una primera imagen de su complejidad tecnológica real.
-- Entiende que la competencia ya es global.
-
----
-
-## Reflexión final
-
-> Si la tecnología define el techo de crecimiento de tu institución,  
-> ¿estámoss diseñando ese techo?
 
 ---
 

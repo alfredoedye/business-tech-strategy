@@ -2,60 +2,40 @@
 
 ---
 
-## Objetivo del módulo
+## 1 Introduccion
 
+### 1.1 Objetivo del módulo
 Que los participantes puedan **leer, cuestionar y discutir** la arquitectura tecnológica de una organización, aunque no sean técnicos. No se trata de aprender a diseñar sistemas, sino de entender cómo funcionan por dentro para tomar mejores decisiones y hacer mejores preguntas.
 
 La arquitectura IT no es un tema de infraestructura. Es un tema de gobierno, competitividad y riesgo estratégico.
 
 ---
 
-## Pregunta guía
+### 1.2 Pregunta guía
 
 > ¿Cómo funciona realmente una institución educativa moderna por dentro?
 
 ---
 
-### Dinámica Disparadora
+### 1.3 Dinámica Disparadora "Tu Stack en una servilleta" 
 
-Es el último día de exámenes finales y miles de estudiantes acceden al sistema de exámenes.
-El sistema de Examinación + Proctoring se cae, las notas no se guardan, estudiantes protestan, redes sociales estallan.
-El call center no pueden comunicarse con el CRM para gestionar reclamos y los sistemas internos no tienen unificadas los datos de los estudiantes.
-
-#### Se divide a los directivos en 3 grupos:
-
-#### Grupo 1 — Académico
-- ¿Qué perciben los estudiantes?
-- ¿Qué impacta en la calidad de servicio?
-
-#### Grupo 2 — Operaciones / Tecnología
-- ¿Qué falló a nivel de sistema y flujos de datos?
-- ¿Qué dependencias existen entre Examinación/Proctoring y otros sistemas?
-
-#### Grupo 3 — Negocio / Dirección
-- ¿Cuánto puede costar esta crisis?
-- ¿Qué decisiones deberían haberse tomado antes?
-
-#### Salidas de la Dinámica
-- Principales puntos de falla (técnicos y de negocio)
-- Decisiones que hubieran evitado el problema
-- 2 prioridades inmediatas para mitigarlo
-
-El facilitador cierra conectando cada punto con la arquitectura de sistemas: qué es, cómo se mapea, dónde están las fronteras e interdependencias.
-
+TODO: agregar intro y link a dinamica "tu-stack-en-servilleta.md"
 ---
 
-## Conceptos clave
+## 2 Conceptos claves
 
 ### 1. ¿Qué es una arquitectura IT?
 
 Una arquitectura IT es el **mapa** de todos los sistemas tecnológicos de una organización: qué sistemas existen, qué hace cada uno, cómo se conectan entre sí y cómo fluye la información.
 
-**Analogía:** pensá en tu organización como una ciudad.
-- Los sistemas son los edificios (cada uno cumple una función).
-- Las integraciones son las calles (conectan los edificios entre sí).
-- Los datos son las personas que circulan por la ciudad (si las calles están cortadas, no llegan a destino).
-- La arquitectura IT es el plano de la ciudad completa.
+
+TODO:  Agregar imagen campus-03
+
+**Analogía:** pensá en tu organización como el campus.
+- Los "sistemas" son los espacios o edificios (cada uno cumple una función especifica). Biblioteca, Bedelia, Administracion, Rectoria, etc. 
+- Las integraciones son los pasillos (conectan los edificios entre sí). E.g. no cumplen ninguna funcion mas que llevar datos de un lugar a otro.
+- Los datos son las personas que circulan por el campus (si los pasillos están cortadas, no llegan a destino).
+- La arquitectura IT es el plano de la campus completo.
 
 Un directivo no necesita saber construir edificios. Pero sí necesita poder leer el plano de la ciudad para decidir dónde construir el próximo, cuál demoler y cuál renovar.
 

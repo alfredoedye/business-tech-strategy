@@ -12,29 +12,6 @@ Que los participantes adquieran el vocabulario, los criterios y los frameworks n
 ## 1.3 Dinámica Disparadora: "1 millón para invertir”
 
 
-Escenario: Recibís USD 1M para fortalecer la estrategia tecnológica.
-Tenés que distribuirlo entre:
-    - Infraestructura
-    - Integraciones
-    - Desarrollo Propio
-    - Datos - BI
-    - Seguridad
-    - IA
-    - Talento 
-CONDICIÓN: No podés invertir en todo.
-
-Luego deben explicar:
-- Qué priorizaron.
-- Qué dejaron afuera.
-- Qué riesgo asumen.
-________________________________________
-Por qué funciona: 
-- 	Conecta tecnología con capital.
-- 	Hace visible la alineación negocio-tecnología.
--  	Es profundamente ejecutiva.
-
-Después de la dinámica, se puede decir para finalizar : “Acaban de hacer estrategia tecnológica. Ahora vamos a ordenar el criterio.”
-
 ---
 ## 2 Conceptos Claves
 
@@ -173,66 +150,11 @@ Ejemplo:
 
 > Para profundizar en frameworks estratégicos (Wardley Maps, Hype Cycle, TOGAF simplificado), ver el [Anexo: Frameworks Estratégicos](../anexos/frameworks-estrategicos.md).
 
----
-
-
 
 ---
 
-## Dinámica: Auditoría Express — Radar de Estrategia Tecnológica
 
-**Duración:** 30 minutos (15 individual + 15 en pares)
-
-**Instrucciones:**
-1. Cada participante completa el [Template Radar de Estrategia Tecnológica](../materiales/templates/template-radar-estrategia-tech.md), calificando las 6 dimensiones (Infraestructura, Arquitectura, Datos, Seguridad, Talento, Innovación) del 1 al 5.
-2. Conectá los puntos para visualizar tu perfil.
-3. En pares, comparen sus radares y discutan:
-   - ¿Cuál es tu dimensión más fuerte?
-   - ¿Cuál es la brecha más crítica?
-   - ¿Cuál priorizarías mejorar en el próximo año y por qué?
-
-**Debrief grupal:**
-- ¿Aparecieron patrones comunes entre organizaciones?
-- ¿Hay brechas que sorprendieron?
-- ¿Qué decisiones estratégicas emergen de este diagnóstico?
-
----
-
-## Dinámica: Trade-offs en acción
-
-**Duración:** 20 minutos
-
-**Instrucciones:**
-1. Se presentan 4 escenarios. Cada grupo debe decidir y argumentar:
-
-**Escenario 1:** Tu LMS actual cumple el 70% de lo que necesitás. Un competidor ofrece un LMS nuevo que promete el 95%. Migrar cuesta USD 200K y 6 meses. ¿Migrás o mejorás lo que tenés?
-
-**Escenario 2:** Tu equipo de IT propone construir un chatbot de IA para atención a estudiantes. Costo estimado: USD 80K + 4 meses. Existen alternativas SaaS por USD 500/mes. ¿Build o Buy?
-
-**Escenario 3:** Tenés 3 sistemas que no se integran (SIS, LMS, CRM). Podés invertir en integrarlos o reemplazarlos por una suite integrada. Integrar cuesta menos pero deja deuda técnica. Reemplazar cuesta más pero es limpio. ¿Qué elegís?
-
-**Escenario 4:** Tu competidor acaba de lanzar una app móvil para estudiantes. Tu equipo dice que pueden hacer una en 3 meses. Marketing dice que es urgente. IT dice que la infraestructura no está lista. ¿Velocidad o control?
-
-2. Cada grupo presenta su decisión en 2 minutos. No hay respuesta correcta — lo importante es el criterio.
-
----
-
-## Resultado esperado
-
-Al terminar este módulo, el participante:
-
-- Maneja el vocabulario de decisiones tecnológicas estratégicas (Build vs. Buy, Cloud vs. On-premise, Core vs. Commodity).
-- Puede distinguir entre una decisión táctica y una decisión estructural.
-- Entiende las 6 dimensiones de una estrategia tecnológica integral.
-- Comprende el impacto financiero de las decisiones tecnológicas (CAPEX vs. OPEX, deuda técnica).
-- Tiene un primer diagnóstico visual (radar) de la madurez tecnológica de su organización.
-- Puede participar activamente en una conversación sobre estrategia tecnológica con su equipo de IT.
-
----
-
-## Reflexión final
-
-## Tesis del módulo
+## 3 Reflexión final
 
 > No existen decisiones "puramente tecnológicas".
 > Toda decisión tecnológica es una decisión de negocio con consecuencias en costos, velocidad, dependencia y diferenciación.

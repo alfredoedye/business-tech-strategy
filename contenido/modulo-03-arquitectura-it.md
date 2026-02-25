@@ -24,12 +24,14 @@ TODO: agregar intro y link a dinamica "tu-stack-en-servilleta.md"
 
 ## 2 Conceptos claves
 
-### 1. ¿Qué es una arquitectura IT?
+### 2.1 ¿Qué es una arquitectura IT?
 
 Una arquitectura IT es el **mapa** de todos los sistemas tecnológicos de una organización: qué sistemas existen, qué hace cada uno, cómo se conectan entre sí y cómo fluye la información.
 
 
-TODO:  Agregar imagen campus-03
+
+
+TODO:  Agregar imagen centrada campus-03 
 
 **Analogía:** pensá en tu organización como el campus.
 - Los "sistemas" son los espacios o edificios (cada uno cumple una función especifica). Biblioteca, Bedelia, Administracion, Rectoria, etc. 
@@ -45,26 +47,32 @@ Porque las decisiones de arquitectura tienen consecuencias que se extienden por 
 
 La arquitectura no solo determina cómo funciona la tecnología. Determina qué es posible hacer como organización.
 
-> 💡 **Para participantes de empresas no educativas:** Los conceptos de arquitectura IT son universales. Donde dice "estudiante", pensá en "cliente" o "usuario". Donde dice "SIS", pensá en tu sistema core de gestión. El principio es el mismo: los sistemas deben estar integrados y alineados al negocio.
+TODO: Agregar definicion de Que es un sistema.
 
 ---
 
-### 2. Los sistemas clave de una organización educativa
+### 2.2 Los sistemas clave de una organización educativa
 
 Toda organización educativa moderna opera con un ecosistema de sistemas. Los principales son:
 
+TODO: Revisar la analogía para que tenga sentido con la metafora central del curso en que cada sistema es un aula/espacio de 
+
 | Sistema | Qué hace | Analogía |
 |---------|----------|----------|
-| **CMS** (Content Management System) | Presenta la Institución en la web, publica la oferta académica y puede contener el e-commerce | El "sitio" de la Institución |
-| **SIS** (Student Information System) | Gestiona toda la vida académica del estudiante: inscripción, cursada, notas, título | El "DNI" del estudiante en la institución |
-| **LMS** (Learning Management System) | Plataforma donde se da la experiencia de aprendizaje: contenidos, actividades, foros | El "aula" virtual |
-| **EXAM** (Exam & Proctoring) | Plataforma de examinación segura, con auditorías de fraude | La validación del proceso de aprendizaje |
-| **CRM** (Customer Relationship Management) | Gestiona la relación con prospectos y estudiantes: campañas, seguimiento, comunicación | La "memoria" de todas las interacciones |
+| **CMS** (Content Management System) | Presenta la Institución en la web, publica la oferta académica y puede contener el e-commerce | La Fachada del campus |
+| **SIS** (Student Information System) | Gestiona toda la vida académica del estudiante: inscripción, cursada, notas, título | El rectorado donde se lleva el legajo |
+| **LMS** (Learning Management System) | Plataforma donde se da la experiencia de aprendizaje: contenidos, actividades, foros | El "aula" |
+| **EXAM** (Exam & Proctoring) | Plataforma de examinación segura, con auditorías de fraude | Aula de examenes/laboratorio |
+| **CRM** (Customer Relationship Management) | Gestiona la relación con prospectos y estudiantes: campañas, seguimiento, comunicación | vedelia |
 | **ERP** (Enterprise Resource Planning) | Gestiona administración y finanzas: facturación, pagos, contabilidad, RRHH | La "administración" del negocio |
-| **BI** (Business Intelligence) | Analítica y reportes: dashboards, indicadores, tendencias | Los "ojos" de la organización |
+| **BI** (Business Intelligence) | Analítica y reportes: dashboards, indicadores, tendencias | La direccion |
 | **IA** (Inteligencia Artificial) | Capa transversal: chatbots, analítica predictiva, personalización | El "asistente inteligente" |
 
-#### Un zoom sobre el SIS: el sistema más estratégico
+#### 2.3  Un zoom sobre el SIS: el sistema más estratégico
+
+
+El "Student Information System" es el sistema Core: modela la estrategia académica y los procesos académicos más importantes.
+
 
 El Student Information System (SIS) merece atención especial porque es el **sistema de registro oficial** de la institución. No es una herramienta de soporte — es el núcleo del modelo académico.
 
@@ -76,31 +84,55 @@ Un SIS bien implementado:
 
 Un SIS mal implementado (o ausente) se convierte en un laberinto de Excel, correos y trámites manuales que escala de forma lineal: más estudiantes = más personas procesando datos. No hay crecimiento sostenible sin un SIS sólido.
 
-**Ejemplo:** Universidad Siglo 21 decidió construir su propio SIS (Proyecto Algarrobo) porque ninguna solución de mercado se adaptaba a su modelo federal con más de 15 sedes y modalidades mixtas. La inversión fue significativa pero estratégica: permitió pasar de 30.000 a 60.000+ estudiantes sin perder control operativo.
 
-#### ¿Qué pasa con el LMS?
+![Funcionalidades del SIS.](https://github.com/alfredoedye/business-tech-strategy/blob/main/assets/Funcionalidades%20SIS.png)
+
+
+
+#### 2.4 ¿Qué pasa con el LMS?
 
 El LMS (Learning Management System) es la cara visible de la institución para el estudiante. Sin embargo, muchas instituciones cometen el error de tratar el LMS como un repositorio de PDFs y videos — cuando su verdadero valor está en los **datos de aprendizaje** que genera.
 
-Un LMS moderno bien utilizado produce:
-- Datos de engagement (¿el estudiante abrió el material? ¿cuánto tiempo estuvo activo?)
-- Señales de riesgo (¿no ingresa hace 5 días? ¿no entregó la tarea?)
-- Datos de desempeño (¿en qué conceptos tiene más dificultad?)
+TODO: explicar las 3 principales funciones del LMS.
+1 - Contenido mas diseño instruccional
+2 - Catedras / aulas virtuales.
+3 - Gradebook
 
-Cuando esos datos se conectan con el CRM, se puede intervenir antes de que el estudiante abandone. Cuando se conectan con BI, se pueden tomar decisiones de diseño curricular basadas en evidencia.
-
-**El LMS no es un aula virtual. Es un generador de inteligencia sobre el aprendizaje.** La diferencia entre usarlo como repositorio vs. como sistema de datos es la diferencia entre digitalizar y transformar.
 
 ---
 
-### 3. El ciclo de vida del estudiante visto desde los sistemas
+### 2.5 El CRM
+
+TODO: Explicar en el contexto de una institucion educativa cuales son las principales funciones de el CRM.
+
+** Marketing 
+** Sales
+** Servicio
+
+
+### 2.6 El ciclo de vida del estudiante visto desde los sistemas
 
 La experiencia del estudiante es un viaje que atraviesa múltiples sistemas. Cada etapa depende de que los sistemas correctos funcionen y estén conectados:
 
 ```
-Captación → Evaluación → Admisión → Onboarding → Cursada → Servicios al Est → Evaluación → Graduación → Alumni
+Captación → Consideracion → Admisión → Onboarding → Cursada → Servicios al Est → Evaluación → Graduación → Alumni
  CRM/Mktg     CMS/Web      SIS        SIS/LMS      LMS       CRM/Services        EXAM        SIS         CRM
 ```
+
+
+
+### 2.7 Cuadrante de Tecnología en Modelo MII
+
+El modelo MII, en su cuadrante de Tecnología define la línea base de stack tecnológico para el grupo R'Evolution, como la arquitectura recomendada y deseada en cada institución, para garantizar la calidad y excelencia en la experiencia del estudiante, y la escalabilidad y eficiencia en su modelo académico mediado por tecnología.
+
+TODO:  agregar parrafo explicando porque es importante tener una linea base tecnologica para todas las instituciones? Coherencia, reutilizacion de know-how, negociacion en escala, etc. 
+
+![Linea base](https://github.com/alfredoedye/business-tech-strategy/blob/main/assets/Linea%20base%20Revolution.png)
+
+
+---
+
+### 2.8 Integraciones: el sistema nervioso de la organización
 
 **Los problemas reales surgen en las transiciones:**
 - El prospecto que se inscribe en el CRM pero sus datos no llegan al SIS → tiene que cargar todo de nuevo.
@@ -111,23 +143,6 @@ Cada una de estas transiciones que falla tiene un nombre en el negocio: **fricci
 
 Un estudio de Salesforce encontró que el 76% de los clientes espera interacciones consistentes entre áreas. En educación, el equivalente es que el asesor académico, el sistema de pagos y la plataforma de aprendizaje "conozcan" al mismo estudiante. Cuando no es así, el estudiante lo nota — y eventualmente se va.
 
-#### 3.1 El "doble-click" en la plataforma Core: el SIS
-
-El "Student Information System" es el sistema Core: modela la estrategia académica y los procesos académicos más importantes.
-
-![Funcionalidades del SIS.](https://github.com/alfredoedye/business-tech-strategy/blob/main/assets/Funcionalidades%20SIS.png)
-
----
-
-### 4. Cuadrante de Tecnología en Modelo MII
-
-El modelo MII, en su cuadrante de Tecnología define la línea base de stack tecnológico para el grupo R'Evolution, como la arquitectura recomendada y deseada en cada institución, para garantizar la calidad y excelencia en la experiencia del estudiante, y la escalabilidad y eficiencia en su modelo académico mediado por tecnología.
-
-![Linea base](https://github.com/alfredoedye/business-tech-strategy/blob/main/assets/Linea%20base%20Revolution.png)
-
----
-
-### 5. Integraciones: el sistema nervioso de la organización
 
 Los sistemas individuales son importantes, pero lo que realmente define la madurez de una arquitectura es **cómo se conectan entre sí**.
 
@@ -148,7 +163,7 @@ Una institución con 10.000 estudiantes que procesa notas manualmente necesita a
 
 Pero la integración no es solo un tema técnico. **Es un tema de gobierno.** Alguien tiene que decidir quién es el "dueño" de cada dato, qué sistema es la fuente de verdad, y qué pasa cuando dos sistemas tienen información contradictoria sobre el mismo estudiante.
 
-#### El concepto de "fuente de verdad única" (Single Source of Truth)
+### 2.9 El concepto de "fuente de verdad única" (Single Source of Truth)
 
 Una de las causas más comunes de caos en organizaciones educativas es tener el mismo dato en múltiples sistemas — y que esos datos no coincidan.
 
@@ -164,7 +179,7 @@ La arquitectura madura define para cada dato cuál es el sistema maestro (la fue
 
 ---
 
-### 6. La arquitectura como herramienta de decisión
+### 2.10 La arquitectura como herramienta de decisión
 
 Una arquitectura IT bien entendida permite al líder evaluar y anticipar problemas antes de que se conviertan en crisis.
 
@@ -186,9 +201,10 @@ La continuidad operativa es una conversación que muchos equipos directivos evit
 
 ---
 
-## Dinámica: "Mapeá tu arquitectura"
+## Dinámica: "Revisar la servilleta"
 
-**Duración:** 40 minutos (20 individual/grupal + 20 presentación y debate)
+**Duración:** 10 minutos
+
 
 **Instrucciones:**
 1. Cada participante (o grupo por institución) completa el [Template Mapa de Arquitectura IT](../materiales/templates/template-mapa-arquitectura-it.md).
@@ -207,18 +223,7 @@ La continuidad operativa es una conversación que muchos equipos directivos evit
 - Señalar que mapear la arquitectura es un acto de gobierno, no un ejercicio técnico.
 - Destacar que muchos líderes hacen este ejercicio por primera vez — y eso es parte del problema.
 
----
 
-## Resultado esperado
-
-Al terminar este módulo, el participante:
-
-- Puede nombrar y describir los sistemas principales de una institución educativa (SIS, LMS, CRM, ERP, BI, EXAM).
-- Entiende el ciclo de vida del estudiante como un flujo que depende de la integración entre sistemas.
-- Puede leer un mapa de arquitectura IT y hacer preguntas relevantes.
-- Comprende el concepto de "fuente de verdad única" y sus implicancias para la toma de decisiones.
-- Tiene un diagnóstico visual de su propia arquitectura, con brechas y dolores identificados.
-- Comprende que la arquitectura no es un tema de IT — es un tema de gobierno y competitividad.
 
 ---
 

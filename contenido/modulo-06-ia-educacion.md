@@ -1,143 +1,277 @@
-# Bonus — Panel de Discusión: IA y el Futuro de la Educación
+# Módulo 06 — IA y el Futuro de la Educación
 
-> ⚡ Este módulo es **parte del programa oficial del Día 2 (Sábado), 60 minutos**. Formato: panel de discusión moderado. Se seleccionan 3 de las 5 preguntas según la energía y los intereses del grupo.
+## 🎯 Propósito
 
----
+Cerrar el programa ayudando a cada líder a definir una postura estratégica explícita frente al impacto de la IA en educación.
 
-## Propósito
+* No es un panel de opinión.  
+* No es una clase.  
+* Es un ejercicio de posicionamiento.
 
-Abrir un espacio de reflexión profunda — sin respuestas predefinidas — sobre cómo la inteligencia artificial va a transformar la educación en los próximos 5-10 años. No es una clase. Es una conversación entre líderes que toman decisiones hoy sobre un futuro incierto.
+Al finalizar este módulo, cada participante debe poder responder:
 
----
-
-## Formato sugerido
-
-| Elemento | Detalle |
-|----------|---------|
-| **Duración** | 60 minutos |
-| **Formato** | Panel de discusión moderado |
-| **Participantes** | Los 15 participantes del módulo + facilitadores |
-| **Moderador** | Uno de los facilitadores |
-| **Dinámica** | Preguntas provocadoras → debate abierto → votación de posiciones |
+> ¿Qué postura estratégica va a tomar mi organización frente a la IA en los próximos 3–5 años?
 
 ---
 
-## Las 5 preguntas provocadoras
+# Parte 1 — Apertura  
+# IA en 2026: La realidad incómoda (10 minutos)
 
-Se recomienda elegir 3 de las 5 preguntas según la energía del grupo (sugeridas: 1, 4 y 5). Cada pregunta se presenta al grupo, se da 2 minutos de reflexión individual, y luego se abre el debate. El moderador gestiona tiempos y equilibra participación.
+El objetivo de esta apertura es generar claridad estratégica sobre la magnitud del cambio.
 
-### 1. ¿La IA va a reemplazar docentes o va a potenciarlos?
+No es una introducción técnica.  
+Es una lectura de contexto.
 
-**Contexto para el debate:**
-- Sal Khan (Khan Academy) argumenta que un tutor de IA personalizado es el mayor avance educativo desde la imprenta.
-- UNESCO advierte que la adopción de IA sin regulación puede ampliar la brecha educativa.
-- El Tec de Monterrey no reemplazó docentes — les dio herramientas de IA para amplificar su impacto.
+Leopold Aschenbrenner, ex-investigador de OpenAI, publicó en 2024 un ensayo titulado *Situational Awareness: The Decade Ahead* que sacudió al mundo tech. Su tesis central:
 
-**Posiciones posibles:**
-- **A:** La IA va a reemplazar al docente en tareas repetitivas (calificar, responder consultas), liberándolo para lo que importa (mentoría, pensamiento crítico).
-- **B:** La IA va a crear una nueva categoría: el "docente aumentado" que usa IA como co-piloto.
-- **C:** Hay un riesgo real de que algunas instituciones reemplacen docentes por IA para reducir costos, degradando la calidad educativa.
+> "Para 2025/26, estas máquinas superarán a muchos graduados universitarios. Para el final de la década, serán más inteligentes que usted o yo; tendremos superinteligencia."
 
-**Pregunta filosa:** Si un estudiante puede aprender más con un tutor de IA que con una clase magistral de 200 personas, ¿cuál es el rol de la institución educativa?
-
-### 2. ¿Los títulos universitarios van a perder valor?
-
-**Contexto para el debate:**
-- Google, Apple, IBM y otras Big Tech eliminaron el requisito de título universitario para muchos puestos.
-- Las micro-credenciales (badges, certificados) crecen exponencialmente.
-- En LATAM, el título sigue siendo un diferenciador social y económico fuerte.
-
-**Posiciones posibles:**
-- **A:** El título va a perder valor como credencial laboral, pero mantendrá valor como experiencia formativa.
-- **B:** El título va a ser reemplazado por portafolios de habilidades verificables.
-- **C:** El título va a evolucionar, no desaparecer. Se va a complementar con certificaciones y evidencia de competencias.
-
-**Pregunta filosa:** Si un estudiante demuestra competencia con un portafolio verificado por IA, ¿necesita pasar por 4-5 años de formación formal?
-
-### 3. ¿Quién debe regular la IA en educación?
-
-**Contexto para el debate:**
-- La Unión Europea avanza con el AI Act, que clasifica la IA en educación como "alto riesgo".
-- LATAM tiene regulación desigual: algunos países avanzan, otros no tienen marco legal.
-- Las propias instituciones están definiendo sus políticas caso a caso.
-
-**Posiciones posibles:**
-- **A:** Gobiernos nacionales deben establecer marcos regulatorios claros antes de que sea tarde.
-- **B:** Las instituciones educativas deben autorregularse con estándares éticos propios.
-- **C:** La regulación va a llegar siempre tarde. Lo importante es que cada organización tenga principios claros hoy.
-
-**Pregunta filosa:** ¿Estás dispuesto a que un algoritmo decida si un estudiante está en riesgo de deserción? ¿Y si el algoritmo tiene sesgos que no podemos detectar?
-
-### 4. ¿La IA va a democratizar o concentrar la educación?
-
-**Contexto para el debate:**
-- Por un lado: un estudiante en una zona rural de Perú puede acceder a un tutor de IA de nivel mundial con un celular.
-- Por otro lado: las universidades con más recursos van a desarrollar ecosistemas de IA mucho más sofisticados, ampliando la brecha.
-
-**Posiciones posibles:**
-- **A:** Democratización: la IA reduce barreras de acceso y personaliza la educación a escala.
-- **B:** Concentración: solo las instituciones con presupuesto van a poder implementar IA de calidad.
-- **C:** Ambas cosas al mismo tiempo. La brecha se va a redefinir, no a eliminar.
-
-**Pregunta filosa:** Si ChatGPT puede dar una clase mejor que el 80% de los docentes del mundo, ¿qué hacemos con esa realidad?
-
-### 5. ¿Qué debería saber hacer un profesional de 2030?
-
-**Contexto para el debate:**
-- Si la IA puede escribir código, traducir idiomas, analizar datos y crear contenido, ¿cuáles son las habilidades humanas irremplazables?
-- El World Economic Forum proyecta que el 65% de los niños que hoy entran a primaria van a trabajar en profesiones que aún no existen.
-
-**Posiciones posibles:**
-- **A:** Pensamiento crítico, creatividad, colaboración y adaptabilidad. Las "soft skills" pasan a ser las "core skills".
-- **B:** Alfabetización en IA como competencia fundamental — todos necesitan entender cómo funciona la IA, aunque no la construyan.
-- **C:** Lo que siempre importó: aprender a aprender. La capacidad de adaptación es la única skill a prueba de futuro.
-
-**Pregunta filosa:** ¿Tu plan de estudios actual prepara estudiantes para 2030 o para 2010?
+No es ciencia ficción. Es la proyección de alguien que trabajó dentro de los laboratorios que construyen estos sistemas. Y lo que está en juego no es solo tecnología — es el modelo completo de formación humana.
 
 ---
 
-## Dinámica de cierre: "Votación de posiciones"
+## 1. La IA ya no es experimental
 
-**Duración:** 10 minutos
+- Está integrada en LMS, CRM, soporte y marketing.
+- Docentes y estudiantes la usan, con o sin política institucional.
+- Las universidades líderes ya están en fase de integración estructural.
 
-Al finalizar las 5 preguntas, cada participante vota (con post-its, chat o mano alzada) la afirmación que más le resuena:
+La fase “exploratoria” terminó.
 
-- [ ] **"La IA es la mayor oportunidad para la educación en 100 años."**
-- [ ] **"La IA es un riesgo que necesitamos gestionar con cuidado."**
-- [ ] **"La IA no va a cambiar tanto como creemos — es otra ola tecnológica más."**
-- [ ] **"No tengo una posición clara y eso está bien."**
+Ejemplos concretos:
 
-**El objetivo no es consenso.** Es hacer visible la diversidad de perspectivas en la sala y que cada líder salga con su propia posición informada.
+- **University of Wisconsin–Madison** está creando un College of Computing and AI independiente, operativo desde julio 2026. No es un laboratorio — es una facultad completa dedicada a IA.
+- **Georgia Tech** implementó "Jill Watson", un asistente docente IA que responde ~10,000 consultas estudiantiles por semestre con 97% de precisión. Los estudiantes no sabían que era IA.
+- **Tec de Monterrey** integró herramientas de IA en sus procesos de enseñanza, no como reemplazo docente sino como amplificador.
 
----
-
-## Lecturas sugeridas para profundizar
-
-- **Sal Khan** — *Brave New Words: How AI Will Revolutionize Education (and Why That's a Good Thing)* (2024)
-- **Ethan Mollick** — *Co-Intelligence: Living and Working with AI* (2024)
-- **UNESCO** — *Guidance for Generative AI in Education and Research* (2023)
-- **World Economic Forum** — *Future of Jobs Report* (edición más reciente)
-- **Audrey Watters** — *Teaching Machines: The History of Personalized Learning* (2021) — para perspectiva crítica
+Para finales de 2026, la tendencia global es que la alfabetización en IA esté embebida en los programas de grado a nivel institucional — no como electiva, sino como competencia transversal.
 
 ---
 
-## Notas para el moderador
+## 2. La brecha se está ampliando
 
-### Tono
-- Esto es un panel de discusión, no una clase. El moderador no tiene la respuesta.
-- Validar todas las posiciones. No hay respuesta correcta.
-- Garantizar que se escuchen voces diversas (no solo los más verbales).
+Algunas instituciones:
 
-### Gestión del debate
-- Si la conversación se polariza: "¿Alguien tiene una perspectiva intermedia?"
-- Si se estanca: pasar a la siguiente pregunta. No forzar.
-- Si se enciende: dejar fluir. Las mejores conversaciones surgen de la tensión productiva.
-- Usar timer visible: 10-12 minutos por pregunta.
+- Integran IA en procesos core.
+- Miden impacto.
+- Tienen gobernanza clara.
 
-### Cierre
-- No buscar conclusiones. Cerrar con: "No vinimos a resolver estas preguntas. Vinimos a hacérnoslas con mejor criterio."
-- Conectar con el módulo: "Estas preguntas son las que van a definir las decisiones tecnológicas de los próximos años. Ahora tienen mejores herramientas para abordarlas."
+Otras:
+
+- Siguen en uso individual.
+- No tienen política.
+- No tienen presupuesto asignado.
+
+La brecha no es tecnológica.
+Es estratégica.
+
+**Caso: Georgia State University.** Implementó un sistema de IA para identificar estudiantes en riesgo de deserción basado en más de 800 indicadores. Resultado: incremento del 7% en tasas de graduación y reducción significativa de la brecha de logro entre grupos demográficos. No fue un piloto — fue una decisión institucional con gobernanza, presupuesto y métricas claras.
 
 ---
+
+## 3. El modelo educativo está bajo presión
+
+- Matrículas tensionadas.
+- Costos estructurales altos.
+- Competencia global creciente.
+- Microcredenciales en expansión.
+- Empleadores cuestionando el valor del título tradicional.
+
+La IA no crea esta presión.  
+La acelera.
+
+Los datos lo confirman:
+
+- En EE.UU., se proyecta una caída del **15% en graduados de secundaria entre 2025 y 2037** (el "Enrollment Cliff").
+- Solo el **22% de los estadounidenses** considera que un título de 4 años vale la pena si implica endeudarse (Gallup).
+- La deuda estudiantil acumulada supera los **$1.77 trillones** (Federal Reserve, 2023).
+- Google, Apple e IBM eliminaron el requisito de título universitario para múltiples posiciones.
+- Las inscripciones en escuelas técnicas crecen al **4.9% anual**; los apprenticeships se duplicaron en la última década.
+
+Esto no es una crisis futura. Ya está ocurriendo.
+
+---
+
+## 4. La competencia ya no es local
+
+Un estudiante puede:
+
+- Aprender con un tutor IA global.
+- Certificar habilidades en plataformas internacionales.
+- Acceder a contenido de élite sin intermediación institucional.
+
+La barrera geográfica desapareció.
+
+Pero esto también es una oportunidad sin precedentes.
+
+Una institución en LATAM puede:
+
+* Usar las mismas herramientas de IA que Harvard o el MIT, a una fracción del costo.
+* Ofrecer tutorías personalizadas a escala sin necesidad de infraestructura física masiva.
+* Saltar etapas tecnológicas completas (el efecto "leapfrog" que permitió a África liderar en banca móvil).
+* Participar en ecosistemas globales de educación con IA, no solo consumirlos.
+
+La barrera geográfica desapareció. Pero la ventana de oportunidad también tiene fecha de vencimiento.
+
+---
+
+## 5. No decidir es una decisión
+
+La pregunta ya no es:
+
+> “¿La IA va a cambiar la educación?”
+
+La pregunta es:
+
+> “¿Cómo va a posicionarse mi institución frente a este cambio?”
+
+---
+
+# Parte 2 — Escenarios 2030 (20 minutos)
+
+Se presentan tres escenarios plausibles.  
+Cada grupo debe elegir el que considera más probable y diseñar una respuesta estratégica.
+
+---
+
+## Escenario A — Educación Aumentada
+
+- Asistente IA institucional embebido en todo el journey.
+- Docentes aumentados, no reemplazados.
+- Arquitectura integrada.
+- Cultura experimental.
+- Mejora en retención y experiencia.
+
+Las instituciones que lo hicieron bien crecieron.
+
+---
+
+## Escenario B — Educación Commoditizada
+
+- Cursos generados masivamente por IA.
+- Bajos costos.
+- Competencia global feroz.
+- Títulos pierden peso frente a habilidades verificadas.
+- Presión en márgenes.
+
+La diferenciación se vuelve crítica.
+
+---
+
+## Escenario C — Regulación y Fragmentación
+
+- Regulación estricta sobre IA.
+- Resistencia cultural interna.
+- Implementación desigual.
+- Brecha entre instituciones premium y rezagadas.
+
+La gobernanza se vuelve ventaja competitiva.
+
+---
+
+## Trabajo en grupos (15 minutos)
+
+Cada grupo debe:
+
+1. Elegir el escenario más probable.
+2. Definir cómo debería posicionarse su organización.
+3. Identificar:
+   - Qué debería empezar a hacer en 12 meses.
+   - Qué debería dejar de hacer.
+   - Qué ventaja competitiva busca construir.
+   - Qué riesgo está dispuesto a asumir.
+
+---
+
+# Parte 3 — Plenaria estratégica (20 minutos)
+
+Cada grupo presenta:
+
+- Escenario elegido.
+- Posicionamiento estratégico.
+- Trade-offs explícitos.
+- Primeras decisiones concretas.
+
+El facilitador conecta con conceptos del curso:
+
+- Good Strategy vs Bad Strategy.
+- Triángulo cultura–proceso–tecnología.
+- IA como capa transversal.
+- Gobernanza y presupuesto.
+- Riesgo de piloto eterno.
+
+---
+
+# Parte 4 — Declaración personal (10 minutos)
+
+Cada participante completa individualmente:
+
+> “En los próximos 24 meses, mi organización debe dejar de ______ y empezar a ______.”
+
+Y luego:
+
+> “El mayor riesgo estratégico si no actuamos es ______.”
+
+Algunos ejemplos para inspirar:
+
+* "En los próximos 24 meses, mi organización debe dejar de **tratar la IA como un proyecto del área de tecnología** y empezar a **integrarla como prioridad estratégica del Consejo Directivo**."
+
+* "En los próximos 24 meses, mi organización debe dejar de **capacitar docentes solo en herramientas digitales básicas** y empezar a **desarrollar competencias de diseño instruccional con IA**."
+
+* "En los próximos 24 meses, mi organización debe dejar de **prohibir el uso de IA en evaluaciones** y empezar a **rediseñar las evaluaciones para un mundo donde la IA existe**."
+
+* "El mayor riesgo estratégico si no actuamos es **que nuestros estudiantes se formen con estándares de 2015 para un mercado laboral de 2030**."
+
+Se invita a 3–4 voluntarios a compartir.
+
+---
+
+# Cierre
+
+No buscamos consenso.
+
+Cerramos con una afirmación:
+
+> “La IA no es un proyecto tecnológico.  
+> Es una decisión estratégica sobre el futuro de la institución.”
+
+Este módulo no pretende responder las preguntas.
+
+Pretende que cada líder salga con una postura más clara, más incómoda y más consciente.
+
+Como lo expresó Ethan Mollick, profesor de Wharton y autor de *Co-Intelligence*:
+
+> "La IA no va a reemplazar a los profesores. Pero los profesores que usen IA van a reemplazar a los que no."
+
+La decisión no es si la IA va a transformar la educación. La decisión es si su institución va a liderar esa transformación o va a reaccionar cuando ya sea tarde.
+
+---
+
+# Resultado esperado
+
+Al finalizar el módulo, el participante:
+
+* Comprende la magnitud estratégica del impacto de la IA.
+* Puede articular una postura institucional.
+* Identifica decisiones concretas a corto plazo.
+* Entiende que no decidir también es una decisión.
+
+---
+
+## Referencias
+
+* Aschenbrenner, L. (2024). *Situational Awareness: The Decade Ahead*. [situational-awareness.ai](https://situational-awareness.ai/)
+* Mollick, E. (2024). *Co-Intelligence: Living and Working with AI*. Portfolio/Penguin.
+* Deloitte Insights (2025). *2025 US Higher Education Trends*.
+* Education Dynamics (2025). *Seeing Past the Enrollment Cliff of 2025*.
+* Federal Reserve (2023). *Consumer Credit — Student Loan Debt Statistics*.
+* Georgia State University. *Student Success Programs — Predictive Analytics*.
+* Georgia Institute of Technology. *Jill Watson — AI Teaching Assistant*.
+* Inside Higher Ed (2026). *The Rise of the Agentic AI University in 2026*.
+* UNESCO (2023). *Guidance for Generative AI in Education and Research*.
+* World Economic Forum. *Future of Jobs Report* (edición más reciente).
+
+---
+
 
 *Anterior: [← Módulo 5 — Mindset Digital](modulo-05-mindset-digital.md)*

@@ -248,4 +248,4 @@ Es institucionalizarla con intención y responsabilidad.
 > Se trata de construir una organización que aprende, se adapta y mejora de forma continua.
 
 **Pregunta para llevarse:**
-*Si tuvieras que elegir un solo proceso de tu organización para modernizar con tecnología e IA en los próximos 6 meses — uno que genere impacto real en la experiencia del estudiante o en la eficiencia operativa — ¿cuál sería? ¿Qué necesitarías para empezar?*
+*Si tuvieras que elegir un solo proceso de tu organización para modernizar en los próximos 6 meses — uno que genere impacto real en la experiencia del estudiante o en la eficiencia operativa — ¿cuál sería? ¿Qué necesitarías para empezar?*

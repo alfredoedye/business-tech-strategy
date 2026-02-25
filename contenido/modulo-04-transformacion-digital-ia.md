@@ -1,9 +1,8 @@
 # Módulo 4 — Transformación Digital e IA  
-## De la intención a la gobernanza
-
 ---
 
-## Objetivo del módulo
+## 1 Introduccion 
+### 1.1 Objetivo del módulo
 
 Que los participantes:
 
@@ -14,43 +13,27 @@ Que los participantes:
 
 ---
 
-## Pregunta guía
+### 1.2 Pregunta guía
 
 > ¿Cómo transformar sin romper la organización?
 
----
+### 1.3 Dinámica Disparadora “🔥 Boardroom en Crisis: Decidir bajo presión”
 
-# 🔥 Dinámica de apertura  
-## “Boardroom en Crisis: Decidir bajo presión”
-
-**Duración total:** 15–18 minutos  
-- 3 min briefing  
-- 8 min trabajo en grupo  
-- 6–7 min plenaria  
 
 Los participantes asumen el rol de Comité Ejecutivo.  
 Reciben un escenario realista con presión financiera y competitiva.  
 Tienen 8 minutos para decidir una estrategia.
 
+Ver guía completa para el facilitador: [Dinámica "Boardroom en Crisis"](../materiales/dinamicas/04-guia-boardroom-crisis.md)
 
-*(El detalle completo de la actividad se encuentra en el documento aparte.)*
 
-## El patrón invisible
 
-Luego de la dinámica, se hace visible algo:
-
-Las decisiones suelen:
-
-- Ir directo a tecnología.
-- Carecer de gobernanza formal.
-- No tener presupuesto asignado explícitamente.
-- No definir KPIs antes de ejecutar.
-- Ignorar cultura o procesos.
 
 ---
 
-# 1. Transformacion Digital
-## 1.1 El Triángulo de la Transformación Digital
+## 2. Coneptos Clave
+
+### 2.1 El Triángulo de la Transformación Digital
 
 La transformación digital **no es un proyecto de tecnología**.
 
@@ -75,11 +58,11 @@ Es la intersección de tres dimensiones:
 | Tecnología | Arquitectura, integración, escalabilidad | La estrategia no se ejecuta |
 
 
-## 1.2 El modelo holístico de McKinsey: las 6 dimensiones
+### 2.2 El modelo holístico de McKinsey: las 6 dimensiones
 
 McKinsey evolucionó su concepto y hoy habla de **transformación holística** — porque descubrieron que las organizaciones que se enfocaban en una sola dimensión (solo tecnología, solo cultura, solo procesos) invariablemente fracasaban. El cambio necesita ser sistémico.
 
-Las 6 dimensiones que McKinsey considera obligatorias para una transformación exitosa:
+Las 6 dimensiones obligatorias para una transformación exitosa:
 
 | Dimensión | Qué implica |
 | --------- | ----------- |
@@ -92,11 +75,14 @@ Las 6 dimensiones que McKinsey considera obligatorias para una transformación e
 
 El término "holístico" no es marketing — es una advertencia: si falta una dimensión, el sistema colapsa. Una organización con excelente tecnología y cultura resistente al cambio es como un auto de Fórmula 1 conducido por alguien sin licencia.
 
+**Mini caso: BBVA y la transformación cultural imposible.** Cuando BBVA decidió competir con las fintech, descubrió que transformar la cultura de un banco con 160 años de historia era más difícil que construir la tecnología. La solución: crear una unidad digital completamente separada — nueva oficina, nuevo equipo contratado desde afuera, nuevos procesos, nueva cultura. Recién cuando esa unidad demostró resultados, empezó a influir en el banco tradicional. La lección para educación: a veces la transformación no se logra cambiando lo que existe, sino construyendo algo nuevo al lado y dejando que el éxito hable por sí mismo.
+
 ---
 
-## 1.3 Anti-patrones frecuentes
+### 2.3 Anti-patrones frecuentes
 
-McKinsey reporta que **el 70% de las transformaciones digitales no alcanzan sus objetivos**. Gartner coincide: menos de 1 de cada 3 proyectos de transformación entrega el valor prometido.
+Según el reporte [*"The new digital edge"* de McKinsey (2023)](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-new-digital-edge), **el 70% de las transformaciones digitales no alcanzan sus objetivos**. Gartner coincide: menos de 1 de cada 3 proyectos de transformación entrega el valor prometido.
+
 
 ¿Por qué fallan?
 
@@ -119,11 +105,11 @@ Los anti-patrones que siguen tienen nombres, pero son síntomas de una causa má
 | Visionario sin herramientas | Intención sin infraestructura | Tecnología |
 | Piloto eterno | Pruebas sin escalamiento | Gobernanza |
 
-El último es especialmente frecuente en iniciativas de IA.
+El último es especialmente frecuente en iniciativas de IA. 
 
 ---
 
-# 2. Framework Estratégico de Implementacion de IA  
+## 3 Framework Estratégico de Implementacion de IA  
 *(Basado en el Framework R’Evolution 2026)*
 
 En lugar de pensar la IA como experimentación aislada, analizamos un **modelo operativo real**.
@@ -139,7 +125,7 @@ El Framework establece:
 
 ---
 
-## 2.1 Principios rectores
+### 3.1 Principios rectores
 
 1. **Centralización estratégica**
    - Ejes definidos por una Célula Estratégica IA.
@@ -164,7 +150,7 @@ El Framework establece:
 
 ---
 
-## 2.2 Gobernanza: la diferencia entre moda y estrategia
+### 3.2 Gobernanza: la diferencia entre moda y estrategia
 
 El framework define tres roles estructurales:
 
@@ -193,7 +179,7 @@ Sin estructura, la IA se vuelve improvisación.
 
 ---
 
-## 2.3 Presupuesto explícito
+### 3.3 Presupuesto explícito
 
 En una organización, lo que no tiene presupuesto propio no tiene prioridad real. La IA que se financia "con lo que sobra" de otros proyectos tiene alcance limitado, velocidad reducida y cero accountability. Un presupuesto explícito hace tres cosas: obliga a definir ROI antes de gastar, crea una línea de rendición de cuentas clara en cada MBR, y señala a toda la organización que esto es una apuesta estratégica — no un experimento de IT.
 
@@ -207,11 +193,11 @@ Sin presupuesto explícito, no hay prioridad real.
 
 ---
 
-# 3. IA como capa transversal
+# 3.4 IA como capa transversal
 
 La IA no es un producto que se compra y se instala en un rincón de la organización. Es una **capacidad que se integra en cada proceso existente**. Tratarla como proyecto aislado produce lo de siempre: un piloto impresionante en demo que no escala, porque no está conectado con los sistemas donde vive el negocio real.
 
-**Ejemplo:** Una universidad implementa un chatbot de IA para responder consultas de estudiantes. Si está desconectado del SIS, no puede decirle al estudiante cuándo vence su cuota. Si no habla con el CRM, no puede detectar que ese mismo estudiante lleva 3 semanas sin ingresar al campus. Si no tiene acceso al LMS, no puede recomendar contenido relevante. El chatbot responde — pero no transforma nada.
+**Caso: Georgia State University.** Esta universidad pública en Atlanta implementó un chatbot con IA llamado "Pounce" para hacer seguimiento proactivo a estudiantes durante el proceso de admisión y onboarding. El resultado: redujo el "summer melt" (estudiantes aceptados que nunca se inscriben) en un 22% y mejoró la tasa de retención del primer año. La clave no fue la tecnología en sí — fue integrarla con los datos del SIS y el CRM para que las intervenciones fueran personalizadas y oportunas. Un chatbot genérico no habría logrado lo mismo.
 
 La IA no es un proyecto independiente.
 
@@ -233,7 +219,7 @@ Sino:
 
 ---
 
-# 4. Riesgos y ética
+# 3.5 Riesgos y ética
 
 La IA toma decisiones que antes tomaban personas. Cuando un algoritmo decide qué estudiante recibe una beca, qué candidato avanza en un proceso de selección, o qué alumno es marcado como "en riesgo de deserción", esas decisiones tienen consecuencias reales. Si el modelo fue entrenado con datos sesgados, reproduce y amplifica ese sesgo — sin que nadie lo note, porque "lo dijo el sistema".
 
@@ -255,12 +241,11 @@ Es institucionalizarla con intención y responsabilidad.
 
 ---
 
-# Resultado esperado
+## 4 Reflexión final
 
-Al finalizar el módulo, el participante:
+> La transformación digital no es un destino — es una forma de operar.
+> No se trata de llegar a un estado "transformado" y detenerse.
+> Se trata de construir una organización que aprende, se adapta y mejora de forma continua.
 
-- Entiende la transformación digital como sistema.
-- Conoce un framework operativo real.
-- Puede diseñar gobernanza básica en su organización.
-- Identifica un eje estratégico prioritario.
-- Define un primer paso estructurado.
+**Pregunta para llevarse:**
+*Si tuvieras que elegir un solo proceso de tu organización para modernizar con tecnología e IA en los próximos 6 meses — uno que genere impacto real en la experiencia del estudiante o en la eficiencia operativa — ¿cuál sería? ¿Qué necesitarías para empezar?*

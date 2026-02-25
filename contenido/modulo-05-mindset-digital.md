@@ -1,9 +1,8 @@
 # Módulo 5 — Mindset Digital  
-## El sistema operativo invisible que define si tu estrategia funciona o fracasa
 
----
+## 1 Introduccion 
+### 1.1 Objetivo del módulo
 
-## 🎯 Objetivo del módulo
 
 Que los participantes entiendan que el mindset digital no es una actitud ni una moda, sino un **sistema operativo de liderazgo** que determina si la estrategia tecnológica se ejecuta o se diluye.
 
@@ -11,45 +10,26 @@ Sin este sistema operativo, incluso la mejor arquitectura y la mejor estrategia 
 
 ---
 
-## Pregunta guía
+### 1.2 Pregunta guía
 
-> ¿Qué decisiones estás tomando hoy que demuestran que no tienes un mindset digital?
+> ¿Qué decisiones estás tomando hoy como lider que demuestran que tienes un mindset digital?
 
----
+### 1.3 Dinámica Disparadora: "Diagnostico Brutal"
 
-# Parte 1 — Síntomas de que tu organización NO tiene mindset digital
+Cada participante completa un autodiagnóstico rápido sobre qué tan digital es su liderazgo hoy — sin filtro ni corrección política.
 
-Antes de hablar de pilares, hablemos de síntomas.
+Ver guía completa: [Dinámica "Termómetro Digital"](../materiales/dinamicas/05-termometro-digital.md)
 
-Si reconoces más de 3 de estos, el problema no es tecnológico.
 
-Es cultural y de liderazgo.
 
-- Las decisiones tecnológicas se toman 1 vez al año.
-- El comité directivo no usa dashboards en sus reuniones.
-- Se implementó un sistema hace años y nadie lo volvió a revisar.
-- IT es visto como proveedor interno, no como socio estratégico.
-- Para probar algo nuevo se necesita aprobación de múltiples niveles.
-- Los proyectos se celebran por “entrega”, no por impacto.
-- No hay métricas claras de producto.
-- Se compran herramientas para “no quedarse atrás”.
-- La frase “eso es tema de sistemas” aparece regularmente.
-- El LMS funciona igual que hace 3 años.
-- Se mide matrícula, pero no experiencia.
-- La palabra “experimento” genera ansiedad.
-
-Esto no es un juicio moral.
-
-Es un diagnóstico.
-
-La mayoría de las organizaciones operan así.
+> Esto no es un juicio moral. Es un diagnóstico. La mayoría de las organizaciones operan así.
 
 La pregunta es:  
 ¿quieres seguir operando así en 2026?
 
 ---
 
-# Concepto central
+## 2 Conceptos
 
 El mindset digital no es:
 
@@ -69,17 +49,15 @@ Es el sistema operativo humano que sostiene la estrategia.
 
 ---
 
-# Pilar Fundacional — Orientación a Producto, no a Proyecto
+### 2.1 Pilar Fundacional — Orientación a Producto, no a Proyecto
 
-Este no es un pilar más.
-
-Es el cambio estructural.
+Este no es un pilar más. Es el cambio estructural.
 
 Sin esto, los otros 6 pilares no funcionan.
 
 ---
 
-## Mentalidad de Proyecto
+#### Mentalidad de Proyecto
 
 - Tiene inicio y fin.
 - Se mide por cumplimiento de cronograma.
@@ -88,13 +66,13 @@ Sin esto, los otros 6 pilares no funcionan.
 - El éxito es “lo implementamos”.
 
 Resultado típico:
-El LMS se implementa.  
+El Sistema se implementa.  
 Nunca más se toca.  
 Se degrada lentamente.
 
 ---
 
-## Mentalidad de Producto
+#### Mentalidad de Producto
 
 - Es continuo.
 - Se mide por valor entregado.
@@ -102,45 +80,45 @@ Se degrada lentamente.
 - Tiene dueño permanente.
 - Se mejora sistemáticamente.
 
-La pregunta cambia de:
+La pregunta de fondo cambia de:
 
 > ¿Terminamos?
-
 a
-
 > ¿Está mejor hoy que hace 3 meses?
 
 ---
 
-## La fricción real
+#### La fricción real
 
 La mentalidad de proyecto es cómoda:
 
 - Tiene fecha.
 - Tiene presupuesto cerrado.
 - Tiene final.
+- Presupuesto acotado.
 
 La mentalidad de producto es incómoda:
 
 - No termina nunca.
 - Requiere métricas.
 - Exige accountability continua.
+- Presupuesto sin limites.
 
 ---
 
-## Pregunta incómoda
+#### Pregunta incómoda
 
-¿Quién es dueño hoy de tu LMS como producto?
+¿Quién es dueño hoy de tu SIS/CRM/ETC como producto?
 
 No “quién lo implementó”.
 
-¿Quién es responsable de que entregue más valor cada trimestre?
+¿Quién es responsable dentro de la organizacion de que entregue más valor cada trimestre?
 
 Si no hay respuesta clara, operas en modo proyecto.
 
 ---
 
-# Pilar 2 — Aprendizaje Continuo
+### 2.2 — Aprendizaje Continuo
 
 La tecnología cambia más rápido que los organigramas.
 
@@ -159,7 +137,7 @@ El aprendizaje continuo en liderazgo no se mide por cursos completados o certifi
 
 Si la respuesta es cero, no estás aprendiendo. Estás confirmando lo que ya creías.
 
-**Caso:** El CEO de una cadena educativa asistió a una demostración interna de su propio LMS. Descubrió que el proceso de inscripción tenía 14 pasos. Su equipo de IT lo sabía. Su equipo académico lo sabía. Nadie se lo había dicho porque "ya estaba implementado". En 3 meses, lo redujeron a 5 pasos. La tasa de abandono en inscripción cayó un 23%. El problema no era tecnológico — era que el líder había dejado de mirar.
+**Caso: Georgia State University y los micro-bloqueos invisibles.** Tim Renick, VP de Éxito Estudiantil de Georgia State, decidió examinar personalmente los datos de deserción en lugar de esperar los reportes trimestrales. Descubrió algo que nadie le había reportado: cientos de estudiantes abandonaban cada semestre por deudas menores a USD 300 — montos que la institución ni siquiera registraba como problema. Creó el programa "Panther Retention Grants" para cubrir esos micro-bloqueos. Resultado: la tasa de graduación subió más de 20 puntos porcentuales en una década. El problema no era financiero — era que ningún líder había mirado los datos con esa granularidad. [Fuente: Georgia State University - Student Success Programs](https://success.gsu.edu/approach/)
 
 Pregunta directa:
 
@@ -167,7 +145,7 @@ Pregunta directa:
 
 ---
 
-# Pilar 3 — Experimentación con disciplina
+### 2.3 — Experimentación con disciplina
 
 Experimentar no es improvisar.
 
@@ -197,7 +175,7 @@ Pregunta incómoda:
 
 ---
 
-# Pilar 4 — Colaboración multidisciplinaria
+### 2.4 — Colaboración multidisciplinaria
 
 Las decisiones tecnológicas no pueden ser territorio exclusivo de una sola función.
 
@@ -217,7 +195,7 @@ Pregunta clave:
 
 ---
 
-# Pilar 5 — Cultura de datos
+### 2.5 — Cultura de datos
 
 El problema no es no tener datos. Es no usarlos.
 
@@ -248,9 +226,10 @@ Pregunta incómoda:
 
 ---
 
-# Pilar 6 — Agencia
+### 2.6 — Agencia
 
-La tecnología no es “tema de IT”.
+Agency > Intelligence
+
 
 Agencia, en este contexto, significa que cada persona en la organización tiene la capacidad y la autorización para actuar sobre los problemas que ve — sin esperar que “alguien de sistemas” lo resuelva. Es lo opuesto a la indefensión aprendida organizacional, donde todos saben que algo no funciona pero nadie se siente responsable ni empoderado para cambiarlo.
 
@@ -274,7 +253,7 @@ Si mañana un coordinador académico identifica que un proceso en el LMS genera 
 
 ---
 
-# Pilar 7 — Seguridad y Ética
+### 2.7 — Seguridad y Ética
 
 El mindset digital moderno incluye responsabilidad. No se delega.
 
@@ -300,40 +279,15 @@ Si mañana hay una filtración de datos de estudiantes en tu institución, ¿qui
 
 ---
 
-# Dinámica final — El Espejo Ejecutivo (15 minutos)
+## 3 Reflexión final
 
-No es un diagnóstico con semáforos.
+> El mindset digital no se instala con un workshop ni se compra con una herramienta.
+> Se demuestra con decisiones diarias: qué preguntas hacés, qué datos mirás, a quién escuchás, qué tan rápido experimentás y qué tan honesto sos con los resultados.
+> La tecnología amplifica lo que ya sos como líder. Si liderás con curiosidad, la tecnología te da superpoderes. Si liderás con inercia, la tecnología solo automatiza la mediocridad.
 
-Es un compromiso incómodo.
+**Pregunta para llevarse:**
 
-Cada participante responde por escrito:
-
-1. ¿Cuál de estos pilares es hoy tu mayor debilidad como líder?
-2. ¿Qué decisión concreta has tomado en los últimos 12 meses que demuestra mentalidad de proyecto?
-3. ¿Qué práctica concreta vas a cambiar en los próximos 30 días?
-4. ¿Qué ritual organizacional deberías eliminar?
-
-Luego, en parejas:
-
-Comparten una sola acción concreta que implementarán.
-
-No más de una.
-
-El objetivo no es evaluar.
-
-Es generar compromiso conductual.
-
----
-
-# Resultado esperado
-
-Al finalizar este módulo, el participante:
-
-- Reconoce síntomas reales en su organización.
-- Entiende que el mindset digital no es discurso.
-- Puede identificar decisiones que revelan mentalidad de proyecto.
-- Asume responsabilidad personal en el cambio.
-- Define una acción concreta en los próximos 30 días.
+*De los 7 pilares que vimos hoy — orientación a producto, aprendizaje continuo, experimentación, colaboración, cultura de datos, agencia y ética — ¿en cuál sos más fuerte y en cuál más débil? ¿Qué una acción concreta podrías tomar esta semana para mover el que más te duele?*
 
 ---
 

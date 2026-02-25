@@ -14,7 +14,9 @@ Que los participantes comprendan por qué la tecnología dejó de ser un área d
 
 ## 1.3 Dinámica Disparadora "El reemplazo Invisible"
 
-TODO: add link to Dinamica 01-el-reemplazo-invisible.md
+Antes de entrar en los conceptos, arrancamos con una dinámica grupal para poner en contexto el desafío competitivo actual.
+
+Ver guía completa: [Dinámica "El Reemplazo Invisible"](../materiales/dinamicas/01-el-reemplazo-invisible.md)
 
 ---
 
@@ -96,18 +98,7 @@ Pero sí necesita criterio tecnológico.
 Y una pregunta incómoda:
 
 > Si el CTO renuncia mañana,  
-> ¿sabémos qué decisiones tecnológicas son estratégicas en mi organización y cuáles son operativas?  
-
-
-TODO: mover los siguientes casos a la guia del facilitador.
-Casos cercanos , de decisiones que incorporan la tecnología como pilar estratégico : 
-•	“EPIC” como palanca de crecimiento Online. 
-•	Capabilia , como unidad de negocio diseñada desde la tecnología. 
-•	Aquisición de Bitlogic para no “ceder” en el modelo de negocio , ni académico. 
-•	Klarway  para la escalabilidad de la examinación Online. 
-•	Plataformas World Class, para asegurar escalabilidad. 
-
-
+> ¿sabémos qué decisiones tecnológicas son estratégicas en mi organización y cuáles son operativas?
 
 ---
 

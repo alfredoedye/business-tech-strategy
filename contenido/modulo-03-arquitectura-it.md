@@ -19,7 +19,10 @@ La arquitectura IT no es un tema de infraestructura. Es un tema de gobierno, com
 
 ### 1.3 Dinámica Disparadora "Tu Stack en una servilleta" 
 
-TODO: agregar intro y link a dinamica "tu-stack-en-servilleta.md"
+Arrancamos con un ejercicio rápido: cada participante dibuja en una servilleta (o una hoja) todos los sistemas tecnológicos que conoce de su organización y cómo se conectan. El objetivo es hacer visible lo que normalmente es invisible.
+
+Ver guía completa: [Dinámica "Tu Stack en una Servilleta"](../materiales/dinamicas/03-tu-stack-en-servilleta.md)
+
 ---
 
 ## 2 Conceptos claves
@@ -31,7 +34,7 @@ Una arquitectura IT es el **mapa** de todos los sistemas tecnológicos de una or
 
 
 
-TODO:  Agregar imagen centrada campus-03 
+<!-- Imagen pendiente: campus-03 -->
 
 **Analogía:** pensá en tu organización como el campus.
 - Los "sistemas" son los espacios o edificios (cada uno cumple una función especifica). Biblioteca, Bedelia, Administracion, Rectoria, etc. 
@@ -47,7 +50,7 @@ Porque las decisiones de arquitectura tienen consecuencias que se extienden por 
 
 La arquitectura no solo determina cómo funciona la tecnología. Determina qué es posible hacer como organización.
 
-TODO: Agregar definicion de Que es un sistema.
+> **¿Qué es un "sistema"?** En este contexto, un sistema es una pieza de software que cumple una función específica dentro de la organización: gestionar estudiantes, procesar pagos, entregar contenido, etc. Cada sistema tiene sus propios datos, sus propias reglas y sus propios usuarios. La arquitectura IT es cómo esos sistemas se organizan y se comunican entre sí.
 
 ---
 
@@ -55,18 +58,16 @@ TODO: Agregar definicion de Que es un sistema.
 
 Toda organización educativa moderna opera con un ecosistema de sistemas. Los principales son:
 
-TODO: Revisar la analogía para que tenga sentido con la metafora central del curso en que cada sistema es un aula/espacio de 
-
-| Sistema | Qué hace | Analogía |
-|---------|----------|----------|
-| **CMS** (Content Management System) | Presenta la Institución en la web, publica la oferta académica y puede contener el e-commerce | La Fachada del campus |
-| **SIS** (Student Information System) | Gestiona toda la vida académica del estudiante: inscripción, cursada, notas, título | El rectorado donde se lleva el legajo |
-| **LMS** (Learning Management System) | Plataforma donde se da la experiencia de aprendizaje: contenidos, actividades, foros | El "aula" |
-| **EXAM** (Exam & Proctoring) | Plataforma de examinación segura, con auditorías de fraude | Aula de examenes/laboratorio |
-| **CRM** (Customer Relationship Management) | Gestiona la relación con prospectos y estudiantes: campañas, seguimiento, comunicación | vedelia |
-| **ERP** (Enterprise Resource Planning) | Gestiona administración y finanzas: facturación, pagos, contabilidad, RRHH | La "administración" del negocio |
-| **BI** (Business Intelligence) | Analítica y reportes: dashboards, indicadores, tendencias | La direccion |
-| **IA** (Inteligencia Artificial) | Capa transversal: chatbots, analítica predictiva, personalización | El "asistente inteligente" |
+| Sistema | Qué hace | Espacio del campus |
+|---------|----------|--------------------|
+| **CMS** (Content Management System) | Presenta la Institución en la web, publica la oferta académica y puede contener el e-commerce | La **fachada y cartelería** del campus — lo primero que ve el visitante |
+| **SIS** (Student Information System) | Gestiona toda la vida académica del estudiante: inscripción, cursada, notas, título | El **rectorado** — donde vive el legajo oficial de cada estudiante |
+| **LMS** (Learning Management System) | Plataforma donde se da la experiencia de aprendizaje: contenidos, actividades, foros | Las **aulas** — donde ocurre el aprendizaje |
+| **EXAM** (Exam & Proctoring) | Plataforma de examinación segura, con auditorías de fraude | El **salón de exámenes** — acceso controlado y supervisado |
+| **CRM** (Customer Relationship Management) | Gestiona la relación con prospectos y estudiantes: campañas, seguimiento, comunicación | La **bedelía / oficina de atención** — el punto de contacto con el estudiante |
+| **ERP** (Enterprise Resource Planning) | Gestiona administración y finanzas: facturación, pagos, contabilidad, RRHH | La **oficina de administración** — donde se gestionan los recursos del campus |
+| **BI** (Business Intelligence) | Analítica y reportes: dashboards, indicadores, tendencias | La **sala de dirección** — donde se miran los números y se toman decisiones |
+| **IA** (Inteligencia Artificial) | Capa transversal: chatbots, analítica predictiva, personalización | El **asistente inteligente** — presente en todos los espacios, mejorando cada interacción |
 
 #### 2.3  Un zoom sobre el SIS: el sistema más estratégico
 
@@ -93,21 +94,26 @@ Un SIS mal implementado (o ausente) se convierte en un laberinto de Excel, corre
 
 El LMS (Learning Management System) es la cara visible de la institución para el estudiante. Sin embargo, muchas instituciones cometen el error de tratar el LMS como un repositorio de PDFs y videos — cuando su verdadero valor está en los **datos de aprendizaje** que genera.
 
-TODO: explicar las 3 principales funciones del LMS.
-1 - Contenido mas diseño instruccional
-2 - Catedras / aulas virtuales.
-3 - Gradebook
+Las tres funciones principales de un LMS son:
+
+**1. Contenido y diseño instruccional:** El LMS organiza el material de aprendizaje (videos, lecturas, actividades) en una secuencia pedagógica con sentido. No es un repositorio de archivos — es la estructura que guía al estudiante a través de una experiencia de aprendizaje diseñada intencionalmente.
+
+**2. Cátedras y aulas virtuales:** Cada curso o sección tiene su espacio donde interactúan docentes y estudiantes: foros, entregas, comunicaciones, calendario. Es el equivalente digital del aula física, pero con la ventaja de que todo queda registrado.
+
+**3. Gradebook (libro de calificaciones):** Registro centralizado de evaluaciones, notas parciales y finales. Cuando está integrado con el SIS, las calificaciones fluyen automáticamente al expediente oficial del estudiante sin intervención manual.
 
 
 ---
 
 ### 2.5 El CRM
 
-TODO: Explicar en el contexto de una institucion educativa cuales son las principales funciones de el CRM.
+En el contexto educativo, el CRM gestiona toda la relación con el estudiante desde antes de que se inscriba hasta después de que se gradúe. Sus tres funciones principales son:
 
-** Marketing 
-** Sales
-** Servicio
+**Marketing:** Captación de prospectos a través de campañas digitales, landing pages, eventos y redes sociales. El CRM rastrea de dónde viene cada prospecto, qué programa le interesa y en qué etapa del proceso de decisión se encuentra. Permite medir el costo de adquisición por estudiante y la efectividad de cada canal.
+
+**Sales (Admisiones):** Gestión del embudo de conversión desde el primer contacto hasta la inscripción. Los asesores de admisión usan el CRM para hacer seguimiento personalizado, agendar llamadas, enviar información y no perder prospectos por falta de seguimiento. Sin CRM, los prospectos se pierden en bandejas de email y planillas.
+
+**Servicio (Atención al estudiante):** Una vez inscripto, el estudiante necesita soporte: consultas administrativas, reclamos, trámites, solicitudes. El CRM centraliza estos casos para que cualquier persona del equipo pueda ver el historial completo del estudiante y responder con contexto, sin que el estudiante tenga que repetir su situación cada vez.
 
 
 ### 2.6 El ciclo de vida del estudiante visto desde los sistemas
@@ -125,7 +131,7 @@ Captación → Consideracion → Admisión → Onboarding → Cursada → Servic
 
 El modelo MII, en su cuadrante de Tecnología define la línea base de stack tecnológico para el grupo R'Evolution, como la arquitectura recomendada y deseada en cada institución, para garantizar la calidad y excelencia en la experiencia del estudiante, y la escalabilidad y eficiencia en su modelo académico mediado por tecnología.
 
-TODO:  agregar parrafo explicando porque es importante tener una linea base tecnologica para todas las instituciones? Coherencia, reutilizacion de know-how, negociacion en escala, etc. 
+¿Por qué es importante definir una línea base tecnológica común para todas las instituciones del grupo? Porque sin ella, cada institución reinventa la rueda: elige sus propias herramientas, desarrolla sus propios procesos y forma a su equipo desde cero. Una línea base compartida genera **coherencia** en la experiencia del estudiante sin importar la sede, **reutilización del know-how** (lo que aprende una institución al implementar el LMS beneficia a todas), **negociación en escala** con proveedores (mejores precios y condiciones), y **movilidad del talento técnico** entre instituciones sin curva de aprendizaje. No se trata de uniformar — se trata de construir sobre una base común que permita a cada institución diferenciarse donde realmente importa.
 
 ![Linea base](https://github.com/alfredoedye/business-tech-strategy/blob/main/assets/Linea%20base%20Revolution.png)
 

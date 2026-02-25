@@ -8,14 +8,14 @@ Bienvenidos. Este módulo dura 10 minutos y nos sirve para arrancar con mapa en 
 
 ### Alfredo Edye
 
-<img src="./image-1.png" alt="Foto de Alfredo Edye" width="112" />
+<img src="../assets/image-1.png" alt="Foto de Alfredo Edye" width="112" />
 
 Aterriza estrategia tecnológica a decisiones concretas de negocio, sin humo.  
 Perfil: [LinkedIn](https://www.linkedin.com/in/alfredoedye/)
 
 ### Pablo Ortiz
 
-<img src="./image.png" alt="Foto de Pablo Ortiz" width="112" />
+<img src="../assets/image.png" alt="Foto de Pablo Ortiz" width="112" />
 
 Conecta liderazgo, innovación y ejecución para que la transformación sí pase.  
 Perfil: [LinkedIn](https://www.linkedin.com/in/pablo-ortiz-olmos/)

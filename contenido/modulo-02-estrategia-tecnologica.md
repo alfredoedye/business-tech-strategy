@@ -59,8 +59,7 @@ No todas las decisiones tecnológicas son iguales. Algunas son operativas (qué 
 | **Riesgo** | Costos que pueden crecer, dependencia del proveedor | Obsolescencia, necesidad de equipo de infraestructura |
 | **Tendencia** | La mayoría de las organizaciones están migrando a cloud | Se mantiene para regulaciones específicas |
 
-TODO: buscar otro ejemplo educativo. 
-**Ejemplo educativo:** Universidad Siglo 21 migró a AWS. Esto le permitió escalar de cientos a 10,000 usuarios simultáneos sin comprar servidores. Durante picos de inscripción o exámenes, la infraestructura escala automáticamente.
+**Ejemplo educativo:** Durante la pandemia, muchas instituciones en LATAM que dependían de servidores on-premise colapsaron cuando la demanda de clases virtuales se multiplicó por 10 en semanas. Las que ya operaban en cloud (como el Tecnológico de Monterrey con Azure) pudieron escalar su capacidad de forma elástica sin comprar un solo servidor. La lección fue clara: la infraestructura cloud no es un lujo — es resiliencia operativa.
 
 **Impacto financiero:** Cloud convierte CAPEX en OPEX. Se elimina la inversión inicial grande (comprar servidores) pero se genera un costo recurrente mensual. El CFO necesita entender esta transición porque cambia cómo se planifica y aprueba el presupuesto tecnológico.
 

@@ -1,7 +1,8 @@
 # Módulo 3 — Arquitectura IT Educativa
 
 ---
-![Campus](../assets/Campus-03.png)
+
+<img src="../assets/Campus-03.png" alt="Campus-03"/>
 
 ## 1 Introducción
 

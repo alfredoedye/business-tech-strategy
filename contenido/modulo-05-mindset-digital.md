@@ -1,6 +1,6 @@
 # Módulo 5 — Mindset Digital 
 
-![Campus](../assets/Campus-05.png)
+<img src="../assets/Campus-05.png" alt="Campus-05"/>
 
 ## 1 Introducción 
 ### 1.1 Objetivo del módulo

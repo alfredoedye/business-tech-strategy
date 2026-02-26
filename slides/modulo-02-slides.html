@@ -352,7 +352,7 @@
             min-width: 40px;
         }
 
-        /* Governance roles */
+        /* Role card */
         .role-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -375,7 +375,7 @@
         }
 
         .role-list li::before {
-            content: '&#8594;';
+            content: '\2192';
             position: absolute;
             left: 0;
             color: var(--accent);
@@ -577,9 +577,9 @@
     <a class="nav-home" href="../index.html" title="Inicio">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     </a>
-    <div class="nav-module-indicator">Módulo 02 / 07</div>
-    <a class="nav-prev" href="modulo-01-slides.html">&larr; Módulo 01</a>
-    <a class="nav-next" href="modulo-03-slides.html">Módulo 03 &rarr;</a>
+    <div class="nav-module-indicator">M&#243;dulo 02 / 07</div>
+    <a class="nav-prev" href="modulo-01-slides.html">&larr; M&#243;dulo 01</a>
+    <a class="nav-next" href="modulo-03-slides.html">M&#243;dulo 03 &rarr;</a>
 
     <!-- Progress bar -->
     <div class="progress-bar" id="progressBar"></div>
@@ -595,197 +595,223 @@
         <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
 
         <div class="slide-content centered">
-            <div class="slide-tag reveal">Modulo 02</div>
-            <h1 class="reveal">Estrategia <span class="gradient-text">Tecnologica</span></h1>
+            <div class="slide-tag reveal">M&#243;dulo 02</div>
+            <h1 class="reveal">Estrategia <span class="gradient-text">Tecnol&#243;gica</span></h1>
             <div class="divider reveal"><div class="diamond"></div></div>
             <p class="subtitle reveal">Decisiones que definen el futuro</p>
-            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Que decisiones tecnologicas son estrategicas y cuales son tacticas?</p>
+            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Qu&#233; decisiones tecnol&#243;gicas son estrat&#233;gicas y cu&#225;les son t&#225;cticas?</p>
         </div>
         <div class="slide-num">01 / 15</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 2: OBJETIVO + TESIS
+         SLIDE 2: OBJETIVO
          =========================================== -->
     <section class="slide" data-slide="1">
         <div class="slide-content">
             <div class="slide-tag reveal">Objetivo</div>
-            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este modulo</span></h2>
-            <div style="margin-top:var(--content-gap);">
-                <ul class="bullet-list">
-                    <li class="reveal">Manejar el vocabulario de <strong style="color:var(--text-primary);">decisiones tecnologicas estrategicas</strong></li>
-                    <li class="reveal">Distinguir entre <strong style="color:var(--text-primary);">decision tactica y decision estructural</strong></li>
-                    <li class="reveal">Entender las <strong style="color:var(--text-primary);">6 dimensiones de una estrategia tecnologica</strong></li>
-                    <li class="reveal">Comprender el <strong style="color:var(--text-primary);">impacto financiero de las decisiones tech</strong> (CAPEX vs OPEX)</li>
-                </ul>
-            </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                No existen decisiones "puramente tecnologicas". Toda decision tech es una decision de negocio con consecuencias en costos, velocidad, dependencia y diferenciacion. El directivo que no participa no esta delegando &mdash; <strong style="color:var(--text-primary);">esta abdicando</strong>.
+            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este m&#243;dulo</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Adquirir vocabulario, criterios y frameworks para participar activamente en la definici&#243;n de estrategia tecnol&#243;gica. No se trata de aprender tecnolog&#237;a sino de aprender a <strong style="color:var(--text-primary);">DECIDIR</strong> sobre tecnolog&#237;a.</p>
+            <div class="quote-box reveal">
+                No existen decisiones &#8220;puramente tecnol&#243;gicas&#8221;. Toda decisi&#243;n tech es una decisi&#243;n de negocio con consecuencias en costos, velocidad, dependencia y diferenciaci&#243;n. El directivo que no participa no est&#225; delegando &mdash; <strong style="color:var(--text-primary);">est&#225; abdicando</strong>.
             </div>
         </div>
         <div class="slide-num">02 / 15</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 3: DINAMICA DISPARADORA — USD 1 MILLON
+         SLIDE 3: DIN&#193;MICA &#8212; CASINO ESTRAT&#201;GICO TECH
          =========================================== -->
     <section class="slide" data-slide="2">
         <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica Disparadora</div>
-            <h2 class="reveal">Tenes <span class="gradient-text">USD 1 millon</span> para invertir</h2>
-            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Distribuilo entre estas categorias. Condicion: no podes invertir en todo.</p>
-            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(4,1fr);">
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">&#x1F3D7;&#xFE0F;</div>
-                    <h3>Infraestructura</h3>
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Din&#225;mica</div>
+            <h2 class="reveal">Casino Estrat&#233;gico <span class="gradient-text">Tech</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Recib&#237;s USD 1,000,000 para invertir. Decid&#237; c&#243;mo distribuirlo entre estrategias tech.</p>
+            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(2,1fr);">
+                <div class="card">
+                    <div class="card-icon">&#x1F3B0;</div>
+                    <h3>3 rondas</h3>
+                    <p>Cambios de contexto inesperados en cada ronda</p>
                 </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">&#x1F517;</div>
-                    <h3>Integraciones</h3>
+                <div class="card">
+                    <div class="card-icon">&#x1F50D;</div>
+                    <h3>&#8220;Reveal Context&#8221;</h3>
+                    <p>Pod&#233;s comprar informaci&#243;n, pero tiene un costo</p>
                 </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">&#x2699;&#xFE0F;</div>
-                    <h3>Desarrollo Propio</h3>
+                <div class="card">
+                    <div class="card-icon">&#x23F1;&#xFE0F;</div>
+                    <h3>Tiempo decreciente</h3>
+                    <p>60s &#8594; 30s &#8594; 15s para decidir</p>
                 </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">&#x1F4CA;</div>
-                    <h3>Datos &amp; BI</h3>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">&#x1F512;</div>
-                    <h3>Seguridad</h3>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">&#x1F916;</div>
-                    <h3>IA</h3>
-                </div>
-                <div class="card" style="text-align:center;grid-column:span 2;">
-                    <div class="card-icon">&#x1F465;</div>
-                    <h3>Talento</h3>
+                <div class="card">
+                    <div class="card-icon">&#x1F3C6;</div>
+                    <h3>Ganador</h3>
+                    <p>Quien conserva m&#225;s presupuesto al final</p>
                 </div>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                Luego: que priorizaron, que dejaron afuera, que riesgo asumen. <strong style="color:var(--text-primary);">"Acaban de hacer estrategia tecnologica. Ahora vamos a ordenar el criterio."</strong>
+            <div style="display:flex;gap:var(--element-gap);margin-top:var(--content-gap);flex-wrap:wrap;">
+                <a href="https://casino-tech-play.lovable.app/" target="_blank" rel="noopener noreferrer" class="reveal" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:var(--small-size);color:var(--accent);text-decoration:none;padding:0.4em 1em;border:1px solid rgba(56,189,248,0.3);border-radius:8px;background:rgba(56,189,248,0.08);transition:all 0.3s ease;">Abrir Casino Tech &#8599;</a>
+                <a href="dinamica-02-slides.html" class="reveal" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:var(--small-size);color:var(--accent-warm);text-decoration:none;padding:0.4em 1em;border:1px solid rgba(245,158,11,0.3);border-radius:8px;background:rgba(245,158,11,0.08);transition:all 0.3s ease;">Ver din&#225;mica completa &rarr;</a>
             </div>
         </div>
         <div class="slide-num">03 / 15</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 4: COSTO DE DECISIONES EQUIVOCADAS
+         SLIDE 4: CONCLUSIONES CASINO TECH
          =========================================== -->
     <section class="slide" data-slide="3">
         <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Revelacion</div>
-            <h2 class="reveal">El costo de <span class="gradient-text">decidir mal</span></h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="card" style="border-left:3px solid var(--accent-red);">
-                    <div class="card-icon">&#x1F4B8;</div>
-                    <h3>Deuda tecnica</h3>
-                    <p>Consume el 40% del presupuesto IT en la empresa promedio (McKinsey 2024)</p>
+            <div class="slide-tag reveal">Conclusiones</div>
+            <h2 class="reveal">Qu&#233; aprendimos del <span class="gradient-text">Casino Tech</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
+                <div class="card" style="border-top:3px solid #38bdf8;">
+                    <div class="card-icon">&#x1F30D;</div>
+                    <h3 style="color:#38bdf8;">El contexto manda</h3>
+                    <p>La mejor estrategia sin contexto es una apuesta ciega. El entorno cambia y la estrategia debe adaptarse.</p>
                 </div>
-                <div class="card" style="border-left:3px solid var(--accent-red);">
-                    <div class="card-icon">&#x1F4C9;</div>
-                    <h3>2U + edX</h3>
-                    <p>Invirtio USD 800M. Hoy tiene USD 900M en deuda. La decision Build vs Buy mas cara de EdTech.</p>
+                <div class="card" style="border-top:3px solid #a855f7;">
+                    <div class="card-icon">&#x1F3B2;</div>
+                    <h3 style="color:#a855f7;">Toda decisi&#243;n implica riesgo</h3>
+                    <p>No existe la opci&#243;n sin riesgo. No decidir tambi&#233;n es una decisi&#243;n con consecuencias.</p>
                 </div>
-                <div class="card" style="border-left:3px solid var(--accent-green);">
-                    <div class="card-icon">&#x1F4C8;</div>
-                    <h3>Siglo 21</h3>
-                    <p>Construyo su propio SIS. De 30,000 a 60,000+ estudiantes con NPS +31.</p>
+                <div class="card" style="border-top:3px solid #f59e0b;">
+                    <div class="card-icon">&#x1F4B0;</div>
+                    <h3 style="color:#f59e0b;">M&#225;s informaci&#243;n cuesta</h3>
+                    <p>Obtener certeza tiene un precio. A veces hay que decidir con informaci&#243;n incompleta.</p>
+                </div>
+                <div class="card" style="border-top:3px solid #ef4444;">
+                    <div class="card-icon">&#x26A1;</div>
+                    <h3 style="color:#ef4444;">La velocidad importa</h3>
+                    <p>El tiempo de decisi&#243;n es un recurso escaso. Quien demora pierde opciones.</p>
                 </div>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">La diferencia no es tecnica. Es estrategica. Es la diferencia entre tener criterio para decidir y delegar sin entender.</p>
         </div>
         <div class="slide-num">04 / 15</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 5: BUILD VS BUY
+         SLIDE 5: EJEMPLOS LATAM (2.1)
          =========================================== -->
     <section class="slide" data-slide="4">
         <div class="slide-content">
-            <div class="slide-tag reveal">Decision 1</div>
-            <h2 class="reveal">Build vs <span class="gradient-text">Buy</span></h2>
+            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Ejemplos LATAM</div>
+            <h2 class="reveal">El dilema de los <span class="gradient-text">sistemas heredados</span></h2>
             <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="role-card" style="border-top:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">Build (Construir)</h3>
-                    <ul class="role-list">
-                        <li>Control total y diferenciacion</li>
-                        <li>Requiere equipo tecnico</li>
-                        <li>Costos altos, mas tiempo</li>
-                        <li>Conviene para ventaja competitiva</li>
+                <div>
+                    <h3 style="color:var(--accent-red);margin-bottom:var(--element-gap);">Sistemas heredados</h3>
+                    <ul class="bullet-list">
+                        <li>Muchas universidades LATAM operan con sistemas de 15&#8211;20 a&#241;os</li>
+                        <li>No los reemplazan porque &#8220;funcionan&#8221;</li>
+                        <li>Limitan crecimiento, fragmentan datos, crean dependencia</li>
+                        <li>La decisi&#243;n de migrar se encarece cada a&#241;o que pasa</li>
                     </ul>
                 </div>
-                <div class="role-card" style="border-top:3px solid #a855f7;">
-                    <h3 style="color:#a855f7;">Buy (Comprar)</h3>
-                    <ul class="role-list">
-                        <li>Velocidad de implementacion</li>
-                        <li>Menor riesgo inicial</li>
-                        <li>Dependencia del proveedor</li>
-                        <li>Conviene para procesos estandar</li>
+                <div>
+                    <h3 style="color:var(--accent-warm);margin-bottom:var(--element-gap);">El costo oculto del &#8220;gratis&#8221;</h3>
+                    <ul class="bullet-list">
+                        <li>Instituciones adoptan herramientas gratuitas como Moodle</li>
+                        <li>Descubren tarde que no controlan los datos del estudiante</li>
+                        <li>No pueden personalizar, dependen de terceros</li>
                     </ul>
                 </div>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                Compra lo que es commodity. Construi lo que es tu ventaja competitiva.
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);border-left-color:var(--accent-warm);background:rgba(245,158,11,0.05);">
+                &iquest;Qui&#233;n toma las decisiones tecnol&#243;gicas estructurales? &iquest;El equipo directivo o el &#225;rea de IT sola?
             </div>
-            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">Impacto financiero: Build = CAPEX (inversion de capital). Buy = OPEX (gasto operativo mensual).</p>
         </div>
         <div class="slide-num">05 / 15</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 6: CLOUD VS ON-PREMISE
+         SLIDE 6: BUILD VS BUY
          =========================================== -->
     <section class="slide" data-slide="5">
         <div class="slide-content">
-            <div class="slide-tag reveal">Decision 2</div>
-            <h2 class="reveal">Cloud vs <span class="gradient-text">On-premise</span></h2>
+            <div class="slide-tag reveal">Decisi&#243;n 1</div>
+            <h2 class="reveal">Build vs <span class="gradient-text">Buy</span></h2>
             <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
                 <div class="role-card" style="border-top:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">&#x2601;&#xFE0F; Cloud</h3>
+                    <h3 style="color:#38bdf8;">Build (Construir)</h3>
                     <ul class="role-list">
-                        <li>Escalabilidad automatica</li>
-                        <li>Sin inversion inicial grande</li>
-                        <li>Costos que pueden crecer</li>
-                        <li>Analogia: alquilar un departamento</li>
+                        <li>Control total, diferenciaci&#243;n, propiedad de datos</li>
+                        <li>Requiere equipo t&#233;cnico, costos altos, tiempo</li>
+                        <li>Conviene cuando el proceso es ventaja competitiva</li>
                     </ul>
                 </div>
-                <div class="role-card" style="border-top:3px solid #f59e0b;">
-                    <h3 style="color:#f59e0b;">&#x1F3E2; On-premise</h3>
+                <div class="role-card" style="border-top:3px solid #a855f7;">
+                    <h3 style="color:#a855f7;">Buy (Comprar)</h3>
                     <ul class="role-list">
-                        <li>Control total</li>
-                        <li>Costos predecibles largo plazo</li>
-                        <li>Riesgo de obsolescencia</li>
-                        <li>Analogia: comprar una casa</li>
+                        <li>Velocidad de implementaci&#243;n, menor riesgo inicial</li>
+                        <li>Dependencia proveedor, limitaciones personalizaci&#243;n</li>
+                        <li>Conviene cuando el proceso es est&#225;ndar</li>
                     </ul>
                 </div>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--body-size);color:var(--text-muted);">Cloud convierte CAPEX en OPEX. El CFO necesita entender esta transicion porque cambia como se planifica el presupuesto tecnologico.</p>
+            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">Ejemplo: Siglo 21 construy&#243; su propio SIS (Proyecto Algarrobo) &#8212; escal&#243; a 60,000+ estudiantes.</p>
+            <div class="quote-box reveal" style="margin-top:var(--element-gap);">
+                Compr&#225; lo que es commodity. Constru&#237; lo que es tu ventaja competitiva.
+            </div>
+            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">Impacto financiero: Build = CAPEX + OPEX. Buy SaaS = OPEX predecible.</p>
         </div>
         <div class="slide-num">06 / 15</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 7: CORE VS COMMODITY
+         SLIDE 7: CLOUD VS ON-PREMISE
          =========================================== -->
     <section class="slide" data-slide="6">
         <div class="slide-content">
-            <div class="slide-tag reveal">Decision 3</div>
+            <div class="slide-tag reveal">Decisi&#243;n 2</div>
+            <h2 class="reveal">Cloud vs <span class="gradient-text">On-Premise</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="role-card" style="border-top:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">&#x2601;&#xFE0F; Cloud</h3>
+                    <ul class="role-list">
+                        <li>Escalabilidad, sin inversi&#243;n inicial grande</li>
+                        <li>Actualizaciones autom&#225;ticas</li>
+                        <li>Analog&#237;a: alquilar departamento</li>
+                    </ul>
+                </div>
+                <div class="role-card" style="border-top:3px solid #f59e0b;">
+                    <h3 style="color:#f59e0b;">&#x1F3E2; On-Premise</h3>
+                    <ul class="role-list">
+                        <li>Control total, costos predecibles largo plazo</li>
+                        <li>Analog&#237;a: comprar casa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card reveal" style="margin-top:var(--content-gap);border-left:3px solid var(--accent-green);">
+                <h3 style="color:var(--accent-green);font-size:var(--small-size);">Caso: Tec de Monterrey</h3>
+                <p>Durante la pandemia la demanda se multiplic&#243; 10x. Cloud (Azure) escal&#243; el&#225;sticamente. Instituciones on-premise colapsaron.</p>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--element-gap);">
+                Cloud no es lujo &#8212; es <strong style="color:var(--text-primary);">resiliencia operativa</strong>.
+            </div>
+            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">Financiero: Cloud convierte CAPEX en OPEX.</p>
+        </div>
+        <div class="slide-num">07 / 15</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: CORE VS COMMODITY
+         =========================================== -->
+    <section class="slide" data-slide="7">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Decisi&#243;n 3</div>
             <h2 class="reveal">Core vs <span class="gradient-text">Commodity</span></h2>
             <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
                 <div class="role-card" style="border-top:3px solid #38bdf8;">
                     <h3 style="color:#38bdf8;">Core</h3>
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:var(--element-gap);">Sistemas que definen tu ventaja competitiva</p>
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:var(--element-gap);">Ventaja competitiva</p>
                     <ul class="role-list">
                         <li>Plataforma de aprendizaje personalizado</li>
-                        <li>Motor de analitica de retencion</li>
+                        <li>Motor de anal&#237;tica de retenci&#243;n</li>
                     </ul>
                 </div>
                 <div class="role-card" style="border-top:3px solid #f59e0b;">
                     <h3 style="color:#f59e0b;">Commodity</h3>
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:var(--element-gap);">Sistemas necesarios pero no diferenciadores</p>
+                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:var(--element-gap);">Necesarios pero no diferenciadores</p>
                     <ul class="role-list">
                         <li>Email</li>
                         <li>Videoconferencia</li>
@@ -796,34 +822,34 @@
             <div class="antipattern reveal" style="margin-top:var(--content-gap);">
                 <div class="antipattern-icon">&#x26A0;&#xFE0F;</div>
                 <div>
-                    <div class="antipattern-name">La trampa comun</div>
-                    <div class="antipattern-desc">Invertir en personalizar commodities y usar soluciones genericas para lo que es core.</div>
+                    <div class="antipattern-name">Anti-patr&#243;n</div>
+                    <div class="antipattern-desc">Invertir en personalizar commodities y usar soluciones gen&#233;ricas para lo core.</div>
                 </div>
             </div>
         </div>
-        <div class="slide-num">07 / 15</div>
+        <div class="slide-num">08 / 15</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 8: VELOCIDAD VS CONTROL
+         SLIDE 9: VELOCIDAD VS CONTROL
          =========================================== -->
-    <section class="slide" data-slide="7">
+    <section class="slide" data-slide="8">
         <div class="slide-content">
-            <div class="slide-tag reveal">Decision 4</div>
+            <div class="slide-tag reveal">Decisi&#243;n 4</div>
             <h2 class="reveal">Velocidad vs <span class="gradient-text">Control</span></h2>
             <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
                 <div class="role-card" style="border-top:3px solid #38bdf8;">
                     <h3 style="color:#38bdf8;">Priorizar Velocidad</h3>
                     <div class="info-row">
-                        <span class="info-value">Lanzar rapido, iterar despues</span>
+                        <span class="info-value">Lanzar r&#225;pido, iterar</span>
                     </div>
                     <div class="info-row">
-                        <span class="info-value">Aceptar deuda tecnica a corto plazo</span>
+                        <span class="info-value">Aceptar deuda t&#233;cnica corto plazo</span>
                     </div>
                     <div class="info-row">
-                        <span class="info-value">Funciona para validar hipotesis</span>
+                        <span class="info-value">Para validar hip&#243;tesis</span>
                     </div>
-                    <div style="margin-top:var(--element-gap);"><span class="pill pill-blue">Riesgo: acumulacion de problemas</span></div>
+                    <div style="margin-top:var(--element-gap);"><span class="pill pill-blue">Riesgo: acumulaci&#243;n de problemas</span></div>
                 </div>
                 <div class="role-card" style="border-top:3px solid #a855f7;">
                     <h3 style="color:#a855f7;">Priorizar Control</h3>
@@ -831,25 +857,25 @@
                         <span class="info-value">Planificar en detalle</span>
                     </div>
                     <div class="info-row">
-                        <span class="info-value">Minimizar deuda tecnica desde el inicio</span>
+                        <span class="info-value">Minimizar deuda t&#233;cnica</span>
                     </div>
                     <div class="info-row">
-                        <span class="info-value">Funciona para sistemas criticos</span>
+                        <span class="info-value">Para sistemas cr&#237;ticos</span>
                     </div>
-                    <div style="margin-top:var(--element-gap);"><span class="pill pill-purple">Riesgo: paralisis por analisis</span></div>
+                    <div style="margin-top:var(--element-gap);"><span class="pill pill-purple">Riesgo: par&#225;lisis por an&#225;lisis</span></div>
                 </div>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                No hay respuesta correcta universal. La decision depende del momento, el riesgo y la reversibilidad.
+                No hay respuesta correcta universal. Depende del momento, riesgo y reversibilidad.
             </div>
         </div>
-        <div class="slide-num">08 / 15</div>
+        <div class="slide-num">09 / 15</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 9: 6 DIMENSIONES GRID
+         SLIDE 10: 6 DIMENSIONES GRID
          =========================================== -->
-    <section class="slide" data-slide="8">
+    <section class="slide" data-slide="9">
         <div class="slide-content">
             <div class="slide-tag reveal">Framework</div>
             <h2 class="reveal">6 dimensiones de <span class="gradient-text">estrategia tech</span></h2>
@@ -857,68 +883,32 @@
                 <div class="card">
                     <div class="card-icon">&#x1F3D7;&#xFE0F;</div>
                     <h3>Infraestructura</h3>
-                    <p>&iquest;Donde viven tus sistemas? &iquest;Cloud, on-premise, hibrido?</p>
+                    <p>&iquest;D&#243;nde viven tus sistemas?</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">&#x1F517;</div>
                     <h3>Arquitectura</h3>
-                    <p>&iquest;Tus sistemas se hablan o son islas?</p>
+                    <p>&iquest;Se hablan o son islas?</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">&#x1F4CA;</div>
                     <h3>Datos</h3>
-                    <p>&iquest;Son confiables? &iquest;Quien los gobierna?</p>
+                    <p>&iquest;Son confiables? &iquest;Qui&#233;n los gobierna?</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">&#x1F512;</div>
                     <h3>Seguridad</h3>
-                    <p>&iquest;Tenemos politicas definidas? &iquest;Estamos preparados?</p>
+                    <p>&iquest;Pol&#237;ticas definidas? &iquest;Preparados?</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">&#x1F465;</div>
                     <h3>Talento</h3>
-                    <p>&iquest;Apaga incendios o construye estrategia?</p>
+                    <p>&iquest;Apaga incendios o construye?</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">&#x1F4A1;</div>
-                    <h3>Innovacion</h3>
-                    <p>&iquest;Hay proceso o es ad hoc?</p>
-                </div>
-            </div>
-        </div>
-        <div class="slide-num">09 / 15</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 10: DIMENSIONES 1, 2 Y 3
-         =========================================== -->
-    <section class="slide" data-slide="9">
-        <div class="slide-content">
-            <h2 class="reveal">Dimensiones <span class="gradient-text">1, 2 y 3</span></h2>
-            <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vw,0.8rem);margin-top:var(--content-gap);">
-                <div class="card reveal" style="border-left:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">&#x1F3D7;&#xFE0F; Infraestructura</h3>
-                    <ul class="bullet-list">
-                        <li>&iquest;Puede escalar en picos?</li>
-                        <li>&iquest;Cuan dependiente sos de un proveedor?</li>
-                    </ul>
-                </div>
-                <div class="card reveal" style="border-left:3px solid #a855f7;">
-                    <h3 style="color:#a855f7;">&#x1F517; Arquitectura</h3>
-                    <ul class="bullet-list">
-                        <li>&iquest;La info fluye automaticamente?</li>
-                        <li>&iquest;Cuantos procesos dependen de Excel?</li>
-                    </ul>
-                </div>
-                <div class="card reveal" style="border-left:3px solid #34d399;">
-                    <h3 style="color:#34d399;">&#x1F4CA; Datos</h3>
-                    <ul class="bullet-list">
-                        <li>&iquest;Que datos tenemos? &iquest;Son confiables?</li>
-                        <li>&iquest;Decisiones con datos o intuicion?</li>
-                    </ul>
-                    <div style="margin-top:var(--element-gap);padding:0.6em 0.8em;background:rgba(52,211,153,0.06);border-radius:6px;border-left:2px solid #34d399;">
-                        <p style="font-size:var(--small-size);color:var(--text-secondary);font-style:normal;"><strong style="color:#34d399;">&#x1F4A1; Gobernanza R&rsquo;Evolution:</strong> El CTO es custodio de la Arquitectura de Datos. El CEO es responsable final del cumplimiento.</p>
-                    </div>
+                    <h3>Innovaci&#243;n</h3>
+                    <p>&iquest;Proceso o ad hoc?</p>
                 </div>
             </div>
         </div>
@@ -926,32 +916,35 @@
     </section>
 
     <!-- ===========================================
-         SLIDE 11: DIMENSIONES 4, 5 Y 6
+         SLIDE 11: DIMENSIONES 1, 2, 3
          =========================================== -->
     <section class="slide" data-slide="10">
         <div class="slide-content">
-            <h2 class="reveal">Dimensiones <span class="gradient-text">4, 5 y 6</span></h2>
+            <h2 class="reveal">Dimensiones <span class="gradient-text">1, 2 y 3</span></h2>
             <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vw,0.8rem);margin-top:var(--content-gap);">
-                <div class="card reveal" style="border-left:3px solid #ef4444;">
-                    <h3 style="color:#ef4444;">&#x1F512; Seguridad</h3>
-                    <ul class="bullet-list">
-                        <li>&iquest;Quien tiene acceso a que?</li>
-                        <li>&iquest;Preparados para un incidente?</li>
-                    </ul>
-                </div>
-                <div class="card reveal" style="border-left:3px solid #f59e0b;">
-                    <h3 style="color:#f59e0b;">&#x1F465; Talento</h3>
-                    <ul class="bullet-list">
-                        <li>&iquest;Negocio y tech hablan el mismo idioma?</li>
-                        <li>&iquest;Equipo de construccion o de bomberos?</li>
-                    </ul>
-                </div>
                 <div class="card reveal" style="border-left:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">&#x1F4A1; Innovacion</h3>
+                    <h3 style="color:#38bdf8;">&#x1F3D7;&#xFE0F; Infraestructura</h3>
                     <ul class="bullet-list">
-                        <li>&iquest;Quien identifica oportunidades?</li>
-                        <li>&iquest;Espacio para experimentar?</li>
+                        <li>&iquest;Puede escalar en picos?</li>
+                        <li>&iquest;Cu&#225;n dependiente de proveedor?</li>
                     </ul>
+                </div>
+                <div class="card reveal" style="border-left:3px solid #a855f7;">
+                    <h3 style="color:#a855f7;">&#x1F517; Arquitectura</h3>
+                    <ul class="bullet-list">
+                        <li>&iquest;La info fluye autom&#225;ticamente?</li>
+                        <li>&iquest;Cu&#225;ntos procesos dependen de Excel?</li>
+                    </ul>
+                </div>
+                <div class="card reveal" style="border-left:3px solid #34d399;">
+                    <h3 style="color:#34d399;">&#x1F4CA; Datos</h3>
+                    <ul class="bullet-list">
+                        <li>&iquest;Qu&#233; datos tenemos? &iquest;Confiables?</li>
+                        <li>&iquest;Decisiones con datos o intuici&#243;n?</li>
+                    </ul>
+                    <div style="margin-top:var(--element-gap);padding:0.6em 0.8em;background:rgba(52,211,153,0.06);border-radius:6px;border-left:2px solid #34d399;">
+                        <p style="font-size:var(--small-size);color:var(--text-secondary);font-style:normal;"><strong style="color:#34d399;">Pol&#237;tica Gobernanza Grupo R&#8217;Evolution:</strong> CTO custodio de Arquitectura de Datos y accesos. CEO responsable final del cumplimiento.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -959,12 +952,45 @@
     </section>
 
     <!-- ===========================================
-         SLIDE 12: ALINEACION TECNOLOGIA-NEGOCIO
+         SLIDE 12: DIMENSIONES 4, 5, 6
          =========================================== -->
     <section class="slide" data-slide="11">
         <div class="slide-content">
-            <div class="slide-tag reveal">Alineacion</div>
-            <h2 class="reveal">Tecnologia alineada <span class="gradient-text">al negocio</span></h2>
+            <h2 class="reveal">Dimensiones <span class="gradient-text">4, 5 y 6</span></h2>
+            <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vw,0.8rem);margin-top:var(--content-gap);">
+                <div class="card reveal" style="border-left:3px solid #ef4444;">
+                    <h3 style="color:#ef4444;">&#x1F512; Seguridad</h3>
+                    <ul class="bullet-list">
+                        <li>&iquest;Qui&#233;n tiene acceso a qu&#233;?</li>
+                        <li>&iquest;Preparados para un incidente?</li>
+                    </ul>
+                </div>
+                <div class="card reveal" style="border-left:3px solid #f59e0b;">
+                    <h3 style="color:#f59e0b;">&#x1F465; Talento</h3>
+                    <ul class="bullet-list">
+                        <li>&iquest;Negocio y tech hablan el mismo idioma?</li>
+                        <li>&iquest;Equipo de construcci&#243;n o de bomberos?</li>
+                    </ul>
+                </div>
+                <div class="card reveal" style="border-left:3px solid #38bdf8;">
+                    <h3 style="color:#38bdf8;">&#x1F4A1; Innovaci&#243;n</h3>
+                    <ul class="bullet-list">
+                        <li>&iquest;Qui&#233;n identifica oportunidades?</li>
+                        <li>&iquest;Espacio para experimentar?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">12 / 15</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 13: ALINEACI&#211;N TECNOLOG&#205;A-NEGOCIO
+         =========================================== -->
+    <section class="slide" data-slide="12">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Alineaci&#243;n</div>
+            <h2 class="reveal">Tecnolog&#237;a alineada <span class="gradient-text">al negocio</span></h2>
             <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:600px;margin-left:0;">
                 <div class="layer">
                     <span class="layer-label">01</span>
@@ -976,39 +1002,15 @@
                 </div>
                 <div class="layer">
                     <span class="layer-label">03</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">&#8594; Habilitadores tecnologicos</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">&#8594; Habilitadores tecnol&#243;gicos</span>
                 </div>
                 <div class="layer">
                     <span class="layer-label">04</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">&#8594; Inversion y priorizacion</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">&#8594; Inversi&#243;n y priorizaci&#243;n</span>
                 </div>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                <strong style="color:var(--text-primary);">Ejemplo:</strong> Objetivo: reducir desercion del 42% al 25%. Capacidad: detectar estudiantes en riesgo. Habilitador: analitica predictiva. Inversion: integracion de datos + modelo de alertas.
-            </div>
-        </div>
-        <div class="slide-num">12 / 15</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 13: DINAMICA
-         =========================================== -->
-    <section class="slide" data-slide="12">
-        <div class="slide-content centered">
-            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
-            <h2 class="reveal">Radar + Trade-offs</h2>
-            <div class="divider reveal"><div class="diamond" style="background:var(--accent-warm);"></div></div>
-            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);max-width:700px;">
-                <div class="card" style="text-align:left;">
-                    <div class="card-icon">&#x1F4E1;</div>
-                    <h3>Radar de Estrategia Tech</h3>
-                    <p>Califica las 6 dimensiones del 1 al 5. Visualiza tu perfil. 15 min individual.</p>
-                </div>
-                <div class="card" style="text-align:left;">
-                    <div class="card-icon">&#x2696;&#xFE0F;</div>
-                    <h3>Trade-offs en Accion</h3>
-                    <p>4 escenarios de decision. Decidir y argumentar en grupo. 20 min grupal.</p>
-                </div>
+                <strong style="color:var(--text-primary);">Ejemplo:</strong> Objetivo: reducir deserci&#243;n del 42% al 25%. Capacidad: detectar estudiantes en riesgo. Habilitador: anal&#237;tica predictiva LMS+SIS. Inversi&#243;n: integraci&#243;n datos + modelo alertas + equipo intervenci&#243;n.
             </div>
         </div>
         <div class="slide-num">13 / 15</div>
@@ -1022,31 +1024,32 @@
             <div class="slide-tag reveal">Cierre</div>
             <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
             <div class="divider reveal"><div class="diamond"></div></div>
-            <div style="max-width:550px;margin-top:var(--content-gap);">
+            <div style="max-width:580px;margin-top:var(--content-gap);">
                 <ul class="bullet-list" style="text-align:left;">
-                    <li class="reveal">Manejas vocabulario de <strong style="color:var(--text-primary);">decisiones tech estrategicas</strong></li>
-                    <li class="reveal">Distingues decisiones <strong style="color:var(--text-primary);">tacticas de estructurales</strong></li>
-                    <li class="reveal">Entendes las <strong style="color:var(--text-primary);">6 dimensiones de estrategia tech</strong></li>
-                    <li class="reveal">Comprendes el impacto financiero: <strong style="color:var(--text-primary);">CAPEX vs OPEX, deuda tecnica</strong></li>
-                    <li class="reveal">Tenes un primer <strong style="color:var(--text-primary);">diagnostico visual (radar) de tu madurez</strong></li>
-                    <li class="reveal">Podes participar activamente en <strong style="color:var(--text-primary);">conversaciones de estrategia tech</strong></li>
+                    <li class="reveal">Manej&#225;s <strong style="color:var(--text-primary);">vocabulario de decisiones tech</strong></li>
+                    <li class="reveal">Distingu&#237;s decisiones <strong style="color:var(--text-primary);">t&#225;cticas de estructurales</strong></li>
+                    <li class="reveal">Entend&#233;s las <strong style="color:var(--text-primary);">6 dimensiones de estrategia tech</strong></li>
+                    <li class="reveal">Comprend&#233;s el <strong style="color:var(--text-primary);">impacto financiero CAPEX/OPEX</strong></li>
+                    <li class="reveal">Ten&#233;s un primer <strong style="color:var(--text-primary);">diagn&#243;stico radar</strong></li>
+                    <li class="reveal">Pod&#233;s participar activamente en <strong style="color:var(--text-primary);">conversaciones de tech strategy</strong></li>
                 </ul>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 02 &#8212; Estrategia Tecnologica</p>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">M&#243;dulo 02 &#8212; Estrategia Tecnol&#243;gica</p>
         </div>
         <div class="slide-num">14 / 15</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 15: REFLEXION
+         SLIDE 15: REFLEXI&#211;N FINAL
          =========================================== -->
     <section class="slide" data-slide="14">
         <div class="slide-content centered">
-            <div class="slide-tag reveal">Reflexion</div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:680px;font-size:var(--h3-size);line-height:1.6;border-left-width:4px;">
-                Cada decision tecnologica que tomas (o que dejas que otros tomen por vos) define la estructura de costos, la velocidad y la dependencia de tu organizacion por los proximos 3&#8211;5 anos. &iquest;Estas eligiendo... o estas heredando?
+            <div class="slide-tag reveal">Reflexi&#243;n</div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:700px;text-align:center;border-left:none;border-top:3px solid var(--accent);border-radius:8px 8px 0 0;padding:1.5em 2em;font-size:clamp(1rem,2vw,1.4rem);line-height:1.6;">
+                Cada decisi&#243;n tecnol&#243;gica que tom&#225;s (o que dej&#225;s que otros tomen por vos) define la estructura de costos, la velocidad y la dependencia de tu organizaci&#243;n por los pr&#243;ximos 3&#8211;5 a&#241;os.<br><br>
+                &iquest;Est&#225;s eligiendo&#8230; o est&#225;s heredando?
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 02 &#8212; Estrategia Tecnologica</p>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">M&#243;dulo 02 &#8212; Estrategia Tecnol&#243;gica</p>
         </div>
         <div class="slide-num">15 / 15</div>
     </section>

@@ -1,6 +1,6 @@
 # Módulo 4 — Transformación Digital e IA  
 ---
-![Campus](../assets/Campus-04.png)
+<img src="../assets/Campus-04.png" alt="Campus-04"/>
 
 ## 1 Introducción
 

@@ -2,7 +2,7 @@
 
 ---
 
-
+<!-- Image should be full screen in the slides-->
 <img src="../assets/Campus-01.png" alt="Campus-01"/>
 
 
@@ -23,11 +23,33 @@ Que los participantes comprendan por qué la tecnología dejó de ser un área d
 
 Antes de entrar en los conceptos, arrancamos con una dinámica grupal para poner en contexto el desafío competitivo actual.
 
-Ver guía completa: [Dinámica "El Reemplazo Invisible"](../materiales/dinamicas/01-el-reemplazo-invisible.md)
+### Duracion:
 
----
+- 10 minutos de trabajo. Grupos de 4.
+- 5 minutos. Puesta en comun. 
+
+### Objetivo Dinamica
+
+Queremos una dUnicamente el paranoico sobrevive.  -> Siempre hay que innovar o buscar la innovacion porque llega de cualquier lado. 
+
+Es importante entender el contexto porque sino te va a comer. 
+
+Toda decision de negocio va de la mano de la tecnologia.
+
+### Consigna
+
+Imaginemos que mañana aparece un nuevo competidor, una Universidad 100% digital, con tecnología AI, organización con procesos ágiles y con una oferta de programas de grado y pre-grado que compiten directamente con la oferta de tu institucion. 
+Como Directivo a cargo de una Institución educativa:  Qué decisiones de Negocio tomarías para competir? Cómo se relacionan esas decisiones con la tecnología?
 
 
+<!-- This should be a new Slide -->
+### 💡 **Cierre Dinamica:**
+
+Si ese competidor nace hoy digital, la tecnología no es soporte. Es el modelo.”
+Cuando la tecnología es soporte, el negocio se diseña primero y se digitaliza después. Cuando es core, el negocio se diseña desde la arquitectura y la tecnología es parte de la estrategia
+
+
+<!-- New Section -->
 ## 2 Conceptos clave
 
 

@@ -1,8 +1,8 @@
 # Módulo 2 — Estrategia Tecnológica del negocio
 
 ---
-
-![Campus](../assets/Campus-02.png)
+<!-- Image should be full screen in the slides-->
+<img src="../assets/Campus-02.png" alt="Campus-02"/>
 
 ## 1 Introducción
 
@@ -14,13 +14,41 @@ Que los participantes adquieran el vocabulario, los criterios y los frameworks n
 
 > ¿Qué decisiones tecnológicas son estratégicas y cuáles son tácticas?
 
-### 1.3 Dinámica Disparadora: “1 millón para invertir”
+### 1.3 Dinámica Disparadora: “Casino Estrategico Tech"
 
 Arrancamos con un ejercicio de priorización: recibís USD 1M para invertir en la estrategia tecnológica de tu organización. ¿Cómo lo distribuís? La condición: no podés invertir en todo.
 
-Ver guía completa: [Dinámica "1 Millón USD para invertir"](../materiales/dinamicas/02-1Million-Dollars.md)
 
----
+- Recibirás **USD 1.000.000** para invertir.
+
+- Deberás decidir cómo asignarlo entre distintas **estrategias tecnológicas**.
+
+- Durante **3 rondas**, el contexto cambiará inesperadamente.
+
+- Podrás comprar información (**Reveal Context**)…  
+pero tendrá un costo.
+
+- ⏳ Tiempo de decisión decreciente  
+60s → 30s → 15s
+
+El objetivo no es solo ganar. Es experimentar que en estrategia tecnológica:
+
+
+Gana quien conserve mayor presupuesto.
+
+<!-- Link should open in new window-->
+https://casino-tech-play.lovable.app/
+
+<!-- new slide -->
+### Conclusiones Casino Tech
+
+• El contexto manda  
+• Toda decisión implica riesgo  
+• Más información cuesta  
+• La velocidad importa  
+
+
+<!-- new section -->
 ## 2 Conceptos Claves
 
 <!-- Buscar para el facilitador algunos ejemplos de decisiones tecnologicas estrategicas -->

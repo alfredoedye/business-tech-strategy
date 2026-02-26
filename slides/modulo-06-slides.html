@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonus — IA y el Futuro de la Educacion</title>
+    <title>Módulo 06 — IA y el Futuro de la Educación</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 
     <style>
@@ -609,9 +609,28 @@
             }
             html { scroll-behavior: auto; }
         }
+        /* ===========================================
+           NAVIGATION OVERLAY
+           =========================================== */
+        .nav-home { position: fixed; top: clamp(0.8rem,1.5vw,1.2rem); left: clamp(0.8rem,1.5vw,1.2rem); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; z-index: 200; }
+        .nav-home:hover { background: rgba(56,189,248,0.15); color: var(--accent); border-color: rgba(56,189,248,0.3); }
+        .nav-module-indicator { position: fixed; top: clamp(0.8rem,1.5vw,1.2rem); left: 50%; transform: translateX(-50%); font-size: var(--small-size); color: var(--text-muted); z-index: 200; pointer-events: none; font-family: var(--font-body); letter-spacing: 0.05em; }
+        .nav-prev, .nav-next { position: fixed; bottom: clamp(0.8rem,1.5vw,1.2rem); padding: 0.4em 0.8em; font-size: var(--small-size); color: var(--text-secondary); text-decoration: none; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 6px; transition: all 0.3s ease; z-index: 200; font-family: var(--font-body); }
+        .nav-prev { left: clamp(0.8rem,1.5vw,1.2rem); }
+        .nav-next { right: clamp(3rem,5vw,4rem); }
+        .nav-prev:hover, .nav-next:hover { background: rgba(56,189,248,0.1); color: var(--accent); border-color: rgba(56,189,248,0.3); }
+
     </style>
 </head>
 <body>
+
+    <!-- Navigation Overlay -->
+    <a class="nav-home" href="../index.html" title="Inicio">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </a>
+    <div class="nav-module-indicator">Módulo 06 / 07</div>
+    <a class="nav-prev" href="modulo-05-slides.html">&larr; Módulo 05</a>
+    <a class="nav-next" href="modulo-07-slides.html">Módulo 07 &rarr;</a>
 
     <!-- Progress bar -->
     <div class="progress-bar" id="progressBar"></div>
@@ -627,13 +646,13 @@
         <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
 
         <div class="slide-content centered">
-            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Bonus</div>
+            <div class="slide-tag reveal">Módulo 06</div>
             <h1 class="reveal">IA y el Futuro <span class="gradient-text">de la Educacion</span></h1>
             <div class="divider reveal"><div class="diamond"></div></div>
             <p class="subtitle reveal">Panel de Discusion</p>
             <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">No es una clase. Es una conversacion entre lideres.</p>
         </div>
-        <div class="slide-num">01 / 11</div>
+        <div class="slide-num">01 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -668,11 +687,139 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">02 / 11</div>
+        <div class="slide-num">02 / 14</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 3: PREGUNTA 1
+         SLIDE 3: ESCENARIOS 2030
+         =========================================== -->
+    <section class="slide" data-slide="2">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Escenarios 2030</div>
+            <h2 class="reveal">Tres futuros <span class="gradient-text">plausibles</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Cada grupo elige el que considera mas probable y disena una respuesta estrategica.</p>
+            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);margin-top:var(--content-gap);">
+                <div class="card" style="border-top:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">A. Aumentada</h3>
+                    <ul class="bullet-list" style="font-size:var(--small-size);">
+                        <li>IA institucional en todo el journey</li>
+                        <li>Docentes aumentados, no reemplazados</li>
+                        <li>Arquitectura integrada</li>
+                        <li>Mejora en retencion y experiencia</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-top:3px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">B. Commoditizada</h3>
+                    <ul class="bullet-list" style="font-size:var(--small-size);">
+                        <li>Cursos generados masivamente por IA</li>
+                        <li>Competencia global feroz</li>
+                        <li>Titulos pierden peso vs habilidades</li>
+                        <li>Presion en margenes</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-top:3px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">C. Fragmentada</h3>
+                    <ul class="bullet-list" style="font-size:var(--small-size);">
+                        <li>Regulacion estricta sobre IA</li>
+                        <li>Resistencia cultural interna</li>
+                        <li>Implementacion desigual</li>
+                        <li>Brecha entre instituciones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">03 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: COMPARACION DE ESCENARIOS
+         =========================================== -->
+    <section class="slide" data-slide="3">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Comparacion</div>
+            <h2 class="reveal">Escenarios <span class="gradient-text">frente a frente</span></h2>
+            <div class="reveal-scale" style="margin-top:var(--content-gap);overflow-x:auto;">
+                <table style="width:100%;border-collapse:collapse;font-size:var(--small-size);color:var(--text-secondary);">
+                    <thead>
+                        <tr style="border-bottom:2px solid var(--border);">
+                            <th style="padding:0.5em 0.8em;text-align:left;color:var(--text-muted);font-weight:400;"></th>
+                            <th style="padding:0.5em 0.8em;text-align:left;color:var(--accent);font-weight:600;">Aumentada</th>
+                            <th style="padding:0.5em 0.8em;text-align:left;color:var(--accent-purple);font-weight:600;">Commoditizada</th>
+                            <th style="padding:0.5em 0.8em;text-align:left;color:var(--accent-warm);font-weight:600;">Fragmentada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid var(--border);">
+                            <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">IA como...</td>
+                            <td style="padding:0.5em 0.8em;">Capacidad integrada en el journey</td>
+                            <td style="padding:0.5em 0.8em;">Motor de produccion masiva</td>
+                            <td style="padding:0.5em 0.8em;">Herramienta regulada y desigual</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border);">
+                            <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">Rol docente</td>
+                            <td style="padding:0.5em 0.8em;">Aumentado por IA</td>
+                            <td style="padding:0.5em 0.8em;">Reemplazado parcialmente</td>
+                            <td style="padding:0.5em 0.8em;">Depende de la institucion</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border);">
+                            <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">Diferenciacion</td>
+                            <td style="padding:0.5em 0.8em;">Experiencia personalizada</td>
+                            <td style="padding:0.5em 0.8em;">Costo y escala</td>
+                            <td style="padding:0.5em 0.8em;">Gobernanza y cumplimiento</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border);">
+                            <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">Riesgo</td>
+                            <td style="padding:0.5em 0.8em;">Inversion sostenida</td>
+                            <td style="padding:0.5em 0.8em;">Margenes comprimidos</td>
+                            <td style="padding:0.5em 0.8em;">Brecha creciente</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">Oportunidad</td>
+                            <td style="padding:0.5em 0.8em;">Retencion y calidad</td>
+                            <td style="padding:0.5em 0.8em;">Acceso masivo</td>
+                            <td style="padding:0.5em 0.8em;">Ventaja para los preparados</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                &iquest;Cual consideran mas probable? &iquest;Que deberia hacer su institucion hoy para prepararse?
+            </div>
+        </div>
+        <div class="slide-num">04 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: TRABAJO EN GRUPOS
+         =========================================== -->
+    <section class="slide" data-slide="4">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
+            <h2 class="reveal">Trabajo en <span class="gradient-text">grupos</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">15 minutos para elegir, argumentar y disenar.</p>
+            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);">
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">1</div>
+                    <h3>Elegir</h3>
+                    <p>El escenario que el grupo considera mas probable para su contexto</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">2</div>
+                    <h3>Argumentar</h3>
+                    <p>Por que ese escenario y no los otros dos</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">3</div>
+                    <h3>Disenar</h3>
+                    <p>3 acciones concretas que su institucion deberia tomar en los proximos 12 meses</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">05 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: PREGUNTA 1
          =========================================== -->
     <section class="slide" data-slide="2">
         <div class="slide-content">
@@ -696,7 +843,7 @@
                 Si un estudiante aprende mas con un tutor de IA que con una clase de 200 personas, &iquest;cual es el rol de la institucion?
             </div>
         </div>
-        <div class="slide-num">03 / 11</div>
+        <div class="slide-num">06 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -722,7 +869,7 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Google, Apple, IBM eliminaron el requisito de titulo. Las micro-credenciales crecen exponencialmente. En LATAM, el titulo sigue siendo diferenciador.</p>
         </div>
-        <div class="slide-num">04 / 11</div>
+        <div class="slide-num">07 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -750,7 +897,7 @@
                 &iquest;Estas dispuesto a que un algoritmo decida si un estudiante esta en riesgo? &iquest;Y si tiene sesgos?
             </div>
         </div>
-        <div class="slide-num">05 / 11</div>
+        <div class="slide-num">08 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -774,7 +921,7 @@
                 Si ChatGPT puede dar una clase mejor que el 80% de los docentes del mundo, &iquest;que hacemos con esa realidad?
             </div>
         </div>
-        <div class="slide-num">06 / 11</div>
+        <div class="slide-num">09 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -806,7 +953,7 @@
                 &iquest;Tu plan de estudios actual prepara estudiantes para 2030 o para 2010?
             </div>
         </div>
-        <div class="slide-num">07 / 11</div>
+        <div class="slide-num">10 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -832,7 +979,7 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">El objetivo no es consenso. Es hacer visible la diversidad de perspectivas.</p>
         </div>
-        <div class="slide-num">08 / 11</div>
+        <div class="slide-num">11 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -852,7 +999,7 @@
                 </ul>
             </div>
         </div>
-        <div class="slide-num">09 / 11</div>
+        <div class="slide-num">12 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -880,7 +1027,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">10 / 11</div>
+        <div class="slide-num">13 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -904,7 +1051,7 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Bonus — IA y el Futuro de la Educacion</p>
         </div>
-        <div class="slide-num">11 / 11</div>
+        <div class="slide-num">14 / 14</div>
     </section>
 
     <!-- ===========================================

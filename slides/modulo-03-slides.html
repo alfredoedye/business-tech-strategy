@@ -503,9 +503,28 @@
             }
             html { scroll-behavior: auto; }
         }
+        /* ===========================================
+           NAVIGATION OVERLAY
+           =========================================== */
+        .nav-home { position: fixed; top: clamp(0.8rem,1.5vw,1.2rem); left: clamp(0.8rem,1.5vw,1.2rem); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; z-index: 200; }
+        .nav-home:hover { background: rgba(56,189,248,0.15); color: var(--accent); border-color: rgba(56,189,248,0.3); }
+        .nav-module-indicator { position: fixed; top: clamp(0.8rem,1.5vw,1.2rem); left: 50%; transform: translateX(-50%); font-size: var(--small-size); color: var(--text-muted); z-index: 200; pointer-events: none; font-family: var(--font-body); letter-spacing: 0.05em; }
+        .nav-prev, .nav-next { position: fixed; bottom: clamp(0.8rem,1.5vw,1.2rem); padding: 0.4em 0.8em; font-size: var(--small-size); color: var(--text-secondary); text-decoration: none; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 6px; transition: all 0.3s ease; z-index: 200; font-family: var(--font-body); }
+        .nav-prev { left: clamp(0.8rem,1.5vw,1.2rem); }
+        .nav-next { right: clamp(3rem,5vw,4rem); }
+        .nav-prev:hover, .nav-next:hover { background: rgba(56,189,248,0.1); color: var(--accent); border-color: rgba(56,189,248,0.3); }
+
     </style>
 </head>
 <body>
+
+    <!-- Navigation Overlay -->
+    <a class="nav-home" href="../index.html" title="Inicio">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </a>
+    <div class="nav-module-indicator">Módulo 03 / 07</div>
+    <a class="nav-prev" href="modulo-02-slides.html">&larr; Módulo 02</a>
+    <a class="nav-next" href="modulo-04-slides.html">Módulo 04 &rarr;</a>
 
     <!-- Progress bar -->
     <div class="progress-bar" id="progressBar"></div>
@@ -528,7 +547,7 @@
             <p class="subtitle reveal">El mapa de tus sistemas</p>
             <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Como funciona realmente una institucion educativa moderna por dentro?</p>
         </div>
-        <div class="slide-num">01 / 12</div>
+        <div class="slide-num">01 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -550,7 +569,7 @@
                 Un directivo no necesita saber construir edificios. Pero si necesita poder leer el plano de la ciudad.
             </div>
         </div>
-        <div class="slide-num">02 / 12</div>
+        <div class="slide-num">02 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -580,7 +599,7 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Salidas: puntos de falla, decisiones preventivas, 2 prioridades inmediatas</p>
         </div>
-        <div class="slide-num">03 / 12</div>
+        <div class="slide-num">03 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -614,7 +633,7 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Para participantes de empresas no educativas: donde dice &ldquo;estudiante&rdquo; pensa en &ldquo;cliente&rdquo;. Donde dice &ldquo;SIS&rdquo; pensa en tu sistema core de gestion. El principio es el mismo.</p>
         </div>
-        <div class="slide-num">04 / 12</div>
+        <div class="slide-num">04 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -654,7 +673,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">05 / 12</div>
+        <div class="slide-num">05 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -673,7 +692,7 @@
                 />
             </div>
         </div>
-        <div class="slide-num">06 / 12</div>
+        <div class="slide-num">06 / 14</div>
     </section>
 
     <!-- ===========================================
@@ -721,13 +740,67 @@
                 Los problemas reales surgen en las transiciones entre sistemas.
             </div>
         </div>
-        <div class="slide-num">07 / 12</div>
+        <div class="slide-num">07 / 14</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 8: NIVELES DE INTEGRACION
+         SLIDE 8: CASOS REALES — LMS y CRM
          =========================================== -->
     <section class="slide" data-slide="7">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Casos Reales</div>
+            <h2 class="reveal">Cuando los sistemas <span class="gradient-text">generan valor</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:1fr 1fr;">
+                <div class="card" style="border-left:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">Purdue University — Course Signals</h3>
+                    <p><strong style="color:var(--text-primary);">Contexto:</strong> Alta desercion, necesitaban detectar estudiantes en riesgo de forma temprana.</p>
+                    <p><strong style="color:var(--text-primary);">Decision:</strong> Usar datos del LMS (participacion, entregas, tiempo) para alertas tempranas.</p>
+                    <p><strong style="color:var(--text-primary);">Resultado:</strong> Mejora del 21% en retencion. El valor no estaba en el LMS como repositorio, sino en los datos de comportamiento.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">Georgia State — Summer Melt</h3>
+                    <p><strong style="color:var(--text-primary);">Contexto:</strong> Muchos estudiantes aceptados nunca completaban la inscripcion (&ldquo;summer melt&rdquo;).</p>
+                    <p><strong style="color:var(--text-primary);">Decision:</strong> CRM para automatizar seguimiento proactivo con mensajes personalizados.</p>
+                    <p><strong style="color:var(--text-primary);">Resultado:</strong> Reduccion del 22% en summer melt. La clave: el CRM tenia los datos y podia intervenir en el momento justo.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">08 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: SINGLE SOURCE OF TRUTH
+         =========================================== -->
+    <section class="slide" data-slide="8">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Gobierno de Datos</div>
+            <h2 class="reveal">Fuente de verdad <span class="gradient-text">unica (SSOT)</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Sin una fuente de verdad definida, cada area trabaja con su propia &ldquo;version de la realidad&rdquo;.</p>
+            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);margin-top:var(--content-gap);">
+                <div class="card" style="text-align:center;border-top:3px solid var(--accent);">
+                    <div style="font-size:clamp(1.5rem,3vw,2.5rem);font-family:var(--font-display);color:var(--accent);">12,000</div>
+                    <p>estudiantes segun el <strong style="color:var(--text-primary);">SIS</strong></p>
+                </div>
+                <div class="card" style="text-align:center;border-top:3px solid var(--accent-purple);">
+                    <div style="font-size:clamp(1.5rem,3vw,2.5rem);font-family:var(--font-display);color:var(--accent-purple);">14,200</div>
+                    <p>estudiantes segun el <strong style="color:var(--text-primary);">CRM</strong></p>
+                </div>
+                <div class="card" style="text-align:center;border-top:3px solid var(--accent-warm);">
+                    <div style="font-size:clamp(1.5rem,3vw,2.5rem);font-family:var(--font-display);color:var(--accent-warm);">10,800</div>
+                    <p>estudiantes segun el <strong style="color:var(--text-primary);">LMS</strong></p>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                &iquest;Cuantos estudiantes tiene realmente? Nadie sabe. Marketing invierte con un numero, finanzas presupuesta con otro, y el rector presenta un tercero al directorio.
+            </div>
+        </div>
+        <div class="slide-num">09 / 14</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: NIVELES DE INTEGRACION
+         =========================================== -->
+    <section class="slide" data-slide="9">
         <div class="slide-content">
             <div class="slide-tag reveal">Integracion</div>
             <h2 class="reveal">Niveles de <span class="gradient-text">integracion</span></h2>
@@ -761,11 +834,11 @@
                 <strong style="color:var(--text-primary);">Cada quiebre en la integracion</strong> es una mala experiencia para el estudiante y un costo operativo para la organizacion.
             </div>
         </div>
-        <div class="slide-num">08 / 12</div>
+        <div class="slide-num">10 / 14</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 9: CUADRANTE DE TECNOLOGIA — MODELO MII
+         SLIDE 11: CUADRANTE DE TECNOLOGIA — MODELO MII
          =========================================== -->
     <section class="slide" data-slide="8">
         <div class="slide-content">
@@ -780,11 +853,11 @@
                 />
             </div>
         </div>
-        <div class="slide-num">09 / 12</div>
+        <div class="slide-num">11 / 14</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 10: ARQUITECTURA COMO HERRAMIENTA DE DECISION
+         SLIDE 12: ARQUITECTURA COMO HERRAMIENTA DE DECISION
          =========================================== -->
     <section class="slide" data-slide="9">
         <div class="slide-content">
@@ -812,11 +885,11 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">10 / 12</div>
+        <div class="slide-num">12 / 14</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 11: DINAMICA: MAPEA TU ARQUITECTURA
+         SLIDE 13: DINAMICA: MAPEA TU ARQUITECTURA
          =========================================== -->
     <section class="slide" data-slide="10">
         <div class="slide-content">
@@ -844,11 +917,11 @@
             </div>
             <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">40 minutos &mdash; Individual/grupal + presentacion</p>
         </div>
-        <div class="slide-num">11 / 12</div>
+        <div class="slide-num">13 / 14</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 12: RESULTADO ESPERADO
+         SLIDE 14: RESULTADO ESPERADO
          =========================================== -->
     <section class="slide" data-slide="11">
         <div class="slide-content centered">
@@ -866,7 +939,7 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 03 &mdash; Arquitectura IT Educativa</p>
         </div>
-        <div class="slide-num">12 / 12</div>
+        <div class="slide-num">14 / 14</div>
     </section>
 
     <!-- ===========================================

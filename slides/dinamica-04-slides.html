@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinamica 04 — Boardroom en Crisis</title>
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=space-grotesk@300,400,500,600,700&display=swap">
+
+    <style>
+        :root {
+            --bg: #0a0a0f; --bg-surface: #12121a; --bg-card: #1a1a24; --bg-elevated: #22222e;
+            --text: #e8e6e3; --text-secondary: #9090a0; --muted: #6b6b78;
+            --cyan: #00e5ff; --magenta: #ff0080; --purple: #8b5cf6; --green: #10b981; --amber: #f59e0b; --red: #ef4444;
+            --cyan-glow: rgba(0, 229, 255, 0.4); --magenta-glow: rgba(255, 0, 128, 0.3); --purple-glow: rgba(139, 92, 246, 0.3);
+            --font-display: 'Clash Display', sans-serif; --font-body: 'Space Grotesk', sans-serif;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --title-size: clamp(2rem, 5.5vw, 4rem); --h2-size: clamp(1.4rem, 3.5vw, 2.5rem); --h3-size: clamp(1rem, 2vw, 1.4rem);
+            --body-size: clamp(0.8rem, 1.3vw, 1.05rem); --small-size: clamp(0.7rem, 1vw, 0.85rem); --tag-size: clamp(0.65rem, 0.9vw, 0.75rem);
+            --slide-padding: clamp(1.5rem, 4vw, 4rem); --content-gap: clamp(0.8rem, 2vw, 2rem); --element-gap: clamp(0.4rem, 1vw, 1rem);
+            --duration: 0.7s;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-snap-type: y mandatory; height: 100%; overflow-x: hidden; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); overflow-x: hidden; height: 100%; -webkit-font-smoothing: antialiased; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); opacity: 0.12; animation: scan 8s linear infinite; z-index: 1000; pointer-events: none; }
+        @keyframes scan { 0% { top: -2px; } 100% { top: 100vh; } }
+        body::after { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(0, 229, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 229, 255, 0.02) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: -1; }
+
+        .slide { width: 100vw; height: 100vh; height: 100dvh; padding: var(--slide-padding); scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+        .slide-content { flex: 1; display: flex; flex-direction: column; justify-content: center; max-height: 100%; overflow: hidden; max-width: 1100px; margin: 0 auto; width: 100%; }
+        .slide::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 20%, rgba(0, 229, 255, 0.05) 0%, transparent 50%), radial-gradient(ellipse at 20% 80%, rgba(139, 92, 246, 0.04) 0%, transparent 50%); pointer-events: none; }
+        .geo { position: absolute; border: 1px solid rgba(0, 229, 255, 0.06); border-radius: 4px; pointer-events: none; opacity: 0.4; }
+
+        .slide-tag { display: inline-block; font-size: var(--tag-size); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); background: rgba(0, 229, 255, 0.1); border: 1px solid rgba(0, 229, 255, 0.2); padding: 0.4em 1.2em; border-radius: 100px; margin-bottom: clamp(0.8rem, 1.5vw, 1.5rem); width: fit-content; }
+        .slide h1 { font-family: var(--font-display); font-size: var(--title-size); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: clamp(0.5rem, 1.5vw, 1rem); }
+        .slide h2 { font-family: var(--font-display); font-size: var(--h2-size); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: clamp(0.5rem, 1.5vw, 1.2rem); }
+        .slide h3 { font-family: var(--font-body); font-size: var(--h3-size); font-weight: 700; margin-bottom: var(--element-gap); }
+        .gradient { background: linear-gradient(135deg, var(--cyan), var(--magenta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .slide p, .slide li { font-size: var(--body-size); line-height: 1.6; color: var(--text-secondary); }
+        .subtitle { font-size: clamp(0.9rem, 1.6vw, 1.15rem); color: var(--text-secondary); }
+
+        .quote-box { border-left: 3px solid var(--cyan); padding: 1em 1.5em; background: rgba(0, 229, 255, 0.04); border-radius: 0 12px 12px 0; font-style: italic; color: var(--text-secondary); font-size: var(--body-size); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: clamp(0.8rem, 1.5vw, 1.2rem); }
+        .card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: clamp(1rem, 2vw, 1.8rem); transition: all 0.4s var(--ease); position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--cyan), var(--purple)); opacity: 0; transition: opacity 0.3s; }
+        .card:hover { transform: translateY(-4px); border-color: rgba(0, 229, 255, 0.2); box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5); }
+        .card:hover::before { opacity: 1; }
+        .card-icon { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: clamp(0.4rem, 1vw, 0.8rem); }
+        .card h3 { font-size: clamp(0.85rem, 1.3vw, 1.05rem); margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem); color: var(--text); }
+        .card p { font-size: var(--small-size); color: var(--muted); line-height: 1.5; }
+
+        .bullet-list { list-style: none; display: flex; flex-direction: column; gap: clamp(0.3rem, 0.7vw, 0.6rem); }
+        .bullet-list li { padding-left: 1.5em; position: relative; font-size: var(--body-size); }
+        .bullet-list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan-glow); }
+
+        .info-row { display: flex; gap: clamp(0.5rem, 1.5vw, 1.5rem); padding: clamp(0.4rem, 0.8vw, 0.6rem) 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); align-items: flex-start; }
+        .info-row:last-child { border-bottom: none; }
+        .info-label { font-size: var(--small-size); font-weight: 700; color: var(--cyan); min-width: clamp(60px, 10vw, 120px); flex-shrink: 0; }
+        .info-value { font-size: var(--small-size); color: var(--text-secondary); line-height: 1.4; }
+
+        .divider { display: flex; align-items: center; gap: 0.8rem; margin: clamp(0.5rem, 1.5vw, 1.5rem) 0; }
+        .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.2), transparent); }
+        .divider .diamond { width: 6px; height: 6px; background: var(--cyan); transform: rotate(45deg); flex-shrink: 0; box-shadow: 0 0 8px var(--cyan-glow); }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2.5rem); align-items: start; }
+
+        .pill { display: inline-block; font-size: var(--small-size); font-weight: 500; padding: 0.3em 0.8em; border-radius: 100px; border: 1px solid; }
+        .pill-red { color: var(--red); border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); }
+
+        .reveal { opacity: 0; transform: translateY(25px); transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease); }
+        .slide.visible .reveal { opacity: 1; transform: translateY(0); }
+        .reveal:nth-child(1) { transition-delay: 0.05s; } .reveal:nth-child(2) { transition-delay: 0.12s; } .reveal:nth-child(3) { transition-delay: 0.19s; } .reveal:nth-child(4) { transition-delay: 0.26s; } .reveal:nth-child(5) { transition-delay: 0.33s; } .reveal:nth-child(6) { transition-delay: 0.40s; }
+        .reveal-scale { opacity: 0; transform: scale(0.95); transition: opacity var(--duration) var(--ease), transform var(--duration) var(--ease); }
+        .slide.visible .reveal-scale { opacity: 1; transform: scale(1); }
+
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--cyan), var(--magenta)); z-index: 100; transition: width 0.3s ease; width: 0%; }
+        .nav-dots { position: fixed; right: clamp(0.8rem, 1.5vw, 1.5rem); top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 100; }
+        .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, 0.15); cursor: pointer; transition: all 0.3s ease; border: none; padding: 0; }
+        .nav-dot.active { background: var(--cyan); box-shadow: 0 0 10px var(--cyan-glow); }
+        .nav-dot:hover { background: rgba(0, 229, 255, 0.5); }
+        .slide-num { position: absolute; bottom: clamp(1rem, 2vw, 1.5rem); right: clamp(1.5rem, 3vw, 2.5rem); font-size: var(--small-size); color: var(--muted); font-variant-numeric: tabular-nums; }
+        .centered { text-align: center; align-items: center; }
+
+        @media (max-height: 700px) { :root { --slide-padding: clamp(1rem, 3vw, 2.5rem); --content-gap: clamp(0.5rem, 1.5vw, 1.2rem); --title-size: clamp(1.6rem, 4.5vw, 3rem); --h2-size: clamp(1.2rem, 3vw, 2rem); } }
+        @media (max-height: 600px) { :root { --slide-padding: clamp(0.75rem, 2.5vw, 1.5rem); --content-gap: clamp(0.3rem, 1vw, 0.8rem); --title-size: clamp(1.3rem, 4vw, 2.2rem); --body-size: clamp(0.7rem, 1.1vw, 0.9rem); } .nav-dots { display: none; } }
+        @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { :root { --title-size: clamp(1.5rem, 7vw, 2.5rem); } .cards-grid { grid-template-columns: 1fr; } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; } html { scroll-behavior: auto; } }
+    </style>
+</head>
+<body>
+
+    <div class="progress-bar" id="progressBar"></div>
+    <nav class="nav-dots" id="navDots"></nav>
+
+    <!-- SLIDE 1: TITLE -->
+    <section class="slide" data-slide="0">
+        <div class="geo" style="width:180px;height:180px;top:8%;right:12%;transform:rotate(15deg);"></div>
+        <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(255,0,128,0.06);transform:rotate(-10deg);"></div>
+
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--red);border-color:rgba(239,68,68,0.3);">Dinamica 04</div>
+            <h1 class="reveal">Boardroom en <span class="gradient">Crisis</span></h1>
+            <div class="divider reveal"><div class="diamond" style="background:var(--red);box-shadow:0 0 8px rgba(239,68,68,0.4);"></div></div>
+            <p class="subtitle reveal">Decidir bajo presion. Simular una decision estrategica real.</p>
+            <p class="reveal" style="margin-top:var(--content-gap);color:var(--muted);font-size:var(--small-size);">8 minutos de trabajo + 3 min por grupo de presentacion</p>
+        </div>
+        <div class="slide-num">01 / 07</div>
+    </section>
+
+    <!-- SLIDE 2: OBJETIVO -->
+    <section class="slide" data-slide="1">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Objetivo</div>
+            <h2 class="reveal">Que vamos a <span class="gradient">evidenciar</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
+                <div class="card" style="border-left:3px solid var(--red);">
+                    <div class="card-icon">&#x1F6A8;</div>
+                    <h3>Falta de gobernanza</h3>
+                    <p>Quien decide? Quien valida? Quien tiene la vision completa?</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--amber);">
+                    <div class="card-icon">&#x1F4C9;</div>
+                    <h3>Ausencia de KPIs claros</h3>
+                    <p>Si no medis, no gestionas. Si no gestionas, no transformas.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--purple);">
+                    <div class="card-icon">&#x267E;&#xFE0F;</div>
+                    <h3>Riesgo de piloto eterno</h3>
+                    <p>Pilotos que nunca escalan. POCs que nunca se convierten en estrategia.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--magenta);">
+                    <div class="card-icon">&#x1F500;</div>
+                    <h3>Confusion tech vs transformacion</h3>
+                    <p>Comprar tecnologia no es transformar. Transformar requiere cultura + procesos + tech.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">02 / 07</div>
+    </section>
+
+    <!-- SLIDE 3: INSTRUCCIONES FACILITADOR -->
+    <section class="slide" data-slide="2">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--amber);border-color:rgba(245,158,11,0.3);">Facilitador</div>
+            <h2 class="reveal">Instrucciones para <span class="gradient">el facilitador</span></h2>
+            <div style="margin-top:var(--content-gap);display:flex;flex-direction:column;gap:clamp(0.4rem,0.8vw,0.6rem);">
+                <div class="info-row reveal">
+                    <span class="info-label" style="color:var(--cyan);">Paso 1</span>
+                    <span class="info-value">Dividir en 2 grupos</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label" style="color:var(--cyan);">Paso 2</span>
+                    <span class="info-value">Entregar escenario impreso a cada grupo</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label" style="color:var(--cyan);">Paso 3</span>
+                    <span class="info-value">Dar 8 minutos para trabajar</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label" style="color:var(--red);">Paso 4</span>
+                    <span class="info-value"><strong style="color:var(--text);">Anunciar evento inesperado al minuto 4</strong></span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label" style="color:var(--cyan);">Paso 5</span>
+                    <span class="info-value">Cada grupo presenta en 3 minutos</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label" style="color:var(--amber);">Paso 6</span>
+                    <span class="info-value"><strong style="color:var(--text);">No corregir. Solo preguntar.</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">03 / 07</div>
+    </section>
+
+    <!-- SLIDE 4: GRUPO 1 -->
+    <section class="slide" data-slide="3">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(0,229,255,0.1);color:var(--cyan);border-color:rgba(0,229,255,0.3);">Grupo 1</div>
+            <h2 class="reveal">Universidad Tradicional <span class="gradient">en Retroceso</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div>
+                    <h3 style="color:var(--cyan);font-size:var(--body-size);margin-bottom:var(--element-gap);">Situacion</h3>
+                    <div style="display:flex;flex-direction:column;gap:clamp(0.2rem,0.5vw,0.4rem);">
+                        <div class="info-row"><span class="info-label">Matricula</span><span class="info-value">-14% interanual</span></div>
+                        <div class="info-row"><span class="info-label">Conversion</span><span class="info-value">9% de leads</span></div>
+                        <div class="info-row"><span class="info-label">Retencion</span><span class="info-value">68% primer ano</span></div>
+                        <div class="info-row"><span class="info-label">LMS</span><span class="info-value">Subutilizado</span></div>
+                        <div class="info-row"><span class="info-label">Cultura</span><span class="info-value">Docente resistente</span></div>
+                        <div class="info-row"><span class="info-label">Budget IT</span><span class="info-value">USD 2M (sin IA)</span></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card" style="border-top:3px solid var(--red);margin-bottom:var(--element-gap);">
+                        <h3 style="color:var(--red);font-size:var(--small-size);">Evento inesperado (min 4)</h3>
+                        <p>Un competidor regional lanza tutor IA institucional con fuerte campana de marketing</p>
+                    </div>
+                    <h3 style="color:var(--amber);font-size:var(--body-size);margin-bottom:var(--element-gap);">Deben definir</h3>
+                    <ul class="bullet-list">
+                        <li>En que eje invertiran?</li>
+                        <li>Que NO haran este ano?</li>
+                        <li>Que KPI mediran?</li>
+                        <li>Quien lidera la iniciativa?</li>
+                        <li>Que riesgo asumen?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">04 / 07</div>
+    </section>
+
+    <!-- SLIDE 5: GRUPO 2 -->
+    <section class="slide" data-slide="4">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(139,92,246,0.1);color:var(--purple);border-color:rgba(139,92,246,0.3);">Grupo 2</div>
+            <h2 class="reveal">EdTech en Crecimiento <span class="gradient">Desordenado</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div>
+                    <h3 style="color:var(--purple);font-size:var(--body-size);margin-bottom:var(--element-gap);">Situacion</h3>
+                    <div style="display:flex;flex-direction:column;gap:clamp(0.2rem,0.5vw,0.4rem);">
+                        <div class="info-row"><span class="info-label" style="color:var(--purple);">MRR</span><span class="info-value">Creciendo 20% anual</span></div>
+                        <div class="info-row"><span class="info-label" style="color:var(--purple);">Soporte</span><span class="info-value">Colapsado</span></div>
+                        <div class="info-row"><span class="info-label" style="color:var(--purple);">NPS</span><span class="info-value">Bajando</span></div>
+                        <div class="info-row"><span class="info-label" style="color:var(--purple);">Datos</span><span class="info-value">Fragmentados en multiples herramientas</span></div>
+                        <div class="info-row"><span class="info-label" style="color:var(--purple);">IT Team</span><span class="info-value">5 personas</span></div>
+                        <div class="info-row"><span class="info-label" style="color:var(--purple);">Budget</span><span class="info-value">USD 800K</span></div>
+                        <div class="info-row"><span class="info-label" style="color:var(--purple);">Founder</span><span class="info-value">Quiere "IA en todo"</span></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card" style="border-top:3px solid var(--red);margin-bottom:var(--element-gap);">
+                        <h3 style="color:var(--red);font-size:var(--small-size);">Evento inesperado (min 4)</h3>
+                        <p>Un inversor exige roadmap de IA con KPIs y plan de ROI en 30 dias</p>
+                    </div>
+                    <h3 style="color:var(--amber);font-size:var(--body-size);margin-bottom:var(--element-gap);">Deben definir</h3>
+                    <ul class="bullet-list">
+                        <li>En que eje invertiran?</li>
+                        <li>Que NO haran?</li>
+                        <li>Que KPI mediran?</li>
+                        <li>Quien lidera?</li>
+                        <li>Que presupuesto asignaran?</li>
+                        <li>Como revisaran resultados?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">05 / 07</div>
+    </section>
+
+    <!-- SLIDE 6: PREGUNTAS INCOMODAS -->
+    <section class="slide" data-slide="5">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(255,0,128,0.1);color:var(--magenta);border-color:rgba(255,0,128,0.3);">Debrief</div>
+            <h2 class="reveal">Preguntas incomodas <span class="gradient">del facilitador</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
+                <div class="card">
+                    <div class="card-icon">&#x1F4B0;</div>
+                    <h3>Que presupuesto formal asignaron?</h3>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#x1F3D7;&#xFE0F;</div>
+                    <h3>Quien valida arquitectura?</h3>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#x1F9EA;</div>
+                    <h3>Es piloto o estrategia?</h3>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#x1F4C8;</div>
+                    <h3>Donde revisan ROI?</h3>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#x2699;&#xFE0F;</div>
+                    <h3>Que proceso cambia realmente?</h3>
+                </div>
+                <div class="card">
+                    <div class="card-icon">&#x26A0;&#xFE0F;</div>
+                    <h3>Que dimension del triangulo estan ignorando?</h3>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">06 / 07</div>
+    </section>
+
+    <!-- SLIDE 7: CIERRE -->
+    <section class="slide" data-slide="6">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(255,0,128,0.1);color:var(--magenta);border-color:rgba(255,0,128,0.3);">Cierre</div>
+            <div class="divider reveal"><div class="diamond" style="background:var(--magenta);box-shadow:0 0 8px var(--magenta-glow);"></div></div>
+            <div class="quote-box reveal" style="max-width:700px;text-align:center;border-left:none;border-top:3px solid var(--magenta);border-radius:12px;padding:2em;font-size:clamp(1rem,2vw,1.3rem);line-height:1.7;background:rgba(255,0,128,0.04);">
+                La presion real no es el tiempo. Es decidir <strong style="color:var(--text);">sin gobernanza, sin KPIs y sin saber si es piloto o estrategia.</strong>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--muted);">Dinamica 04 — Boardroom en Crisis: Decidir bajo presion</p>
+        </div>
+        <div class="slide-num">07 / 07</div>
+    </section>
+
+    <script>
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.progressBar = document.getElementById('progressBar');
+                this.navDotsContainer = document.getElementById('navDots');
+                this.currentSlide = 0;
+                this.totalSlides = this.slides.length;
+                this.createNavDots(); this.setupIntersectionObserver(); this.setupKeyboardNav(); this.setupTouchNav(); this.updateProgress();
+            }
+            createNavDots() { for (let i = 0; i < this.totalSlides; i++) { const dot = document.createElement('button'); dot.classList.add('nav-dot'); dot.setAttribute('aria-label', `Slide ${i + 1}`); if (i === 0) dot.classList.add('active'); dot.addEventListener('click', () => this.goToSlide(i)); this.navDotsContainer.appendChild(dot); } }
+            setupIntersectionObserver() { const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); const index = parseInt(entry.target.dataset.slide); this.currentSlide = index; this.updateNavDots(); this.updateProgress(); } }); }, { threshold: 0.5 }); this.slides.forEach(slide => observer.observe(slide)); }
+            setupKeyboardNav() { document.addEventListener('keydown', (e) => { if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); this.nextSlide(); } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); this.prevSlide(); } }); }
+            setupTouchNav() { let startY = 0; document.addEventListener('touchstart', (e) => { startY = e.touches[0].clientY; }, { passive: true }); document.addEventListener('touchend', (e) => { const diff = startY - e.changedTouches[0].clientY; if (Math.abs(diff) > 50) { diff > 0 ? this.nextSlide() : this.prevSlide(); } }, { passive: true }); }
+            goToSlide(index) { if (index >= 0 && index < this.totalSlides) this.slides[index].scrollIntoView({ behavior: 'smooth' }); }
+            nextSlide() { this.goToSlide(this.currentSlide + 1); }
+            prevSlide() { this.goToSlide(this.currentSlide - 1); }
+            updateNavDots() { const dots = this.navDotsContainer.querySelectorAll('.nav-dot'); dots.forEach((dot, i) => dot.classList.toggle('active', i === this.currentSlide)); }
+            updateProgress() { this.progressBar.style.width = `${((this.currentSlide + 1) / this.totalSlides) * 100}%`; }
+        }
+        document.addEventListener('DOMContentLoaded', () => new SlidePresentation());
+    </script>
+</body>
+</html>

@@ -1,8 +1,9 @@
 # Módulo 3 — Arquitectura IT Educativa
 
 ---
+![Campus](../assets/Campus-03.png)
 
-## 1 Introduccion
+## 1 Introducción
 
 ### 1.1 Objetivo del módulo
 Que los participantes puedan **leer, cuestionar y discutir** la arquitectura tecnológica de una organización, aunque no sean técnicos. No se trata de aprender a diseñar sistemas, sino de entender cómo funcionan por dentro para tomar mejores decisiones y hacer mejores preguntas.
@@ -33,8 +34,6 @@ Una arquitectura IT es el **mapa** de todos los sistemas tecnológicos de una or
 
 
 
-
-<!-- Imagen pendiente: campus-03 -->
 
 **Analogía:** pensá en tu organización como el campus.
 - Los "sistemas" son los espacios o edificios (cada uno cumple una función especifica). Biblioteca, Bedelia, Administracion, Rectoria, etc. 
@@ -102,6 +101,11 @@ Las tres funciones principales de un LMS son:
 
 **3. Gradebook (libro de calificaciones):** Registro centralizado de evaluaciones, notas parciales y finales. Cuando está integrado con el SIS, las calificaciones fluyen automáticamente al expediente oficial del estudiante sin intervención manual.
 
+#### Caso: Purdue University — Course Signals
+
+- **Contexto:** Universidad con alta deserción necesitaba detectar estudiantes en riesgo de forma temprana.
+- **Decisión:** Usar datos del LMS (participación, entregas, tiempo en plataforma) para alimentar un sistema de alertas tempranas ("Course Signals").
+- **Resultado:** Mejora del 21% en retención de estudiantes en riesgo. El valor no estaba en el LMS como repositorio de contenido, sino en los datos de comportamiento que generaba.
 
 ---
 
@@ -115,6 +119,11 @@ En el contexto educativo, el CRM gestiona toda la relación con el estudiante de
 
 **Servicio (Atención al estudiante):** Una vez inscripto, el estudiante necesita soporte: consultas administrativas, reclamos, trámites, solicitudes. El CRM centraliza estos casos para que cualquier persona del equipo pueda ver el historial completo del estudiante y responder con contexto, sin que el estudiante tenga que repetir su situación cada vez.
 
+#### Caso: Georgia State University — Reducir el "summer melt"
+
+- **Contexto:** Muchos estudiantes aceptados nunca completaban la inscripción (fenómeno conocido como "summer melt").
+- **Decisión:** Usar el CRM para automatizar seguimiento proactivo con mensajes personalizados durante el verano previo al ingreso.
+- **Resultado:** Reducción del 22% en el summer melt. La clave fue que el CRM tenía los datos del proceso de admisión y podía intervenir en el momento justo.
 
 ### 2.6 El ciclo de vida del estudiante visto desde los sistemas
 
@@ -176,6 +185,8 @@ Una de las causas más comunes de caos en organizaciones educativas es tener el 
 ¿La fecha de nacimiento del estudiante está en el SIS, en el CRM o en ambos? ¿Cuál es la correcta si difieren? ¿Qué pasa si el estudiante cambia su email en uno pero no en el otro?
 
 La arquitectura madura define para cada dato cuál es el sistema maestro (la fuente de verdad) y cómo se propaga esa información al resto de los sistemas. Sin esa definición, cada área trabaja con su propia "versión de la verdad" — y las decisiones se toman sobre datos inconsistentes.
+
+**Ejemplo de lo que pasa sin SSOT:** Una institución reporta 12,000 estudiantes activos según el SIS, pero 14,200 según el CRM y 10,800 según el LMS. ¿Cuántos estudiantes tiene realmente? Nadie sabe. El equipo de marketing invierte basándose en un número, finanzas presupuesta con otro, y el rector presenta un tercero al directorio. Tres decisiones estratégicas tomadas sobre tres datos distintos del mismo concepto.
 
 **Para el líder ejecutivo, las preguntas clave son:**
 - ¿Cuántos procesos dependen de carga manual? (Cada uno es un riesgo y un costo)

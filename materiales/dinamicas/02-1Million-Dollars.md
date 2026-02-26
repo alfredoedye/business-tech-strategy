@@ -1,28 +1,27 @@
-# 1 Millon USD para invertir
+# Casino Estratégico Tecnológico
 
-TODO: Rediseñar la dinamica. 
-1 - Ser especifico en un caso de negocio especifico. 
-2 - Buscar como resultado que ellos se den cuenta que 1ero va el negocio y la inversion esta atada a esa estrategia de negocio.
+Recibirás **USD 1.000.000** para invertir.
 
-Escenario: Recibís USD 1M para fortalecer la estrategia tecnológica.
-Tenés que distribuirlo entre:
-    - Infraestructura
-    - Integraciones
-    - Desarrollo Propio
-    - Datos - BI
-    - Seguridad
-    - IA
-    - Talento 
-CONDICIÓN: No podés invertir en todo.
+Deberás decidir cómo asignarlo entre distintas **estrategias tecnológicas**.
 
-Luego deben explicar:
-- Qué priorizaron.
-- Qué dejaron afuera.
-- Qué riesgo asumen.
-________________________________________
-Por qué funciona: 
-- 	Conecta tecnología con capital.
-- 	Hace visible la alineación negocio-tecnología.
--  	Es profundamente ejecutiva.
+Durante **3 rondas**, el contexto cambiará inesperadamente.
 
-Después de la dinámica, se puede decir para finalizar : “Acaban de hacer estrategia tecnológica. Ahora vamos a ordenar el criterio.”
+Podrás comprar información (**Reveal Context**)…  
+pero tendrá un costo.
+
+⏳ Tiempo de decisión decreciente  
+60s → 30s → 15s
+
+El objetivo no es solo ganar.
+
+Es experimentar que en estrategia tecnológica:
+
+• El contexto manda  
+• Toda decisión implica riesgo  
+• Más información cuesta  
+• La velocidad importa  
+
+Sobrevive quien conserve mayor presupuesto.
+
+
+https://casino-tech-play.lovable.app/

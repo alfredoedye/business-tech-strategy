@@ -120,6 +120,11 @@
             background: rgba(10, 10, 15, 0.85);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .nav.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
         .nav-inner {
@@ -156,9 +161,79 @@
             font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cyan);
+            transition: width 0.3s var(--ease);
         }
 
         .nav-links a:hover {
+            color: var(--cyan);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ==========================================
+           BREADCRUMB
+           ========================================== */
+        .breadcrumb {
+            padding: 0.75rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 0.8rem;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding-top: 4.5rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .breadcrumb-fixed.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .breadcrumb a {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--cyan);
+        }
+
+        .breadcrumb .separator {
+            color: var(--muted);
+            opacity: 0.5;
+        }
+
+        .breadcrumb .current {
             color: var(--cyan);
         }
 
@@ -390,6 +465,11 @@
             opacity: 0.5;
         }
 
+        .module-links {
+            display: flex;
+            gap: 1rem;
+        }
+
         .module-link {
             display: inline-flex;
             align-items: center;
@@ -397,6 +477,7 @@
             font-size: 0.85rem;
             color: var(--cyan);
             font-weight: 500;
+            transition: gap 0.3s var(--ease);
         }
 
         .module-link:hover {
@@ -486,6 +567,12 @@
             padding: 2rem;
             position: relative;
             overflow: hidden;
+            transition: all 0.4s var(--ease);
+        }
+
+        .case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
         }
 
         .case-card.featured {
@@ -586,6 +673,7 @@
             border-color: var(--cyan);
             background: rgba(0, 229, 255, 0.05);
             color: var(--cyan);
+            transform: translateY(-2px);
         }
 
         .quick-item span {
@@ -608,16 +696,27 @@
         }
 
         /* ==========================================
-           ANIMATIONS
+           SCROLL ANIMATIONS
            ========================================== */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
             }
         }
 
@@ -630,6 +729,76 @@
         .animate-delay-3 { animation-delay: 0.3s; }
         .animate-delay-4 { animation-delay: 0.4s; }
         .animate-delay-5 { animation-delay: 0.5s; }
+
+        /* Scroll-triggered reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.95) translateY(20px);
+            transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+        }
+
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        /* Stagger children */
+        .stagger-children .reveal-scale:nth-child(1) { transition-delay: 0.05s; }
+        .stagger-children .reveal-scale:nth-child(2) { transition-delay: 0.1s; }
+        .stagger-children .reveal-scale:nth-child(3) { transition-delay: 0.15s; }
+        .stagger-children .reveal-scale:nth-child(4) { transition-delay: 0.2s; }
+        .stagger-children .reveal-scale:nth-child(5) { transition-delay: 0.25s; }
+        .stagger-children .reveal-scale:nth-child(6) { transition-delay: 0.3s; }
+        .stagger-children .reveal-scale:nth-child(7) { transition-delay: 0.35s; }
+        .stagger-children .reveal-scale:nth-child(8) { transition-delay: 0.4s; }
+        .stagger-children .reveal-scale:nth-child(9) { transition-delay: 0.45s; }
+        .stagger-children .reveal-scale:nth-child(10) { transition-delay: 0.5s; }
+
+        /* ==========================================
+           BACK TO TOP
+           ========================================== */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 44px;
+            height: 44px;
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cyan);
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s var(--ease);
+            z-index: 50;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: rgba(0, 229, 255, 0.1);
+            box-shadow: 0 0 20px var(--cyan-glow);
+            transform: translateY(-2px);
+        }
 
         /* ==========================================
            RESPONSIVE
@@ -651,39 +820,61 @@
             section {
                 padding: 4rem 0;
             }
+
+            .breadcrumb-fixed {
+                display: none;
+            }
+
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" id="mainNav">
         <div class="nav-inner">
             <div class="nav-logo">
                 <span class="accent">//</span> Tech Strategy
             </div>
             <ul class="nav-links">
-                <li><a href="#modulos">Módulos</a></li>
+                <li><a href="#modulos">Modulos</a></li>
                 <li><a href="#casos">Casos</a></li>
                 <li><a href="#recursos">Recursos</a></li>
-                <li><a href="slides/presentacion.html">Presentación</a></li>
+                <li><a href="#acceso-rapido">Acceso Rapido</a></li>
+                <li><a href="slides/presentacion.html">Slides</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Breadcrumb (appears on scroll) -->
+    <div class="breadcrumb-fixed" id="breadcrumb">
+        <div class="breadcrumb">
+            <a href="#">Inicio</a>
+            <span class="separator">/</span>
+            <span class="current" id="breadcrumb-section">Programa Ejecutivo</span>
+        </div>
+    </div>
+
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="inicio">
         <div class="hero-content">
-            <div class="hero-badge animate">Módulo V — Programa Ejecutivo</div>
+            <div class="hero-badge animate">Modulo V -- Programa Ejecutivo</div>
             <h1 class="animate animate-delay-1">
-                Estrategia Tecnológica<br>
+                Estrategia Tecnologica<br>
                 <span class="gradient">+ Mindset Digital</span>
             </h1>
             <p class="hero-subtitle animate animate-delay-2">
-                Herramientas, frameworks y criterios para que líderes educativos tomen decisiones tecnológicas estratégicas.
+                Herramientas, frameworks y criterios para que lideres educativos tomen decisiones tecnologicas estrategicas.
             </p>
             <div class="hero-cta animate animate-delay-3">
                 <a href="slides/presentacion.html" class="btn btn-primary">
-                    Ver Presentación
+                    Ver Presentacion
                 </a>
                 <a href="assets/curso-estrategia-tecnologica.pdf" class="btn btn-secondary">
                     Descargar PDF
@@ -695,124 +886,172 @@
     <!-- Modules -->
     <section id="modulos">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <div class="section-label">Contenido del curso</div>
-                <h2 class="section-title">5 Módulos + Bonus</h2>
+                <h2 class="section-title">8 Modulos del Programa</h2>
             </div>
 
-            <div class="modules-grid">
+            <div class="modules-grid stagger-children">
+                <!-- Module 0 -->
+                <div class="module-card reveal-scale">
+                    <div class="module-number">MODULO 00</div>
+                    <h3 class="module-title">Introduccion</h3>
+                    <p class="module-subtitle">Bienvenida, estructura y objetivos</p>
+                    <ul class="module-topics">
+                        <li>Presentacion del programa</li>
+                        <li>Objetivos de aprendizaje</li>
+                        <li>Estructura de 4 semanas</li>
+                        <li>Agenda detallada del Driver Class</li>
+                    </ul>
+                    <div class="module-links">
+                        <a href="contenido/modulo-00-intro.md" class="module-link">
+                            Ver contenido &#8594;
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Module 1 -->
-                <div class="module-card">
-                    <div class="module-number">MÓDULO 01</div>
+                <div class="module-card reveal-scale">
+                    <div class="module-number">MODULO 01</div>
                     <h3 class="module-title">Hello World</h3>
-                    <p class="module-subtitle">Tecnología como ventaja competitiva</p>
+                    <p class="module-subtitle">Tecnologia como ventaja competitiva</p>
                     <ul class="module-topics">
                         <li>Software Is Eating The World</li>
-                        <li>3 niveles: Usar → Operar → Diseñar</li>
+                        <li>3 niveles: Usar, Operar, Disenar</li>
                         <li>El rol del equipo directivo en decisiones tech</li>
                         <li>Mapa global EdTech (HolonIQ)</li>
                     </ul>
-                    <a href="contenido/modulo-01-hello-world.md" class="module-link">
-                        Ver contenido →
-                    </a>
-                    <a href="slides/modulo-01-slides.html" class="module-link" style="margin-left: 1rem;">
-                        Ver slides →
-                    </a>
+                    <div class="module-links">
+                        <a href="contenido/modulo-01-hello-world.md" class="module-link">
+                            Ver contenido &#8594;
+                        </a>
+                        <a href="slides/modulo-01-slides.html" class="module-link">
+                            Ver slides &#8594;
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Module 2 -->
-                <div class="module-card">
-                    <div class="module-number">MÓDULO 02</div>
-                    <h3 class="module-title">Estrategia Tecnológica</h3>
+                <div class="module-card reveal-scale">
+                    <div class="module-number">MODULO 02</div>
+                    <h3 class="module-title">Estrategia Tecnologica</h3>
                     <p class="module-subtitle">Decisiones que definen el futuro</p>
                     <ul class="module-topics">
                         <li>Build vs Buy</li>
                         <li>Cloud vs On-premise</li>
                         <li>Core vs Commodity</li>
-                        <li>5 componentes de estrategia tech</li>
+                        <li>6 dimensiones de estrategia tech</li>
                     </ul>
-                    <a href="contenido/modulo-02-estrategia-tecnologica.md" class="module-link">
-                        Ver contenido →
-                    </a>
-                    <a href="slides/modulo-02-slides.html" class="module-link" style="margin-left: 1rem;">
-                        Ver slides →
-                    </a>
+                    <div class="module-links">
+                        <a href="contenido/modulo-02-estrategia-tecnologica.md" class="module-link">
+                            Ver contenido &#8594;
+                        </a>
+                        <a href="slides/modulo-02-slides.html" class="module-link">
+                            Ver slides &#8594;
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Module 3 -->
-                <div class="module-card">
-                    <div class="module-number">MÓDULO 03</div>
+                <div class="module-card reveal-scale">
+                    <div class="module-number">MODULO 03</div>
                     <h3 class="module-title">Arquitectura IT Educativa</h3>
                     <p class="module-subtitle">El mapa de tus sistemas</p>
                     <ul class="module-topics">
                         <li>SIS, LMS, CRM, ERP, BI, IAM</li>
                         <li>Ciclo de vida del estudiante</li>
-                        <li>Niveles de integración</li>
-                        <li>Arquitectura como decisión</li>
+                        <li>Niveles de integracion</li>
+                        <li>Arquitectura como decision</li>
                     </ul>
-                    <a href="contenido/modulo-03-arquitectura-it.md" class="module-link">
-                        Ver contenido →
-                    </a>
-                    <a href="slides/modulo-03-slides.html" class="module-link" style="margin-left: 1rem;">
-                        Ver slides →
-                    </a>
+                    <div class="module-links">
+                        <a href="contenido/modulo-03-arquitectura-it.md" class="module-link">
+                            Ver contenido &#8594;
+                        </a>
+                        <a href="slides/modulo-03-slides.html" class="module-link">
+                            Ver slides &#8594;
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Module 4 -->
-                <div class="module-card">
-                    <div class="module-number">MÓDULO 04</div>
-                    <h3 class="module-title">Transformación Digital e IA</h3>
-                    <p class="module-subtitle">Cómo transformar sin romper</p>
+                <div class="module-card reveal-scale">
+                    <div class="module-number">MODULO 04</div>
+                    <h3 class="module-title">Transformacion Digital e IA</h3>
+                    <p class="module-subtitle">Como transformar sin romper</p>
                     <ul class="module-topics">
-                        <li>Triángulo: Cultura + Procesos + Tech</li>
-                        <li>3 horizontes de transformación</li>
-                        <li>Framework adopción de IA (5 niveles)</li>
-                        <li>Riesgos y ética</li>
+                        <li>Triangulo: Cultura + Procesos + Tech</li>
+                        <li>Anti-patrones de transformacion</li>
+                        <li>Framework de adopcion de IA</li>
+                        <li>Riesgos y etica</li>
                     </ul>
-                    <a href="contenido/modulo-04-transformacion-digital-ia.md" class="module-link">
-                        Ver contenido →
-                    </a>
-                    <a href="slides/modulo-04-slides.html" class="module-link" style="margin-left: 1rem;">
-                        Ver slides →
-                    </a>
+                    <div class="module-links">
+                        <a href="contenido/modulo-04-transformacion-digital-ia.md" class="module-link">
+                            Ver contenido &#8594;
+                        </a>
+                        <a href="slides/modulo-04-slides.html" class="module-link">
+                            Ver slides &#8594;
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Module 5 -->
-                <div class="module-card">
-                    <div class="module-number">MÓDULO 05</div>
+                <div class="module-card reveal-scale">
+                    <div class="module-number">MODULO 05</div>
                     <h3 class="module-title">Mindset Digital</h3>
                     <p class="module-subtitle">El sistema operativo del liderazgo</p>
                     <ul class="module-topics">
                         <li>Los 7 Pilares del Mindset Digital</li>
-                        <li>Orientación a Producto</li>
+                        <li>Orientacion a Producto</li>
                         <li>Cultura de Datos</li>
-                        <li>Experimentación y Agilidad</li>
+                        <li>Experimentacion y Agilidad</li>
                     </ul>
-                    <a href="contenido/modulo-05-mindset-digital.md" class="module-link">
-                        Ver contenido →
-                    </a>
-                    <a href="slides/modulo-05-slides.html" class="module-link" style="margin-left: 1rem;">
-                        Ver slides →
-                    </a>
+                    <div class="module-links">
+                        <a href="contenido/modulo-05-mindset-digital.md" class="module-link">
+                            Ver contenido &#8594;
+                        </a>
+                        <a href="slides/modulo-05-slides.html" class="module-link">
+                            Ver slides &#8594;
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Bonus -->
-                <div class="module-card" style="border-color: rgba(255, 0, 128, 0.2);">
-                    <div class="module-number" style="color: var(--magenta);">BONUS</div>
-                    <h3 class="module-title">Panel: IA y Educación</h3>
-                    <p class="module-subtitle">5 preguntas provocadoras</p>
+                <!-- Module 6 -->
+                <div class="module-card reveal-scale" style="border-color: rgba(255, 0, 128, 0.2);">
+                    <div class="module-number" style="color: var(--magenta);">MODULO 06</div>
+                    <h3 class="module-title">IA y el Futuro de la Educacion</h3>
+                    <p class="module-subtitle">Posicionamiento estrategico frente a la IA</p>
                     <ul class="module-topics">
-                        <li>¿IA reemplaza o potencia docentes?</li>
-                        <li>¿Los títulos perderán valor?</li>
-                        <li>¿Quién regula la IA en educación?</li>
-                        <li>¿Qué debe aprender un estudiante 2030?</li>
+                        <li>Escenarios 2030: Aumentada, Commoditizada, Fragmentada</li>
+                        <li>Ejercicio de posicionamiento institucional</li>
+                        <li>Declaracion personal de accion</li>
+                        <li>Trade-offs estrategicos</li>
                     </ul>
-                    <a href="contenido/modulo-06-ia-educacion.md" class="module-link" style="color: var(--magenta);">
-                        Ver contenido →
-                    </a>
-                    <a href="slides/modulo-06-slides.html" class="module-link" style="margin-left: 1rem; color: var(--magenta);">
-                        Ver slides →
-                    </a>
+                    <div class="module-links">
+                        <a href="contenido/modulo-06-ia-educacion.md" class="module-link" style="color: var(--magenta);">
+                            Ver contenido &#8594;
+                        </a>
+                        <a href="slides/modulo-06-slides.html" class="module-link" style="color: var(--magenta);">
+                            Ver slides &#8594;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Module 7 -->
+                <div class="module-card reveal-scale" style="border-color: rgba(139, 92, 246, 0.2);">
+                    <div class="module-number" style="color: var(--purple);">MODULO 07</div>
+                    <h3 class="module-title">Cierre y Challenge</h3>
+                    <p class="module-subtitle">Lanzamiento del Challenge "Arquitecto del Futuro"</p>
+                    <ul class="module-topics">
+                        <li>Recapitulacion de frameworks clave</li>
+                        <li>Brief del Challenge individual</li>
+                        <li>Template y criterios de evaluacion</li>
+                        <li>Timeline de entrega</li>
+                    </ul>
+                    <div class="module-links">
+                        <a href="contenido/modulo-07-cierre-challenge.md" class="module-link" style="color: var(--purple);">
+                            Ver contenido &#8594;
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -821,17 +1060,17 @@
     <!-- Case Studies -->
     <section id="casos" style="background: var(--bg-surface);">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <div class="section-label">Aprender de los mejores</div>
                 <h2 class="section-title">Casos de Estudio</h2>
             </div>
 
-            <div class="cases-grid">
+            <div class="cases-grid stagger-children">
                 <!-- Siglo 21 -->
-                <div class="case-card featured">
+                <div class="case-card featured reveal-scale">
                     <span class="case-badge argentina">Argentina</span>
                     <h3 class="case-title">Universidad Siglo 21</h3>
-                    <p class="case-subtitle">Migración a la nube + SIS propio (Proyecto Algarrobo). Cómo una universidad privada construyó su ecosistema tecnológico y escaló a 60,000+ estudiantes.</p>
+                    <p class="case-subtitle">Migracion a la nube + SIS propio (Proyecto Algarrobo). Como una universidad privada construyo su ecosistema tecnologico y escalo a 60,000+ estudiantes.</p>
                     <div class="case-stats">
                         <div class="stat">
                             <div class="stat-value">+35%</div>
@@ -849,8 +1088,8 @@
                 </div>
 
                 <!-- Tec de Monterrey -->
-                <div class="case-card">
-                    <span class="case-badge mexico">México</span>
+                <div class="case-card reveal-scale">
+                    <span class="case-badge mexico">Mexico</span>
                     <h3 class="case-title">Tec de Monterrey</h3>
                     <p class="case-subtitle">TECgpt: ecosistema institucional de IA generativa sobre Azure OpenAI.</p>
                     <div class="case-stats">
@@ -866,14 +1105,14 @@
                 </div>
 
                 <!-- Platzi -->
-                <div class="case-card">
+                <div class="case-card reveal-scale">
                     <span class="case-badge colombia">Colombia</span>
                     <h3 class="case-title">Platzi</h3>
                     <p class="case-subtitle">EdTech nativa digital con mentalidad de producto y 1M+ estudiantes en LATAM.</p>
                     <div class="case-stats">
                         <div class="stat">
                             <div class="stat-value">70%</div>
-                            <div class="stat-label">Tasa completación</div>
+                            <div class="stat-label">Tasa completacion</div>
                         </div>
                         <div class="stat">
                             <div class="stat-value">+54%</div>
@@ -882,29 +1121,23 @@
                     </div>
                 </div>
             </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="materiales/casos-de-estudio.md" class="btn btn-secondary">
-                    Ver todos los casos →
-                </a>
-            </div>
         </div>
     </section>
 
     <!-- Resources -->
     <section id="recursos">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <div class="section-label">Todo el material</div>
                 <h2 class="section-title">Recursos del Curso</h2>
             </div>
 
-            <div class="resources-grid">
+            <div class="resources-grid stagger-children">
                 <!-- Templates -->
-                <div class="resource-card">
-                    <div class="resource-icon">📋</div>
+                <div class="resource-card reveal-scale">
+                    <div class="resource-icon">&#x1F4CB;</div>
                     <h3 class="resource-title">Templates de Trabajo</h3>
-                    <p class="resource-desc">Plantillas para actividades prácticas y diagnóstico organizacional.</p>
+                    <p class="resource-desc">Plantillas para actividades practicas y diagnostico organizacional.</p>
                     <div class="resource-links">
                         <a href="materiales/templates/template-radar-estrategia-tech.md" class="resource-tag">Radar Tech</a>
                         <a href="materiales/templates/template-mapa-arquitectura-it.md" class="resource-tag">Mapa IT</a>
@@ -914,94 +1147,108 @@
                 </div>
 
                 <!-- Programa -->
-                <div class="resource-card">
-                    <div class="resource-icon">📅</div>
+                <div class="resource-card reveal-scale">
+                    <div class="resource-icon">&#x1F4C5;</div>
                     <h3 class="resource-title">Programa del Curso</h3>
-                    <p class="resource-desc">Agenda, estructura y diseño del challenge.</p>
+                    <p class="resource-desc">Agenda, estructura y diseno del challenge.</p>
                     <div class="resource-links">
                         <a href="programa/00-programa-completo.md" class="resource-tag">Programa</a>
-                        <a href="programa/01-challenge-design.md" class="resource-tag">Challenge</a>
-                        <a href="programa/02-challenge-point.md" class="resource-tag">Checkpoint</a>
+                        <a href="materiales/challenge/brief-challenge.md" class="resource-tag">Challenge Brief</a>
+                        <a href="materiales/challenge/template-challenge.md" class="resource-tag">Template Challenge</a>
                     </div>
                 </div>
 
-                <!-- Guías Facilitador -->
-                <div class="resource-card">
-                    <div class="resource-icon">🎯</div>
-                    <h3 class="resource-title">Guías del Facilitador</h3>
-                    <p class="resource-desc">Instrucciones detalladas para cada día del curso.</p>
+                <!-- Guias Facilitador -->
+                <div class="resource-card reveal-scale">
+                    <div class="resource-icon">&#x1F3AF;</div>
+                    <h3 class="resource-title">Guias del Facilitador</h3>
+                    <p class="resource-desc">Instrucciones detalladas para cada dia del curso.</p>
                     <div class="resource-links">
-                        <a href="guia-facilitador/guia-dia-1-viernes.md" class="resource-tag">Día 1</a>
-                        <a href="guia-facilitador/guia-dia-2-sabado.md" class="resource-tag">Día 2</a>
-                        <a href="materiales/dinamicas/guia-challenge-point.md" class="resource-tag">Challenge</a>
+                        <a href="materiales/guia-facilitador/guia-dia-1-viernes.md" class="resource-tag">Dia 1</a>
+                        <a href="materiales/guia-facilitador/guia-dia-2-sabado.md" class="resource-tag">Dia 2</a>
+                        <a href="materiales/dinamicas/guia-challenge-point.md" class="resource-tag">Challenge Point</a>
                     </div>
                 </div>
 
                 <!-- Referencias -->
-                <div class="resource-card">
-                    <div class="resource-icon">📚</div>
+                <div class="resource-card reveal-scale">
+                    <div class="resource-icon">&#x1F4DA;</div>
                     <h3 class="resource-title">Lecturas y Referencias</h3>
-                    <p class="resource-desc">Bibliografía, artículos y recursos para profundizar.</p>
+                    <p class="resource-desc">Bibliografia, articulos y recursos para profundizar.</p>
                     <div class="resource-links">
-                        <a href="referencias/lecturas-y-recursos.md" class="resource-tag">Ver todas</a>
+                        <a href="materiales/templates/referencias/lecturas-y-recursos.md" class="resource-tag">Ver todas</a>
                     </div>
                 </div>
 
                 <!-- Presentaciones -->
-                <div class="resource-card">
-                    <div class="resource-icon">🎬</div>
+                <div class="resource-card reveal-scale">
+                    <div class="resource-icon">&#x1F3AC;</div>
                     <h3 class="resource-title">Presentaciones</h3>
                     <p class="resource-desc">Slides interactivas para proyectar en clase.</p>
                     <div class="resource-links">
                         <a href="slides/presentacion.html" class="resource-tag">Completa</a>
                         <a href="slides/presentacion-brief.html" class="resource-tag">Brief</a>
-                        <a href="slides/modulo-01-slides.html" class="resource-tag">Módulo 01</a>
-                        <a href="slides/modulo-02-slides.html" class="resource-tag">Módulo 02</a>
-                        <a href="slides/modulo-03-slides.html" class="resource-tag">Módulo 03</a>
-                        <a href="slides/modulo-04-slides.html" class="resource-tag">Módulo 04</a>
-                        <a href="slides/modulo-05-slides.html" class="resource-tag">Módulo 05</a>
-                        <a href="slides/modulo-06-slides.html" class="resource-tag">Bonus</a>
+                        <a href="slides/modulo-01-slides.html" class="resource-tag">Mod 01</a>
+                        <a href="slides/modulo-02-slides.html" class="resource-tag">Mod 02</a>
+                        <a href="slides/modulo-03-slides.html" class="resource-tag">Mod 03</a>
+                        <a href="slides/modulo-04-slides.html" class="resource-tag">Mod 04</a>
+                        <a href="slides/modulo-05-slides.html" class="resource-tag">Mod 05</a>
+                        <a href="slides/modulo-06-slides.html" class="resource-tag">Mod 06</a>
                     </div>
                 </div>
 
-                <!-- Downloads -->
-                <div class="resource-card">
-                    <div class="resource-icon">⬇️</div>
+                <!-- Descargas -->
+                <div class="resource-card reveal-scale">
+                    <div class="resource-icon">&#x2B07;&#xFE0F;</div>
                     <h3 class="resource-title">Descargas</h3>
                     <p class="resource-desc">Material en formato PDF para imprimir o compartir.</p>
                     <div class="resource-links">
                         <a href="assets/curso-estrategia-tecnologica.pdf" class="resource-tag">Manual PDF</a>
-                        <a href="docs/brief.md" class="resource-tag">Brief</a>
+                        <a href="materiales/challenge/brief-challenge.md" class="resource-tag">Brief Challenge</a>
                     </div>
                 </div>
 
-                <!-- Anexos Teóricos -->
-                <div class="resource-card">
-                    <div class="resource-icon">🎓</div>
-                    <h3 class="resource-title">Anexos Teóricos</h3>
-                    <p class="resource-desc">Profundización en frameworks estratégicos, finanzas e IA.</p>
+                <!-- Anexos Teoricos -->
+                <div class="resource-card reveal-scale">
+                    <div class="resource-icon">&#x1F393;</div>
+                    <h3 class="resource-title">Anexos Teoricos</h3>
+                    <p class="resource-desc">Profundizacion en frameworks estrategicos, finanzas e IA.</p>
                     <div class="resource-links">
-                        <a href="anexos/frameworks-estrategicos.md" class="resource-tag">Frameworks</a>
-                        <a href="anexos/finanzas-para-decisiones-tech.md" class="resource-tag">Finanzas</a>
-                        <a href="anexos/framework-ia-expandido.md" class="resource-tag">IA Expandido</a>
+                        <a href="materiales/anexos/frameworks-estrategicos.md" class="resource-tag">Frameworks</a>
+                        <a href="materiales/anexos/finanzas-para-decisiones-tech.md" class="resource-tag">Finanzas</a>
+                        <a href="materiales/anexos/framework-ia-expandido.md" class="resource-tag">IA Expandido</a>
                     </div>
                 </div>
 
                 <!-- Herramientas Ejecutivas -->
-                <div class="resource-card">
-                    <div class="resource-icon">🛠️</div>
+                <div class="resource-card reveal-scale">
+                    <div class="resource-icon">&#x1F6E0;&#xFE0F;</div>
                     <h3 class="resource-title">Herramientas Ejecutivas</h3>
-                    <p class="resource-desc">Recursos prácticos para líderes: glosario, checklists y alertas.</p>
+                    <p class="resource-desc">Recursos practicos para lideres: glosario, checklists y alertas.</p>
                     <div class="resource-links">
-                        <a href="referencias/glosario-ejecutivo.md" class="resource-tag">Glosario</a>
-                        <a href="referencias/checklist-preguntas-cto.md" class="resource-tag">10 Preguntas CTO</a>
-                        <a href="referencias/red-flags-proyectos-tech.md" class="resource-tag">Red Flags</a>
+                        <a href="materiales/templates/referencias/glosario-ejecutivo.md" class="resource-tag">Glosario</a>
+                        <a href="materiales/templates/referencias/checklist-preguntas-cto.md" class="resource-tag">10 Preguntas CTO</a>
+                        <a href="materiales/templates/referencias/red-flags-proyectos-tech.md" class="resource-tag">Red Flags</a>
+                    </div>
+                </div>
+
+                <!-- Dinamicas -->
+                <div class="resource-card reveal-scale">
+                    <div class="resource-icon">&#x1F3B2;</div>
+                    <h3 class="resource-title">Dinamicas de Clase</h3>
+                    <p class="resource-desc">Actividades practicas para cada modulo del curso.</p>
+                    <div class="resource-links">
+                        <a href="materiales/dinamicas/01-el-reemplazo-invisible.md" class="resource-tag">Reemplazo Invisible</a>
+                        <a href="materiales/dinamicas/02-1Million-Dollars.md" class="resource-tag">1 Millon USD</a>
+                        <a href="materiales/dinamicas/03-tu-stack-en-servilleta.md" class="resource-tag">Stack Servilleta</a>
+                        <a href="materiales/dinamicas/04-guia-boardroom-crisis.md" class="resource-tag">Boardroom Crisis</a>
+                        <a href="materiales/dinamicas/05-termometro-digital.md" class="resource-tag">Termometro</a>
                     </div>
                 </div>
 
                 <!-- Visualizaciones -->
-                <div class="resource-card">
-                    <div class="resource-icon">📊</div>
+                <div class="resource-card reveal-scale">
+                    <div class="resource-icon">&#x1F4CA;</div>
                     <h3 class="resource-title">Visualizaciones</h3>
                     <p class="resource-desc">Diagramas interactivos de frameworks y arquitecturas.</p>
                     <div class="resource-links">
@@ -1010,8 +1257,8 @@
                 </div>
 
                 <!-- Survey Radar -->
-                <div class="resource-card" style="border-color: rgba(0, 229, 255, 0.3);">
-                    <div class="resource-icon" style="background: rgba(0, 229, 255, 0.2);">📡</div>
+                <div class="resource-card reveal-scale" style="border-color: rgba(0, 229, 255, 0.3);">
+                    <div class="resource-icon" style="background: rgba(0, 229, 255, 0.2);">&#x1F4E1;</div>
                     <h3 class="resource-title">Survey Radar en Vivo</h3>
                     <p class="resource-desc">Encuesta interactiva con QR y resultados en tiempo real.</p>
                     <div class="resource-links">
@@ -1023,37 +1270,37 @@
     </section>
 
     <!-- Quick Access -->
-    <section style="background: var(--bg-surface);">
+    <section id="acceso-rapido" style="background: var(--bg-surface);">
         <div class="container">
-            <div class="section-header">
-                <div class="section-label">Acceso rápido</div>
+            <div class="section-header reveal">
+                <div class="section-label">Acceso rapido</div>
                 <h2 class="section-title">Archivos Principales</h2>
             </div>
 
-            <div class="quick-grid">
-                <a href="README.md" class="quick-item">
-                    <span>📖</span> README
+            <div class="quick-grid stagger-children">
+                <a href="README.md" class="quick-item reveal-scale">
+                    <span>&#x1F4D6;</span> README
                 </a>
-                <a href="docs/brief.md" class="quick-item">
-                    <span>📝</span> Brief del Módulo
+                <a href="programa/00-programa-completo.md" class="quick-item reveal-scale">
+                    <span>&#x1F4DD;</span> Programa Completo
                 </a>
-                <a href="slides/graficos-mermaid.html" class="quick-item">
-                    <span>📊</span> Diagramas
+                <a href="slides/graficos-mermaid.html" class="quick-item reveal-scale">
+                    <span>&#x1F4CA;</span> Diagramas
                 </a>
-                <a href="referencias/glosario-ejecutivo.md" class="quick-item">
-                    <span>📘</span> Glosario Tech
+                <a href="materiales/templates/referencias/glosario-ejecutivo.md" class="quick-item reveal-scale">
+                    <span>&#x1F4D8;</span> Glosario Tech
                 </a>
-                <a href="referencias/checklist-preguntas-cto.md" class="quick-item">
-                    <span>✅</span> 10 Preguntas CTO
+                <a href="materiales/templates/referencias/checklist-preguntas-cto.md" class="quick-item reveal-scale">
+                    <span>&#x2705;</span> 10 Preguntas CTO
                 </a>
-                <a href="referencias/red-flags-proyectos-tech.md" class="quick-item">
-                    <span>🚩</span> Red Flags
+                <a href="materiales/templates/referencias/red-flags-proyectos-tech.md" class="quick-item reveal-scale">
+                    <span>&#x1F6A9;</span> Red Flags
                 </a>
-                <a href="materiales/challenge/brief-challenge.md" class="quick-item">
-                    <span>🏆</span> Brief Challenge
+                <a href="materiales/challenge/brief-challenge.md" class="quick-item reveal-scale">
+                    <span>&#x1F3C6;</span> Brief Challenge
                 </a>
-                <a href="contenido/" class="quick-item">
-                    <span>📁</span> Todo el Contenido
+                <a href="contenido/" class="quick-item reveal-scale">
+                    <span>&#x1F4C1;</span> Todo el Contenido
                 </a>
             </div>
         </div>
@@ -1063,10 +1310,123 @@
     <footer>
         <div class="container">
             <p>
-                Módulo V — Estrategia Tecnológica + Mindset Digital<br>
-                <span style="color: var(--muted);">Programa Ejecutivo de Estrategia Digital para Líderes del Sector Educativo</span>
+                Modulo V -- Estrategia Tecnologica + Mindset Digital<br>
+                <span style="color: var(--muted);">Programa Ejecutivo de Estrategia Digital para Lideres del Sector Educativo</span>
             </p>
         </div>
     </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Volver arriba">&#8593;</button>
+
+    <!-- Scripts -->
+    <script>
+        // ==========================================
+        // Scroll-triggered reveal animations
+        // ==========================================
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal, .reveal-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ==========================================
+        // Nav shadow on scroll
+        // ==========================================
+        const nav = document.getElementById('mainNav');
+        const breadcrumb = document.getElementById('breadcrumb');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+
+            // Nav shadow
+            if (scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // Breadcrumb visibility
+            if (scrollY > window.innerHeight * 0.5) {
+                breadcrumb.classList.add('visible');
+            } else {
+                breadcrumb.classList.remove('visible');
+            }
+
+            // Back to top visibility
+            if (scrollY > 600) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // ==========================================
+        // Breadcrumb section tracking
+        // ==========================================
+        const sections = document.querySelectorAll('section[id]');
+        const breadcrumbLabel = document.getElementById('breadcrumb-section');
+
+        const sectionNames = {
+            'inicio': 'Inicio',
+            'modulos': 'Modulos',
+            'casos': 'Casos de Estudio',
+            'recursos': 'Recursos',
+            'acceso-rapido': 'Acceso Rapido'
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    if (sectionNames[id]) {
+                        breadcrumbLabel.textContent = sectionNames[id];
+                    }
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // ==========================================
+        // Active nav link tracking
+        // ==========================================
+        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.style.color = 'var(--cyan)';
+                        } else {
+                            link.style.color = '';
+                        }
+                    });
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        sections.forEach(section => {
+            navObserver.observe(section);
+        });
+    </script>
 </body>
 </html>

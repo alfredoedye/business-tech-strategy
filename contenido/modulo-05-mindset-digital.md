@@ -1,6 +1,8 @@
-# Módulo 5 — Mindset Digital  
+# Módulo 5 — Mindset Digital 
 
-## 1 Introduccion 
+![Campus](../assets/Campus-05.png)
+
+## 1 Introducción 
 ### 1.1 Objetivo del módulo
 
 
@@ -292,4 +294,4 @@ Si mañana hay una filtración de datos de estudiantes en tu institución, ¿qui
 ---
 
 *Anterior: [← Módulo 4 — Transformación Digital e IA](modulo-04-transformacion-digital-ia.md)*
-*Siguiente: [Módulo 6 — Posicionamiento Estratégico 2030 →](modulo-06-posicionamiento-estrategico-2030.md)*
+*Siguiente: [Módulo 6 — IA y el Futuro de la Educación →](modulo-06-ia-educacion.md)*

@@ -1,6 +1,6 @@
 # Módulo 06 — IA y el Futuro de la Educación
 
-## 🎯 Propósito
+## Propósito
 
 Cerrar el programa ayudando a cada líder a definir una postura estratégica explícita frente al impacto de la IA en educación.
 
@@ -14,8 +14,9 @@ Al finalizar este módulo, cada participante debe poder responder:
 
 ---
 
-# Parte 1 — Apertura  
-# IA en 2026: La realidad incómoda (10 minutos)
+## Parte 1 — Apertura
+
+### IA en 2026: La realidad incómoda (10 minutos)
 
 El objetivo de esta apertura es generar claridad estratégica sobre la magnitud del cambio.
 
@@ -127,7 +128,7 @@ La pregunta es:
 
 ---
 
-# Parte 2 — Escenarios 2030 (20 minutos)
+## Parte 2 — Escenarios 2030 (20 minutos)
 
 Se presentan tres escenarios plausibles.  
 Cada grupo debe elegir el que considera más probable y diseñar una respuesta estratégica.
@@ -169,6 +170,18 @@ La gobernanza se vuelve ventaja competitiva.
 
 ---
 
+### Comparación de escenarios
+
+| | Escenario A: Aumentada | Escenario B: Commoditizada | Escenario C: Fragmentada |
+|---|---|---|---|
+| **IA como...** | Capacidad integrada en el journey | Motor de producción masiva de contenido | Herramienta regulada y desigual |
+| **Rol del docente** | Aumentado por IA | Reemplazado parcialmente | Depende de la institución |
+| **Diferenciación** | Experiencia personalizada | Costo y escala | Gobernanza y cumplimiento |
+| **Riesgo principal** | Requiere inversión sostenida | Márgenes comprimidos | Brecha creciente entre instituciones |
+| **Oportunidad** | Retención y calidad | Acceso masivo | Ventaja para los que se preparen |
+
+---
+
 ## Trabajo en grupos (15 minutos)
 
 Cada grupo debe:
@@ -183,7 +196,7 @@ Cada grupo debe:
 
 ---
 
-# Parte 3 — Plenaria estratégica (20 minutos)
+## Parte 3 — Plenaria estratégica (20 minutos)
 
 Cada grupo presenta:
 
@@ -202,7 +215,7 @@ El facilitador conecta con conceptos del curso:
 
 ---
 
-# Parte 4 — Declaración personal (10 minutos)
+## Parte 4 — Declaración personal (10 minutos)
 
 Cada participante completa individualmente:
 
@@ -226,7 +239,7 @@ Se invita a 3–4 voluntarios a compartir.
 
 ---
 
-# Cierre
+## Cierre
 
 No buscamos consenso.
 
@@ -247,14 +260,15 @@ La decisión no es si la IA va a transformar la educación. La decisión es si s
 
 ---
 
-# Resultado esperado
+## Resultado esperado
 
 Al finalizar el módulo, el participante:
 
-* Comprende la magnitud estratégica del impacto de la IA.
-* Puede articular una postura institucional.
-* Identifica decisiones concretas a corto plazo.
-* Entiende que no decidir también es una decisión.
+* Comprende la magnitud estratégica del impacto de la IA en educación superior.
+* Puede articular una postura institucional explícita frente a la IA (no solo "estamos explorando").
+* Identifica al menos una cosa que su organización debe empezar a hacer y una que debe dejar de hacer en los próximos 24 meses.
+* Puede argumentar su postura frente a uno de los 3 escenarios 2030.
+* Entiende que no decidir también es una decisión — y tiene consecuencias estratégicas.
 
 ---
 
@@ -275,3 +289,4 @@ Al finalizar el módulo, el participante:
 
 
 *Anterior: [← Módulo 5 — Mindset Digital](modulo-05-mindset-digital.md)*
+*Siguiente: [Módulo 7 — Cierre y Lanzamiento del Challenge →](modulo-07-cierre-challenge.md)*

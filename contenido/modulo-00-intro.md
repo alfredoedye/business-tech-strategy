@@ -1,5 +1,5 @@
 
-# Introduccion
+# Introducción
 Bienvenidos. Este módulo dura 10 minutos y nos sirve para arrancar con mapa en mano: qué vamos a ver, por qué importa y cómo aprovechar el curso desde el día 1. La idea es simple: menos teoría suelta, más criterio para tomar decisiones tecnológicas con impacto real en el negocio educativo.
 
 ## Presentadores
@@ -105,7 +105,11 @@ Al finalizar este módulo, los participantes podrán:
 | Horario | Actividad | Duración |
 |---------|-----------|----------|
 | 14:00–14:05 | Apertura | 5 min |
-| 14:05–14:55 | Presentaciones Equipos 1 y 2 + Feedback | 50 min |
+| 14:05–14:55 | Presentaciones individuales + Feedback (Bloque 1) | 50 min |
 | 14:55–15:00 | Break | 5 min |
-| 15:00–15:50 | Presentaciones Equipos 3 y 4 + Feedback | 50 min |
+| 15:00–15:50 | Presentaciones individuales + Feedback (Bloque 2) | 50 min |
 | 15:50–16:00 | Reflexión de cierre | 10 min |
+
+---
+
+*Siguiente: [Módulo 1 — Hello World: Tecnología como ventaja competitiva →](modulo-01-hello-world.md)*

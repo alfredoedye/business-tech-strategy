@@ -2,22 +2,30 @@
 
 ---
 
-## 1 Introduccion 
-## 1.1 Objetivo del módulo
+![Campus](../assets/Campus-02.png)
+
+## 1 Introducción
+
+### 1.1 Objetivo del módulo
+
 Que los participantes adquieran el vocabulario, los criterios y los frameworks necesarios para participar activamente en la definición de la estrategia tecnológica de su organización. No se trata de aprender tecnología, sino de aprender a **decidir sobre tecnología**.
 
-## 1.2 Pregunta guía
-> ¿Qué decisiones tecnológicas son estratégicas y cuáles son tácticas?
-> 
-## 1.3 Dinámica Disparadora: "1 millón para invertir”
+### 1.2 Pregunta guía
 
+> ¿Qué decisiones tecnológicas son estratégicas y cuáles son tácticas?
+
+### 1.3 Dinámica Disparadora: “1 millón para invertir”
+
+Arrancamos con un ejercicio de priorización: recibís USD 1M para invertir en la estrategia tecnológica de tu organización. ¿Cómo lo distribuís? La condición: no podés invertir en todo.
+
+Ver guía completa: [Dinámica "1 Millón USD para invertir"](../materiales/dinamicas/02-1Million-Dollars.md)
 
 ---
 ## 2 Conceptos Claves
 
-<!- Buscar para el facilitador algunos ejemplos de decisiones tecnologicas estrategicas -> 
+<!-- Buscar para el facilitador algunos ejemplos de decisiones tecnologicas estrategicas -->
 
- ###Ejemplos aplicados al sector educativo (LATAM)
+### 2.1 Ejemplos aplicados al sector educativo (LATAM)
 
 **El dilema de los sistemas heredados**
 Muchas universidades en LATAM operan con sistemas que tienen 15-20 años. No se reemplazan porque "funcionan" — pero la realidad es que limitan el crecimiento, fragmentan los datos y generan dependencia de personas específicas. La decisión de migrar es difícil pero cada año que pasa la hace más costosa.
@@ -30,7 +38,7 @@ Instituciones que adoptan herramientas gratuitas como moodle descubren tarde que
 
 
 
-### 2.1 Decisiones estratégicas que todo directivo debe dominar
+### 2.2 Decisiones estratégicas que todo directivo debe dominar
 
 No todas las decisiones tecnológicas son iguales. Algunas son operativas (qué herramienta de videoconferencia usar) y otras son estructurales (en qué plataforma vamos a construir nuestro futuro). Un líder debe saber distinguirlas.
 
@@ -47,7 +55,14 @@ No todas las decisiones tecnológicas son iguales. Algunas son operativas (qué 
 
 **La regla de oro:** Comprá lo que es commodity. Construí lo que es tu ventaja competitiva.
 
-**Impacto financiero:** Build = CAPEX (inversión de capital) + equipo permanente para mantenimiento (OPEX). Buy SaaS = OPEX predecible (gasto operativo mensual). La decisión no es solo técnica — cambia el modelo financiero. Para profundizar: [Anexo: Finanzas para Decisiones Tech](../anexos/finanzas-para-decisiones-tech.md).
+**Impacto financiero:**
+
+| Modelo | Tipo de gasto | Ventaja financiera | Riesgo financiero |
+|--------|--------------|--------------------|--------------------|
+| Build | CAPEX + OPEX (equipo permanente) | Propiedad total del activo | Inversión alta y continua |
+| Buy SaaS | OPEX predecible (mensual) | Sin inversión inicial grande | Dependencia de proveedor |
+
+Para profundizar: [Anexo: Finanzas para Decisiones Tech](../materiales/anexos/finanzas-para-decisiones-tech.md).
 
 #### Cloud vs. On-premise
 
@@ -59,9 +74,14 @@ No todas las decisiones tecnológicas son iguales. Algunas son operativas (qué 
 | **Riesgo** | Costos que pueden crecer, dependencia del proveedor | Obsolescencia, necesidad de equipo de infraestructura |
 | **Tendencia** | La mayoría de las organizaciones están migrando a cloud | Se mantiene para regulaciones específicas |
 
-**Ejemplo educativo:** Durante la pandemia, muchas instituciones en LATAM que dependían de servidores on-premise colapsaron cuando la demanda de clases virtuales se multiplicó por 10 en semanas. Las que ya operaban en cloud (como el Tecnológico de Monterrey con Azure) pudieron escalar su capacidad de forma elástica sin comprar un solo servidor. La lección fue clara: la infraestructura cloud no es un lujo — es resiliencia operativa.
+#### Caso: Tecnológico de Monterrey — Resiliencia cloud en pandemia
 
-**Impacto financiero:** Cloud convierte CAPEX en OPEX. Se elimina la inversión inicial grande (comprar servidores) pero se genera un costo recurrente mensual. El CFO necesita entender esta transición porque cambia cómo se planifica y aprueba el presupuesto tecnológico.
+- **Contexto:** Durante la pandemia, la demanda de clases virtuales se multiplicó por 10 en semanas.
+- **Decisión:** Las instituciones en cloud (como el Tec de Monterrey con Azure) pudieron escalar de forma elástica.
+- **Resultado:** Las que dependían de servidores on-premise colapsaron. Las que operaban en cloud escalaron sin comprar un solo servidor.
+- **Lección:** La infraestructura cloud no es un lujo — es resiliencia operativa.
+
+**Impacto financiero:** Cloud convierte CAPEX en OPEX. El CFO necesita entender esta transición porque cambia cómo se planifica y aprueba el presupuesto tecnológico.
 
 #### Core vs. Commodity
 
@@ -85,7 +105,7 @@ No todos los sistemas tienen el mismo valor estratégico:
 
 **La clave para líderes:** no hay una respuesta correcta universal. La decisión depende del momento de la organización, el riesgo del proyecto y la reversibilidad de la decisión.
 
-### 2. Las 6 dimensiones de una estrategia tecnológica
+### 2.3 Las 6 dimensiones de una estrategia tecnológica
 
 Una estrategia tecnológica no es una lista de herramientas. Es un modelo que conecta seis dimensiones. Estas mismas dimensiones son las que vas a evaluar en el [Radar de Estrategia Tecnológica](../materiales/templates/template-radar-estrategia-tech.md).
 
@@ -127,7 +147,7 @@ Una estrategia tecnológica no es una lista de herramientas. Es un modelo que co
 - ¿Quién identifica oportunidades tecnológicas? ¿Solo IT o también el negocio?
 - ¿Tenemos espacio para experimentar o toda inversión requiere un business case completo?
 
-### 3. Alineación tecnología-negocio
+### 2.4 Alineación tecnología-negocio
 
 La estrategia tecnológica no existe en el vacío. Debe estar alineada con:
 
@@ -147,7 +167,7 @@ Ejemplo:
 - Habilitador: analítica predictiva conectada al LMS y al SIS.
 - Inversión: integración de datos + modelo de alertas + equipo de intervención.
 
-> Para profundizar en frameworks estratégicos (Wardley Maps, Hype Cycle, TOGAF simplificado), ver el [Anexo: Frameworks Estratégicos](../anexos/frameworks-estrategicos.md).
+> Para profundizar en frameworks estratégicos (Wardley Maps, Hype Cycle, TOGAF simplificado), ver el [Anexo: Frameworks Estratégicos](../materiales/anexos/frameworks-estrategicos.md).
 
 
 ---
@@ -163,6 +183,18 @@ Ejemplo:
 > Cada decisión tecnológica que tomás (o que dejás que otros tomen por vos)
 > define la estructura de costos, la velocidad y la dependencia de tu organización por los próximos 3-5 años.
 > ¿Estás eligiendo… o estás heredando?
+
+---
+
+## 4 Resultado esperado
+
+Al finalizar este módulo, el participante puede:
+
+- Distinguir decisiones tecnológicas estratégicas de las tácticas.
+- Aplicar los criterios Build vs. Buy, Cloud vs. On-premise, Core vs. Commodity y Velocidad vs. Control.
+- Evaluar las 6 dimensiones de una estrategia tecnológica en su propia organización.
+- Articular la alineación entre objetivos de negocio y habilitadores tecnológicos.
+- Entender el impacto financiero (CAPEX vs. OPEX) de las decisiones tecnológicas.
 
 ---
 

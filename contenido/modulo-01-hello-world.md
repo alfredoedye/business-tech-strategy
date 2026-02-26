@@ -2,10 +2,14 @@
 
 ---
 
-## 1 Introduccion 
+![Campus](../assets/Campus-01.png)
+
+
+## 1 Introducción 
 ## 1.1 Objetivo del módulo
 
 Que los participantes comprendan por qué la tecnología dejó de ser un área de soporte y se convirtió en parte de la estrategia central del negocio educativo. Al terminar este bloque, cada líder debe poder identificar en qué nivel se encuentra su organización y qué implica esa posición para competir.
+
 
 ## 1.2 Pregunta guía
 

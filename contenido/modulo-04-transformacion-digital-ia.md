@@ -1,7 +1,9 @@
 # Módulo 4 — Transformación Digital e IA  
 ---
+![Campus](../assets/Campus-04.png)
 
-## 1 Introduccion 
+## 1 Introducción
+
 ### 1.1 Objetivo del módulo
 
 Que los participantes:
@@ -31,7 +33,7 @@ Ver guía completa para el facilitador: [Dinámica "Boardroom en Crisis"](../mat
 
 ---
 
-## 2. Coneptos Clave
+## 2. Conceptos Clave
 
 ### 2.1 El Triángulo de la Transformación Digital
 
@@ -75,7 +77,12 @@ Las 6 dimensiones obligatorias para una transformación exitosa:
 
 El término "holístico" no es marketing — es una advertencia: si falta una dimensión, el sistema colapsa. Una organización con excelente tecnología y cultura resistente al cambio es como un auto de Fórmula 1 conducido por alguien sin licencia.
 
-**Mini caso: BBVA y la transformación cultural imposible.** Cuando BBVA decidió competir con las fintech, descubrió que transformar la cultura de un banco con 160 años de historia era más difícil que construir la tecnología. La solución: crear una unidad digital completamente separada — nueva oficina, nuevo equipo contratado desde afuera, nuevos procesos, nueva cultura. Recién cuando esa unidad demostró resultados, empezó a influir en el banco tradicional. La lección para educación: a veces la transformación no se logra cambiando lo que existe, sino construyendo algo nuevo al lado y dejando que el éxito hable por sí mismo.
+#### Caso: BBVA — La transformación cultural imposible
+
+- **Contexto:** Banco con 160 años de historia necesitaba competir con fintech. Transformar la cultura interna era más difícil que construir la tecnología.
+- **Decisión:** Crear una unidad digital completamente separada — nueva oficina, nuevo equipo contratado desde afuera, nuevos procesos, nueva cultura.
+- **Resultado:** La unidad demostró resultados primero y luego empezó a influir en el banco tradicional.
+- **Lección para educación:** A veces la transformación no se logra cambiando lo que existe, sino construyendo algo nuevo al lado y dejando que el éxito hable por sí mismo.
 
 ---
 
@@ -154,19 +161,21 @@ El Framework establece:
 
 El framework define tres roles estructurales:
 
-### Célula Estratégica IA
+#### Célula Estratégica IA
+
 - Define lineamientos y ejes.
 - Aprueba presupuesto.
 - Valida KPIs y ROI.
 
+#### Equipo Experto IA
 
-### Equipo Experto IA
 - Valida arquitecturas.
 - Selecciona herramientas.
 - Documenta aprendizajes.
 - Apoya equipos reducidos.
 
-### Instituciones / EdTech
+#### Instituciones / EdTech
+
 - Ejecutan ejes estratégicos.
 - Proponen iniciativas propias.
 - Reportan resultados.
@@ -181,23 +190,32 @@ Sin estructura, la IA se vuelve improvisación.
 
 ### 3.3 Presupuesto explícito
 
-En una organización, lo que no tiene presupuesto propio no tiene prioridad real. La IA que se financia "con lo que sobra" de otros proyectos tiene alcance limitado, velocidad reducida y cero accountability. Un presupuesto explícito hace tres cosas: obliga a definir ROI antes de gastar, crea una línea de rendición de cuentas clara en cada MBR, y señala a toda la organización que esto es una apuesta estratégica — no un experimento de IT.
+Lo que no tiene presupuesto propio no tiene prioridad real.
 
-Pregunta incómoda:
+Un presupuesto explícito para IA cumple tres funciones:
 
-> ¿Cuánto presupuesto formal tiene hoy tu organización asignado a IA?
+| Función | Por qué importa |
+|---------|----------------|
+| Obliga a definir ROI antes de gastar | Sin métrica, no hay accountability |
+| Crea línea de rendición de cuentas en cada MBR | Hace visible el avance (o la falta de él) |
+| Señala a la organización que es apuesta estratégica | No es un experimento de IT — es prioridad de negocio |
 
-Sin presupuesto explícito, no hay prioridad real.
+> Pregunta incómoda: ¿Cuánto presupuesto formal tiene hoy tu organización asignado a IA?
 
 
 
 ---
 
-# 3.4 IA como capa transversal
+### 3.4 IA como capa transversal
 
 La IA no es un producto que se compra y se instala en un rincón de la organización. Es una **capacidad que se integra en cada proceso existente**. Tratarla como proyecto aislado produce lo de siempre: un piloto impresionante en demo que no escala, porque no está conectado con los sistemas donde vive el negocio real.
 
-**Caso: Georgia State University.** Esta universidad pública en Atlanta implementó un chatbot con IA llamado "Pounce" para hacer seguimiento proactivo a estudiantes durante el proceso de admisión y onboarding. El resultado: redujo el "summer melt" (estudiantes aceptados que nunca se inscriben) en un 22% y mejoró la tasa de retención del primer año. La clave no fue la tecnología en sí — fue integrarla con los datos del SIS y el CRM para que las intervenciones fueran personalizadas y oportunas. Un chatbot genérico no habría logrado lo mismo.
+#### Caso: Georgia State University — Pounce
+
+- **Contexto:** Universidad pública en Atlanta con alto "summer melt" (estudiantes aceptados que nunca se inscriben).
+- **Decisión:** Implementar un chatbot con IA ("Pounce") integrado con SIS y CRM para seguimiento proactivo durante admisión y onboarding.
+- **Resultado:** Redujo el summer melt en un 22% y mejoró la tasa de retención del primer año.
+- **Clave:** La IA funcionó porque estaba conectada a los datos reales del estudiante. Un chatbot genérico no habría logrado lo mismo.
 
 La IA no es un proyecto independiente.
 
@@ -219,7 +237,7 @@ Sino:
 
 ---
 
-# 3.5 Riesgos y ética
+### 3.5 Riesgos y ética
 
 La IA toma decisiones que antes tomaban personas. Cuando un algoritmo decide qué estudiante recibe una beca, qué candidato avanza en un proceso de selección, o qué alumno es marcado como "en riesgo de deserción", esas decisiones tienen consecuencias reales. Si el modelo fue entrenado con datos sesgados, reproduce y amplifica ese sesgo — sin que nadie lo note, porque "lo dijo el sistema".
 
@@ -249,3 +267,20 @@ Es institucionalizarla con intención y responsabilidad.
 
 **Pregunta para llevarse:**
 *Si tuvieras que elegir un solo proceso de tu organización para modernizar en los próximos 6 meses — uno que genere impacto real en la experiencia del estudiante o en la eficiencia operativa — ¿cuál sería? ¿Qué necesitarías para empezar?*
+
+---
+
+## 5 Resultado esperado
+
+Al finalizar este módulo, el participante puede:
+
+- Explicar por qué la transformación digital requiere cultura + procesos + tecnología (no solo tecnología).
+- Identificar anti-patrones de transformación en su propia organización.
+- Describir el framework de adopción de IA con gobernanza, presupuesto y ciclo de revisión.
+- Articular por qué la IA es una capa transversal y no un proyecto aislado.
+- Evaluar riesgos éticos básicos de implementar IA en decisiones sobre personas.
+
+---
+
+*Anterior: [← Módulo 3 — Arquitectura IT Educativa](modulo-03-arquitectura-it.md)*
+*Siguiente: [Módulo 5 — Mindset Digital →](modulo-05-mindset-digital.md)*

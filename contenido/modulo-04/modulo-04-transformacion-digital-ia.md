@@ -1,6 +1,6 @@
 # Módulo 4 — Transformación Digital e IA  
 ---
-<img src="../assets/Campus-04.png" alt="Campus-04"/>
+<img src="../../assets/Campus-04.png" alt="Campus-04"/>
 
 ## 1 Introducción
 
@@ -26,7 +26,7 @@ Los participantes asumen el rol de Comité Ejecutivo.
 Reciben un escenario realista con presión financiera y competitiva.  
 Tienen 8 minutos para decidir una estrategia.
 
-Ver guía completa para el facilitador: [Dinámica "Boardroom en Crisis"](../materiales/dinamicas/04-guia-boardroom-crisis.md)
+Ver guía completa para el facilitador: [Dinámica "Boardroom en Crisis"](../../materiales/dinamicas/04-guia-boardroom-crisis.md)
 
 
 
@@ -282,5 +282,5 @@ Al finalizar este módulo, el participante puede:
 
 ---
 
-*Anterior: [← Módulo 3 — Arquitectura IT Educativa](modulo-03-arquitectura-it.md)*
-*Siguiente: [Módulo 5 — Mindset Digital →](modulo-05-mindset-digital.md)*
+*Anterior: [← Módulo 3 — Arquitectura IT Educativa](../modulo-03/modulo-03-arquitectura-it.md)*
+*Siguiente: [Módulo 5 — Mindset Digital →](../modulo-05/modulo-05-mindset-digital.md)*

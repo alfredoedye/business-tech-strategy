@@ -513,6 +513,21 @@
             align-items: center;
         }
 
+        /* Full-screen hero image slide */
+        .slide-hero-img {
+            padding: 0;
+        }
+        .slide-hero-img::before {
+            display: none;
+        }
+        .slide-hero-img img.hero-cover {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* ===========================================
            RESPONSIVE BREAKPOINTS
            =========================================== */
@@ -601,13 +616,21 @@
             <p class="subtitle reveal">Decisiones que definen el futuro</p>
             <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Qu&#233; decisiones tecnol&#243;gicas son estrat&#233;gicas y cu&#225;les son t&#225;cticas?</p>
         </div>
-        <div class="slide-num">01 / 15</div>
+        <div class="slide-num">01 / 16</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: CAMPUS HERO
+         =========================================== -->
+    <section class="slide slide-hero-img" data-slide="1">
+        <img class="hero-cover" src="../assets/Campus-02.png" alt="Campus-hero">
+        <div class="slide-num" style="color:rgba(255,255,255,0.6);">02 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 2: OBJETIVO
          =========================================== -->
-    <section class="slide" data-slide="1">
+    <section class="slide" data-slide="2">
         <div class="slide-content">
             <div class="slide-tag reveal">Objetivo</div>
             <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este m&#243;dulo</span></h2>
@@ -616,13 +639,13 @@
                 No existen decisiones &#8220;puramente tecnol&#243;gicas&#8221;. Toda decisi&#243;n tech es una decisi&#243;n de negocio con consecuencias en costos, velocidad, dependencia y diferenciaci&#243;n. El directivo que no participa no est&#225; delegando &mdash; <strong style="color:var(--text-primary);">est&#225; abdicando</strong>.
             </div>
         </div>
-        <div class="slide-num">02 / 15</div>
+        <div class="slide-num">03 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 3: DIN&#193;MICA &#8212; CASINO ESTRAT&#201;GICO TECH
          =========================================== -->
-    <section class="slide" data-slide="2">
+    <section class="slide" data-slide="3">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Din&#225;mica</div>
             <h2 class="reveal">Casino Estrat&#233;gico <span class="gradient-text">Tech</span></h2>
@@ -654,13 +677,13 @@
                 <a href="dinamica-02-slides.html" class="reveal" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:var(--small-size);color:var(--accent-warm);text-decoration:none;padding:0.4em 1em;border:1px solid rgba(245,158,11,0.3);border-radius:8px;background:rgba(245,158,11,0.08);transition:all 0.3s ease;">Ver din&#225;mica completa &rarr;</a>
             </div>
         </div>
-        <div class="slide-num">03 / 15</div>
+        <div class="slide-num">04 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 4: CONCLUSIONES CASINO TECH
          =========================================== -->
-    <section class="slide" data-slide="3">
+    <section class="slide" data-slide="4">
         <div class="slide-content">
             <div class="slide-tag reveal">Conclusiones</div>
             <h2 class="reveal">Qu&#233; aprendimos del <span class="gradient-text">Casino Tech</span></h2>
@@ -687,13 +710,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">04 / 15</div>
+        <div class="slide-num">05 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 5: EJEMPLOS LATAM (2.1)
          =========================================== -->
-    <section class="slide" data-slide="4">
+    <section class="slide" data-slide="5">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Ejemplos LATAM</div>
             <h2 class="reveal">El dilema de los <span class="gradient-text">sistemas heredados</span></h2>
@@ -720,13 +743,13 @@
                 &iquest;Qui&#233;n toma las decisiones tecnol&#243;gicas estructurales? &iquest;El equipo directivo o el &#225;rea de IT sola?
             </div>
         </div>
-        <div class="slide-num">05 / 15</div>
+        <div class="slide-num">06 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 6: BUILD VS BUY
          =========================================== -->
-    <section class="slide" data-slide="5">
+    <section class="slide" data-slide="6">
         <div class="slide-content">
             <div class="slide-tag reveal">Decisi&#243;n 1</div>
             <h2 class="reveal">Build vs <span class="gradient-text">Buy</span></h2>
@@ -754,13 +777,13 @@
             </div>
             <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">Impacto financiero: Build = CAPEX + OPEX. Buy SaaS = OPEX predecible.</p>
         </div>
-        <div class="slide-num">06 / 15</div>
+        <div class="slide-num">07 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 7: CLOUD VS ON-PREMISE
          =========================================== -->
-    <section class="slide" data-slide="6">
+    <section class="slide" data-slide="7">
         <div class="slide-content">
             <div class="slide-tag reveal">Decisi&#243;n 2</div>
             <h2 class="reveal">Cloud vs <span class="gradient-text">On-Premise</span></h2>
@@ -790,13 +813,13 @@
             </div>
             <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">Financiero: Cloud convierte CAPEX en OPEX.</p>
         </div>
-        <div class="slide-num">07 / 15</div>
+        <div class="slide-num">08 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 8: CORE VS COMMODITY
          =========================================== -->
-    <section class="slide" data-slide="7">
+    <section class="slide" data-slide="8">
         <div class="slide-content">
             <div class="slide-tag reveal">Decisi&#243;n 3</div>
             <h2 class="reveal">Core vs <span class="gradient-text">Commodity</span></h2>
@@ -827,13 +850,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">08 / 15</div>
+        <div class="slide-num">09 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 9: VELOCIDAD VS CONTROL
          =========================================== -->
-    <section class="slide" data-slide="8">
+    <section class="slide" data-slide="9">
         <div class="slide-content">
             <div class="slide-tag reveal">Decisi&#243;n 4</div>
             <h2 class="reveal">Velocidad vs <span class="gradient-text">Control</span></h2>
@@ -869,13 +892,13 @@
                 No hay respuesta correcta universal. Depende del momento, riesgo y reversibilidad.
             </div>
         </div>
-        <div class="slide-num">09 / 15</div>
+        <div class="slide-num">10 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 10: 6 DIMENSIONES GRID
          =========================================== -->
-    <section class="slide" data-slide="9">
+    <section class="slide" data-slide="10">
         <div class="slide-content">
             <div class="slide-tag reveal">Framework</div>
             <h2 class="reveal">6 dimensiones de <span class="gradient-text">estrategia tech</span></h2>
@@ -912,13 +935,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">10 / 15</div>
+        <div class="slide-num">11 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 11: DIMENSIONES 1, 2, 3
          =========================================== -->
-    <section class="slide" data-slide="10">
+    <section class="slide" data-slide="11">
         <div class="slide-content">
             <h2 class="reveal">Dimensiones <span class="gradient-text">1, 2 y 3</span></h2>
             <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vw,0.8rem);margin-top:var(--content-gap);">
@@ -948,13 +971,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">11 / 15</div>
+        <div class="slide-num">12 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 12: DIMENSIONES 4, 5, 6
          =========================================== -->
-    <section class="slide" data-slide="11">
+    <section class="slide" data-slide="12">
         <div class="slide-content">
             <h2 class="reveal">Dimensiones <span class="gradient-text">4, 5 y 6</span></h2>
             <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vw,0.8rem);margin-top:var(--content-gap);">
@@ -981,13 +1004,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">12 / 15</div>
+        <div class="slide-num">13 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 13: ALINEACI&#211;N TECNOLOG&#205;A-NEGOCIO
          =========================================== -->
-    <section class="slide" data-slide="12">
+    <section class="slide" data-slide="13">
         <div class="slide-content">
             <div class="slide-tag reveal">Alineaci&#243;n</div>
             <h2 class="reveal">Tecnolog&#237;a alineada <span class="gradient-text">al negocio</span></h2>
@@ -1013,13 +1036,13 @@
                 <strong style="color:var(--text-primary);">Ejemplo:</strong> Objetivo: reducir deserci&#243;n del 42% al 25%. Capacidad: detectar estudiantes en riesgo. Habilitador: anal&#237;tica predictiva LMS+SIS. Inversi&#243;n: integraci&#243;n datos + modelo alertas + equipo intervenci&#243;n.
             </div>
         </div>
-        <div class="slide-num">13 / 15</div>
+        <div class="slide-num">14 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 14: RESULTADO ESPERADO
          =========================================== -->
-    <section class="slide" data-slide="13">
+    <section class="slide" data-slide="14">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Cierre</div>
             <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
@@ -1036,13 +1059,13 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">M&#243;dulo 02 &#8212; Estrategia Tecnol&#243;gica</p>
         </div>
-        <div class="slide-num">14 / 15</div>
+        <div class="slide-num">15 / 16</div>
     </section>
 
     <!-- ===========================================
          SLIDE 15: REFLEXI&#211;N FINAL
          =========================================== -->
-    <section class="slide" data-slide="14">
+    <section class="slide" data-slide="15">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Reflexi&#243;n</div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:700px;text-align:center;border-left:none;border-top:3px solid var(--accent);border-radius:8px 8px 0 0;padding:1.5em 2em;font-size:clamp(1rem,2vw,1.4rem);line-height:1.6;">
@@ -1051,7 +1074,7 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">M&#243;dulo 02 &#8212; Estrategia Tecnol&#243;gica</p>
         </div>
-        <div class="slide-num">15 / 15</div>
+        <div class="slide-num">16 / 16</div>
     </section>
 
     <!-- ===========================================

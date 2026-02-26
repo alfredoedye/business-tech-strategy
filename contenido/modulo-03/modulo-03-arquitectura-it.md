@@ -2,7 +2,7 @@
 
 ---
 
-<img src="../assets/Campus-03.png" alt="Campus-03"/>
+<img src="../../assets/Campus-03.png" alt="Campus-hero"/>
 
 ## 1 Introducción
 
@@ -23,7 +23,29 @@ La arquitectura IT no es un tema de infraestructura. Es un tema de gobierno, com
 
 Arrancamos con un ejercicio rápido: cada participante dibuja en una servilleta (o una hoja) todos los sistemas tecnológicos que conoce de su organización y cómo se conectan. El objetivo es hacer visible lo que normalmente es invisible.
 
-Ver guía completa: [Dinámica "Tu Stack en una Servilleta"](../materiales/dinamicas/03-tu-stack-en-servilleta.md)
+## Dinámica: "Tu stack en una servilleta"
+
+**Duración:** 15 minutos
+
+### Instrucciones
+
+1. Dibujá todas las herramientas tecnológicas que vos conoces. 
+2. Nombralas y conectalas si están integradas.
+3. Marcá las críticas.
+4. Señalá las que no entendés cómo se conectan.
+5. Dibuja como sea. No hay reglas. 
+
+---
+
+### Debrief
+
+- ¿Cuántas herramientas aparecieron?
+- ¿Se puede o es facil cambiar?
+- ¿Cuántas están realmente integradas?
+- ¿Quién tiene la visión completa?
+- ¿Tu stack permite cambiar el modelo de negocio?
+
+La complejidad tecnológica que no se ve es una de las mayores fuentes de riesgo estratégico. 
 
 ---
 
@@ -225,7 +247,7 @@ La continuidad operativa es una conversación que muchos equipos directivos evit
 
 
 **Instrucciones:**
-1. Cada participante (o grupo por institución) completa el [Template Mapa de Arquitectura IT](../materiales/templates/template-mapa-arquitectura-it.md).
+1. Cada participante (o grupo por institución) completa el [Template Mapa de Arquitectura IT](../../materiales/templates/template-mapa-arquitectura-it.md).
 2. Mapear:
    - Qué sistemas tiene la organización.
    - Cómo se conectan (o no).
@@ -279,5 +301,5 @@ La continuidad operativa es una conversación que muchos equipos directivos evit
 
 ---
 
-*Anterior: [← Módulo 2 — Estrategia Tecnológica](modulo-02-estrategia-tecnologica.md)*
-*Siguiente: [Módulo 4 — Transformación Digital e IA →](modulo-04-transformacion-digital-ia.md)*
+*Anterior: [← Módulo 2 — Estrategia Tecnológica](../modulo-02/modulo-02-estrategia-tecnologica.md)*
+*Siguiente: [Módulo 4 — Transformación Digital e IA →](../modulo-04/modulo-04-transformacion-digital-ia.md)*

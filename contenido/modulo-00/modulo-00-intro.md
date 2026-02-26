@@ -8,14 +8,14 @@ Bienvenidos. Este módulo dura 10 minutos y nos sirve para arrancar con mapa en 
 
 ### Alfredo Edye
 
-<img src="../assets/image-1.png" alt="Foto de Alfredo Edye" width="112" />
+<img src="../../assets/image-1.png" alt="Foto de Alfredo Edye" width="112" />
 
 Aterriza estrategia tecnológica a decisiones concretas de negocio, sin humo.  
 Perfil: [LinkedIn](https://www.linkedin.com/in/alfredoedye/)
 
 ### Pablo Ortiz
 
-<img src="../assets/image.png" alt="Foto de Pablo Ortiz" width="112" />
+<img src="../../assets/image.png" alt="Foto de Pablo Ortiz" width="112" />
 
 Conecta liderazgo, innovación y ejecución para que la transformación sí pase.  
 Perfil: [LinkedIn](https://www.linkedin.com/in/pablo-ortiz-olmos/)
@@ -58,12 +58,12 @@ Al finalizar este módulo, los participantes podrán:
 
 | # | Módulo | Pregunta guía | Contenido |
 |---|--------|---------------|-----------|
-| 1 | [Hello World](../contenido/modulo-01-hello-world.md) | ¿Por qué la tecnología dejó de ser soporte y pasó a ser core? | Ventaja competitiva, 3 niveles de relación con la tech, rol del equipo directivo |
-| 2 | [Estrategia Tecnológica](../contenido/modulo-02-estrategia-tecnologica.md) | ¿Qué decisiones son estratégicas y cuáles tácticas? | Build/Buy, Cloud/On-premise, Core/Commodity, 5 componentes de estrategia |
-| 3 | [Arquitectura IT Educativa](../contenido/modulo-03-arquitectura-it.md) | ¿Cómo funciona una institución educativa moderna por dentro? | SIS, LMS, CRM, ERP, BI, IAM, integraciones, ciclo de vida del estudiante |
-| 4 | [Transformación Digital e IA](../contenido/modulo-04-transformacion-digital-ia.md) | ¿Cómo transformar sin romper la organización? | Triángulo de transformación, framework de adopción de IA, ética |
-| 5 | [Mindset Digital](../contenido/modulo-05-mindset-digital.md) | ¿Qué tipo de líder necesita ser tu organización? | 7 pilares del mindset digital, anti-patrones, diagnóstico |
-| 6 | [IA y Educación](../contenido/modulo-06-ia-educacion.md) | ¿Cómo va la IA a transformar la educación? | Panel de discusión — Día 2 (Sábado) |
+| 1 | [Hello World](../modulo-01/modulo-01-hello-world.md) | ¿Por qué la tecnología dejó de ser soporte y pasó a ser core? | Ventaja competitiva, 3 niveles de relación con la tech, rol del equipo directivo |
+| 2 | [Estrategia Tecnológica](../modulo-02/modulo-02-estrategia-tecnologica.md) | ¿Qué decisiones son estratégicas y cuáles tácticas? | Build/Buy, Cloud/On-premise, Core/Commodity, 5 componentes de estrategia |
+| 3 | [Arquitectura IT Educativa](../modulo-03/modulo-03-arquitectura-it.md) | ¿Cómo funciona una institución educativa moderna por dentro? | SIS, LMS, CRM, ERP, BI, IAM, integraciones, ciclo de vida del estudiante |
+| 4 | [Transformación Digital e IA](../modulo-04/modulo-04-transformacion-digital-ia.md) | ¿Cómo transformar sin romper la organización? | Triángulo de transformación, framework de adopción de IA, ética |
+| 5 | [Mindset Digital](../modulo-05/modulo-05-mindset-digital.md) | ¿Qué tipo de líder necesita ser tu organización? | 7 pilares del mindset digital, anti-patrones, diagnóstico |
+| 6 | [IA y Educación](../modulo-06/modulo-06-ia-educacion.md) | ¿Cómo va la IA a transformar la educación? | Panel de discusión — Día 2 (Sábado) |
 
 ---
 
@@ -84,7 +84,7 @@ Al finalizar este módulo, los participantes podrán:
 | 4 | 16:30–18:00 | Transformación Digital e IA | 90 min |
 | 5 | 18:00–18:30 | Cierre Día 1 (Takeaway rápido + Preview Día 2) | 30 min |
 
-→ Guía detallada: [Guía del Facilitador — Día 1](../guia-facilitador/guia-dia-1-viernes.md)
+
 
 ### DÍA 2: SÁBADO 28/02 (09:30 - 13:30)
 
@@ -98,7 +98,7 @@ Al finalizar este módulo, los participantes podrán:
 | ☕ | 11:45–12:00 | Break | 15 min |
 | 8 | 12:00–13:30 | Lanzamiento y Trabajo del Challenge | 90 min |
 
-→ Guía detallada: [Guía del Facilitador — Día 2](../guia-facilitador/guia-dia-2-sabado.md)
+
 
 ### SEMANA 4: CHALLENGE POINT — MIÉ 18/03 (14:00 - 16:00)
 
@@ -112,4 +112,4 @@ Al finalizar este módulo, los participantes podrán:
 
 ---
 
-*Siguiente: [Módulo 1 — Hello World: Tecnología como ventaja competitiva →](modulo-01-hello-world.md)*
+*Siguiente: [Módulo 1 — Hello World: Tecnología como ventaja competitiva →](../modulo-01/modulo-01-hello-world.md)*

@@ -1,6 +1,6 @@
 # Módulo 5 — Mindset Digital 
 
-<img src="../assets/Campus-05.png" alt="Campus-05"/>
+<img src="../../assets/Campus-05.png" alt="Campus-05"/>
 
 ## 1 Introducción 
 ### 1.1 Objetivo del módulo
@@ -20,7 +20,7 @@ Sin este sistema operativo, incluso la mejor arquitectura y la mejor estrategia 
 
 Cada participante completa un autodiagnóstico rápido sobre qué tan digital es su liderazgo hoy — sin filtro ni corrección política.
 
-Ver guía completa: [Dinámica "Termómetro Digital"](../materiales/dinamicas/05-termometro-digital.md)
+Ver guía completa: [Dinámica "Termómetro Digital"](../../materiales/dinamicas/05-termometro-digital.md)
 
 
 
@@ -293,5 +293,5 @@ Si mañana hay una filtración de datos de estudiantes en tu institución, ¿qui
 
 ---
 
-*Anterior: [← Módulo 4 — Transformación Digital e IA](modulo-04-transformacion-digital-ia.md)*
-*Siguiente: [Módulo 6 — IA y el Futuro de la Educación →](modulo-06-ia-educacion.md)*
+*Anterior: [← Módulo 4 — Transformación Digital e IA](../modulo-04/modulo-04-transformacion-digital-ia.md)*
+*Siguiente: [Módulo 6 — IA y el Futuro de la Educación →](../modulo-06/modulo-06-ia-educacion.md)*

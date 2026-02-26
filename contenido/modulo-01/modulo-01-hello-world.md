@@ -3,7 +3,7 @@
 ---
 
 <!-- Image should be full screen in the slides-->
-<img src="../assets/Campus-01.png" alt="Campus-01"/>
+<img src="../../assets/Campus-01.png" alt="Campus-hero"/>
 
 
 
@@ -195,4 +195,4 @@ Clayton Christensen predijo en 2011 que la mitad de las universidades estadounid
 
 ---
 
-*Siguiente: [Módulo 2 — Estrategia Tecnológica del negocio →](modulo-02-estrategia-tecnologica.md)*
+*Siguiente: [Módulo 2 — Estrategia Tecnológica del negocio →](../modulo-02/modulo-02-estrategia-tecnologica.md)*

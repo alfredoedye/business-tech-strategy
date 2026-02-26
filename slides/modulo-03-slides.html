@@ -458,6 +458,21 @@
             align-items: center;
         }
 
+        /* Full-screen hero image slide */
+        .slide-hero-img {
+            padding: 0;
+        }
+        .slide-hero-img::before {
+            display: none;
+        }
+        .slide-hero-img img.hero-cover {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* ===========================================
            RESPONSIVE BREAKPOINTS
            =========================================== */
@@ -547,13 +562,21 @@
             <p class="subtitle reveal">El mapa de tus sistemas</p>
             <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Como funciona realmente una institucion educativa moderna por dentro?</p>
         </div>
-        <div class="slide-num">01 / 14</div>
+        <div class="slide-num">01 / 15</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 2: OBJETIVO
+         SLIDE 2: CAMPUS HERO
          =========================================== -->
-    <section class="slide" data-slide="1">
+    <section class="slide slide-hero-img" data-slide="1">
+        <img class="hero-cover" src="../assets/Campus-03.png" alt="Campus-hero">
+        <div class="slide-num" style="color:rgba(255,255,255,0.6);">02 / 15</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: OBJETIVO
+         =========================================== -->
+    <section class="slide" data-slide="2">
         <div class="slide-content">
             <div class="slide-tag reveal">Objetivo</div>
             <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este modulo</span></h2>
@@ -569,13 +592,13 @@
                 Un directivo no necesita saber construir edificios. Pero si necesita poder leer el plano de la ciudad.
             </div>
         </div>
-        <div class="slide-num">02 / 14</div>
+        <div class="slide-num">03 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 3: DINAMICA DISPARADORA
          =========================================== -->
-    <section class="slide" data-slide="2">
+    <section class="slide" data-slide="3">
         <div class="slide-content centered">
             <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
             <h2 class="reveal">Crisis de examenes</h2>
@@ -599,13 +622,13 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Salidas: puntos de falla, decisiones preventivas, 2 prioridades inmediatas</p>
         </div>
-        <div class="slide-num">03 / 14</div>
+        <div class="slide-num">04 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 4: QUE ES UNA ARQUITECTURA IT
          =========================================== -->
-    <section class="slide" data-slide="3">
+    <section class="slide" data-slide="4">
         <div class="slide-content">
             <div class="slide-tag reveal">Concepto Clave</div>
             <h2 class="reveal">Arquitectura IT: <span class="gradient-text">la analogia de la ciudad</span></h2>
@@ -633,13 +656,13 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Para participantes de empresas no educativas: donde dice &ldquo;estudiante&rdquo; pensa en &ldquo;cliente&rdquo;. Donde dice &ldquo;SIS&rdquo; pensa en tu sistema core de gestion. El principio es el mismo.</p>
         </div>
-        <div class="slide-num">04 / 14</div>
+        <div class="slide-num">05 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 5: SISTEMAS CLAVE
          =========================================== -->
-    <section class="slide" data-slide="4">
+    <section class="slide" data-slide="5">
         <div class="slide-content">
             <h2 class="reveal">Los sistemas <span class="gradient-text">clave</span></h2>
             <div style="margin-top:var(--content-gap);">
@@ -673,13 +696,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">05 / 14</div>
+        <div class="slide-num">06 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 6: EL SIS — PLATAFORMA CORE
          =========================================== -->
-    <section class="slide" data-slide="5">
+    <section class="slide" data-slide="6">
         <div class="slide-content">
             <div class="slide-tag reveal">Sistema Core</div>
             <h2 class="reveal">El SIS: <span class="gradient-text">doble-click en el nucleo</span></h2>
@@ -692,13 +715,13 @@
                 />
             </div>
         </div>
-        <div class="slide-num">06 / 14</div>
+        <div class="slide-num">07 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 7: CICLO DE VIDA DEL ESTUDIANTE
          =========================================== -->
-    <section class="slide" data-slide="6">
+    <section class="slide" data-slide="7">
         <div class="slide-content">
             <div class="slide-tag reveal">Flujo</div>
             <h2 class="reveal">Ciclo de vida <span class="gradient-text">del estudiante</span></h2>
@@ -740,13 +763,13 @@
                 Los problemas reales surgen en las transiciones entre sistemas.
             </div>
         </div>
-        <div class="slide-num">07 / 14</div>
+        <div class="slide-num">08 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 8: CASOS REALES — LMS y CRM
          =========================================== -->
-    <section class="slide" data-slide="7">
+    <section class="slide" data-slide="8">
         <div class="slide-content">
             <div class="slide-tag reveal">Casos Reales</div>
             <h2 class="reveal">Cuando los sistemas <span class="gradient-text">generan valor</span></h2>
@@ -765,13 +788,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">08 / 14</div>
+        <div class="slide-num">09 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 9: SINGLE SOURCE OF TRUTH
          =========================================== -->
-    <section class="slide" data-slide="8">
+    <section class="slide" data-slide="9">
         <div class="slide-content">
             <div class="slide-tag reveal">Gobierno de Datos</div>
             <h2 class="reveal">Fuente de verdad <span class="gradient-text">unica (SSOT)</span></h2>
@@ -794,13 +817,13 @@
                 &iquest;Cuantos estudiantes tiene realmente? Nadie sabe. Marketing invierte con un numero, finanzas presupuesta con otro, y el rector presenta un tercero al directorio.
             </div>
         </div>
-        <div class="slide-num">09 / 14</div>
+        <div class="slide-num">10 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 10: NIVELES DE INTEGRACION
          =========================================== -->
-    <section class="slide" data-slide="9">
+    <section class="slide" data-slide="10">
         <div class="slide-content">
             <div class="slide-tag reveal">Integracion</div>
             <h2 class="reveal">Niveles de <span class="gradient-text">integracion</span></h2>
@@ -834,13 +857,13 @@
                 <strong style="color:var(--text-primary);">Cada quiebre en la integracion</strong> es una mala experiencia para el estudiante y un costo operativo para la organizacion.
             </div>
         </div>
-        <div class="slide-num">10 / 14</div>
+        <div class="slide-num">11 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 11: CUADRANTE DE TECNOLOGIA — MODELO MII
          =========================================== -->
-    <section class="slide" data-slide="8">
+    <section class="slide" data-slide="11">
         <div class="slide-content">
             <div class="slide-tag reveal">Framework</div>
             <h2 class="reveal">Linea base tecnologica <span class="gradient-text">Modelo MII</span></h2>
@@ -853,13 +876,13 @@
                 />
             </div>
         </div>
-        <div class="slide-num">11 / 14</div>
+        <div class="slide-num">12 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 12: ARQUITECTURA COMO HERRAMIENTA DE DECISION
          =========================================== -->
-    <section class="slide" data-slide="9">
+    <section class="slide" data-slide="12">
         <div class="slide-content">
             <h2 class="reveal">La arquitectura como <span class="gradient-text">herramienta de decision</span></h2>
             <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
@@ -885,13 +908,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">12 / 14</div>
+        <div class="slide-num">13 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 13: DINAMICA: MAPEA TU ARQUITECTURA
          =========================================== -->
-    <section class="slide" data-slide="10">
+    <section class="slide" data-slide="13">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
             <h2 class="reveal">Mapea tu arquitectura</h2>
@@ -917,13 +940,13 @@
             </div>
             <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">40 minutos &mdash; Individual/grupal + presentacion</p>
         </div>
-        <div class="slide-num">13 / 14</div>
+        <div class="slide-num">14 / 15</div>
     </section>
 
     <!-- ===========================================
          SLIDE 14: RESULTADO ESPERADO
          =========================================== -->
-    <section class="slide" data-slide="11">
+    <section class="slide" data-slide="14">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Cierre</div>
             <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
@@ -939,7 +962,7 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 03 &mdash; Arquitectura IT Educativa</p>
         </div>
-        <div class="slide-num">14 / 14</div>
+        <div class="slide-num">15 / 15</div>
     </section>
 
     <!-- ===========================================

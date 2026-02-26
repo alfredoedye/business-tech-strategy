@@ -288,5 +288,5 @@ Al finalizar el módulo, el participante:
 ---
 
 
-*Anterior: [← Módulo 5 — Mindset Digital](modulo-05-mindset-digital.md)*
-*Siguiente: [Módulo 7 — Cierre y Lanzamiento del Challenge →](modulo-07-cierre-challenge.md)*
+*Anterior: [← Módulo 5 — Mindset Digital](../modulo-05/modulo-05-mindset-digital.md)*
+*Siguiente: [Módulo 7 — Cierre y Lanzamiento del Challenge →](../modulo-07/modulo-07-cierre-challenge.md)*

@@ -2,7 +2,7 @@
 
 ---
 <!-- Image should be full screen in the slides-->
-<img src="../assets/Campus-02.png" alt="Campus-02"/>
+<img src="../../assets/Campus-02.png" alt="Campus-hero"/>
 
 ## 1 Introducción
 
@@ -39,6 +39,8 @@ Gana quien conserve mayor presupuesto.
 <!-- Link should open in new window-->
 https://casino-tech-play.lovable.app/
 
+---
+
 <!-- new slide -->
 ### Conclusiones Casino Tech
 
@@ -47,7 +49,7 @@ https://casino-tech-play.lovable.app/
 • Más información cuesta  
 • La velocidad importa  
 
-
+---
 <!-- new section -->
 ## 2 Conceptos Claves
 
@@ -90,7 +92,7 @@ No todas las decisiones tecnológicas son iguales. Algunas son operativas (qué 
 | Build | CAPEX + OPEX (equipo permanente) | Propiedad total del activo | Inversión alta y continua |
 | Buy SaaS | OPEX predecible (mensual) | Sin inversión inicial grande | Dependencia de proveedor |
 
-Para profundizar: [Anexo: Finanzas para Decisiones Tech](../materiales/anexos/finanzas-para-decisiones-tech.md).
+Para profundizar: [Anexo: Finanzas para Decisiones Tech](../../materiales/anexos/finanzas-para-decisiones-tech.md).
 
 #### Cloud vs. On-premise
 
@@ -135,7 +137,7 @@ No todos los sistemas tienen el mismo valor estratégico:
 
 ### 2.3 Las 6 dimensiones de una estrategia tecnológica
 
-Una estrategia tecnológica no es una lista de herramientas. Es un modelo que conecta seis dimensiones. Estas mismas dimensiones son las que vas a evaluar en el [Radar de Estrategia Tecnológica](../materiales/templates/template-radar-estrategia-tech.md).
+Una estrategia tecnológica no es una lista de herramientas. Es un modelo que conecta seis dimensiones. Estas mismas dimensiones son las que vas a evaluar en el [Radar de Estrategia Tecnológica](../../materiales/templates/template-radar-estrategia-tech.md).
 
 #### Infraestructura
 
@@ -195,7 +197,7 @@ Ejemplo:
 - Habilitador: analítica predictiva conectada al LMS y al SIS.
 - Inversión: integración de datos + modelo de alertas + equipo de intervención.
 
-> Para profundizar en frameworks estratégicos (Wardley Maps, Hype Cycle, TOGAF simplificado), ver el [Anexo: Frameworks Estratégicos](../materiales/anexos/frameworks-estrategicos.md).
+> Para profundizar en frameworks estratégicos (Wardley Maps, Hype Cycle, TOGAF simplificado), ver el [Anexo: Frameworks Estratégicos](../../materiales/anexos/frameworks-estrategicos.md).
 
 
 ---
@@ -226,5 +228,5 @@ Al finalizar este módulo, el participante puede:
 
 ---
 
-*Anterior: [← Módulo 1 — Hello World](modulo-01-hello-world.md)*
-*Siguiente: [Módulo 3 — Arquitectura IT Educativa →](modulo-03-arquitectura-it.md)*
+*Anterior: [← Módulo 1 — Hello World](../modulo-01/modulo-01-hello-world.md)*
+*Siguiente: [Módulo 3 — Arquitectura IT Educativa →](../modulo-03/modulo-03-arquitectura-it.md)*

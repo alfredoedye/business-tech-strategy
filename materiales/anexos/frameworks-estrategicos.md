@@ -306,4 +306,4 @@ Una extensión del Business Model Canvas de Osterwalder que conecta cada bloque 
 
 ---
 
-*Este anexo complementa el Módulo 2. Para volver: [← Módulo 2 — Estrategia Tecnológica](../contenido/modulo-02-estrategia-tecnologica.md)*
+*Este anexo complementa el Módulo 2. Para volver: [← Módulo 2 — Estrategia Tecnológica](../contenido/modulo-02/modulo-02-estrategia-tecnologica.md)*

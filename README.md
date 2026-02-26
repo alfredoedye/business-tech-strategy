@@ -28,14 +28,14 @@ Módulo de formación ejecutiva para directivos y líderes del sector educativo 
 
 | # | Módulo | Pregunta guía |
 |---|--------|---------------|
-| 0 | [Introducción](contenido/modulo-00-intro.md) | Bienvenida, estructura y objetivos del curso |
-| 1 | [Hello World](contenido/modulo-01-hello-world.md) | ¿Por qué la tecnología dejó de ser soporte y pasó a ser core? |
-| 2 | [Estrategia Tecnológica](contenido/modulo-02-estrategia-tecnologica.md) | ¿Qué decisiones son estratégicas y cuáles tácticas? |
-| 3 | [Arquitectura IT Educativa](contenido/modulo-03-arquitectura-it.md) | ¿Cómo funciona una institución educativa moderna por dentro? |
-| 4 | [Transformación Digital e IA](contenido/modulo-04-transformacion-digital-ia.md) | ¿Cómo transformar sin romper la organización? |
-| 5 | [Mindset Digital](contenido/modulo-05-mindset-digital.md) | ¿Qué tipo de líder necesita ser tu organización? |
-| 6 | [IA y Educación](contenido/modulo-06-ia-educacion.md) | ¿Cómo va la IA a transformar la educación? |
-| 7 | [Cierre y Challenge](contenido/modulo-07-cierre-challenge.md) | Lanzamiento del challenge "Arquitecto del Futuro" |
+| 0 | [Introducción](contenido/modulo-00/modulo-00-intro.md) | Bienvenida, estructura y objetivos del curso |
+| 1 | [Hello World](contenido/modulo-01/modulo-01-hello-world.md) | ¿Por qué la tecnología dejó de ser soporte y pasó a ser core? |
+| 2 | [Estrategia Tecnológica](contenido/modulo-02/modulo-02-estrategia-tecnologica.md) | ¿Qué decisiones son estratégicas y cuáles tácticas? |
+| 3 | [Arquitectura IT Educativa](contenido/modulo-03/modulo-03-arquitectura-it.md) | ¿Cómo funciona una institución educativa moderna por dentro? |
+| 4 | [Transformación Digital e IA](contenido/modulo-04/modulo-04-transformacion-digital-ia.md) | ¿Cómo transformar sin romper la organización? |
+| 5 | [Mindset Digital](contenido/modulo-05/modulo-05-mindset-digital.md) | ¿Qué tipo de líder necesita ser tu organización? |
+| 6 | [IA y Educación](contenido/modulo-06/modulo-06-ia-educacion.md) | ¿Cómo va la IA a transformar la educación? |
+| 7 | [Cierre y Challenge](contenido/modulo-07/modulo-07-cierre-challenge.md) | Lanzamiento del challenge "Arquitecto del Futuro" |
 
 ### Anexos teóricos
 
@@ -92,7 +92,15 @@ Módulo de formación ejecutiva para directivos y líderes del sector educativo 
 ## Estructura de carpetas
 
 ```
-├── contenido/                        # Módulos del curso (modulo-00 a modulo-07)
+├── contenido/                        # Módulos del curso
+│   ├── modulo-00/                    # Introducción
+│   ├── modulo-01/                    # Hello World
+│   ├── modulo-02/                    # Estrategia Tecnológica
+│   ├── modulo-03/                    # Arquitectura IT
+│   ├── modulo-04/                    # Transformación Digital e IA
+│   ├── modulo-05/                    # Mindset Digital
+│   ├── modulo-06/                    # IA y Educación
+│   └── modulo-07/                    # Cierre y Challenge
 ├── materiales/
 │   ├── anexos/                       # Profundización teórica
 │   ├── templates/                    # Templates para actividades

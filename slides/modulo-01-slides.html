@@ -521,6 +521,21 @@
             align-items: center;
         }
 
+        /* Full-screen hero image slide */
+        .slide-hero-img {
+            padding: 0;
+        }
+        .slide-hero-img::before {
+            display: none;
+        }
+        .slide-hero-img img.hero-cover {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* ===========================================
            RESPONSIVE BREAKPOINTS
            =========================================== */
@@ -604,20 +619,28 @@
         <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
 
         <div class="slide-content centered">
-            <img src="../assets/Campus-01.png" alt="Campus" class="reveal" style="max-height:28vh;max-width:60%;object-fit:contain;border-radius:12px;margin-bottom:clamp(0.5rem,1.5vw,1.5rem);">
+
             <div class="slide-tag reveal">M&#243;dulo 01</div>
             <h1 class="reveal">Hello World: <span class="gradient-text">Tecnolog&#237;a como ventaja competitiva</span></h1>
             <div class="divider reveal"><div class="diamond"></div></div>
             <p class="subtitle reveal">La tecnolog&#237;a dej&#243; de ser soporte. Es arquitectura competitiva.</p>
             <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Por qu&#233; la tecnolog&#237;a dej&#243; de ser un &#225;rea de soporte y pas&#243; a ser parte de la estrategia del negocio?</p>
         </div>
-        <div class="slide-num">01 / 12</div>
+        <div class="slide-num">01 / 13</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: CAMPUS HERO
+         =========================================== -->
+    <section class="slide slide-hero-img" data-slide="1">
+        <img class="hero-cover" src="../assets/Campus-01.png" alt="Campus-hero">
+        <div class="slide-num" style="color:rgba(255,255,255,0.6);">02 / 13</div>
     </section>
 
     <!-- ===========================================
          SLIDE 2: OBJETIVO
          =========================================== -->
-    <section class="slide" data-slide="1">
+    <section class="slide" data-slide="2">
         <div class="slide-content">
             <div class="slide-tag reveal">Objetivo</div>
             <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este m&#243;dulo</span></h2>
@@ -631,13 +654,13 @@
                 </ul>
             </div>
         </div>
-        <div class="slide-num">02 / 12</div>
+        <div class="slide-num">03 / 13</div>
     </section>
 
     <!-- ===========================================
          SLIDE 3: DIN&#193;MICA DISPARADORA — EL REEMPLAZO INVISIBLE
          =========================================== -->
-    <section class="slide" data-slide="2">
+    <section class="slide" data-slide="3">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Din&#225;mica Disparadora</div>
             <h2 class="reveal">El Reemplazo <span class="gradient-text">Invisible</span></h2>
@@ -666,13 +689,13 @@
             </div>
             <a href="dinamica-05-slides.html" class="reveal" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:var(--element-gap);font-size:var(--small-size);color:var(--accent);text-decoration:none;padding:0.4em 1em;border:1px solid rgba(56,189,248,0.3);border-radius:8px;background:rgba(56,189,248,0.08);transition:all 0.3s ease;">Ver din&#225;mica completa &rarr;</a>
         </div>
-        <div class="slide-num">03 / 12</div>
+        <div class="slide-num">04 / 13</div>
     </section>
 
     <!-- ===========================================
          SLIDE 4: SOFTWARE IS EATING THE WORLD
          =========================================== -->
-    <section class="slide" data-slide="3">
+    <section class="slide" data-slide="4">
         <div class="slide-content">
             <div class="slide-tag reveal">Concepto Clave</div>
             <h2 class="reveal">Software Is Eating <span class="gradient-text">The World</span></h2>
@@ -703,13 +726,13 @@
                 Si el negocio educativo es digital-first, la arquitectura tecnol&#243;gica es parte del modelo de negocio. No es infraestructura. Es <strong style="color:var(--text-primary);">estructura competitiva</strong>.
             </div>
         </div>
-        <div class="slide-num">04 / 12</div>
+        <div class="slide-num">05 / 13</div>
     </section>
 
     <!-- ===========================================
          SLIDE 5: TRES NIVELES — Usar, Operar, Dise&#241;ar
          =========================================== -->
-    <section class="slide" data-slide="4">
+    <section class="slide" data-slide="5">
         <div class="slide-content">
             <div class="slide-tag reveal">Framework</div>
             <h2 class="reveal">Tres niveles: <span class="gradient-text">Usar, Operar, Dise&#241;ar</span></h2>
@@ -746,13 +769,13 @@
                 &iquest;En qu&#233; nivel est&#225; tu organizaci&#243;n? &iquest;En qu&#233; nivel necesita estar para competir en los pr&#243;ximos 5 a&#241;os?
             </div>
         </div>
-        <div class="slide-num">05 / 12</div>
+        <div class="slide-num">06 / 13</div>
     </section>
 
     <!-- ===========================================
          SLIDE 6: IMPACTO ECON&#211;MICO
          =========================================== -->
-    <section class="slide" data-slide="5">
+    <section class="slide" data-slide="6">
         <div class="slide-content">
             <div class="slide-tag reveal">Impacto</div>
             <h2 class="reveal">Impacto econ&#243;mico <span class="gradient-text">por nivel</span></h2>
@@ -782,13 +805,13 @@
                 La diferencia entre niveles no es t&#233;cnica. Es econ&#243;mica. <strong style="color:var(--text-primary);">El nivel en el que est&#225;s define el techo de tu crecimiento.</strong>
             </div>
         </div>
-        <div class="slide-num">06 / 12</div>
+        <div class="slide-num">07 / 13</div>
     </section>
 
     <!-- ===========================================
          SLIDE 7: ROL DEL EQUIPO DIRECTIVO
          =========================================== -->
-    <section class="slide" data-slide="6">
+    <section class="slide" data-slide="7">
         <div class="slide-content">
             <div class="slide-tag reveal">Liderazgo</div>
             <h2 class="reveal">El rol del <span class="gradient-text">equipo directivo</span></h2>
@@ -829,13 +852,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">07 / 12</div>
+        <div class="slide-num">08 / 13</div>
     </section>
 
     <!-- ===========================================
          SLIDE 8: MAPA EDTECH GLOBAL
          =========================================== -->
-    <section class="slide" data-slide="7">
+    <section class="slide" data-slide="8">
         <div class="slide-content">
             <div class="slide-tag reveal">Ecosistema</div>
             <h2 class="reveal">Mapa EdTech <span class="gradient-text">global</span></h2>
@@ -867,13 +890,13 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Conocer el mapa permite entender d&#243;nde compet&#237;s, d&#243;nde hay oportunidades y d&#243;nde est&#225;n las amenazas invisibles.</p>
         </div>
-        <div class="slide-num">08 / 12</div>
+        <div class="slide-num">09 / 13</div>
     </section>
 
     <!-- ===========================================
          SLIDE 9: FUERZA 1 — Presi&#243;n financiera
          =========================================== -->
-    <section class="slide" data-slide="8">
+    <section class="slide" data-slide="9">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Contexto Estructural</div>
             <h2 class="reveal">Fuerza 1: <span class="gradient-text">Presi&#243;n financiera</span></h2>
@@ -895,13 +918,13 @@
                 La pregunta ya no es &ldquo;si vamos a crecer&rdquo;, sino <strong style="color:var(--text-primary);">&ldquo;si el modelo actual es financieramente viable&rdquo;</strong>.
             </div>
         </div>
-        <div class="slide-num">09 / 12</div>
+        <div class="slide-num">10 / 13</div>
     </section>
 
     <!-- ===========================================
          SLIDE 10: FUERZAS 2 Y 3
          =========================================== -->
-    <section class="slide" data-slide="9">
+    <section class="slide" data-slide="10">
         <div class="slide-content">
             <h2 class="reveal">Fuerzas <span class="gradient-text">2 y 3</span></h2>
             <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
@@ -926,13 +949,13 @@
                 Christensen predijo que la mitad de las universidades de EE.UU. cerrar&#237;an en 10&#8211;15 a&#241;os. Estamos en la ventana. <strong style="color:var(--text-primary);">&iquest;Tu instituci&#243;n est&#225; preparada para competir?</strong>
             </div>
         </div>
-        <div class="slide-num">10 / 12</div>
+        <div class="slide-num">11 / 13</div>
     </section>
 
     <!-- ===========================================
          SLIDE 11: RESULTADO ESPERADO
          =========================================== -->
-    <section class="slide" data-slide="10">
+    <section class="slide" data-slide="11">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Cierre</div>
             <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
@@ -949,13 +972,13 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">M&#243;dulo 01 &mdash; Hello World</p>
         </div>
-        <div class="slide-num">11 / 12</div>
+        <div class="slide-num">12 / 13</div>
     </section>
 
     <!-- ===========================================
          SLIDE 12: REFLEXI&#211;N FINAL
          =========================================== -->
-    <section class="slide" data-slide="11">
+    <section class="slide" data-slide="12">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Reflexi&#243;n</div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:700px;text-align:center;border-left:none;border-top:3px solid var(--accent);border-radius:8px 8px 0 0;padding:1.5em 2em;font-size:clamp(1rem,2vw,1.4rem);line-height:1.6;">
@@ -964,7 +987,7 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">M&#243;dulo 01 &mdash; Hello World: Tecnolog&#237;a como ventaja competitiva</p>
         </div>
-        <div class="slide-num">12 / 12</div>
+        <div class="slide-num">13 / 13</div>
     </section>
 
     <!-- ===========================================

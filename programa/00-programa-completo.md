@@ -42,14 +42,14 @@ Al finalizar este módulo, los participantes podrán:
 
 | # | Módulo | Pregunta guía | Contenido |
 |---|--------|---------------|-----------|
-| 0 | [Introducción](../contenido/modulo-00-intro.md) | — | Presentación del curso, facilitadores y estructura |
-| 1 | [Hello World](../contenido/modulo-01-hello-world.md) | ¿Por qué la tecnología dejó de ser soporte y pasó a ser core? | Ventaja competitiva, 3 niveles de relación con la tech, rol del equipo directivo |
-| 2 | [Estrategia Tecnológica](../contenido/modulo-02-estrategia-tecnologica.md) | ¿Qué decisiones son estratégicas y cuáles tácticas? | Build/Buy, Cloud/On-premise, Core/Commodity, 5 componentes de estrategia |
-| 3 | [Arquitectura IT Educativa](../contenido/modulo-03-arquitectura-it.md) | ¿Cómo funciona una institución educativa moderna por dentro? | SIS, LMS, CRM, ERP, BI, IAM, integraciones, ciclo de vida del estudiante |
-| 4 | [Transformación Digital e IA](../contenido/modulo-04-transformacion-digital-ia.md) | ¿Cómo transformar sin romper la organización? | Triángulo de transformación, framework de adopción de IA, ética |
-| 5 | [Mindset Digital](../contenido/modulo-05-mindset-digital.md) | ¿Qué tipo de líder necesita ser tu organización? | 7 pilares del mindset digital, anti-patrones, diagnóstico |
-| 6 | [IA y Educación](../contenido/modulo-06-ia-educacion.md) | ¿Cómo va la IA a transformar la educación? | Panel de discusión — Día 2 (Sábado) |
-| 7 | [Cierre y Lanzamiento del Challenge](../contenido/modulo-07-cierre-challenge.md) | — | Cierre del curso y lanzamiento del challenge grupal |
+| 0 | [Introducción](../contenido/modulo-00/modulo-00-intro.md) | — | Presentación del curso, facilitadores y estructura |
+| 1 | [Hello World](../contenido/modulo-01/modulo-01-hello-world.md) | ¿Por qué la tecnología dejó de ser soporte y pasó a ser core? | Ventaja competitiva, 3 niveles de relación con la tech, rol del equipo directivo |
+| 2 | [Estrategia Tecnológica](../contenido/modulo-02/modulo-02-estrategia-tecnologica.md) | ¿Qué decisiones son estratégicas y cuáles tácticas? | Build/Buy, Cloud/On-premise, Core/Commodity, 5 componentes de estrategia |
+| 3 | [Arquitectura IT Educativa](../contenido/modulo-03/modulo-03-arquitectura-it.md) | ¿Cómo funciona una institución educativa moderna por dentro? | SIS, LMS, CRM, ERP, BI, IAM, integraciones, ciclo de vida del estudiante |
+| 4 | [Transformación Digital e IA](../contenido/modulo-04/modulo-04-transformacion-digital-ia.md) | ¿Cómo transformar sin romper la organización? | Triángulo de transformación, framework de adopción de IA, ética |
+| 5 | [Mindset Digital](../contenido/modulo-05/modulo-05-mindset-digital.md) | ¿Qué tipo de líder necesita ser tu organización? | 7 pilares del mindset digital, anti-patrones, diagnóstico |
+| 6 | [IA y Educación](../contenido/modulo-06/modulo-06-ia-educacion.md) | ¿Cómo va la IA a transformar la educación? | Panel de discusión — Día 2 (Sábado) |
+| 7 | [Cierre y Lanzamiento del Challenge](../contenido/modulo-07/modulo-07-cierre-challenge.md) | — | Cierre del curso y lanzamiento del challenge grupal |
 
 ---
 

@@ -369,4 +369,4 @@ Versión: 1.0 | Fecha: [Fecha] | Aprobado por: [Autoridad]
 
 ---
 
-*Este anexo complementa el Módulo 4. Para volver: [← Módulo 4 — Transformación Digital e IA](../contenido/modulo-04-transformacion-digital-ia.md)*
+*Este anexo complementa el Módulo 4. Para volver: [← Módulo 4 — Transformación Digital e IA](../contenido/modulo-04/modulo-04-transformacion-digital-ia.md)*

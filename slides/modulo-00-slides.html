@@ -506,6 +506,21 @@
             align-items: center;
         }
 
+        /* Full-screen hero image slide */
+        .slide-hero-img {
+            padding: 0;
+        }
+        .slide-hero-img::before {
+            display: none;
+        }
+        .slide-hero-img img.hero-cover {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* ===========================================
            RESPONSIVE BREAKPOINTS
            =========================================== */
@@ -585,13 +600,21 @@
             <p class="subtitle reveal">Mapa en mano: que vamos a ver, por que importa y como aprovechar el curso.</p>
             <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">Tecnologia como palanca estrategica, no solo como soporte.</p>
         </div>
-        <div class="slide-num">01 / 08</div>
+        <div class="slide-num">01 / 09</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: CAMPUS HERO
+         =========================================== -->
+    <section class="slide slide-hero-img" data-slide="1">
+        <img class="hero-cover" src="../assets/Campus-01.png" alt="Campus-hero">
+        <div class="slide-num" style="color:rgba(255,255,255,0.6);">02 / 09</div>
     </section>
 
     <!-- ===========================================
          SLIDE 2: PRESENTADORES
          =========================================== -->
-    <section class="slide" data-slide="1">
+    <section class="slide" data-slide="2">
         <div class="slide-content">
             <div class="slide-tag reveal">Facilitadores</div>
             <h2 class="reveal">Quienes <span class="gradient-text">somos</span></h2>
@@ -610,13 +633,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">02 / 08</div>
+        <div class="slide-num">03 / 09</div>
     </section>
 
     <!-- ===========================================
          SLIDE 3: OBJETIVOS DE APRENDIZAJE
          =========================================== -->
-    <section class="slide" data-slide="2">
+    <section class="slide" data-slide="3">
         <div class="slide-content">
             <div class="slide-tag reveal">Objetivos de Aprendizaje</div>
             <h2 class="reveal">Al finalizar, <span class="gradient-text">podras</span></h2>
@@ -631,13 +654,13 @@
                 </ul>
             </div>
         </div>
-        <div class="slide-num">03 / 08</div>
+        <div class="slide-num">04 / 09</div>
     </section>
 
     <!-- ===========================================
          SLIDE 4: ESTRUCTURA DEL PROGRAMA
          =========================================== -->
-    <section class="slide" data-slide="3">
+    <section class="slide" data-slide="4">
         <div class="slide-content">
             <div class="slide-tag reveal">Estructura</div>
             <h2 class="reveal">4 Semanas <span class="gradient-text">de Programa</span></h2>
@@ -659,13 +682,13 @@
                 Menos teoria suelta, mas criterio para tomar decisiones tecnologicas con impacto real en el negocio educativo.
             </div>
         </div>
-        <div class="slide-num">04 / 08</div>
+        <div class="slide-num">05 / 09</div>
     </section>
 
     <!-- ===========================================
          SLIDE 5: AGENDA DIA 1
          =========================================== -->
-    <section class="slide" data-slide="4">
+    <section class="slide" data-slide="5">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Agenda</div>
             <h2 class="reveal">Dia 1 &mdash; <span class="gradient-text">Viernes 27/02</span></h2>
@@ -693,13 +716,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">05 / 08</div>
+        <div class="slide-num">06 / 09</div>
     </section>
 
     <!-- ===========================================
          SLIDE 6: AGENDA DIA 2
          =========================================== -->
-    <section class="slide" data-slide="5">
+    <section class="slide" data-slide="6">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Agenda</div>
             <h2 class="reveal">Dia 2 &mdash; <span class="gradient-text">Sabado 28/02</span></h2>
@@ -722,13 +745,13 @@
                 <strong style="color:var(--text-primary);">Challenge Point:</strong> Mie 18/03, 14:00&ndash;16:00 (virtual) &mdash; Presentaciones individuales + Feedback
             </div>
         </div>
-        <div class="slide-num">06 / 08</div>
+        <div class="slide-num">07 / 09</div>
     </section>
 
     <!-- ===========================================
          SLIDE 7: VISTA GENERAL DE MODULOS
          =========================================== -->
-    <section class="slide" data-slide="6">
+    <section class="slide" data-slide="7">
         <div class="slide-content">
             <div class="slide-tag reveal">Vista General</div>
             <h2 class="reveal">7 Modulos <span class="gradient-text">del Programa</span></h2>
@@ -763,13 +786,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">07 / 08</div>
+        <div class="slide-num">08 / 09</div>
     </section>
 
     <!-- ===========================================
          SLIDE 8: TRANSICION
          =========================================== -->
-    <section class="slide" data-slide="7">
+    <section class="slide" data-slide="8">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Arranquemos</div>
             <h1 class="reveal"><span class="gradient-text">Empecemos</span></h1>
@@ -779,7 +802,7 @@
                 Ir al Modulo 01 &rarr;
             </a>
         </div>
-        <div class="slide-num">08 / 08</div>
+        <div class="slide-num">09 / 09</div>
     </section>
 
     <!-- ===========================================

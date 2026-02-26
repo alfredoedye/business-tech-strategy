@@ -113,4 +113,4 @@ Comienza con decisiones de diseño estratégico.
 
 ---
 
-*Anterior: [← Módulo 6 — IA y el Futuro de la Educación](modulo-06-ia-educacion.md)*
+*Anterior: [← Módulo 6 — IA y el Futuro de la Educación](../modulo-06/modulo-06-ia-educacion.md)*

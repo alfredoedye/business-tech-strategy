@@ -2,7 +2,10 @@
 
 ---
 
-![Campus](../assets/Campus-01.png)
+
+<img src="../assets/Campus-01.png" alt="Campus-01"/>
+
+
 
 
 ## 1 Introducción 

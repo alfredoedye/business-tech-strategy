@@ -43,7 +43,7 @@ Como Directivo a cargo de una Institución educativa:  Qué decisiones de Negoci
 
 ---
 <!-- This should be a new Slide -->
-### 💡 **Cierre Dinamica:**
+## 💡 **Cierre Dinamica:**
 
 Si ese competidor nace hoy digital, la tecnología no es soporte. Es el modelo.”
 Cuando la tecnología es soporte, el negocio se diseña primero y se digitaliza después. Cuando es core, el negocio se diseña desde la arquitectura y la tecnología es parte de la estrategia

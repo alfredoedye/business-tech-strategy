@@ -182,44 +182,11 @@ La gobernanza se vuelve ventaja competitiva.
 
 ---
 
-## Trabajo en grupos (15 minutos)
-
-Cada grupo debe:
-
-1. Elegir el escenario más probable.
-2. Definir cómo debería posicionarse su organización.
-3. Identificar:
-   - Qué debería empezar a hacer en 12 meses.
-   - Qué debería dejar de hacer.
-   - Qué ventaja competitiva busca construir.
-   - Qué riesgo está dispuesto a asumir.
-
----
-
-## Parte 3 — Plenaria estratégica (20 minutos)
-
-Cada grupo presenta:
-
-- Escenario elegido.
-- Posicionamiento estratégico.
-- Trade-offs explícitos.
-- Primeras decisiones concretas.
-
-El facilitador conecta con conceptos del curso:
-
-- Good Strategy vs Bad Strategy.
-- Triángulo cultura–proceso–tecnología.
-- IA como capa transversal.
-- Gobernanza y presupuesto.
-- Riesgo de piloto eterno.
-
----
-
 ## Parte 4 — Declaración personal (10 minutos)
 
 Cada participante completa individualmente:
 
-> “En los próximos 24 meses, mi organización debe dejar de ______ y empezar a ______.”
+> “En los próximos 24 meses, como lider debo dejar de ______ y empezar a ______.”
 
 Y luego:
 

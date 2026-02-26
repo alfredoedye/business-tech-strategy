@@ -247,24 +247,10 @@ La continuidad operativa es una conversación que muchos equipos directivos evit
 
 **Duración:** 10 minutos
 
-
-**Instrucciones:**
-1. Cada participante (o grupo por institución) completa el [Template Mapa de Arquitectura IT](../../materiales/templates/template-mapa-arquitectura-it.md).
-2. Mapear:
-   - Qué sistemas tiene la organización.
-   - Cómo se conectan (o no).
-   - Cuál es el "dueño" de los datos del estudiante.
-   - Los top 3 dolores.
-3. Cada grupo presenta en 3 minutos:
-   - Su descubrimiento principal.
-   - Su dolor #1.
-   - La pregunta que se llevan.
-
 **Debrief facilitador:**
 - Buscar patrones comunes entre las organizaciones.
 - Señalar que mapear la arquitectura es un acto de gobierno, no un ejercicio técnico.
 - Destacar que muchos líderes hacen este ejercicio por primera vez — y eso es parte del problema.
-
 
 
 ---

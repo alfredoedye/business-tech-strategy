@@ -19,15 +19,26 @@ Que los participantes:
 
 > ¿Cómo transformar sin romper la organización?
 
-### 1.3 Dinámica Disparadora “🔥 Boardroom en Crisis: Decidir bajo presión”
+### 1.3 Dinámica Disparadora: 🔥 90 Días para No Colapsar
 
+- En esta simulación individual, cada participante enfrenta 10 decisiones estratégicas bajo presión, representando una organización en crisis.  
+- En cada escenario deberá elegir entre priorizar **Tecnología, Proceso o Cultura**, sin conocer el impacto acumulado.
 
-Los participantes asumen el rol de Comité Ejecutivo.  
-Reciben un escenario realista con presión financiera y competitiva.  
-Tienen 8 minutos para decidir una estrategia.
+- Al finalizar, se revela su perfil estratégico y el equilibrio (o desbalance) de su triángulo Cultura–Proceso–Tecnología.  
+- En pantalla principal, veremos el mapa colectivo del grupo en tiempo real.
 
-Ver guía completa para el facilitador: [Dinámica "Boardroom en Crisis"](../../materiales/dinamicas/04-guia-boardroom-crisis.md)
+El objetivo no es acertar.  
+Es descubrir cómo decidimos cuando el sistema está bajo tensión.
 
+https://ninety-day-strategy-spark.lovable.app
+
+## Resumen dinamica
+
+- Toda decisión fortalece un vértice del triángulo y puede debilitar otro si no se equilibra.
+- El problema no es una mala decisión aislada, sino el patrón acumulado de decisiones.
+- Cada líder tiende a sobrerrepresentar su zona cómoda (Tecnología, Proceso o Cultura).
+- El desbalance sistémico no se ve al inicio, pero termina generando fricción estructural.
+- La resiliencia organizacional surge del equilibrio coherente entre Cultura, Proceso y Tecnología.
 
 
 

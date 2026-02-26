@@ -333,17 +333,30 @@
             flex-shrink: 0;
         }
 
-        /* Triangle diagram */
-        .triangle-container {
+        /* Layer diagram */
+        .layer-stack {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: clamp(0.5rem, 2vw, 1.5rem) 0;
+            flex-direction: column;
+            gap: clamp(0.3rem, 0.6vw, 0.5rem);
+            max-width: 700px;
         }
 
-        .triangle-svg {
-            width: min(300px, 40vw);
-            height: auto;
+        .layer {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1vw, 1rem);
+            padding: clamp(0.5rem, 0.8vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: var(--small-size);
+            font-weight: 500;
+        }
+
+        .layer-label {
+            font-weight: 700;
+            color: var(--accent);
+            min-width: clamp(60px, 8vw, 90px);
         }
 
         /* Anti-pattern cards */
@@ -375,70 +388,18 @@
             color: var(--text-muted);
         }
 
-        /* Layer diagram */
-        .layer-stack {
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.3rem, 0.6vw, 0.5rem);
-            max-width: 500px;
-            margin: 0 auto;
+        /* Hero image slide */
+        .slide-hero-img {
+            padding: 0;
         }
 
-        .layer {
-            display: flex;
-            align-items: center;
-            gap: clamp(0.5rem, 1vw, 1rem);
-            padding: clamp(0.5rem, 0.8vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem);
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: var(--small-size);
-            font-weight: 500;
+        .slide-hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .layer-label {
-            font-weight: 700;
-            color: var(--accent);
-            min-width: 40px;
-        }
-
-        /* Governance roles */
-        .role-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: clamp(0.8rem, 1.5vw, 1.2rem);
-        }
-
-        .role-title {
-            font-size: clamp(0.8rem, 1.2vw, 1rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);
-        }
-
-        .role-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.15rem, 0.4vw, 0.3rem);
-        }
-
-        .role-list li {
-            font-size: var(--small-size);
-            color: var(--text-muted);
-            padding-left: 1em;
-            position: relative;
-        }
-
-        .role-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        /* Ethics list */
+        /* Ethics grid */
         .ethics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
@@ -651,37 +612,79 @@
             <h1 class="reveal">Mindset <span class="gradient-text">Digital</span></h1>
             <div class="divider reveal"><div class="diamond"></div></div>
             <p class="subtitle reveal">El sistema operativo del liderazgo</p>
-            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Que tipo de lider necesita ser tu organizacion?</p>
+            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Qu&eacute; decisiones est&aacute;s tomando hoy como lider que demuestran que tienes un mindset digital?</p>
         </div>
-        <div class="slide-num">01 / 14</div>
+        <div class="slide-num">01 / 19</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 2: QUE NO ES MINDSET DIGITAL
+         SLIDE 2: CAMPUS HERO
          =========================================== -->
-    <section class="slide" data-slide="1">
+    <section class="slide slide-hero-img" data-slide="1">
+        <img src="../assets/Campus-05.png" alt="Campus-05">
+        <div class="slide-num" style="color:#fff;">02 / 19</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: OBJETIVO
+         =========================================== -->
+    <section class="slide" data-slide="2">
         <div class="slide-content">
             <div class="slide-tag reveal">Objetivo</div>
-            <h2 class="reveal">Que NO es <span class="gradient-text">mindset digital</span></h2>
+            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este modulo</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Que los participantes entiendan que el mindset digital no es una actitud ni una moda, sino un <strong style="color:var(--text-primary)">sistema operativo de liderazgo</strong> que determina si la estrategia tecnologica se ejecuta o se diluye.</p>
+            <div class="quote-box reveal">
+                Sin este sistema operativo, incluso la mejor arquitectura y la mejor estrategia fracasan.
+            </div>
+        </div>
+        <div class="slide-num">03 / 19</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: DINAMICA DISPARADORA — DIAGNOSTICO BRUTAL
+         =========================================== -->
+    <section class="slide" data-slide="3">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica Disparadora</div>
+            <h2 class="reveal">Diagnostico <span class="gradient-text">Brutal</span></h2>
+            <p class="subtitle reveal">Cada participante completa un autodiagnostico rapido sobre que tan digital es su liderazgo hoy &mdash; sin filtro ni correccion politica.</p>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--body-size);color:var(--text-secondary);">Antes de hablar de pilares, hablemos de sintomas</p>
+            <div class="reveal" style="margin-top:var(--content-gap);">
+                <a href="https://mindset-thermometer.lovable.app/" target="_blank" style="display:inline-block;padding:0.6em 1.5em;background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.3);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:700;font-size:var(--body-size);transition:all 0.3s ease;">mindset-thermometer.lovable.app &rarr;</a>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:650px;text-align:left;">
+                Esto no es un juicio moral. Es un diagnostico. La mayoria de las organizaciones operan asi.
+            </div>
+        </div>
+        <div class="slide-num">04 / 19</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: QUE NO ES / SI ES MINDSET DIGITAL
+         =========================================== -->
+    <section class="slide" data-slide="4">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Conceptos</div>
+            <h2 class="reveal">Que NO es y que SI es <span class="gradient-text">mindset digital</span></h2>
             <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
                 <div class="card" style="border-left:3px solid var(--accent-red);">
                     <h3 style="color:var(--accent-red);margin-bottom:var(--element-gap);">NO es:</h3>
                     <ul class="bullet-list" style="list-style:none;">
                         <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">✕</span>
-                            Ser joven o "millennial"
+                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">&#x2715;</span>
+                            Ser joven.
                         </li>
                         <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">✕</span>
-                            Saber usar herramientas digitales
+                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">&#x2715;</span>
+                            Saber usar herramientas.
                         </li>
                         <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">✕</span>
-                            Hablar de innovacion en conferencias
+                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">&#x2715;</span>
+                            Hablar de innovacion.
                         </li>
                         <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">✕</span>
-                            Tener cuentas en redes sociales
+                            <span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">&#x2715;</span>
+                            Tener un laboratorio de IA.
                         </li>
                     </ul>
                 </div>
@@ -689,481 +692,380 @@
                     <h3 style="color:var(--accent-green);margin-bottom:var(--element-gap);">SI es:</h3>
                     <ul class="bullet-list" style="list-style:none;">
                         <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">✓</span>
-                            Tomar decisiones basadas en datos y experimentacion
+                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">&#x2713;</span>
+                            Una forma estructural de tomar decisiones.
                         </li>
                         <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">✓</span>
-                            Liderar en contextos de incertidumbre tecnologica
+                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">&#x2713;</span>
+                            Una forma de asignar recursos.
                         </li>
                         <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">✓</span>
-                            Practicas concretas que se pueden instalar
+                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">&#x2713;</span>
+                            Una forma de evaluar resultados.
                         </li>
                         <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">✓</span>
-                            La capa humana que hace posible la estrategia tech
+                            <span style="position:absolute;left:0;color:var(--accent-green);font-weight:700;">&#x2713;</span>
+                            Una forma de asumir riesgo.
                         </li>
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="slide-num">02 / 14</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 3: BINGO DE ANTI-PATRONES
-         =========================================== -->
-    <section class="slide" data-slide="2">
-        <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
-            <h2 class="reveal">Bingo de <span class="gradient-text">anti-patrones</span></h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);gap:clamp(0.4rem,0.8vw,0.6rem);">
-                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Implementamos el sistema hace 3 anos y no lo tocamos"</p>
-                    <span class="pill pill-blue">Producto</span>
-                </div>
-                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Yo no necesito entender de tech"</p>
-                    <span class="pill pill-purple">Aprendizaje</span>
-                </div>
-                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Necesitamos un business case de 50 paginas"</p>
-                    <span class="pill pill-amber">Experimentacion</span>
-                </div>
-                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Eso es tema de sistemas, no mio"</p>
-                    <span class="pill pill-blue">Colaboracion</span>
-                </div>
-                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Yo creo que la desercion bajo" (sin datos)</p>
-                    <span class="pill pill-purple">Datos</span>
-                </div>
-                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Solo IT propone soluciones"</p>
-                    <span class="pill pill-green">Agencia</span>
-                </div>
-                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"La seguridad es tema de IT"</p>
-                    <span class="pill pill-red">Seguridad</span>
-                </div>
-                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Compramos la herramienta pero nadie la usa"</p>
-                    <span class="pill pill-amber">Cultura</span>
-                </div>
-                <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:0.3em;">"Tenemos 12 sistemas y solo 2 integrados"</p>
-                    <span class="pill pill-blue">Arquitectura</span>
-                </div>
-            </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">7 minutos &mdash; &iquest;Cuantos marcaste? Ese es el diagnostico mas honesto del dia.</p>
-        </div>
-        <div class="slide-num">03 / 14</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 4: PILAR 1 — ORIENTACION A PRODUCTO
-         =========================================== -->
-    <section class="slide" data-slide="3">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Pilar 1</div>
-            <h2 class="reveal">Orientacion a <span class="gradient-text">Producto</span></h2>
-            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
-                <div>
-                    <h3 style="color:var(--accent-red);margin-bottom:var(--element-gap);">Mentalidad de Proyecto</h3>
-                    <div class="info-row">
-                        <span class="info-value">Tiene fecha de inicio y fin</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-value">Se mide por entrega en tiempo</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-value">Una vez entregado, "se termino"</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 style="color:var(--accent-green);margin-bottom:var(--element-gap);">Mentalidad de Producto</h3>
-                    <div class="info-row">
-                        <span class="info-value">Es continuo &mdash; se itera permanentemente</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-value">Se mide por valor al usuario</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-value">Nunca esta terminado</span>
-                    </div>
-                </div>
-            </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                El campus virtual no es un proyecto. Es un producto que se itera y se mide continuamente.
+                Es el sistema operativo humano que sostiene la estrategia.
             </div>
         </div>
-        <div class="slide-num">04 / 14</div>
+        <div class="slide-num">05 / 19</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 5: PILAR 2 — APRENDIZAJE CONTINUO
-         =========================================== -->
-    <section class="slide" data-slide="4">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Pilar 2</div>
-            <h2 class="reveal">Aprendizaje <span class="gradient-text">Continuo</span></h2>
-            <div style="margin-top:var(--content-gap);">
-                <ul class="bullet-list">
-                    <li class="reveal">2-3 horas semanales leyendo sobre tendencias del sector</li>
-                    <li class="reveal">Al menos 2 eventos de industria por ano</li>
-                    <li class="reveal">Conversaciones regulares con pares de otras industrias</li>
-                    <li class="reveal">Probar personalmente las herramientas que usa la organizacion</li>
-                </ul>
-            </div>
-            <div class="antipattern reveal" style="margin-top:var(--content-gap);">
-                <div class="antipattern-icon">⚠️</div>
-                <div>
-                    <div class="antipattern-name">Anti-patron</div>
-                    <div class="antipattern-desc">"Yo no necesito entender de tecnologia, para eso tengo IT."</div>
-                </div>
-            </div>
-            <div class="quote-box reveal" style="margin-top:var(--element-gap);">
-                &iquest;Cuando fue la ultima vez que usaste tu propia plataforma como si fueras un estudiante?
-            </div>
-        </div>
-        <div class="slide-num">05 / 14</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 6: PILAR 3 — EXPERIMENTACION
+         SLIDE 6: PILAR FUNDACIONAL — ORIENTACION A PRODUCTO
          =========================================== -->
     <section class="slide" data-slide="5">
         <div class="slide-content">
-            <div class="slide-tag reveal">Pilar 3</div>
-            <h2 class="reveal"><span class="gradient-text">Experimentacion</span></h2>
-            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:100%;">
-                <div class="layer" style="justify-content:center;gap:clamp(0.3rem,0.6vw,0.5rem);">
-                    <span style="color:var(--accent);font-weight:700;">Hipotesis</span>
-                    <span style="color:var(--text-muted);">→</span>
-                    <span style="color:var(--text-secondary);">Prototipo</span>
-                    <span style="color:var(--text-muted);">→</span>
-                    <span style="color:var(--text-secondary);">Prueba controlada</span>
-                    <span style="color:var(--text-muted);">→</span>
-                    <span style="color:var(--text-secondary);">Medir</span>
-                    <span style="color:var(--text-muted);">→</span>
-                    <span style="color:var(--text-secondary);">Decidir</span>
-                </div>
-            </div>
+            <div class="slide-tag reveal">Pilar Fundacional</div>
+            <h2 class="reveal">Orientacion a <span class="gradient-text">Producto</span>, no a Proyecto</h2>
+            <p class="subtitle reveal">Este no es un pilar mas. Es el cambio estructural. Sin esto, los otros 6 pilares no funcionan.</p>
             <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="card" style="border-left:3px solid var(--accent-green);">
-                    <h3 style="color:var(--accent-green);margin-bottom:var(--element-gap);">Experimentar</h3>
+                <div>
+                    <h3 style="color:var(--accent-red);margin-bottom:var(--element-gap);">Mentalidad de Proyecto</h3>
                     <ul class="bullet-list" style="list-style:none;">
-                        <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-green);">✓</span>
-                            Tiene hipotesis clara
-                        </li>
-                        <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-green);">✓</span>
-                            Se mide el resultado
-                        </li>
-                        <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-green);">✓</span>
-                            El fracaso ensena
-                        </li>
+                        <li class="reveal" style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#x2715;</span> Tiene inicio y fin.</li>
+                        <li class="reveal" style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#x2715;</span> Se mide por cumplimiento de cronograma.</li>
+                        <li class="reveal" style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#x2715;</span> Se celebra la entrega.</li>
+                        <li class="reveal" style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#x2715;</span> El equipo se disuelve.</li>
+                        <li class="reveal" style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#x2715;</span> El exito es "lo implementamos".</li>
                     </ul>
                 </div>
-                <div class="card" style="border-left:3px solid var(--accent-red);">
-                    <h3 style="color:var(--accent-red);margin-bottom:var(--element-gap);">Improvisar</h3>
+                <div>
+                    <h3 style="color:var(--accent-green);margin-bottom:var(--element-gap);">Mentalidad de Producto</h3>
                     <ul class="bullet-list" style="list-style:none;">
-                        <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-red);">✕</span>
-                            No tiene direccion
-                        </li>
-                        <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-red);">✕</span>
-                            No se mide nada
-                        </li>
-                        <li style="padding-left:1.4em;position:relative;">
-                            <span style="position:absolute;left:0;color:var(--accent-red);">✕</span>
-                            El fracaso se oculta
-                        </li>
+                        <li class="reveal" style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-green);">&#x2713;</span> Es continuo.</li>
+                        <li class="reveal" style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-green);">&#x2713;</span> Se mide por valor entregado.</li>
+                        <li class="reveal" style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-green);">&#x2713;</span> Se itera.</li>
+                        <li class="reveal" style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-green);">&#x2713;</span> Tiene dueno permanente.</li>
+                        <li class="reveal" style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-green);">&#x2713;</span> Se mejora sistematicamente.</li>
                     </ul>
                 </div>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Antes de invertir USD 200K en un chatbot, proba con 500 estudiantes durante 2 meses.</p>
         </div>
-        <div class="slide-num">06 / 14</div>
+        <div class="slide-num">06 / 19</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 7: PILAR 4 — COLABORACION MULTIDISCIPLINARIA
+         SLIDE 7: PRODUCTO — FRICCION Y PREGUNTA
          =========================================== -->
     <section class="slide" data-slide="6">
         <div class="slide-content">
-            <div class="slide-tag reveal">Pilar 4</div>
-            <h2 class="reveal">Colaboracion <span class="gradient-text">Multidisciplinaria</span></h2>
-            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:100%;">
-                <div class="layer" style="justify-content:center;gap:clamp(0.3rem,0.6vw,0.5rem);flex-wrap:wrap;">
-                    <span style="color:#38bdf8;font-weight:700;">Negocio</span>
-                    <span style="color:var(--text-muted);">+</span>
-                    <span style="color:#a855f7;font-weight:700;">Tecnologia</span>
-                    <span style="color:var(--text-muted);">+</span>
-                    <span style="color:#34d399;font-weight:700;">Datos</span>
-                    <span style="color:var(--text-muted);">+</span>
-                    <span style="color:#f59e0b;font-weight:700;">Diseno</span>
-                    <span style="color:var(--text-muted);">=</span>
-                    <span style="color:var(--text-primary);font-weight:700;">Decisiones integrales</span>
+            <div class="slide-tag reveal">Pilar Fundacional</div>
+            <h2 class="reveal">La <span class="gradient-text">friccion</span> real</h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <h3 style="color:var(--accent-red);margin-bottom:var(--element-gap);">Proyecto es comodo</h3>
+                    <ul class="bullet-list" style="list-style:none;">
+                        <li style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#x2715;</span> Tiene fecha.</li>
+                        <li style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#x2715;</span> Tiene presupuesto cerrado.</li>
+                        <li style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#x2715;</span> Tiene final.</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <h3 style="color:var(--accent-green);margin-bottom:var(--element-gap);">Producto es incomodo</h3>
+                    <ul class="bullet-list" style="list-style:none;">
+                        <li style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-green);">&#x2713;</span> No termina nunca.</li>
+                        <li style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-green);">&#x2713;</span> Requiere metricas.</li>
+                        <li style="padding-left:1.4em;position:relative;"><span style="position:absolute;left:0;color:var(--accent-green);">&#x2713;</span> Exige accountability continua.</li>
+                    </ul>
                 </div>
             </div>
-            <div style="margin-top:var(--content-gap);">
-                <ul class="bullet-list">
-                    <li class="reveal">Academia no elige el LMS sola &mdash; lo elige con IT y experiencia del estudiante</li>
-                    <li class="reveal">IT no decide la arquitectura solo &mdash; la define con el negocio</li>
-                    <li class="reveal">Marketing no compra un CRM solo &mdash; lo compra con IT que lo va a integrar</li>
-                </ul>
-            </div>
-            <div class="antipattern reveal" style="margin-top:var(--content-gap);">
-                <div class="antipattern-icon">⚠️</div>
-                <div>
-                    <div class="antipattern-name">Silos</div>
-                    <div class="antipattern-desc">Cada area compra su herramienta sin consultar. Resultado: 12 sistemas, 2 integrados.</div>
-                </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                <strong style="color:var(--text-primary);">Pregunta incomoda:</strong> &iquest;Quien es dueno hoy de tu SIS/CRM/ETC como producto? No "quien lo implemento". &iquest;Quien es responsable de que entregue mas valor cada trimestre? Si no hay respuesta clara, operas en modo proyecto.
             </div>
         </div>
-        <div class="slide-num">07 / 14</div>
+        <div class="slide-num">07 / 19</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 8: PILAR 5 — CULTURA DE DATOS
+         SLIDE 8: PILAR 2 — APRENDIZAJE CONTINUO
          =========================================== -->
     <section class="slide" data-slide="7">
         <div class="slide-content">
-            <div class="slide-tag reveal">Pilar 5</div>
-            <h2 class="reveal">Cultura de <span class="gradient-text">Datos</span></h2>
+            <div class="slide-tag reveal">Pilar 2</div>
+            <h2 class="reveal">Aprendizaje <span class="gradient-text">Continuo</span></h2>
+            <p class="subtitle reveal">La tecnologia cambia mas rapido que los organigramas.</p>
             <div style="margin-top:var(--content-gap);">
-                <div class="info-row reveal">
-                    <span class="info-label" style="color:var(--accent-red);">Sin datos</span>
-                    <span class="info-value">"Creo que la desercion bajo"</span>
-                    <span style="color:var(--text-muted);font-size:var(--small-size);margin-left:auto;padding-left:0.5em;">→</span>
-                    <span class="info-label" style="color:var(--accent-green);min-width:clamp(60px,8vw,100px);">Con datos</span>
-                    <span class="info-value">"La desercion bajo del 42% al 35%"</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label" style="color:var(--accent-red);">Sin datos</span>
-                    <span class="info-value">"Los estudiantes estan satisfechos"</span>
-                    <span style="color:var(--text-muted);font-size:var(--small-size);margin-left:auto;padding-left:0.5em;">→</span>
-                    <span class="info-label" style="color:var(--accent-green);min-width:clamp(60px,8vw,100px);">Con datos</span>
-                    <span class="info-value">"El NPS subio de +15 a +31"</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label" style="color:var(--accent-red);">Sin datos</span>
-                    <span class="info-value">"Necesitamos mas marketing"</span>
-                    <span style="color:var(--text-muted);font-size:var(--small-size);margin-left:auto;padding-left:0.5em;">→</span>
-                    <span class="info-label" style="color:var(--accent-green);min-width:clamp(60px,8vw,100px);">Con datos</span>
-                    <span class="info-value">"El CAC subio 40% pero el LTV se mantuvo"</span>
-                </div>
+                <ul class="bullet-list">
+                    <li class="reveal"><strong style="color:var(--text-primary);">Entender el lenguaje.</strong> Si tu equipo dice "API" y tu escuchas ruido, no puedes evaluar lo que te proponen.</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">Entender las posibilidades.</strong> No para implementarlas &mdash; para reconocer cuando una oportunidad es real y cuando es humo.</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">Entender los riesgos.</strong> Un lider que no entiende que puede salir mal con IA no puede gobernarla.</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">Probar lo que tus equipos usan.</strong> No delegues la experiencia de usuario. Vivela.</li>
+                </ul>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                No se trata de tener data science. Se trata de que las decisiones se basen en evidencia.
+                "The learn-it-all will always beat the know-it-all." &mdash; Satya Nadella
             </div>
         </div>
-        <div class="slide-num">08 / 14</div>
+        <div class="slide-num">08 / 19</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 9: PILAR 6 — AGENCIA DIGITAL
+         SLIDE 9: CASO GEORGIA STATE + PREGUNTA
          =========================================== -->
     <section class="slide" data-slide="8">
         <div class="slide-content">
-            <div class="slide-tag reveal">Pilar 6</div>
-            <h2 class="reveal">Agencia <span class="gradient-text">Digital</span></h2>
-            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:100%;">
-                <div class="layer" style="justify-content:space-between;">
-                    <span class="pill pill-red">Pasivo</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">"No se de tech, que lo resuelva IT"</span>
-                </div>
-                <div class="layer" style="justify-content:space-between;">
-                    <span class="pill pill-amber">Usuario</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">"Uso lo que me dan"</span>
-                </div>
-                <div class="layer" style="justify-content:space-between;">
-                    <span class="pill pill-blue">Participante</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">"Propongo mejoras desde mi perspectiva"</span>
-                </div>
-                <div class="layer" style="justify-content:space-between;border-color:rgba(52,211,153,0.2);">
-                    <span class="pill pill-green">Protagonista</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">"Entiendo, uso y propongo tecnologia"</span>
-                </div>
+            <div class="slide-tag reveal">Caso Real</div>
+            <h2 class="reveal">Georgia State University: <span class="gradient-text">micro-bloqueos invisibles</span></h2>
+            <div class="card reveal-scale" style="border-left:3px solid var(--accent);margin-top:var(--content-gap);">
+                <p style="font-size:var(--body-size);color:var(--text-secondary);line-height:1.6;">Tim Renick, VP de Exito Estudiantil, decidio examinar personalmente los datos de desercion en lugar de esperar los reportes trimestrales. Descubrio que cientos de estudiantes abandonaban cada semestre por deudas menores a USD 300 &mdash; montos que la institucion ni siquiera registraba como problema.</p>
+                <p style="font-size:var(--body-size);color:var(--text-secondary);line-height:1.6;margin-top:0.5em;">Creo el programa "Panther Retention Grants" para cubrir esos micro-bloqueos. <strong style="color:var(--accent);">Resultado: la tasa de graduacion subio mas de 20 puntos porcentuales en una decada.</strong></p>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                En una organizacion con agencia digital, cualquier area puede identificar oportunidades.
+                &iquest;Cuando fue la ultima vez que usaste tu propia plataforma como usuario real &mdash; no en una demo preparada, sino como lo haria un estudiante a las 11pm un domingo?
             </div>
         </div>
-        <div class="slide-num">09 / 14</div>
+        <div class="slide-num">09 / 19</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 10: PILAR 7 — SEGURIDAD Y ETICA
+         SLIDE 10: PILAR 3 — EXPERIMENTACION
          =========================================== -->
     <section class="slide" data-slide="9">
         <div class="slide-content">
-            <div class="slide-tag reveal">Pilar 7</div>
-            <h2 class="reveal">Seguridad y <span class="gradient-text">Etica</span></h2>
-            <div class="ethics-grid reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="ethics-item">
-                    <span class="ethics-icon">✓</span>
-                    <span>&iquest;Que datos personales almacenamos?</span>
-                </div>
-                <div class="ethics-item">
-                    <span class="ethics-icon">✓</span>
-                    <span>&iquest;Quien tiene acceso a esa informacion?</span>
-                </div>
-                <div class="ethics-item">
-                    <span class="ethics-icon">✓</span>
-                    <span>&iquest;Que pasaria con un ataque de ransomware?</span>
-                </div>
-                <div class="ethics-item">
-                    <span class="ethics-icon">✓</span>
-                    <span>&iquest;Cumplimos regulacion de proteccion de datos?</span>
-                </div>
-                <div class="ethics-item">
-                    <span class="ethics-icon">✓</span>
-                    <span>&iquest;Podemos explicar el criterio de la IA?</span>
+            <div class="slide-tag reveal">Pilar 3</div>
+            <h2 class="reveal">Experimentacion <span class="gradient-text">con disciplina</span></h2>
+            <p class="subtitle reveal">Experimentar no es improvisar.</p>
+            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:100%;">
+                <div class="layer" style="justify-content:center;gap:clamp(0.3rem,0.6vw,0.5rem);">
+                    <span style="color:var(--accent);font-weight:700;">Hipotesis</span>
+                    <span style="color:var(--text-muted);">&rarr;</span>
+                    <span style="color:var(--text-secondary);">Prototipo</span>
+                    <span style="color:var(--text-muted);">&rarr;</span>
+                    <span style="color:var(--text-secondary);">Prueba</span>
+                    <span style="color:var(--text-muted);">&rarr;</span>
+                    <span style="color:var(--text-secondary);">Medir</span>
+                    <span style="color:var(--text-muted);">&rarr;</span>
+                    <span style="color:var(--accent-green);font-weight:700;">Decidir</span>
                 </div>
             </div>
-            <div class="antipattern reveal" style="margin-top:var(--content-gap);">
-                <div class="antipattern-icon">⚠️</div>
-                <div>
-                    <div class="antipattern-name">Anti-patron critico</div>
-                    <div class="antipattern-desc">"La seguridad es tema del equipo de IT." En 2024, una filtracion llega a la direccion general.</div>
-                </div>
+            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--body-size);color:var(--text-secondary);">La clave esta en el ultimo paso: <strong style="color:var(--text-primary);">decidir</strong>. Escalar o matar. No hay opcion intermedia.</p>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal"><strong style="color:var(--text-primary);">No tienen hipotesis claras.</strong> "Vamos a probar IA" no es una hipotesis.</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">No definen metricas antes de empezar.</strong> Si no sabes que vas a medir, no puedes saber si funciono.</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">No deciden explicitamente escalar o cerrar.</strong> Y nace el anti-patron mas destructivo: el piloto eterno.</li>
+                </ul>
             </div>
         </div>
-        <div class="slide-num">10 / 14</div>
+        <div class="slide-num">10 / 19</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 11: EJEMPLO PLATZI
+         SLIDE 11: CASO BOOKING.COM
          =========================================== -->
     <section class="slide" data-slide="10">
         <div class="slide-content">
             <div class="slide-tag reveal">Caso Real</div>
-            <h2 class="reveal">Platzi: <span class="gradient-text">mindset digital en accion</span></h2>
-            <div style="margin-top:var(--content-gap);">
-                <div class="info-row reveal">
-                    <span class="info-label">Producto</span>
-                    <span class="info-value">Actualizacion semanal, sin "versiones"</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label">Aprendizaje</span>
-                    <span class="info-value">Los fundadores siguen creando cursos</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label">Experimentacion</span>
-                    <span class="info-value">Nuevos formatos se prueban continuamente</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label">Colaboracion</span>
-                    <span class="info-value">Equipos multidisciplinarios crean cada curso</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label">Datos</span>
-                    <span class="info-value">Tasas de finalizacion, engagement y NPS como KPIs centrales</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label">Agencia</span>
-                    <span class="info-value">Toda la organizacion propone mejoras al producto</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label">Seguridad</span>
-                    <span class="info-value">Tecnologia propia para control de datos</span>
-                </div>
+            <h2 class="reveal">Booking.com: <span class="gradient-text">25,000 experimentos al ano</span></h2>
+            <div class="card reveal-scale" style="border-left:3px solid var(--accent-purple);margin-top:var(--content-gap);">
+                <p style="font-size:var(--body-size);color:var(--text-secondary);line-height:1.6;">No porque tengan mas recursos &mdash; porque tienen mas disciplina. Cada experimento tiene hipotesis escrita, metrica definida, duracion acotada y criterio de decision explicito. El 90% fracasa. Pero ese 10% que funciona se escala inmediatamente.</p>
+                <p style="font-size:var(--body-size);color:var(--text-secondary);line-height:1.6;margin-top:0.5em;">La cultura no celebra el exito del experimento &mdash; <strong style="color:var(--accent-purple);">celebra la velocidad de aprendizaje.</strong></p>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--body-size);color:var(--text-secondary);">El mindset digital tolera el error. No tolera la ambiguedad permanente.</p>
+            <div class="quote-box reveal" style="margin-top:var(--element-gap);">
+                &iquest;Cuantos pilotos tiene tu organizacion hoy que llevan mas de 12 meses sin una decision explicita de escalar o cerrar?
             </div>
         </div>
-        <div class="slide-num">11 / 14</div>
+        <div class="slide-num">11 / 19</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 12: PLATZI VS UNIVERSIDAD
+         SLIDE 12: PILAR 4 — COLABORACION MULTIDISCIPLINARIA
          =========================================== -->
     <section class="slide" data-slide="11">
         <div class="slide-content">
-            <h2 class="reveal">Platzi vs <span class="gradient-text">Universidad tradicional</span></h2>
+            <div class="slide-tag reveal">Pilar 4</div>
+            <h2 class="reveal">Colaboracion <span class="gradient-text">Multidisciplinaria</span></h2>
+            <p class="subtitle reveal">Las decisiones tecnologicas no pueden ser territorio exclusivo de una sola funcion.</p>
             <div style="margin-top:var(--content-gap);">
-                <div class="info-row reveal">
-                    <span class="info-label">Actualizacion</span>
-                    <span class="info-value">Semanal <span style="color:var(--text-muted);">vs</span> Cada 3-5 anos</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label">Metrica central</span>
-                    <span class="info-value">Tasa finalizacion <span style="color:var(--text-muted);">vs</span> Matricula</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label">Time to market</span>
-                    <span class="info-value">Dias/semanas <span style="color:var(--text-muted);">vs</span> Meses/anos</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label">Relacion con estudiante</span>
-                    <span class="info-value">Continua, personalizada <span style="color:var(--text-muted);">vs</span> Administrativa</span>
-                </div>
-                <div class="info-row reveal">
-                    <span class="info-label">Rol de la tech</span>
-                    <span class="info-value">ES el negocio <span style="color:var(--text-muted);">vs</span> Soporte al negocio</span>
-                </div>
+                <ul class="bullet-list">
+                    <li class="reveal">Cuando el negocio compra herramientas sin consultar arquitectura, se generan silos tecnologicos.</li>
+                    <li class="reveal">Cuando IT elige plataformas sin entender el impacto en el usuario final, se implementan sistemas que nadie usa.</li>
+                    <li class="reveal">Spotify popularizo el modelo de "squads" &mdash; equipos pequenos, autonomos, con perfiles diversos y un objetivo compartido.</li>
+                    <li class="reveal">La decision de implementar un nuevo LMS necesita a academica, datos, operaciones y tecnologia en la misma mesa.</li>
+                </ul>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                La pregunta no es "como ser como Platzi". Es que practicas podes incorporar en tu contexto.
+                &iquest;Las decisiones tecnologicas estrategicas en tu organizacion incluyen negocio + tecnologia + datos en la misma mesa? &iquest;O son conversaciones separadas que despues alguien intenta reconciliar?
             </div>
         </div>
-        <div class="slide-num">12 / 14</div>
+        <div class="slide-num">12 / 19</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 13: DINAMICA DIAGNOSTICO
+         SLIDE 13: PILAR 5 — CULTURA DE DATOS
          =========================================== -->
     <section class="slide" data-slide="12">
         <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
-            <h2 class="reveal">Diagnostico rapido</h2>
-            <p class="subtitle reveal">Evalua cada pilar como semaforo</p>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
-                <div class="card" style="border-left:3px solid var(--accent-red);text-align:center;">
-                    <div class="card-icon">&#x1F534;</div>
-                    <h3 style="color:var(--accent-red);">Rojo</h3>
-                    <p>No existe o es muy debil</p>
-                </div>
-                <div class="card" style="border-left:3px solid var(--accent-warm);text-align:center;">
-                    <div class="card-icon">&#x1F7E1;</div>
-                    <h3 style="color:var(--accent-warm);">Amarillo</h3>
-                    <p>Existe pero no es consistente</p>
-                </div>
-                <div class="card" style="border-left:3px solid var(--accent-green);text-align:center;">
-                    <div class="card-icon">&#x1F7E2;</div>
-                    <h3 style="color:var(--accent-green);">Verde</h3>
-                    <p>Es parte de la cultura</p>
-                </div>
+            <div class="slide-tag reveal">Pilar 5</div>
+            <h2 class="reveal">Cultura de <span class="gradient-text">Datos</span></h2>
+            <p class="subtitle reveal">El problema no es no tener datos. Es no usarlos.</p>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal"><strong style="color:var(--text-primary);">No debate percepciones &mdash; debate evidencia.</strong> "Los datos de engagement muestran que el 67% de las interacciones ocurren fuera del horario de clase".</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">Puede acceder a metricas en tiempo real.</strong> No espera al informe trimestral para descubrir que la retencion cayo.</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">Cambia decisiones si los datos lo justifican.</strong> La cultura de datos requiere humildad institucional.</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">Democratiza el acceso a la informacion.</strong> Cada equipo tiene acceso a las metricas que necesita para decidir.</li>
+                </ul>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">25 minutos &mdash; "No me digas que estas en verde. Dame el ejemplo que lo demuestra."</p>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                "In God we trust. All others must bring data." &mdash; W. Edwards Deming
+            </div>
         </div>
-        <div class="slide-num">13 / 14</div>
+        <div class="slide-num">13 / 19</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 14: RESULTADO ESPERADO
+         SLIDE 14: CULTURA DE DATOS — NIVELES DE MADUREZ + NETFLIX
          =========================================== -->
     <section class="slide" data-slide="13">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pilar 5</div>
+            <h2 class="reveal">Tres niveles de <span class="gradient-text">madurez</span> en cultura de datos</h2>
+            <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,0.8vw,0.6rem);margin-top:var(--content-gap);max-width:800px;">
+                <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem) clamp(0.8rem,1.5vw,1.2rem);background:var(--bg-card);border:1px solid var(--border);border-radius:8px;border-left:3px solid var(--accent-red);">
+                    <span style="font-weight:700;color:var(--accent-red);min-width:clamp(70px,10vw,100px);font-size:var(--small-size);">Reactivo</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Los datos se consultan para justificar decisiones ya tomadas. "Buscame los numeros que respalden esto"</span>
+                </div>
+                <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem) clamp(0.8rem,1.5vw,1.2rem);background:var(--bg-card);border:1px solid var(--border);border-radius:8px;border-left:3px solid var(--accent-warm);">
+                    <span style="font-weight:700;color:var(--accent-warm);min-width:clamp(70px,10vw,100px);font-size:var(--small-size);">Informado</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Los datos se consultan antes de decidir. "&iquest;Que dicen los datos sobre esto?"</span>
+                </div>
+                <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem) clamp(0.8rem,1.5vw,1.2rem);background:var(--bg-card);border:1px solid var(--border);border-radius:8px;border-left:3px solid var(--accent-green);">
+                    <span style="font-weight:700;color:var(--accent-green);min-width:clamp(70px,10vw,100px);font-size:var(--small-size);">Predictivo</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Los datos anticipan problemas y oportunidades. "Los datos indican que esto va a pasar &mdash; &iquest;que hacemos?"</span>
+                </div>
+            </div>
+            <div class="card reveal-scale" style="border-left:3px solid var(--accent-purple);margin-top:var(--content-gap);">
+                <h3 style="color:var(--accent-purple);font-size:var(--small-size);">Caso: Netflix</h3>
+                <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.5;">Netflix no cancela series por intuicion de ejecutivos. Cruza datos de visualizacion, completitud, engagement social y costo de produccion. La cultura de datos no es popular &mdash; es efectiva.</p>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--element-gap);">
+                &iquest;Tu comite directivo decide mirando dashboards actualizados o escuchando la opinion del que habla mas fuerte?
+            </div>
+        </div>
+        <div class="slide-num">14 / 19</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 15: PILAR 6 — AGENCIA
+         =========================================== -->
+    <section class="slide" data-slide="14">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pilar 6</div>
+            <h2 class="reveal"><span class="gradient-text">Agencia</span></h2>
+            <p class="subtitle reveal">Agency &gt; Intelligence. El mindset digital distribuye responsabilidad. No la concentra.</p>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal"><strong style="color:var(--text-primary);">Cualquier area puede proponer mejoras tecnologicas.</strong> La propuesta se evalua por merito, no por jurisdiccion.</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">Los lideres entienden las implicancias tecnologicas de sus decisiones.</strong> No delegan ciegamente.</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">La conversacion tecnologica es transversal.</strong> Ocurre en las mesas donde se toman decisiones de negocio.</li>
+                </ul>
+            </div>
+            <div class="card reveal-scale" style="border-left:3px solid var(--accent);margin-top:var(--content-gap);">
+                <h3 style="color:var(--accent);font-size:var(--small-size);">Caso: Toyota &mdash; Andon Cord</h3>
+                <p style="font-size:var(--small-size);color:var(--text-secondary);line-height:1.5;">Cualquier operario puede detener toda la produccion si detecta un defecto. No necesita aprobacion. El costo de un defecto que avanza es exponencialmente mayor que el costo de una pausa.</p>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--element-gap);">
+                Si manana un coordinador academico identifica que un proceso en el LMS genera friccion innecesaria, &iquest;cuantos pasos necesita para que se corrija? Si la respuesta es mas de dos, tienes un problema de agencia.
+            </div>
+        </div>
+        <div class="slide-num">15 / 19</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 16: PILAR 7 — SEGURIDAD Y ETICA
+         =========================================== -->
+    <section class="slide" data-slide="15">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Pilar 7</div>
+            <h2 class="reveal">Seguridad y <span class="gradient-text">Etica</span></h2>
+            <p class="subtitle reveal">El mindset digital moderno incluye responsabilidad. No se delega.</p>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal"><strong style="color:var(--text-primary);">Sesgo algoritmico.</strong> Si un modelo de IA fue entrenado con datos historicos sesgados, va a discriminar &mdash; sistematicamente y a escala.</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">Transparencia.</strong> Cuando un algoritmo recomienda que un estudiante no sea admitido, &iquest;quien puede explicar por que?</li>
+                    <li class="reveal"><strong style="color:var(--text-primary);">Privacidad.</strong> &iquest;Que datos de tus estudiantes estan alimentando modelos externos? &iquest;Quien autorizo eso?</li>
+                </ul>
+            </div>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <h3 style="color:var(--accent-red);font-size:var(--small-size);">Caso: Equifax (2017)</h3>
+                    <p style="font-size:var(--small-size);color:var(--text-muted);line-height:1.4;">Filtracion de datos de 147 millones de personas. La vulnerabilidad era conocida. El parche existia. Nadie lo aplico durante meses. El CEO tuvo que renunciar.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <h3 style="color:var(--accent-green);font-size:var(--small-size);">Caso: Apple</h3>
+                    <p style="font-size:var(--small-size);color:var(--text-muted);line-height:1.4;">Convirtio la privacidad en ventaja competitiva. "If a business is built on misleading users, on data exploitation, on choices that are no choices at all, then it does not deserve our praise &mdash; it deserves reform." &mdash; Tim Cook</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">16 / 19</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 17: DINAMICA — TERMOMETRO DIGITAL
+         =========================================== -->
+    <section class="slide" data-slide="16">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
+            <h2 class="reveal">Termometro <span class="gradient-text">Digital</span></h2>
+            <p class="subtitle reveal">Antes de hablar de pilares, hablemos de sintomas</p>
+            <div class="reveal" style="margin-top:var(--content-gap);">
+                <a href="https://mindset-thermometer.lovable.app/" target="_blank" style="display:inline-block;padding:0.6em 1.5em;background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.3);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:700;font-size:var(--body-size);transition:all 0.3s ease;">mindset-thermometer.lovable.app &rarr;</a>
+            </div>
+        </div>
+        <div class="slide-num">17 / 19</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 18: REFLEXION FINAL
+         =========================================== -->
+    <section class="slide" data-slide="17">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Reflexion Final</div>
+            <h2 class="reveal">Mindset <span class="gradient-text">Digital</span></h2>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:700px;text-align:left;font-size:clamp(0.85rem,1.3vw,1.05rem);">
+                El mindset digital no se instala con un workshop ni se compra con una herramienta. Se demuestra con decisiones diarias: que preguntas haces, que datos miras, a quien escuchas, que tan rapido experimentas y que tan honesto sos con los resultados. La tecnologia amplifica lo que ya sos como lider. Si lideras con curiosidad, la tecnologia te da superpoderes. Si lideras con inercia, la tecnologia solo automatiza la mediocridad.
+            </div>
+            <div class="reveal" style="margin-top:var(--content-gap);max-width:700px;text-align:left;">
+                <p style="font-size:var(--body-size);font-weight:700;color:var(--text-primary);margin-bottom:0.5em;">Pregunta para llevarse:</p>
+                <p style="font-size:var(--body-size);color:var(--text-secondary);font-style:italic;">De los 7 pilares que vimos hoy &mdash; orientacion a producto, aprendizaje continuo, experimentacion, colaboracion, cultura de datos, agencia y etica &mdash; &iquest;en cual sos mas fuerte y en cual mas debil? &iquest;Que una accion concreta podrias tomar esta semana para mover el que mas te duele?</p>
+            </div>
+        </div>
+        <div class="slide-num">18 / 19</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 19: CIERRE
+         =========================================== -->
+    <section class="slide" data-slide="18">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Cierre</div>
-            <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
+            <h2 class="reveal">Modulo 05 <span class="gradient-text">completo</span></h2>
             <div class="divider reveal"><div class="diamond"></div></div>
             <div style="max-width:550px;margin-top:var(--content-gap);">
+                <p class="reveal" style="font-size:var(--body-size);color:var(--text-secondary);margin-bottom:var(--content-gap);">7 pilares del mindset digital:</p>
                 <ul class="bullet-list" style="text-align:left;">
-                    <li class="reveal">Entendes el mindset digital como sistema de decision concreto</li>
-                    <li class="reveal">Podes diagnosticar los 7 pilares en tu organizacion</li>
-                    <li class="reveal">Identificas anti-patrones en tu gestion</li>
-                    <li class="reveal">Tenes acciones concretas para mejorar al menos 2 pilares</li>
-                    <li class="reveal">Podes modelar y comunicar este mindset a tu equipo</li>
+                    <li class="reveal">Orientacion a Producto</li>
+                    <li class="reveal">Aprendizaje Continuo</li>
+                    <li class="reveal">Experimentacion con disciplina</li>
+                    <li class="reveal">Colaboracion Multidisciplinaria</li>
+                    <li class="reveal">Cultura de Datos</li>
+                    <li class="reveal">Agencia</li>
+                    <li class="reveal">Seguridad y Etica</li>
                 </ul>
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 05 &mdash; Mindset Digital</p>
         </div>
-        <div class="slide-num">14 / 14</div>
+        <div class="slide-num">19 / 19</div>
     </section>
 
     <!-- ===========================================

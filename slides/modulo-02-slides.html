@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&#243;dulo 02 &#8212; Estrategia Tecnol&#243;gica</title>
+    <title>Módulo 02 — Estrategia Tecnológica</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 
     <style>
@@ -11,7 +11,6 @@
            CSS CUSTOM PROPERTIES (THEME: Midnight Clarity)
            =========================================== */
         :root {
-            /* Colors */
             --bg-primary: #111827;
             --bg-secondary: #1f2937;
             --bg-card: rgba(255, 255, 255, 0.04);
@@ -25,8 +24,6 @@
             --accent-red: #ef4444;
             --accent-green: #34d399;
             --border: rgba(255, 255, 255, 0.08);
-
-            /* Typography */
             --font-display: 'DM Serif Display', serif;
             --font-body: 'DM Sans', sans-serif;
             --title-size: clamp(2rem, 5.5vw, 4rem);
@@ -35,396 +32,113 @@
             --body-size: clamp(0.75rem, 1.3vw, 1.05rem);
             --small-size: clamp(0.65rem, 1vw, 0.85rem);
             --tag-size: clamp(0.6rem, 0.9vw, 0.75rem);
-
-            /* Spacing */
             --slide-padding: clamp(1.5rem, 4vw, 4rem);
             --content-gap: clamp(0.8rem, 2vw, 2rem);
             --element-gap: clamp(0.4rem, 1vw, 1rem);
-
-            /* Animation */
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
             --duration: 0.7s;
         }
 
-        /* ===========================================
-           BASE STYLES
-           =========================================== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-snap-type: y mandatory;
-            height: 100%;
-            overflow-x: hidden;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            overflow-x: hidden;
-            height: 100%;
-        }
+        html { scroll-behavior: smooth; scroll-snap-type: y mandatory; height: 100%; overflow-x: hidden; }
+        body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); overflow-x: hidden; height: 100%; }
 
         /* ===========================================
-           SLIDE CONTAINER
+           SLIDE BASE
            =========================================== */
-        .slide {
-            width: 100vw;
-            height: 100vh;
-            height: 100dvh;
-            padding: var(--slide-padding);
-            scroll-snap-align: start;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .slide-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-height: 100%;
-            overflow: hidden;
-            max-width: 1100px;
-            margin: 0 auto;
-            width: 100%;
-        }
+        .slide { width: 100vw; height: 100vh; height: 100dvh; padding: var(--slide-padding); scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+        .slide-content { flex: 1; display: flex; flex-direction: column; justify-content: center; max-height: 100%; overflow: hidden; max-width: 1100px; margin: 0 auto; width: 100%; }
+        .slide::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 20%, rgba(56,189,248,0.05) 0%, transparent 50%), radial-gradient(ellipse at 20% 80%, rgba(168,85,247,0.04) 0%, transparent 50%); pointer-events: none; }
+        .geo { position: absolute; border: 1px solid var(--border); border-radius: 4px; pointer-events: none; opacity: 0.4; }
 
         /* ===========================================
-           BACKGROUND EFFECTS
+           TYPOGRAPHY & TAGS
            =========================================== */
-        .slide::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse at 70% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at 20% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        /* Geometric decorations */
-        .geo {
-            position: absolute;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            pointer-events: none;
-            opacity: 0.4;
-        }
-
-        /* ===========================================
-           TYPOGRAPHY
-           =========================================== */
-        .slide-tag {
-            display: inline-block;
-            font-size: var(--tag-size);
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent);
-            background: rgba(56, 189, 248, 0.1);
-            padding: 0.4em 1.2em;
-            border-radius: 100px;
-            margin-bottom: clamp(0.8rem, 1.5vw, 1.5rem);
-            width: fit-content;
-        }
-
-        .slide h1 {
-            font-family: var(--font-display);
-            font-size: var(--title-size);
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
-        }
-
-        .slide h2 {
-            font-family: var(--font-display);
-            font-size: var(--h2-size);
-            font-weight: 400;
-            line-height: 1.15;
-            margin-bottom: clamp(0.5rem, 1.5vw, 1.2rem);
-        }
-
-        .slide h3 {
-            font-family: var(--font-body);
-            font-size: var(--h3-size);
-            font-weight: 700;
-            margin-bottom: var(--element-gap);
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #38bdf8, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .slide p, .slide li {
-            font-size: var(--body-size);
-            line-height: 1.5;
-            color: var(--text-secondary);
-        }
-
-        .subtitle {
-            font-size: clamp(0.9rem, 1.6vw, 1.15rem);
-            color: var(--text-secondary);
-        }
+        .slide-tag { display: inline-block; font-size: var(--tag-size); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); background: rgba(56,189,248,0.1); padding: 0.4em 1.2em; border-radius: 100px; margin-bottom: clamp(0.8rem,1.5vw,1.5rem); width: fit-content; }
+        .slide h1 { font-family: var(--font-display); font-size: var(--title-size); font-weight: 400; line-height: 1.1; margin-bottom: clamp(0.5rem,1.5vw,1rem); }
+        .slide h2 { font-family: var(--font-display); font-size: var(--h2-size); font-weight: 400; line-height: 1.15; margin-bottom: clamp(0.5rem,1.5vw,1.2rem); }
+        .slide h3 { font-family: var(--font-body); font-size: var(--h3-size); font-weight: 700; margin-bottom: var(--element-gap); }
+        .gradient-text { background: linear-gradient(135deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .slide p, .slide li { font-size: var(--body-size); line-height: 1.5; color: var(--text-secondary); }
+        .subtitle { font-size: clamp(0.9rem,1.6vw,1.15rem); color: var(--text-secondary); }
 
         /* ===========================================
            COMPONENTS
            =========================================== */
+        .quote-box { border-left: 3px solid var(--accent); padding: 0.8em 1.2em; background: rgba(56,189,248,0.05); border-radius: 0 8px 8px 0; font-style: italic; color: var(--text-secondary); font-size: var(--body-size); }
 
-        /* Blockquote */
-        .quote-box {
-            border-left: 3px solid var(--accent);
-            padding: 0.8em 1.2em;
-            background: rgba(56, 189, 248, 0.05);
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-            color: var(--text-secondary);
-            font-size: var(--body-size);
-        }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,280px),1fr)); gap: clamp(0.5rem,1.2vw,1rem); }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: clamp(0.8rem,1.5vw,1.5rem); transition: background 0.3s ease; }
+        .card:hover { background: var(--bg-card-hover); }
+        .card-icon { font-size: clamp(1.2rem,2vw,1.8rem); margin-bottom: clamp(0.3rem,0.8vw,0.6rem); }
+        .card h3 { font-size: clamp(0.8rem,1.2vw,1rem); margin-bottom: clamp(0.2rem,0.5vw,0.4rem); color: var(--text-primary); }
+        .card p { font-size: var(--small-size); color: var(--text-muted); line-height: 1.4; }
 
-        /* Cards grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-            gap: clamp(0.5rem, 1.2vw, 1rem);
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: clamp(0.8rem, 1.5vw, 1.5rem);
-            transition: background 0.3s ease;
-        }
-
-        .card:hover {
-            background: var(--bg-card-hover);
-        }
-
-        .card-icon {
-            font-size: clamp(1.2rem, 2vw, 1.8rem);
-            margin-bottom: clamp(0.3rem, 0.8vw, 0.6rem);
-        }
-
-        .card h3 {
-            font-size: clamp(0.8rem, 1.2vw, 1rem);
-            margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
-            color: var(--text-primary);
-        }
-
-        .card p {
-            font-size: var(--small-size);
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        /* Table-like rows */
-        .info-row {
-            display: flex;
-            gap: clamp(0.5rem, 1.5vw, 1.5rem);
-            padding: clamp(0.5rem, 1vw, 0.8rem) 0;
-            border-bottom: 1px solid var(--border);
-            align-items: flex-start;
-        }
-
+        .info-row { display: flex; gap: clamp(0.5rem,1.5vw,1.5rem); padding: clamp(0.5rem,1vw,0.8rem) 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
         .info-row:last-child { border-bottom: none; }
+        .info-label { font-size: var(--small-size); font-weight: 700; color: var(--accent); min-width: clamp(50px,8vw,80px); flex-shrink: 0; }
+        .info-value { font-size: var(--small-size); color: var(--text-secondary); line-height: 1.4; }
 
-        .info-label {
-            font-size: var(--small-size);
-            font-weight: 700;
-            color: var(--accent);
-            min-width: clamp(80px, 12vw, 140px);
-            flex-shrink: 0;
-        }
+        .pill { display: inline-block; font-size: var(--tag-size); font-weight: 500; padding: 0.3em 0.8em; border-radius: 100px; border: 1px solid; }
+        .pill-blue { color: #38bdf8; border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.08); }
+        .pill-purple { color: #a855f7; border-color: rgba(168,85,247,0.3); background: rgba(168,85,247,0.08); }
+        .pill-amber { color: #f59e0b; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.08); }
+        .pill-red { color: #ef4444; border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.08); }
+        .pill-green { color: #34d399; border-color: rgba(52,211,153,0.3); background: rgba(52,211,153,0.08); }
 
-        .info-value {
-            font-size: var(--small-size);
-            color: var(--text-secondary);
-            line-height: 1.4;
-        }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem,2.5vw,2.5rem); align-items: start; }
+        @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
 
-        /* Pill tags */
-        .pill {
-            display: inline-block;
-            font-size: var(--small-size);
-            font-weight: 500;
-            padding: 0.3em 0.8em;
-            border-radius: 100px;
-            border: 1px solid;
-        }
+        .bullet-list { list-style: none; display: flex; flex-direction: column; gap: clamp(0.3rem,0.8vw,0.6rem); }
+        .bullet-list li { padding-left: 1.2em; position: relative; font-size: var(--body-size); }
+        .bullet-list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
-        .pill-blue { color: #38bdf8; border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.08); }
-        .pill-purple { color: #a855f7; border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.08); }
-        .pill-amber { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.08); }
-        .pill-red { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); }
-        .pill-green { color: #34d399; border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.08); }
+        .divider { display: flex; align-items: center; gap: 0.8rem; margin: clamp(0.5rem,1.5vw,1.5rem) 0; }
+        .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+        .divider .diamond { width: 5px; height: 5px; background: var(--accent); transform: rotate(45deg); flex-shrink: 0; }
 
-        /* Two column layout */
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(1rem, 2.5vw, 2.5rem);
-            align-items: start;
-        }
+        /* Layer stack */
+        .layer-stack { display: flex; flex-direction: column; gap: clamp(0.4rem,0.8vw,0.6rem); }
+        .layer { display: flex; align-items: center; gap: clamp(0.5rem,1.5vw,1rem); padding: clamp(0.6rem,1.2vw,1rem) clamp(0.8rem,1.5vw,1.2rem); background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; transition: background 0.3s ease; }
+        .layer:hover { background: var(--bg-card-hover); }
+        .layer-label { font-size: var(--body-size); color: var(--text-secondary); }
+        .layer-label strong { color: var(--text-primary); }
 
-        @media (max-width: 700px) {
-            .two-col { grid-template-columns: 1fr; }
-        }
+        /* Role cards */
+        .role-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: clamp(0.8rem,1.5vw,1.2rem); }
+        .role-card h3 { font-size: var(--h3-size); margin-bottom: var(--element-gap); }
+        .role-list { list-style: none; display: flex; flex-direction: column; gap: clamp(0.2rem,0.5vw,0.4rem); }
+        .role-list li { font-size: var(--small-size); color: var(--text-secondary); padding-left: 1em; position: relative; line-height: 1.4; }
+        .role-list li::before { content: ''; position: absolute; left: 0; top: 0.5em; width: 5px; height: 5px; border-radius: 50%; background: var(--text-muted); }
 
-        /* Bullet list */
-        .bullet-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.3rem, 0.8vw, 0.6rem);
-        }
+        /* Anti-pattern */
+        .antipattern { background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); border-radius: 10px; padding: clamp(0.6rem,1.2vw,1rem); font-size: var(--small-size); color: var(--text-secondary); }
+        .antipattern strong { color: var(--accent-red); }
 
-        .bullet-list li {
-            padding-left: 1.2em;
-            position: relative;
-            font-size: var(--body-size);
-        }
+        /* Full-screen hero image slide */
+        .slide-hero-img { padding: 0; }
+        .slide-hero-img::before { display: none; }
+        .slide-hero-img img.hero-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
-        .bullet-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.55em;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
+        .centered { text-align: center; align-items: center; }
+        .slide-num { position: absolute; bottom: clamp(1rem,2vw,1.5rem); right: clamp(1.5rem,3vw,2.5rem); font-size: var(--small-size); color: var(--text-muted); font-variant-numeric: tabular-nums; }
 
-        /* Divider */
-        .divider {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin: clamp(0.5rem, 1.5vw, 1.5rem) 0;
-        }
-
-        .divider::before, .divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
-
-        .divider .diamond {
-            width: 5px; height: 5px;
-            background: var(--accent);
-            transform: rotate(45deg);
-            flex-shrink: 0;
-        }
-
-        /* Layer diagram */
-        .layer-stack {
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.3rem, 0.6vw, 0.5rem);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .layer {
-            display: flex;
-            align-items: center;
-            gap: clamp(0.5rem, 1vw, 1rem);
-            padding: clamp(0.5rem, 0.8vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem);
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: var(--small-size);
-            font-weight: 500;
-        }
-
-        .layer-label {
-            font-weight: 700;
-            color: var(--accent);
-            min-width: 40px;
-        }
-
-        /* Role card */
-        .role-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: clamp(0.8rem, 1.5vw, 1.2rem);
-        }
-
-        .role-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.15rem, 0.4vw, 0.3rem);
-        }
-
-        .role-list li {
-            font-size: var(--small-size);
-            color: var(--text-muted);
-            padding-left: 1em;
-            position: relative;
-        }
-
-        .role-list li::before {
-            content: '\2192';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        /* Anti-pattern cards */
-        .antipattern {
-            display: flex;
-            gap: clamp(0.5rem, 1vw, 1rem);
-            align-items: flex-start;
-            padding: clamp(0.6rem, 1vw, 1rem);
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            border-left: 3px solid var(--accent-red);
-        }
-
-        .antipattern-icon {
-            font-size: clamp(1rem, 1.5vw, 1.5rem);
-            flex-shrink: 0;
-        }
-
-        .antipattern-name {
-            font-size: clamp(0.75rem, 1.1vw, 0.95rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.15em;
-        }
-
-        .antipattern-desc {
-            font-size: var(--small-size);
-            color: var(--text-muted);
-        }
+        /* ===========================================
+           NAVIGATION OVERLAY
+           =========================================== */
+        .nav-home { position: fixed; top: clamp(0.8rem,1.5vw,1.2rem); left: clamp(0.8rem,1.5vw,1.2rem); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; z-index: 200; }
+        .nav-home:hover { background: rgba(56,189,248,0.15); color: var(--accent); }
+        .nav-module-indicator { position: fixed; top: clamp(0.8rem,1.5vw,1.2rem); left: 50%; transform: translateX(-50%); font-size: var(--small-size); color: var(--text-muted); z-index: 200; pointer-events: none; }
+        .nav-prev, .nav-next { position: fixed; bottom: clamp(0.8rem,1.5vw,1.2rem); padding: 0.4em 0.8em; font-size: var(--small-size); color: var(--text-secondary); text-decoration: none; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 6px; transition: all 0.3s ease; z-index: 200; }
+        .nav-prev { left: clamp(0.8rem,1.5vw,1.2rem); }
+        .nav-next { right: clamp(0.8rem,1.5vw,1.2rem); }
+        .nav-prev:hover, .nav-next:hover { background: rgba(56,189,248,0.1); color: var(--accent); }
 
         /* ===========================================
            ANIMATIONS
            =========================================== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: opacity var(--duration) var(--ease-out-expo),
-                        transform var(--duration) var(--ease-out-expo);
-        }
-
-        .slide.visible .reveal {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .reveal { opacity: 0; transform: translateY(25px); transition: opacity var(--duration) var(--ease-out-expo), transform var(--duration) var(--ease-out-expo); }
+        .slide.visible .reveal { opacity: 1; transform: translateY(0); }
         .reveal:nth-child(1) { transition-delay: 0.05s; }
         .reveal:nth-child(2) { transition-delay: 0.12s; }
         .reveal:nth-child(3) { transition-delay: 0.19s; }
@@ -432,460 +146,343 @@
         .reveal:nth-child(5) { transition-delay: 0.33s; }
         .reveal:nth-child(6) { transition-delay: 0.40s; }
         .reveal:nth-child(7) { transition-delay: 0.47s; }
+        .reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity var(--duration) var(--ease-out-expo), transform var(--duration) var(--ease-out-expo); }
+        .slide.visible .reveal-scale { opacity: 1; transform: scale(1); }
 
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.92);
-            transition: opacity var(--duration) var(--ease-out-expo),
-                        transform var(--duration) var(--ease-out-expo);
-        }
-
-        .slide.visible .reveal-scale {
-            opacity: 1;
-            transform: scale(1);
-        }
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-purple)); z-index: 100; transition: width 0.3s ease; width: 0%; }
+        .nav-dots { position: fixed; right: clamp(0.8rem,1.5vw,1.5rem); top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 100; }
+        .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.15); cursor: pointer; transition: all 0.3s ease; border: none; padding: 0; }
+        .nav-dot.active { background: var(--accent); box-shadow: 0 0 8px rgba(56,189,248,0.4); }
+        .nav-dot:hover { background: rgba(255,255,255,0.4); }
 
         /* ===========================================
-           PROGRESS BAR
-           =========================================== */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-purple));
-            z-index: 100;
-            transition: width 0.3s ease;
-            width: 0%;
-        }
-
-        /* ===========================================
-           NAV DOTS
-           =========================================== */
-        .nav-dots {
-            position: fixed;
-            right: clamp(0.8rem, 1.5vw, 1.5rem);
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            z-index: 100;
-        }
-
-        .nav-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            padding: 0;
-        }
-
-        .nav-dot.active {
-            background: var(--accent);
-            box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
-        }
-
-        .nav-dot:hover {
-            background: rgba(255, 255, 255, 0.4);
-        }
-
-        /* ===========================================
-           SLIDE NUMBER
-           =========================================== */
-        .slide-num {
-            position: absolute;
-            bottom: clamp(1rem, 2vw, 1.5rem);
-            right: clamp(1.5rem, 3vw, 2.5rem);
-            font-size: var(--small-size);
-            color: var(--text-muted);
-            font-variant-numeric: tabular-nums;
-        }
-
-        /* ===========================================
-           CENTERED CONTENT
-           =========================================== */
-        .centered {
-            text-align: center;
-            align-items: center;
-        }
-
-        /* Full-screen hero image slide */
-        .slide-hero-img {
-            padding: 0;
-        }
-        .slide-hero-img::before {
-            display: none;
-        }
-        .slide-hero-img img.hero-cover {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* ===========================================
-           RESPONSIVE BREAKPOINTS
+           RESPONSIVE
            =========================================== */
         @media (max-height: 700px) {
-            :root {
-                --slide-padding: clamp(1rem, 3vw, 2.5rem);
-                --content-gap: clamp(0.5rem, 1.5vw, 1.2rem);
-                --title-size: clamp(1.6rem, 4.5vw, 3rem);
-                --h2-size: clamp(1.2rem, 3vw, 2rem);
-            }
+            :root { --slide-padding: clamp(1rem,3vw,2.5rem); --content-gap: clamp(0.5rem,1.5vw,1.2rem); --title-size: clamp(1.6rem,4.5vw,3rem); --h2-size: clamp(1.2rem,3vw,2rem); }
         }
-
         @media (max-height: 600px) {
-            :root {
-                --slide-padding: clamp(0.75rem, 2.5vw, 1.5rem);
-                --content-gap: clamp(0.3rem, 1vw, 0.8rem);
-                --title-size: clamp(1.3rem, 4vw, 2.2rem);
-                --body-size: clamp(0.7rem, 1.1vw, 0.9rem);
-            }
+            :root { --slide-padding: clamp(0.75rem,2.5vw,1.5rem); --content-gap: clamp(0.3rem,1vw,0.8rem); --title-size: clamp(1.3rem,4vw,2.2rem); --body-size: clamp(0.7rem,1.1vw,0.9rem); }
             .nav-dots { display: none; }
         }
-
         @media (max-height: 500px) {
-            :root {
-                --slide-padding: clamp(0.5rem, 2vw, 1rem);
-                --title-size: clamp(1.1rem, 3.5vw, 1.8rem);
-                --h2-size: clamp(0.95rem, 2.5vw, 1.4rem);
-                --body-size: clamp(0.65rem, 1vw, 0.8rem);
-            }
+            :root { --slide-padding: clamp(0.5rem,2vw,1rem); --title-size: clamp(1.1rem,3.5vw,1.8rem); --h2-size: clamp(0.95rem,2.5vw,1.4rem); --body-size: clamp(0.65rem,1vw,0.8rem); }
         }
-
         @media (max-width: 600px) {
-            :root {
-                --title-size: clamp(1.5rem, 7vw, 2.5rem);
-            }
+            :root { --title-size: clamp(1.5rem,7vw,2.5rem); }
             .cards-grid { grid-template-columns: 1fr; }
+            .nav-module-indicator { display: none; }
         }
-
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.2s !important;
-            }
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
             html { scroll-behavior: auto; }
         }
-        /* ===========================================
-           NAVIGATION OVERLAY
-           =========================================== */
-        .nav-home { position: fixed; top: clamp(0.8rem,1.5vw,1.2rem); left: clamp(0.8rem,1.5vw,1.2rem); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; z-index: 200; }
-        .nav-home:hover { background: rgba(56,189,248,0.15); color: var(--accent); border-color: rgba(56,189,248,0.3); }
-        .nav-module-indicator { position: fixed; top: clamp(0.8rem,1.5vw,1.2rem); left: 50%; transform: translateX(-50%); font-size: var(--small-size); color: var(--text-muted); z-index: 200; pointer-events: none; font-family: var(--font-body); letter-spacing: 0.05em; }
-        .nav-prev, .nav-next { position: fixed; bottom: clamp(0.8rem,1.5vw,1.2rem); padding: 0.4em 0.8em; font-size: var(--small-size); color: var(--text-secondary); text-decoration: none; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 6px; transition: all 0.3s ease; z-index: 200; font-family: var(--font-body); }
-        .nav-prev { left: clamp(0.8rem,1.5vw,1.2rem); }
-        .nav-next { right: clamp(3rem,5vw,4rem); }
-        .nav-prev:hover, .nav-next:hover { background: rgba(56,189,248,0.1); color: var(--accent); border-color: rgba(56,189,248,0.3); }
 
+        /* ===========================================
+           LINK BUTTONS
+           =========================================== */
+        .link-btn { display: inline-block; padding: 0.5em 1.2em; font-size: var(--small-size); font-weight: 500; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; border: 1px solid; }
+        .link-btn-primary { color: var(--accent); background: rgba(56,189,248,0.1); border-color: rgba(56,189,248,0.3); }
+        .link-btn-primary:hover { background: rgba(56,189,248,0.2); }
+        .link-btn-secondary { color: var(--text-secondary); background: rgba(255,255,255,0.04); border-color: var(--border); }
+        .link-btn-secondary:hover { background: rgba(255,255,255,0.08); color: var(--text-primary); }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Overlay -->
+    <!-- Navigation overlay -->
     <a class="nav-home" href="../index.html" title="Inicio">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
     </a>
-    <div class="nav-module-indicator">M&#243;dulo 02 / 07</div>
-    <a class="nav-prev" href="modulo-01-slides.html">&larr; M&#243;dulo 01</a>
-    <a class="nav-next" href="modulo-03-slides.html">M&#243;dulo 03 &rarr;</a>
+    <div class="nav-module-indicator">Módulo 02 / 07</div>
+    <a class="nav-prev" href="modulo-01-slides.html">&larr; Módulo 01</a>
+    <a class="nav-next" href="modulo-03-slides.html">Módulo 03 &rarr;</a>
 
-    <!-- Progress bar -->
     <div class="progress-bar" id="progressBar"></div>
-
-    <!-- Navigation dots -->
     <nav class="nav-dots" id="navDots"></nav>
 
-    <!-- ===========================================
+    <!-- =========================================
          SLIDE 1: TITLE
-         =========================================== -->
+         ========================================= -->
     <section class="slide" data-slide="0">
         <div class="geo" style="width:180px;height:180px;top:8%;right:12%;border-color:rgba(56,189,248,0.08);transform:rotate(15deg);"></div>
         <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
-
+        <div class="geo" style="width:140px;height:140px;top:55%;right:5%;border-color:rgba(245,158,11,0.05);transform:rotate(30deg);"></div>
         <div class="slide-content centered">
-            <div class="slide-tag reveal">M&#243;dulo 02</div>
-            <h1 class="reveal">Estrategia <span class="gradient-text">Tecnol&#243;gica</span></h1>
+            <div class="slide-tag reveal">Módulo 02</div>
+            <h1 class="reveal">Estrategia <span class="gradient-text">Tecnológica</span> del negocio</h1>
             <div class="divider reveal"><div class="diamond"></div></div>
-            <p class="subtitle reveal">Decisiones que definen el futuro</p>
-            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Qu&#233; decisiones tecnol&#243;gicas son estrat&#233;gicas y cu&#225;les son t&#225;cticas?</p>
+            <p class="subtitle reveal">¿Qué decisiones tecnológicas son estratégicas y cuáles son tácticas?</p>
         </div>
         <div class="slide-num">01 / 16</div>
     </section>
 
-    <!-- ===========================================
+    <!-- =========================================
          SLIDE 2: CAMPUS HERO
-         =========================================== -->
+         ========================================= -->
     <section class="slide slide-hero-img" data-slide="1">
         <img class="hero-cover" src="../assets/Campus-02.png" alt="Campus-hero">
         <div class="slide-num" style="color:rgba(255,255,255,0.6);">02 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 2: OBJETIVO
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 3: OBJETIVO
+         ========================================= -->
     <section class="slide" data-slide="2">
         <div class="slide-content">
             <div class="slide-tag reveal">Objetivo</div>
-            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este m&#243;dulo</span></h2>
-            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Adquirir vocabulario, criterios y frameworks para participar activamente en la definici&#243;n de estrategia tecnol&#243;gica. No se trata de aprender tecnolog&#237;a sino de aprender a <strong style="color:var(--text-primary);">DECIDIR</strong> sobre tecnolog&#237;a.</p>
+            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este módulo</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Adquirir vocabulario, criterios y frameworks para participar activamente en la definición de estrategia tecnológica. No se trata de aprender tecnología sino de aprender a <strong style="color:var(--text-primary);">DECIDIR</strong> sobre tecnología.</p>
             <div class="quote-box reveal">
-                No existen decisiones &#8220;puramente tecnol&#243;gicas&#8221;. Toda decisi&#243;n tech es una decisi&#243;n de negocio con consecuencias en costos, velocidad, dependencia y diferenciaci&#243;n. El directivo que no participa no est&#225; delegando &mdash; <strong style="color:var(--text-primary);">est&#225; abdicando</strong>.
+                No existen decisiones "puramente tecnológicas". Toda decisión tech es una decisión de negocio con consecuencias en costos, velocidad, dependencia y diferenciación. El directivo que no participa no está delegando — <strong style="color:var(--text-primary);">está abdicando</strong>.
             </div>
         </div>
         <div class="slide-num">03 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 3: DIN&#193;MICA &#8212; CASINO ESTRAT&#201;GICO TECH
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 4: DINÁMICA — CASINO ESTRATÉGICO TECH
+         ========================================= -->
     <section class="slide" data-slide="3">
         <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Din&#225;mica</div>
-            <h2 class="reveal">Casino Estrat&#233;gico <span class="gradient-text">Tech</span></h2>
-            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Recib&#237;s USD 1,000,000 para invertir. Decid&#237; c&#243;mo distribuirlo entre estrategias tech.</p>
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinámica</div>
+            <h2 class="reveal">Casino Estratégico <span class="gradient-text">Tech</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Recibís USD 1,000,000 para invertir. Decidí cómo distribuirlo entre estrategias tech.</p>
             <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(2,1fr);">
                 <div class="card">
-                    <div class="card-icon">&#x1F3B0;</div>
+                    <div class="card-icon">🎰</div>
                     <h3>3 rondas</h3>
-                    <p>Cambios de contexto inesperados en cada ronda</p>
+                    <p>El contexto cambia inesperadamente entre rondas</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">&#x1F50D;</div>
-                    <h3>&#8220;Reveal Context&#8221;</h3>
-                    <p>Pod&#233;s comprar informaci&#243;n, pero tiene un costo</p>
+                    <div class="card-icon">🔍</div>
+                    <h3>Reveal Context</h3>
+                    <p>Podés comprar información, pero tiene un costo</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">&#x23F1;&#xFE0F;</div>
+                    <div class="card-icon">⏱️</div>
                     <h3>Tiempo decreciente</h3>
-                    <p>60s &#8594; 30s &#8594; 15s para decidir</p>
+                    <p>60s → 30s → 15s para decidir</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">&#x1F3C6;</div>
+                    <div class="card-icon">🏆</div>
                     <h3>Ganador</h3>
-                    <p>Quien conserva m&#225;s presupuesto al final</p>
+                    <p>Quien conserve mayor presupuesto gana</p>
                 </div>
             </div>
-            <div style="display:flex;gap:var(--element-gap);margin-top:var(--content-gap);flex-wrap:wrap;">
-                <a href="https://casino-tech-play.lovable.app/" target="_blank" rel="noopener noreferrer" class="reveal" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:var(--small-size);color:var(--accent);text-decoration:none;padding:0.4em 1em;border:1px solid rgba(56,189,248,0.3);border-radius:8px;background:rgba(56,189,248,0.08);transition:all 0.3s ease;">Abrir Casino Tech &#8599;</a>
-                <a href="dinamica-02-slides.html" class="reveal" style="display:inline-flex;align-items:center;gap:0.5rem;font-size:var(--small-size);color:var(--accent-warm);text-decoration:none;padding:0.4em 1em;border:1px solid rgba(245,158,11,0.3);border-radius:8px;background:rgba(245,158,11,0.08);transition:all 0.3s ease;">Ver din&#225;mica completa &rarr;</a>
+            <div class="reveal" style="display:flex;gap:clamp(0.5rem,1vw,1rem);margin-top:var(--content-gap);flex-wrap:wrap;">
+                <a href="https://casino-tech-play.lovable.app/" target="_blank" class="link-btn link-btn-primary">Abrir Casino Tech ↗</a>
+                <a href="#" class="link-btn link-btn-secondary">Ver dinámica completa →</a>
             </div>
         </div>
         <div class="slide-num">04 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 4: CONCLUSIONES CASINO TECH
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 5: CONCLUSIONES CASINO TECH
+         ========================================= -->
     <section class="slide" data-slide="4">
         <div class="slide-content">
             <div class="slide-tag reveal">Conclusiones</div>
-            <h2 class="reveal">Qu&#233; aprendimos del <span class="gradient-text">Casino Tech</span></h2>
+            <h2 class="reveal">Qué aprendimos del <span class="gradient-text">Casino Tech</span></h2>
             <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
-                <div class="card" style="border-top:3px solid #38bdf8;">
-                    <div class="card-icon">&#x1F30D;</div>
-                    <h3 style="color:#38bdf8;">El contexto manda</h3>
-                    <p>La mejor estrategia sin contexto es una apuesta ciega. El entorno cambia y la estrategia debe adaptarse.</p>
+                <div class="card" style="border-top:2px solid var(--accent);">
+                    <div class="card-icon">🌍</div>
+                    <h3>El contexto manda</h3>
+                    <p>La mejor estrategia sin contexto es una apuesta ciega</p>
                 </div>
-                <div class="card" style="border-top:3px solid #a855f7;">
-                    <div class="card-icon">&#x1F3B2;</div>
-                    <h3 style="color:#a855f7;">Toda decisi&#243;n implica riesgo</h3>
-                    <p>No existe la opci&#243;n sin riesgo. No decidir tambi&#233;n es una decisi&#243;n con consecuencias.</p>
+                <div class="card" style="border-top:2px solid var(--accent-purple);">
+                    <div class="card-icon">🎲</div>
+                    <h3>Toda decisión implica riesgo</h3>
+                    <p>No decidir también es una decisión</p>
                 </div>
-                <div class="card" style="border-top:3px solid #f59e0b;">
-                    <div class="card-icon">&#x1F4B0;</div>
-                    <h3 style="color:#f59e0b;">M&#225;s informaci&#243;n cuesta</h3>
-                    <p>Obtener certeza tiene un precio. A veces hay que decidir con informaci&#243;n incompleta.</p>
+                <div class="card" style="border-top:2px solid var(--accent-warm);">
+                    <div class="card-icon">💰</div>
+                    <h3>Más información cuesta</h3>
+                    <p>A veces hay que decidir con información incompleta</p>
                 </div>
-                <div class="card" style="border-top:3px solid #ef4444;">
-                    <div class="card-icon">&#x26A1;</div>
-                    <h3 style="color:#ef4444;">La velocidad importa</h3>
-                    <p>El tiempo de decisi&#243;n es un recurso escaso. Quien demora pierde opciones.</p>
+                <div class="card" style="border-top:2px solid var(--accent-red);">
+                    <div class="card-icon">⚡</div>
+                    <h3>La velocidad importa</h3>
+                    <p>Quien demora pierde opciones</p>
                 </div>
             </div>
         </div>
         <div class="slide-num">05 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 5: EJEMPLOS LATAM (2.1)
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 6: EJEMPLOS LATAM
+         ========================================= -->
     <section class="slide" data-slide="5">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Ejemplos LATAM</div>
             <h2 class="reveal">El dilema de los <span class="gradient-text">sistemas heredados</span></h2>
-            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+            <div class="two-col reveal" style="margin-top:var(--content-gap);">
                 <div>
-                    <h3 style="color:var(--accent-red);margin-bottom:var(--element-gap);">Sistemas heredados</h3>
+                    <h3 style="color:var(--text-primary);font-size:var(--h3-size);">Sistemas heredados</h3>
                     <ul class="bullet-list">
-                        <li>Muchas universidades LATAM operan con sistemas de 15&#8211;20 a&#241;os</li>
-                        <li>No los reemplazan porque &#8220;funcionan&#8221;</li>
-                        <li>Limitan crecimiento, fragmentan datos, crean dependencia</li>
-                        <li>La decisi&#243;n de migrar se encarece cada a&#241;o que pasa</li>
+                        <li>Sistemas de 15-20 años que "funcionan"</li>
+                        <li>Limitan crecimiento y fragmentan datos</li>
+                        <li>Generan dependencia de personas específicas</li>
+                        <li>Cada año que pasa, migrar es más costoso</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 style="color:var(--accent-warm);margin-bottom:var(--element-gap);">El costo oculto del &#8220;gratis&#8221;</h3>
+                    <h3 style="color:var(--text-primary);font-size:var(--h3-size);">Costo oculto del "gratis"</h3>
                     <ul class="bullet-list">
-                        <li>Instituciones adoptan herramientas gratuitas como Moodle</li>
-                        <li>Descubren tarde que no controlan los datos del estudiante</li>
-                        <li>No pueden personalizar, dependen de terceros</li>
+                        <li>Sin control sobre datos de estudiantes</li>
+                        <li>No pueden personalizar la experiencia</li>
+                        <li>Dependencia total de decisiones de terceros</li>
                     </ul>
                 </div>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);border-left-color:var(--accent-warm);background:rgba(245,158,11,0.05);">
-                &iquest;Qui&#233;n toma las decisiones tecnol&#243;gicas estructurales? &iquest;El equipo directivo o el &#225;rea de IT sola?
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);border-left-color:var(--accent-warm);">
+                ¿Quién toma las decisiones tecnológicas estructurales? ¿El equipo directivo o el área de IT sola?
             </div>
         </div>
         <div class="slide-num">06 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 6: BUILD VS BUY
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 7: BUILD vs BUY
+         ========================================= -->
     <section class="slide" data-slide="6">
         <div class="slide-content">
-            <div class="slide-tag reveal">Decisi&#243;n 1</div>
+            <div class="slide-tag reveal">Decisión 1</div>
             <h2 class="reveal">Build vs <span class="gradient-text">Buy</span></h2>
-            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="role-card" style="border-top:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">Build (Construir)</h3>
+            <div class="two-col reveal" style="margin-top:var(--content-gap);">
+                <div class="role-card" style="border-left:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">🔨 Build</h3>
                     <ul class="role-list">
-                        <li>Control total, diferenciaci&#243;n, propiedad de datos</li>
-                        <li>Requiere equipo t&#233;cnico, costos altos, tiempo</li>
+                        <li>Control total, diferenciación, propiedad datos</li>
+                        <li>Costos altos, requiere equipo técnico, tiempo</li>
                         <li>Conviene cuando el proceso es ventaja competitiva</li>
                     </ul>
                 </div>
-                <div class="role-card" style="border-top:3px solid #a855f7;">
-                    <h3 style="color:#a855f7;">Buy (Comprar)</h3>
+                <div class="role-card" style="border-left:3px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">🛒 Buy</h3>
                     <ul class="role-list">
-                        <li>Velocidad de implementaci&#243;n, menor riesgo inicial</li>
-                        <li>Dependencia proveedor, limitaciones personalizaci&#243;n</li>
-                        <li>Conviene cuando el proceso es est&#225;ndar</li>
+                        <li>Velocidad de implementación, menor riesgo</li>
+                        <li>Dependencia proveedor, limitaciones de personalización</li>
+                        <li>Conviene cuando el proceso es estándar en la industria</li>
                     </ul>
                 </div>
             </div>
-            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">Ejemplo: Siglo 21 construy&#243; su propio SIS (Proyecto Algarrobo) &#8212; escal&#243; a 60,000+ estudiantes.</p>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);margin-top:var(--element-gap);">Universidad Siglo 21 decidió construir su propio SIS (Proyecto Algarrobo) porque ninguna solución de mercado se adaptaba a su modelo federal. Resultado: flexibilidad total para escalar a 60,000+ estudiantes.</p>
             <div class="quote-box reveal" style="margin-top:var(--element-gap);">
-                Compr&#225; lo que es commodity. Constru&#237; lo que es tu ventaja competitiva.
+                Comprá lo que es commodity. Construí lo que es tu ventaja competitiva.
             </div>
-            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">Impacto financiero: Build = CAPEX + OPEX. Buy SaaS = OPEX predecible.</p>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);margin-top:var(--element-gap);">Impacto financiero: Build = CAPEX + OPEX. Buy SaaS = OPEX predecible.</p>
         </div>
         <div class="slide-num">07 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 7: CLOUD VS ON-PREMISE
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 8: CLOUD vs ON-PREMISE
+         ========================================= -->
     <section class="slide" data-slide="7">
         <div class="slide-content">
-            <div class="slide-tag reveal">Decisi&#243;n 2</div>
+            <div class="slide-tag reveal">Decisión 2</div>
             <h2 class="reveal">Cloud vs <span class="gradient-text">On-Premise</span></h2>
-            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="role-card" style="border-top:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">&#x2601;&#xFE0F; Cloud</h3>
+            <div class="two-col reveal" style="margin-top:var(--content-gap);">
+                <div class="role-card" style="border-left:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">☁️ Cloud</h3>
                     <ul class="role-list">
-                        <li>Escalabilidad, sin inversi&#243;n inicial grande</li>
-                        <li>Actualizaciones autom&#225;ticas</li>
-                        <li>Analog&#237;a: alquilar departamento</li>
+                        <li>Infraestructura alquilada (AWS, Azure, GCP)</li>
+                        <li>Escalabilidad elástica, sin inversión inicial</li>
+                        <li>Actualizaciones automáticas</li>
+                        <li>Riesgo: costos crecientes, dependencia</li>
                     </ul>
                 </div>
-                <div class="role-card" style="border-top:3px solid #f59e0b;">
-                    <h3 style="color:#f59e0b;">&#x1F3E2; On-Premise</h3>
+                <div class="role-card" style="border-left:3px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">🏢 On-Premise</h3>
                     <ul class="role-list">
+                        <li>Servidores propios en tu edificio</li>
                         <li>Control total, costos predecibles largo plazo</li>
-                        <li>Analog&#237;a: comprar casa</li>
+                        <li>Para regulaciones específicas</li>
+                        <li>Riesgo: obsolescencia, equipo infraestructura</li>
                     </ul>
                 </div>
             </div>
-            <div class="card reveal" style="margin-top:var(--content-gap);border-left:3px solid var(--accent-green);">
-                <h3 style="color:var(--accent-green);font-size:var(--small-size);">Caso: Tec de Monterrey</h3>
-                <p>Durante la pandemia la demanda se multiplic&#243; 10x. Cloud (Azure) escal&#243; el&#225;sticamente. Instituciones on-premise colapsaron.</p>
+            <div class="card reveal" style="border-left:3px solid var(--accent-green);margin-top:var(--element-gap);">
+                <h3 style="color:var(--accent-green);">Caso: Tec de Monterrey</h3>
+                <p>Durante la pandemia, la demanda de clases virtuales se multiplicó por 10 en semanas. Las instituciones en cloud (como el Tec de Monterrey con Azure) pudieron escalar de forma elástica. Las que dependían de servidores on-premise colapsaron.</p>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--element-gap);">
-                Cloud no es lujo &#8212; es <strong style="color:var(--text-primary);">resiliencia operativa</strong>.
+                Cloud no es lujo — es <strong style="color:var(--text-primary);">resiliencia operativa</strong>.
             </div>
-            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">Financiero: Cloud convierte CAPEX en OPEX.</p>
         </div>
         <div class="slide-num">08 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 8: CORE VS COMMODITY
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 9: CORE vs COMMODITY
+         ========================================= -->
     <section class="slide" data-slide="8">
         <div class="slide-content">
-            <div class="slide-tag reveal">Decisi&#243;n 3</div>
+            <div class="slide-tag reveal">Decisión 3</div>
             <h2 class="reveal">Core vs <span class="gradient-text">Commodity</span></h2>
-            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="role-card" style="border-top:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">Core</h3>
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:var(--element-gap);">Ventaja competitiva</p>
+            <div class="two-col reveal" style="margin-top:var(--content-gap);">
+                <div class="role-card" style="border-left:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">💎 Core</h3>
                     <ul class="role-list">
-                        <li>Plataforma de aprendizaje personalizado</li>
-                        <li>Motor de anal&#237;tica de retenci&#243;n</li>
+                        <li>Define tu ventaja competitiva</li>
+                        <li>Si lo perdés, perdés diferenciación</li>
+                        <li>Ej: plataforma aprendizaje personalizado</li>
+                        <li>Ej: motor de analítica de retención</li>
                     </ul>
                 </div>
-                <div class="role-card" style="border-top:3px solid #f59e0b;">
-                    <h3 style="color:#f59e0b;">Commodity</h3>
-                    <p style="font-size:var(--small-size);color:var(--text-secondary);margin-bottom:var(--element-gap);">Necesarios pero no diferenciadores</p>
+                <div class="role-card" style="border-left:3px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">📦 Commodity</h3>
                     <ul class="role-list">
-                        <li>Email</li>
-                        <li>Videoconferencia</li>
-                        <li>Sistema contable</li>
+                        <li>Lo necesitás pero no te diferencia</li>
+                        <li>Cualquier proveedor lo resuelve</li>
+                        <li>Ej: email, videoconferencia</li>
+                        <li>Ej: sistema contable</li>
                     </ul>
                 </div>
             </div>
             <div class="antipattern reveal" style="margin-top:var(--content-gap);">
-                <div class="antipattern-icon">&#x26A0;&#xFE0F;</div>
-                <div>
-                    <div class="antipattern-name">Anti-patr&#243;n</div>
-                    <div class="antipattern-desc">Invertir en personalizar commodities y usar soluciones gen&#233;ricas para lo core.</div>
-                </div>
+                <strong>La trampa común:</strong> invertir tiempo y recursos en personalizar commodities (crear tu propio sistema de email interno) y al mismo tiempo usar soluciones genéricas para lo que es core (un LMS sin personalización).
             </div>
         </div>
         <div class="slide-num">09 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 9: VELOCIDAD VS CONTROL
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 10: VELOCIDAD vs CONTROL
+         ========================================= -->
     <section class="slide" data-slide="9">
         <div class="slide-content">
-            <div class="slide-tag reveal">Decisi&#243;n 4</div>
+            <div class="slide-tag reveal">Decisión 4</div>
             <h2 class="reveal">Velocidad vs <span class="gradient-text">Control</span></h2>
-            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="role-card" style="border-top:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">Priorizar Velocidad</h3>
-                    <div class="info-row">
-                        <span class="info-value">Lanzar r&#225;pido, iterar</span>
+            <div class="two-col reveal" style="margin-top:var(--content-gap);">
+                <div class="role-card" style="border-left:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">🚀 Velocidad</h3>
+                    <ul class="role-list">
+                        <li>Lanzar rápido, iterar después</li>
+                        <li>Aceptar deuda técnica a corto plazo</li>
+                        <li>Para validar hipótesis</li>
+                    </ul>
+                    <div class="info-row" style="margin-top:var(--element-gap);">
+                        <span class="info-label">Riesgo</span>
+                        <span class="info-value"><span class="pill pill-amber">Acumulación de problemas</span></span>
                     </div>
-                    <div class="info-row">
-                        <span class="info-value">Aceptar deuda t&#233;cnica corto plazo</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-value">Para validar hip&#243;tesis</span>
-                    </div>
-                    <div style="margin-top:var(--element-gap);"><span class="pill pill-blue">Riesgo: acumulaci&#243;n de problemas</span></div>
                 </div>
-                <div class="role-card" style="border-top:3px solid #a855f7;">
-                    <h3 style="color:#a855f7;">Priorizar Control</h3>
-                    <div class="info-row">
-                        <span class="info-value">Planificar en detalle</span>
+                <div class="role-card" style="border-left:3px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">🛡️ Control</h3>
+                    <ul class="role-list">
+                        <li>Planificar en detalle, lanzar cuando esté listo</li>
+                        <li>Minimizar deuda técnica desde el inicio</li>
+                        <li>Para sistemas críticos</li>
+                    </ul>
+                    <div class="info-row" style="margin-top:var(--element-gap);">
+                        <span class="info-label">Riesgo</span>
+                        <span class="info-value"><span class="pill pill-red">Parálisis por análisis</span></span>
                     </div>
-                    <div class="info-row">
-                        <span class="info-value">Minimizar deuda t&#233;cnica</span>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-value">Para sistemas cr&#237;ticos</span>
-                    </div>
-                    <div style="margin-top:var(--element-gap);"><span class="pill pill-purple">Riesgo: par&#225;lisis por an&#225;lisis</span></div>
                 </div>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);">
@@ -895,191 +492,174 @@
         <div class="slide-num">10 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 10: 6 DIMENSIONES GRID
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 11: 6 DIMENSIONES
+         ========================================= -->
     <section class="slide" data-slide="10">
         <div class="slide-content">
             <div class="slide-tag reveal">Framework</div>
             <h2 class="reveal">6 dimensiones de <span class="gradient-text">estrategia tech</span></h2>
             <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
-                <div class="card">
-                    <div class="card-icon">&#x1F3D7;&#xFE0F;</div>
+                <div class="card" style="border-top:2px solid var(--accent);">
+                    <div class="card-icon">🏗️</div>
                     <h3>Infraestructura</h3>
-                    <p>&iquest;D&#243;nde viven tus sistemas?</p>
+                    <p>¿Dónde viven tus sistemas y datos?</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon">&#x1F517;</div>
+                <div class="card" style="border-top:2px solid var(--accent-purple);">
+                    <div class="card-icon">🔗</div>
                     <h3>Arquitectura</h3>
-                    <p>&iquest;Se hablan o son islas?</p>
+                    <p>¿Se hablan tus sistemas entre sí?</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon">&#x1F4CA;</div>
+                <div class="card" style="border-top:2px solid var(--accent-green);">
+                    <div class="card-icon">📊</div>
                     <h3>Datos</h3>
-                    <p>&iquest;Son confiables? &iquest;Qui&#233;n los gobierna?</p>
+                    <p>¿Son confiables? ¿Quién los gobierna?</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon">&#x1F512;</div>
+                <div class="card" style="border-top:2px solid var(--accent-red);">
+                    <div class="card-icon">🔒</div>
                     <h3>Seguridad</h3>
-                    <p>&iquest;Pol&#237;ticas definidas? &iquest;Preparados?</p>
+                    <p>¿Quién tiene acceso a qué?</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon">&#x1F465;</div>
+                <div class="card" style="border-top:2px solid var(--accent-warm);">
+                    <div class="card-icon">👥</div>
                     <h3>Talento</h3>
-                    <p>&iquest;Apaga incendios o construye?</p>
+                    <p>¿Tenés las personas correctas?</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon">&#x1F4A1;</div>
-                    <h3>Innovaci&#243;n</h3>
-                    <p>&iquest;Proceso o ad hoc?</p>
+                <div class="card" style="border-top:2px solid var(--accent);">
+                    <div class="card-icon">💡</div>
+                    <h3>Innovación</h3>
+                    <p>¿Hay proceso para incorporar tech nueva?</p>
                 </div>
             </div>
         </div>
         <div class="slide-num">11 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 11: DIMENSIONES 1, 2, 3
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 12: DIMENSIONES 1, 2, 3
+         ========================================= -->
     <section class="slide" data-slide="11">
         <div class="slide-content">
             <h2 class="reveal">Dimensiones <span class="gradient-text">1, 2 y 3</span></h2>
-            <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vw,0.8rem);margin-top:var(--content-gap);">
-                <div class="card reveal" style="border-left:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">&#x1F3D7;&#xFE0F; Infraestructura</h3>
-                    <ul class="bullet-list">
-                        <li>&iquest;Puede escalar en picos?</li>
-                        <li>&iquest;Cu&#225;n dependiente de proveedor?</li>
-                    </ul>
+            <div class="reveal" style="display:flex;flex-direction:column;gap:var(--element-gap);margin-top:var(--content-gap);">
+                <div class="card" style="border-left:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">🏗️ Infraestructura</h3>
+                    <p>¿Cloud, on-premise o híbrido? ¿Puede escalar en picos (inscripciones, exámenes)? ¿Cuán dependiente sos de servidores físicos o de un proveedor cloud?</p>
                 </div>
-                <div class="card reveal" style="border-left:3px solid #a855f7;">
-                    <h3 style="color:#a855f7;">&#x1F517; Arquitectura</h3>
-                    <ul class="bullet-list">
-                        <li>&iquest;La info fluye autom&#225;ticamente?</li>
-                        <li>&iquest;Cu&#225;ntos procesos dependen de Excel?</li>
-                    </ul>
+                <div class="card" style="border-left:3px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">🔗 Arquitectura</h3>
+                    <p>¿Tus sistemas se hablan o son islas? ¿La información fluye automáticamente o requiere carga manual? ¿Cuántos procesos dependen de un Excel o un email?</p>
                 </div>
-                <div class="card reveal" style="border-left:3px solid #34d399;">
-                    <h3 style="color:#34d399;">&#x1F4CA; Datos</h3>
-                    <ul class="bullet-list">
-                        <li>&iquest;Qu&#233; datos tenemos? &iquest;Confiables?</li>
-                        <li>&iquest;Decisiones con datos o intuici&#243;n?</li>
-                    </ul>
-                    <div style="margin-top:var(--element-gap);padding:0.6em 0.8em;background:rgba(52,211,153,0.06);border-radius:6px;border-left:2px solid #34d399;">
-                        <p style="font-size:var(--small-size);color:var(--text-secondary);font-style:normal;"><strong style="color:#34d399;">Pol&#237;tica Gobernanza Grupo R&#8217;Evolution:</strong> CTO custodio de Arquitectura de Datos y accesos. CEO responsable final del cumplimiento.</p>
-                    </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <h3 style="color:var(--accent-green);">📊 Datos</h3>
+                    <p>¿Qué datos tenemos? ¿Son confiables? ¿Quién los gobierna? ¿Tomamos decisiones basadas en datos o en intuición?</p>
                 </div>
+            </div>
+            <div class="reveal" style="margin-top:var(--element-gap);padding:clamp(0.5rem,1vw,0.8rem);background:rgba(168,85,247,0.06);border:1px solid rgba(168,85,247,0.15);border-radius:8px;">
+                <p style="font-size:var(--small-size);color:var(--accent-purple);"><strong>Gobernanza de Datos:</strong> El CTO es custodio de la Arquitectura de Datos y sus accesos. El CEO es responsable final del cumplimiento.</p>
             </div>
         </div>
         <div class="slide-num">12 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 12: DIMENSIONES 4, 5, 6
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 13: DIMENSIONES 4, 5, 6
+         ========================================= -->
     <section class="slide" data-slide="12">
         <div class="slide-content">
             <h2 class="reveal">Dimensiones <span class="gradient-text">4, 5 y 6</span></h2>
-            <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vw,0.8rem);margin-top:var(--content-gap);">
-                <div class="card reveal" style="border-left:3px solid #ef4444;">
-                    <h3 style="color:#ef4444;">&#x1F512; Seguridad</h3>
-                    <ul class="bullet-list">
-                        <li>&iquest;Qui&#233;n tiene acceso a qu&#233;?</li>
-                        <li>&iquest;Preparados para un incidente?</li>
-                    </ul>
+            <div class="reveal" style="display:flex;flex-direction:column;gap:var(--element-gap);margin-top:var(--content-gap);">
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <h3 style="color:var(--accent-red);">🔒 Seguridad</h3>
+                    <p>¿Tenemos políticas definidas? ¿Quién tiene acceso a qué? ¿Estamos preparados para un incidente (fuga de datos, ransomware)?</p>
                 </div>
-                <div class="card reveal" style="border-left:3px solid #f59e0b;">
-                    <h3 style="color:#f59e0b;">&#x1F465; Talento</h3>
-                    <ul class="bullet-list">
-                        <li>&iquest;Negocio y tech hablan el mismo idioma?</li>
-                        <li>&iquest;Equipo de construcci&#243;n o de bomberos?</li>
-                    </ul>
+                <div class="card" style="border-left:3px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">👥 Talento</h3>
+                    <p>¿Tenemos las personas correctas? ¿IT es "apaga incendios" o construcción estratégica? ¿El negocio y la tecnología hablan el mismo idioma?</p>
                 </div>
-                <div class="card reveal" style="border-left:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">&#x1F4A1; Innovaci&#243;n</h3>
-                    <ul class="bullet-list">
-                        <li>&iquest;Qui&#233;n identifica oportunidades?</li>
-                        <li>&iquest;Espacio para experimentar?</li>
-                    </ul>
+                <div class="card" style="border-left:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">💡 Innovación</h3>
+                    <p>¿Cómo incorporamos nuevas tecnologías? ¿Quién identifica oportunidades? ¿Hay espacio para experimentar o toda inversión requiere business case completo?</p>
                 </div>
             </div>
         </div>
         <div class="slide-num">13 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 13: ALINEACI&#211;N TECNOLOG&#205;A-NEGOCIO
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 14: ALINEACIÓN TECH-NEGOCIO
+         ========================================= -->
     <section class="slide" data-slide="13">
         <div class="slide-content">
-            <div class="slide-tag reveal">Alineaci&#243;n</div>
-            <h2 class="reveal">Tecnolog&#237;a alineada <span class="gradient-text">al negocio</span></h2>
-            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:600px;margin-left:0;">
-                <div class="layer">
-                    <span class="layer-label">01</span>
-                    <span style="font-size:var(--small-size);color:var(--text-primary);font-weight:600;">Objetivos de negocio</span>
+            <div class="slide-tag reveal">Alineación</div>
+            <h2 class="reveal">Tecnología alineada <span class="gradient-text">al negocio</span></h2>
+            <div class="layer-stack reveal" style="margin-top:var(--content-gap);">
+                <div class="layer" style="border-left:3px solid var(--accent);">
+                    <span style="font-size:var(--h3-size);font-weight:700;color:var(--accent);min-width:2em;">01</span>
+                    <span class="layer-label"><strong>Objetivos de negocio</strong> — ¿Qué queremos lograr?</span>
                 </div>
-                <div class="layer">
-                    <span class="layer-label">02</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">&#8594; Capacidades necesarias</span>
+                <div style="text-align:center;color:var(--text-muted);font-size:var(--small-size);">↓</div>
+                <div class="layer" style="border-left:3px solid var(--accent-purple);">
+                    <span style="font-size:var(--h3-size);font-weight:700;color:var(--accent-purple);min-width:2em;">02</span>
+                    <span class="layer-label"><strong>Capacidades necesarias</strong> — ¿Qué necesitamos poder hacer?</span>
                 </div>
-                <div class="layer">
-                    <span class="layer-label">03</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">&#8594; Habilitadores tecnol&#243;gicos</span>
+                <div style="text-align:center;color:var(--text-muted);font-size:var(--small-size);">↓</div>
+                <div class="layer" style="border-left:3px solid var(--accent-warm);">
+                    <span style="font-size:var(--h3-size);font-weight:700;color:var(--accent-warm);min-width:2em;">03</span>
+                    <span class="layer-label"><strong>Habilitadores tecnológicos</strong> — ¿Qué tecnología lo habilita?</span>
                 </div>
-                <div class="layer">
-                    <span class="layer-label">04</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">&#8594; Inversi&#243;n y priorizaci&#243;n</span>
+                <div style="text-align:center;color:var(--text-muted);font-size:var(--small-size);">↓</div>
+                <div class="layer" style="border-left:3px solid var(--accent-green);">
+                    <span style="font-size:var(--h3-size);font-weight:700;color:var(--accent-green);min-width:2em;">04</span>
+                    <span class="layer-label"><strong>Inversión y priorización</strong> — ¿Cuánto y en qué orden?</span>
                 </div>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                <strong style="color:var(--text-primary);">Ejemplo:</strong> Objetivo: reducir deserci&#243;n del 42% al 25%. Capacidad: detectar estudiantes en riesgo. Habilitador: anal&#237;tica predictiva LMS+SIS. Inversi&#243;n: integraci&#243;n datos + modelo alertas + equipo intervenci&#243;n.
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-secondary);margin-top:var(--element-gap);">
+                <strong style="color:var(--text-primary);">La etapa de crecimiento:</strong> Una startup EdTech necesita velocidad. Una universidad establecida necesita estabilidad y migración gradual.
+            </p>
+            <div class="quote-box reveal" style="margin-top:var(--element-gap);">
+                <strong style="color:var(--text-primary);">Ejemplo:</strong> Deserción 42% → 25%. Capacidad: detectar alumnos en riesgo. Habilitador: analítica predictiva conectada al LMS + SIS. Inversión: integración datos + modelo alertas + equipo intervención.
             </div>
         </div>
         <div class="slide-num">14 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 14: RESULTADO ESPERADO
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 15: RESULTADO ESPERADO
+         ========================================= -->
     <section class="slide" data-slide="14">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Cierre</div>
             <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
             <div class="divider reveal"><div class="diamond"></div></div>
-            <div style="max-width:580px;margin-top:var(--content-gap);">
-                <ul class="bullet-list" style="text-align:left;">
-                    <li class="reveal">Manej&#225;s <strong style="color:var(--text-primary);">vocabulario de decisiones tech</strong></li>
-                    <li class="reveal">Distingu&#237;s decisiones <strong style="color:var(--text-primary);">t&#225;cticas de estructurales</strong></li>
-                    <li class="reveal">Entend&#233;s las <strong style="color:var(--text-primary);">6 dimensiones de estrategia tech</strong></li>
-                    <li class="reveal">Comprend&#233;s el <strong style="color:var(--text-primary);">impacto financiero CAPEX/OPEX</strong></li>
-                    <li class="reveal">Ten&#233;s un primer <strong style="color:var(--text-primary);">diagn&#243;stico radar</strong></li>
-                    <li class="reveal">Pod&#233;s participar activamente en <strong style="color:var(--text-primary);">conversaciones de tech strategy</strong></li>
-                </ul>
-            </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">M&#243;dulo 02 &#8212; Estrategia Tecnol&#243;gica</p>
+            <ul class="bullet-list reveal" style="text-align:left;max-width:700px;">
+                <li>Distinguir decisiones tecnológicas <strong style="color:var(--text-primary);">estratégicas</strong> de las <strong style="color:var(--text-primary);">tácticas</strong>.</li>
+                <li>Aplicar los criterios <strong style="color:var(--text-primary);">Build vs. Buy</strong>, Cloud vs. On-premise, Core vs. Commodity y Velocidad vs. Control.</li>
+                <li>Evaluar las <strong style="color:var(--text-primary);">6 dimensiones</strong> de una estrategia tecnológica en su propia organización.</li>
+                <li>Articular la alineación entre objetivos de negocio y <strong style="color:var(--text-primary);">habilitadores tecnológicos</strong>.</li>
+                <li>Entender el impacto financiero (<strong style="color:var(--text-primary);">CAPEX vs. OPEX</strong>) de las decisiones tecnológicas.</li>
+            </ul>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);margin-top:var(--content-gap);">Módulo 02 — Estrategia Tecnológica</p>
         </div>
         <div class="slide-num">15 / 16</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 15: REFLEXI&#211;N FINAL
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 16: REFLEXIÓN FINAL
+         ========================================= -->
     <section class="slide" data-slide="15">
         <div class="slide-content centered">
-            <div class="slide-tag reveal">Reflexi&#243;n</div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:700px;text-align:center;border-left:none;border-top:3px solid var(--accent);border-radius:8px 8px 0 0;padding:1.5em 2em;font-size:clamp(1rem,2vw,1.4rem);line-height:1.6;">
-                Cada decisi&#243;n tecnol&#243;gica que tom&#225;s (o que dej&#225;s que otros tomen por vos) define la estructura de costos, la velocidad y la dependencia de tu organizaci&#243;n por los pr&#243;ximos 3&#8211;5 a&#241;os.<br><br>
-                &iquest;Est&#225;s eligiendo&#8230; o est&#225;s heredando?
+            <div class="slide-tag reveal" style="background:rgba(168,85,247,0.1);color:var(--accent-purple);">Reflexión</div>
+            <div class="reveal" style="max-width:750px;margin-top:var(--content-gap);padding:clamp(1.2rem,2.5vw,2rem);background:rgba(56,189,248,0.04);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:12px;">
+                <p style="font-size:clamp(0.85rem,1.5vw,1.1rem);line-height:1.6;color:var(--text-secondary);font-style:italic;">
+                    Cada decisión tecnológica que tomás (o que dejás que otros tomen por vos) define la estructura de costos, la velocidad y la dependencia de tu organización por los próximos 3–5 años.<br><br>
+                    <strong style="color:var(--text-primary);font-size:clamp(1rem,1.8vw,1.3rem);">¿Estás eligiendo… o estás heredando?</strong>
+                </p>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">M&#243;dulo 02 &#8212; Estrategia Tecnol&#243;gica</p>
         </div>
         <div class="slide-num">16 / 16</div>
     </section>
 
-    <!-- ===========================================
-       JAVASCRIPT: Slide Controller
-       =========================================== -->
     <script>
         class SlidePresentation {
             constructor() {
@@ -1088,8 +668,6 @@
                 this.navDotsContainer = document.getElementById('navDots');
                 this.currentSlide = 0;
                 this.totalSlides = this.slides.length;
-                this.isScrolling = false;
-
                 this.createNavDots();
                 this.setupIntersectionObserver();
                 this.setupKeyboardNav();
@@ -1097,7 +675,6 @@
                 this.updateProgress();
             }
 
-            /* Create navigation dots */
             createNavDots() {
                 for (let i = 0; i < this.totalSlides; i++) {
                     const dot = document.createElement('button');
@@ -1109,7 +686,6 @@
                 }
             }
 
-            /* Observe which slide is visible */
             setupIntersectionObserver() {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -1122,11 +698,9 @@
                         }
                     });
                 }, { threshold: 0.5 });
-
                 this.slides.forEach(slide => observer.observe(slide));
             }
 
-            /* Keyboard navigation */
             setupKeyboardNav() {
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
@@ -1139,13 +713,11 @@
                 });
             }
 
-            /* Touch/swipe support */
             setupTouchNav() {
                 let startY = 0;
                 document.addEventListener('touchstart', (e) => {
                     startY = e.touches[0].clientY;
                 }, { passive: true });
-
                 document.addEventListener('touchend', (e) => {
                     const diff = startY - e.changedTouches[0].clientY;
                     if (Math.abs(diff) > 50) {
@@ -1182,7 +754,6 @@
             }
         }
 
-        /* Initialize on load */
         document.addEventListener('DOMContentLoaded', () => {
             new SlidePresentation();
         });

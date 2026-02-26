@@ -41,7 +41,7 @@ Toda decision de negocio va de la mano de la tecnologia.
 Imaginemos que mañana aparece un nuevo competidor, una Universidad 100% digital, con tecnología AI, organización con procesos ágiles y con una oferta de programas de grado y pre-grado que compiten directamente con la oferta de tu institucion. 
 Como Directivo a cargo de una Institución educativa:  Qué decisiones de Negocio tomarías para competir? Cómo se relacionan esas decisiones con la tecnología?
 
-
+---
 <!-- This should be a new Slide -->
 ### 💡 **Cierre Dinamica:**
 

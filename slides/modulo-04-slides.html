@@ -432,7 +432,7 @@
         }
 
         .role-list li::before {
-            content: '→';
+            content: '\2192';
             position: absolute;
             left: 0;
             color: var(--accent);
@@ -459,6 +459,17 @@
         .ethics-icon {
             color: var(--accent-green);
             flex-shrink: 0;
+        }
+
+        /* Hero image slide */
+        .slide-hero-img {
+            padding: 0;
+        }
+
+        .slide-hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ===========================================
@@ -653,97 +664,208 @@
             <p class="subtitle reveal">De la intencion a la gobernanza</p>
             <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Como transformar sin romper la organizacion?</p>
         </div>
-        <div class="slide-num">01 / 18</div>
+        <div class="slide-num">01 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 2: OBJETIVO
+         SLIDE 2: CAMPUS HERO IMAGE
          =========================================== -->
-    <section class="slide" data-slide="1">
+    <section class="slide slide-hero-img" data-slide="1">
+        <img src="../assets/Campus-04.png" alt="Campus-04">
+        <div class="slide-num" style="color:#fff;">02 / 22</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: OBJETIVO
+         =========================================== -->
+    <section class="slide" data-slide="2">
         <div class="slide-content">
             <div class="slide-tag reveal">Objetivo</div>
             <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este modulo</span></h2>
             <div style="margin-top:var(--content-gap);">
                 <ul class="bullet-list">
                     <li class="reveal">Comprender que la transformacion digital requiere <strong style="color:var(--text-primary)">cultura + procesos + tecnologia</strong></li>
-                    <li class="reveal">Entender que la adopcion de IA es una <strong style="color:var(--text-primary)">decision estrategica con gobernanza</strong>, no un proyecto aislado</li>
-                    <li class="reveal">Conocer un <strong style="color:var(--text-primary)">framework real de aplicacion de IA</strong></li>
+                    <li class="reveal">Entender que la adopcion de IA no es un proyecto aislado, sino una <strong style="color:var(--text-primary)">decision estrategica con gobernanza</strong></li>
+                    <li class="reveal">Conocer el <strong style="color:var(--text-primary)">framework real de aplicacion de IA</strong></li>
                     <li class="reveal">Salir con un <strong style="color:var(--text-primary)">primer paso concreto y estructurado</strong> para avanzar</li>
                 </ul>
             </div>
         </div>
-        <div class="slide-num">02 / 18</div>
+        <div class="slide-num">03 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 3: DINAMICA DE APERTURA
+         SLIDE 4: DINAMICA DE APERTURA
          =========================================== -->
-    <section class="slide" data-slide="2">
+    <section class="slide" data-slide="3">
         <div class="slide-content centered">
             <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
             <h2 class="reveal">Boardroom en Crisis</h2>
             <p class="subtitle reveal">Decidir bajo presion</p>
             <div class="divider reveal"><div class="diamond" style="background:var(--accent-warm);"></div></div>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);max-width:700px;">
+            <p class="reveal" style="font-size:var(--body-size);color:var(--text-secondary);max-width:650px;">Simular una decision estrategica bajo presion para evidenciar:</p>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--element-gap);max-width:700px;grid-template-columns:1fr 1fr;">
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">📋</div>
-                    <h3>3 min</h3>
-                    <p>Briefing del escenario</p>
+                    <p>Falta de gobernanza</p>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">⚡</div>
-                    <h3>8 min</h3>
-                    <p>Trabajo en grupo como Comite Ejecutivo</p>
+                    <p>Ausencia de KPIs claros</p>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">🎤</div>
-                    <h3>6-7 min</h3>
-                    <p>Plenaria y reflexion</p>
+                    <p>Riesgo de piloto eterno</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <p>Confusion entre tecnologia y transformacion</p>
                 </div>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Asumes el rol de Comite Ejecutivo. Recibes un escenario con presion financiera y competitiva. Tienes 8 minutos para decidir.</p>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Los participantes asumen el rol de Comite Ejecutivo. Reciben un escenario realista con presion financiera y competitiva. Tienen 8 minutos para decidir una estrategia.</p>
         </div>
-        <div class="slide-num">03 / 18</div>
+        <div class="slide-num">04 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 4: EL PATRON INVISIBLE
-         =========================================== -->
-    <section class="slide" data-slide="3">
-        <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Revelacion</div>
-            <h2 class="reveal">El patron <span class="gradient-text">invisible</span></h2>
-            <p class="reveal" style="margin-bottom:var(--content-gap);color:var(--text-secondary);font-size:var(--body-size);">Despues de la dinamica, algo se hace visible. Las decisiones suelen:</p>
-            <div style="display:flex;flex-direction:column;gap:clamp(0.3rem,0.7vw,0.5rem);">
-                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-red);">
-                    <span style="color:var(--accent-red);">✕</span>
-                    <span style="font-size:var(--body-size);">Ir directo a tecnologia</span>
-                </div>
-                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-red);">
-                    <span style="color:var(--accent-red);">✕</span>
-                    <span style="font-size:var(--body-size);">Carecer de gobernanza formal</span>
-                </div>
-                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-red);">
-                    <span style="color:var(--accent-red);">✕</span>
-                    <span style="font-size:var(--body-size);">No tener presupuesto asignado explicitamente</span>
-                </div>
-                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-red);">
-                    <span style="color:var(--accent-red);">✕</span>
-                    <span style="font-size:var(--body-size);">No definir KPIs antes de ejecutar</span>
-                </div>
-                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-red);">
-                    <span style="color:var(--accent-red);">✕</span>
-                    <span style="font-size:var(--body-size);">Ignorar cultura o procesos</span>
-                </div>
-            </div>
-        </div>
-        <div class="slide-num">04 / 18</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 5: TRIANGULO DE TRANSFORMACION
+         SLIDE 5: DINAMICA — GRUPO 1
          =========================================== -->
     <section class="slide" data-slide="4">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Grupo 1</div>
+            <h2 class="reveal">Universidad Tradicional <span class="gradient-text">en Retroceso</span></h2>
+            <div class="two-col" style="margin-top:var(--content-gap);">
+                <div>
+                    <h3 class="reveal" style="color:var(--accent);font-size:var(--body-size);">Situacion</h3>
+                    <ul class="bullet-list reveal">
+                        <li>Matricula -14% interanual</li>
+                        <li>Conversion de leads: 9%</li>
+                        <li>Retencion primer ano: 68%</li>
+                        <li>LMS subutilizado</li>
+                        <li>Cultura docente resistente</li>
+                        <li>Presupuesto IT: USD 2M</li>
+                        <li>No existe presupuesto especifico para IA</li>
+                    </ul>
+                    <div class="reveal" style="margin-top:var(--element-gap);padding:0.5em 0.8em;background:rgba(239,68,68,0.08);border-radius:8px;border-left:3px solid var(--accent-red);">
+                        <p style="font-size:var(--small-size);color:var(--accent-red);font-weight:700;">Evento inesperado (minuto 4)</p>
+                        <p style="font-size:var(--small-size);">Un competidor regional lanza tutor IA institucional con fuerte campana de marketing.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="reveal" style="color:var(--accent-purple);font-size:var(--body-size);">Deben definir</h3>
+                    <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.2rem,0.5vw,0.4rem);">
+                        <div style="display:flex;align-items:center;gap:0.5em;font-size:var(--small-size);color:var(--text-secondary);">
+                            <span style="color:var(--accent-purple);font-weight:700;">1.</span> &iquest;En que eje invertiran?
+                        </div>
+                        <div style="display:flex;align-items:center;gap:0.5em;font-size:var(--small-size);color:var(--text-secondary);">
+                            <span style="color:var(--accent-purple);font-weight:700;">2.</span> &iquest;Que NO haran este ano?
+                        </div>
+                        <div style="display:flex;align-items:center;gap:0.5em;font-size:var(--small-size);color:var(--text-secondary);">
+                            <span style="color:var(--accent-purple);font-weight:700;">3.</span> &iquest;Que KPI mediran?
+                        </div>
+                        <div style="display:flex;align-items:center;gap:0.5em;font-size:var(--small-size);color:var(--text-secondary);">
+                            <span style="color:var(--accent-purple);font-weight:700;">4.</span> &iquest;Quien lidera la iniciativa?
+                        </div>
+                        <div style="display:flex;align-items:center;gap:0.5em;font-size:var(--small-size);color:var(--text-secondary);">
+                            <span style="color:var(--accent-purple);font-weight:700;">5.</span> &iquest;Que riesgo asumen?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">05 / 22</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: DINAMICA — GRUPO 2
+         =========================================== -->
+    <section class="slide" data-slide="5">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Grupo 2</div>
+            <h2 class="reveal">EdTech en Crecimiento <span class="gradient-text">Desordenado</span></h2>
+            <div class="two-col" style="margin-top:var(--content-gap);">
+                <div>
+                    <h3 class="reveal" style="color:var(--accent);font-size:var(--body-size);">Situacion</h3>
+                    <ul class="bullet-list reveal">
+                        <li>MRR creciendo 20% anual</li>
+                        <li>Soporte colapsado</li>
+                        <li>NPS bajando</li>
+                        <li>Datos fragmentados en multiples herramientas</li>
+                        <li>Equipo IT pequeno (5 personas)</li>
+                        <li>Presupuesto IT: USD 800K</li>
+                        <li>Founder quiere &ldquo;IA en todo&rdquo;</li>
+                    </ul>
+                    <div class="reveal" style="margin-top:var(--element-gap);padding:0.5em 0.8em;background:rgba(239,68,68,0.08);border-radius:8px;border-left:3px solid var(--accent-red);">
+                        <p style="font-size:var(--small-size);color:var(--accent-red);font-weight:700;">Evento inesperado (minuto 4)</p>
+                        <p style="font-size:var(--small-size);">Un inversor exige roadmap de IA con KPIs y plan de ROI en 30 dias.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="reveal" style="color:var(--accent-purple);font-size:var(--body-size);">Deben definir</h3>
+                    <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.2rem,0.5vw,0.4rem);">
+                        <div style="display:flex;align-items:center;gap:0.5em;font-size:var(--small-size);color:var(--text-secondary);">
+                            <span style="color:var(--accent-purple);font-weight:700;">1.</span> &iquest;En que eje invertiran?
+                        </div>
+                        <div style="display:flex;align-items:center;gap:0.5em;font-size:var(--small-size);color:var(--text-secondary);">
+                            <span style="color:var(--accent-purple);font-weight:700;">2.</span> &iquest;Que NO haran?
+                        </div>
+                        <div style="display:flex;align-items:center;gap:0.5em;font-size:var(--small-size);color:var(--text-secondary);">
+                            <span style="color:var(--accent-purple);font-weight:700;">3.</span> &iquest;Que KPI mediran?
+                        </div>
+                        <div style="display:flex;align-items:center;gap:0.5em;font-size:var(--small-size);color:var(--text-secondary);">
+                            <span style="color:var(--accent-purple);font-weight:700;">4.</span> &iquest;Quien lidera?
+                        </div>
+                        <div style="display:flex;align-items:center;gap:0.5em;font-size:var(--small-size);color:var(--text-secondary);">
+                            <span style="color:var(--accent-purple);font-weight:700;">5.</span> &iquest;Que presupuesto asignaran?
+                        </div>
+                        <div style="display:flex;align-items:center;gap:0.5em;font-size:var(--small-size);color:var(--text-secondary);">
+                            <span style="color:var(--accent-purple);font-weight:700;">6.</span> &iquest;Como revisaran resultados?
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">06 / 22</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: DINAMICA — PREGUNTAS DEL FACILITADOR
+         =========================================== -->
+    <section class="slide" data-slide="6">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Facilitador</div>
+            <h2 class="reveal">Preguntas <span class="gradient-text">incomodas</span></h2>
+            <div class="divider reveal"><div class="diamond" style="background:var(--accent-warm);"></div></div>
+            <div style="max-width:550px;display:flex;flex-direction:column;gap:clamp(0.3rem,0.7vw,0.5rem);margin-top:var(--content-gap);">
+                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-warm);">
+                    <span style="color:var(--accent-warm);">?</span>
+                    <span style="font-size:var(--body-size);">&iquest;Que presupuesto formal asignaron?</span>
+                </div>
+                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-warm);">
+                    <span style="color:var(--accent-warm);">?</span>
+                    <span style="font-size:var(--body-size);">&iquest;Quien valida arquitectura?</span>
+                </div>
+                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-warm);">
+                    <span style="color:var(--accent-warm);">?</span>
+                    <span style="font-size:var(--body-size);">&iquest;Es piloto o estrategia?</span>
+                </div>
+                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-warm);">
+                    <span style="color:var(--accent-warm);">?</span>
+                    <span style="font-size:var(--body-size);">&iquest;Donde revisan ROI?</span>
+                </div>
+                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-warm);">
+                    <span style="color:var(--accent-warm);">?</span>
+                    <span style="font-size:var(--body-size);">&iquest;Que proceso cambia realmente?</span>
+                </div>
+                <div class="reveal" style="display:flex;align-items:center;gap:0.8em;padding:clamp(0.5rem,0.8vw,0.7rem) clamp(0.8rem,1.2vw,1rem);background:var(--bg-card);border-radius:8px;border-left:3px solid var(--accent-warm);">
+                    <span style="color:var(--accent-warm);">?</span>
+                    <span style="font-size:var(--body-size);">&iquest;Que dimension del triangulo estan ignorando?</span>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">07 / 22</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: TRIANGULO DE TRANSFORMACION
+         =========================================== -->
+    <section class="slide" data-slide="7">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Concepto Clave</div>
             <h2 class="reveal">El Triangulo de la <span class="gradient-text">Transformacion Digital</span></h2>
@@ -767,18 +889,17 @@
                 </svg>
             </div>
         </div>
-        <div class="slide-num">05 / 18</div>
+        <div class="slide-num">08 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 6: TRES DIMENSIONES
+         SLIDE 9: TRES DIMENSIONES
          =========================================== -->
-    <section class="slide" data-slide="5">
+    <section class="slide" data-slide="8">
         <div class="slide-content">
             <h2 class="reveal">Tres dimensiones, <span class="gradient-text">un sistema</span></h2>
             <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
                 <div class="card" style="border-top:3px solid #38bdf8;">
-                    <div class="card-icon">🧠</div>
                     <h3 style="color:#38bdf8;">Cultura</h3>
                     <p>Liderazgo visible, apertura al cambio</p>
                     <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
@@ -786,7 +907,6 @@
                     </div>
                 </div>
                 <div class="card" style="border-top:3px solid #a855f7;">
-                    <div class="card-icon">⚙️</div>
                     <h3 style="color:#a855f7;">Procesos</h3>
                     <p>Rediseno real del trabajo</p>
                     <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
@@ -794,7 +914,6 @@
                     </div>
                 </div>
                 <div class="card" style="border-top:3px solid #f59e0b;">
-                    <div class="card-icon">🔧</div>
                     <h3 style="color:#f59e0b;">Tecnologia</h3>
                     <p>Arquitectura, integracion, escalabilidad</p>
                     <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
@@ -806,57 +925,51 @@
                 McKinsey: las organizaciones que tratan la transformacion como un cambio de modelo de negocio tienen <strong style="color:var(--text-primary)">2.5x mas probabilidad de exito</strong>.
             </div>
         </div>
-        <div class="slide-num">06 / 18</div>
+        <div class="slide-num">09 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 7: McKINSEY 6 DIMENSIONES
+         SLIDE 10: McKINSEY 6 DIMENSIONES
          =========================================== -->
-    <section class="slide" data-slide="6">
+    <section class="slide" data-slide="9">
         <div class="slide-content">
             <div class="slide-tag reveal">McKinsey</div>
             <h2 class="reveal">6 dimensiones de la <span class="gradient-text">transformacion holistica</span></h2>
             <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);margin-bottom:var(--content-gap);">Si falta una dimension, el sistema colapsa.</p>
             <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);">
                 <div class="card">
-                    <div class="card-icon">🎯</div>
                     <h3>Estrategia y modelo de negocio</h3>
-                    <p>Redefinir donde y como compite la organizacion</p>
+                    <p>Redefinir donde y como compite la organizacion en el mundo digital</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">🏃</div>
                     <h3>Agilidad y organizacion</h3>
-                    <p>Equipos autonomos con mandato claro</p>
+                    <p>Equipos pequenos, autonomos, con mandato claro y capacidad de decidir rapido</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">💻</div>
                     <h3>Tecnologia</h3>
-                    <p>Arquitectura moderna, datos integrados</p>
+                    <p>Arquitectura moderna, datos integrados, capacidad de iterar sin romper todo</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">📊</div>
                     <h3>Datos y analitica</h3>
-                    <p>Datos como activo estrategico</p>
+                    <p>Los datos como activo estrategico, no como subproducto de la operacion</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">👥</div>
                     <h3>Talento y cultura</h3>
-                    <p>Lideres que modelan el cambio</p>
+                    <p>Lideres que modelan el cambio, equipos con nuevas capacidades, una cultura que aprende</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">🌐</div>
                     <h3>Ecosistema</h3>
-                    <p>Partnerships y plataformas externas</p>
+                    <p>Partnerships, plataformas y terceros que amplian capacidades sin construir todo internamente</p>
                 </div>
             </div>
         </div>
-        <div class="slide-num">07 / 18</div>
+        <div class="slide-num">10 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 8: CASO BBVA
+         SLIDE 11: CASO BBVA
          =========================================== -->
-    <section class="slide" data-slide="7">
+    <section class="slide" data-slide="10">
         <div class="slide-content">
             <div class="slide-tag reveal">Caso Real</div>
             <h2 class="reveal">BBVA — La transformacion <span class="gradient-text">cultural imposible</span></h2>
@@ -878,13 +991,13 @@
                 <strong style="color:var(--text-primary);">Leccion para educacion:</strong> A veces la transformacion no se logra cambiando lo que existe, sino construyendo algo nuevo al lado y dejando que el exito hable por si mismo.
             </div>
         </div>
-        <div class="slide-num">08 / 18</div>
+        <div class="slide-num">11 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 9: ESTADISTICA DE FRACASO
+         SLIDE 12: ESTADISTICA DE FRACASO
          =========================================== -->
-    <section class="slide" data-slide="7">
+    <section class="slide" data-slide="11">
         <div class="slide-content centered">
             <div class="reveal">
                 <div class="stat-big gradient-text">70%</div>
@@ -894,15 +1007,15 @@
             <p class="reveal" style="font-size:var(--body-size);max-width:600px;">Menos de 1 de cada 3 proyectos entrega el valor prometido.<br><span style="color:var(--text-muted);">— McKinsey / Gartner</span></p>
             <div style="margin-top:var(--content-gap);display:flex;flex-direction:column;gap:clamp(0.2rem,0.5vw,0.4rem);max-width:500px;width:100%;">
                 <div class="reveal" style="display:flex;justify-content:space-between;font-size:var(--small-size);padding:0.4em 0;border-bottom:1px solid var(--border);">
-                    <span style="color:var(--text-secondary);">1. Falta de alineacion del liderazgo</span>
+                    <span style="color:var(--text-secondary);">1. Falta de alineacion del liderazgo ejecutivo</span>
                     <span class="pill pill-red" style="font-size:var(--small-size);">1er</span>
                 </div>
                 <div class="reveal" style="display:flex;justify-content:space-between;font-size:var(--small-size);padding:0.4em 0;border-bottom:1px solid var(--border);">
-                    <span style="color:var(--text-secondary);">2. Resistencia cultural al cambio</span>
+                    <span style="color:var(--text-secondary);">2. Resistencia cultural a cambiar la forma de trabajar</span>
                     <span class="pill pill-red" style="font-size:var(--small-size);">2do</span>
                 </div>
                 <div class="reveal" style="display:flex;justify-content:space-between;font-size:var(--small-size);padding:0.4em 0;border-bottom:1px solid var(--border);">
-                    <span style="color:var(--text-secondary);">3. Deficit de talento digital</span>
+                    <span style="color:var(--text-secondary);">3. Deficit de talento digital en la organizacion</span>
                     <span class="pill pill-amber" style="font-size:var(--small-size);">3er</span>
                 </div>
                 <div class="reveal" style="display:flex;justify-content:space-between;font-size:var(--small-size);padding:0.4em 0;border-bottom:1px solid var(--border);">
@@ -910,18 +1023,18 @@
                     <span class="pill pill-amber" style="font-size:var(--small-size);">4to</span>
                 </div>
                 <div class="reveal" style="display:flex;justify-content:space-between;font-size:var(--small-size);padding:0.4em 0;">
-                    <span style="color:var(--text-secondary);">5. Ausencia de metricas claras</span>
+                    <span style="color:var(--text-secondary);">5. Ausencia de metricas claras desde el inicio</span>
                     <span class="pill pill-amber" style="font-size:var(--small-size);">5to</span>
                 </div>
             </div>
         </div>
-        <div class="slide-num">09 / 18</div>
+        <div class="slide-num">12 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 10: ANTI-PATRONES
+         SLIDE 13: ANTI-PATRONES
          =========================================== -->
-    <section class="slide" data-slide="8">
+    <section class="slide" data-slide="12">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Anti-patrones</div>
             <h2 class="reveal">Los errores que <span class="gradient-text">tienen nombre</span></h2>
@@ -959,15 +1072,15 @@
                     </div>
                 </div>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">El patron mas comun: invertir en tecnologia, ignorar cultura y procesos, medir exito por "cuanto se implemento" en vez de "cuanto cambio el resultado".</p>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">El patron mas comun: se invierte en tecnologia, se ignoran cultura y procesos, y se mide el exito por &ldquo;cuanto se implemento&rdquo; en vez de &ldquo;cuanto cambio el resultado&rdquo;.</p>
         </div>
-        <div class="slide-num">10 / 18</div>
+        <div class="slide-num">13 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 10: FRAMEWORK IA - INTRO
+         SLIDE 14: FRAMEWORK IA - INTRO
          =========================================== -->
-    <section class="slide" data-slide="9">
+    <section class="slide" data-slide="13">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Framework</div>
             <h2 class="reveal">Framework Estrategico de <span class="gradient-text">Implementacion de IA</span></h2>
@@ -975,47 +1088,41 @@
             <div class="divider reveal"><div class="diamond"></div></div>
             <div class="cards-grid reveal-scale" style="max-width:700px;margin-top:var(--content-gap);">
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">🏛️</div>
                     <h3>Gobernanza formal</h3>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">🎯</div>
-                    <h3>Ejes estrategicos</h3>
+                    <h3>Ejes estrategicos obligatorios</h3>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">💰</div>
                     <h3>Presupuesto explicito</h3>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">🔄</div>
-                    <h3>Ciclo autonomo</h3>
+                    <h3>Ciclo autonomo de iniciativas</h3>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">📈</div>
-                    <h3>Revision MBR/QBR</h3>
+                    <h3>Revision periodica en MBR/QBR</h3>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">⚖️</div>
-                    <h3>Marco etico</h3>
+                    <h3>Marco etico estructurado</h3>
                 </div>
             </div>
         </div>
-        <div class="slide-num">11 / 18</div>
+        <div class="slide-num">14 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 11: PRINCIPIOS RECTORES
+         SLIDE 15: PRINCIPIOS RECTORES
          =========================================== -->
-    <section class="slide" data-slide="10">
+    <section class="slide" data-slide="14">
         <div class="slide-content">
             <h2 class="reveal">Principios <span class="gradient-text">rectores</span></h2>
             <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:1fr 1fr;">
                 <div class="card" style="border-left:3px solid #38bdf8;">
                     <h3 style="color:#38bdf8;">1. Centralizacion estrategica</h3>
                     <ul class="role-list">
-                        <li>Ejes definidos por Celula Estrategica IA</li>
-                        <li>Validacion tecnica obligatoria</li>
-                        <li>KPIs y ROI requeridos</li>
+                        <li>Ejes definidos por una Celula Estrategica IA</li>
+                        <li>Validacion tecnica</li>
+                        <li>KPIs y ROI obligatorios</li>
                         <li>Presupuesto revisado en MBR</li>
                     </ul>
                 </div>
@@ -1037,20 +1144,21 @@
                 <div class="card" style="border-left:3px solid #f59e0b;">
                     <h3 style="color:#f59e0b;">4. Etica y responsabilidad</h3>
                     <ul class="role-list">
-                        <li>Transparencia y equidad</li>
+                        <li>Transparencia</li>
+                        <li>Equidad</li>
                         <li>Proteccion de datos</li>
                         <li>Explicabilidad</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="slide-num">12 / 18</div>
+        <div class="slide-num">15 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 12: GOBERNANZA
+         SLIDE 16: GOBERNANZA
          =========================================== -->
-    <section class="slide" data-slide="11">
+    <section class="slide" data-slide="15">
         <div class="slide-content">
             <div class="slide-tag reveal">Gobernanza</div>
             <h2 class="reveal">La diferencia entre <span class="gradient-text">moda y estrategia</span></h2>
@@ -1058,7 +1166,6 @@
             <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);">
                 <div class="role-card" style="border-top:3px solid #38bdf8;">
                     <div style="display:flex;align-items:center;gap:0.5em;margin-bottom:clamp(0.3rem,0.6vw,0.5rem);">
-                        <span style="font-size:1.2em;">🏛️</span>
                         <div class="role-title" style="margin-bottom:0;">Celula Estrategica IA</div>
                     </div>
                     <ul class="role-list">
@@ -1069,7 +1176,6 @@
                 </div>
                 <div class="role-card" style="border-top:3px solid #a855f7;">
                     <div style="display:flex;align-items:center;gap:0.5em;margin-bottom:clamp(0.3rem,0.6vw,0.5rem);">
-                        <span style="font-size:1.2em;">🔬</span>
                         <div class="role-title" style="margin-bottom:0;">Equipo Experto IA</div>
                     </div>
                     <ul class="role-list">
@@ -1081,51 +1187,58 @@
                 </div>
                 <div class="role-card" style="border-top:3px solid #34d399;">
                     <div style="display:flex;align-items:center;gap:0.5em;margin-bottom:clamp(0.3rem,0.6vw,0.5rem);">
-                        <span style="font-size:1.2em;">🏫</span>
                         <div class="role-title" style="margin-bottom:0;">Instituciones / EdTech</div>
                     </div>
                     <ul class="role-list">
                         <li>Ejecutan ejes estrategicos</li>
-                        <li>Proponen iniciativas</li>
+                        <li>Proponen iniciativas propias</li>
                         <li>Reportan resultados</li>
-                        <li>MBR mensual / QBR trimestral</li>
+                        <li>Revisan avances en MBR mensual</li>
+                        <li>Participan en QBR trimestral</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="slide-num">13 / 18</div>
+        <div class="slide-num">16 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 13: PRESUPUESTO
+         SLIDE 17: PRESUPUESTO
          =========================================== -->
-    <section class="slide" data-slide="12">
+    <section class="slide" data-slide="16">
         <div class="slide-content centered">
             <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Presupuesto</div>
             <h2 class="reveal">Lo que no tiene presupuesto<br><span class="gradient-text">no tiene prioridad real</span></h2>
             <div class="divider reveal"><div class="diamond" style="background:var(--accent-warm);"></div></div>
-            <div class="reveal" style="max-width:550px;">
-                <ul class="bullet-list" style="text-align:left;">
-                    <li>Obliga a definir ROI <strong style="color:var(--text-primary);">antes</strong> de gastar</li>
-                    <li>Crea una linea de <strong style="color:var(--text-primary);">rendicion de cuentas</strong> clara en cada MBR</li>
-                    <li>Senala a toda la organizacion que es una <strong style="color:var(--text-primary);">apuesta estrategica</strong></li>
-                </ul>
+            <div class="reveal" style="max-width:600px;">
+                <div class="info-row">
+                    <span class="info-label" style="min-width:12em;">Obliga a definir ROI antes de gastar</span>
+                    <span class="info-value">Sin metrica, no hay accountability</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label" style="min-width:12em;">Crea linea de rendicion de cuentas en cada MBR</span>
+                    <span class="info-value">Hace visible el avance (o la falta de el)</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label" style="min-width:12em;">Senala a la organizacion que es apuesta estrategica</span>
+                    <span class="info-value">No es un experimento de IT — es prioridad de negocio</span>
+                </div>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:550px;text-align:left;">
                 &iquest;Cuanto presupuesto formal tiene hoy tu organizacion asignado a IA?
             </div>
         </div>
-        <div class="slide-num">14 / 18</div>
+        <div class="slide-num">17 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 14: IA COMO CAPA TRANSVERSAL
+         SLIDE 18: IA COMO CAPA TRANSVERSAL
          =========================================== -->
-    <section class="slide" data-slide="13">
+    <section class="slide" data-slide="17">
         <div class="slide-content">
             <div class="slide-tag reveal">Arquitectura</div>
             <h2 class="reveal">IA como <span class="gradient-text">capa transversal</span></h2>
-            <p class="reveal" style="font-size:var(--body-size);color:var(--text-secondary);margin-bottom:var(--content-gap);">La IA no es un proyecto independiente. Es una capacidad que cruza cada proceso.</p>
+            <p class="reveal" style="font-size:var(--body-size);color:var(--text-secondary);margin-bottom:var(--content-gap);">La IA no es un proyecto independiente. Es una capacidad que se integra en cada proceso existente.</p>
             <div class="two-col">
                 <div>
                     <div class="layer-stack reveal-scale">
@@ -1161,13 +1274,13 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">15 / 18</div>
+        <div class="slide-num">18 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 16: CASO GEORGIA STATE — POUNCE
+         SLIDE 19: CASO GEORGIA STATE — POUNCE
          =========================================== -->
-    <section class="slide" data-slide="15">
+    <section class="slide" data-slide="18">
         <div class="slide-content">
             <div class="slide-tag reveal">Caso Real</div>
             <h2 class="reveal">Georgia State — <span class="gradient-text">Pounce</span></h2>
@@ -1189,70 +1302,93 @@
                 <strong style="color:var(--text-primary);">Clave:</strong> La IA funciono porque estaba conectada a los datos reales del estudiante. Un chatbot generico no habria logrado lo mismo.
             </div>
         </div>
-        <div class="slide-num">16 / 18</div>
+        <div class="slide-num">19 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 17: RIESGOS Y ETICA
+         SLIDE 20: RIESGOS Y ETICA
          =========================================== -->
-    <section class="slide" data-slide="14">
+    <section class="slide" data-slide="19">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(52,211,153,0.1);color:var(--accent-green);">Etica</div>
             <h2 class="reveal">Riesgos y <span class="gradient-text">responsabilidad</span></h2>
-            <p class="reveal" style="font-size:var(--body-size);color:var(--text-secondary);margin-bottom:var(--content-gap);">La IA toma decisiones que antes tomaban personas. La adopcion responsable exige:</p>
+            <p class="reveal" style="font-size:var(--body-size);color:var(--text-secondary);margin-bottom:var(--element-gap);">La IA toma decisiones que antes tomaban personas. Cuando un algoritmo decide que estudiante recibe una beca, que candidato avanza en un proceso de seleccion, o que alumno es marcado como &ldquo;en riesgo de desercion&rdquo;, esas decisiones tienen consecuencias reales.</p>
+            <div class="reveal" style="padding:clamp(0.6rem,1vw,1rem);background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.15);border-radius:10px;border-left:3px solid var(--accent-red);margin-bottom:var(--element-gap);">
+                <p style="font-size:var(--small-size);color:var(--accent-red);font-weight:700;margin-bottom:0.3em;">Ejemplo: sesgo en admisiones</p>
+                <p style="font-size:var(--small-size);">Una institucion educativa implementa IA para predecir que postulantes tienen mas probabilidad de completar la carrera. El modelo aprende patrones historicos y concluye que ciertos codigos postales predicen abandono. La institucion empieza a rechazar postulantes de esas zonas — sin saberlo, esta discriminando por nivel socioeconomico.</p>
+            </div>
             <div class="ethics-grid reveal-scale">
                 <div class="ethics-item">
-                    <span class="ethics-icon">✓</span>
+                    <span class="ethics-icon">&#10003;</span>
                     <span>Supervision humana significativa</span>
                 </div>
                 <div class="ethics-item">
-                    <span class="ethics-icon">✓</span>
+                    <span class="ethics-icon">&#10003;</span>
                     <span>Robustez tecnica</span>
                 </div>
                 <div class="ethics-item">
-                    <span class="ethics-icon">✓</span>
+                    <span class="ethics-icon">&#10003;</span>
                     <span>Gobernanza de datos</span>
                 </div>
                 <div class="ethics-item">
-                    <span class="ethics-icon">✓</span>
+                    <span class="ethics-icon">&#10003;</span>
                     <span>Transparencia y explicabilidad</span>
                 </div>
                 <div class="ethics-item">
-                    <span class="ethics-icon">✓</span>
+                    <span class="ethics-icon">&#10003;</span>
                     <span>No discriminacion</span>
                 </div>
                 <div class="ethics-item">
-                    <span class="ethics-icon">✓</span>
+                    <span class="ethics-icon">&#10003;</span>
                     <span>Rendicion de cuentas</span>
                 </div>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+            <div class="quote-box reveal" style="margin-top:var(--element-gap);">
                 El rol del lider no es frenar la IA. Es <strong style="color:var(--text-primary);">institucionalizarla con intencion y responsabilidad</strong>.
             </div>
         </div>
-        <div class="slide-num">17 / 18</div>
+        <div class="slide-num">20 / 22</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 16: RESULTADO ESPERADO
+         SLIDE 21: REFLEXION FINAL
          =========================================== -->
-    <section class="slide" data-slide="15">
+    <section class="slide" data-slide="20">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Reflexion Final</div>
+            <h2 class="reveal">La transformacion digital <span class="gradient-text">no es un destino</span></h2>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:650px;text-align:left;font-size:clamp(0.9rem,1.4vw,1.1rem);">
+                La transformacion digital no es un destino — es una forma de operar. No se trata de llegar a un estado &ldquo;transformado&rdquo; y detenerse. Se trata de construir una organizacion que aprende, se adapta y mejora de forma continua.
+            </div>
+            <div class="reveal" style="margin-top:var(--content-gap);max-width:650px;text-align:left;">
+                <p style="font-size:var(--body-size);color:var(--text-primary);font-weight:700;margin-bottom:0.3em;">Pregunta para llevarse:</p>
+                <p style="font-size:var(--body-size);font-style:italic;">Si tuvieras que elegir un solo proceso de tu organizacion para modernizar en los proximos 6 meses — uno que genere impacto real en la experiencia del estudiante o en la eficiencia operativa — &iquest;cual seria? &iquest;Que necesitarias para empezar?</p>
+            </div>
+        </div>
+        <div class="slide-num">21 / 22</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 22: RESULTADO ESPERADO
+         =========================================== -->
+    <section class="slide" data-slide="21">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Cierre</div>
             <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
             <div class="divider reveal"><div class="diamond"></div></div>
-            <div style="max-width:550px;margin-top:var(--content-gap);">
+            <div style="max-width:600px;margin-top:var(--content-gap);">
                 <ul class="bullet-list" style="text-align:left;">
-                    <li class="reveal">Entiendes la transformacion digital <strong style="color:var(--text-primary);">como sistema</strong></li>
-                    <li class="reveal">Conoces un <strong style="color:var(--text-primary);">framework operativo real</strong></li>
-                    <li class="reveal">Puedes disenar <strong style="color:var(--text-primary);">gobernanza basica</strong> en tu organizacion</li>
-                    <li class="reveal">Identificas un <strong style="color:var(--text-primary);">eje estrategico prioritario</strong></li>
-                    <li class="reveal">Defines un <strong style="color:var(--text-primary);">primer paso estructurado</strong></li>
+                    <li class="reveal">Explicar por que la transformacion digital requiere <strong style="color:var(--text-primary)">cultura + procesos + tecnologia</strong> (no solo tecnologia)</li>
+                    <li class="reveal">Identificar <strong style="color:var(--text-primary)">anti-patrones de transformacion</strong> en su propia organizacion</li>
+                    <li class="reveal">Describir el <strong style="color:var(--text-primary)">framework de adopcion de IA</strong> con gobernanza, presupuesto y ciclo de revision</li>
+                    <li class="reveal">Articular por que la IA es una <strong style="color:var(--text-primary)">capa transversal</strong> y no un proyecto aislado</li>
+                    <li class="reveal">Evaluar <strong style="color:var(--text-primary)">riesgos eticos basicos</strong> de implementar IA en decisiones sobre personas</li>
                 </ul>
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 04 — Transformacion Digital e IA</p>
         </div>
-        <div class="slide-num">18 / 18</div>
+        <div class="slide-num">22 / 22</div>
     </section>
 
     <!-- ===========================================

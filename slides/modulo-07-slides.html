@@ -48,6 +48,10 @@
         .slide::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 20%, rgba(56,189,248,0.05) 0%, transparent 50%), radial-gradient(ellipse at 20% 80%, rgba(168,85,247,0.04) 0%, transparent 50%); pointer-events: none; }
         .geo { position: absolute; border: 1px solid var(--border); border-radius: 4px; pointer-events: none; opacity: 0.4; }
 
+        .slide-hero-img { padding: 0; }
+        .slide-hero-img::before { display: none; }
+        .slide-hero-img img.hero-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
         .slide-tag { display: inline-block; font-size: var(--tag-size); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); background: rgba(56,189,248,0.1); padding: 0.4em 1.2em; border-radius: 100px; margin-bottom: clamp(0.8rem,1.5vw,1.5rem); width: fit-content; }
         .slide h1 { font-family: var(--font-display); font-size: var(--title-size); font-weight: 400; line-height: 1.1; margin-bottom: clamp(0.5rem,1.5vw,1rem); }
         .slide h2 { font-family: var(--font-display); font-size: var(--h2-size); font-weight: 400; line-height: 1.15; margin-bottom: clamp(0.5rem,1.5vw,1.2rem); }
@@ -83,6 +87,8 @@
         .bullet-list li { padding-left: 1.2em; position: relative; font-size: var(--body-size); }
         .bullet-list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
+        .bullet-list.red li::before { background: var(--accent-red); }
+
         .divider { display: flex; align-items: center; gap: 0.8rem; margin: clamp(0.5rem,1.5vw,1.5rem) 0; }
         .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
         .divider .diamond { width: 5px; height: 5px; background: var(--accent); transform: rotate(45deg); flex-shrink: 0; }
@@ -98,7 +104,7 @@
         /* Animations */
         .reveal { opacity: 0; transform: translateY(25px); transition: opacity var(--duration) var(--ease-out-expo), transform var(--duration) var(--ease-out-expo); }
         .slide.visible .reveal { opacity: 1; transform: translateY(0); }
-        .reveal:nth-child(1) { transition-delay: 0.05s; } .reveal:nth-child(2) { transition-delay: 0.12s; } .reveal:nth-child(3) { transition-delay: 0.19s; } .reveal:nth-child(4) { transition-delay: 0.26s; } .reveal:nth-child(5) { transition-delay: 0.33s; } .reveal:nth-child(6) { transition-delay: 0.40s; } .reveal:nth-child(7) { transition-delay: 0.47s; }
+        .reveal:nth-child(1) { transition-delay: 0.05s; } .reveal:nth-child(2) { transition-delay: 0.12s; } .reveal:nth-child(3) { transition-delay: 0.19s; } .reveal:nth-child(4) { transition-delay: 0.26s; } .reveal:nth-child(5) { transition-delay: 0.33s; } .reveal:nth-child(6) { transition-delay: 0.40s; } .reveal:nth-child(7) { transition-delay: 0.47s; } .reveal:nth-child(8) { transition-delay: 0.54s; }
         .reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity var(--duration) var(--ease-out-expo), transform var(--duration) var(--ease-out-expo); }
         .slide.visible .reveal-scale { opacity: 1; transform: scale(1); }
 
@@ -131,7 +137,9 @@
     <div class="progress-bar" id="progressBar"></div>
     <nav class="nav-dots" id="navDots"></nav>
 
-    <!-- SLIDE 1: TITLE -->
+    <!-- =========================================
+         SLIDE 1: TITLE
+         ========================================= -->
     <section class="slide" data-slide="0">
         <div class="geo" style="width:180px;height:180px;top:8%;right:12%;border-color:rgba(56,189,248,0.08);transform:rotate(15deg);"></div>
         <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
@@ -141,49 +149,45 @@
             <div class="divider reveal"><div class="diamond"></div></div>
             <p class="subtitle reveal">De participantes a Arquitectos del Futuro.</p>
         </div>
-        <div class="slide-num">01 / 10</div>
+        <div class="slide-num">01 / 23</div>
     </section>
 
-    <!-- SLIDE 2: RECAPITULACION -->
-    <section class="slide" data-slide="1">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Recapitulacion</div>
-            <h2 class="reveal">Lo que <span class="gradient-text">recorrimos</span></h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
-                <div class="card" style="border-top:2px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">Hello World</h3>
-                    <p>Tecnologia como ventaja competitiva, 3 niveles</p>
-                </div>
-                <div class="card" style="border-top:2px solid #a855f7;">
-                    <h3 style="color:#a855f7;">Estrategia Tech</h3>
-                    <p>Build/Buy, Core/Commodity, 6 dimensiones</p>
-                </div>
-                <div class="card" style="border-top:2px solid #f59e0b;">
-                    <h3 style="color:#f59e0b;">Arquitectura IT</h3>
-                    <p>SIS, LMS, CRM, integraciones, SSOT</p>
-                </div>
-                <div class="card" style="border-top:2px solid #ef4444;">
-                    <h3 style="color:#ef4444;">Transformacion Digital</h3>
-                    <p>Cultura + Procesos + Tech, framework IA</p>
-                </div>
-                <div class="card" style="border-top:2px solid #34d399;">
-                    <h3 style="color:#34d399;">Mindset Digital</h3>
-                    <p>7 pilares, orientacion a producto, datos</p>
-                </div>
-                <div class="card" style="border-top:2px solid #f472b6;">
-                    <h3 style="color:#f472b6;">IA y Educacion</h3>
-                    <p>Escenarios 2030, posicionamiento estrategico</p>
-                </div>
-            </div>
-        </div>
-        <div class="slide-num">02 / 10</div>
+    <!-- =========================================
+         SLIDE 2: CAMPUS HERO
+         ========================================= -->
+    <section class="slide slide-hero-img" data-slide="1">
+        <img class="hero-cover" src="../assets/Campus-05.png" alt="Campus-hero">
+        <div class="slide-num" style="color:rgba(255,255,255,0.6);">02 / 23</div>
     </section>
 
-    <!-- SLIDE 3: CAMBIO DE ROL -->
+    <!-- =========================================
+         SLIDE 3: CIERRE DEL CURSO
+         ========================================= -->
     <section class="slide" data-slide="2">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Cierre del Curso</div>
+            <h2 class="reveal">Llegamos al final <span class="gradient-text">del curso</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--element-gap);">Pero esto no es un cierre.</p>
+            <p class="reveal" style="margin-bottom:var(--content-gap);">Porque la transformacion digital no es un conocimiento. Es una <strong style="color:var(--text-primary);">responsabilidad de diseno</strong>.</p>
+            <h3 class="reveal" style="color:var(--accent-red);">Las organizaciones no fracasan por falta de tecnologia. Fracasan por:</h3>
+            <ul class="bullet-list red reveal">
+                <li>Decisiones tardias</li>
+                <li>Procesos que nadie redisena</li>
+                <li>Metricas que nadie mira</li>
+                <li>Liderazgos que delegan lo digital</li>
+            </ul>
+        </div>
+        <div class="slide-num">03 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 4: CAMBIO DE ROL
+         ========================================= -->
+    <section class="slide" data-slide="3">
         <div class="slide-content centered">
             <div class="slide-tag reveal" style="background:rgba(168,85,247,0.1);color:var(--accent-purple);">Cambio de Rol</div>
-            <h2 class="reveal">Ya no son participantes</h2>
+            <p class="subtitle reveal">Durante este curso analizamos estrategia, procesos, arquitectura, datos e IA.</p>
+            <p class="reveal" style="margin-top:var(--element-gap);color:var(--text-primary);font-weight:500;">Ahora cambia el rol. Ya no son participantes. Ahora actuan como:</p>
             <h1 class="reveal" style="margin-top:var(--content-gap);"><span class="gradient-text">Arquitectos del Futuro</span></h1>
             <div class="divider reveal"><div class="diamond"></div></div>
             <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);max-width:700px;">
@@ -191,15 +195,42 @@
                 <div class="card" style="text-align:center;"><p style="color:var(--text-primary);">Arquitectos de <strong>procesos</strong></p></div>
                 <div class="card" style="text-align:center;"><p style="color:var(--text-primary);">Arquitectos de <strong>sistemas</strong></p></div>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:600px;border-left:none;border-top:3px solid var(--accent);border-radius:8px 8px 0 0;text-align:center;padding:1em 1.5em;">
-                El futuro no llega. <strong style="color:var(--text-primary);">El futuro se disena.</strong>
-            </div>
         </div>
-        <div class="slide-num">03 / 10</div>
+        <div class="slide-num">04 / 23</div>
     </section>
 
-    <!-- SLIDE 4: OVERVIEW DEL CHALLENGE -->
-    <section class="slide" data-slide="3">
+    <!-- =========================================
+         SLIDE 5: RESTRICCIONES REALES
+         ========================================= -->
+    <section class="slide" data-slide="4">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Restricciones Reales</div>
+            <div class="quote-box reveal" style="max-width:600px;text-align:center;border-left:none;border-top:3px solid var(--accent);border-radius:8px 8px 0 0;padding:1em 1.5em;font-size:clamp(1rem,2vw,1.4rem);">
+                El futuro no llega. <strong style="color:var(--text-primary);">El futuro se disena.</strong>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);color:var(--text-primary);font-weight:500;">Y se disena bajo restricciones reales:</p>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--element-gap);grid-template-columns:repeat(4,1fr);max-width:800px;">
+                <div class="card" style="text-align:center;border-top:2px solid var(--accent-red);">
+                    <h3 style="color:var(--accent-red);">Presupuesto</h3>
+                </div>
+                <div class="card" style="text-align:center;border-top:2px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">Cultura organizacional</h3>
+                </div>
+                <div class="card" style="text-align:center;border-top:2px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">Sistemas legacy</h3>
+                </div>
+                <div class="card" style="text-align:center;border-top:2px solid var(--accent);">
+                    <h3 style="color:var(--accent);">Resistencia al cambio</h3>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">05 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 6: OVERVIEW DEL CHALLENGE
+         ========================================= -->
+    <section class="slide" data-slide="5">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Challenge</div>
             <h2 class="reveal">Arquitecto del Futuro &mdash; <span class="gradient-text">Reboot Organizacional</span></h2>
@@ -208,8 +239,8 @@
                     <h3 style="color:var(--accent);margin-bottom:var(--element-gap);">Que es</h3>
                     <ul class="bullet-list">
                         <li>Trabajo <strong style="color:var(--text-primary);">individual</strong></li>
-                        <li>Propuesta estrategica <strong style="color:var(--text-primary);">defendible ante direccion</strong></li>
-                        <li>Transformar una organizacion real, un area o un proceso critico</li>
+                        <li>Propuesta estrategica <strong style="color:var(--text-primary);">defendible ante direccion</strong>, no solo conceptualmente correcta</li>
+                        <li>Transformar digitalmente una organizacion real, un area especifica o un proceso critico</li>
                     </ul>
                 </div>
                 <div>
@@ -226,11 +257,72 @@
                 No se evalua si la idea es &ldquo;interesante&rdquo;. Se evalua si es <strong style="color:var(--text-primary);">ejecutable, priorizable y defendible</strong>.
             </div>
         </div>
-        <div class="slide-num">04 / 10</div>
+        <div class="slide-num">06 / 23</div>
     </section>
 
-    <!-- SLIDE 5: ENTREGABLE -->
-    <section class="slide" data-slide="4">
+    <!-- =========================================
+         SLIDE 7: CAPACIDADES A DEMOSTRAR
+         ========================================= -->
+    <section class="slide" data-slide="6">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Capacidades</div>
+            <h2 class="reveal">El trabajo debe demostrar <span class="gradient-text">capacidad de:</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Diagnosticar con precision (no sintomas)</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Tomar decisiones dificiles (trade-offs explicitos)</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Redisenar procesos (no digitalizar lo roto)</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Disenar arquitectura ejecutiva coherente</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Incorporar IA con impacto medible</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Justificar economicamente la transformacion</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">07 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 8: ALCANCE
+         ========================================= -->
+    <section class="slide" data-slide="7">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(168,85,247,0.1);color:var(--accent-purple);">Alcance</div>
+            <h2 class="reveal">Elegi <span class="gradient-text">una</span> de estas opciones como foco</h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
+                <div class="card" style="border-top:2px solid var(--accent);">
+                    <h3 style="color:var(--accent);">Una organizacion real</h3>
+                    <p>En la que trabajes o conozcas bien</p>
+                </div>
+                <div class="card" style="border-top:2px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">Un area especifica</h3>
+                    <p>Admision, Retencion, Academica, Marketing, Operaciones, etc.</p>
+                </div>
+                <div class="card" style="border-top:2px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">Un proceso critico</h3>
+                    <p>Captacion, onboarding, evaluacion, soporte, etc.</p>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);border-left-color:var(--accent-red);background:rgba(239,68,68,0.05);">
+                No intentes abarcar toda una organizacion. Es mejor un diagnostico profundo de un proceso que uno superficial de todo.
+            </div>
+        </div>
+        <div class="slide-num">08 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 9: ENTREGABLE
+         ========================================= -->
+    <section class="slide" data-slide="8">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Entregable</div>
             <h2 class="reveal">10&ndash;15 slides + <span class="gradient-text">Defensa oral</span></h2>
@@ -253,14 +345,16 @@
             </div>
             <p class="reveal" style="margin-top:var(--content-gap);font-style:italic;color:var(--text-muted);font-size:var(--small-size);">10 minutos estrictos. Defendes ante un comite directivo simulado.</p>
         </div>
-        <div class="slide-num">05 / 10</div>
+        <div class="slide-num">09 / 23</div>
     </section>
 
-    <!-- SLIDE 6: ESTRUCTURA DE SLIDES -->
-    <section class="slide" data-slide="5">
+    <!-- =========================================
+         SLIDE 10: ESTRUCTURA DE SLIDES (tabla)
+         ========================================= -->
+    <section class="slide" data-slide="9">
         <div class="slide-content">
             <div class="slide-tag reveal">Estructura</div>
-            <h2 class="reveal">14 Slides <span class="gradient-text">obligatorias</span></h2>
+            <h2 class="reveal">14 Slides &mdash; <span class="gradient-text">Estructura en una mirada</span></h2>
             <div class="two-col reveal" style="margin-top:var(--element-gap);">
                 <div>
                     <div class="info-row"><span class="info-label">1</span><span class="info-value">Contexto estrategico</span></div>
@@ -269,7 +363,7 @@
                     <div class="info-row"><span class="info-label">4</span><span class="info-value">Principio rector</span></div>
                     <div class="info-row"><span class="info-label">5</span><span class="info-value">Acciones coherentes</span></div>
                     <div class="info-row"><span class="info-label">6</span><span class="info-value">AS IS (proceso actual)</span></div>
-                    <div class="info-row"><span class="info-label">7</span><span class="info-value">TO BE (proceso rediseñado)</span></div>
+                    <div class="info-row"><span class="info-label">7</span><span class="info-value">TO BE (proceso redise&ntilde;ado)</span></div>
                 </div>
                 <div>
                     <div class="info-row"><span class="info-label">8</span><span class="info-value">Arquitectura objetivo</span></div>
@@ -281,12 +375,139 @@
                     <div class="info-row"><span class="info-label" style="color:var(--text-muted);">14</span><span class="info-value" style="font-style:italic;">(Opcional) Que NO voy a hacer</span></div>
                 </div>
             </div>
+            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">El detalle de cada slide esta en el brief del challenge.</p>
         </div>
-        <div class="slide-num">06 / 10</div>
+        <div class="slide-num">10 / 23</div>
     </section>
 
-    <!-- SLIDE 7: CRITERIOS DE EVALUACION -->
-    <section class="slide" data-slide="6">
+    <!-- =========================================
+         SLIDE 11: GUIA DETALLADA SLIDES 1-4
+         ========================================= -->
+    <section class="slide" data-slide="10">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Guia Slide por Slide</div>
+            <h2 class="reveal">Slides 1&ndash;4: <span class="gradient-text">Estrategia</span></h2>
+            <div class="two-col reveal" style="margin-top:var(--element-gap);">
+                <div>
+                    <div class="card" style="margin-bottom:var(--element-gap);border-left:3px solid var(--accent);">
+                        <h3 style="color:var(--accent);">Slide 1 &mdash; Contexto Estrategico</h3>
+                        <p style="color:var(--text-secondary);">Responder en &le;30 segundos: &iquest;Que elegiste transformar? &iquest;Que duele hoy? &iquest;Que KPI critico esta afectado? &iquest;Por que direccion deberia prestar atencion?</p>
+                        <p style="color:var(--accent-warm);font-size:var(--small-size);margin-top:0.3em;">Esto es un pitch ejecutivo, no contexto descriptivo.</p>
+                    </div>
+                    <div class="card" style="border-left:3px solid var(--accent-purple);">
+                        <h3 style="color:var(--accent-purple);">Slide 2 &mdash; Diagnostico</h3>
+                        <p style="color:var(--text-secondary);">Aplicar Good Strategy / Bad Strategy. Problema real (no generalidad), evidencia observable, causa raiz, que ilusion o falsa explicacion existe hoy.</p>
+                        <p style="color:var(--accent-red);font-size:var(--small-size);margin-top:0.3em;">Prohibido: &ldquo;Falta innovacion&rdquo; / &ldquo;Necesitamos digitalizar&rdquo;</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="card" style="margin-bottom:var(--element-gap);border-left:3px solid var(--accent-warm);">
+                        <h3 style="color:var(--accent-warm);">Slide 3 &mdash; La Decision Estrategica</h3>
+                        <p style="color:var(--text-secondary);">Completar: &ldquo;Elijo NO optimizar X para concentrarme en Y.&rdquo;</p>
+                        <p style="color:var(--text-muted);font-size:var(--small-size);margin-top:0.3em;">Ej: NO escalar features &rarr; SI redisenar onboarding</p>
+                    </div>
+                    <div class="card" style="border-left:3px solid var(--accent-green);">
+                        <h3 style="color:var(--accent-green);">Slide 4 &mdash; Principio Rector</h3>
+                        <p style="color:var(--text-secondary);">Una frase que guie TODAS las acciones. Debe poder usarse para validar decisiones.</p>
+                        <p style="color:var(--text-muted);font-size:var(--small-size);margin-top:0.3em;">Ej: &ldquo;Reducir friccion operativa antes de incorporar IA.&rdquo;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">11 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 12: GUIA DETALLADA SLIDES 5-7
+         ========================================= -->
+    <section class="slide" data-slide="11">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Guia Slide por Slide</div>
+            <h2 class="reveal">Slides 5&ndash;7: <span class="gradient-text">Acciones y Procesos</span></h2>
+            <div class="cards-grid reveal" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
+                <div class="card" style="border-top:2px solid var(--accent);">
+                    <h3 style="color:var(--accent);">Slide 5 &mdash; Acciones coherentes</h3>
+                    <p style="color:var(--text-secondary);">Definir 3&ndash;5 acciones conectadas causalmente. Formato: Accion / Que cambia / Por que importa.</p>
+                    <p style="color:var(--accent-warm);font-size:var(--small-size);margin-top:0.3em;">Debe leerse como sistema, no backlog.</p>
+                </div>
+                <div class="card" style="border-top:2px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">Slide 6 &mdash; AS IS (Proceso actual)</h3>
+                    <p style="color:var(--text-secondary);">Mostrar flujo real. Identificar: fricciones criticas, cuellos de botella, manualidad, puntos sin datos, costos invisibles.</p>
+                    <p style="color:var(--accent-green);font-size:var(--small-size);margin-top:0.3em;">Bonus: cuantificar UNA friccion (tiempo, error, fuga).</p>
+                </div>
+                <div class="card" style="border-top:2px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">Slide 7 &mdash; TO BE (Proceso redise&ntilde;ado)</h3>
+                    <p style="color:var(--text-secondary);">Explicar: que desaparece, que se automatiza, que se simplifica, que decision mejora, que KPI cambia.</p>
+                    <p style="color:var(--accent-red);font-size:var(--small-size);margin-top:0.3em;">No basta &ldquo;implemente una herramienta&rdquo;.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">12 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 13: GUIA DETALLADA SLIDES 8-10
+         ========================================= -->
+    <section class="slide" data-slide="12">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Guia Slide por Slide</div>
+            <h2 class="reveal">Slides 8&ndash;10: <span class="gradient-text">Arquitectura e Impacto</span></h2>
+            <div class="cards-grid reveal" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
+                <div class="card" style="border-top:2px solid var(--accent);">
+                    <h3 style="color:var(--accent);">Slide 8 &mdash; Arquitectura Objetivo</h3>
+                    <p style="color:var(--text-secondary);">Capas sugeridas: Systems, Data, IA, Experience. Responder: que permanece, que se integra, que se elimina, donde esta el cambio estructural.</p>
+                    <p style="color:var(--accent-warm);font-size:var(--small-size);margin-top:0.3em;">Evaluamos coherencia, no complejidad tecnica.</p>
+                </div>
+                <div class="card" style="border-top:2px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">Slide 9 &mdash; Rol de la IA</h3>
+                    <p style="color:var(--text-secondary);">Responder: problema concreto, tipo de intervencion (automatiza / predice / asiste), riesgo si falla, KPI impactado.</p>
+                    <p style="color:var(--accent-red);font-size:var(--small-size);margin-top:0.3em;">Prohibido &ldquo;usar IA para mejorar experiencia&rdquo;.</p>
+                </div>
+                <div class="card" style="border-top:2px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">Slide 10 &mdash; Impacto en Negocio</h3>
+                    <p style="color:var(--text-secondary);">Debe incluir: KPI impactado, orden de magnitud (&uarr; revenue / &darr; costo / &uarr; conversion), inversion relativa, horizonte de retorno.</p>
+                    <p style="color:var(--accent-green);font-size:var(--small-size);margin-top:0.3em;">Evaluamos criterio economico, no exactitud.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">13 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 14: GUIA DETALLADA SLIDES 11-14
+         ========================================= -->
+    <section class="slide" data-slide="13">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Guia Slide por Slide</div>
+            <h2 class="reveal">Slides 11&ndash;14: <span class="gradient-text">Trade-offs, Roadmap y Riesgos</span></h2>
+            <div class="cards-grid reveal" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
+                <div class="card" style="border-left:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">Slide 11 &mdash; Trade-offs</h3>
+                    <p style="color:var(--text-secondary);">&iquest;Que sacrificaste o postergaste? Ej: Precision vs velocidad, Personalizacion vs simplicidad, Innovacion vs estabilizacion.</p>
+                    <p style="color:var(--accent-red);font-size:var(--small-size);margin-top:0.3em;">Sin trade-offs &rarr; estrategia debil.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">Slide 12 &mdash; Roadmap 18 meses</h3>
+                    <p style="color:var(--text-secondary);">H1 (0&ndash;6 meses) &rarr; desbloqueos / quick wins. H2 (6&ndash;12 meses) &rarr; rediseno estructural. H3 (12&ndash;18 meses) &rarr; evolucion / escala.</p>
+                    <p style="color:var(--accent-warm);font-size:var(--small-size);margin-top:0.3em;">Evitar &ldquo;fases tecnologicas&rdquo;.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">Slide 13 &mdash; Riesgos Estrategicos</h3>
+                    <p style="color:var(--text-secondary);">Identificar riesgos: Cultural, Operativo, Tecnologico, Financiero. Y mitigacion realista.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <h3 style="color:var(--accent-green);">Slide 14 (Opcional) &mdash; Que NO voy a hacer</h3>
+                    <p style="color:var(--text-secondary);">Demuestra madurez ejecutiva.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">14 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 15: CRITERIOS DE EVALUACION
+         ========================================= -->
+    <section class="slide" data-slide="14">
         <div class="slide-content">
             <div class="slide-tag reveal">Evaluacion</div>
             <h2 class="reveal">Criterios de <span class="gradient-text">evaluacion</span></h2>
@@ -295,17 +516,50 @@
                 <div class="info-row"><span class="info-label" style="min-width:clamp(100px,15vw,180px);">Decision estrategica</span><span class="info-value"><strong style="color:var(--accent);">15%</strong></span></div>
                 <div class="info-row"><span class="info-label" style="min-width:clamp(100px,15vw,180px);">Coherencia estrategica</span><span class="info-value"><strong style="color:var(--accent);">15%</strong></span></div>
                 <div class="info-row"><span class="info-label" style="min-width:clamp(100px,15vw,180px);">Rediseno real de proceso</span><span class="info-value"><strong style="color:var(--accent);">15%</strong></span></div>
-                <div class="info-row"><span class="info-label" style="min-width:clamp(100px,15vw,180px);">Comprension arquitectonica</span><span class="info-value"><strong style="color:var(--accent-purple);">10%</strong></span></div>
+                <div class="info-row"><span class="info-label" style="min-width:clamp(100px,15vw,180px);">Comprension arquitectonica ejecutiva</span><span class="info-value"><strong style="color:var(--accent-purple);">10%</strong></span></div>
                 <div class="info-row"><span class="info-label" style="min-width:clamp(100px,15vw,180px);">Uso inteligente de IA</span><span class="info-value"><strong style="color:var(--accent-purple);">10%</strong></span></div>
                 <div class="info-row"><span class="info-label" style="min-width:clamp(100px,15vw,180px);">Impacto economico creible</span><span class="info-value"><strong style="color:var(--accent-purple);">10%</strong></span></div>
                 <div class="info-row"><span class="info-label" style="min-width:clamp(100px,15vw,180px);">Integracion Cultura&ndash;Proceso&ndash;Tech</span><span class="info-value"><strong style="color:var(--text-muted);">5%</strong></span></div>
             </div>
         </div>
-        <div class="slide-num">07 / 10</div>
+        <div class="slide-num">15 / 23</div>
     </section>
 
-    <!-- SLIDE 8: TIMELINE -->
-    <section class="slide" data-slide="7">
+    <!-- =========================================
+         SLIDE 16: ERRORES TIPICOS
+         ========================================= -->
+    <section class="slide" data-slide="15">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Errores Tipicos</div>
+            <h2 class="reveal">Errores tipicos <span class="gradient-text">(evitar)</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <p style="color:var(--text-primary);">Lista de iniciativas sin estrategia</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <p style="color:var(--text-primary);">Diagnostico generico</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <p style="color:var(--text-primary);">IA como adorno</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <p style="color:var(--text-primary);">Arquitectura sobre-ingenierizada</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <p style="color:var(--text-primary);">Roadmap tecnologico sin logica de negocio</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <p style="color:var(--text-primary);">Impacto economico magico</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">16 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 17: CALENDARIO DEL CHALLENGE
+         ========================================= -->
+    <section class="slide" data-slide="16">
         <div class="slide-content">
             <div class="slide-tag reveal" style="background:rgba(52,211,153,0.1);color:var(--accent-green);">Timeline</div>
             <h2 class="reveal">Calendario <span class="gradient-text">del Challenge</span></h2>
@@ -324,7 +578,7 @@
                 </div>
                 <div class="info-row">
                     <span class="info-label">Dom 16/03</span>
-                    <span class="info-value"><strong style="color:var(--text-primary);">Checkpoint 2:</strong> Entrega final de slides <span class="pill pill-red">Asincronico</span></span>
+                    <span class="info-value"><strong style="color:var(--text-primary);">Checkpoint 2:</strong> Entrega final <span class="pill pill-red">Asincronico</span></span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Mie 18/03</span>
@@ -332,25 +586,140 @@
                 </div>
             </div>
         </div>
-        <div class="slide-num">08 / 10</div>
+        <div class="slide-num">17 / 23</div>
     </section>
 
-    <!-- SLIDE 9: QUOTE CIERRE -->
-    <section class="slide" data-slide="8">
+    <!-- =========================================
+         SLIDE 18: CHECKPOINT DETAILS
+         ========================================= -->
+    <section class="slide" data-slide="17">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(52,211,153,0.1);color:var(--accent-green);">Checkpoints</div>
+            <h2 class="reveal">Detalle de <span class="gradient-text">Checkpoints</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="border-top:3px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">Checkpoint 1 &mdash; Check-in opcional (5 de marzo)</h3>
+                    <p style="color:var(--text-secondary);margin-bottom:0.5em;">Sesion virtual para resolver dudas iniciales. Venis con:</p>
+                    <ul class="bullet-list">
+                        <li>Tu caso seleccionado y alcance definido</li>
+                        <li>Dudas sobre entregables o conceptos del curso</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-top:3px solid var(--accent-red);">
+                    <h3 style="color:var(--accent-red);">Checkpoint 2 &mdash; Entrega final (16 de marzo)</h3>
+                    <p style="color:var(--text-secondary);">Entregas las slides completas (10-15) para revision del facilitador antes de la presentacion final.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">18 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 19: DEFENSA ORAL
+         ========================================= -->
+    <section class="slide" data-slide="18">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(168,85,247,0.1);color:var(--accent-purple);">Defensa Oral</div>
+            <h2 class="reveal">Preguntas tipo <span class="gradient-text">comite directivo</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
+                <div class="card" style="border-left:3px solid var(--accent);">
+                    <p style="color:var(--text-primary);">&iquest;Por que esto y no otra cosa?</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-purple);">
+                    <p style="color:var(--text-primary);">&iquest;Donde esta el impacto economico?</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-warm);">
+                    <p style="color:var(--text-primary);">&iquest;Que pasa si la cultura no cambia?</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <p style="color:var(--text-primary);">&iquest;Cual es el mayor riesgo real?</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">&iquest;Que sacrificaste?</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--text-muted);">
+                    <p style="color:var(--text-primary);">&iquest;Que haria fracasar esta estrategia?</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">19 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 20: MATERIALES ENTREGADOS
+         ========================================= -->
+    <section class="slide" data-slide="19">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Materiales</div>
+            <h2 class="reveal">Materiales <span class="gradient-text">entregados</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Cada participante recibe:</p>
+            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(2,1fr);max-width:800px;">
+                <div class="card" style="border-top:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">1. Brief del challenge</h3>
+                    <p style="color:var(--text-secondary);">Instrucciones completas, estructura de slides obligatoria, criterios de evaluacion y errores tipicos a evitar.</p>
+                </div>
+                <div class="card" style="border-top:3px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">2. Template de trabajo</h3>
+                    <p style="color:var(--text-secondary);">Documento para ir completando cada seccion antes de armar las slides finales. Las secciones corresponden a la estructura de slides del brief.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">20 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 21: RESULTADO ESPERADO
+         ========================================= -->
+    <section class="slide" data-slide="20">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(52,211,153,0.1);color:var(--accent-green);">Resultado Esperado</div>
+            <h2 class="reveal">El participante demuestra <span class="gradient-text">que puede:</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Pensar estrategicamente</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Priorizar bajo restricciones</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Redisenar procesos reales</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Disenar arquitectura coherente</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Integrar tecnologia + negocio</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <p style="color:var(--text-primary);">Defender decisiones dificiles</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">21 / 23</div>
+    </section>
+
+    <!-- =========================================
+         SLIDE 22: MENSAJE DE CIERRE
+         ========================================= -->
+    <section class="slide" data-slide="21">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Cierre</div>
-            <div class="quote-box reveal" style="max-width:700px;text-align:center;border-left:none;border-top:3px solid var(--accent);border-radius:8px 8px 0 0;padding:1.5em 2em;font-size:clamp(1rem,2vw,1.4rem);line-height:1.6;">
-                Las organizaciones no fracasan por falta de tecnologia.<br>
-                Fracasan por decisiones tardias, procesos que nadie redisena,<br>
-                metricas que nadie mira y liderazgos que delegan lo digital.
+            <h2 class="reveal">Este challenge no busca la propuesta perfecta.</h2>
+            <p class="subtitle reveal" style="margin-top:var(--element-gap);">Busca demostrar que pueden pensar como:</p>
+            <h1 class="reveal" style="margin-top:var(--content-gap);"><span class="gradient-text">Arquitectos del Futuro</span></h1>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <div class="quote-box reveal" style="max-width:700px;text-align:center;border-left:none;border-top:3px solid var(--accent);border-radius:8px 8px 0 0;padding:1em 1.5em;font-size:clamp(1rem,2vw,1.4rem);line-height:1.6;">
+                La modernizacion real no comienza con tecnologia.<br>
+                Comienza con <strong style="color:var(--text-primary);">decisiones de diseno estrategico</strong>.
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);color:var(--text-muted);font-size:var(--small-size);">La modernizacion real no comienza con tecnologia. Comienza con decisiones de diseno estrategico.</p>
         </div>
-        <div class="slide-num">09 / 10</div>
+        <div class="slide-num">22 / 23</div>
     </section>
 
-    <!-- SLIDE 10: FINAL -->
-    <section class="slide" data-slide="9">
+    <!-- =========================================
+         SLIDE 23: FINAL
+         ========================================= -->
+    <section class="slide" data-slide="22">
         <div class="geo" style="width:200px;height:200px;top:10%;left:10%;border-color:rgba(56,189,248,0.06);transform:rotate(20deg);"></div>
         <div class="geo" style="width:120px;height:120px;bottom:12%;right:15%;border-color:rgba(168,85,247,0.06);transform:rotate(-15deg);"></div>
         <div class="slide-content centered">
@@ -362,7 +731,7 @@
                 Volver al Inicio &rarr;
             </a>
         </div>
-        <div class="slide-num">10 / 10</div>
+        <div class="slide-num">23 / 23</div>
     </section>
 
     <script>

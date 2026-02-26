@@ -333,132 +333,15 @@
             flex-shrink: 0;
         }
 
-        /* Triangle diagram */
-        .triangle-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: clamp(0.5rem, 2vw, 1.5rem) 0;
+        /* Hero image slide */
+        .slide-hero-img {
+            padding: 0;
         }
 
-        .triangle-svg {
-            width: min(300px, 40vw);
-            height: auto;
-        }
-
-        /* Anti-pattern cards */
-        .antipattern {
-            display: flex;
-            gap: clamp(0.5rem, 1vw, 1rem);
-            align-items: flex-start;
-            padding: clamp(0.6rem, 1vw, 1rem);
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            border-left: 3px solid var(--accent-red);
-        }
-
-        .antipattern-icon {
-            font-size: clamp(1rem, 1.5vw, 1.5rem);
-            flex-shrink: 0;
-        }
-
-        .antipattern-name {
-            font-size: clamp(0.75rem, 1.1vw, 0.95rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.15em;
-        }
-
-        .antipattern-desc {
-            font-size: var(--small-size);
-            color: var(--text-muted);
-        }
-
-        /* Layer diagram */
-        .layer-stack {
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.3rem, 0.6vw, 0.5rem);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .layer {
-            display: flex;
-            align-items: center;
-            gap: clamp(0.5rem, 1vw, 1rem);
-            padding: clamp(0.5rem, 0.8vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem);
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: var(--small-size);
-            font-weight: 500;
-        }
-
-        .layer-label {
-            font-weight: 700;
-            color: var(--accent);
-            min-width: 40px;
-        }
-
-        /* Governance roles */
-        .role-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: clamp(0.8rem, 1.5vw, 1.2rem);
-        }
-
-        .role-title {
-            font-size: clamp(0.8rem, 1.2vw, 1rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);
-        }
-
-        .role-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.15rem, 0.4vw, 0.3rem);
-        }
-
-        .role-list li {
-            font-size: var(--small-size);
-            color: var(--text-muted);
-            padding-left: 1em;
-            position: relative;
-        }
-
-        .role-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        /* Ethics list */
-        .ethics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-            gap: clamp(0.4rem, 0.8vw, 0.6rem);
-        }
-
-        .ethics-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5em;
-            font-size: var(--body-size);
-            color: var(--text-secondary);
-            padding: clamp(0.4rem, 0.7vw, 0.6rem) clamp(0.6rem, 1vw, 0.8rem);
-            background: var(--bg-card);
-            border-radius: 8px;
-        }
-
-        .ethics-icon {
-            color: var(--accent-green);
-            flex-shrink: 0;
+        .slide-hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ===========================================
@@ -647,96 +530,263 @@
 
         <div class="slide-content centered">
             <div class="slide-tag reveal">Módulo 06</div>
-            <h1 class="reveal">IA y el Futuro <span class="gradient-text">de la Educacion</span></h1>
+            <h1 class="reveal">IA y el Futuro <span class="gradient-text">de la Educación</span></h1>
             <div class="divider reveal"><div class="diamond"></div></div>
-            <p class="subtitle reveal">Panel de Discusion</p>
-            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">No es una clase. Es una conversacion entre lideres.</p>
+            <p class="subtitle reveal">Ejercicio de posicionamiento estratégico</p>
+            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Qué postura estratégica va a tomar mi organización frente a la IA en los próximos 3&ndash;5 años?</p>
         </div>
-        <div class="slide-num">01 / 14</div>
+        <div class="slide-num">01 / 17</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 2: PROPOSITO + FORMATO
+         SLIDE 2: CAMPUS HERO
          =========================================== -->
-    <section class="slide" data-slide="1">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Proposito</div>
-            <h2 class="reveal">Reflexion profunda, <span class="gradient-text">sin respuestas predefinidas</span></h2>
-            <div style="margin-top:var(--content-gap);">
-                <ul class="bullet-list">
-                    <li class="reveal">Abrir espacio de reflexion sobre como la IA transformara la educacion en 5-10 anos</li>
-                    <li class="reveal">No hay respuestas correctas — hay posiciones informadas</li>
-                    <li class="reveal">Conversacion entre lideres que toman decisiones hoy sobre un futuro incierto</li>
-                </ul>
-            </div>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">⏱️</div>
-                    <h3>60 minutos</h3>
-                    <p>Panel de discusion moderado</p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">👥</div>
-                    <h3>15 participantes</h3>
-                    <p>Facilitadores como moderadores</p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">🎯</div>
-                    <h3>3 de 5 preguntas</h3>
-                    <p>Segun energia del grupo</p>
-                </div>
-            </div>
-        </div>
-        <div class="slide-num">02 / 14</div>
+    <section class="slide slide-hero-img" data-slide="1">
+        <img src="../assets/Campus-05.png" alt="Campus-hero">
+        <div class="slide-num" style="color:#fff;">02 / 17</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 3: ESCENARIOS 2030
+         SLIDE 3: PROPÓSITO
          =========================================== -->
     <section class="slide" data-slide="2">
         <div class="slide-content">
-            <div class="slide-tag reveal">Escenarios 2030</div>
-            <h2 class="reveal">Tres futuros <span class="gradient-text">plausibles</span></h2>
-            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Cada grupo elige el que considera mas probable y disena una respuesta estrategica.</p>
-            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);margin-top:var(--content-gap);">
-                <div class="card" style="border-top:3px solid var(--accent);">
-                    <h3 style="color:var(--accent);">A. Aumentada</h3>
-                    <ul class="bullet-list" style="font-size:var(--small-size);">
-                        <li>IA institucional en todo el journey</li>
-                        <li>Docentes aumentados, no reemplazados</li>
-                        <li>Arquitectura integrada</li>
-                        <li>Mejora en retencion y experiencia</li>
-                    </ul>
-                </div>
-                <div class="card" style="border-top:3px solid var(--accent-purple);">
-                    <h3 style="color:var(--accent-purple);">B. Commoditizada</h3>
-                    <ul class="bullet-list" style="font-size:var(--small-size);">
-                        <li>Cursos generados masivamente por IA</li>
-                        <li>Competencia global feroz</li>
-                        <li>Titulos pierden peso vs habilidades</li>
-                        <li>Presion en margenes</li>
-                    </ul>
-                </div>
-                <div class="card" style="border-top:3px solid var(--accent-warm);">
-                    <h3 style="color:var(--accent-warm);">C. Fragmentada</h3>
-                    <ul class="bullet-list" style="font-size:var(--small-size);">
-                        <li>Regulacion estricta sobre IA</li>
-                        <li>Resistencia cultural interna</li>
-                        <li>Implementacion desigual</li>
-                        <li>Brecha entre instituciones</li>
-                    </ul>
-                </div>
+            <div class="slide-tag reveal">Propósito</div>
+            <h2 class="reveal">Definir una postura estratégica <span class="gradient-text">explícita</span></h2>
+            <p class="subtitle reveal">Cerrar el programa ayudando a cada líder a definir una postura estratégica explícita frente al impacto de la IA en educación.</p>
+            <div style="margin-top:var(--content-gap);">
+                <ul class="bullet-list">
+                    <li class="reveal">No es un panel de opinión.</li>
+                    <li class="reveal">No es una clase.</li>
+                    <li class="reveal">Es un ejercicio de posicionamiento.</li>
+                </ul>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                &iquest;Qué postura estratégica va a tomar mi organización frente a la IA en los próximos 3&ndash;5 años?
             </div>
         </div>
-        <div class="slide-num">03 / 14</div>
+        <div class="slide-num">03 / 17</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 4: COMPARACION DE ESCENARIOS
+         SLIDE 4: APERTURA — LA REALIDAD INCÓMODA
          =========================================== -->
     <section class="slide" data-slide="3">
         <div class="slide-content">
-            <div class="slide-tag reveal">Comparacion</div>
+            <div class="slide-tag reveal">Parte 1 — Apertura</div>
+            <h2 class="reveal">IA en 2026: <span class="gradient-text">La realidad incómoda</span></h2>
+            <p class="subtitle reveal">El objetivo de esta apertura es generar claridad estratégica sobre la magnitud del cambio. No es una introducción técnica. Es una lectura de contexto.</p>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                "Para 2025/26, estas máquinas superarán a muchos graduados universitarios. Para el final de la década, serán más inteligentes que usted o yo; tendremos superinteligencia." &mdash; Leopold Aschenbrenner, <em>Situational Awareness: The Decade Ahead</em> (2024)
+            </div>
+            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">No es ciencia ficción. Es la proyección de alguien que trabajó dentro de los laboratorios que construyen estos sistemas. Y lo que está en juego no es solo tecnología — es el modelo completo de formación humana.</p>
+        </div>
+        <div class="slide-num">04 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: LA IA YA NO ES EXPERIMENTAL
+         =========================================== -->
+    <section class="slide" data-slide="4">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Apertura</div>
+            <h2 class="reveal">La IA ya no es <span class="gradient-text">experimental</span></h2>
+            <ul class="bullet-list" style="margin-bottom:var(--content-gap);">
+                <li class="reveal">Está integrada en LMS, CRM, soporte y marketing.</li>
+                <li class="reveal">Docentes y estudiantes la usan, con o sin política institucional.</li>
+                <li class="reveal">Las universidades líderes ya están en fase de integración estructural.</li>
+            </ul>
+            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);">
+                <div class="card" style="border-top:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">U. of Wisconsin&ndash;Madison</h3>
+                    <p>Creando un College of Computing and AI independiente, operativo desde julio 2026. No es un laboratorio — es una facultad completa dedicada a IA.</p>
+                </div>
+                <div class="card" style="border-top:3px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">Georgia Tech</h3>
+                    <p>"Jill Watson": asistente docente IA que responde ~10,000 consultas estudiantiles por semestre con 97% de precisión. Los estudiantes no sabían que era IA.</p>
+                </div>
+                <div class="card" style="border-top:3px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">Tec de Monterrey</h3>
+                    <p>Integró herramientas de IA en sus procesos de enseñanza, no como reemplazo docente sino como amplificador.</p>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">La fase "exploratoria" terminó. Para finales de 2026, la tendencia global es que la alfabetización en IA esté embebida en los programas de grado a nivel institucional.</p>
+        </div>
+        <div class="slide-num">05 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: LA BRECHA SE ESTÁ AMPLIANDO
+         =========================================== -->
+    <section class="slide" data-slide="5">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Apertura</div>
+            <h2 class="reveal">La brecha se está <span class="gradient-text">ampliando</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card" style="border-left:3px solid var(--accent-green);">
+                    <h3 style="color:var(--accent-green);">Algunas instituciones</h3>
+                    <ul class="bullet-list" style="font-size:var(--small-size);">
+                        <li>Integran IA en procesos core.</li>
+                        <li>Miden impacto.</li>
+                        <li>Tienen gobernanza clara.</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-left:3px solid var(--accent-red);">
+                    <h3 style="color:var(--accent-red);">Otras</h3>
+                    <ul class="bullet-list" style="font-size:var(--small-size);">
+                        <li>Siguen en uso individual.</li>
+                        <li>No tienen política.</li>
+                        <li>No tienen presupuesto asignado.</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--body-size);color:var(--text-primary);font-weight:700;">La brecha no es tecnológica. Es estratégica.</p>
+            <div class="card reveal" style="margin-top:var(--element-gap);border-left:3px solid var(--accent);">
+                <h3 style="color:var(--accent);">Caso: Georgia State University</h3>
+                <p>Implementó un sistema de IA para identificar estudiantes en riesgo de deserción basado en más de 800 indicadores. Resultado: incremento del 7% en tasas de graduación y reducción significativa de la brecha de logro entre grupos demográficos. No fue un piloto — fue una decisión institucional con gobernanza, presupuesto y métricas claras.</p>
+            </div>
+        </div>
+        <div class="slide-num">06 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: EL MODELO EDUCATIVO BAJO PRESIÓN
+         =========================================== -->
+    <section class="slide" data-slide="6">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Apertura</div>
+            <h2 class="reveal">El modelo educativo <span class="gradient-text">bajo presión</span></h2>
+            <div style="margin-top:var(--content-gap);">
+                <div class="info-row reveal">
+                    <span class="info-label">Enrollment Cliff</span>
+                    <span class="info-value">En EE.UU., se proyecta una caída del <strong style="color:var(--accent-red);">15% en graduados de secundaria entre 2025 y 2037</strong>.</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Percepción</span>
+                    <span class="info-value">Solo el <strong style="color:var(--accent-warm);">22% de los estadounidenses</strong> considera que un título de 4 años vale la pena si implica endeudarse (Gallup).</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Deuda</span>
+                    <span class="info-value">La deuda estudiantil acumulada supera los <strong style="color:var(--accent-red);">$1.77 trillones</strong> (Federal Reserve, 2023).</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Empleadores</span>
+                    <span class="info-value">Google, Apple e IBM eliminaron el requisito de título universitario para múltiples posiciones.</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label">Alternativas</span>
+                    <span class="info-value">Las inscripciones en escuelas técnicas crecen al <strong style="color:var(--accent-green);">4.9% anual</strong>; los apprenticeships se duplicaron en la última década.</span>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--body-size);color:var(--text-primary);font-weight:700;">La IA no crea esta presión. La acelera.</p>
+        </div>
+        <div class="slide-num">07 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: LA COMPETENCIA YA NO ES LOCAL
+         =========================================== -->
+    <section class="slide" data-slide="7">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Apertura</div>
+            <h2 class="reveal">La competencia ya no es <span class="gradient-text">local</span></h2>
+            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+                <div>
+                    <h3 style="color:var(--text-primary);margin-bottom:var(--element-gap);">Un estudiante puede:</h3>
+                    <ul class="bullet-list">
+                        <li>Aprender con un tutor IA global.</li>
+                        <li>Certificar habilidades en plataformas internacionales.</li>
+                        <li>Acceder a contenido de élite sin intermediación institucional.</li>
+                    </ul>
+                    <p style="margin-top:var(--element-gap);font-weight:700;color:var(--text-primary);">La barrera geográfica desapareció.</p>
+                </div>
+                <div>
+                    <h3 style="color:var(--accent-green);margin-bottom:var(--element-gap);">Una institución en LATAM puede:</h3>
+                    <ul class="bullet-list">
+                        <li>Usar las mismas herramientas de IA que Harvard o el MIT, a una fracción del costo.</li>
+                        <li>Ofrecer tutorías personalizadas a escala sin infraestructura física masiva.</li>
+                        <li>Saltar etapas tecnológicas completas (el efecto "leapfrog").</li>
+                        <li>Participar en ecosistemas globales de educación con IA, no solo consumirlos.</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">La barrera geográfica desapareció. Pero la ventana de oportunidad también tiene fecha de vencimiento.</p>
+        </div>
+        <div class="slide-num">08 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: NO DECIDIR ES UNA DECISIÓN
+         =========================================== -->
+    <section class="slide" data-slide="8">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Apertura</div>
+            <h2 class="reveal">No decidir es <span class="gradient-text">una decisión</span></h2>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">La pregunta ya no es:</p>
+            <div class="quote-box reveal" style="max-width:600px;text-align:left;border-left-color:var(--text-muted);">
+                "&iquest;La IA va a cambiar la educación?"
+            </div>
+            <p class="subtitle reveal" style="margin-top:var(--content-gap);margin-bottom:var(--element-gap);">La pregunta es:</p>
+            <div class="quote-box reveal" style="max-width:600px;text-align:left;">
+                "&iquest;Cómo va a posicionarse mi institución frente a este cambio?"
+            </div>
+        </div>
+        <div class="slide-num">09 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: ESCENARIOS 2030
+         =========================================== -->
+    <section class="slide" data-slide="9">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Parte 2 — Escenarios 2030</div>
+            <h2 class="reveal">Tres futuros <span class="gradient-text">plausibles</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Se presentan tres escenarios plausibles. Cada grupo debe elegir el que considera más probable y diseñar una respuesta estratégica.</p>
+            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);">
+                <div class="card" style="border-top:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">A. Educación Aumentada</h3>
+                    <ul class="bullet-list" style="font-size:var(--small-size);">
+                        <li>Asistente IA institucional embebido en todo el journey.</li>
+                        <li>Docentes aumentados, no reemplazados.</li>
+                        <li>Arquitectura integrada.</li>
+                        <li>Cultura experimental.</li>
+                        <li>Mejora en retención y experiencia.</li>
+                    </ul>
+                    <p style="margin-top:0.5em;font-style:italic;">Las instituciones que lo hicieron bien crecieron.</p>
+                </div>
+                <div class="card" style="border-top:3px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">B. Educación Commoditizada</h3>
+                    <ul class="bullet-list" style="font-size:var(--small-size);">
+                        <li>Cursos generados masivamente por IA.</li>
+                        <li>Bajos costos.</li>
+                        <li>Competencia global feroz.</li>
+                        <li>Títulos pierden peso frente a habilidades verificadas.</li>
+                        <li>Presión en márgenes.</li>
+                    </ul>
+                    <p style="margin-top:0.5em;font-style:italic;">La diferenciación se vuelve crítica.</p>
+                </div>
+                <div class="card" style="border-top:3px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">C. Regulación y Fragmentación</h3>
+                    <ul class="bullet-list" style="font-size:var(--small-size);">
+                        <li>Regulación estricta sobre IA.</li>
+                        <li>Resistencia cultural interna.</li>
+                        <li>Implementación desigual.</li>
+                        <li>Brecha entre instituciones premium y rezagadas.</li>
+                    </ul>
+                    <p style="margin-top:0.5em;font-style:italic;">La gobernanza se vuelve ventaja competitiva.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">10 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 11: COMPARACIÓN DE ESCENARIOS
+         =========================================== -->
+    <section class="slide" data-slide="10">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Comparación</div>
             <h2 class="reveal">Escenarios <span class="gradient-text">frente a frente</span></h2>
             <div class="reveal-scale" style="margin-top:var(--content-gap);overflow-x:auto;">
                 <table style="width:100%;border-collapse:collapse;font-size:var(--small-size);color:var(--text-secondary);">
@@ -752,306 +802,187 @@
                         <tr style="border-bottom:1px solid var(--border);">
                             <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">IA como...</td>
                             <td style="padding:0.5em 0.8em;">Capacidad integrada en el journey</td>
-                            <td style="padding:0.5em 0.8em;">Motor de produccion masiva</td>
+                            <td style="padding:0.5em 0.8em;">Motor de producción masiva de contenido</td>
                             <td style="padding:0.5em 0.8em;">Herramienta regulada y desigual</td>
                         </tr>
                         <tr style="border-bottom:1px solid var(--border);">
-                            <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">Rol docente</td>
+                            <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">Rol del docente</td>
                             <td style="padding:0.5em 0.8em;">Aumentado por IA</td>
                             <td style="padding:0.5em 0.8em;">Reemplazado parcialmente</td>
-                            <td style="padding:0.5em 0.8em;">Depende de la institucion</td>
+                            <td style="padding:0.5em 0.8em;">Depende de la institución</td>
                         </tr>
                         <tr style="border-bottom:1px solid var(--border);">
-                            <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">Diferenciacion</td>
+                            <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">Diferenciación</td>
                             <td style="padding:0.5em 0.8em;">Experiencia personalizada</td>
                             <td style="padding:0.5em 0.8em;">Costo y escala</td>
                             <td style="padding:0.5em 0.8em;">Gobernanza y cumplimiento</td>
                         </tr>
                         <tr style="border-bottom:1px solid var(--border);">
-                            <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">Riesgo</td>
-                            <td style="padding:0.5em 0.8em;">Inversion sostenida</td>
-                            <td style="padding:0.5em 0.8em;">Margenes comprimidos</td>
-                            <td style="padding:0.5em 0.8em;">Brecha creciente</td>
+                            <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">Riesgo principal</td>
+                            <td style="padding:0.5em 0.8em;">Requiere inversión sostenida</td>
+                            <td style="padding:0.5em 0.8em;">Márgenes comprimidos</td>
+                            <td style="padding:0.5em 0.8em;">Brecha creciente entre instituciones</td>
                         </tr>
                         <tr>
                             <td style="padding:0.5em 0.8em;font-weight:600;color:var(--text-primary);">Oportunidad</td>
-                            <td style="padding:0.5em 0.8em;">Retencion y calidad</td>
+                            <td style="padding:0.5em 0.8em;">Retención y calidad</td>
                             <td style="padding:0.5em 0.8em;">Acceso masivo</td>
-                            <td style="padding:0.5em 0.8em;">Ventaja para los preparados</td>
+                            <td style="padding:0.5em 0.8em;">Ventaja para los que se preparen</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                &iquest;Cual consideran mas probable? &iquest;Que deberia hacer su institucion hoy para prepararse?
-            </div>
         </div>
-        <div class="slide-num">04 / 14</div>
+        <div class="slide-num">11 / 17</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 5: TRABAJO EN GRUPOS
+         SLIDE 12: TRABAJO EN GRUPOS
          =========================================== -->
-    <section class="slide" data-slide="4">
+    <section class="slide" data-slide="11">
         <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinámica</div>
             <h2 class="reveal">Trabajo en <span class="gradient-text">grupos</span></h2>
-            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">15 minutos para elegir, argumentar y disenar.</p>
-            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);">
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">15 minutos — Cada grupo debe:</p>
+            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(2,1fr);">
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">1</div>
-                    <h3>Elegir</h3>
-                    <p>El escenario que el grupo considera mas probable para su contexto</p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">2</div>
-                    <h3>Argumentar</h3>
-                    <p>Por que ese escenario y no los otros dos</p>
+                    <div class="card-icon" style="color:var(--accent);font-weight:700;">1</div>
+                    <h3>Elegir el escenario más probable</h3>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">3</div>
-                    <h3>Disenar</h3>
-                    <p>3 acciones concretas que su institucion deberia tomar en los proximos 12 meses</p>
+                    <div class="card-icon" style="color:var(--accent-purple);font-weight:700;">2</div>
+                    <h3>Definir cómo debería posicionarse su organización</h3>
                 </div>
             </div>
-        </div>
-        <div class="slide-num">05 / 14</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 6: PREGUNTA 1
-         =========================================== -->
-    <section class="slide" data-slide="2">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Pregunta 1</div>
-            <h2 class="reveal">&iquest;La IA va a <span class="gradient-text">reemplazar docentes?</span></h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:1fr;">
-                <div class="card" style="border-left:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">Posicion A</h3>
-                    <p>La IA reemplaza tareas repetitivas (calificar, consultas), liberando al docente para mentoria y pensamiento critico.</p>
-                </div>
-                <div class="card" style="border-left:3px solid #a855f7;">
-                    <h3 style="color:#a855f7;">Posicion B</h3>
-                    <p>La IA crea una nueva categoria: el "docente aumentado" que usa IA como co-piloto.</p>
-                </div>
-                <div class="card" style="border-left:3px solid #ef4444;">
-                    <h3 style="color:#ef4444;">Posicion C</h3>
-                    <p>Riesgo real de que instituciones reemplacen docentes por IA para reducir costos.</p>
-                </div>
-            </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                Si un estudiante aprende mas con un tutor de IA que con una clase de 200 personas, &iquest;cual es el rol de la institucion?
-            </div>
-        </div>
-        <div class="slide-num">06 / 14</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 4: PREGUNTA 2
-         =========================================== -->
-    <section class="slide" data-slide="3">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Pregunta 2</div>
-            <h2 class="reveal">&iquest;Los titulos van a <span class="gradient-text">perder valor?</span></h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:1fr;">
-                <div class="card" style="border-left:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">Posicion A</h3>
-                    <p>El titulo pierde valor como credencial laboral, pero mantiene valor como experiencia formativa.</p>
-                </div>
-                <div class="card" style="border-left:3px solid #a855f7;">
-                    <h3 style="color:#a855f7;">Posicion B</h3>
-                    <p>El titulo sera reemplazado por portafolios de habilidades verificables.</p>
-                </div>
-                <div class="card" style="border-left:3px solid #34d399;">
-                    <h3 style="color:#34d399;">Posicion C</h3>
-                    <p>El titulo va a evolucionar, no desaparecer. Se complementara con certificaciones.</p>
-                </div>
-            </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Google, Apple, IBM eliminaron el requisito de titulo. Las micro-credenciales crecen exponencialmente. En LATAM, el titulo sigue siendo diferenciador.</p>
-        </div>
-        <div class="slide-num">07 / 14</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 5: PREGUNTA 3
-         =========================================== -->
-    <section class="slide" data-slide="4">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Pregunta 3</div>
-            <h2 class="reveal">&iquest;Quien debe <span class="gradient-text">regular la IA?</span></h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="card" style="border-left:3px solid #38bdf8;">
-                    <h3 style="color:#38bdf8;">Posicion A</h3>
-                    <p>Gobiernos deben establecer marcos regulatorios claros.</p>
-                </div>
-                <div class="card" style="border-left:3px solid #a855f7;">
-                    <h3 style="color:#a855f7;">Posicion B</h3>
-                    <p>Instituciones deben autorregularse con estandares eticos propios.</p>
-                </div>
-                <div class="card" style="border-left:3px solid #f59e0b;">
-                    <h3 style="color:#f59e0b;">Posicion C</h3>
-                    <p>La regulacion siempre llega tarde. Lo importante es tener principios claros hoy.</p>
-                </div>
-            </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                &iquest;Estas dispuesto a que un algoritmo decida si un estudiante esta en riesgo? &iquest;Y si tiene sesgos?
-            </div>
-        </div>
-        <div class="slide-num">08 / 14</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 6: PREGUNTA 4
-         =========================================== -->
-    <section class="slide" data-slide="5">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Pregunta 4</div>
-            <h2 class="reveal">&iquest;Democratizar o <span class="gradient-text">concentrar?</span></h2>
-            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="card" style="border-top:3px solid #34d399;">
-                    <h3 style="color:#34d399;">Democratizacion</h3>
-                    <p>Un estudiante rural en Peru accede a un tutor de IA de nivel mundial con un celular. La IA reduce barreras de acceso.</p>
-                </div>
-                <div class="card" style="border-top:3px solid #ef4444;">
-                    <h3 style="color:#ef4444;">Concentracion</h3>
-                    <p>Las universidades con mas recursos desarrollan ecosistemas mucho mas sofisticados, ampliando la brecha.</p>
-                </div>
-            </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                Si ChatGPT puede dar una clase mejor que el 80% de los docentes del mundo, &iquest;que hacemos con esa realidad?
-            </div>
-        </div>
-        <div class="slide-num">09 / 14</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 7: PREGUNTA 5
-         =========================================== -->
-    <section class="slide" data-slide="6">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Pregunta 5</div>
-            <h2 class="reveal">&iquest;Profesional <span class="gradient-text">2030?</span></h2>
-            <p class="subtitle reveal">&iquest;Que deberia saber hacer?</p>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">🧠</div>
-                    <h3>Core Skills</h3>
-                    <p>Pensamiento critico, creatividad, colaboracion y adaptabilidad</p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">🤖</div>
-                    <h3>Alfabetizacion IA</h3>
-                    <p>Todos necesitan entender como funciona la IA, aunque no la construyan</p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">🔄</div>
-                    <h3>Aprender a aprender</h3>
-                    <p>La capacidad de adaptacion es la unica skill a prueba de futuro</p>
-                </div>
-            </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                &iquest;Tu plan de estudios actual prepara estudiantes para 2030 o para 2010?
-            </div>
-        </div>
-        <div class="slide-num">10 / 14</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 8: VOTACION DE POSICIONES
-         =========================================== -->
-    <section class="slide" data-slide="7">
-        <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica de Cierre</div>
-            <h2 class="reveal">Votacion de <span class="gradient-text">posiciones</span></h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:1fr 1fr;">
-                <div class="card" style="border-left:3px solid #38bdf8;">
-                    <p style="color:var(--text-primary);">"La IA es la mayor oportunidad para la educacion en 100 anos."</p>
-                </div>
-                <div class="card" style="border-left:3px solid #34d399;">
-                    <p style="color:var(--text-primary);">"La IA es un riesgo que necesitamos gestionar con cuidado."</p>
-                </div>
-                <div class="card" style="border-left:3px solid #f59e0b;">
-                    <p style="color:var(--text-primary);">"La IA no va a cambiar tanto — es otra ola tecnologica mas."</p>
-                </div>
-                <div class="card" style="border-left:3px solid #a855f7;">
-                    <p style="color:var(--text-primary);">"No tengo una posicion clara y eso esta bien."</p>
-                </div>
-            </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">El objetivo no es consenso. Es hacer visible la diversidad de perspectivas.</p>
-        </div>
-        <div class="slide-num">11 / 14</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 9: LECTURAS SUGERIDAS
-         =========================================== -->
-    <section class="slide" data-slide="8">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Lecturas</div>
-            <h2 class="reveal">Para <span class="gradient-text">profundizar</span></h2>
-            <div style="margin-top:var(--content-gap);">
-                <ul class="bullet-list">
-                    <li class="reveal">Sal Khan — <strong style="color:var(--text-primary);">Brave New Words</strong> (2024)</li>
-                    <li class="reveal">Ethan Mollick — <strong style="color:var(--text-primary);">Co-Intelligence</strong> (2024)</li>
-                    <li class="reveal">UNESCO — <strong style="color:var(--text-primary);">Guidance for Generative AI in Education</strong> (2023)</li>
-                    <li class="reveal">World Economic Forum — <strong style="color:var(--text-primary);">Future of Jobs Report</strong></li>
-                    <li class="reveal">Audrey Watters — <strong style="color:var(--text-primary);">Teaching Machines</strong> (2021) — perspectiva critica</li>
+            <div class="card reveal" style="margin-top:var(--content-gap);">
+                <h3 style="color:var(--accent-warm);">3. Identificar:</h3>
+                <ul class="bullet-list" style="font-size:var(--small-size);">
+                    <li>Qué debería empezar a hacer en 12 meses.</li>
+                    <li>Qué debería dejar de hacer.</li>
+                    <li>Qué ventaja competitiva busca construir.</li>
+                    <li>Qué riesgo está dispuesto a asumir.</li>
                 </ul>
             </div>
         </div>
-        <div class="slide-num">12 / 14</div>
+        <div class="slide-num">12 / 17</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 10: NOTAS PARA EL MODERADOR
+         SLIDE 13: PLENARIA ESTRATÉGICA
          =========================================== -->
-    <section class="slide" data-slide="9">
+    <section class="slide" data-slide="12">
         <div class="slide-content">
-            <div class="slide-tag reveal">Moderador</div>
-            <h2 class="reveal">Notas para el <span class="gradient-text">moderador</span></h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">🎯</div>
-                    <h3>Tono</h3>
-                    <p>Panel de discusion, no clase. Validar todas las posiciones. Garantizar voces diversas.</p>
+            <div class="slide-tag reveal">Parte 3 — Plenaria Estratégica</div>
+            <h2 class="reveal">Plenaria <span class="gradient-text">estratégica</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">20 minutos — Cada grupo presenta:</p>
+            <div class="two-col reveal-scale">
+                <div>
+                    <h3 style="color:var(--text-primary);margin-bottom:var(--element-gap);">Cada grupo presenta:</h3>
+                    <ul class="bullet-list">
+                        <li>Escenario elegido.</li>
+                        <li>Posicionamiento estratégico.</li>
+                        <li>Trade-offs explícitos.</li>
+                        <li>Primeras decisiones concretas.</li>
+                    </ul>
                 </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">⏱️</div>
-                    <h3>Gestion</h3>
-                    <p>10-12 min por pregunta. Si se polariza: buscar perspectiva intermedia. Si se estanca: pasar a la siguiente.</p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <div class="card-icon">🏁</div>
-                    <h3>Cierre</h3>
-                    <p>"No vinimos a resolver estas preguntas. Vinimos a hacernoslas con mejor criterio."</p>
+                <div>
+                    <h3 style="color:var(--accent);margin-bottom:var(--element-gap);">El facilitador conecta con conceptos del curso:</h3>
+                    <ul class="bullet-list">
+                        <li>Good Strategy vs Bad Strategy.</li>
+                        <li>Triángulo cultura&ndash;proceso&ndash;tecnología.</li>
+                        <li>IA como capa transversal.</li>
+                        <li>Gobernanza y presupuesto.</li>
+                        <li>Riesgo de piloto eterno.</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="slide-num">13 / 14</div>
+        <div class="slide-num">13 / 17</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 11: CIERRE
+         SLIDE 14: DECLARACIÓN PERSONAL
          =========================================== -->
-    <section class="slide" data-slide="10">
+    <section class="slide" data-slide="13">
+        <div class="slide-content">
+            <div class="slide-tag reveal" style="background:rgba(168,85,247,0.1);color:var(--accent-purple);">Parte 4 — Declaración Personal</div>
+            <h2 class="reveal">Declaración <span class="gradient-text">personal</span></h2>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">10 minutos — Cada participante completa individualmente:</p>
+            <div class="quote-box reveal" style="margin-bottom:var(--element-gap);">
+                "En los próximos 24 meses, mi organización debe dejar de ______ y empezar a ______."
+            </div>
+            <div class="quote-box reveal" style="border-left-color:var(--accent-purple);">
+                "El mayor riesgo estratégico si no actuamos es ______."
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Se invita a 3&ndash;4 voluntarios a compartir.</p>
+        </div>
+        <div class="slide-num">14 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 15: DECLARACIÓN — EJEMPLOS
+         =========================================== -->
+    <section class="slide" data-slide="14">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Ejemplos para inspirar</div>
+            <h2 class="reveal">Declaraciones <span class="gradient-text">de ejemplo</span></h2>
+            <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,0.8vw,0.6rem);margin-top:var(--content-gap);">
+                <div class="card reveal" style="border-left:3px solid var(--accent);">
+                    <p style="color:var(--text-primary);">"En los próximos 24 meses, mi organización debe dejar de <strong>tratar la IA como un proyecto del área de tecnología</strong> y empezar a <strong>integrarla como prioridad estratégica del Consejo Directivo</strong>."</p>
+                </div>
+                <div class="card reveal" style="border-left:3px solid var(--accent-purple);">
+                    <p style="color:var(--text-primary);">"En los próximos 24 meses, mi organización debe dejar de <strong>capacitar docentes solo en herramientas digitales básicas</strong> y empezar a <strong>desarrollar competencias de diseño instruccional con IA</strong>."</p>
+                </div>
+                <div class="card reveal" style="border-left:3px solid var(--accent-warm);">
+                    <p style="color:var(--text-primary);">"En los próximos 24 meses, mi organización debe dejar de <strong>prohibir el uso de IA en evaluaciones</strong> y empezar a <strong>rediseñar las evaluaciones para un mundo donde la IA existe</strong>."</p>
+                </div>
+                <div class="card reveal" style="border-left:3px solid var(--accent-red);">
+                    <p style="color:var(--text-primary);">"El mayor riesgo estratégico si no actuamos es <strong>que nuestros estudiantes se formen con estándares de 2015 para un mercado laboral de 2030</strong>."</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">15 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 16: CIERRE
+         =========================================== -->
+    <section class="slide" data-slide="15">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Cierre</div>
+            <h2 class="reveal">La IA no es un <span class="gradient-text">proyecto tecnológico</span></h2>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <div class="quote-box reveal" style="max-width:650px;text-align:left;font-size:clamp(0.9rem,1.4vw,1.1rem);">
+                "La IA no es un proyecto tecnológico. Es una decisión estratégica sobre el futuro de la institución."
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:650px;text-align:left;border-left-color:var(--accent-purple);">
+                "La IA no va a reemplazar a los profesores. Pero los profesores que usen IA van a reemplazar a los que no." &mdash; Ethan Mollick, <em>Co-Intelligence</em>
+            </div>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--body-size);color:var(--text-secondary);">La decisión no es si la IA va a transformar la educación. La decisión es si su institución va a liderar esa transformación o va a reaccionar cuando ya sea tarde.</p>
+        </div>
+        <div class="slide-num">16 / 17</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 17: RESULTADO ESPERADO
+         =========================================== -->
+    <section class="slide" data-slide="16">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Resultado Esperado</div>
             <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
             <div class="divider reveal"><div class="diamond"></div></div>
-            <div style="max-width:550px;margin-top:var(--content-gap);">
+            <div style="max-width:650px;margin-top:var(--content-gap);">
                 <ul class="bullet-list" style="text-align:left;">
-                    <li class="reveal">Reflexionaste sobre el impacto de la IA en educacion con pares</li>
-                    <li class="reveal">Tenes una posicion informada (aunque sea provisional)</li>
-                    <li class="reveal">Identificas las preguntas que van a definir los proximos anos</li>
-                    <li class="reveal">Tenes herramientas para abordarlas con criterio</li>
+                    <li class="reveal">Comprende la magnitud estratégica del impacto de la IA en educación superior.</li>
+                    <li class="reveal">Puede articular una postura institucional explícita frente a la IA (no solo "estamos explorando").</li>
+                    <li class="reveal">Identifica al menos una cosa que su organización debe empezar a hacer y una que debe dejar de hacer en los próximos 24 meses.</li>
+                    <li class="reveal">Puede argumentar su postura frente a uno de los 3 escenarios 2030.</li>
+                    <li class="reveal">Entiende que no decidir también es una decisión — y tiene consecuencias estratégicas.</li>
                 </ul>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:550px;text-align:left;">
-                Estas preguntas van a definir las decisiones tecnologicas de los proximos anos. Ahora tenes mejores herramientas para abordarlas.
-            </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Bonus — IA y el Futuro de la Educacion</p>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Módulo 06 — IA y el Futuro de la Educación</p>
         </div>
-        <div class="slide-num">14 / 14</div>
+        <div class="slide-num">17 / 17</div>
     </section>
 
     <!-- ===========================================

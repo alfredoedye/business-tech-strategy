@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&oacute;dulo 03 &mdash; Arquitectura IT Educativa</title>
+    <title>Módulo 03 — Arquitectura IT Educativa</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 
     <style>
@@ -250,6 +250,30 @@
             line-height: 1.4;
         }
 
+        /* Stat highlight */
+        .stat-big {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1;
+            margin-bottom: clamp(0.3rem, 1vw, 0.8rem);
+        }
+
+        /* Pill tags */
+        .pill {
+            display: inline-block;
+            font-size: var(--small-size);
+            font-weight: 500;
+            padding: 0.3em 0.8em;
+            border-radius: 100px;
+            border: 1px solid;
+        }
+
+        .pill-blue { color: #38bdf8; border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.08); }
+        .pill-purple { color: #a855f7; border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.08); }
+        .pill-amber { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.08); }
+        .pill-red { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); }
+        .pill-green { color: #34d399; border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.08); }
+
         /* Two column layout */
         .two-col {
             display: grid;
@@ -314,8 +338,7 @@
             display: flex;
             flex-direction: column;
             gap: clamp(0.3rem, 0.6vw, 0.5rem);
-            max-width: 500px;
-            margin: 0 auto;
+            max-width: 700px;
         }
 
         .layer {
@@ -334,7 +357,6 @@
             font-weight: 700;
             color: var(--accent);
             min-width: clamp(60px, 8vw, 90px);
-            flex-shrink: 0;
         }
 
         /* Anti-pattern cards */
@@ -349,10 +371,32 @@
             border-left: 3px solid var(--accent-red);
         }
 
+        .antipattern-icon {
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
+            flex-shrink: 0;
+        }
+
         .antipattern-name {
             font-size: clamp(0.75rem, 1.1vw, 0.95rem);
             font-weight: 700;
             color: var(--text-primary);
+            margin-bottom: 0.15em;
+        }
+
+        .antipattern-desc {
+            font-size: var(--small-size);
+            color: var(--text-muted);
+        }
+
+        /* Hero image slide */
+        .slide-hero-img {
+            padding: 0;
+        }
+
+        .slide-hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ===========================================
@@ -458,21 +502,6 @@
             align-items: center;
         }
 
-        /* Full-screen hero image slide */
-        .slide-hero-img {
-            padding: 0;
-        }
-        .slide-hero-img::before {
-            display: none;
-        }
-        .slide-hero-img img.hero-cover {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         /* ===========================================
            RESPONSIVE BREAKPOINTS
            =========================================== */
@@ -518,6 +547,7 @@
             }
             html { scroll-behavior: auto; }
         }
+
         /* ===========================================
            NAVIGATION OVERLAY
            =========================================== */
@@ -554,23 +584,24 @@
         <!-- Floating geometry -->
         <div class="geo" style="width:180px;height:180px;top:8%;right:12%;border-color:rgba(56,189,248,0.08);transform:rotate(15deg);"></div>
         <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
+        <div class="geo" style="width:60px;height:60px;top:40%;left:18%;border-color:rgba(245,158,11,0.06);transform:rotate(25deg);"></div>
 
         <div class="slide-content centered">
-            <div class="slide-tag reveal">Modulo 03</div>
+            <div class="slide-tag reveal">Módulo 03</div>
             <h1 class="reveal">Arquitectura IT <span class="gradient-text">Educativa</span></h1>
             <div class="divider reveal"><div class="diamond"></div></div>
             <p class="subtitle reveal">El mapa de tus sistemas</p>
-            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Como funciona realmente una institucion educativa moderna por dentro?</p>
+            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Cómo funciona realmente una institución educativa moderna por dentro?</p>
         </div>
-        <div class="slide-num">01 / 15</div>
+        <div class="slide-num">01 / 18</div>
     </section>
 
     <!-- ===========================================
          SLIDE 2: CAMPUS HERO
          =========================================== -->
     <section class="slide slide-hero-img" data-slide="1">
-        <img class="hero-cover" src="../assets/Campus-03.png" alt="Campus-hero">
-        <div class="slide-num" style="color:rgba(255,255,255,0.6);">02 / 15</div>
+        <img src="../assets/Campus-03.png" alt="Campus-hero">
+        <div class="slide-num" style="color:#fff;">02 / 18</div>
     </section>
 
     <!-- ===========================================
@@ -579,7 +610,8 @@
     <section class="slide" data-slide="2">
         <div class="slide-content">
             <div class="slide-tag reveal">Objetivo</div>
-            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este modulo</span></h2>
+            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este módulo</span></h2>
+            <p class="subtitle reveal">Que puedas <strong style="color:var(--text-primary)">leer, cuestionar y discutir la arquitectura tecnológica de una organización.</strong></p>
             <div style="margin-top:var(--content-gap);">
                 <ul class="bullet-list">
                     <li class="reveal">Nombrar y describir los sistemas principales (<strong style="color:var(--text-primary)">CMS, SIS, LMS, CRM, ERP, BI</strong>)</li>
@@ -589,380 +621,483 @@
                 </ul>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                Un directivo no necesita saber construir edificios. Pero si necesita poder leer el plano de la ciudad.
+                La arquitectura IT no es un tema de infraestructura. Es un tema de gobierno, competitividad y riesgo estratégico.
             </div>
         </div>
-        <div class="slide-num">03 / 15</div>
+        <div class="slide-num">03 / 18</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 3: DINAMICA DISPARADORA
+         SLIDE 4: DINÁMICA — TU STACK EN UNA SERVILLETA
          =========================================== -->
     <section class="slide" data-slide="3">
         <div class="slide-content centered">
-            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
-            <h2 class="reveal">Crisis de examenes</h2>
-            <p class="subtitle reveal">Ultimo dia de finales. Miles de estudiantes. El sistema se cae.</p>
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinámica Disparadora</div>
+            <h2 class="reveal">Tu Stack <span class="gradient-text">en una servilleta</span></h2>
+            <p class="subtitle reveal">15 minutos — Dibujá todos los sistemas tecnológicos que conocés de tu organización.</p>
             <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);max-width:750px;">
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">&#127891;</div>
-                    <h3>Grupo Academico</h3>
-                    <p>&iquest;Que perciben los estudiantes? &iquest;Que impacta en calidad?</p>
+                    <div class="card-icon">✏️</div>
+                    <h3>1. Dibujá</h3>
+                    <p>Todas las herramientas tecnológicas que conocés</p>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">&#9881;&#65039;</div>
-                    <h3>Grupo Operaciones</h3>
-                    <p>&iquest;Que fallo a nivel de sistemas? &iquest;Que dependencias existen entre Examinacion/Proctoring y otros sistemas?</p>
+                    <div class="card-icon">🔗</div>
+                    <h3>2. Conectá</h3>
+                    <p>Nombralas y conectalas si están integradas</p>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <div class="card-icon">&#128188;</div>
-                    <h3>Grupo Direccion</h3>
-                    <p>&iquest;Cuanto puede costar esta crisis? &iquest;Que decisiones deberian haberse tomado antes?</p>
+                    <div class="card-icon">⚠️</div>
+                    <h3>3. Marcá</h3>
+                    <p>Las críticas y las que no entendés cómo se conectan</p>
                 </div>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Salidas: puntos de falla, decisiones preventivas, 2 prioridades inmediatas</p>
+            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Dibuja como sea. No hay reglas.</p>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:700px;text-align:left;">
+                <strong style="color:var(--text-primary);">Debrief:</strong> &iquest;Cuántas herramientas aparecieron? &iquest;Se puede o es fácil cambiar? &iquest;Cuántas están realmente integradas? &iquest;Quién tiene la visión completa? &iquest;Tu stack permite cambiar el modelo de negocio?
+            </div>
         </div>
-        <div class="slide-num">04 / 15</div>
+        <div class="slide-num">04 / 18</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 4: QUE ES UNA ARQUITECTURA IT
+         SLIDE 5: ANALOGÍA DE LA CIUDAD
          =========================================== -->
     <section class="slide" data-slide="4">
         <div class="slide-content">
             <div class="slide-tag reveal">Concepto Clave</div>
-            <h2 class="reveal">Arquitectura IT: <span class="gradient-text">la analogia de la ciudad</span></h2>
+            <h2 class="reveal">Arquitectura IT: <span class="gradient-text">la analogía de la ciudad</span></h2>
             <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
                 <div class="card">
-                    <div class="card-icon">&#127970;</div>
+                    <div class="card-icon">🏢</div>
                     <h3>Sistemas</h3>
-                    <p>Son los edificios. Cada uno cumple una funcion.</p>
+                    <p>Son los edificios. Cada uno cumple una función.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">&#128739;&#65039;</div>
+                    <div class="card-icon">🛣️</div>
                     <h3>Integraciones</h3>
-                    <p>Son las calles. Conectan los edificios entre si.</p>
+                    <p>Son las calles. Conectan los edificios entre sí.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">&#128101;</div>
+                    <div class="card-icon">👥</div>
                     <h3>Datos</h3>
-                    <p>Son las personas que circulan. Si las calles estan cortadas, no llegan.</p>
+                    <p>Son las personas que circulan. Si las calles están cortadas, no llegan.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">&#128506;&#65039;</div>
+                    <div class="card-icon">🗺️</div>
                     <h3>Arquitectura</h3>
                     <p>Es el plano completo de la ciudad.</p>
                 </div>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Para participantes de empresas no educativas: donde dice &ldquo;estudiante&rdquo; pensa en &ldquo;cliente&rdquo;. Donde dice &ldquo;SIS&rdquo; pensa en tu sistema core de gestion. El principio es el mismo.</p>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Si tu organización no es educativa, pensá en los sistemas equivalentes de tu industria: ERP, CRM, plataforma de e-commerce, etc.</p>
         </div>
-        <div class="slide-num">05 / 15</div>
+        <div class="slide-num">05 / 18</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 5: SISTEMAS CLAVE
+         SLIDE 6: LOS SISTEMAS CLAVE
          =========================================== -->
     <section class="slide" data-slide="5">
         <div class="slide-content">
             <h2 class="reveal">Los sistemas <span class="gradient-text">clave</span></h2>
             <div style="margin-top:var(--content-gap);">
                 <div class="info-row reveal">
-                    <span class="info-label">CMS</span>
-                    <span class="info-value">Presenta la institucion en la web, publica la oferta academica y puede tener e-commerce. El &lsquo;sitio&rsquo; de la institucion.</span>
+                    <span class="info-label" style="min-width:clamp(60px,8vw,90px);">CMS</span>
+                    <span class="info-value">Presenta la institución, oferta académica, e-commerce. La <strong style="color:var(--text-primary)">fachada y cartelería</strong> del campus.</span>
                 </div>
                 <div class="info-row reveal">
-                    <span class="info-label">SIS</span>
-                    <span class="info-value">Gestion academica: inscripcion, cursada, notas, titulo. El &lsquo;DNI&rsquo; del estudiante en la institucion.</span>
+                    <span class="info-label" style="min-width:clamp(60px,8vw,90px);">SIS</span>
+                    <span class="info-value">Gestión académica: inscripción, cursada, notas, título. El <strong style="color:var(--text-primary)">rectorado</strong> — donde vive el legajo oficial.</span>
                 </div>
                 <div class="info-row reveal">
-                    <span class="info-label">LMS</span>
-                    <span class="info-value">Experiencia de aprendizaje: contenidos, actividades, foros. El &lsquo;aula&rsquo; virtual.</span>
+                    <span class="info-label" style="min-width:clamp(60px,8vw,90px);">LMS</span>
+                    <span class="info-value">Experiencia de aprendizaje: contenidos, actividades, foros. Las <strong style="color:var(--text-primary)">aulas</strong> — donde ocurre el aprendizaje.</span>
                 </div>
                 <div class="info-row reveal">
-                    <span class="info-label">EXAM</span>
-                    <span class="info-value">Examinacion segura con auditorias de fraude. La validacion del proceso de aprendizaje.</span>
+                    <span class="info-label" style="min-width:clamp(60px,8vw,90px);">EXAM</span>
+                    <span class="info-value">Examinación segura con auditorías de fraude. El <strong style="color:var(--text-primary)">salón de exámenes</strong> — acceso controlado y supervisado.</span>
                 </div>
                 <div class="info-row reveal">
-                    <span class="info-label">CRM</span>
-                    <span class="info-value">Relacion con prospectos y estudiantes: campanas, seguimiento. La &lsquo;memoria&rsquo; de interacciones.</span>
+                    <span class="info-label" style="min-width:clamp(60px,8vw,90px);">CRM</span>
+                    <span class="info-value">Relación con prospectos y estudiantes: campañas, seguimiento. La <strong style="color:var(--text-primary)">bedelía / oficina de atención</strong>.</span>
                 </div>
                 <div class="info-row reveal">
-                    <span class="info-label">ERP</span>
-                    <span class="info-value">Administracion y finanzas: facturacion, pagos, RRHH. La &lsquo;administracion&rsquo; del negocio.</span>
+                    <span class="info-label" style="min-width:clamp(60px,8vw,90px);">ERP</span>
+                    <span class="info-value">Administración y finanzas: facturación, pagos, RRHH. La <strong style="color:var(--text-primary)">oficina de administración</strong>.</span>
                 </div>
                 <div class="info-row reveal">
-                    <span class="info-label">BI / IA</span>
-                    <span class="info-value">Analitica, reportes, chatbots, predictiva. Los &lsquo;ojos&rsquo; y el &lsquo;asistente inteligente&rsquo; de la organizacion.</span>
+                    <span class="info-label" style="min-width:clamp(60px,8vw,90px);">BI</span>
+                    <span class="info-value">Analítica, reportes, dashboards, indicadores. La <strong style="color:var(--text-primary)">sala de dirección</strong>.</span>
+                </div>
+                <div class="info-row reveal">
+                    <span class="info-label" style="min-width:clamp(60px,8vw,90px);">IA</span>
+                    <span class="info-value">Chatbots, analítica predictiva, personalización. El <strong style="color:var(--text-primary)">asistente inteligente</strong> — presente en todos los espacios.</span>
                 </div>
             </div>
         </div>
-        <div class="slide-num">06 / 15</div>
+        <div class="slide-num">06 / 18</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 6: EL SIS — PLATAFORMA CORE
+         SLIDE 7: EL SIS — PLATAFORMA CORE
          =========================================== -->
     <section class="slide" data-slide="6">
-        <div class="slide-content">
+        <div class="slide-content centered">
             <div class="slide-tag reveal">Sistema Core</div>
-            <h2 class="reveal">El SIS: <span class="gradient-text">doble-click en el nucleo</span></h2>
-            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">El Student Information System modela la estrategia academica y los procesos mas importantes de la institucion.</p>
-            <div class="reveal-scale" style="margin-top:var(--content-gap);text-align:center;">
-                <img
-                    src="../assets/Funcionalidades SIS.png"
-                    alt="Funcionalidades del SIS"
-                    style="max-width:100%;max-height:min(50vh,380px);object-fit:contain;border-radius:8px;border:1px solid var(--border);"
-                />
+            <h2 class="reveal">El SIS: <span class="gradient-text">doble-click en el núcleo</span></h2>
+            <p class="subtitle reveal">El Student Information System modela la estrategia académica y los procesos más importantes de la institución.</p>
+            <div class="reveal-scale" style="margin-top:var(--content-gap);">
+                <img src="../assets/Funcionalidades SIS.png" alt="Funcionalidades del SIS" style="max-width:100%;max-height:min(50vh,380px);object-fit:contain;border-radius:8px;border:1px solid var(--border);">
             </div>
         </div>
-        <div class="slide-num">07 / 15</div>
+        <div class="slide-num">07 / 18</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 7: CICLO DE VIDA DEL ESTUDIANTE
+         SLIDE 8: EL LMS
          =========================================== -->
     <section class="slide" data-slide="7">
         <div class="slide-content">
+            <div class="slide-tag reveal">Sistema Clave</div>
+            <h2 class="reveal">El LMS: <span class="gradient-text">más que un repositorio de PDFs</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>1. Contenido y diseño instruccional</h3>
+                    <p>Organiza material de aprendizaje (videos, lecturas, actividades) en una secuencia pedagógica con sentido.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏫</div>
+                    <h3>2. Cátedras y aulas virtuales</h3>
+                    <p>Espacio donde interactúan docentes y estudiantes: foros, entregas, comunicaciones, calendario.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>3. Gradebook</h3>
+                    <p>Registro centralizado de evaluaciones y notas. Integrado con el SIS, las calificaciones fluyen automáticamente.</p>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
+                El verdadero valor del LMS está en los datos de aprendizaje que genera.
+            </div>
+        </div>
+        <div class="slide-num">08 / 18</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: EL CRM
+         =========================================== -->
+    <section class="slide" data-slide="8">
+        <div class="slide-content">
+            <div class="slide-tag reveal">Sistema Clave</div>
+            <h2 class="reveal">El CRM: <span class="gradient-text">la memoria de la relación con el estudiante</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
+                <div class="card">
+                    <div class="card-icon">📣</div>
+                    <h3>1. Marketing</h3>
+                    <p>Captación de prospectos, campañas digitales, costo de adquisición por estudiante y efectividad de cada canal.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🤝</div>
+                    <h3>2. Sales (Admisiones)</h3>
+                    <p>Embudo de conversión desde primer contacto hasta inscripción. Seguimiento personalizado sin perder prospectos.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎧</div>
+                    <h3>3. Servicio (Atención al estudiante)</h3>
+                    <p>Consultas, reclamos, trámites. Historial completo para responder con contexto sin que el estudiante repita su situación.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">09 / 18</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: CICLO DE VIDA DEL ESTUDIANTE
+         =========================================== -->
+    <section class="slide" data-slide="9">
+        <div class="slide-content">
             <div class="slide-tag reveal">Flujo</div>
             <h2 class="reveal">Ciclo de vida <span class="gradient-text">del estudiante</span></h2>
-            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);max-width:700px;margin-left:0;">
+            <div class="layer-stack reveal-scale" style="margin-top:var(--content-gap);margin-left:0;">
                 <div class="layer">
                     <span class="layer-label">CRM / Mktg</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Captacion &rarr; primer contacto con la institucion</span>
+                    <span style="font-size:var(--small-size);color:var(--text-primary);font-weight:600;">Captación</span>
+                    <span style="font-size:var(--small-size);color:var(--text-muted);">— primer contacto</span>
                 </div>
                 <div class="layer">
                     <span class="layer-label">CMS / Web</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Evaluacion &rarr; oferta academica y propuesta de valor</span>
+                    <span style="font-size:var(--small-size);color:var(--text-primary);font-weight:600;">Evaluación</span>
+                    <span style="font-size:var(--small-size);color:var(--text-muted);">— oferta académica</span>
                 </div>
                 <div class="layer">
                     <span class="layer-label">SIS</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Admision &rarr; inscripcion y registro academico</span>
+                    <span style="font-size:var(--small-size);color:var(--text-primary);font-weight:600;">Admisión</span>
+                    <span style="font-size:var(--small-size);color:var(--text-muted);">— inscripción y registro</span>
                 </div>
                 <div class="layer">
                     <span class="layer-label">SIS / LMS</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Onboarding &rarr; activacion del estudiante</span>
+                    <span style="font-size:var(--small-size);color:var(--text-primary);font-weight:600;">Onboarding</span>
+                    <span style="font-size:var(--small-size);color:var(--text-muted);">— activación del estudiante</span>
                 </div>
                 <div class="layer">
                     <span class="layer-label">LMS</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Cursada &rarr; experiencia de aprendizaje</span>
+                    <span style="font-size:var(--small-size);color:var(--text-primary);font-weight:600;">Cursada</span>
+                    <span style="font-size:var(--small-size);color:var(--text-muted);">— experiencia de aprendizaje</span>
                 </div>
                 <div class="layer">
                     <span class="layer-label">CRM / Serv.</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Servicios al Est. &rarr; soporte y acompanamiento</span>
+                    <span style="font-size:var(--small-size);color:var(--text-primary);font-weight:600;">Servicios al Est.</span>
+                    <span style="font-size:var(--small-size);color:var(--text-muted);">— soporte y acompañamiento</span>
                 </div>
                 <div class="layer">
                     <span class="layer-label">EXAM</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Evaluacion &rarr; validacion del proceso academico</span>
+                    <span style="font-size:var(--small-size);color:var(--text-primary);font-weight:600;">Evaluación</span>
+                    <span style="font-size:var(--small-size);color:var(--text-muted);">— validación del proceso</span>
                 </div>
                 <div class="layer">
                     <span class="layer-label">SIS / CRM</span>
-                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Graduacion &rarr; Alumni</span>
+                    <span style="font-size:var(--small-size);color:var(--text-primary);font-weight:600;">Graduación</span>
+                    <span style="font-size:var(--small-size);color:var(--text-muted);">— Alumni</span>
                 </div>
             </div>
             <div class="quote-box reveal" style="margin-top:var(--content-gap);">
                 Los problemas reales surgen en las transiciones entre sistemas.
             </div>
         </div>
-        <div class="slide-num">08 / 15</div>
+        <div class="slide-num">10 / 18</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 8: CASOS REALES — LMS y CRM
+         SLIDE 11: CASOS REALES
          =========================================== -->
-    <section class="slide" data-slide="8">
+    <section class="slide" data-slide="10">
         <div class="slide-content">
             <div class="slide-tag reveal">Casos Reales</div>
             <h2 class="reveal">Cuando los sistemas <span class="gradient-text">generan valor</span></h2>
             <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:1fr 1fr;">
                 <div class="card" style="border-left:3px solid var(--accent);">
-                    <h3 style="color:var(--accent);">Purdue University — Course Signals</h3>
-                    <p><strong style="color:var(--text-primary);">Contexto:</strong> Alta desercion, necesitaban detectar estudiantes en riesgo de forma temprana.</p>
-                    <p><strong style="color:var(--text-primary);">Decision:</strong> Usar datos del LMS (participacion, entregas, tiempo) para alertas tempranas.</p>
-                    <p><strong style="color:var(--text-primary);">Resultado:</strong> Mejora del 21% en retencion. El valor no estaba en el LMS como repositorio, sino en los datos de comportamiento.</p>
+                    <h3 style="color:var(--accent);">Purdue — Course Signals</h3>
+                    <div class="info-row" style="padding-top:0.4rem;">
+                        <span class="info-label" style="min-width:5em;">Contexto</span>
+                        <span class="info-value">Alta deserción en cursos masivos sin alertas tempranas.</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" style="min-width:5em;">Decisión</span>
+                        <span class="info-value">Usar datos del LMS para generar alertas automáticas a estudiantes en riesgo.</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" style="min-width:5em;">Resultado</span>
+                        <span class="info-value"><strong style="color:var(--accent);">21% mejora</strong> en retención.</span>
+                    </div>
                 </div>
                 <div class="card" style="border-left:3px solid var(--accent-purple);">
                     <h3 style="color:var(--accent-purple);">Georgia State — Summer Melt</h3>
-                    <p><strong style="color:var(--text-primary);">Contexto:</strong> Muchos estudiantes aceptados nunca completaban la inscripcion (&ldquo;summer melt&rdquo;).</p>
-                    <p><strong style="color:var(--text-primary);">Decision:</strong> CRM para automatizar seguimiento proactivo con mensajes personalizados.</p>
-                    <p><strong style="color:var(--text-primary);">Resultado:</strong> Reduccion del 22% en summer melt. La clave: el CRM tenia los datos y podia intervenir en el momento justo.</p>
+                    <div class="info-row" style="padding-top:0.4rem;">
+                        <span class="info-label" style="min-width:5em;">Contexto</span>
+                        <span class="info-value">Estudiantes aceptados que nunca se inscribían.</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" style="min-width:5em;">Decisión</span>
+                        <span class="info-value">CRM para automatizar seguimiento proactivo durante el verano.</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" style="min-width:5em;">Resultado</span>
+                        <span class="info-value"><strong style="color:var(--accent-purple);">22% reducción</strong> del summer melt.</span>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="slide-num">09 / 15</div>
+        <div class="slide-num">11 / 18</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 9: SINGLE SOURCE OF TRUTH
-         =========================================== -->
-    <section class="slide" data-slide="9">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Gobierno de Datos</div>
-            <h2 class="reveal">Fuente de verdad <span class="gradient-text">unica (SSOT)</span></h2>
-            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">Sin una fuente de verdad definida, cada area trabaja con su propia &ldquo;version de la realidad&rdquo;.</p>
-            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(3,1fr);margin-top:var(--content-gap);">
-                <div class="card" style="text-align:center;border-top:3px solid var(--accent);">
-                    <div style="font-size:clamp(1.5rem,3vw,2.5rem);font-family:var(--font-display);color:var(--accent);">12,000</div>
-                    <p>estudiantes segun el <strong style="color:var(--text-primary);">SIS</strong></p>
-                </div>
-                <div class="card" style="text-align:center;border-top:3px solid var(--accent-purple);">
-                    <div style="font-size:clamp(1.5rem,3vw,2.5rem);font-family:var(--font-display);color:var(--accent-purple);">14,200</div>
-                    <p>estudiantes segun el <strong style="color:var(--text-primary);">CRM</strong></p>
-                </div>
-                <div class="card" style="text-align:center;border-top:3px solid var(--accent-warm);">
-                    <div style="font-size:clamp(1.5rem,3vw,2.5rem);font-family:var(--font-display);color:var(--accent-warm);">10,800</div>
-                    <p>estudiantes segun el <strong style="color:var(--text-primary);">LMS</strong></p>
-                </div>
-            </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                &iquest;Cuantos estudiantes tiene realmente? Nadie sabe. Marketing invierte con un numero, finanzas presupuesta con otro, y el rector presenta un tercero al directorio.
-            </div>
-        </div>
-        <div class="slide-num">10 / 15</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 10: NIVELES DE INTEGRACION
-         =========================================== -->
-    <section class="slide" data-slide="10">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Integracion</div>
-            <h2 class="reveal">Niveles de <span class="gradient-text">integracion</span></h2>
-            <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,0.8vw,0.6rem);margin-top:var(--content-gap);">
-                <div class="reveal" style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem);background:var(--bg-card);border:1px solid var(--border);border-radius:10px;border-left:3px solid var(--accent-red);">
-                    <div>
-                        <div style="font-size:clamp(0.75rem,1.1vw,0.95rem);font-weight:700;color:var(--text-primary);margin-bottom:0.15em;">Manual</div>
-                        <div style="font-size:var(--small-size);color:var(--text-muted);">Alguien exporta un Excel y lo importa en otro sistema</div>
-                    </div>
-                </div>
-                <div class="reveal" style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem);background:var(--bg-card);border:1px solid var(--border);border-radius:10px;border-left:3px solid var(--accent-warm);">
-                    <div>
-                        <div style="font-size:clamp(0.75rem,1.1vw,0.95rem);font-weight:700;color:var(--text-primary);margin-bottom:0.15em;">Archivos</div>
-                        <div style="font-size:var(--small-size);color:var(--text-muted);">Un sistema genera un archivo que otro consume automaticamente</div>
-                    </div>
-                </div>
-                <div class="reveal" style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem);background:var(--bg-card);border:1px solid var(--border);border-radius:10px;border-left:3px solid var(--accent);">
-                    <div>
-                        <div style="font-size:clamp(0.75rem,1.1vw,0.95rem);font-weight:700;color:var(--text-primary);margin-bottom:0.15em;">APIs</div>
-                        <div style="font-size:var(--small-size);color:var(--text-muted);">Los sistemas se hablan en tiempo real</div>
-                    </div>
-                </div>
-                <div class="reveal" style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem);background:var(--bg-card);border:1px solid var(--border);border-radius:10px;border-left:3px solid var(--accent-green);">
-                    <div>
-                        <div style="font-size:clamp(0.75rem,1.1vw,0.95rem);font-weight:700;color:var(--text-primary);margin-bottom:0.15em;">Eventos</div>
-                        <div style="font-size:var(--small-size);color:var(--text-muted);">Los sistemas reaccionan a lo que pasa en otros sistemas</div>
-                    </div>
-                </div>
-            </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                <strong style="color:var(--text-primary);">Cada quiebre en la integracion</strong> es una mala experiencia para el estudiante y un costo operativo para la organizacion.
-            </div>
-        </div>
-        <div class="slide-num">11 / 15</div>
-    </section>
-
-    <!-- ===========================================
-         SLIDE 11: CUADRANTE DE TECNOLOGIA — MODELO MII
+         SLIDE 12: SSOT
          =========================================== -->
     <section class="slide" data-slide="11">
-        <div class="slide-content">
-            <div class="slide-tag reveal">Framework</div>
-            <h2 class="reveal">Linea base tecnologica <span class="gradient-text">Modelo MII</span></h2>
-            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">El cuadrante de Tecnologia define el stack recomendado para el grupo R&rsquo;Evolution: la arquitectura deseada en cada institucion para garantizar calidad, escalabilidad y eficiencia.</p>
-            <div class="reveal-scale" style="text-align:center;">
-                <img
-                    src="../assets/Linea base Revolution.png"
-                    alt="Linea base tecnologica Revolution"
-                    style="max-width:100%;max-height:min(50vh,380px);object-fit:contain;border-radius:8px;border:1px solid var(--border);"
-                />
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Gobierno de Datos</div>
+            <h2 class="reveal">Fuente de verdad <span class="gradient-text">única (SSOT)</span></h2>
+            <p class="subtitle reveal">&iquest;Qué pasa cuando cada área trabaja con su propia versión de los datos?</p>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);max-width:700px;grid-template-columns:repeat(3,1fr);">
+                <div class="card" style="text-align:center;">
+                    <div class="stat-big" style="color:var(--accent);font-size:clamp(1.8rem,4vw,3rem);">12,000</div>
+                    <h3>SIS</h3>
+                    <p>Estudiantes registrados</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="stat-big" style="color:var(--accent-purple);font-size:clamp(1.8rem,4vw,3rem);">14,200</div>
+                    <h3>CRM</h3>
+                    <p>Contactos activos</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="stat-big" style="color:var(--accent-warm);font-size:clamp(1.8rem,4vw,3rem);">10,800</div>
+                    <h3>LMS</h3>
+                    <p>Usuarios con acceso</p>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:600px;text-align:left;">
+                &iquest;Cuántos estudiantes tiene realmente? Nadie sabe...
+            </div>
+            <div class="reveal" style="margin-top:var(--element-gap);max-width:600px;text-align:left;">
+                <p style="font-size:var(--small-size);font-weight:700;color:var(--text-primary);margin-bottom:0.3em;">Para el líder ejecutivo:</p>
+                <ul class="bullet-list" style="font-size:var(--small-size);">
+                    <li>&iquest;Cuántos procesos dependen de carga manual?</li>
+                    <li>&iquest;Los datos del estudiante están en un solo lugar o fragmentados en 5 sistemas?</li>
+                    <li>&iquest;Cuánto tiempo pasa entre que algo sucede y se refleja en todos los sistemas?</li>
+                    <li>&iquest;Si mañana un estudiante llama, cuántos sistemas hay que consultar?</li>
+                </ul>
             </div>
         </div>
-        <div class="slide-num">12 / 15</div>
+        <div class="slide-num">12 / 18</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 12: ARQUITECTURA COMO HERRAMIENTA DE DECISION
+         SLIDE 13: NIVELES DE INTEGRACIÓN
          =========================================== -->
     <section class="slide" data-slide="12">
         <div class="slide-content">
-            <h2 class="reveal">La arquitectura como <span class="gradient-text">herramienta de decision</span></h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
-                <div class="card">
-                    <div class="card-icon">&#128200;</div>
-                    <h3>Escalabilidad</h3>
-                    <p>&iquest;Puede mi infra soportar el doble de estudiantes? &iquest;O necesito cambiar sistemas antes de crecer?</p>
+            <div class="slide-tag reveal">Integración</div>
+            <h2 class="reveal">Niveles de <span class="gradient-text">integración</span></h2>
+            <div style="display:flex;flex-direction:column;gap:clamp(0.4rem,0.8vw,0.6rem);margin-top:var(--content-gap);max-width:700px;">
+                <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem) clamp(0.8rem,1.5vw,1.2rem);background:var(--bg-card);border:1px solid var(--border);border-radius:8px;border-left:3px solid var(--accent-red);">
+                    <span style="font-weight:700;color:var(--accent-red);min-width:clamp(60px,8vw,90px);font-size:var(--small-size);">Manual</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Alguien exporta Excel e importa en otro sistema</span>
                 </div>
-                <div class="card">
-                    <div class="card-icon">&#127963;&#65039;</div>
-                    <h3>Gobierno</h3>
-                    <p>&iquest;Quien es el dueno de cada dato? &iquest;Hay vision unificada o cada area compra lo que necesita?</p>
+                <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem) clamp(0.8rem,1.5vw,1.2rem);background:var(--bg-card);border:1px solid var(--border);border-radius:8px;border-left:3px solid var(--accent-warm);">
+                    <span style="font-weight:700;color:var(--accent-warm);min-width:clamp(60px,8vw,90px);font-size:var(--small-size);">Archivos</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Sistema genera archivo que otro consume automáticamente</span>
                 </div>
-                <div class="card">
-                    <div class="card-icon">&#128176;</div>
-                    <h3>Costos</h3>
-                    <p>&iquest;Cuanto cuesta mantener sistemas que no se integran? &iquest;Cuantas horas-persona en procesos manuales?</p>
+                <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem) clamp(0.8rem,1.5vw,1.2rem);background:var(--bg-card);border:1px solid var(--border);border-radius:8px;border-left:3px solid var(--accent);">
+                    <span style="font-weight:700;color:var(--accent);min-width:clamp(60px,8vw,90px);font-size:var(--small-size);">APIs</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Los sistemas se hablan en tiempo real</span>
                 </div>
-                <div class="card">
-                    <div class="card-icon">&#9888;&#65039;</div>
-                    <h3>Riesgo</h3>
-                    <p>&iquest;Que pasa si cae el sistema central? &iquest;Hay plan B? &iquest;Los datos estan respaldados?</p>
+                <div class="reveal" style="display:flex;align-items:center;gap:clamp(0.5rem,1vw,1rem);padding:clamp(0.6rem,1vw,1rem) clamp(0.8rem,1.5vw,1.2rem);background:var(--bg-card);border:1px solid var(--border);border-radius:8px;border-left:3px solid var(--accent-green);">
+                    <span style="font-weight:700;color:var(--accent-green);min-width:clamp(60px,8vw,90px);font-size:var(--small-size);">Eventos</span>
+                    <span style="font-size:var(--small-size);color:var(--text-secondary);">Los sistemas reaccionan a lo que pasa en otros</span>
                 </div>
             </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:700px;">
+                <strong style="color:var(--text-primary);">Cada quiebre en la integración</strong> es una mala experiencia para el estudiante y un costo operativo.
+            </div>
         </div>
-        <div class="slide-num">13 / 15</div>
+        <div class="slide-num">13 / 18</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 13: DINAMICA: MAPEA TU ARQUITECTURA
+         SLIDE 14: MODELO MII
          =========================================== -->
     <section class="slide" data-slide="13">
-        <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinamica</div>
-            <h2 class="reveal">Mapea tu arquitectura</h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);">
-                <div class="card">
-                    <div class="card-icon">&#128196;</div>
-                    <h3>1. Mapear</h3>
-                    <p>Que sistemas tiene tu organizacion y como se conectan (o no)</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">&#128269;</div>
-                    <h3>2. Identificar</h3>
-                    <p>Quien es el dueno de los datos del estudiante. Top 3 dolores.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">&#127908;</div>
-                    <h3>3. Presentar</h3>
-                    <p>Tu descubrimiento principal, dolor #1, y la pregunta que te llevas</p>
-                </div>
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Framework</div>
+            <h2 class="reveal">Línea base tecnológica <span class="gradient-text">Modelo MII</span></h2>
+            <p class="subtitle reveal">El cuadrante de Tecnología define el stack para el grupo R'Evolution.</p>
+            <div class="reveal-scale" style="margin-top:var(--content-gap);">
+                <img src="../assets/Linea base Revolution.png" alt="Línea base tecnológica R'Evolution" style="max-width:100%;max-height:min(50vh,380px);object-fit:contain;border-radius:8px;border:1px solid var(--border);">
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                Mapear la arquitectura es un acto de gobierno, no un ejercicio tecnico. Muchos lideres lo hacen por primera vez &mdash; y eso es parte del problema.
-            </div>
-            <p class="reveal" style="margin-top:var(--element-gap);font-size:var(--small-size);color:var(--text-muted);">40 minutos &mdash; Individual/grupal + presentacion</p>
         </div>
-        <div class="slide-num">14 / 15</div>
+        <div class="slide-num">14 / 18</div>
     </section>
 
     <!-- ===========================================
-         SLIDE 14: RESULTADO ESPERADO
+         SLIDE 15: ARQUITECTURA COMO HERRAMIENTA DE DECISIÓN
          =========================================== -->
     <section class="slide" data-slide="14">
+        <div class="slide-content">
+            <h2 class="reveal">La arquitectura como <span class="gradient-text">herramienta de decisión</span></h2>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(2,1fr);">
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Escalabilidad</h3>
+                    <p>&iquest;Puede soportar el doble de estudiantes? &iquest;Hay que cambiar sistemas antes de crecer?</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏛️</div>
+                    <h3>Gobierno</h3>
+                    <p>&iquest;Quién es dueño de cada dato? &iquest;Hay visión unificada o cada área compra lo que quiere?</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Costos</h3>
+                    <p>&iquest;Cuánto cuesta mantener sistemas sin integrar? &iquest;Cuántas horas-persona se pierden en tareas manuales?</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Riesgo</h3>
+                    <p>&iquest;Qué pasa si cae el sistema central? &iquest;Hay plan B? &iquest;Los datos están respaldados?</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-num">15 / 18</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 16: DINÁMICA — REVISAR LA SERVILLETA
+         =========================================== -->
+    <section class="slide" data-slide="15">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Dinámica</div>
+            <h2 class="reveal">Revisar <span class="gradient-text">la servilleta</span></h2>
+            <p class="subtitle reveal">10 minutos — Completá el Template Mapa de Arquitectura IT</p>
+            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);max-width:750px;">
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">📄</div>
+                    <h3>1. Mapear</h3>
+                    <p>Qué sistemas tiene tu organización y cómo se conectan (o no)</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🔍</div>
+                    <h3>2. Identificar</h3>
+                    <p>Dueño de los datos del estudiante y top 3 dolores</p>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon">🎤</div>
+                    <h3>3. Presentar (3 min)</h3>
+                    <p>Descubrimiento principal, dolor #1, pregunta que te llevás</p>
+                </div>
+            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:700px;text-align:left;">
+                Mapear la arquitectura es un acto de gobierno, no un ejercicio técnico. Muchos líderes lo hacen por primera vez — y eso es parte del problema.
+            </div>
+        </div>
+        <div class="slide-num">16 / 18</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 17: REFLEXIÓN FINAL
+         =========================================== -->
+    <section class="slide" data-slide="16">
+        <div class="slide-content centered">
+            <div class="slide-tag reveal">Reflexión Final</div>
+            <h2 class="reveal">El sistema <span class="gradient-text">circulatorio</span></h2>
+            <div class="divider reveal"><div class="diamond"></div></div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:650px;text-align:left;font-size:clamp(0.9rem,1.4vw,1.1rem);">
+                La arquitectura IT de tu institución es como el sistema circulatorio de una persona. Cuando funciona bien, no lo notás. Cuando falla, todo se detiene. &iquest;Sabés cómo está el tuyo?
+            </div>
+        </div>
+        <div class="slide-num">17 / 18</div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 18: RESULTADO ESPERADO
+         =========================================== -->
+    <section class="slide" data-slide="17">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Cierre</div>
             <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
             <div class="divider reveal"><div class="diamond"></div></div>
             <div style="max-width:600px;margin-top:var(--content-gap);">
                 <ul class="bullet-list" style="text-align:left;">
-                    <li class="reveal">Podes nombrar y describir <strong style="color:var(--text-primary)">CMS, SIS, LMS, CRM, ERP, BI</strong></li>
-                    <li class="reveal">Entendes el ciclo de vida del estudiante como <strong style="color:var(--text-primary)">flujo entre sistemas</strong></li>
-                    <li class="reveal">Podes leer un <strong style="color:var(--text-primary)">mapa de arquitectura IT</strong> y hacer preguntas relevantes</li>
-                    <li class="reveal">Tenes un <strong style="color:var(--text-primary)">diagnostico visual de tu arquitectura</strong> con brechas identificadas</li>
-                    <li class="reveal">Comprendes que la arquitectura no es tema de IT &mdash; es <strong style="color:var(--text-primary)">gobierno y competitividad</strong></li>
+                    <li class="reveal">Podés nombrar y describir <strong style="color:var(--text-primary)">CMS, SIS, LMS, CRM, ERP, BI</strong></li>
+                    <li class="reveal">Entendés el ciclo de vida del estudiante como <strong style="color:var(--text-primary)">flujo entre sistemas</strong></li>
+                    <li class="reveal">Podés leer un <strong style="color:var(--text-primary)">mapa de arquitectura IT</strong> y hacer preguntas relevantes</li>
+                    <li class="reveal">Tenés un <strong style="color:var(--text-primary)">diagnóstico visual de tu arquitectura</strong> con brechas identificadas</li>
+                    <li class="reveal">Comprendés que la arquitectura no es tema de IT — es <strong style="color:var(--text-primary)">gobierno y competitividad</strong></li>
                 </ul>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Modulo 03 &mdash; Arquitectura IT Educativa</p>
+            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Módulo 03 — Arquitectura IT Educativa</p>
         </div>
-        <div class="slide-num">15 / 15</div>
+        <div class="slide-num">18 / 18</div>
     </section>
 
     <!-- ===========================================

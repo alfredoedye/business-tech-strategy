@@ -20,14 +20,18 @@ Sin este sistema operativo, incluso la mejor arquitectura y la mejor estrategia 
 
 Cada participante completa un autodiagnóstico rápido sobre qué tan digital es su liderazgo hoy — sin filtro ni corrección política.
 
-Ver guía completa: [Dinámica "Termómetro Digital"](../../materiales/dinamicas/05-termometro-digital.md)
+Antes de hablar de pilares, hablemos de sintomas
 
 
+https://mindset-thermometer.lovable.app/
+
+
+---
+
+### 1.4 Conclusiones
 
 > Esto no es un juicio moral. Es un diagnóstico. La mayoría de las organizaciones operan así.
 
-La pregunta es:  
-¿quieres seguir operando así en 2026?
 
 ---
 

@@ -4,6 +4,7 @@
 
 <img src="../../assets/Campus-03.png" alt="Campus-hero"/>
 
+---
 ## 1 Introducción
 
 ### 1.1 Objetivo del módulo
@@ -38,6 +39,7 @@ Arrancamos con un ejercicio rápido: cada participante dibuja en una servilleta 
 ---
 
 ### Debrief
+
 
 - ¿Cuántas herramientas aparecieron?
 - ¿Se puede o es facil cambiar?

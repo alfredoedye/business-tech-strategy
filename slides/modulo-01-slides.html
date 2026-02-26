@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&#243;dulo 01 &#8212; Hello World: Tecnolog&#237;a como ventaja competitiva</title>
+    <title>Módulo 01 — Hello World: Tecnología como ventaja competitiva</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 
     <style>
@@ -11,7 +11,6 @@
            CSS CUSTOM PROPERTIES (THEME: Midnight Clarity)
            =========================================== */
         :root {
-            /* Colors */
             --bg-primary: #111827;
             --bg-secondary: #1f2937;
             --bg-card: rgba(255, 255, 255, 0.04);
@@ -25,8 +24,6 @@
             --accent-red: #ef4444;
             --accent-green: #34d399;
             --border: rgba(255, 255, 255, 0.08);
-
-            /* Typography */
             --font-display: 'DM Serif Display', serif;
             --font-body: 'DM Sans', sans-serif;
             --title-size: clamp(2rem, 5.5vw, 4rem);
@@ -35,1070 +32,622 @@
             --body-size: clamp(0.75rem, 1.3vw, 1.05rem);
             --small-size: clamp(0.65rem, 1vw, 0.85rem);
             --tag-size: clamp(0.6rem, 0.9vw, 0.75rem);
-
-            /* Spacing */
             --slide-padding: clamp(1.5rem, 4vw, 4rem);
             --content-gap: clamp(0.8rem, 2vw, 2rem);
             --element-gap: clamp(0.4rem, 1vw, 1rem);
-
-            /* Animation */
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
             --duration: 0.7s;
         }
 
-        /* ===========================================
-           BASE STYLES
-           =========================================== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-snap-type: y mandatory;
-            height: 100%;
-            overflow-x: hidden;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            overflow-x: hidden;
-            height: 100%;
-        }
+        html { scroll-behavior: smooth; scroll-snap-type: y mandatory; height: 100%; overflow-x: hidden; }
+        body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); overflow-x: hidden; height: 100%; }
 
         /* ===========================================
-           SLIDE CONTAINER
+           SLIDE LAYOUT
            =========================================== */
-        .slide {
-            width: 100vw;
-            height: 100vh;
-            height: 100dvh;
-            padding: var(--slide-padding);
-            scroll-snap-align: start;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .slide-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-height: 100%;
-            overflow: hidden;
-            max-width: 1100px;
-            margin: 0 auto;
-            width: 100%;
-        }
+        .slide { width: 100vw; height: 100vh; height: 100dvh; padding: var(--slide-padding); scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+        .slide-content { flex: 1; display: flex; flex-direction: column; justify-content: center; max-height: 100%; overflow: hidden; max-width: 1100px; margin: 0 auto; width: 100%; }
+        .slide::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 20%, rgba(56,189,248,0.05) 0%, transparent 50%), radial-gradient(ellipse at 20% 80%, rgba(168,85,247,0.04) 0%, transparent 50%); pointer-events: none; }
+        .geo { position: absolute; border: 1px solid var(--border); border-radius: 4px; pointer-events: none; opacity: 0.4; }
 
         /* ===========================================
-           BACKGROUND EFFECTS
+           TYPOGRAPHY & COMPONENTS
            =========================================== */
-        .slide::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(ellipse at 70% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 50%),
-                radial-gradient(ellipse at 20% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
-            pointer-events: none;
-        }
+        .slide-tag { display: inline-block; font-size: var(--tag-size); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); background: rgba(56,189,248,0.1); padding: 0.4em 1.2em; border-radius: 100px; margin-bottom: clamp(0.8rem,1.5vw,1.5rem); width: fit-content; }
+        .slide-tag.amber { color: var(--accent-warm); background: rgba(245,158,11,0.1); }
+        .slide-tag.red { color: var(--accent-red); background: rgba(239,68,68,0.1); }
+        .slide h1 { font-family: var(--font-display); font-size: var(--title-size); font-weight: 400; line-height: 1.1; margin-bottom: clamp(0.5rem,1.5vw,1rem); }
+        .slide h2 { font-family: var(--font-display); font-size: var(--h2-size); font-weight: 400; line-height: 1.15; margin-bottom: clamp(0.5rem,1.5vw,1.2rem); }
+        .slide h3 { font-family: var(--font-body); font-size: var(--h3-size); font-weight: 700; margin-bottom: var(--element-gap); }
+        .gradient-text { background: linear-gradient(135deg, #38bdf8, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .slide p, .slide li { font-size: var(--body-size); line-height: 1.5; color: var(--text-secondary); }
+        .subtitle { font-size: clamp(0.9rem,1.6vw,1.15rem); color: var(--text-secondary); }
 
-        /* Geometric decorations */
-        .geo {
-            position: absolute;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            pointer-events: none;
-            opacity: 0.4;
-        }
+        .quote-box { border-left: 3px solid var(--accent); padding: 0.8em 1.2em; background: rgba(56,189,248,0.05); border-radius: 0 8px 8px 0; font-style: italic; color: var(--text-secondary); font-size: var(--body-size); }
+        .quote-box.purple { border-left-color: var(--accent-purple); background: rgba(168,85,247,0.05); }
 
-        /* ===========================================
-           TYPOGRAPHY
-           =========================================== */
-        .slide-tag {
-            display: inline-block;
-            font-size: var(--tag-size);
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent);
-            background: rgba(56, 189, 248, 0.1);
-            padding: 0.4em 1.2em;
-            border-radius: 100px;
-            margin-bottom: clamp(0.8rem, 1.5vw, 1.5rem);
-            width: fit-content;
-        }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,280px),1fr)); gap: clamp(0.5rem,1.2vw,1rem); }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: clamp(0.8rem,1.5vw,1.5rem); transition: background 0.3s ease; }
+        .card:hover { background: var(--bg-card-hover); }
+        .card-icon { font-size: clamp(1.2rem,2vw,1.8rem); margin-bottom: clamp(0.3rem,0.8vw,0.6rem); }
+        .card h3 { font-size: clamp(0.8rem,1.2vw,1rem); margin-bottom: clamp(0.2rem,0.5vw,0.4rem); color: var(--text-primary); }
+        .card p { font-size: var(--small-size); color: var(--text-muted); line-height: 1.4; }
 
-        .slide h1 {
-            font-family: var(--font-display);
-            font-size: var(--title-size);
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
-        }
-
-        .slide h2 {
-            font-family: var(--font-display);
-            font-size: var(--h2-size);
-            font-weight: 400;
-            line-height: 1.15;
-            margin-bottom: clamp(0.5rem, 1.5vw, 1.2rem);
-        }
-
-        .slide h3 {
-            font-family: var(--font-body);
-            font-size: var(--h3-size);
-            font-weight: 700;
-            margin-bottom: var(--element-gap);
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #38bdf8, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .slide p, .slide li {
-            font-size: var(--body-size);
-            line-height: 1.5;
-            color: var(--text-secondary);
-        }
-
-        .subtitle {
-            font-size: clamp(0.9rem, 1.6vw, 1.15rem);
-            color: var(--text-secondary);
-        }
-
-        /* ===========================================
-           COMPONENTS
-           =========================================== */
-
-        /* Blockquote */
-        .quote-box {
-            border-left: 3px solid var(--accent);
-            padding: 0.8em 1.2em;
-            background: rgba(56, 189, 248, 0.05);
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-            color: var(--text-secondary);
-            font-size: var(--body-size);
-        }
-
-        /* Cards grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-            gap: clamp(0.5rem, 1.2vw, 1rem);
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: clamp(0.8rem, 1.5vw, 1.5rem);
-            transition: background 0.3s ease;
-        }
-
-        .card:hover {
-            background: var(--bg-card-hover);
-        }
-
-        .card-icon {
-            font-size: clamp(1.2rem, 2vw, 1.8rem);
-            margin-bottom: clamp(0.3rem, 0.8vw, 0.6rem);
-        }
-
-        .card h3 {
-            font-size: clamp(0.8rem, 1.2vw, 1rem);
-            margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
-            color: var(--text-primary);
-        }
-
-        .card p {
-            font-size: var(--small-size);
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        /* Table-like rows */
-        .info-row {
-            display: flex;
-            gap: clamp(0.5rem, 1.5vw, 1.5rem);
-            padding: clamp(0.5rem, 1vw, 0.8rem) 0;
-            border-bottom: 1px solid var(--border);
-            align-items: flex-start;
-        }
-
+        .info-row { display: flex; gap: clamp(0.5rem,1.5vw,1.5rem); padding: clamp(0.5rem,1vw,0.8rem) 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
         .info-row:last-child { border-bottom: none; }
+        .info-label { font-size: var(--small-size); font-weight: 700; color: var(--accent); min-width: clamp(80px,12vw,140px); flex-shrink: 0; }
+        .info-value { font-size: var(--small-size); color: var(--text-secondary); line-height: 1.4; }
 
-        .info-label {
-            font-size: var(--small-size);
-            font-weight: 700;
-            color: var(--accent);
-            min-width: clamp(80px, 12vw, 140px);
-            flex-shrink: 0;
-        }
+        .stat-big { font-family: var(--font-display); font-size: clamp(2.5rem,7vw,5rem); line-height: 1; }
 
-        .info-value {
-            font-size: var(--small-size);
-            color: var(--text-secondary);
-            line-height: 1.4;
-        }
+        .pill { display: inline-block; font-size: var(--small-size); font-weight: 500; padding: 0.3em 0.8em; border-radius: 100px; border: 1px solid; }
+        .pill-blue { color: #38bdf8; border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.08); }
+        .pill-purple { color: #a855f7; border-color: rgba(168,85,247,0.3); background: rgba(168,85,247,0.08); }
+        .pill-amber { color: #f59e0b; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.08); }
+        .pill-red { color: #ef4444; border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.08); }
+        .pill-green { color: #34d399; border-color: rgba(52,211,153,0.3); background: rgba(52,211,153,0.08); }
 
-        /* Stat highlight */
-        .stat-big {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            line-height: 1;
-            margin-bottom: clamp(0.3rem, 1vw, 0.8rem);
-        }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem,2.5vw,2.5rem); align-items: start; }
+        @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
 
-        /* Pill tags */
-        .pill {
-            display: inline-block;
-            font-size: var(--small-size);
-            font-weight: 500;
-            padding: 0.3em 0.8em;
-            border-radius: 100px;
-            border: 1px solid;
-        }
+        .bullet-list { list-style: none; display: flex; flex-direction: column; gap: clamp(0.3rem,0.8vw,0.6rem); }
+        .bullet-list li { padding-left: 1.2em; position: relative; font-size: var(--body-size); }
+        .bullet-list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
-        .pill-blue { color: #38bdf8; border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.08); }
-        .pill-purple { color: #a855f7; border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.08); }
-        .pill-amber { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.08); }
-        .pill-red { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08); }
-        .pill-green { color: #34d399; border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.08); }
+        .divider { display: flex; align-items: center; gap: 0.8rem; margin: clamp(0.5rem,1.5vw,1.5rem) 0; }
+        .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+        .divider .diamond { width: 5px; height: 5px; background: var(--accent); transform: rotate(45deg); flex-shrink: 0; }
 
-        /* Two column layout */
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(1rem, 2.5vw, 2.5rem);
-            align-items: start;
-        }
+        .layer-stack { display: flex; flex-direction: column; gap: 2px; }
+        .layer { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: clamp(0.5rem,1vw,0.8rem) clamp(0.8rem,1.5vw,1.2rem); text-align: center; }
+        .layer-label { font-size: var(--small-size); color: var(--text-secondary); }
 
-        @media (max-width: 700px) {
-            .two-col { grid-template-columns: 1fr; }
-        }
+        .role-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: clamp(0.8rem,1.5vw,1.5rem); }
+        .role-list { list-style: none; display: flex; flex-direction: column; gap: clamp(0.2rem,0.5vw,0.4rem); }
+        .role-list li { font-size: var(--small-size); color: var(--text-secondary); padding-left: 1.2em; position: relative; }
+        .role-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
 
-        /* Bullet list */
-        .bullet-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.3rem, 0.8vw, 0.6rem);
-        }
+        .antipattern { background: rgba(239,68,68,0.05); border: 1px solid rgba(239,68,68,0.2); border-radius: 12px; padding: clamp(0.8rem,1.5vw,1.5rem); }
 
-        .bullet-list li {
-            padding-left: 1.2em;
-            position: relative;
-            font-size: var(--body-size);
-        }
+        .centered { text-align: center; align-items: center; }
 
-        .bullet-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.55em;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        /* Divider */
-        .divider {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin: clamp(0.5rem, 1.5vw, 1.5rem) 0;
-        }
-
-        .divider::before, .divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
-
-        .divider .diamond {
-            width: 5px; height: 5px;
-            background: var(--accent);
-            transform: rotate(45deg);
-            flex-shrink: 0;
-        }
-
-        /* Layer diagram */
-        .layer-stack {
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.3rem, 0.6vw, 0.5rem);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .layer {
-            display: flex;
-            align-items: center;
-            gap: clamp(0.5rem, 1vw, 1rem);
-            padding: clamp(0.5rem, 0.8vw, 0.7rem) clamp(0.8rem, 1.5vw, 1.2rem);
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: var(--small-size);
-            font-weight: 500;
-        }
-
-        .layer-label {
-            font-weight: 700;
-            color: var(--accent);
-            min-width: 40px;
-        }
-
-        /* Role card */
-        .role-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: clamp(0.8rem, 1.5vw, 1.2rem);
-        }
-
-        .role-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: clamp(0.15rem, 0.4vw, 0.3rem);
-        }
-
-        .role-list li {
-            font-size: var(--small-size);
-            color: var(--text-muted);
-            padding-left: 1em;
-            position: relative;
-        }
-
-        .role-list li::before {
-            content: '&#8594;';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        /* Anti-pattern cards */
-        .antipattern {
-            display: flex;
-            gap: clamp(0.5rem, 1vw, 1rem);
-            align-items: flex-start;
-            padding: clamp(0.6rem, 1vw, 1rem);
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            border-left: 3px solid var(--accent-red);
-        }
-
-        .antipattern-icon {
-            font-size: clamp(1rem, 1.5vw, 1.5rem);
-            flex-shrink: 0;
-        }
-
-        .antipattern-name {
-            font-size: clamp(0.75rem, 1.1vw, 0.95rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.15em;
-        }
-
-        .antipattern-desc {
-            font-size: var(--small-size);
-            color: var(--text-muted);
-        }
+        .slide-num { position: absolute; bottom: clamp(1rem,2vw,1.5rem); right: clamp(1.5rem,3vw,2.5rem); font-size: var(--small-size); color: var(--text-muted); font-variant-numeric: tabular-nums; }
 
         /* ===========================================
-           ANIMATIONS
+           HERO IMAGE SLIDE
            =========================================== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: opacity var(--duration) var(--ease-out-expo),
-                        transform var(--duration) var(--ease-out-expo);
-        }
+        .slide-hero-img { padding: 0; }
+        .slide-hero-img::before { display: none; }
+        .slide-hero-img img.hero-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
-        .slide.visible .reveal {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal:nth-child(1) { transition-delay: 0.05s; }
-        .reveal:nth-child(2) { transition-delay: 0.12s; }
-        .reveal:nth-child(3) { transition-delay: 0.19s; }
-        .reveal:nth-child(4) { transition-delay: 0.26s; }
-        .reveal:nth-child(5) { transition-delay: 0.33s; }
-        .reveal:nth-child(6) { transition-delay: 0.40s; }
-        .reveal:nth-child(7) { transition-delay: 0.47s; }
-
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.92);
-            transition: opacity var(--duration) var(--ease-out-expo),
-                        transform var(--duration) var(--ease-out-expo);
-        }
-
-        .slide.visible .reveal-scale {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* ===========================================
-           PROGRESS BAR
-           =========================================== */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-purple));
-            z-index: 100;
-            transition: width 0.3s ease;
-            width: 0%;
-        }
-
-        /* ===========================================
-           NAV DOTS
-           =========================================== */
-        .nav-dots {
-            position: fixed;
-            right: clamp(0.8rem, 1.5vw, 1.5rem);
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            z-index: 100;
-        }
-
-        .nav-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            padding: 0;
-        }
-
-        .nav-dot.active {
-            background: var(--accent);
-            box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
-        }
-
-        .nav-dot:hover {
-            background: rgba(255, 255, 255, 0.4);
-        }
-
-        /* ===========================================
-           SLIDE NUMBER
-           =========================================== */
-        .slide-num {
-            position: absolute;
-            bottom: clamp(1rem, 2vw, 1.5rem);
-            right: clamp(1.5rem, 3vw, 2.5rem);
-            font-size: var(--small-size);
-            color: var(--text-muted);
-            font-variant-numeric: tabular-nums;
-        }
-
-        /* ===========================================
-           CENTERED CONTENT
-           =========================================== */
-        .centered {
-            text-align: center;
-            align-items: center;
-        }
-
-        /* Full-screen hero image slide */
-        .slide-hero-img {
-            padding: 0;
-        }
-        .slide-hero-img::before {
-            display: none;
-        }
-        .slide-hero-img img.hero-cover {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* ===========================================
-           RESPONSIVE BREAKPOINTS
-           =========================================== */
-        @media (max-height: 700px) {
-            :root {
-                --slide-padding: clamp(1rem, 3vw, 2.5rem);
-                --content-gap: clamp(0.5rem, 1.5vw, 1.2rem);
-                --title-size: clamp(1.6rem, 4.5vw, 3rem);
-                --h2-size: clamp(1.2rem, 3vw, 2rem);
-            }
-        }
-
-        @media (max-height: 600px) {
-            :root {
-                --slide-padding: clamp(0.75rem, 2.5vw, 1.5rem);
-                --content-gap: clamp(0.3rem, 1vw, 0.8rem);
-                --title-size: clamp(1.3rem, 4vw, 2.2rem);
-                --body-size: clamp(0.7rem, 1.1vw, 0.9rem);
-            }
-            .nav-dots { display: none; }
-        }
-
-        @media (max-height: 500px) {
-            :root {
-                --slide-padding: clamp(0.5rem, 2vw, 1rem);
-                --title-size: clamp(1.1rem, 3.5vw, 1.8rem);
-                --h2-size: clamp(0.95rem, 2.5vw, 1.4rem);
-                --body-size: clamp(0.65rem, 1vw, 0.8rem);
-            }
-        }
-
-        @media (max-width: 600px) {
-            :root {
-                --title-size: clamp(1.5rem, 7vw, 2.5rem);
-            }
-            .cards-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.2s !important;
-            }
-            html { scroll-behavior: auto; }
-        }
         /* ===========================================
            NAVIGATION OVERLAY
            =========================================== */
         .nav-home { position: fixed; top: clamp(0.8rem,1.5vw,1.2rem); left: clamp(0.8rem,1.5vw,1.2rem); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; z-index: 200; }
-        .nav-home:hover { background: rgba(56,189,248,0.15); color: var(--accent); border-color: rgba(56,189,248,0.3); }
-        .nav-module-indicator { position: fixed; top: clamp(0.8rem,1.5vw,1.2rem); left: 50%; transform: translateX(-50%); font-size: var(--small-size); color: var(--text-muted); z-index: 200; pointer-events: none; font-family: var(--font-body); letter-spacing: 0.05em; }
-        .nav-prev, .nav-next { position: fixed; bottom: clamp(0.8rem,1.5vw,1.2rem); padding: 0.4em 0.8em; font-size: var(--small-size); color: var(--text-secondary); text-decoration: none; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 6px; transition: all 0.3s ease; z-index: 200; font-family: var(--font-body); }
+        .nav-home:hover { background: rgba(56,189,248,0.15); color: var(--accent); }
+        .nav-module-indicator { position: fixed; top: clamp(0.8rem,1.5vw,1.2rem); left: 50%; transform: translateX(-50%); font-size: var(--small-size); color: var(--text-muted); z-index: 200; pointer-events: none; }
+        .nav-prev, .nav-next { position: fixed; bottom: clamp(0.8rem,1.5vw,1.2rem); padding: 0.4em 0.8em; font-size: var(--small-size); color: var(--text-secondary); text-decoration: none; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 6px; transition: all 0.3s ease; z-index: 200; }
         .nav-prev { left: clamp(0.8rem,1.5vw,1.2rem); }
-        .nav-next { right: clamp(3rem,5vw,4rem); }
-        .nav-prev:hover, .nav-next:hover { background: rgba(56,189,248,0.1); color: var(--accent); border-color: rgba(56,189,248,0.3); }
+        .nav-next { right: clamp(0.8rem,1.5vw,1.2rem); }
+        .nav-prev:hover, .nav-next:hover { background: rgba(56,189,248,0.1); color: var(--accent); }
 
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal { opacity: 0; transform: translateY(25px); transition: opacity var(--duration) var(--ease-out-expo), transform var(--duration) var(--ease-out-expo); }
+        .slide.visible .reveal { opacity: 1; transform: translateY(0); }
+        .reveal:nth-child(1) { transition-delay: 0.05s; } .reveal:nth-child(2) { transition-delay: 0.12s; } .reveal:nth-child(3) { transition-delay: 0.19s; } .reveal:nth-child(4) { transition-delay: 0.26s; } .reveal:nth-child(5) { transition-delay: 0.33s; } .reveal:nth-child(6) { transition-delay: 0.40s; } .reveal:nth-child(7) { transition-delay: 0.47s; } .reveal:nth-child(8) { transition-delay: 0.54s; }
+        .reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity var(--duration) var(--ease-out-expo), transform var(--duration) var(--ease-out-expo); }
+        .slide.visible .reveal-scale { opacity: 1; transform: scale(1); }
+
+        /* ===========================================
+           PROGRESS BAR & NAV DOTS
+           =========================================== */
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-purple)); z-index: 100; transition: width 0.3s ease; width: 0%; }
+        .nav-dots { position: fixed; right: clamp(0.8rem,1.5vw,1.5rem); top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 100; }
+        .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.15); cursor: pointer; transition: all 0.3s ease; border: none; padding: 0; }
+        .nav-dot.active { background: var(--accent); box-shadow: 0 0 8px rgba(56,189,248,0.4); }
+        .nav-dot:hover { background: rgba(255,255,255,0.4); }
+
+        /* ===========================================
+           RESPONSIVE BREAKPOINTS
+           =========================================== */
+        @media (max-height: 700px) { :root { --slide-padding: clamp(1rem,3vw,2.5rem); --content-gap: clamp(0.5rem,1.5vw,1.2rem); --title-size: clamp(1.6rem,4.5vw,3rem); --h2-size: clamp(1.2rem,3vw,2rem); } }
+        @media (max-height: 600px) { :root { --slide-padding: clamp(0.75rem,2.5vw,1.5rem); --content-gap: clamp(0.3rem,1vw,0.8rem); --title-size: clamp(1.3rem,4vw,2.2rem); --body-size: clamp(0.7rem,1.1vw,0.9rem); } .nav-dots { display: none; } }
+        @media (max-height: 500px) { :root { --slide-padding: clamp(0.5rem,2vw,1rem); --title-size: clamp(1.1rem,3.5vw,1.8rem); --h2-size: clamp(0.95rem,2.5vw,1.4rem); --body-size: clamp(0.65rem,1vw,0.8rem); } }
+        @media (max-width: 600px) { :root { --title-size: clamp(1.5rem,7vw,2.5rem); } .cards-grid { grid-template-columns: 1fr; } .nav-module-indicator { display: none; } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; } html { scroll-behavior: auto; } }
+
+        /* ===========================================
+           SLIDE-SPECIFIC HELPERS
+           =========================================== */
+        .mini-cards { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.4rem,0.8vw,0.6rem); }
+        .mini-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: clamp(0.5rem,1vw,0.8rem); }
+        .mini-card h3 { font-size: var(--small-size); margin-bottom: clamp(0.1rem,0.3vw,0.2rem); color: var(--text-primary); }
+        .mini-card p { font-size: var(--small-size); color: var(--text-muted); line-height: 1.3; }
+
+        .reflection-quote { border-left: none; border-top: 3px solid var(--accent); border-radius: 8px 8px 8px 8px; text-align: center; font-size: clamp(1rem,2vw,1.4rem); padding: 1.2em 1.5em; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Overlay -->
+    <!-- Navigation overlay -->
     <a class="nav-home" href="../index.html" title="Inicio">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
     </a>
-    <div class="nav-module-indicator">M&#243;dulo 01 / 07</div>
-    <a class="nav-prev" href="modulo-00-slides.html">&larr; M&#243;dulo 00</a>
-    <a class="nav-next" href="modulo-02-slides.html">M&#243;dulo 02 &rarr;</a>
+    <div class="nav-module-indicator">Módulo 01 / 07</div>
+    <a class="nav-prev" href="modulo-00-slides.html">&larr; Módulo 00</a>
+    <a class="nav-next" href="modulo-02-slides.html">Módulo 02 &rarr;</a>
 
-    <!-- Progress bar -->
     <div class="progress-bar" id="progressBar"></div>
-
-    <!-- Navigation dots -->
     <nav class="nav-dots" id="navDots"></nav>
 
-    <!-- ===========================================
+    <!-- =========================================
          SLIDE 1: TITLE
-         =========================================== -->
+         ========================================= -->
     <section class="slide" data-slide="0">
-        <!-- Floating geometry -->
         <div class="geo" style="width:180px;height:180px;top:8%;right:12%;border-color:rgba(56,189,248,0.08);transform:rotate(15deg);"></div>
         <div class="geo" style="width:100px;height:100px;bottom:15%;left:8%;border-color:rgba(168,85,247,0.06);transform:rotate(-10deg);"></div>
-
         <div class="slide-content centered">
-
-            <div class="slide-tag reveal">M&#243;dulo 01</div>
-            <h1 class="reveal">Hello World: <span class="gradient-text">Tecnolog&#237;a como ventaja competitiva</span></h1>
+            <div class="slide-tag reveal">Módulo 01</div>
+            <h1 class="reveal">Hello World: <span class="gradient-text">Tecnología como ventaja competitiva</span></h1>
             <div class="divider reveal"><div class="diamond"></div></div>
-            <p class="subtitle reveal">La tecnolog&#237;a dej&#243; de ser soporte. Es arquitectura competitiva.</p>
-            <p class="reveal" style="margin-top:clamp(1rem,2vw,2rem);font-style:italic;color:var(--text-muted);font-size:var(--body-size);">&iquest;Por qu&#233; la tecnolog&#237;a dej&#243; de ser un &#225;rea de soporte y pas&#243; a ser parte de la estrategia del negocio?</p>
+            <p class="subtitle reveal">La tecnología dejó de ser soporte. Es arquitectura competitiva.</p>
+            <p class="reveal" style="font-style:italic;color:var(--text-muted);margin-top:var(--element-gap);font-size:var(--small-size);">¿Por qué la tecnología dejó de ser un área de soporte y pasó a ser parte de la estrategia del negocio?</p>
         </div>
         <div class="slide-num">01 / 13</div>
     </section>
 
-    <!-- ===========================================
+    <!-- =========================================
          SLIDE 2: CAMPUS HERO
-         =========================================== -->
+         ========================================= -->
     <section class="slide slide-hero-img" data-slide="1">
         <img class="hero-cover" src="../assets/Campus-01.png" alt="Campus-hero">
         <div class="slide-num" style="color:rgba(255,255,255,0.6);">02 / 13</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 2: OBJETIVO
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 3: OBJETIVO
+         ========================================= -->
     <section class="slide" data-slide="2">
         <div class="slide-content">
             <div class="slide-tag reveal">Objetivo</div>
-            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este m&#243;dulo</span></h2>
-            <div style="margin-top:var(--content-gap);">
-                <ul class="bullet-list">
-                    <li class="reveal">Comprender por qu&#233; la tecnolog&#237;a es <strong style="color:var(--text-primary);">parte de la estrategia central</strong> del negocio educativo</li>
-                    <li class="reveal">Identificar en qu&#233; <strong style="color:var(--text-primary);">nivel de madurez tecnol&#243;gica</strong> est&#225; tu organizaci&#243;n</li>
-                    <li class="reveal">Entender el <strong style="color:var(--text-primary);">impacto econ&#243;mico</strong> de cada nivel</li>
-                    <li class="reveal">Reconocer qu&#233; <strong style="color:var(--text-primary);">decisiones tecnol&#243;gicas no pod&#233;s delegar</strong></li>
-                    <li class="reveal">Entender que la <strong style="color:var(--text-primary);">competencia ya es global</strong></li>
-                </ul>
-            </div>
+            <h2 class="reveal">Lo que vas a lograr <span class="gradient-text">en este módulo</span></h2>
+            <ul class="bullet-list reveal">
+                <li>Comprender por qué la tecnología es <strong>parte de la estrategia central</strong> del negocio educativo</li>
+                <li>Identificar en qué <strong>nivel de madurez tecnológica</strong> está tu organización</li>
+                <li>Entender el <strong>impacto económico</strong> de cada nivel</li>
+                <li>Reconocer qué <strong>decisiones tecnológicas no podés delegar</strong></li>
+                <li>Entender que la <strong>competencia ya es global</strong></li>
+            </ul>
         </div>
         <div class="slide-num">03 / 13</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 3: DIN&#193;MICA DISPARADORA — EL REEMPLAZO INVISIBLE
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 4: DINÁMICA — EL REEMPLAZO INVISIBLE
+         ========================================= -->
     <section class="slide" data-slide="3">
         <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(245,158,11,0.1);color:var(--accent-warm);">Din&#225;mica Disparadora</div>
+            <div class="slide-tag amber reveal">Dinámica Disparadora</div>
             <h2 class="reveal">El Reemplazo <span class="gradient-text">Invisible</span></h2>
-            <p class="subtitle reveal" style="margin-bottom:var(--element-gap);">Grupos de 4 &mdash; 10 min trabajo + 5 min puesta en com&#250;n</p>
-            <p class="reveal" style="margin-bottom:var(--content-gap);font-size:var(--body-size);color:var(--text-secondary);">Escenario: ma&#241;ana aparece una universidad 100% digital, con IA, procesos &#225;giles y programas que compiten directamente con los tuyos. Como director: &iquest;qu&#233; decisiones de negocio tom&#225;s para competir? &iquest;C&#243;mo se relacionan con la tecnolog&#237;a?</p>
-            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(2,1fr);">
-                <div class="card">
-                    <div class="card-icon">&#x1F393;</div>
-                    <h3>&iquest;C&#243;mo captar&#237;a estudiantes?</h3>
-                </div>
-                <div class="card">
-                    <div class="card-icon">&#x2728;</div>
-                    <h3>&iquest;C&#243;mo dise&#241;ar&#237;a la experiencia?</h3>
-                </div>
-                <div class="card">
-                    <div class="card-icon">&#x1F4CA;</div>
-                    <h3>&iquest;C&#243;mo usar&#237;a datos?</h3>
-                </div>
-                <div class="card">
-                    <div class="card-icon">&#x1F6AB;</div>
-                    <h3>&iquest;Qu&#233; NO har&#237;a que ustedes s&#237; hacen?</h3>
-                </div>
-            </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                <strong style="color:var(--text-primary);">Cierre del facilitador:</strong> &ldquo;Si ese competidor nace hoy digital, la tecnolog&#237;a no es soporte. Es el modelo.&rdquo;
-            </div>
-            <a href="dinamica-05-slides.html" class="reveal" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:var(--element-gap);font-size:var(--small-size);color:var(--accent);text-decoration:none;padding:0.4em 1em;border:1px solid rgba(56,189,248,0.3);border-radius:8px;background:rgba(56,189,248,0.08);transition:all 0.3s ease;">Ver din&#225;mica completa &rarr;</a>
+            <p class="subtitle reveal">Grupos de 4 — 10 min trabajo + 5 min puesta en común</p>
+            <div class="quote-box reveal" style="margin-top:var(--element-gap);">Imaginemos que mañana aparece un nuevo competidor, una Universidad 100% digital, con tecnología AI, organización con procesos ágiles y con una oferta de programas de grado y pre-grado que compiten directamente con la oferta de tu institucion. Como Directivo a cargo de una Institución educativa: Qué decisiones de Negocio tomarías para competir? Cómo se relacionan esas decisiones con la tecnología?</div>
+            <div class="quote-box purple reveal" style="margin-top:var(--element-gap);">Cierre: Si ese competidor nace hoy digital, la tecnología no es soporte. Es el modelo. Cuando la tecnología es soporte, el negocio se diseña primero y se digitaliza después. Cuando es core, el negocio se diseña desde la arquitectura y la tecnología es parte de la estrategia.</div>
         </div>
         <div class="slide-num">04 / 13</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 4: SOFTWARE IS EATING THE WORLD
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 5: SOFTWARE IS EATING THE WORLD
+         ========================================= -->
     <section class="slide" data-slide="4">
         <div class="slide-content">
             <div class="slide-tag reveal">Concepto Clave</div>
             <h2 class="reveal">Software Is Eating <span class="gradient-text">The World</span></h2>
-            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);margin-bottom:var(--content-gap);">Marc Andreessen, 2011</p>
-            <div class="reveal" style="margin-top:0;">
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);margin-bottom:var(--element-gap);">Marc Andreessen, 2011</p>
+            <div class="reveal">
                 <div class="info-row">
-                    <span class="info-label" style="color:var(--text-muted);font-weight:400;">&ldquo;Tenemos campus virtual&rdquo;</span>
-                    <span class="info-value" style="color:var(--text-primary);">Duolingo tiene 47M usuarios con IA adaptativa. Un Moodle con PDFs no es digitalizaci&#243;n.</span>
+                    <div class="info-label">"Tenemos un campus virtual, estamos digitalizados"</div>
+                    <div class="info-value">Duolingo tiene 47M de usuarios diarios con IA adaptativa. Un Moodle con PDFs no es digitalización.</div>
                 </div>
                 <div class="info-row">
-                    <span class="info-label" style="color:var(--text-muted);font-weight:400;">&ldquo;Competencia son las universidades vecinas&rdquo;</span>
-                    <span class="info-value" style="color:var(--text-primary);">Tu estudiante en Buenos Aires elige entre vos, Coursera, Platzi, Google Certificates y un bootcamp en Berl&#237;n.</span>
+                    <div class="info-label">"Nuestra competencia son las universidades vecinas"</div>
+                    <div class="info-value">Tu estudiante en Buenos Aires elige entre vos, Coursera, Platzi, Google Certificates y un bootcamp en Berlín.</div>
                 </div>
                 <div class="info-row">
-                    <span class="info-label" style="color:var(--text-muted);font-weight:400;">&ldquo;IT es soporte&rdquo;</span>
-                    <span class="info-value" style="color:var(--text-primary);">2U compr&#243; contenido de Harvard/MIT por USD 800M. Sin estrategia tech, al borde de la quiebra.</span>
+                    <div class="info-label">"IT es soporte"</div>
+                    <div class="info-value">2U compró Harvard/MIT por USD 800M, al borde de la quiebra</div>
                 </div>
                 <div class="info-row">
-                    <span class="info-label" style="color:var(--text-muted);font-weight:400;">&ldquo;La IA es moda&rdquo;</span>
-                    <span class="info-value" style="color:var(--text-primary);">81% de empleadores contrata por skills, no por t&#237;tulos.</span>
+                    <div class="info-label">"La IA es moda"</div>
+                    <div class="info-value">81% de empleadores contrata por skills</div>
                 </div>
                 <div class="info-row">
-                    <span class="info-label" style="color:var(--text-muted);font-weight:400;">&ldquo;Invertir en tech es gasto&rdquo;</span>
-                    <span class="info-value" style="color:var(--text-primary);">No invertir es una decisi&#243;n de cierre en c&#225;mara lenta.</span>
+                    <div class="info-label">"Invertir en tech es gasto"</div>
+                    <div class="info-value">No invertir es cierre en cámara lenta</div>
                 </div>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                Si el negocio educativo es digital-first, la arquitectura tecnol&#243;gica es parte del modelo de negocio. No es infraestructura. Es <strong style="color:var(--text-primary);">estructura competitiva</strong>.
-            </div>
+            <div class="quote-box reveal" style="margin-top:var(--element-gap);">Si el negocio educativo es digital-first, la arquitectura tecnológica es parte del modelo de negocio. No es infraestructura. Es <strong>estructura competitiva</strong>.</div>
+            <p class="reveal" style="margin-top:var(--element-gap);">Netflix no es una empresa de tecnología que hace entretenimiento por accidente. Entendió que la experiencia del usuario <strong>es</strong> el producto.</p>
         </div>
         <div class="slide-num">05 / 13</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 5: TRES NIVELES — Usar, Operar, Dise&#241;ar
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 6: TRES NIVELES
+         ========================================= -->
     <section class="slide" data-slide="5">
         <div class="slide-content">
             <div class="slide-tag reveal">Framework</div>
-            <h2 class="reveal">Tres niveles: <span class="gradient-text">Usar, Operar, Dise&#241;ar</span></h2>
-            <div class="cards-grid reveal-scale" style="margin-top:var(--content-gap);grid-template-columns:repeat(3,1fr);">
-                <div class="card" style="border-top:3px solid #38bdf8;">
-                    <div class="card-icon">1&#65039;&#8419;</div>
-                    <h3 style="color:#38bdf8;">Nivel 1: Usar</h3>
-                    <p>Comprar herramientas y usarlas tal como vienen</p>
-                    <p style="margin-top:0.5em;font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Ej: adoptar Zoom para clases</p>
-                    <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
-                        <p style="font-size:var(--small-size);color:var(--text-muted);">Dependencia alta, sin diferenciaci&#243;n</p>
-                    </div>
+            <h2 class="reveal">Tres niveles: <span class="gradient-text">Usar, Operar, Diseñar</span></h2>
+            <div class="cards-grid reveal" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));">
+                <div class="card" style="border-top:3px solid var(--accent);">
+                    <h3 style="color:var(--accent);">Nivel 1: Usar</h3>
+                    <p>Comprar herramientas tal como vienen</p>
+                    <p style="margin-top:0.4em;"><strong style="color:var(--text-secondary);">Ej:</strong> Zoom</p>
+                    <p style="margin-top:0.4em;">Dependencia alta, sin diferenciación</p>
                 </div>
-                <div class="card" style="border-top:3px solid #a855f7;">
-                    <div class="card-icon">2&#65039;&#8419;</div>
-                    <h3 style="color:#a855f7;">Nivel 2: Operar</h3>
-                    <p>Integrar herramientas, personalizar flujos, conectar datos</p>
-                    <p style="margin-top:0.5em;font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Ej: LMS + CRM para detectar deserci&#243;n</p>
-                    <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
-                        <p style="font-size:var(--small-size);color:var(--text-muted);">Eficiencia e inteligencia operativa</p>
-                    </div>
+                <div class="card" style="border-top:3px solid var(--accent-purple);">
+                    <h3 style="color:var(--accent-purple);">Nivel 2: Operar</h3>
+                    <p>Integrar, personalizar, conectar datos</p>
+                    <p style="margin-top:0.4em;"><strong style="color:var(--text-secondary);">Ej:</strong> LMS+CRM deserción</p>
+                    <p style="margin-top:0.4em;">Eficiencia e inteligencia operativa</p>
                 </div>
-                <div class="card" style="border-top:3px solid #f59e0b;">
-                    <div class="card-icon">3&#65039;&#8419;</div>
-                    <h3 style="color:#f59e0b;">Nivel 3: Dise&#241;ar</h3>
-                    <p>El modelo de negocio nace de las capacidades tecnol&#243;gicas</p>
-                    <p style="margin-top:0.5em;font-size:var(--small-size);color:var(--text-muted);font-style:italic;">Ej: Platzi dise&#241;&#243; suscripci&#243;n + plataforma como sistema integrado</p>
-                    <div style="margin-top:0.5em;padding-top:0.5em;border-top:1px solid var(--border);">
-                        <p style="font-size:var(--small-size);color:var(--text-muted);">Diferenciaci&#243;n real y escalabilidad estructural</p>
-                    </div>
+                <div class="card" style="border-top:3px solid var(--accent-warm);">
+                    <h3 style="color:var(--accent-warm);">Nivel 3: Diseñar</h3>
+                    <p>Modelo de negocio nace de capacidades tech</p>
+                    <p style="margin-top:0.4em;"><strong style="color:var(--text-secondary);">Ej:</strong> Platzi suscripción integrada</p>
+                    <p style="margin-top:0.4em;">Diferenciación real y escalabilidad</p>
                 </div>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                &iquest;En qu&#233; nivel est&#225; tu organizaci&#243;n? &iquest;En qu&#233; nivel necesita estar para competir en los pr&#243;ximos 5 a&#241;os?
-            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">¿En qué nivel está tu organización? ¿En qué nivel necesita estar para competir en los próximos 5 años?</div>
         </div>
         <div class="slide-num">06 / 13</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 6: IMPACTO ECON&#211;MICO
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 7: IMPACTO ECONÓMICO POR NIVEL
+         ========================================= -->
     <section class="slide" data-slide="6">
         <div class="slide-content">
             <div class="slide-tag reveal">Impacto</div>
-            <h2 class="reveal">Impacto econ&#243;mico <span class="gradient-text">por nivel</span></h2>
-            <div class="reveal" style="margin-top:var(--content-gap);">
+            <h2 class="reveal">Impacto económico <span class="gradient-text">por nivel</span></h2>
+            <div class="reveal">
                 <div class="info-row">
-                    <span class="info-label">Margen</span>
-                    <span class="info-value">Lineal &rarr; Eficiente &rarr; Escalable (costo marginal decreciente)</span>
+                    <div class="info-label">Margen</div>
+                    <div class="info-value"><span class="pill pill-blue">Nivel 1</span> Bajo — <span class="pill pill-purple">Nivel 2</span> Medio — <span class="pill pill-amber">Nivel 3</span> Alto y escalable</div>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">CAC</span>
-                    <span class="info-value">Alto &rarr; Optimizable &rarr; Optimizado por anal&#237;tica y personalizaci&#243;n</span>
+                    <div class="info-label">CAC</div>
+                    <div class="info-value"><span class="pill pill-blue">Nivel 1</span> Alto, genérico — <span class="pill pill-purple">Nivel 2</span> Optimizado — <span class="pill pill-amber">Nivel 3</span> Orgánico y viral</div>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Retenci&#243;n</span>
-                    <span class="info-value">Depende del docente &rarr; Mejorada por datos &rarr; Dise&#241;ada como sistema</span>
+                    <div class="info-label">Retención</div>
+                    <div class="info-value"><span class="pill pill-blue">Nivel 1</span> Baja — <span class="pill pill-purple">Nivel 2</span> Predecible — <span class="pill pill-amber">Nivel 3</span> Diseñada en el producto</div>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Velocidad</span>
-                    <span class="info-value">Lenta &rarr; Media &rarr; Alta</span>
+                    <div class="info-label">Velocidad</div>
+                    <div class="info-value"><span class="pill pill-blue">Nivel 1</span> Lenta — <span class="pill pill-purple">Nivel 2</span> Iterativa — <span class="pill pill-amber">Nivel 3</span> Continua y automatizada</div>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">Diferenciaci&#243;n</span>
-                    <span class="info-value">Nula &rarr; Parcial &rarr; Alta</span>
+                    <div class="info-label">Diferenciación</div>
+                    <div class="info-value"><span class="pill pill-blue">Nivel 1</span> Nula — <span class="pill pill-purple">Nivel 2</span> Parcial — <span class="pill pill-amber">Nivel 3</span> Única y defendible</div>
                 </div>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                La diferencia entre niveles no es t&#233;cnica. Es econ&#243;mica. <strong style="color:var(--text-primary);">El nivel en el que est&#225;s define el techo de tu crecimiento.</strong>
-            </div>
+            <div class="quote-box reveal" style="margin-top:var(--element-gap);">La diferencia entre niveles no es técnica. Es económica. <strong>El nivel en el que estás define el techo de tu crecimiento.</strong></div>
         </div>
         <div class="slide-num">07 / 13</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 7: ROL DEL EQUIPO DIRECTIVO
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 8: ROL DEL EQUIPO DIRECTIVO
+         ========================================= -->
     <section class="slide" data-slide="7">
         <div class="slide-content">
             <div class="slide-tag reveal">Liderazgo</div>
             <h2 class="reveal">El rol del <span class="gradient-text">equipo directivo</span></h2>
-            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+            <div class="two-col reveal">
                 <div>
-                    <h3 style="color:var(--accent);margin-bottom:var(--element-gap);font-size:var(--small-size);">4 decisiones estrat&#233;gicas</h3>
-                    <div class="cards-grid" style="grid-template-columns:1fr 1fr;gap:clamp(0.4rem,0.8vw,0.6rem);">
-                        <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                            <h3 style="color:var(--text-primary);font-size:var(--small-size);">&iquest;Construimos o compramos plataforma core?</h3>
-                            <p>Dependencia y costos a largo plazo</p>
+                    <h3 style="font-size:var(--small-size);margin-bottom:var(--element-gap);">4 decisiones estratégicas</h3>
+                    <div class="mini-cards">
+                        <div class="mini-card">
+                            <h3>¿Construimos o compramos nuestra plataforma core?</h3>
+                            <p>Define dependencia estructural y costos a largo plazo</p>
                         </div>
-                        <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                            <h3 style="color:var(--text-primary);font-size:var(--small-size);">&iquest;Qu&#233; datos son estrat&#233;gicos?</h3>
-                            <p>Decisi&#243;n basada en evidencia</p>
+                        <div class="mini-card">
+                            <h3>¿Qué datos son estratégicos y quién los gobierna?</h3>
+                            <p>Define capacidad de decisión basada en evidencia</p>
                         </div>
-                        <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                            <h3 style="color:var(--text-primary);font-size:var(--small-size);">&iquest;Cu&#225;nto invertimos en tech?</h3>
-                            <p>Prioridades y visi&#243;n de futuro</p>
+                        <div class="mini-card">
+                            <h3>¿Cuánto invertimos en tecnología vs. otras áreas?</h3>
+                            <p>Define prioridades y visión de futuro</p>
                         </div>
-                        <div class="card" style="padding:clamp(0.5rem,1vw,0.8rem);">
-                            <h3 style="color:var(--text-primary);font-size:var(--small-size);">&iquest;C&#243;mo integramos IA?</h3>
-                            <p>Posici&#243;n competitiva a 3&#8211;5 a&#241;os</p>
+                        <div class="mini-card">
+                            <h3>¿Cómo integramos IA en nuestra operación?</h3>
+                            <p>Define posición competitiva a 3–5 años</p>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <h3 style="color:var(--accent);margin-bottom:var(--element-gap);font-size:var(--small-size);">Casos cercanos</h3>
-                    <ul class="role-list" style="gap:clamp(0.2rem,0.5vw,0.4rem);">
-                        <li>EPIC como palanca de crecimiento Online</li>
-                        <li>Capabilia: unidad de negocio dise&#241;ada desde la tecnolog&#237;a</li>
-                        <li>Adquisici&#243;n de Bitlogic para no ceder en el modelo de negocio</li>
-                        <li>Klarway para la escalabilidad de la examinaci&#243;n Online</li>
-                        <li>Plataformas World Class para asegurar escalabilidad</li>
+                    <h3 style="font-size:var(--small-size);margin-bottom:var(--element-gap);">Casos cercanos</h3>
+                    <ul class="role-list">
+                        <li>EPIC — plataforma integrada de gestión</li>
+                        <li>Capabilia — aprendizaje corporativo escalable</li>
+                        <li>Bitlogic — desarrollo tech para educación</li>
+                        <li>Klarway — verificación de identidad en exámenes</li>
+                        <li>Plataformas World Class — Coursera, edX, Platzi</li>
                     </ul>
-                    <div class="quote-box" style="margin-top:var(--element-gap);border-left-color:var(--accent-purple);background:rgba(168,85,247,0.05);">
-                        Si el CTO renuncia ma&#241;ana, &iquest;sabemos qu&#233; decisiones son estrat&#233;gicas y cu&#225;les operativas?
-                    </div>
+                    <div class="quote-box purple" style="margin-top:var(--element-gap);font-size:var(--small-size);">Si el CTO renuncia mañana, ¿sabemos qué decisiones tecnológicas son estratégicas en mi organización y cuáles son operativas?</div>
                 </div>
             </div>
         </div>
         <div class="slide-num">08 / 13</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 8: MAPA EDTECH GLOBAL
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 9: MAPA EDTECH GLOBAL
+         ========================================= -->
     <section class="slide" data-slide="8">
-        <div class="slide-content">
+        <div class="slide-content centered">
             <div class="slide-tag reveal">Ecosistema</div>
             <h2 class="reveal">Mapa EdTech <span class="gradient-text">global</span></h2>
-            <div class="reveal" style="margin-bottom:var(--content-gap);">
-                <div class="stat-big gradient-text">USD 400B+</div>
-                <p style="color:var(--text-secondary);font-size:var(--body-size);">y creciendo hacia el trill&#243;n para 2030</p>
-            </div>
-            <div class="cards-grid reveal-scale" style="grid-template-columns:repeat(5,1fr);">
+            <div class="stat-big gradient-text reveal">USD 400B+</div>
+            <p class="subtitle reveal" style="margin-bottom:var(--content-gap);">y creciendo hacia el trillón para 2030</p>
+            <div class="cards-grid reveal" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));">
                 <div class="card" style="text-align:center;">
+                    <div class="card-icon">📚</div>
                     <h3>Plataformas de aprendizaje</h3>
-                    <p>LMS, MOOCs</p>
+                    <p>LMS / MOOCs</p>
                 </div>
                 <div class="card" style="text-align:center;">
-                    <h3>Gesti&#243;n institucional</h3>
-                    <p>SIS, ERP</p>
+                    <div class="card-icon">🏛️</div>
+                    <h3>Gestión institucional</h3>
+                    <p>SIS / ERP</p>
                 </div>
                 <div class="card" style="text-align:center;">
+                    <div class="card-icon">💬</div>
                     <h3>Engagement</h3>
-                    <p>CRM, comunicaciones</p>
+                    <p>CRM / comunicaciones</p>
                 </div>
                 <div class="card" style="text-align:center;">
+                    <div class="card-icon">🤖</div>
                     <h3>IA aplicada</h3>
-                    <p>tutores, anal&#237;tica</p>
+                    <p>Tutores / analítica</p>
                 </div>
                 <div class="card" style="text-align:center;">
+                    <div class="card-icon">🏅</div>
                     <h3>Credenciales</h3>
-                    <p>badges, blockchain</p>
+                    <p>Badges / blockchain</p>
                 </div>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">Conocer el mapa permite entender d&#243;nde compet&#237;s, d&#243;nde hay oportunidades y d&#243;nde est&#225;n las amenazas invisibles.</p>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);margin-top:var(--element-gap);">El ecosistema EdTech ya no es un nicho. Es una industria global que compite por los mismos estudiantes.</p>
         </div>
         <div class="slide-num">09 / 13</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 9: FUERZA 1 — Presi&#243;n financiera
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 10: FUERZA 1 — PRESIÓN FINANCIERA
+         ========================================= -->
     <section class="slide" data-slide="9">
         <div class="slide-content">
-            <div class="slide-tag reveal" style="background:rgba(239,68,68,0.1);color:var(--accent-red);">Contexto Estructural</div>
-            <h2 class="reveal">Fuerza 1: <span class="gradient-text">Presi&#243;n financiera</span></h2>
-            <div class="reveal" style="margin-top:var(--content-gap);">
+            <div class="slide-tag red reveal">Contexto Estructural</div>
+            <h2 class="reveal">Fuerza 1: <span class="gradient-text">Presión financiera</span></h2>
+            <div class="reveal">
                 <div class="info-row">
-                    <span class="info-label">EE.UU. 2024</span>
-                    <span class="info-value">20+ universidades cerraron. En 2025, al menos 16 m&#225;s. La Fed predice 80 cierres por a&#241;o.</span>
+                    <div class="info-label" style="color:var(--accent-red);">EE.UU. 2024</div>
+                    <div class="info-value">20+ cierres de instituciones en un solo año</div>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">2U + edX</span>
-                    <span class="info-value">Pag&#243; USD 800M por el contenido de Harvard y MIT. Hoy tiene USD 900M en deuda.</span>
+                    <div class="info-label" style="color:var(--accent-red);">2U + edX</div>
+                    <div class="info-value">Adquisición por USD 800M, acumuló USD 900M en deuda. Modelo insostenible.</div>
                 </div>
                 <div class="info-row">
-                    <span class="info-label">LATAM</span>
-                    <span class="info-value">Sin endowments de USD 50B, la resiliencia financiera es menor.</span>
+                    <div class="info-label" style="color:var(--accent-red);">LATAM</div>
+                    <div class="info-value">Sin endowments, sin fondos de estabilización. Dependencia total de matrícula.</div>
                 </div>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                La pregunta ya no es &ldquo;si vamos a crecer&rdquo;, sino <strong style="color:var(--text-primary);">&ldquo;si el modelo actual es financieramente viable&rdquo;</strong>.
-            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">La pregunta ya no es "si vamos a crecer", sino <strong>"si el modelo actual es financieramente viable"</strong>.</div>
         </div>
         <div class="slide-num">10 / 13</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 10: FUERZAS 2 Y 3
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 11: FUERZAS 2 Y 3
+         ========================================= -->
     <section class="slide" data-slide="10">
         <div class="slide-content">
             <h2 class="reveal">Fuerzas <span class="gradient-text">2 y 3</span></h2>
-            <div class="two-col reveal-scale" style="margin-top:var(--content-gap);">
+            <div class="two-col reveal">
                 <div>
-                    <h3 style="color:#38bdf8;margin-bottom:var(--element-gap);">&#x32;&#xFE0F;&#x20E3; Cambio en la demanda laboral</h3>
+                    <h3>2️⃣ Cambio en la demanda laboral</h3>
                     <ul class="bullet-list" style="margin-bottom:var(--element-gap);">
-                        <li>Google, Apple, IBM y 150+ empresas eliminaron el requisito de t&#237;tulo</li>
-                        <li>81% de empleadores contrata por skills, no por diplomas</li>
+                        <li>Google, Apple, IBM y 150+ empresas eliminaron el requisito de título universitario</li>
+                        <li>81% de empleadores contrata por skills, no por diploma</li>
                     </ul>
-                    <span class="pill pill-blue">El valor del credential est&#225; en cuesti&#243;n</span>
+                    <span class="pill pill-blue">Skill-based hiring</span>
                 </div>
                 <div>
-                    <h3 style="color:#a855f7;margin-bottom:var(--element-gap);">&#x33;&#xFE0F;&#x20E3; Competencia nativa digital</h3>
+                    <h3>3️⃣ Competencia nativa digital</h3>
                     <ul class="bullet-list" style="margin-bottom:var(--element-gap);">
-                        <li>Duolingo: 47M usuarios diarios, USD 1B revenue proyectado</li>
-                        <li>Mercado EdTech global: USD 404B, crece 16.3% anual</li>
+                        <li>Duolingo tiene 47 millones de usuarios diarios y proyecta USD 1B en revenue para 2025</li>
+                        <li>EdTech global: USD 404B, crecimiento 16.3% anual</li>
                     </ul>
-                    <span class="pill pill-purple">La competencia ya no es local</span>
+                    <span class="pill pill-purple">Digital-native players</span>
                 </div>
             </div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);">
-                Christensen predijo que la mitad de las universidades de EE.UU. cerrar&#237;an en 10&#8211;15 a&#241;os. Estamos en la ventana. <strong style="color:var(--text-primary);">&iquest;Tu instituci&#243;n est&#225; preparada para competir?</strong>
-            </div>
+            <div class="quote-box reveal" style="margin-top:var(--content-gap);">"La disrupción no avisa. Cuando la ves, ya te pasó." — Clayton Christensen<br><br>¿Tu institución está preparada para competir?</div>
         </div>
         <div class="slide-num">11 / 13</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 11: RESULTADO ESPERADO
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 12: RESULTADO ESPERADO
+         ========================================= -->
     <section class="slide" data-slide="11">
         <div class="slide-content centered">
             <div class="slide-tag reveal">Cierre</div>
             <h2 class="reveal">Resultado <span class="gradient-text">esperado</span></h2>
             <div class="divider reveal"><div class="diamond"></div></div>
-            <div style="max-width:580px;margin-top:var(--content-gap);">
-                <ul class="bullet-list" style="text-align:left;">
-                    <li class="reveal">Entend&#233;s que la tecnolog&#237;a es <strong style="color:var(--text-primary);">arquitectura competitiva</strong>, no soporte</li>
-                    <li class="reveal">Pod&#233;s identificar tu <strong style="color:var(--text-primary);">nivel de madurez tecnol&#243;gica</strong></li>
-                    <li class="reveal">Comprend&#233;s el <strong style="color:var(--text-primary);">impacto econ&#243;mico</strong> de cada nivel</li>
-                    <li class="reveal">Reconoc&#233;s qu&#233; <strong style="color:var(--text-primary);">decisiones tecnol&#243;gicas no pod&#233;s delegar</strong></li>
-                    <li class="reveal">Ten&#233;s una primera imagen de la <strong style="color:var(--text-primary);">complejidad tecnol&#243;gica real</strong></li>
-                    <li class="reveal">Entend&#233;s que la <strong style="color:var(--text-primary);">competencia ya es global</strong></li>
+            <div style="max-width:580px;" class="reveal">
+                <ul class="bullet-list">
+                    <li>Entendés que la tecnología es <strong>arquitectura competitiva</strong>, no soporte</li>
+                    <li>Podés identificar tu <strong>nivel de madurez tecnológica</strong></li>
+                    <li>Comprendés el <strong>impacto económico</strong> de cada nivel</li>
+                    <li>Reconocés qué <strong>decisiones tecnológicas no podés delegar</strong></li>
+                    <li>Conocés las <strong>fuerzas estructurales</strong> que están reconfigurando la educación superior</li>
+                    <li>Entendés que la <strong>competencia ya es global</strong></li>
                 </ul>
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">M&#243;dulo 01 &mdash; Hello World</p>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);margin-top:var(--content-gap);">Módulo 01 — Hello World</p>
         </div>
         <div class="slide-num">12 / 13</div>
     </section>
 
-    <!-- ===========================================
-         SLIDE 12: REFLEXI&#211;N FINAL
-         =========================================== -->
+    <!-- =========================================
+         SLIDE 13: REFLEXIÓN FINAL
+         ========================================= -->
     <section class="slide" data-slide="12">
         <div class="slide-content centered">
-            <div class="slide-tag reveal">Reflexi&#243;n</div>
-            <div class="quote-box reveal" style="margin-top:var(--content-gap);max-width:700px;text-align:center;border-left:none;border-top:3px solid var(--accent);border-radius:8px 8px 0 0;padding:1.5em 2em;font-size:clamp(1rem,2vw,1.4rem);line-height:1.6;">
-                Si la tecnolog&#237;a define el techo de crecimiento de tu instituci&#243;n,<br>
-                &iquest;estamos dise&#241;ando ese techo?
+            <div class="slide-tag reveal">Reflexión</div>
+            <div class="quote-box reflection-quote reveal" style="max-width:700px;">
+                Clayton Christensen predijo en 2011 que la mitad de las universidades estadounidenses cerrarían en 10–15 años. Estamos en la ventana.
             </div>
-            <p class="reveal" style="margin-top:var(--content-gap);font-size:var(--small-size);color:var(--text-muted);">M&#243;dulo 01 &mdash; Hello World: Tecnolog&#237;a como ventaja competitiva</p>
+            <p class="reveal" style="margin-top:var(--content-gap);font-style:italic;">¿Como directivo, estás preparado para competir en este contexto? ¿O estás operando con supuestos del pasado?</p>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--text-muted);margin-top:var(--element-gap);">Módulo 01 — Hello World: Tecnología como ventaja competitiva</p>
         </div>
         <div class="slide-num">13 / 13</div>
     </section>
 
-    <!-- ===========================================
-       JAVASCRIPT: Slide Controller
-       =========================================== -->
+    <!-- =========================================
+       JAVASCRIPT
+       ========================================= -->
     <script>
-        class SlidePresentation {
-            constructor() {
-                this.slides = document.querySelectorAll('.slide');
-                this.progressBar = document.getElementById('progressBar');
-                this.navDotsContainer = document.getElementById('navDots');
-                this.currentSlide = 0;
-                this.totalSlides = this.slides.length;
-                this.isScrolling = false;
+    class SlidePresentation {
+        constructor() {
+            this.slides = document.querySelectorAll('.slide');
+            this.currentSlide = 0;
+            this.totalSlides = this.slides.length;
+            this.touchStartY = 0;
+            this.touchEndY = 0;
 
-                this.createNavDots();
-                this.setupIntersectionObserver();
-                this.setupKeyboardNav();
-                this.setupTouchNav();
-                this.updateProgress();
-            }
+            this.createNavDots();
+            this.setupIntersectionObserver();
+            this.setupKeyboardNav();
+            this.setupTouchNav();
+            this.updateProgress();
+        }
 
-            /* Create navigation dots */
-            createNavDots() {
-                for (let i = 0; i < this.totalSlides; i++) {
-                    const dot = document.createElement('button');
-                    dot.classList.add('nav-dot');
-                    dot.setAttribute('aria-label', `Slide ${i + 1}`);
-                    if (i === 0) dot.classList.add('active');
-                    dot.addEventListener('click', () => this.goToSlide(i));
-                    this.navDotsContainer.appendChild(dot);
-                }
-            }
-
-            /* Observe which slide is visible */
-            setupIntersectionObserver() {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                            const index = parseInt(entry.target.dataset.slide);
-                            this.currentSlide = index;
-                            this.updateNavDots();
-                            this.updateProgress();
-                        }
-                    });
-                }, { threshold: 0.5 });
-
-                this.slides.forEach(slide => observer.observe(slide));
-            }
-
-            /* Keyboard navigation */
-            setupKeyboardNav() {
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
-                        e.preventDefault();
-                        this.nextSlide();
-                    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-                        e.preventDefault();
-                        this.prevSlide();
-                    }
-                });
-            }
-
-            /* Touch/swipe support */
-            setupTouchNav() {
-                let startY = 0;
-                document.addEventListener('touchstart', (e) => {
-                    startY = e.touches[0].clientY;
-                }, { passive: true });
-
-                document.addEventListener('touchend', (e) => {
-                    const diff = startY - e.changedTouches[0].clientY;
-                    if (Math.abs(diff) > 50) {
-                        if (diff > 0) this.nextSlide();
-                        else this.prevSlide();
-                    }
-                }, { passive: true });
-            }
-
-            goToSlide(index) {
-                if (index >= 0 && index < this.totalSlides) {
-                    this.slides[index].scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-
-            nextSlide() {
-                this.goToSlide(this.currentSlide + 1);
-            }
-
-            prevSlide() {
-                this.goToSlide(this.currentSlide - 1);
-            }
-
-            updateNavDots() {
-                const dots = this.navDotsContainer.querySelectorAll('.nav-dot');
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === this.currentSlide);
-                });
-            }
-
-            updateProgress() {
-                const progress = ((this.currentSlide + 1) / this.totalSlides) * 100;
-                this.progressBar.style.width = `${progress}%`;
+        createNavDots() {
+            const container = document.getElementById('navDots');
+            for (let i = 0; i < this.totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('nav-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.setAttribute('aria-label', `Ir a slide ${i + 1}`);
+                dot.addEventListener('click', () => this.goToSlide(i));
+                container.appendChild(dot);
             }
         }
 
-        /* Initialize on load */
-        document.addEventListener('DOMContentLoaded', () => {
-            new SlidePresentation();
-        });
+        setupIntersectionObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const index = parseInt(entry.target.dataset.slide);
+                        this.currentSlide = index;
+                        entry.target.classList.add('visible');
+                        this.updateNavDots();
+                        this.updateProgress();
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            this.slides.forEach(slide => observer.observe(slide));
+        }
+
+        setupKeyboardNav() {
+            document.addEventListener('keydown', (e) => {
+                switch (e.key) {
+                    case 'ArrowDown':
+                    case 'ArrowRight':
+                    case ' ':
+                        e.preventDefault();
+                        this.nextSlide();
+                        break;
+                    case 'ArrowUp':
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        this.prevSlide();
+                        break;
+                    case 'Home':
+                        e.preventDefault();
+                        this.goToSlide(0);
+                        break;
+                    case 'End':
+                        e.preventDefault();
+                        this.goToSlide(this.totalSlides - 1);
+                        break;
+                }
+            });
+        }
+
+        setupTouchNav() {
+            const threshold = 50;
+            document.addEventListener('touchstart', (e) => {
+                this.touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+
+            document.addEventListener('touchend', (e) => {
+                this.touchEndY = e.changedTouches[0].screenY;
+                const diff = this.touchStartY - this.touchEndY;
+                if (Math.abs(diff) > threshold) {
+                    if (diff > 0) {
+                        this.nextSlide();
+                    } else {
+                        this.prevSlide();
+                    }
+                }
+            }, { passive: true });
+        }
+
+        goToSlide(index) {
+            if (index >= 0 && index < this.totalSlides) {
+                this.slides[index].scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        nextSlide() {
+            if (this.currentSlide < this.totalSlides - 1) {
+                this.goToSlide(this.currentSlide + 1);
+            }
+        }
+
+        prevSlide() {
+            if (this.currentSlide > 0) {
+                this.goToSlide(this.currentSlide - 1);
+            }
+        }
+
+        updateNavDots() {
+            const dots = document.querySelectorAll('.nav-dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === this.currentSlide);
+            });
+        }
+
+        updateProgress() {
+            const progress = ((this.currentSlide + 1) / this.totalSlides) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        new SlidePresentation();
+    });
     </script>
 </body>
 </html>

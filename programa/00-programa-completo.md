@@ -42,12 +42,14 @@ Al finalizar este módulo, los participantes podrán:
 
 | # | Módulo | Pregunta guía | Contenido |
 |---|--------|---------------|-----------|
+| 0 | [Introducción](../contenido/modulo-00-intro.md) | — | Presentación del curso, facilitadores y estructura |
 | 1 | [Hello World](../contenido/modulo-01-hello-world.md) | ¿Por qué la tecnología dejó de ser soporte y pasó a ser core? | Ventaja competitiva, 3 niveles de relación con la tech, rol del equipo directivo |
 | 2 | [Estrategia Tecnológica](../contenido/modulo-02-estrategia-tecnologica.md) | ¿Qué decisiones son estratégicas y cuáles tácticas? | Build/Buy, Cloud/On-premise, Core/Commodity, 5 componentes de estrategia |
 | 3 | [Arquitectura IT Educativa](../contenido/modulo-03-arquitectura-it.md) | ¿Cómo funciona una institución educativa moderna por dentro? | SIS, LMS, CRM, ERP, BI, IAM, integraciones, ciclo de vida del estudiante |
 | 4 | [Transformación Digital e IA](../contenido/modulo-04-transformacion-digital-ia.md) | ¿Cómo transformar sin romper la organización? | Triángulo de transformación, framework de adopción de IA, ética |
 | 5 | [Mindset Digital](../contenido/modulo-05-mindset-digital.md) | ¿Qué tipo de líder necesita ser tu organización? | 7 pilares del mindset digital, anti-patrones, diagnóstico |
 | 6 | [IA y Educación](../contenido/modulo-06-ia-educacion.md) | ¿Cómo va la IA a transformar la educación? | Panel de discusión — Día 2 (Sábado) |
+| 7 | [Cierre y Lanzamiento del Challenge](../contenido/modulo-07-cierre-challenge.md) | — | Cierre del curso y lanzamiento del challenge grupal |
 
 ---
 
@@ -94,7 +96,7 @@ Al finalizar este módulo, los participantes podrán:
 | 15:00–15:50 | Presentaciones Equipos 3 y 4 + Feedback | 50 min |
 | 15:50–16:00 | Reflexión de cierre | 10 min |
 
-→ Guía detallada: [Guía del Facilitador — Challenge Point](../guia-facilitador/guia-challenge-point.md)
+→ Guía detallada: [Guía del Facilitador — Challenge Point](../materiales/dinamicas/guia-challenge-point.md)
 
 ---
 
@@ -124,7 +126,7 @@ Al finalizar este módulo, los participantes podrán:
 | Template: Diagnóstico de Mindset Digital | [materiales/templates/](../materiales/templates/template-diagnostico-mindset-digital.md) |
 | Template: Journey Map del Estudiante | [materiales/templates/](../materiales/templates/template-journey-map-estudiante.md) |
 | Brief del Challenge | [materiales/challenge/](../materiales/challenge/brief-challenge.md) |
-| Casos de estudio LATAM | [materiales/](../materiales/casos-de-estudio.md) |
+| Template del Challenge | [materiales/challenge/](../materiales/challenge/template-challenge.md) |
 | Lecturas y recursos complementarios | [referencias/](../referencias/lecturas-y-recursos.md) |
 
 ### Para facilitadores (uso interno)
@@ -133,8 +135,7 @@ Al finalizar este módulo, los participantes podrán:
 |----------|-----------|
 | Guía Día 1 (Viernes) | [guia-facilitador/](../guia-facilitador/guia-dia-1-viernes.md) |
 | Guía Día 2 (Sábado) | [guia-facilitador/](../guia-facilitador/guia-dia-2-sabado.md) |
-| Guía Challenge Point | [guia-facilitador/](../guia-facilitador/guia-challenge-point.md) |
-| Checkpoints de seguimiento | [materiales/challenge/](../materiales/challenge/checkpoints-seguimiento.md) |
+| Guía Challenge Point | [materiales/dinamicas/](../materiales/dinamicas/guia-challenge-point.md) |
 
 ### Por producir
 

@@ -1,6 +1,9 @@
 # Módulo 06 — IA y el Futuro de la Educación
 
-## Propósito
+## 1. Introducción
+
+### 1.1 Objetivo del módulo
+
 
 Cerrar el programa ayudando a cada líder a definir una postura estratégica explícita frente al impacto de la IA en educación.
 
@@ -8,30 +11,48 @@ Cerrar el programa ayudando a cada líder a definir una postura estratégica exp
 * No es una clase.  
 * Es un ejercicio de posicionamiento.
 
-Al finalizar este módulo, cada participante debe poder responder:
+Al finalizar, cada participante debe poder responder sin ambigüedad:
 
-> ¿Qué postura estratégica va a tomar mi organización frente a la IA en los próximos 3–5 años?
+> ¿Vamos a liderar, seguir o resistir la integración de IA en nuestra institución durante los próximos 3–5 años?
+
+Y esa respuesta debe tener consecuencias presupuestarias, organizacionales y culturales.
+
+
 
 ---
 
-## Parte 1 — Apertura
+## 2 Conceptos 
 
-### IA en 2026: La realidad incómoda (10 minutos)
+### 2.1 IA en 2026: La realidad incómoda
 
-El objetivo de esta apertura es generar claridad estratégica sobre la magnitud del cambio.
-
-No es una introducción técnica.  
-Es una lectura de contexto.
 
 Leopold Aschenbrenner, ex-investigador de OpenAI, publicó en 2024 un ensayo titulado *Situational Awareness: The Decade Ahead* que sacudió al mundo tech. Su tesis central:
 
-> "Para 2025/26, estas máquinas superarán a muchos graduados universitarios. Para el final de la década, serán más inteligentes que usted o yo; tendremos superinteligencia."
+> "Para 2026, estas máquinas superarán a muchos graduados universitarios. Para el final de la década, serán más inteligentes que usted o yo; tendremos superinteligencia."
 
 No es ciencia ficción. Es la proyección de alguien que trabajó dentro de los laboratorios que construyen estos sistemas. Y lo que está en juego no es solo tecnología — es el modelo completo de formación humana.
 
+#### Pregunta al grupo
+
+> ¿Qué parte de su modelo educativo actual puede hacer hoy una IA al 70% del costo y en 1/10 del tiempo?
+
+#### Síntomas de tu organización (Autodiagnóstico rápido)
+
+Marca mentalmente si reconoces estos síntomas:
+
+- “Estamos esperando una regulación más clara.”
+- “Primero queremos capacitar a los docentes.”
+- “No tenemos presupuesto específico para IA.”
+- “Lo estamos viendo desde sistemas.”
+- “Hay resistencia cultural.”
+
+Si 2 o más aplican → no están en exploración.  
+Están en dilación estratégica.
+
+
 ---
 
-## 1. La IA ya no es experimental
+## 2.2 La IA ya no es experimental
 
 - Está integrada en LMS, CRM, soporte y marketing.
 - Docentes y estudiantes la usan, con o sin política institucional.
@@ -49,7 +70,8 @@ Para finales de 2026, la tendencia global es que la alfabetización en IA esté 
 
 ---
 
-## 2. La brecha se está ampliando
+
+## 2.3 La brecha se está ampliando
 
 Algunas instituciones:
 
@@ -70,7 +92,7 @@ Es estratégica.
 
 ---
 
-## 3. El modelo educativo está bajo presión
+## 2.4 El modelo educativo está bajo presión
 
 - Matrículas tensionadas.
 - Costos estructurales altos.
@@ -93,7 +115,7 @@ Esto no es una crisis futura. Ya está ocurriendo.
 
 ---
 
-## 4. La competencia ya no es local
+## 2.5 La competencia ya no es local
 
 Un estudiante puede:
 
@@ -114,21 +136,10 @@ Una institución en LATAM puede:
 
 La barrera geográfica desapareció. Pero la ventana de oportunidad también tiene fecha de vencimiento.
 
----
-
-## 5. No decidir es una decisión
-
-La pregunta ya no es:
-
-> “¿La IA va a cambiar la educación?”
-
-La pregunta es:
-
-> “¿Cómo va a posicionarse mi institución frente a este cambio?”
 
 ---
 
-## Parte 2 — Escenarios 2030 (20 minutos)
+## 2.6 Escenarios 2030
 
 Se presentan tres escenarios plausibles.  
 Cada grupo debe elegir el que considera más probable y diseñar una respuesta estratégica.
@@ -182,9 +193,9 @@ La gobernanza se vuelve ventaja competitiva.
 
 ---
 
-## Parte 4 — Declaración personal (10 minutos)
+## Actividad — Declaración personal 
 
-Cada participante completa individualmente:
+Cada participante completa individualmente en una hoja:
 
 > “En los próximos 24 meses, como lider debo dejar de ______ y empezar a ______.”
 
@@ -225,17 +236,6 @@ Como lo expresó Ethan Mollick, profesor de Wharton y autor de *Co-Intelligence*
 
 La decisión no es si la IA va a transformar la educación. La decisión es si su institución va a liderar esa transformación o va a reaccionar cuando ya sea tarde.
 
----
-
-## Resultado esperado
-
-Al finalizar el módulo, el participante:
-
-* Comprende la magnitud estratégica del impacto de la IA en educación superior.
-* Puede articular una postura institucional explícita frente a la IA (no solo "estamos explorando").
-* Identifica al menos una cosa que su organización debe empezar a hacer y una que debe dejar de hacer en los próximos 24 meses.
-* Puede argumentar su postura frente a uno de los 3 escenarios 2030.
-* Entiende que no decidir también es una decisión — y tiene consecuencias estratégicas.
 
 ---
 
